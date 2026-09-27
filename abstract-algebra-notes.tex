@@ -47020,30 +47020,34 @@ example.)
 \end{pitfall}
 
 \begin{wex}{Distinguishing forms with equal char.\ poly}
-Both $A$ and $A'$ over $\Q$ have $c(x) = (x-2)^3$ and geometric multiplicity
+Both $A$ and $A'$ over $\Q$ have $c(x) = (x-2)^4$ and geometric multiplicity
 $\dim\ker(\cdot - 2I) = 2$. Determine each Jordan form, given the nullity chains
-$r_\bullet(A) = (0,2,3)$ and $r_\bullet(A') = (0,2,2,3)$.
+$r_\bullet(A) = (0,2,4)$ and $r_\bullet(A') = (0,2,3,4)$.
 
 \wrec Step (3) of the Method: block counts come from \emph{differences} of
 nullities, not from $r_1$ alone.
 
-\wsol For $A$: $r_0,r_1,r_2 = 0,2,3$. Blocks of size $\geq 1$: $r_1 - r_0 = 2$;
-size $\geq 2$: $r_2 - r_1 = 1$; size $\geq 3$: $r_3 - r_2 = 0$. So one block of
-size $2$ and one of size $1$:
+\wsol For $A$: $r_0,r_1,r_2 = 0,2,4$. Blocks of size $\geq 1$: $r_1 - r_0 = 2$;
+size $\geq 2$: $r_2 - r_1 = 2$; size $\geq 3$: $r_3 - r_2 = 0$ (the chain has
+stabilized at $r_2 = 4 = d_2$). So two blocks of size $2$:
 \[
-  J(A) = \diag\big(J_2(2),\,J_1(2)\big)
-       = \begin{pmatrix} 2 & 1 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 2 \end{pmatrix},
+  J(A) = \diag\big(J_2(2),\,J_2(2)\big)
+       = \begin{pmatrix} 2 & 1 & 0 & 0 \\ 0 & 2 & 0 & 0 \\ 0 & 0 & 2 & 1 \\ 0 & 0 & 0 & 2 \end{pmatrix},
   \qquad m_A(x) = (x-2)^2 .
 \]
-For $A'$: $r_\bullet = 0,2,2,3$ is impossible since nullities are nondecreasing and
-once they repeat they have stabilized --- so $A'$ as stated cannot occur with
-algebraic multiplicity $3$. The only chains for $d_2 = 3$ with $r_1 = 2$ end at
-$r_2 = 3$. Hence the data $r_1 = 2$ \emph{forces} $J(A')=\diag(J_2(2),J_1(2))$ as
-well: with three boxes in two columns the partition $3 = 2+1$ is unique. Thus the
-genuinely distinct alternative needs $r_1 = 1$ (one block, $J_3(2)$,
-$m(x)=(x-2)^3$) or $r_1 = 3$ ($3$ blocks $J_1(2)$, diagonalizable, $m(x)=x-2$).
-Sanity check: for $A$, $\deg m_A = 2 = $ largest block size, and the partition
-$2+1=3=d_2$ accounts for all of $K_2$.
+For $A'$: $r_0,r_1,r_2,r_3 = 0,2,3,4$. Blocks of size $\geq 1$: $2$; size $\geq 2$:
+$r_2 - r_1 = 1$; size $\geq 3$: $r_3 - r_2 = 1$; size $\geq 4$: $r_4 - r_3 = 0$ (stabilized at $r_3 = 4 = d_2$). So one
+block of size $3$ and one of size $1$:
+\[
+  J(A') = \diag\big(J_3(2),\,J_1(2)\big)
+        = \begin{pmatrix} 2 & 1 & 0 & 0 \\ 0 & 2 & 1 & 0 \\ 0 & 0 & 2 & 0 \\ 0 & 0 & 0 & 2 \end{pmatrix},
+  \qquad m_{A'}(x) = (x-2)^3 .
+\]
+So $A$ and $A'$ share $c(x)$ and the geometric multiplicity $r_1 = 2$ but are not
+similar: their nullity chains first differ at $r_2$. (This needs $d_2 \geq 4$: when
+$d_2 = 3$, the value $r_1 = 2$ forces the partition $3 = 2+1$.)
+Sanity check: in each case $\deg m$ is the largest block size, and the partitions
+$2+2$ and $3+1$ both account for all of $K_2$, of dimension $d_2 = 4$.
 \end{wex}
 
 \begin{wex}{Full computation: a $4\times 4$ matrix over $\Q$}
@@ -48200,8 +48204,9 @@ invariant subspace and induction handles $T|_U$. On $K$ the operator $T$ is
 For a nilpotent $T$ on $K$, let $N = \ker T$, $W = \im T$. Then $\dim W < \dim K$,
 so by induction $T|_W$ has Jordan generators $w_1, \dots, w_s$. Lift each to
 $v_i$ with $Tv_i = w_i$; the chains through the $v_i$ are independent and stack
-the $w_i$-chains with one extra rung, after which a basis of $N$ is adjoined to
-finish, each added vector giving a $1\times 1$ zero block. Reassembling the
+the $w_i$-chains with one extra rung, after which vectors of $N$ are adjoined to
+extend these chains to a basis of $K$ (every $v \in K$ differs by an element of $N$
+from a vector in the span of the chains, since $T$ maps that span onto $W$), each added vector giving a $1\times 1$ zero block. Reassembling the
 $\lambda$-blocks for every eigenvalue gives $J$. Uniqueness follows because the
 numbers $\dim\ker(T-\lambda)^i$ are similarity invariants and (next subsection)
 determine the block sizes.
@@ -48244,8 +48249,8 @@ The geometric multiplicity $k_1$ alone counts the blocks but not their sizes: tw
 operators can share $c_T$, the eigenvalues, and even $k_1$, yet differ in Jordan
 form. You must climb the sequence $k_1, k_2, \dots$. The increments
 $k_j - k_{j-1}$ are nonincreasing in $j$ -- they are the column heights of a
-Young-diagram of the partition -- so a jump that fails to shrink signals an
-arithmetic slip.
+Young-diagram of the partition -- so a jump larger than the one before it signals an
+arithmetic slip (equal consecutive jumps are allowed).
 \end{pitfall}
 
 \begin{wex}{Two nilpotent matrices that look alike (Artin's example)}
@@ -48253,7 +48258,7 @@ Over $\Q$, contrast
 \[
   A = \begin{pmatrix} 0&1&0 \\ 0&0&1 \\ 0&0&0 \end{pmatrix},
   \qquad
-  B = \begin{pmatrix} 1&-1&1 \\ 2&-2&2 \\ -1&1&-1 \end{pmatrix}.
+  B = \begin{pmatrix} 1&-1&1 \\ 2&-2&2 \\ 1&-1&1 \end{pmatrix}.
 \]
 Both are nilpotent with $c(x) = x^3$. Find each Jordan form.
 
@@ -48265,7 +48270,7 @@ $\lambda = 0$, i.e.\ tabulate $k_i = \dim\ker A^i$.
 $k_1, k_2, k_3 = 1, 2, 3$. The sequence rises by $1$ each step, so there is one
 block of size $\geq 1$ and one of size $\geq 2$ and one of size $\geq 3$: a single
 $3\times 3$ block, $J(A) = J_3(0) = A$ itself. A generator is any $v$ with
-$A^2 v \neq 0$, e.g.\ $v = e_1$, giving the chain $(v, Av, A^2 v)$.
+$A^2 v \neq 0$, e.g.\ $v = e_3$, giving the chain $(v, Av, A^2 v) = (e_3, e_2, e_1)$.
 
 For $B$: a short computation gives $B^2 = 0$, so $\rank B = 1$ (its rows are all
 multiples of $(1,-1,1)$) and $k_1, k_2 = 2, 3$. Thus there are $k_1 = 2$ blocks,
