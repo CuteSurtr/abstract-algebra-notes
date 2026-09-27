@@ -28862,8 +28862,11 @@ $D=\{1,2,4\}$.
 when an element of $D$ kills something nonzero. \wrec
 \wsol In $\Zn 6$, $2\cdot 3=0$ and $3\neq 0$, so $2$ is a zero divisor; $D=\{1,2,4\}$ is
 multiplicatively closed ($2\cdot2=4,\ 2\cdot4=8=2,\ 4\cdot4=16=4$) but contains the zero
-divisor $2$. With $\frac{r}{1}=\frac01\eqv r\cdot 1=0\cdot d$ replaced by the localization
-test $\frac r1=\frac01\eqv (\exists d\in D)\ rd=0$, we get $\frac31=\frac01$ because
+divisor $2$. For the relation of Theorem~\ref{thm:frac@c7}, $(3,1)\sim(0,2)$ since $3\cdot 2=0=0\cdot 1$,
+and $(0,2)\sim(0,1)$ since $0\cdot 1=0\cdot 2$, but $(3,1)\not\sim(0,1)$ since
+$3\cdot 1\neq 0\cdot 1$; so $\sim$ is \emph{not} transitive. Repairing this with the localization
+relation $\frac ad=\frac be\eqv(\exists u\in D)\ u(ae-bd)=0$, whose zero test is
+$\frac r1=\frac01\eqv (\exists d\in D)\ rd=0$, we get $\frac31=\frac01$ because
 $3\cdot 2=0$. So $\iota(3)=0$: the element $3\neq 0$ would die. This is exactly the
 pathology the hypothesis ``$D$ has no zero divisors'' rules out, guaranteeing $\iota$
 injective (Theorem~\ref{thm:frac@c7}(1)). \emph{Check:} indeed $3\neq 0$ in $\Zn6$ yet maps
@@ -28937,8 +28940,9 @@ R \arrow[r, hook, "\iota"] \arrow[dr, "f"'] & \Frac(R) \arrow[d, dashed, "\exist
 \dgi{Common pitfall:} Students sometimes think $\bar f$ exists for any ring hom $f\colon R\to F$,
   not just injective ones. If $f$ kills a nonzero $r$, then $f(r)=0$ would need to be a unit
   (since $r/1\in\Frac(R)$ has an inverse $1/r$), but $0$ is not a unit in $F$. The injectivity
-  hypothesis is essential; without it the formula $\bar f(a/b)=f(a)f(b)^{-1}$ can assign
-  $\bar f(1/0)$ which is undefined, or collapse the map.
+  hypothesis is essential; without it the formula $\bar f(a/b)=f(a)f(b)^{-1}$ breaks down: if
+  $f(r)=0$ for some $r\neq 0$, it would require $\bar f(1/r)=f(1)f(r)^{-1}$, and $f(r)^{-1}=0^{-1}$
+  is undefined.
 \dgi{Takeaway:} The point of this diagram is that $\Frac(R)$ is the universal initial step in
   embedding $R$ into a field: every injection of $R$ into a field factors uniquely and injectively
   through $\iota\colon R\hookrightarrow\Frac(R)$.
@@ -29195,9 +29199,9 @@ R \arrow[r, "\iota"] \arrow[dr, "f"'] & \Frac(R) \arrow[d, dashed, "\exists!"] \
   polynomial rings. Recognizing this shape immediately tells you: (a) the extension exists, (b)
   it is unique, and (c) it is given by the explicit formula. No computation is needed once you
   see the triangle.
-\dgi{Concrete example:} $R=\Q[x]$, $\Frac(R)=\Q(x)$, $F=\R$, $f$ the natural inclusion sending
-  polynomials to real-valued rational functions. The unique extension sends $p(x)/q(x)$ to the
-  rational function $p(t)/q(t)$ for real $t$, restricted as needed.
+\dgi{Concrete example:} $R=\Q[x]$, $\Frac(R)=\Q(x)$, $F=\R(t)$ (rational functions in $t$
+  with real coefficients), $f$ the injective map $p(x)\mapsto p(t)$. The unique extension sends
+  $p(x)/q(x)$ to the rational function $p(t)/q(t)\in\R(t)$.
 \dgi{Common pitfall:} The ``$\exists!$'' on the dashed arrow refers to uniqueness \emph{among
   ring homs extending $f$}, not uniqueness of ring homs from $\Frac(R)$ to $F$ in general.
   There can be many ring homs $\Frac(R)\to F$; the universal property pins down the one that
@@ -29212,7 +29216,7 @@ $a/b\mapsto f(a)f(b)\inv$.
 
 \begin{exers}{Exercises (from the text).}
 \item Fill in all the details in the proof of Theorem 15.
-\item Let $R$ be an integral domain and let $D$ be a nonempty subset of $R$ that is closed under multiplication. Prove that the ring of fractions $D^{-1}R$ is isomorphic to a subring of the quotient field of $R$ (hence is also an integral domain).
+\item Let $R$ be an integral domain and let $D$ be a nonempty subset of $R$ that does not contain $0$ and is closed under multiplication. Prove that the ring of fractions $D^{-1}R$ is isomorphic to a subring of the quotient field of $R$ (hence is also an integral domain).
 \item Let $F$ be a field. Prove that $F$ contains a unique smallest subfield $F_0$ and that $F_0$ is isomorphic to either $\Q$ or $\Zn{p}$ for some prime $p$ ($F_0$ is called the \emph{prime subfield} of $F$). [See Exercise 26, Section 3.]
 \item Prove that any subfield of $\R$ must contain $\Q$.
 \item If $F$ is a field, prove that the field of fractions of $F[[x]]$ (the ring of formal power series in the indeterminate $x$ with coefficients in $F$) is the ring $F((x))$ of formal Laurent series (cf. Exercises 3 and 5 of Section 2). Show the field of fractions of the power series ring $\Z[[x]]$ is \emph{properly} contained in the field of Laurent series $\Q((x))$. [Consider the series for $e^x$.]
@@ -29274,10 +29278,10 @@ $a/b\mapsto f(a)f(b)\inv$.
 \item Let $R$ be commutative, $D$ multiplicatively closed with $0\notin D$, and $\iota:R\to D^{-1}R$ the canonical map with $J=\ker\iota=\{r:dr=0\text{ for some }d\in D\}$. Show $\iota$ factors through $R/J$ and that the induced map is injective, giving the diagram below (a fractions version of the First Isomorphism Theorem). Identify the dashed arrow explicitly.
 \[\begin{tikzcd}[row sep=large,column sep=large] R \arrow[r, "\iota"] \arrow[d, two heads, "\pi"'] & D^{-1}R \\ R/J \arrow[ur, dashed, "\overline{\iota}"'] & \end{tikzcd}\]
 
-\item (CRT as an isomorphism.) Let $R$ be a commutative ring with ideals $I_1,I_2$ satisfying $I_1+I_2=R$. Prove the map below is a ring isomorphism, where $r\mapsto(r+I_1,\,r+I_2)$, and identify its kernel as $I_1\cap I_2=I_1 I_2$.
+\item (CRT as an isomorphism.) Let $R$ be a commutative ring with ideals $I_1,I_2$ satisfying $I_1+I_2=R$. Prove that the dashed map below, induced by $\varphi\colon r\mapsto(r+I_1,\,r+I_2)$, is a ring isomorphism, and identify $\ker\varphi$ as $I_1\cap I_2=I_1 I_2$.
 \[\begin{tikzcd}[column sep=large] R \arrow[r, "{r\mapsto(r,r)}"] \arrow[d, two heads, "\pi"'] & R/I_1 \times R/I_2 \\ R/(I_1\cap I_2) \arrow[ur, dashed, "\isom"'] & \end{tikzcd}\]
 
-\item (Universal property of $R[x]$ applied to fractions.) Let $R$ be an integral domain with $F=\Frac(R)$ and let $S$ be a commutative $R$-algebra via $\varphi:R\to S$ in which every nonzero element of $R$ maps to a unit. Using the universal property of fractions, complete the diagram with a unique $R$-algebra map $\Phi$, and state precisely the condition on $\varphi$ that makes $\Phi$ exist.
+\item (Universal property of fractions for $R$-algebras.) Let $R$ be an integral domain with $F=\Frac(R)$ and let $S$ be a commutative $R$-algebra via $\varphi:R\to S$ in which every nonzero element of $R$ maps to a unit. Using the universal property of fractions, complete the diagram with a unique $R$-algebra map $\Phi$, and state precisely the condition on $\varphi$ that makes $\Phi$ exist.
 \[\begin{tikzcd}[column sep=large] R \arrow[r, "\iota"] \arrow[dr, "\varphi"'] & F \arrow[d, dashed, "\exists!\,\Phi"] \\ & S \end{tikzcd}\]
 
 \item Let $R$ be a commutative ring and $D\subseteq D'$ two multiplicatively closed subsets with $0\notin D'$. Show the canonical maps fit into a commutative triangle and that there is a unique ring homomorphism $\theta:D^{-1}R\to D'^{-1}R$ filling it in. Give $\theta$ on a fraction $\frac{r}{d}$.
