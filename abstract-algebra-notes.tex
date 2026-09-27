@@ -53094,7 +53094,7 @@ to isomorphism, exactly one such covering, and by
 Theorem~\ref{art:function_fields:rem@c13} exactly one field. It is
 $K=F(y)$ with $y^k=t$, i.e.\ $y=\sqrt[k]{t}$: the surface of $y^k-t$ has $k$
 sheets and branches only at $0$ since every $t\neq0$ has $k$ distinct $k$th
-roots. \emph{Check:} $\deg_x(y^k-t)=k$ matches $k$ sheets, and $y^k-t$ is
+roots. \emph{Check:} $\deg_y(y^k-t)=k$ matches $k$ sheets, and $y^k-t$ is
 Eisenstein at the prime $t$ in $\C[t]$, hence irreducible -- a genuine
 degree-$k$ extension.
 \end{wex}
@@ -53111,9 +53111,10 @@ t=-1$. At each, $\partial f/\partial t=-3t^2+1$ equals $1,-2,-2$ respectively,
 all nonzero, so the lemma gives a $2$-cycle. With two sheets each
 $\sigma_\nu=(1\,2)$, and numbering is irrelevant. The subgroup
 $\gen{(1\,2)}$ is transitive on $\{1,2\}$, so $X$ is path connected.
-\emph{Check:} three transpositions are needed for the cut-and-paste to close
-up consistently with a connected double cover -- a square-root surface
-$x=\sqrt{t^3-t}$ branched over the three roots of the cubic.
+\emph{Check:} each of the three simple roots of $t^3-t$ contributes $(1\,2)$; since
+$(1\,2)^3=(1\,2)\neq\id$, a large circle also swaps the sheets, so the point at infinity
+is a fourth branch point of the square-root surface $x=\sqrt{t^3-t}$ (the product of all
+local monodromies, infinity included, is the identity).
 \end{wex}
 
 \begin{wex}{Realizing two transpositions: $x^3-3x+t$}
@@ -53126,8 +53127,9 @@ sheets and $\sigma_1$ a transposition, transitivity (path-connectedness)
 forces $\sigma_2$ to be a different transposition.
 \wsol Take $f=x^3-3x+t$. Then $\partial f/\partial x=3x^2-3$ vanishes at
 $x=\pm1$, and $\partial f/\partial t=1\neq0$ everywhere, so the lemma applies.
-Substituting $x=\pm1$ into $f=0$ gives branch points $t=\mp2$, i.e.\ $t=\pm2$;
-at $p_1=(2,-1)$ and $p_2=(-2,1)$ each $f(t_0,x)$ has a double root, so each
+Substituting $x=\pm1$ into $f=0$ gives branch points $t=\pm2$ (as $f(t,\pm1)=t\mp2$);
+at $p_1=(2,1)$ and $p_2=(-2,-1)$ each $f(t_0,x)$ has a double root
+($f(2,x)=(x-1)^2(x+2)$, $f(-2,x)=(x+1)^2(x-2)$), so each
 $\sigma_\nu$ is a transposition. Label so $\sigma_1=(1\,2)$. By the
 transitivity criterion $\sigma_2$ must move sheet $3$, so it is $(2\,3)$ or
 $(1\,3)$; switching sheets $1,2$ fixes $\sigma_1$ and swaps these, so after
