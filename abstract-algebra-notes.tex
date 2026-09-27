@@ -21833,7 +21833,7 @@ Let $G$ be a group with subgroups $H,K\le G$ satisfying
 \textnormal{(iii) } H\cap K=1,\qquad \textnormal{(iv) } HK=G.
 \]
 Then the map $\psi\colon H\times K\to G$, $\psi(h,k)=hk$, is an isomorphism; thus
-$G\isom H\times K$. Conditions (i)--(iii) are equivalent to: $[H,K]=1$, $H\cap K=1$, and $HK=G$.
+$G\isom H\times K$. Conditions (i)--(iv) are equivalent to: $[H,K]=1$, $H\cap K=1$, and $HK=G$.
 \end{theorem}
 
 \begin{proof}
@@ -21963,8 +21963,8 @@ K=\{x\in G\st x\equiv1\!\!\pmod3\}.
 \]
 \textbf{Identify $H$.} An element is $\equiv1\pmod5$ iff $5\mid(x-1)$; among the units only
 $1$ and $11$ qualify (since $11-1=10$), so $H=\{1,11\}$. As $11^2=121=8\cdot15+1\equiv1\pmod{15}$,
-$H\isom\Zn2$, the internal copy of $(\Z/5)^\times\cap\{\equiv1\bmod3\}$-type factor; more simply
-$H$ has order $2$.
+$H\isom\Zn2$, the internal copy of the factor $(\Z/3)^\times$ (the residue mod $5$ is fixed at $1$,
+while $1,11$ have residues $1,2$ mod $3$).
 \textbf{Identify $K$.} An element is $\equiv1\pmod3$ iff $3\mid(x-1)$; among the units $1,4,7,13$
 qualify (the differences $0,3,6,12$ are divisible by $3$), so $K=\{1,4,7,13\}$. Take $7$:
 $7^2=49\equiv4,\ 7^3\equiv28\equiv13,\ 7^4\equiv91\equiv1\pmod{15}$, so $K=\gen7\isom\Zn4$.
@@ -21989,9 +21989,9 @@ unit groups multiply.
 \wsol \textbf{General statement.} The CRT ring isomorphism $\Z/n\Z\isom\prod_i\Z/p_i^{a_i}\Z$
 restricts to a group isomorphism on units, since a tuple is a unit iff each coordinate is. Inside
 $(\Z/n\Z)^\times$ define $H_i=\{x\st x\equiv1\pmod{p_j^{a_j}}\ \text{for all }j\ne i\}$; then $H_i$
-is the internal copy of $(\Z/p_i^{a_i}\Z)^\times$. Each $H_i\nor G$ (abelian), the $H_i$ pairwise
-intersect in $1$ (an element in two of them is $\equiv1$ modulo every prime power, hence $\equiv1
-\pmod n$), and $\prod_i|H_i|=\prod_i\varphi(p_i^{a_i})=\varphi(n)=|G|$ forces $H_1\cdots H_t=G$.
+is the internal copy of $(\Z/p_i^{a_i}\Z)^\times$. Each $H_i\nor G$ (abelian), each $H_i$ meets
+the product $\prod_{j\ne i}H_j$ in $1$ (an element of that product is $\equiv1\pmod{p_i^{a_i}}$, and an
+element of $H_i$ is $\equiv1$ modulo every other prime power, so an element of both is $\equiv1\pmod n$), and $\prod_i|H_i|=\prod_i\varphi(p_i^{a_i})=\varphi(n)=|G|$ forces $H_1\cdots H_t=G$.
 The recognition theorem (applied repeatedly) gives the internal direct product.
 \textbf{Illustration $n=12=2^2\cdot3$.} $(\Z/12)^\times=\{1,5,7,11\}$, order $\varphi(12)=4$. Set
 $H=\{x\equiv1\pmod3\}=\{1,7\}\isom(\Z/4)^\times\isom\Zn2$ (indeed $7\equiv1\pmod3$, $7\equiv3\pmod4$,
