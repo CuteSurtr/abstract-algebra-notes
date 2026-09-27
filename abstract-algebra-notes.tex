@@ -66123,16 +66123,16 @@ the kernels of $R\to\F_2$ and $R\to\F_3$.
     \draw (d3)--(d9); \draw (d6)--(d18); \draw (d12)--(d36); \draw (d24)--(d72);
   \end{scope}
   \node[ltlab,above=1.5pt of d1] {$(1)=R$};
-  \node[ltlab,left=2.5pt of d2] {$(2)$};
-  \node[ltlab,right=2.5pt of d3] {$(3)$};
-  \node[ltlab,left=2.5pt of d4] {$(4)$};
-  \node[ltlab,below=1.5pt of d6] {$(6)$};
-  \node[ltlab,right=2.5pt of d9] {$(9)$};
-  \node[ltlab,left=2.5pt of d8] {$(8)$};
-  \node[ltlab,below=1.5pt of d12] {$(12)$};
-  \node[ltlab,right=2.5pt of d18] {$(18)$};
-  \node[ltlab,left=2.5pt of d24] {$(24)$};
-  \node[ltlab,right=2.5pt of d36] {$(36)$};
+  \node[ltlab,left=5pt of d2] {$(2)$};
+  \node[ltlab,right=5pt of d3] {$(3)$};
+  \node[ltlab,left=5pt of d4] {$(4)$};
+  \node[ltlab,right=5pt of d6] {$(6)$};
+  \node[ltlab,right=5pt of d9] {$(9)$};
+  \node[ltlab,left=5pt of d8] {$(8)$};
+  \node[ltlab,right=5pt of d12] {$(12)$};
+  \node[ltlab,right=5pt of d18] {$(18)$};
+  \node[ltlab,left=5pt of d24] {$(24)$};
+  \node[ltlab,right=5pt of d36] {$(36)$};
   \node[ltlab,below=1.5pt of d72] {$(72)=(0)$};
 \end{tikzpicture}\end{center}
 
@@ -66328,9 +66328,9 @@ Throughout, $R$ is a commutative ring with $1$, ideals are written in fraktur, a
 \[
 \begin{tikzcd}[row sep=1.7em, column sep=1.6em]
 & R=(\bar1) \arrow[dl,dash]\arrow[dr,dash] & \\
-(\bar2) \arrow[d,dash]\arrow[dr,dash] & & (\bar3) \arrow[dl,dash]\arrow[dd,dash] \\
-(\bar4) \arrow[d,dash] & (\bar6) & \\
-(\bar8)\arrow[dr,dash] & & (\bar9) \\
+(\bar2) \arrow[d,dash]\arrow[dr,dash] & & (\bar3) \arrow[dl,dash]\arrow[d,dash] \\
+(\bar4) \arrow[d,dash] & (\bar6) & (\bar9) \\
+(\bar8)\arrow[dr,dash] & & \\
 & (\bar0) &
 \end{tikzcd}
 \]
@@ -66850,7 +66850,7 @@ Sanity check: this restores arithmetic to the famous failure $6=2\cdot3=(1+\sqrt
 \end{wex}
 
 The divisors of $(6)$ under ``to contain is to divide'' form the Hasse lattice below, graded by
-the number of prime factors. Its three atoms are the primes $\fp_2,\fp_3,\fp_3'$; the four
+the number of prime factors. The three primes $\fp_2,\fp_3,\fp_3'$ sit directly below $R$; the four
 principal ideals $(2)=\fp_2^2$, $(3)=\fp_3\fp_3'$, $(1+\sqrt{-5})=\fp_2\fp_3$, and
 $(1-\sqrt{-5})=\fp_2\fp_3'$ all sit on the level-$2$ row. Reading $(6)$ as the bottom meet, the two
 \emph{element}-factorizations regroup into the \emph{same} ideal factorization:
@@ -66893,15 +66893,15 @@ factorization restores uniqueness at the ideal level.
   \end{scope}
   \node[ltlab,above=2pt of R] {$(1)=R$};
   \node[ltlab,above left=-1pt and 1pt of p2] {$\fp_2$};
-  \node[ltlab,above=1.5pt of p3] {$\fp_3$};
+  \node[ltlab,above right=-1pt and 1pt of p3] {$\fp_3$};
   \node[ltlab,above right=-1pt and 1pt of q3] {$\fp_3'$};
-  \node[ltlab,left=2.5pt of i2] {$(2)=\fp_2^2$};
-  \node[ltlab,left=2.5pt of ip] {$(1{+}\sqrt{-5})$};
-  \node[ltlab,right=2.5pt of im] {$(1{-}\sqrt{-5})$};
-  \node[ltlab,right=2.5pt of i3] {$(3)=\fp_3\fp_3'$};
-  \node[ltlab,left=2.5pt of a] {$\fp_2^2\fp_3$};
-  \node[ltlab,below=2pt of b] {$\fp_2\fp_3\fp_3'$};
-  \node[ltlab,right=2.5pt of c] {$\fp_2^2\fp_3'$};
+  \node[ltlab,left=5pt of i2] {$(2)=\fp_2^2$};
+  \node[ltlab,left=5pt of ip] {$(1{+}\sqrt{-5})$};
+  \node[ltlab,right=5pt of im] {$(1{-}\sqrt{-5})$};
+  \node[ltlab,right=5pt of i3] {$(3)=\fp_3\fp_3'$};
+  \node[ltlab,left=5pt of a] {$\fp_2^2\fp_3$};
+  \node[ltlab,left=5pt of b] {$\fp_2\fp_3\fp_3'$};
+  \node[ltlab,right=5pt of c] {$\fp_2^2\fp_3'$};
   \node[ltlab,below=2pt of i6] {$(6)=\fp_2^2\fp_3\fp_3'$};
 \end{tikzpicture}\end{center}
 
@@ -67415,12 +67415,12 @@ tractable, and it drives the unit count below.
   % Triangular lattice of Z[eta]  (d = -3, eta = (1+sqrt(-3))/2 ; |eta|=1, 60 deg)
   \begin{scope}[xshift=5.6cm]
     \foreach \i in {0,1,2,3}
-      \foreach \j in {0,1,2}
+      \foreach \j in {0,1,2,3}
         \node[ltdot] at ({\i+0.5*\j},{0.866*\j}) {};
     \draw[ltedge] (0,0)--(3,0);
     \draw[ltedge] (0,0)--(1.5,2.598);
     \node[ltlab,below=2pt] at (1,0) {$1$};
-    \node[ltlab,left=2pt] at (0.5,0.866) {$\eta$};
+    \node[ltlab,left=4.5pt] at (0.5,0.866) {$\eta$};
     \node[ltlab,below=10pt] at (1.5,0) {$\Z[\eta]$, $d=-3$ (equilateral)};
   \end{scope}
 \end{tikzpicture}\end{center}
@@ -67646,7 +67646,7 @@ Two principal ideals $(\alpha)$ are related by multiplication: writing $\alpha=r
     }}
   % basis arrows for A
   \draw[->,very thick,blue!70!black] (0,0)--(2,0) node[midway,below=2pt]{\scriptsize $2$};
-  \draw[->,very thick,blue!70!black] (0,0)--(1,2.236) node[left=1pt]{\scriptsize $1+\delta$};
+  \draw[->,very thick,blue!70!black] (0,0)--(1,2.236) node[above=1pt]{\scriptsize $1+\delta$};
   % fundamental parallelogram of A
   \draw[blue!50,dashed] (0,0)--(2,0)--(3,2.236)--(1,2.236)--cycle;
   \node[blue!70!black] at (3.7,3.2) {\scriptsize $A=(2,1+\delta)$};
@@ -68044,7 +68044,7 @@ Thus $R$ is a principal ideal domain iff $h=1$, and for these rings PID $\Leftri
   \begin{scope}[xshift=8cm]
     \foreach \x in {-1,...,2}{\fill (2*\x,0) circle (1.3pt);}
     \foreach \x in {-1,...,1}\foreach \y in {-1,1}{\fill (2*\x+1,1.6*\y) circle (1.3pt);}
-    \draw[->,thick] (0,0)--(2,0) node[below]{$2$};
+    \draw[->,thick] (0,0)--(2,0) node[below right]{$2$};
     \draw[->,thick] (0,0)--(1,1.6) node[above right]{$1+\delta$};
     \node at (0,-2.6) {$A=(2,\,1+\delta)$};
   \end{scope}
@@ -68192,7 +68192,7 @@ If $\alpha$ is a unit with inverse $\beta\in R$, then $\Nm(\alpha)\Nm(\beta)=\Nm
   % epsilon = 1+sqrt2 -> (2.414,-0.414) on uv=-1
   \fill (2.414,-0.414) circle (1.8pt) node[below right,font=\scriptsize]{$1+\sqrt2$};
   % epsilon^2 = 3+2sqrt2 -> (5.83,0.17) off-figure; use epsilon^{-1}=-1+sqrt2 -> (0.414,-2.414)
-  \fill (0.414,-2.414) circle (1.8pt) node[left,font=\scriptsize]{$\sqrt2-1$};
+  \fill (0.414,-2.414) circle (1.8pt) node[right,font=\scriptsize]{$\sqrt2-1$};
   % conjugate point of epsilon under v->u : (-0.414,2.414) is -(sqrt2-1)... mark 1 and -1
   \fill (1,1) circle (1.8pt) node[above right,font=\scriptsize]{$1$};
   \fill (-1,-1) circle (1.8pt) node[below left,font=\scriptsize]{$-1$};
