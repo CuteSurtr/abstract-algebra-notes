@@ -62365,7 +62365,7 @@ R_{\fp} \arrow[r,dashed,"\exists!\,\cong"'] & (R_f)_{\fp R_f}
 \end{tikzcd}
 \]
 Then take $R=\Z$, $\fp=(2)$, $f=3$, and verify the isomorphism concretely by identifying both bottom rings as $\Z_{(2)}$.
-\item Let $S\subseteq R$ be multiplicatively closed with canonical map $\pi\colon R\to S^{-1}R$, and let $\pi^{*}\colon\Spec(S^{-1}R)\to\Spec R$ be the induced map of spectra. Complete the diagram and prove that $\pi^{*}$ is a homeomorphism onto the subspace $\set{\fq\in\Spec R:\ \fq\cap S=\es}$, with inverse given by contraction:
+\item Let $S\subseteq R$ be multiplicatively closed with canonical map $\pi\colon R\to S^{-1}R$, and let $\pi^{*}\colon\Spec(S^{-1}R)\to\Spec R$ be the induced map of spectra. Complete the diagram and prove that $\pi^{*}$ is a homeomorphism onto the subspace $\set{\fq\in\Spec R:\ \fq\cap S=\es}$, with inverse given by extension $\fq\mapsto S^{-1}\fq$:
 \[
 \begin{tikzcd}[row sep=large, column sep=huge]
 \Spec(S^{-1}R) \arrow[r,"\pi^{*}"] \arrow[dr,"\cong"'] & \Spec R \\
@@ -62381,7 +62381,7 @@ Specialize to $S=\set{f^n}$ to identify the image with the distinguished open $D
 \end{tikzcd}
 \]
 Use exactness to deduce that $\coker(\varphi)_{\fm}\isom\coker(\varphi_{\fm})$ for any map $\varphi\colon M\to N$ and any maximal ideal $\fm$, and hence that surjectivity of $\varphi$ is a local property.
-\item For $f\in R$ and a basic open $D(g)\subseteq D(f)$ of $\Spec R$ (so $g^n=uf$ for some $n$ and $u$), complete the restriction diagram of the structure presheaf and prove it commutes; then prove that the stalk at a point $\fp$ is the local ring $R_{\fp}$ by exhibiting the colimit:
+\item For $f\in R$ and a basic open $D(g)\subseteq D(f)$ of $\Spec R$ (so $g^n=uf$ for some $n$ and $u$), complete the restriction diagram of the structure presheaf and prove it commutes; then, for a point $\fp\in D(g)$, prove that the stalk at $\fp$ is the local ring $R_{\fp}$ by exhibiting the colimit:
 \[
 \begin{tikzcd}[row sep=large, column sep=huge]
 R_f \arrow[rr,"\rho^{f}_{g}"] \arrow[dr] & & R_g \arrow[dl] \\
