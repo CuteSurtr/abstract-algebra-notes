@@ -7658,7 +7658,7 @@ this kind.
   group) with the orbit itself. The arrow $\Phi$ is a \emph{bijection of sets}, not a group
   isomorphism; $G/G_s$ inherits a group structure only when $G_s\nor G$.
 \dgi{Takeaway:} The point of this diagram is that the orbit of $s$ is in bijection with the
-  set of cosets of the stabilizer, so counting orbits always reduces to counting cosets.
+  set of cosets of the stabilizer, so computing the size of an orbit always reduces to counting cosets.
 \end{dgx}
 
 \subsection*{Maps and commutative diagrams}
@@ -7722,7 +7722,7 @@ $C_G(A)\sgr N_G(A)\sgr G$ of Proposition~\ref{p:tower@c2} at a glance.
   mapping $A$ to itself setwise by conjugation. $\operatorname{Sym}(A)$ is the group of all
   bijections of the set $A$.
 \dgi{Arrows:} The arrow $1\to C_G(A)$ is the inclusion of the trivial element (recording
-  that $1\in C_G(A)$; it says the sequence starts at $1$, i.e.\ $C_G(A)=\ker c$).
+  that $1\in C_G(A)$; exactness at $C_G(A)$ says that the inclusion $C_G(A)\hookrightarrow N_G(A)$ is injective, while $C_G(A)=\ker c$ is exactness at $N_G(A)$).
   The hooked arrow $C_G(A)\hookrightarrow N_G(A)$ is the subgroup inclusion from
   Proposition~\ref{p:tower@c2}. The arrow $c:N_G(A)\to\operatorname{Sym}(A)$ is the conjugation
   homomorphism $c(g)=\sigma_g$ where $\sigma_g(a)=gag\inv$; it is well defined on
@@ -7766,7 +7766,7 @@ whose kernel is $Z(G)$. Thus $Z(G)\nor G$ for free.
   center of $G$: the normal subgroup of elements commuting with every $x\in G$.
   $G$ is the group itself. $\operatorname{Aut}(G)$ is the group of all automorphisms
   (bijective homomorphisms $G\to G$), the target for the inner-automorphism representation.
-\dgi{Arrows:} $1\to Z(G)$ records that $1\in Z(G)$ and that $Z(G)=\ker\phi$, starting the
+\dgi{Arrows:} $1\to Z(G)$ records that $1\in Z(G)$ and (exactness at $Z(G)$) that the inclusion $Z(G)\hookrightarrow G$ is injective, starting the
   left-exact sequence. The inclusion $Z(G)\hookrightarrow G$ is the subgroup inclusion from
   Proposition~\ref{p:center-subgroup@c2}. The arrow $\phi:G\to\operatorname{Aut}(G)$ is the
   \emph{inner automorphism map}: $\phi(g)=\iota_g$ where $\iota_g(x)=gxg\inv$. Each
