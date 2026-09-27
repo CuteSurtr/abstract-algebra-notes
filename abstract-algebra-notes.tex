@@ -40701,13 +40701,14 @@ $\det(A^2 A^{-3}) = 1/7$. \emph{Sanity check:} $\det(A^2)\det(A^{-3})
 = 7^2 \cdot 7^{-3} = 7^{-1}$. \checkmark
 \end{wex}
 
-\begin{wex}{Singular over $\R$ via a dependent column}
+\begin{wex}{A suspected dependent column, over $\R$}
 Decide whether $A = \begin{psmallmatrix} 1 & 0 & 2 \\ 2 & 1 & 5 \\ 0 & 3 & 6
 \end{psmallmatrix}$ is invertible.
 \wrec Theorem~\ref{thm:det-invertible@c11}: invertible iff columns independent iff
 $\det \neq 0$.
-\wsol Note $A_3 = 2A_1 + A_2$: check $2(1,2,0)^{\trans} + (0,1,3)^{\trans}
-= (2,5,3)^{\trans}$ -- the third entry is $3$, not $6$, so that fails.
+\wsol The first two rows suggest $A_3 = 2A_1 + A_2$, but
+$2(1,2,0)^{\trans} + (0,1,3)^{\trans} = (2,5,3)^{\trans} \neq (2,5,6)^{\trans} = A_3$,
+so there is no such relation, and a failed guess decides nothing.
 Compute directly by expanding along column $1$:
 $\det A = 1\cdot(1\cdot 6 - 5\cdot 3) - 2\cdot(0\cdot 6 - 2\cdot 3) + 0
 = (6-15) - 2(0-6) = -9 + 12 = 3 \neq 0$. Hence $A$ is invertible.
@@ -40836,8 +40837,9 @@ $1\cdot(-1)^{2+1}\det\begin{psmallmatrix} 0 & 3 \\ 4 & 6 \end{psmallmatrix}
 \begin{theorem}[Basis-independence; determinant of an operator]
 \label{thm:det-operator@c11}
 Let $T \in \End(V)$ with $\dim_F V = n$. If $A$ and $A'$ are the matrices of $T$
-in two ordered bases, related by $A' = P^{-1} A P$ for the change-of-basis matrix
-$P$, then $\det A' = \det A$. Hence
+in two ordered bases, related by $A' = P^{-1} A P$, where the columns of $P$ are the new basis vectors
+written in the old basis (so $P$ converts new coordinates to old; the change-of-basis matrix
+of \S 11.2 from the old basis to the new one is $P^{-1}$), then $\det A' = \det A$. Hence
 \[
   \det T := \det\big( [T]_{\mathcal B} \big)
 \]
@@ -41003,7 +41005,7 @@ V^{\times n} \arrow[r, "T^{\times n}"] \arrow[d, "\extp"'] & V^{\times n} \arrow
 
 \begin{dgx}
 \dgi{Objects:} The top row nodes are $V^{\times n}$, the $n$-fold Cartesian product of the
-  $F$-vector space $V$; these are not vector spaces but sets of ordered $n$-tuples of vectors.
+  $F$-vector space $V$; these are vector spaces (products of copies of $V$), but the vertical wedge maps are only $n$-linear, not linear, so the square is a diagram of maps of sets.
   The bottom row nodes are $\extp^n V$, the $n$th exterior power of $V$, which is a
   $1$-dimensional $F$-vector space (since $\dim V = n$); its sole basis element is
   $e_1 \extp \cdots \extp e_n$.
@@ -41018,9 +41020,10 @@ V^{\times n} \arrow[r, "T^{\times n}"] \arrow[d, "\extp"'] & V^{\times n} \arrow
   Concretely: $Tv_1\extp\cdots\extp Tv_n = (\det T)\,v_1\extp\cdots\extp v_n$.
 \dgi{Why it commutes:} The map $(v_1,\dots,v_n)\mapsto Tv_1\extp\cdots\extp Tv_n$ is
   alternating $n$-linear in $(v_1,\dots,v_n)$ (since $T$ is linear and wedge is alternating
-  multilinear). By uniqueness in the determinant theorem, every such function equals
-  $(\det T)$ times the standard alternating $n$-linear function sending $(v_1,\dots,v_n)$
-  to $v_1\extp\cdots\extp v_n$. No element-chase is needed: it follows directly from the
+  multilinear). By uniqueness in the determinant theorem, every such function is a
+  scalar multiple of the standard alternating $n$-linear function sending $(v_1,\dots,v_n)$
+  to $v_1\extp\cdots\extp v_n$, and evaluating at a basis shows that for this function the
+  scalar is $\det T$. No element-chase is needed: it follows directly from the
   universal property of exterior powers.
 \dgi{Why this matters here:} This square is the conceptual definition of $\det T$: instead
   of a formula, $\det T$ is the unique scalar by which $T$ stretches the top exterior power.
