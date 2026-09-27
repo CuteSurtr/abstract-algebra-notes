@@ -13366,7 +13366,7 @@ $\{\Zn2,\Zn2,\Zn3\}$ --- exactly the Jordan--Holder invariance.
   \node[ltlab,below=1.5pt of Ab] {$0$};
   \node[ltlab,left=3pt of A6]    {$\gen{6}$};
   \node[ltlab,left=3pt of A3]    {$\gen{3}$};
-  \node[ltlab,above=1.5pt of At] {$\Z/12$};
+  \node[ltlab,above=1.5pt of At] {$\Zn{12}$};
   \node[ltlab,right=2pt of $(Ab)!0.5!(A6)$] {$\Zn 2$};
   \node[ltlab,right=2pt of $(A6)!0.5!(A3)$] {$\Zn 2$};
   \node[ltlab,right=2pt of $(A3)!0.5!(At)$] {$\Zn 3$};
@@ -13381,7 +13381,7 @@ $\{\Zn2,\Zn2,\Zn3\}$ --- exactly the Jordan--Holder invariance.
   \node[ltlab,below=1.5pt of Bb] {$0$};
   \node[ltlab,left=3pt of B4]    {$\gen{4}$};
   \node[ltlab,left=3pt of B2]    {$\gen{2}$};
-  \node[ltlab,above=1.5pt of Bt] {$\Z/12$};
+  \node[ltlab,above=1.5pt of Bt] {$\Zn{12}$};
   \node[ltlab,right=2pt of $(Bb)!0.5!(B4)$] {$\Zn 3$};
   \node[ltlab,right=2pt of $(B4)!0.5!(B2)$] {$\Zn 2$};
   \node[ltlab,right=2pt of $(B2)!0.5!(Bt)$] {$\Zn 2$};
@@ -13573,7 +13573,7 @@ one above, labeled by its factor:
 \[
 \begin{tikzcd}[row sep=large]
 G \arrow[d, dash, "{N_{k}/N_{k-1}}" {anchor=center, fill=white}] \\
-N_{k-1} \arrow[d, dash, "{\ \vdots}" {anchor=center}] \\
+N_{k-1} \arrow[d, dash, "\vdots" {anchor=center, fill=white}] \\
 N_1 \arrow[d, dash, "{N_1/N_0}" {anchor=center, fill=white}] \\
 1
 \end{tikzcd}
@@ -15060,7 +15060,7 @@ H x K = \{h x k \mid h \in H, \ k \in K\}.
 i.e. $\rho(gh) = \rho(g)\rho(h)$ and $\rho(1) = \id_A$.
 
 \item Let $G$ act transitively on $A$ and fix $a \in A$. Prove the orbit-stabilizer map is a well-defined $G$-set bijection making
-\[\begin{tikzcd}[column sep=huge] G/\Stab_G(a) \arrow[r, "\sim"', "{g\,\Stab_G(a)\,\mapsto\, g\cdot a}"] & A \end{tikzcd}\]
+\[\begin{tikzcd}[column sep=7em] G/\Stab_G(a) \arrow[r, "\sim"', "{g\,\Stab_G(a)\,\mapsto\, g\cdot a}"] & A \end{tikzcd}\]
 commute with the $G$-actions (left multiplication on cosets, the given action on $A$). Deduce $|A| = \idx{G}{\Stab_G(a)}$.
 
 \item Let $G$ act on itself by conjugation. Show this is the homomorphism $\psi : G \to \Aut(G)$, $g \mapsto (x \mapsto gxg\inv)$, with image $\Inn(G)$, and that $\ker\psi = Z(G)$, giving the exact sequence
@@ -15497,7 +15497,7 @@ G \arrow[r, "\pi_H"] \arrow[rd, "q"'] & \Sym(G/H) \\
 where $K=\ker\pi_H$ and $q$ is the quotient map. Identify $K$ as $\bigcap_{g\in G}gHg\inv$ and explain why the injection $G/K\hookrightarrow\Sym(G/H)$ exists.
 
 \item Let $H\le G$ with stabilizer of the base coset equal to $H$. Show the orbit-stabilizer map is a $G$-equivariant bijection by verifying the diagram
-\[\begin{tikzcd}[column sep=large]
+\[\begin{tikzcd}[column sep=5.5em]
 G/H \arrow[r, "\sim", "{gH\mapsto g\cdot(1H)}"'] & \Orb(1H)
 \end{tikzcd}\]
 commutes with the left-multiplication actions on both sides; i.e. that translating by $g'$ before and after the map agree.
@@ -15547,8 +15547,9 @@ g_1 \cdot (g_2 \cdot x) = g_1(g_2 x g_2\inv)g_1\inv = (g_1 g_2) x (g_1 g_2)\inv 
 \]
 The associated permutation representation is the map sending $g$ to the inner automorphism $\psi_g(x) = gxg\inv$:
 \[
-\begin{tikzcd}[column sep=large]
-G \arrow[r, "\psi"] & \Sym(G), & g \arrow[r, mapsto] & \psi_g .
+\begin{tikzcd}[column sep=large, row sep=tiny]
+G \arrow[r, "\psi"] & \Sym(G) \\
+g \arrow[r, mapsto] & \psi_g .
 \end{tikzcd}
 \]
 \begin{dgx}
@@ -15590,7 +15591,7 @@ In particular $|\mathcal{K}_x|$ divides $|G|$ when $G$ is finite, and $|\mathcal
 \begin{proof}
 $g$ fixes $x$ under conjugation $\eqv gxg\inv = x \eqv gx = xg \eqv g \in C_G(x)$; that is the definition of the centralizer. Orbit--stabilizer gives the bijection
 \[
-\begin{tikzcd}[column sep=huge]
+\begin{tikzcd}[column sep=7em]
 G/C_G(x) \arrow[r, "\sim", "{\,gC_G(x)\,\mapsto\, gxg\inv\,}"'] & \mathcal{K}_x ,
 \end{tikzcd}
 \]
@@ -15682,11 +15683,11 @@ Pictorially, $G$ is partitioned into a central block of singletons plus the larg
 \node at (1.57,2.7) {$Z(G)$};
 % singletons inside Z(G)
 \foreach \x in {0.55,1.05,1.55,2.05,2.55} {
-  \foreach \y in {0.55,1.05,1.55,2.05} {
+  \foreach \y in {0.8,1.25,1.7,2.15} {
     \fill (\x,\y) circle (1.2pt);
   }
 }
-\node at (1.57,0.25) {\small singletons $\{z\}$};
+\node at (1.57,0.42) {\small singletons $\{z\}$};
 % non-central classes
 \draw[fill=black!4] (3.25,0.15) rectangle (5.3,3.05);
 \node at (4.27,2.7) {$\mathcal{K}_{g_1}$};
@@ -15899,7 +15900,7 @@ In particular this number divides $|G|$, and it equals $1$ iff $H \nor G$.
 \begin{proof}
 $g$ stabilizes $H$ under conjugation $\eqv gHg\inv = H \eqv g \in N_G(H)$, by definition of the normalizer. Orbit--stabilizer applied to this action on subsets gives the bijection
 \[
-\begin{tikzcd}[column sep=huge]
+\begin{tikzcd}[column sep=7em]
 G/N_G(H) \arrow[r, "\sim", "{\,gN_G(H)\,\mapsto\, gHg\inv\,}"'] & \{\,gHg\inv : g\in G\,\},
 \end{tikzcd}
 \]
@@ -17145,7 +17146,7 @@ G \arrow[r, "\rho"] & \Sym\bigl(\Syl_p(G)\bigr)
 The action is \emph{transitive} (Theorem~\ref{thm:sylow@c4}(2)), so there is a single orbit, and
 orbit--stabilizer collapses to one bijection:
 \[
-\begin{tikzcd}[column sep=large]
+\begin{tikzcd}[column sep=7em]
 G/N_G(P) \arrow[r, "\sim", "{gN_G(P)\,\mapsto\, gPg\inv}"'] & \Syl_p(G)
 \end{tikzcd}
 \qquad\Longrightarrow\qquad n_p = \idx{G}{N_G(P)} .
@@ -17435,7 +17436,7 @@ Theorem~\ref{thm:sylow@c4}(2) says $G$ permutes $\Syl_p(G)$ transitively by conj
 why the entire non-simplicity industry reduces to arithmetic: bound $n_p$ by the two
 congruences, and a forced $n_p = 1$ instantly produces a normal subgroup. The orbit picture
 \[
-\begin{tikzcd}[column sep=large]
+\begin{tikzcd}[column sep=7em]
 G/N_G(P) \arrow[r, "\sim", "{gN_G(P)\,\mapsto\, gPg\inv}"'] & \Syl_p(G)
 \end{tikzcd}
 \]
@@ -17627,7 +17628,7 @@ nonsimplicity arguments when Sylow subgroups intersect nontrivially.
 \item Let $G$ act on $\Syl_p(G)$ by conjugation, giving a homomorphism
 $\rho\colon G\to\Sym(\Syl_p(G))$. For $P\in\Syl_p(G)$ identify the stabilizer and complete
 the orbit-stabilizer isomorphism in the diagram
-\[\begin{tikzcd}[column sep=large]
+\[\begin{tikzcd}[column sep=6.5em]
 G/N_G(P) \arrow[r, "\sim", "{gN_G(P)\mapsto gPg\inv}"'] & \Orb(P).
 \end{tikzcd}\]
 Explain why $\rho$ is transitive (Sylow II) and hence $\im\rho$ acts transitively on
@@ -18255,13 +18256,13 @@ The square below carries the dihedral symmetry group $D_8$: four rotations about
 \node[below right] at (0,0) {$c$};
 % rotation arrow (quarter turn)
 \draw[->,thick] (0.7,0) arc[start angle=0, end angle=80, radius=0.7];
-\node at (0.95,0.55) {$\rho_{\pi/2}$};
+\node[right, inner sep=1.5pt] at (0.72,0.32) {$\rho_{\pi/2}$};
 % a mirror line (vertical edge-bisector), extended
 \draw[dashed] (0,-2.05) -- (0,2.05);
 \node[above] at (0,2.05) {$\ell$};
 % a diagonal mirror, lightly
 \draw[dashed] (-2.05,-2.05) -- (2.05,2.05);
-\node[above right] at (1.7,1.7) {$\ell'$};
+\node[above right] at (2.05,2.05) {$\ell'$};
 % vertices
 \foreach \p in {(-1.5,-1.5),(1.5,-1.5),(1.5,1.5),(-1.5,1.5)} \fill \p circle (1.2pt);
 \end{tikzpicture}
@@ -18501,11 +18502,11 @@ horizontal/vertical midlines. The reflection axes are drawn below.
 \draw[dashed,gray!70] (-1.35,1.35)--(1.35,-1.35);
 % rotation arrow
 \draw[->,>=Stealth] (0.42,0.42) arc (45:135:0.6);
-\node at (0,0.78) {$\rho$};
-\node[below left] at (A) {$1$};
-\node[below right] at (B) {$2$};
-\node[above right] at (C) {$3$};
-\node[above left] at (D) {$4$};
+\node at (0.3,0.78) {$\rho$};
+\node[below right] at (A) {$1$};
+\node[below left] at (B) {$2$};
+\node[above left] at (C) {$3$};
+\node[above right] at (D) {$4$};
 \fill (0,0) circle (1.2pt);
 \end{tikzpicture}
 \]
