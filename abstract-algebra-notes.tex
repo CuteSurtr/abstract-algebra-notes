@@ -20376,8 +20376,9 @@ $\pi_1\circ(f,g)=f$ and $\pi_2\circ(f,g)=g$.
   up to choice, or that it might not exist. The universal property guarantees \emph{both}
   existence and uniqueness: there is exactly one homomorphism $T\to A\times B$ whose
   projections are $f$ and $g$. Also, do not confuse this ``into-product'' property with a
-  dual ``out-of-product'' property: a homomorphism $A\times B\to T$ is \emph{not} in
-  general determined by its restrictions to $A$ and $B$ unless their images commute in $T$.
+  dual ``out-of-product'' property: a homomorphism $A\times B\to T$ \emph{is} determined by its
+  restrictions to $A$ and $B$, but a given pair of homomorphisms $A\to T$, $B\to T$ extends to
+  such a homomorphism only when their images commute elementwise in $T$.
 \dgi{Takeaway:} The point of this diagram is that giving a single homomorphism into a direct
   product is equivalent to independently giving one homomorphism into each factor, with the
   projections recovering the factors automatically.
@@ -20397,8 +20398,9 @@ those projections.
 
 \begin{pitfall}
 The universal property characterizes maps \emph{into} a product via projections, not maps
-\emph{out of} it. A homomorphism $A\times B\to T$ is \emph{not} in general determined by its
-restrictions to $A$ and $B$ unless those images commute in $T$. (The ``co-universal'' picture
+\emph{out of} it. A homomorphism $A\times B\to T$ is determined by its restrictions to $A$
+and $B$, but a pair of homomorphisms $A\to T$, $B\to T$ need \emph{not} come from any homomorphism
+$A\times B\to T$: it does exactly when the two images commute elementwise in $T$. (The ``co-universal'' picture
 with injections and coproducts works cleanly only for \emph{abelian} groups.)
 \end{pitfall}
 
@@ -20442,8 +20444,8 @@ induced injective map is in fact an isomorphism.
 \end{wex}
 
 \begin{wex}{Failure of the dual property}
-Problem. Give homomorphisms out of $\Z\times\Z$ showing a map $A\times B\to T$ is not
-determined by its restrictions to the factors.
+Problem. Give homomorphisms $\alpha,\beta:\Z\to T$ on the two factors of $\Z\times\Z$ that are
+not the restrictions of any single homomorphism $\Z\times\Z\to T$.
 \wrec Pitfall above: maps \emph{out} of a product need the factor-images to commute; pick
 noncommuting targets.
 \wsol Take $T=S_3$, and let $\alpha:\Z\to S_3$ send $1\mapsto(1\,2)$ and $\beta:\Z\to S_3$
