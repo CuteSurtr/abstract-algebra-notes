@@ -15129,7 +15129,7 @@ The chain $\Zn{4}\hookrightarrow\Sym(\Zn{4})\isom S_4$ sends $1\mapsto\lambda_1\
 \dgi{Common pitfall:} Students sometimes think $\lambda(g)=\lambda_g$ is a map $G\to G$ (a group endomorphism).
 It is not: $\lambda_g$ is a \emph{permutation of the set} $G$, so $\lambda$ maps into $\Sym(G)$, not into $G$.
 Also, the isomorphism $\Sym(G)\isom S_n$ depends on a choice of labelling; the embedding $G\hookrightarrow S_n$ changes by conjugation when the labelling changes, but injectivity does not.
-\dgi{Takeaway:} The point of this diagram is that the left regular action provides a canonical injective group homomorphism $G\to S_n$, realizing any abstract group of order $n$ as a concrete subgroup of the symmetric group $S_n$.
+\dgi{Takeaway:} The point of this diagram is that the left regular action provides a canonical injective group homomorphism $G\to\Sym(G)$, hence (once the elements of $G$ are labelled $1,\dots,n$) an embedding $G\hookrightarrow S_n$, realizing any abstract group of order $n$ as a concrete subgroup of the symmetric group $S_n$.
 \end{dgx}
 
 \begin{proof}
@@ -15315,7 +15315,7 @@ Taking $p=2$ recovers the familiar fact: \emph{every subgroup of index $2$ is no
 \item List the $m$ left cosets $g_1H,\dots,g_mH$ (with $g_1=1$). This is the set $A$.
 \item For each generator $g$, compute $g\cdot(g_iH)=(gg_i)H$ and identify which coset it equals; record the permutation $\rho_H(g)\in S_m$.
 \item $\ker\rho_H=\bigcap_x xHx^{-1}=\operatorname{core}_G(H)$ is the largest normal subgroup inside $H$. In practice intersect the conjugates, or read it off as $\bigcap_i\Stab(g_iH)$.
-\item \textbf{Conclusions:} $\idx{G}{\ker\rho_H}\mid m!$ (Cor.~\ref{cor:divis@c4}); if $m$ is the least prime dividing $\ord G$ then $H\nor G$ (Cor.~\ref{cor:smallprime@c4}); if $\ord G\nmid m!$ then $\rho_H$ has nontrivial kernel, so $G$ has a proper nontrivial normal subgroup (not simple).
+\item \textbf{Conclusions:} $\idx{G}{\ker\rho_H}\mid m!$ (Cor.~\ref{cor:divis@c4}); if $m$ is the least prime dividing $\ord G$ then $H\nor G$ (Cor.~\ref{cor:smallprime@c4}); if $m>1$ and $\ord G\nmid m!$ then $\rho_H$ has nontrivial kernel, contained in $H\ne G$, so $G$ has a proper nontrivial normal subgroup (not simple).
 \end{enumerate}
 \end{method}
 
