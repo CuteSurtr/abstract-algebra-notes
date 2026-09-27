@@ -13550,15 +13550,19 @@ giving genuine factors
 \]
 All factors are prime-order abelian, so $G$ is solvable.
 \emph{Check.} $5\cdot 3\cdot 2\cdot 2=60=|G|$. \checkmark The lesson: every gap in a
-\emph{composition} series must have \emph{prime} order; a non-prime gap signals a missing
+\emph{composition} series must be a \emph{simple} group; for an abelian (more generally, a
+solvable) group this means \emph{prime} order, so a non-prime gap signals a missing
 refinement.
 \end{wex}
 
 \begin{pitfall}
 A factor of prime power order need not be simple. In a composition series each
-\emph{factor} (quotient) must have \emph{prime} order. If you write a chain whose successive
-indices include a $4$, $6$, $8$, or $9$, it is a subnormal series but \emph{not} a
-composition series --- refine it until every index is prime.
+\emph{factor} (quotient) must be \emph{simple}; it has \emph{prime} order exactly when it is
+abelian, as always happens for a solvable group, but a factor may also be nonabelian simple
+(e.g.\ $A_5$ in the composition series $1\nor A_5\nor S_5$). If you write a chain whose
+successive indices include a $4$, $6$, $8$, or $9$, it is a subnormal series but \emph{not} a
+composition series (no simple group has any of these orders) --- refine it until every
+factor is simple.
 \end{pitfall}
 
 \subsection*{The subnormal series as a vertical chain, and two diagrams}
