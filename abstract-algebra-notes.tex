@@ -48563,7 +48563,7 @@ Indeed, if $\charac(F) = p$ then $\im\varphi \isom \Z/(p) = \F_p$ is already a f
 \begin{center}
 \begin{tikzcd}[column sep=large]
 \Z \arrow[r, "\varphi"] \arrow[d, two heads] & F \\
-\Z/\ker\varphi \arrow[ru, hook', "\isom\ \text{onto }\im\varphi"'] &
+\Z/\ker\varphi \arrow[ru, dashed, hook', "\isom\ \text{onto }\im\varphi"'] &
 \end{tikzcd}
 \end{center}
 
@@ -48821,7 +48821,7 @@ The split between algebraic and transcendental elements is precisely the split b
 \[
 \begin{tikzcd}
 F[x] \arrow[r,"\operatorname{ev}_\alpha"] \arrow[d,twoheadrightarrow,"\pi"'] & \overline{F} \\
-F[x]/(p(x)) \arrow[ru,"\overline{\operatorname{ev}_\alpha}"',hook] &
+F[x]/(p(x)) \arrow[ru,"\overline{\operatorname{ev}_\alpha}"',dashed,hook] &
 \end{tikzcd}
 \]
 Identify $\ker(\operatorname{ev}_\alpha)$ and explain why $\overline{\operatorname{ev}_\alpha}$ lands in $F(\alpha)$.
@@ -48836,7 +48836,7 @@ State precisely what each diagonal isomorphism is and why $\sigma$ fixes $F$.
 \item Let $p(x) \in F[x]$ be irreducible and let $\iota\colon F \hookrightarrow F[x]/(p(x))$ be the canonical inclusion. Show that any $F$-algebra homomorphism out of $F[x]/(p(x))$ into an $F$-algebra $A$ corresponds bijectively to a choice of root of $p$ in $A$, by interpreting the universal property as the diagram:
 \[
 \begin{tikzcd}
-F \arrow[r,"\iota"] \arrow[d,"j"'] & F[x]/(p(x)) \arrow[ld,dashed,"{\psi}"] \\
+F \arrow[r,hook,"\iota"] \arrow[d,"j"'] & F[x]/(p(x)) \arrow[ld,dashed,"{\psi}"] \\
 A &
 \end{tikzcd}
 \]
@@ -51105,7 +51105,7 @@ Then explain how iterating this square over the roots of $f$ builds the extensio
 \item Let $\overline{\Q}$ be a fixed algebraic closure of $\Q$ and let $K \subseteq \overline{\Q}$ be a splitting field of $f \in \Q[x]$. Show that any $\Q$-embedding $\tau \colon K \to \overline{\Q}$ has image $\tau(K) = K$, i.e. the embedding below necessarily restricts to an automorphism of $K$. Explain why this fails if $K$ is replaced by a non-splitting subfield such as $\Q(\sqrt[3]{2})$.
 \[
 \begin{tikzcd}
-K \arrow[r, "\tau"] & \overline{\Q} \\
+K \arrow[r, hook, "\tau"] & \overline{\Q} \\
 \Q \arrow[u, hook] \arrow[ur, hook'] &
 \end{tikzcd}
 \]
@@ -51544,7 +51544,7 @@ repeated root via Frobenius, which we display as a degenerate splitting picture.
 \[
 \begin{tikzcd}[column sep=huge]
 F \arrow[r, hook] &
-F(\alpha)=F[x]/\big(x^{p^k}-a\big) \arrow[r, "{x\,\mapsto\,\alpha}"] &
+F(\alpha)=F[x]/\big(x^{p^k}-a\big) \arrow[r, hook, "{x\,\mapsto\,\alpha}"] &
 \overline{F}\ \ni\ \alpha,\ \ \alpha^{p^k}=a
 \end{tikzcd}
 \]
@@ -51748,16 +51748,16 @@ has all its coefficients divisible by $p$.
 \item Let $\sigma : \F_{p^n} \to \F_{p^n}$ be the Frobenius $x \mapsto x^p$ and let $\iota : \F_p \hookrightarrow \F_{p^n}$ be the inclusion. Draw the square
 \[
 \begin{tikzcd}
-\F_p \arrow[r, "\iota"] \arrow[d, "\id"'] & \F_{p^n} \arrow[d, "\sigma"] \\
-\F_p \arrow[r, "\iota"'] & \F_{p^n}
+\F_p \arrow[r, hook, "\iota"] \arrow[d, "\id"'] & \F_{p^n} \arrow[d, "\sigma"] \\
+\F_p \arrow[r, hook, "\iota"'] & \F_{p^n}
 \end{tikzcd}
 \]
 and prove it commutes (i.e. $\sigma$ restricts to the identity on the prime field). Explain why this exhibits $\sigma$ as an $\F_p$-algebra automorphism.
 
 \item For $m \mid n$, let $\sigma$ be the Frobenius on $\F_{p^n}$. Consider
 \[
-\begin{tikzcd}
-\F_{p^n} \arrow[r, "\sigma^m"] \arrow[d, "\subseteq"'] & \F_{p^n} \arrow[d, "\subseteq"] \\
+\begin{tikzcd}[column sep=large]
+\F_{p^n} \arrow[r, "\sigma^m"] \arrow[d, hook, "\subseteq"'] & \F_{p^n} \arrow[d, hook', "\subseteq"] \\
 \overline{\F_p} \arrow[r, "{x \mapsto x^{p^m}}"'] & \overline{\F_p}
 \end{tikzcd}
 \]
@@ -51766,8 +51766,8 @@ Show the diagram commutes, and prove that the fixed field of $\sigma^m$ on $\F_{
 \item Let $F$ have characteristic $p$ and let $\alpha \in \overline{F}$, $\alpha \notin F$, be purely inseparable over $F$ with $\alpha^{p} = a \in F$. Let $K = F(\alpha)$ and consider the Frobenius maps making the square
 \[
 \begin{tikzcd}
-F \arrow[r, "\subseteq"] \arrow[d, "{x \mapsto x^p}"'] & K \arrow[d, "{x \mapsto x^p}"] \\
-F \arrow[r, "\subseteq"'] & K
+F \arrow[r, hook, "\subseteq"] \arrow[d, "{x \mapsto x^p}"'] & K \arrow[d, "{x \mapsto x^p}"] \\
+F \arrow[r, hook, "\subseteq"'] & K
 \end{tikzcd}
 \]
 Show this commutes, and use it to prove $K^p \subseteq F$, hence $\idx{K}{F} = p$. Why does this force $m_{\alpha,F}(x) = x^p - a$?
@@ -51775,8 +51775,8 @@ Show this commutes, and use it to prove $K^p \subseteq F$, hence $\idx{K}{F} = p
 \item Let $E$ be the splitting field of $x^{p^n} - x$ over $\F_p$ and let $\varphi : E \to E$ be the Frobenius. Given a tower $\F_p \subseteq \F_{p^d} \subseteq E$ with $d \mid n$, fill in and prove commutativity of
 \[
 \begin{tikzcd}
-\F_{p^d} \arrow[r, "\subseteq"] \arrow[d, "\varphi^d"'] & E \arrow[d, "\varphi^d"] \\
-\F_{p^d} \arrow[r, "\subseteq"'] & E
+\F_{p^d} \arrow[r, hook, "\subseteq"] \arrow[d, "\varphi^d"'] & E \arrow[d, "\varphi^d"] \\
+\F_{p^d} \arrow[r, hook, "\subseteq"'] & E
 \end{tikzcd}
 \]
 where the left arrow is the identity on $\F_{p^d}$. Explain how this realizes $\Aut(E/\F_p)$ as the cyclic group $\gen{\varphi}$ of order $n$, with $\Aut(E/\F_{p^d}) = \gen{\varphi^d}$.
@@ -51784,7 +51784,7 @@ where the left arrow is the identity on $\F_{p^d}$. Explain how this realizes $\
 \item Let $F = \F_p(t)$ and $K = F(t^{1/p})$, a purely inseparable extension. Writing $\beta = t^{1/p}$, show there is exactly one $F$-algebra homomorphism $K \to \overline{F}$ by completing
 \[
 \begin{tikzcd}
-F \arrow[r, "\subseteq"] \arrow[rd, "\subseteq"'] & K \arrow[d, dashed, "\exists !\,\psi"] \\
+F \arrow[r, hook, "\subseteq"] \arrow[rd, hook', "\subseteq"'] & K \arrow[d, dashed, "\exists !\,\psi"] \\
  & \overline{F}
 \end{tikzcd}
 \]
@@ -51953,8 +51953,8 @@ Explain why $\Q(\zeta_n)=\Q(\zeta_{2n})$ when $n$ is odd, illustrated by $n=3$.
 \textit{Adjoining $\zeta_n$ as a quotient of $\Q[x]$ (the evaluation map).} Adjoining a primitive root realizes $\Q(\zeta_n)$ as a quotient of the polynomial ring by the irreducible $\Phi_n$:
 \begin{center}
 \begin{tikzcd}[column sep=large]
-\Q[x] \arrow[r, "x\,\mapsto\,\zeta_n"] \arrow[d, two heads] & \Q(\zeta_n) \\
-\Q[x]/(\Phi_n(x)) \arrow[ur, "\isom"', "{\bar{x}\,\mapsto\,\zeta_n}"] &
+\Q[x] \arrow[r, two heads, "x\,\mapsto\,\zeta_n"] \arrow[d, two heads] & \Q(\zeta_n) \\
+\Q[x]/(\Phi_n(x)) \arrow[ur, "{\isom\ \ \bar{x}\,\mapsto\,\zeta_n}"'] &
 \end{tikzcd}
 \end{center}
 The evaluation homomorphism $f(x)\mapsto f(\zeta_n)$ has kernel $(\Phi_n)$ because $\Phi_n=m_{\zeta_n,\Q}$ is irreducible, so the induced map is an isomorphism onto $\Q(\zeta_n)$, of dimension $\varphi(n)$ over $\Q$.
@@ -54595,7 +54595,7 @@ filling in all three order-$2$ subgroups and the corresponding three degree-$3$ 
 \item Let $F\subseteq E\subseteq K$ be a tower with $K/F$ Galois, $H=\Gal(K/E)\sgr G=\Gal(K/F)$. Complete the diagram of inclusions and Galois groups
 \[
 \begin{tikzcd}[row sep=2em, column sep=2.4em]
-F \arrow[r,hook] \arrow[d,dash,"\idx{E}{F}"'] & K \\
+F \arrow[r,hook] \arrow[d,hook,"\idx{E}{F}"'] & K \\
 E \arrow[ur,hook,"\idx{K}{E}"'] &
 \end{tikzcd}
 \]
