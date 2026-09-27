@@ -33899,7 +33899,7 @@ preserved), then $f$ could not have factored either.
 
 \subsection*{The Rational Root Theorem}
 
-\begin{proposition}[{Rational roots, D\&F 9.4.9}]
+\begin{proposition}[{Rational roots, D\&F 9.4.11}]
 Let $f(x)=a_n x^n+a_{n-1}x^{n-1}+\cdots+a_1 x+a_0\in\Z[x]$ with $a_n\neq 0$ and $a_0\neq 0$.
 If $\alpha=p/q\in\Q$ is a root of $f$, written in lowest terms with $\gcd(p,q)=1$, then
 $p\divides a_0$ and $q\divides a_n$. In particular, if $f$ is monic then every rational root
@@ -33985,7 +33985,7 @@ Does $f(x)=x^4+x+1$ have a rational root?
 \wsol $f(1)=1+1+1=3\neq0$ and $f(-1)=1-1+1=1\neq0$. No rational root.
 \textbf{Check / warning:} this does \emph{not} prove $x^4+x+1$ irreducible over $\Q$; a
 quartic can be a product of two quadratics with no roots. (In fact $x^4+x+1$ \emph{is}
-irreducible over $\Q$ --- proven by reduction mod $2$ in the next section --- but the
+irreducible over $\Q$ --- proven by reduction mod $2$ below --- but the
 rational-root test alone is silent here.)
 \end{wex}
 
@@ -34097,12 +34097,12 @@ prime here does not contradict that.)
 \begin{pitfall}
 Reduction mod a \emph{single} prime can give a factorization that does not lift: $x^4+1$ is
 irreducible over $\Q$ yet factors mod every prime. Reduction proves irreducibility only when
-$\bar f$ is irreducible; a factorization of $\bar f$ proves nothing about $f$.
+$\bar f$ is irreducible; a factorization of $\bar f$ does not show that $f$ factors (it only limits the degrees of possible factors of $f$).
 \end{pitfall}
 
 \subsection*{Reduction mod $p$}
 
-\begin{proposition}[{Reduction mod $p$ criterion, D\&F 9.4.11}]
+\begin{proposition}[{Reduction mod $p$ criterion, D\&F 9.4.12}]
 Let $f\in\Z[x]$ be monic of degree $n\ge 1$ and let $p$ be a prime. Let $\bar f\in\F_p[x]$ be
 the reduction of $f$ mod $p$. If $\bar f$ is irreducible in $\F_p[x]$ (and $\deg\bar f=n$,
 automatic since $f$ is monic, as $p\ndivides 1$), then $f$ is irreducible in $\Z[x]$, hence
@@ -34121,7 +34121,10 @@ polynomial it is then irreducible in $\Q[x]$ by Gauss's Lemma.
 
 \begin{remark}
 If $f$ is not monic, pick a prime $p\ndivides a_n$ (the leading coefficient), so that
-$\deg\bar f=\deg f$; the same proof works. Picking $p\divides a_n$ drops the degree and the
+$\deg\bar f=\deg f$; the same argument (with $\deg\bar g\le\deg g$, $\deg\bar h\le\deg h$ and
+$\deg\bar g+\deg\bar h=\deg f$ in place of monicity) shows that $f$ is irreducible in $\Q[x]$, and in
+$\Z[x]$ if $f$ is primitive (e.g.\ $2x^2+2=2(x^2+1)$ is reducible in $\Z[x]$ although its reduction
+mod $3$ is irreducible). Picking $p\divides a_n$ drops the degree and the
 criterion fails --- for example $\bar f$ could become a constant.
 \end{remark}
 
@@ -34363,9 +34366,8 @@ irreducible.
 
 \begin{wex}{Shift to make Eisenstein work: $x^4+1$}
 Show $\Phi_8(x)=x^4+1$ is irreducible over $\Q$.
-\wrec No prime fits $x^4+1$ directly (the condition $p^2\ndivides a_0=1$ holds trivially, but
-no prime divides the middle coefficients, which are $0$ for the powers present and absent
-otherwise); shift $x\mapsto x+1$ and use $p=2$.
+\wrec No prime fits $x^4+1$ directly (every prime divides the middle coefficients, which are
+all $0$, but no prime divides the constant term $a_0=1$); shift $x\mapsto x+1$ and use $p=2$.
 \wsol Substitute:
 \[
 (x+1)^4+1=x^4+4x^3+6x^2+4x+1+1=x^4+4x^3+6x^2+4x+2.
@@ -34424,7 +34426,7 @@ difference/sum patterns.
 
 \begin{remark}
 The four tests sit in a hierarchy of \emph{conclusiveness}. The root test is an iff for
-degree $\le3$. Eisenstein and reduction-mod-$p$ are one-directional (success proves
+degree $2$ and $3$. Eisenstein and reduction-mod-$p$ are one-directional (success proves
 irreducibility; failure proves nothing). All of them live downstream of Gauss's Lemma, which
 licenses moving freely between $\Z[x]$ and $\Q[x]$, and downstream of the reduction
 homomorphism $\Z[x]\twoheadrightarrow\F_p[x]$, the engine behind both Eisenstein's proof and
