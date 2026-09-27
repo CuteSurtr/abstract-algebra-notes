@@ -53721,7 +53721,7 @@ Determine $\Gal(\Q(\sqrt2,\sqrt3)/\Q)$.
 \dgi{What commutes:} The diagram records an \emph{order-reversing} bijection, not path-commutativity. The key equalities are $\Fix(1) = K$, $\Fix(V_4) = \Q$, $\Fix(\gen\sigma) = \Q(\sqrt3)$, $\Fix(\gen\tau) = \Q(\sqrt2)$, $\Fix(\gen{\sigma\tau}) = \Q(\sqrt6)$. Containment reverses: $\gen\sigma \le V_4$ on the right corresponds to $\Q \subseteq \Q(\sqrt3)$ on the left, so a larger subgroup fixes a smaller field.
 \dgi{Why it commutes:} Chase $\gen\sigma$ explicitly. Since $\sigma$ sends $\sqrt2 \mapsto -\sqrt2$ and $\sqrt3 \mapsto \sqrt3$, a general element $a + b\sqrt2 + c\sqrt3 + d\sqrt6 \in K$ is fixed by $\sigma$ iff $b = 0$ and $d = 0$, leaving $a + c\sqrt3 \in \Q(\sqrt3)$. So $\Fix(\gen\sigma) = \Q(\sqrt3)$. Similarly $\tau(\sqrt3 \mapsto -\sqrt3,\ \sqrt2 \mapsto \sqrt2)$ fixes only $\Q(\sqrt2)$, and $\sigma\tau(\sqrt6 = \sqrt2\cdot\sqrt3 \mapsto (-\sqrt2)(-\sqrt3) = \sqrt6)$ fixes only $\Q(\sqrt6)$. These are genuine fixed-field computations, not just index counting.
 \dgi{Why this matters here:} The worked example has just established $\Gal(\Q(\sqrt2,\sqrt3)/\Q) \cong V_4$ and verified the Galois condition $\abs{\Gal} = \idx{K}{F} = 4$. The diagram is an explicit preview of the Fundamental Theorem of Galois Theory (Section 14.2): it shows the promised anti-isomorphism between the lattice of intermediate fields and the lattice of subgroups, making abstract theory concrete and checkable for this small but complete example.
-\dgi{Concrete example:} The index $[\gen\sigma : 1] = 2$ in the right lattice corresponds to the degree $[\Q(\sqrt3) : \Q] = 2$ in the left lattice. The subgroup $\gen\sigma$ has index $2$ in $V_4$, so its fixed field $\Q(\sqrt3)$ has degree $2$ over $\Q$, exactly matching. Every index-to-degree correspondence in the diagram works out this cleanly, which is characteristic of a Galois extension where the theorem applies with full strength.
+\dgi{Concrete example:} The index $[\gen\sigma : 1] = 2$ in the right lattice corresponds to the degree $[K : \Q(\sqrt3)] = 2$ in the left lattice. The subgroup $\gen\sigma$ has index $2$ in $V_4$, so its fixed field $\Q(\sqrt3)$ has degree $2$ over $\Q$, exactly matching. Every index-to-degree correspondence in the diagram works out this cleanly, which is characteristic of a Galois extension where the theorem applies with full strength.
 \dgi{Common pitfall:} Students often read the lattices as going in the same direction and conclude that $\Q$ (at the bottom left) corresponds to $1$ (at the top right). The anti-isomorphism goes the other way: $\Q$ at the bottom of the field lattice corresponds to $V_4$ at the bottom of the subgroup lattice (a larger subgroup fixes a smaller field). Separately, because all three intermediate subgroups have the same order $2$, you cannot identify which subgroup corresponds to which intermediate field by order alone; the explicit fixed-field calculation above is necessary.
 \dgi{Takeaway:} The point of this diagram is that for a Galois extension with Galois group $V_4$, the lattice of intermediate fields and the lattice of subgroups are in perfect order-reversing bijection via the fixed-field map $\Fix$, so the two diamond-shaped lattices are mirror images of each other.
 \end{dgx}
@@ -54028,9 +54028,9 @@ The paired lattice (subgroups on the left, subfields on the right), joined by th
 \end{tikzcd}
 \]
 \begin{dgx}
-\dgi{Objects:} Left Hasse diagram: four groups -- the full Galois group $G=V_4$ (top node), the three
+\dgi{Objects:} Left Hasse diagram: five groups -- the full Galois group $G=V_4$ (top node), the three
   order-$2$ subgroups $\gen{\tau},\gen{\sigma\tau},\gen{\sigma}$ (middle row), and the trivial group $1$
-  (bottom node). Right Hasse diagram: four fields -- $\Q$ (top node), the three quadratic intermediate
+  (bottom node). Right Hasse diagram: five fields -- $\Q$ (top node), the three quadratic intermediate
   fields $\Q(\sqrt2),\Q(\sqrt6),\Q(\sqrt3)$ (middle row), and the top field $K=\Q(\sqrt2,\sqrt3)$
   (bottom node). All edges are inclusion lines (dashes), not arrows with direction.
 \dgi{Arrows:} The two Hasse diagrams are linked by the correspondence arrow $\xleftrightarrow{\Fix}$
@@ -54059,9 +54059,9 @@ The paired lattice (subgroups on the left, subfields on the right), joined by th
   ``top'' in the field lattice (small field), because more symmetry means fewer fixed elements.
 \dgi{Takeaway:} The point of this diagram is that the Galois correspondence turns the subgroup lattice of $V_4$
   upside-down to produce the intermediate-field lattice of $\Q(\sqrt2,\sqrt3)/\Q$, with each subgroup
-  paired to its fixed field at the opposite height.
+  paired to its fixed field; since the field lattice is drawn inverted, each pair sits at the same height.
 \end{dgx}
-Note how the diagrams are vertical mirror images: the top group $G$ matches the bottom field $\Q$, and the bottom group $1$ matches the top field $K$. The middle row is fixed setwise by the correspondence but each entry flips to its $\Fix$.
+Note that the field diagram is drawn upside down (larger fields lower), so the two diagrams have the same shape: the top group $G$ matches the top field $\Q$, the bottom group $1$ matches the bottom field $K$, and each order-$2$ subgroup in the middle row sits opposite the quadratic field it fixes.
 
 Writing $V_4=\Gal(K/\Q)=\set{1,a,b,c}$ with $a\colon\sqrt2\mapsto-\sqrt2,\,\sqrt3\mapsto\sqrt3$; $b\colon\sqrt2\mapsto\sqrt2,\,\sqrt3\mapsto-\sqrt3$; and $c=ab\colon\sqrt2\mapsto-\sqrt2,\,\sqrt3\mapsto-\sqrt3$, the paired Hasse diagram makes the inclusion-reversing bijection fully explicit. On the left the subgroup lattice of $V_4$ grows \emph{up} from $1$; on the right the subfield lattice of $K$ is drawn \emph{inverted}, growing \emph{down} from $\Q$, so a subgroup $H$ and its fixed field $\Fix(H)$ sit at equal height and are joined by a faint tie-line.
 
@@ -54117,7 +54117,7 @@ Writing $V_4=\Gal(K/\Q)=\set{1,a,b,c}$ with $a\colon\sqrt2\mapsto-\sqrt2,\,\sqrt
 \end{tikzpicture}
 \end{center}
 \begin{dgx}
-\dgi{Objects:} Left side: the subgroup lattice of $V_4=\{1,a,b,c\}$ drawn growing upward, with nodes at four
+\dgi{Objects:} Left side: the subgroup lattice of $V_4=\{1,a,b,c\}$ drawn growing upward, with nodes at three
   levels -- trivial group $1$ (bottom), the three order-$2$ subgroups $\gen{a},\gen{b},\gen{c}$ (middle), and
   $V_4$ (top). Right side: the subfield lattice of $K/\Q$ drawn inverted (growing downward), with nodes --
   $\Q$ (top), $\Q(\sqrt3),\Q(\sqrt2),\Q(\sqrt6)$ (middle), and $K=\Q(\sqrt2,\sqrt3)$ (bottom). The dotted
@@ -54141,7 +54141,7 @@ Writing $V_4=\Gal(K/\Q)=\set{1,a,b,c}$ with $a\colon\sqrt2\mapsto-\sqrt2,\,\sqrt
 \dgi{Concrete example:} Take $H=\gen{c}$ where $c\colon\sqrt2\mapsto-\sqrt2,\sqrt3\mapsto-\sqrt3$. Then
   $\Fix(\gen{c})=\{r\in K:c(r)=r\}$. We have $c(\sqrt6)=\sqrt6$, so $\Q(\sqrt6)\subseteq\Fix(\gen{c})$;
   since $\idx{K}{\Fix(\gen{c})}=\abs{\gen{c}}=2$ by Artin and $\idx{K}{\Q(\sqrt6)}=2$, equality holds.
-  This is the bottom-right tie in the diagram.
+  This is the tie joining $\gen{c}$ to $\Q(\sqrt6)$ (the shallowest of the three curved middle ties).
 \dgi{Common pitfall:} Students sometimes read the tie-lines as indicating field maps or ring homomorphisms.
   They are not: a tie $H\text{---}\Fix(H)$ records the bijection $H\leftrightarrow K^H$, which is a
   set-theoretic correspondence, not an algebraic map from the group to the field. The Galois correspondence
