@@ -54665,7 +54665,7 @@ $\F_{p^n}/\F_p$ is a splitting field of a separable polynomial, so it is Galois 
 \end{proof}
 
 \begin{remark}
-The fixed field of $\sigma=\Frob_p$ is $\Fix(\gen{\sigma})=\set{\alpha:\alpha^p=\alpha}=\F_p$, consistent with the Fundamental Theorem: the full group fixes exactly the base field. More generally $\Fix(\gen{\sigma^d})=\set{\alpha:\alpha^{p^d}=\alpha}=\F_{p^d}$, which is the engine of the subfield correspondence below.
+The fixed field of $\sigma=\Frob_p$ is $\Fix(\gen{\sigma})=\set{\alpha:\alpha^p=\alpha}=\F_p$, consistent with the Fundamental Theorem: the full group fixes exactly the base field. More generally, for $d\mid n$, $\Fix(\gen{\sigma^d})=\set{\alpha:\alpha^{p^d}=\alpha}=\F_{p^d}$ (for arbitrary $d\ge1$ it is $\F_{p^{\gcd(d,n)}}$), which is the engine of the subfield correspondence below.
 \end{remark}
 
 \begin{wex}{The Galois group of $\F_8/\F_2$ and a Frobenius orbit}
@@ -54675,7 +54675,7 @@ Compute $\Gal(\F_8/\F_2)$ and trace the orbit of a generator under Frobenius.
 \[
 \alpha\ \xmapsto{\sigma}\ \alpha^2\ \xmapsto{\sigma}\ \alpha^4=\alpha\cdot\alpha^3=\alpha(\alpha+1)=\alpha^2+\alpha\ \xmapsto{\sigma}\ \alpha^8=\alpha.
 \]
-So the three conjugates of $\alpha$ are $\alpha,\ \alpha^2,\ \alpha^2+\alpha$, and these are exactly the three roots of $x^3+x+1$. Sanity check: their product is $(-1)^3\cdot(\text{constant term})=1$ and indeed $\alpha\cdot\alpha^2\cdot(\alpha^2+\alpha)=\alpha^3(\alpha+1)=(\alpha+1)^2=\alpha^2+1=\alpha\cdot\alpha=\alpha^2$? Let us recompute cleanly: $\alpha\cdot\alpha^2=\alpha^3=\alpha+1$, times $(\alpha^2+\alpha)=\alpha(\alpha+1)$ gives $(\alpha+1)\cdot\alpha(\alpha+1)=\alpha(\alpha+1)^2=\alpha(\alpha^2+1)=\alpha^3+\alpha=(\alpha+1)+\alpha=1$, matching $-(\text{constant term})=-1=1$ in $\F_2$. The sum of the conjugates is $\alpha+\alpha^2+(\alpha^2+\alpha)=0$, matching the zero $x^2$-coefficient.
+So the three conjugates of $\alpha$ are $\alpha,\ \alpha^2,\ \alpha^2+\alpha$, and these are exactly the three roots of $x^3+x+1$. Sanity check: their product is $(-1)^3\cdot(\text{constant term})=1$ and indeed $\alpha\cdot\alpha^2=\alpha^3=\alpha+1$, times $(\alpha^2+\alpha)=\alpha(\alpha+1)$ gives $(\alpha+1)\cdot\alpha(\alpha+1)=\alpha(\alpha+1)^2=\alpha(\alpha^2+1)=\alpha^3+\alpha=(\alpha+1)+\alpha=1$, matching $-(\text{constant term})=-1=1$ in $\F_2$. The sum of the conjugates is $\alpha+\alpha^2+(\alpha^2+\alpha)=0$, matching the zero $x^2$-coefficient.
 \end{wex}
 
 \begin{wex}{$\Gal(\F_{16}/\F_2)$ as a cyclic group of order $4$}
@@ -54693,7 +54693,7 @@ With $\F_9=\F_3(i)$, $i^2=-1$, list the Frobenius orbits and read off minimal po
 \begin{wex}{Frobenius vs.\ a non-Galois-looking generator}
 Show that on $\F_{p^n}$, $\sigma^k=\Frob_{p^k}$ (the map $\alpha\mapsto\alpha^{p^k}$), and that $\sigma^k=\id$ iff $n\mid k$.
 \wrec $\sigma=\Frob_p$ and composition of $\alpha\mapsto\alpha^p$ with itself $k$ times gives $\alpha\mapsto\alpha^{p^k}$; $\sigma$ has order $n$ in the cyclic group, so $\sigma^k=\id$ iff $n\mid k$.
-\wsol $\sigma^k(\alpha)=(\cdots((\alpha^p)^p)\cdots)^p=\alpha^{p^k}$ by induction. Then $\sigma^k=\id$ means $\alpha^{p^k}=\alpha$ for all $\alpha\in\F_{p^n}$, i.e.\ $\F_{p^n}\subseteq\set{\alpha:\alpha^{p^k}=\alpha}=\F_{p^{\gcd}}$... more directly, since $\ord{\sigma}=n$, the order of $\sigma^k$ is $n/\gcd(n,k)$ and $\sigma^k=\id\iff n\mid k$. Sanity check ($n=6$): $\sigma^2$ has order $6/\gcd(6,2)=3$, fixing $\F_{p^2}$; $\sigma^3$ has order $2$, fixing $\F_{p^3}$; matching divisors $2,3$ of $6$.
+\wsol $\sigma^k(\alpha)=(\cdots((\alpha^p)^p)\cdots)^p=\alpha^{p^k}$ by induction. Then $\sigma^k=\id$ means $\alpha^{p^k}=\alpha$ for all $\alpha\in\F_{p^n}$, i.e.\ $\F_{p^n}\subseteq\set{\alpha\in\overline{\F_p}:\alpha^{p^k}=\alpha}=\F_{p^k}$. More directly, since $\ord{\sigma}=n$, the order of $\sigma^k$ is $n/\gcd(n,k)$ and $\sigma^k=\id\iff n\mid k$. Sanity check ($n=6$): $\sigma^2$ has order $6/\gcd(6,2)=3$, fixing $\F_{p^2}$; $\sigma^3$ has order $2$, fixing $\F_{p^3}$; matching divisors $2,3$ of $6$.
 \end{wex}
 
 \subsection*{The lattice of subfields}
