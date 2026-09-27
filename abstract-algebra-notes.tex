@@ -38975,7 +38975,7 @@ If $V$ has a finite basis, then any two bases of $V$ have the same number of ele
 \end{theorem}
 
 \begin{proof}
-Let $\mathcal{B}=\set{e_1,\dots,e_n}$ and $\mathcal{B}'=\set{f_1,\dots,f_m}$ be bases. Then $\mathcal{B}$ is independent and $\mathcal{B}'$ spans, so the Replacement Lemma gives $n\leq m$; symmetrically $m\leq n$. Hence $n=m$.
+Let $\mathcal{B}=\set{e_1,\dots,e_n}$ be a finite basis and $\mathcal{B}'$ any basis. Every finite subset of $\mathcal{B}'$ is independent and $\mathcal{B}$ spans, so by the Replacement Lemma every finite subset of $\mathcal{B}'$ has at most $n$ elements; hence $\mathcal{B}'$ is finite, say $\mathcal{B}'=\set{f_1,\dots,f_m}$, and $m\leq n$. Symmetrically ($\mathcal{B}$ independent, $\mathcal{B}'$ spanning) $n\leq m$. Hence $n=m$.
 \end{proof}
 
 \begin{theorem}[Existence of a basis, via Zorn's Lemma]
@@ -38983,7 +38983,7 @@ Every vector space $V$ has a basis. More precisely, every linearly independent s
 \end{theorem}
 
 \begin{proof}
-Let $\mathcal{P}$ be the set of linearly independent subsets of $V$ containing $A$, partially ordered by inclusion; $\mathcal{P}\neq\es$ since $A\in\mathcal{P}$. Given a chain $\mathcal{C}\subseteq\mathcal{P}$, its union $U=\bigcup\mathcal{C}$ is independent: any finite relation involves finitely many vectors, all lying in a single member of the chain (chains are totally ordered), which is independent; so $U\in\mathcal{P}$ is an upper bound. By Zorn's Lemma $\mathcal{P}$ has a maximal element $\mathcal{B}\supseteq A$. If $\mathcal{B}$ failed to span, some $v\notin\Span(\mathcal{B})$ would make $\mathcal{B}\cup\set{v}$ independent (a relation $\alpha v+\sum\alpha_i e_i=0$ forces $\alpha=0$ by $v\notin\Span\mathcal{B}$, then the rest $=0$ by independence of $\mathcal{B}$), contradicting maximality. So $\mathcal{B}$ is a basis containing $A$.
+Let $\mathcal{P}$ be the set of linearly independent subsets of $V$ containing $A$, partially ordered by inclusion; $\mathcal{P}\neq\es$ since $A\in\mathcal{P}$. Given a chain $\mathcal{C}\subseteq\mathcal{P}$, its union $U=\bigcup\mathcal{C}$ is independent: any finite relation involves finitely many vectors, all lying in a single member of the chain (chains are totally ordered), which is independent; so $U\in\mathcal{P}$ is an upper bound. By Zorn's Lemma $\mathcal{P}$ has a maximal element $\mathcal{B}\supseteq A$. If $\mathcal{B}$ failed to span, some $v\notin\Span(\mathcal{B})$ would make $\mathcal{B}\cup\set{v}$ independent (a relation $\alpha v+\sum\alpha_i e_i=0$ forces $\alpha=0$ by $v\notin\Span\mathcal{B}$, then the rest $=0$ by independence of $\mathcal{B}$), contradicting maximality. So $\mathcal{B}$ is a basis containing $A$. For the last assertion, let $S$ span $V$ and run the same argument with $\mathcal{P}$ the set of independent subsets of $S$ (and $A=\es$): a maximal one $\mathcal{B}\subseteq S$ contains every $s\in S$ in its span (otherwise $\mathcal{B}\cup\set{s}$ would be a larger independent subset of $S$), so $\Span(\mathcal{B})\supseteq\Span(S)=V$ and $\mathcal{B}\subseteq S$ is a basis.
 \end{proof}
 
 \begin{wex}{Extending an independent set to a basis}
@@ -39207,7 +39207,7 @@ In the following exercises let $V$ be a vector space of arbitrary dimension over
 \end{exers}
 
 \begin{exers}{Additional exercises.}
-\item (Replacement lemma in action.) Let $V$ be an $F$-vector space spanned by $\set{w_1,\dots,w_m}$ and suppose $\set{u_1,\dots,u_k}\subseteq V$ is linearly independent. Prove $k\le m$, and show that $m-k$ of the $w_i$ may be deleted so that the remaining ones together with the $u_j$ still span $V$.
+\item (Replacement lemma in action.) Let $V$ be an $F$-vector space spanned by $\set{w_1,\dots,w_m}$ and suppose $\set{u_1,\dots,u_k}\subseteq V$ is linearly independent. Prove $k\le m$, and show that $k$ of the $w_i$ may be deleted so that the remaining $m-k$ of them together with the $u_j$ still span $V$.
 
 \item (Existence of a basis via Zorn.) Let $V$ be an arbitrary $F$-vector space. Using Zorn's lemma, prove that any linearly independent subset $S\subseteq V$ is contained in a basis of $V$. (Partially order the linearly independent sets containing $S$ by inclusion and verify chains have upper bounds.)
 
