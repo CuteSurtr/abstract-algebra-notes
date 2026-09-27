@@ -18880,7 +18880,7 @@ combination $\rho^2(a)+a$ lands strictly inside the minimal circle.
 \begin{tikzpicture}[scale=1.7,>=stealth]
 % minimal length circle
 \draw[gray!45,dashed] (0,0) circle (1);
-\node[gray!70] at (-0.78,-0.86) {\footnotesize $\lvert v\rvert=r$};
+\node[gray!70] at (-0.95,-0.95) {\footnotesize $\lvert v\rvert=r$};
 % the five rotated copies of a (regular pentagon vertices), starting along +x
 \foreach \k in {0,1,2,3,4}{
   \coordinate (P\k) at ({cos(72*\k)},{sin(72*\k)});
@@ -18892,7 +18892,7 @@ combination $\rho^2(a)+a$ lands strictly inside the minimal circle.
 % the contradiction vector b' = rho^2(a) + a
 \coordinate (B) at ({cos(0)+cos(144)},{sin(0)+sin(144)});
 \draw[->,thick,red!70!black] (0,0) -- (B)
-  node[midway,above right] {\footnotesize $b'=\rho^2(a)+a$};
+  node[above right=1pt and 0pt,fill=white,inner sep=1pt] {\footnotesize $b'=\rho^2(a)+a$};
 \fill[red!70!black] (B) circle (0.9pt);
 % parallelogram guide lines
 \draw[red!55!black,dotted] (P0) -- (B);
@@ -19084,7 +19084,9 @@ The cleanest illustration of why the point group alone is not enough is a \emph{
 \begin{center}
 \begin{tikzpicture}[scale=0.62, line cap=round]
 % Lattice vectors a (horizontal) and b (vertical)
-% Bricks: width 2, height 1, offset by half-width on each row
+% Bricks: width 2, height 1, offset by half-width on each row (clipped to the frame)
+\begin{scope}
+\clip (0,0) rectangle (6,4);
 \foreach \y in {0,1,2,3} {
   \pgfmathtruncatemacro{\sh}{mod(\y,2)} % 0 or 1
   \foreach \x in {-1,0,1,2,3} {
@@ -19093,19 +19095,23 @@ The cleanest illustration of why the point group alone is not enough is a \emph{
     \draw ({2*\x + \sh*1},{\y + \sh}) -- ({2*\x + \sh*1 + 2},{\y + 1 - \sh});
   }
 }
-% clip-like viewport frame
+% white casing: blanks the mortar line under the glide line so that its dashes show
+\draw[white, line width=1.6pt] (0,2) -- (6,2);
+\end{scope}
+% viewport frame
 \draw[very thick] (0,0) rectangle (6,4);
 % rotation centers (order 2) at brick centers and edge midpoints -- mark a few
 \foreach \pt in {(1,0.5),(3,0.5),(2,1.5),(0,1.5)} {
   \fill[black] \pt circle (2.2pt);
 }
-% glide line: horizontal dashed line between two rows
-\draw[dashed, thick] (0,2) -- (6,2);
-\node[anchor=west] at (6.25,2) {\small glide line};
-% basis vectors
-\draw[->, very thick] (0,0) -- (2,0) node[midway,below] {\small $a$};
-\draw[->, very thick] (0,0) -- (0,2) node[midway,left] {\small $b$};
-\node[anchor=north] at (3,-0.55) {\small $c=\bigl(\tfrac12,\tfrac12\bigr)$ glide};
+% glide line: the mortar line between the two middle rows, drawn thick and dashed in
+% black on the white casing and continued past the frame to its label
+\draw[line width=1.6pt, line cap=butt, dash pattern=on 4pt off 3pt] (0,2) -- (6.6,2);
+\node[anchor=west] at (6.7,2) {\small glide line};
+% basis vectors, drawn just outside the frame
+\draw[->, very thick] (0,-0.4) -- (2,-0.4) node[midway,below] {\small $a$};
+\draw[->, very thick] (-0.4,0) -- (-0.4,2) node[midway,left] {\small $b$};
+\node[anchor=north] at (3,-0.95) {\small $c=\bigl(\tfrac12,\tfrac12\bigr)$ glide};
 \end{tikzpicture}
 \end{center}
 
@@ -19429,14 +19435,15 @@ axis is where it pierces the surrounding sphere.
 \draw[gray!55] (B) -- (B2);
 \draw[gray!55] (C) -- (C2);
 \draw[gray!55] (D) -- (D2);
-% centers
-\coordinate (Ofront) at (1.7,1.7); % center of front face
-\coordinate (Oback)  at (1.0,1.0); % center of back face
-% face axis (r=4): through opposite face centers
-\draw[very thick] (0.6,0.6) -- (2.1,2.1);
-\filldraw[black] (0.6,0.6) circle (1.2pt);
-\filldraw[black] (2.1,2.1) circle (1.2pt);
-\node[font=\scriptsize] at (2.35,2.05) {$r=4$};
+% centers of the bottom face (A,B,B2,A2) and of the top face (D,C,C2,D2)
+\coordinate (Obot) at (1.35,0.35);
+\coordinate (Otop) at (1.35,2.35);
+% face axis (r=4): through opposite face centers; the vertical one is drawn, since the
+% axis through the front/back face centers projects onto the line A2 -- C (two vertices)
+\draw[very thick] (1.35,-0.25) -- (1.35,2.95);
+\filldraw[black] (1.35,-0.25) circle (1.2pt);
+\filldraw[black] (1.35,2.95) circle (1.2pt);
+\node[font=\scriptsize] at (1.72,3.0) {$r=4$};
 % vertex axis (r=3): body diagonal B -- D2 (A2 -- C would be drawn on top of the face axis)
 \draw[very thick] (B) -- (D2);
 \filldraw[black] (B) circle (1.2pt);
@@ -19656,18 +19663,19 @@ table.
 \draw (A)--(B)--(C)--(D)--cycle;
 \draw (A2)--(B2)--(C2)--(D2)--cycle;
 \draw (A)--(A2); \draw (B)--(B2); \draw (C)--(C2); \draw (D)--(D2);
-% face axis (through centers of front/back faces)
-\draw[dashed] (1,1) -- (1.8,1.8);
-\fill (1,1) circle (1.2pt); \fill (1.8,1.8) circle (1.2pt);
-\node[font=\footnotesize, below] at (1,1) {face axis (4-fold)};
+% face axis (through the centers of the bottom and top faces; the axis through the
+% front/back face centers projects onto the line A -- C2), continued below the cube
+\draw[dashed] (1.4,-0.35) -- (1.4,2.4);
+\fill (1.4,0.4) circle (1.2pt); \fill (1.4,2.4) circle (1.2pt);
+\node[font=\footnotesize, below] at (1.4,-0.35) {face axis (4-fold)};
 % vertex axis (body diagonal B to opposite vertex D2; A -- C2 would lie on top of the face axis)
 \draw[dashed] (B) -- (D2);
-\node[font=\footnotesize, left] at (D2) {vertex axis (3-fold)};
+\node[font=\footnotesize, above left] at (D2) {vertex axis (3-fold)};
 % edge axis (midpoints of two opposite edges)
 \coordinate (mAB) at (1,0);
 \coordinate (mC2D2) at (1.8,2.8);
 \draw[dashed] (mAB) -- (mC2D2);
-\node[font=\footnotesize, right] at (mC2D2) {edge axis (2-fold)};
+\node[font=\footnotesize, above right] at (mC2D2) {edge axis (2-fold)};
 \end{tikzpicture}
 \end{center}
 
@@ -21084,7 +21092,7 @@ where $p\cdot$ is multiplication by $p$, and show $A[p]\isom A/pA$ as $\F_p$-vec
   \end{scope}
   \node[ltlab,above=2pt of top] {$\Z_2\times\Z_4$};
   \node[ltlab,left=2pt of c1] {$C_1$};
-  \node[ltlab,above left=-1pt and -1pt of c2] {$C_2$};
+  \node[ltlab,above left=0pt and 0pt of c2] {$C_2$};
   \node[ltlab,right=2pt of v] {$V$};
   \node[ltlab,left=2pt of a2] {$A_2$};
   \node[ltlab,below right=-1pt and 0pt of a1] {$A_1$};
@@ -21344,7 +21352,7 @@ and three of order $4$.
     \end{scope}
     \node[ltlab,above=2pt of top] {$\Zn4\times\Zn2$};
     \node[ltlab,left=2pt of P]  {$P$};
-    \node[ltlab,above left=-1pt and -1pt of Q] {$Q$};
+    \node[ltlab,above left=0pt and 0pt of Q] {$Q$};
     \node[ltlab,right=2pt of K] {$K$};
     \node[ltlab,left=2pt of A]  {$A$};
     \node[ltlab,below right=-1pt and 0pt of B] {$B$};
@@ -21519,8 +21527,8 @@ A_4 & 1 & 4 & \text{nonab., no order }6
 \subsection*{Diagrams: the split exact sequence and the order-$12$ trichotomy}
 
 Every group of order $2p$, $pq$ (nonabelian case), or $12$ (nonabelian) arises as a (semi)direct product, hence sits in a \emph{split} short exact sequence with a normal Sylow subgroup as kernel; so does $D_8=\gen{r}\sdp\gen{s}$, with kernel $\gen{r}$. The exception is $Q_8$: every nontrivial subgroup of $Q_8$ contains $-1$, so $Q_8$ is not a semidirect product of proper subgroups (it is a non-split extension). The split sequence is:
-\[\begin{tikzcd}[column sep=normal]
-1 \arrow[r] & H \arrow[r, hook] & H\sdp K \arrow[r, two heads, "\pi"] & K \arrow[r] \arrow[l, bend right, "s"'] & 1
+\[\begin{tikzcd}[column sep=large]
+1 \arrow[r] & H \arrow[r, hook] & H\sdp K \arrow[r, two heads, "\pi"] & K \arrow[r] \arrow[l, bend right=40, "s"'] & 1
 \end{tikzcd}\]
 \begin{dgx}
 \dgi{Objects:} Five nodes from left to right: the trivial group $1$; the normal subgroup $H$ (the normal Sylow $p$-subgroup, e.g.\ $\Zn q$ when $|G|=pq$); the semidirect product $H\sdp K$ (the full group $G$); the complement $K$ (a Sylow subgroup of complementary order); and the trivial group $1$ again on the far right. Together they form a short exact sequence.
@@ -21549,9 +21557,9 @@ H & H\times K \arrow[l, "p_1"] \arrow[r, "p_2"'] & K
 \end{dgx}
 
 The nonabelian groups of order $12$ are exactly the three nontrivial $(H,K,\varphi)$ data:
-\[\begin{tikzcd}[row sep=small, column sep=huge]
+\[\begin{tikzcd}[column sep=huge]
 & \Zn3\sdp_{\varphi}\Zn4 = \mathrm{Dic}_3 \\
-(\text{normal } P_3) \arrow[ur, "{K=\Zn4}"] \arrow[r, "{K=\Zn2^2}"] & \Zn3\sdp_{\varphi}\Zn2^2 \isom D_{12} \\
+(\text{normal } P_3) \arrow[ur, "{K=\Zn4}"] \arrow[r, "{K=\Zn2^2}"'] & \Zn3\sdp_{\varphi}\Zn2^2 \isom D_{12} \\
 (\text{normal } P_2=\Zn2^2) \arrow[r, "{K=\Zn3}"'] & \Zn2^2\sdp_{\varphi}\Zn3 \isom A_4
 \end{tikzcd}\]
 \begin{dgx}
@@ -21594,13 +21602,13 @@ A semidirect product $H\sdp K$ collapsing to a \emph{direct} product (or to a sm
 
 \begin{exers}{Commutative-diagram exercises.}
 \item Let $p<q$ be primes with $p\nmid q-1$, so that the unique group of order $pq$ is cyclic. Draw the split short exact sequence
-\[\begin{tikzcd}[column sep=normal]
-1 \arrow[r] & \Zn q \arrow[r, hook] & \Zn{pq} \arrow[r, two heads, "\pi"] & \Zn p \arrow[r] \arrow[l, bend right, "s"'] & 1
+\[\begin{tikzcd}[column sep=large]
+1 \arrow[r] & \Zn q \arrow[r, hook] & \Zn{pq} \arrow[r, two heads, "\pi"] & \Zn p \arrow[r] \arrow[l, bend right=40, "s"'] & 1
 \end{tikzcd}\]
 with the normal Sylow $q$-subgroup as kernel, and explain why $p\nmid q-1$ forces the conjugation action $\Zn p\to\Aut(\Zn q)\isom\Zn{q-1}$ to be trivial (no element of order $p$ in $\Aut(\Zn q)$). Conclude that the image of the section $s$ is also normal, so the sequence realizes a \emph{direct} product $\Zn{pq}\isom\Zn q\times\Zn p$, and indicate which projection splits it on the other side.
 \item For the alternating group $A_4=V_4\sdp\Zn3$, draw the split short exact sequence exhibiting the normal Sylow $2$-subgroup $V_4$ as kernel and the Sylow $3$-subgroup as a complement:
-\[\begin{tikzcd}[column sep=normal]
-1 \arrow[r] & V_4 \arrow[r, hook] & A_4 \arrow[r, two heads, "\pi"] & \Zn3 \arrow[r] \arrow[l, bend right, "s"'] & 1
+\[\begin{tikzcd}[column sep=large]
+1 \arrow[r] & V_4 \arrow[r, hook] & A_4 \arrow[r, two heads, "\pi"] & \Zn3 \arrow[r] \arrow[l, bend right=40, "s"'] & 1
 \end{tikzcd}\]
 Identify $\pi$ as the quotient by $V_4$, give a splitting $s$ sending a generator of $\Zn3$ to a $3$-cycle, and verify $\pi\circ s=\id$. Explain why the action $\varphi\colon\Zn3\to\Aut(V_4)\isom\Sym_3$ is nontrivial (a $3$-cycle permuting the three involutions), so the product is genuinely semidirect and not direct, distinguishing $A_4$ from $\Zn{12}$ and $\Zn2\times\Zn6$.
 \item Draw the lattice of normal subgroups of $A_4$ and use it to display the quotient $A_4/V_4\isom\Zn3$ and the absence of an index-$2$ subgroup:
@@ -22033,8 +22041,8 @@ $\gen{r}\cap\gen{s}=1$ and $\gen{r}\gen{s}=D_8$ --- but $\gen{s}$ is \emph{not n
 Having $H\nor G$, $H\cap K=1$, and $HK=G$ with $K$ \emph{not} normal does \emph{not} give a direct
 product --- it gives a semidirect product $H\sdp K$. The split exact sequence below has a section $s$
 but the extension need not be central/trivial:
-\[\begin{tikzcd}[column sep=normal]
-1 \arrow[r] & H \arrow[r, hook] & H\sdp K \arrow[r, two heads] & K \arrow[r] \arrow[l, bend right, "s"'] & 1
+\[\begin{tikzcd}[column sep=large]
+1 \arrow[r] & H \arrow[r, hook] & H\sdp K \arrow[r, two heads, "\pi"] & K \arrow[r] \arrow[l, bend right=40, "s"'] & 1
 \end{tikzcd}\]
 
 \begin{dgx}
@@ -23064,7 +23072,7 @@ The central chain sits inside the subgroup lattice of $D_8$: the central subgrou
     \draw (e) -- (z);
   \end{scope}
   \node[ltlab,below=2pt of e]  {$1$};
-  \node[ltlab,left=2pt of z]   {$\gen{r^2}=Z(D_8)=D_8'$};
+  \node[ltlab,below left=0pt and 2pt of z] {$\gen{r^2}=Z(D_8)=D_8'$};
   \node[ltlab,left=2pt of r]   {$\gen{r}$};
   \node[ltlab,right=3pt of m1] {$\gen{r^2,s}$};
   \node[ltlab,right=2pt of m2] {$\gen{r^2,rs}$};
@@ -23437,7 +23445,7 @@ So $G^{(1)}=G'$, $G^{(2)}=G''=[G',G']$, and so on. Each $G^{(i+1)}\nor G^{(i)}$ 
 
 We picture the chain descending to the trivial group:
 \[
-\begin{tikzcd}[row sep=small, column sep=tiny]
+\begin{tikzcd}[column sep=tiny]
 G=G^{(0)} \arrow[d, dash, "{\text{ab. quotient}}"] \\
 G^{(1)}=G' \arrow[d, dash] \\
 G^{(2)}=G'' \arrow[d, dash, dashed] \\
@@ -23616,8 +23624,8 @@ The subgroup lattice of $S_3$ makes the separation visible: the derived series $
   \end{scope}
   \node[ltlab,below=2pt of e]  {$1$};
   \node[ltlab,left=2pt of a]   {$\gen{(1\,2)}$};
-  \node[ltlab,below=1pt of b]  {$\gen{(1\,3)}$};
-  \node[ltlab,below=1pt of c]  {$\gen{(2\,3)}$};
+  \node[ltlab,left=2pt of b]   {$\gen{(1\,3)}$};
+  \node[ltlab,right=2pt of c]  {$\gen{(2\,3)}$};
   \node[ltlab,right=2pt of A3] {$A_3=\gen{(1\,2\,3)}$};
   \node[ltlab,above=2pt of S3] {$S_3$};
 \end{tikzpicture}
@@ -24318,8 +24326,8 @@ G \arrow[r, "\rho"] \arrow[dr, hook, "{G\,\isom\,A_5}"'] & S_5 \\
 
 \item \textbf{(Internal semidirect product of order $30$.)} For $|G|=30$ display the split short exact sequence $1\to\Zn{15}\to G\to\Zn2\to1$ together with the action $\Zn2\to\Aut(\Zn{15})$, and build the classifying square whose four $2$-torsion homomorphisms label the four groups of order $30$.
 \[
-\begin{tikzcd}[column sep=normal]
-1 \arrow[r] & \Zn{15} \arrow[r, hook, "\iota"] & G \arrow[r, two heads, "\pi"] & \Zn2 \arrow[r] \arrow[l, bend left, dashed, "s"] & 1
+\begin{tikzcd}[column sep=large]
+1 \arrow[r] & \Zn{15} \arrow[r, hook, "\iota"] & G \arrow[r, two heads, "\pi"] & \Zn2 \arrow[r] \arrow[l, bend left=40, dashed, "s"] & 1
 \end{tikzcd}
 \qquad
 \begin{tikzcd}[column sep=large, row sep=large]
@@ -25083,13 +25091,13 @@ Proposition~\ref{prop:fp@c6}(3). Do not conflate these three notions.
 Two universal properties govern this section, each saying ``a map on generators
 extends uniquely, once the right conditions hold'':
 \[
-\begin{tikzcd}[column sep=normal, row sep=small]
-  S \arrow[r, "\iota"] \arrow[dr, "\varphi"'] & F(S)
+\begin{tikzcd}[column sep=normal]
+  S \arrow[r, hook, "\iota"] \arrow[dr, "\varphi"'] & F(S)
     \arrow[d, dashed] & \text{(free: no condition)} \\
   & G &
 \end{tikzcd}
 \quad
-\begin{tikzcd}[column sep=normal, row sep=small]
+\begin{tikzcd}[column sep=normal]
   F(S) \arrow[r, two heads, "q"] \arrow[dr, "\Psi"'] & \gen{S\mid R}
     \arrow[d, dashed] & {\text{(needs } \Psi(R)=1)} \\
   & H &
@@ -25405,7 +25413,7 @@ conjugacy classes.
   \draw[ltedge,line width=0.9pt] (0,-1.7) -- (0,1.7);
   \node[ltdot] at (0,1.7) {};
   \node[ltdot] at (0,-1.7) {};
-  \node[ltlab,above] at (0,1.7) {\small face (5-fold)};
+  \node[ltlab,above=2pt] at (0,1.7) {\small face (5-fold)};
   % edge (2-fold) axis
   \draw[ltedge,line width=0.9pt] (-1.65,0.4) -- (1.65,-0.4);
   \node[ltdot] at (1.65,-0.4) {};
@@ -26057,7 +26065,7 @@ $3$-cycle, drawn around the triangle) and $y=(1\,2)$ (the transposition).
   \end{scope}
   \begin{scope}[cgs]
     \draw[{Stealth[length=2.2mm]}-{Stealth[length=2.2mm]},dashed]
-         (n1) to[bend left=22] (n2);
+         (n1) to[bend right=22] (n2);
   \end{scope}
   \node[cglab] at (0,-1.55) {solid: $x=(1\,2\,3)$\qquad dashed: $y=(1\,2)$};
 \end{tikzpicture}
@@ -26366,12 +26374,12 @@ each group.
 \begin{center}
 \begin{tikzpicture}[node distance=12mm]
   \node[ltdot] (G)  at (0,2.4) {};
-  \node[ltdot] (K)  at (-1.4,1.2) {};
-  \node[ltdot] (H)  at (1.4,1.2) {};
+  \node[ltdot] (K)  at (-1.8,1.2) {};
+  \node[ltdot] (H)  at (1.8,1.2) {};
   \node[ltdot] (one) at (0,0) {};
   \begin{scope}[ltedge]
     \draw (G) -- node[ltlab,above left]{$\nor$} (K);
-    \draw (G) -- node[ltlab,above right]{} (H);
+    \draw (G) -- (H);
     \draw (K) -- (one);
     \draw (H) -- (one);
   \end{scope}
@@ -26379,8 +26387,8 @@ each group.
   \node[ltlab,left=3pt of K]    {$K$ (normal Sylow)};
   \node[ltlab,right=3pt of H]   {$H$ (complement)};
   \node[ltlab,below=2pt of one] {$1$};
-  \draw[-{Stealth[length=2.4mm]},black!70,line width=0.9pt,bend left=18]
-        (H) to node[ltlab,right]{$\,H\to\Aut(K)$} (K);
+  \draw[-{Stealth[length=2.4mm]},black!70,line width=0.9pt,bend left=8]
+        (H) to node[ltlab,below]{$H\to\Aut(K)$} (K);
 \end{tikzpicture}
 \end{center}
 
@@ -26801,7 +26809,7 @@ Compute $\charac(R)$ for $R=\Z,\ \Zn{6},\ \Zn{5},\ \Z\times\Zn{3}$, and decide i
 
 % ==================================================================
 The chain of implications among these classes is worth fixing visually:
-\[\begin{tikzcd}[row sep=small,column sep=large]
+\[\begin{tikzcd}[row sep=large,column sep=large]
 \text{field}
   \arrow[r, Rightarrow]
   \arrow[d, Rightarrow]
@@ -27058,7 +27066,7 @@ R/\ker\varphi \arrow[ur, dashed, "\overline{\varphi}"'] &
 Apply this to $\varphi:\Z[x]\to\C$, $f\mapsto f(i)$, to identify $\Z[x]/\gen{x^2+1}$.
 
 \item Let $I_1,I_2$ be ideals of a commutative ring $R$ with $I_1+I_2=R$ (comaximal). Prove the Chinese Remainder Theorem: the map $r\mapsto(r+I_1,\,r+I_2)$ induces a ring isomorphism, by showing it has kernel $I_1\cap I_2=I_1 I_2$ and is surjective:
-\[\begin{tikzcd}[column sep=large]
+\[\begin{tikzcd}[column sep=7em]
 R \arrow[r, "{r\mapsto(r+I_1,\,r+I_2)}"] \arrow[dr, two heads, "\pi"'] & R/I_1 \times R/I_2 \\
 & R/(I_1\cap I_2) \arrow[u, dashed, "\isom"']
 \end{tikzcd}\]
