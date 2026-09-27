@@ -15473,7 +15473,7 @@ a \mapsto (1\ 2)(3\ 4) \qquad b \mapsto (1\ 4)(2\ 3) \qquad c \mapsto (1\ 3)(2\ 
 \end{exers}
 
 \begin{exers}{Additional exercises.}
-\item Let $G$ be a finite group of order $n$. Prove that $G$ embeds in $S_n$, and that $G$ embeds in $A_n$ if and only if $G$ has no subgroup of index $2$. (Use the cycle-type description of the regular representation to compute $\sgn\circ\rho$, and show that whenever $\sgn\circ\rho\colon G\to\{\pm1\}$ is nontrivial its kernel is a subgroup of index $2$.)
+\item Let $G$ be a finite group of order $n$. Prove that $G$ embeds in $S_n$, and that if $G$ has no subgroup of index $2$ then the regular representation embeds $G$ in $A_n$. Show that the converse fails: the regular representation of $V_4$ already lies in $A_4$, although $V_4$ has subgroups of index $2$. (Use the cycle-type description of the regular representation to compute $\sgn\circ\rho$, and show that whenever $\sgn\circ\rho\colon G\to\{\pm1\}$ is nontrivial its kernel is a subgroup of index $2$.)
 
 \item Show that the left regular representation $\rho\colon G\to\Sym(G)$ and the right regular representation $\lambda\colon G\to\Sym(G)$, $\lambda(g)\colon x\mapsto xg\inv$, have images that centralize each other inside $\Sym(G)$; that is, $\rho(g)$ and $\lambda(h)$ commute for all $g,h\in G$. Identify $\rho(G)\cap\lambda(G)$ with $Z(G)$ via these embeddings.
 
@@ -15481,7 +15481,7 @@ a \mapsto (1\ 2)(3\ 4) \qquad b \mapsto (1\ 4)(2\ 3) \qquad c \mapsto (1\ 3)(2\ 
 
 \item Let $G$ be a group with a subgroup $H$ of finite index $n$. Prove (Poincare) that $H$ contains a normal subgroup $N\nor G$ with $\idx{G}{N}\le n!$. For $G=S_n$ acting on $G/H$ where $H$ is the point stabilizer $S_{n-1}$ of index $n$, determine the core of $H$ and decide for which $n$ that core is trivial and $\idx{G}{N}=n!$ holds exactly.
 
-\item Let $G$ be an infinite group in which every proper subgroup has finite index. Must $G$ be finite? Either prove it, or analyze what the coset-action embeddings $G\to\Sym(G/H)$ tell you when $\idx{G}{H}=n<\infty$ for every proper $H$.
+\item Let $G$ be a group in which every proper subgroup has finite index. Must $G$ be finite? Either prove it, or analyze what the coset actions $G\to\Sym(G/H)$ tell you when $\idx{G}{H}=n<\infty$ for every proper $H$.
 
 \item Let $p$ be a prime and $G$ a group of order $p^2$. Using the action of $G$ on the left cosets of a subgroup of order $p$, prove that every subgroup of order $p$ is normal in $G$, and conclude $G$ is abelian.
 
@@ -15490,10 +15490,10 @@ a \mapsto (1\ 2)(3\ 4) \qquad b \mapsto (1\ 4)(2\ 3) \qquad c \mapsto (1\ 3)(2\ 
 \begin{exers}{Commutative-diagram exercises.}
 \item For the action of $G$ on $G/H$ by left multiplication ($\idx{G}{H}=n$), fill in and justify the factorization
 \[\begin{tikzcd}[column sep=large]
-G \arrow[r, "\pi_H"] \arrow[rd, "\bar\pi_H"'] & \Sym(G/H) \\
-& G/K \arrow[u, hook]
+G \arrow[r, "\pi_H"] \arrow[rd, "q"'] & \Sym(G/H) \\
+& G/K \arrow[u, hook, "\bar\pi_H"']
 \end{tikzcd}\]
-where $K=\ker\pi_H$. Identify $K$ as $\bigcap_{g\in G}gHg\inv$ and explain why the injection $G/K\hookrightarrow\Sym(G/H)$ exists.
+where $K=\ker\pi_H$ and $q$ is the quotient map. Identify $K$ as $\bigcap_{g\in G}gHg\inv$ and explain why the injection $G/K\hookrightarrow\Sym(G/H)$ exists.
 
 \item Let $H\le G$ with stabilizer of the base coset equal to $H$. Show the orbit-stabilizer map is a $G$-equivariant bijection by verifying the diagram
 \[\begin{tikzcd}[column sep=large]
