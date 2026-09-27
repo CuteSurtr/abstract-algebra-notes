@@ -2490,7 +2490,7 @@ Trigger: ``invertible over $\F_p$,'' ``inverse mod $p$,'' or ``$\GL_2$/$\SL_2$.'
 \end{method}
 
 \begin{pitfall}
-Over $\F_p$ a nonzero determinant is enough --- you do \emph{not} need $\det=\pm 1$. E.g.\ $\det=2$ over $\F_3$ is invertible because $2\not\equiv 0\pmod 3$ (indeed $2\inv\equiv 2$). The ``$\det=\pm 1$'' instinct is from $\GL_n(\Z)$, a different group.
+Over $\F_p$ a nonzero determinant is enough --- you do \emph{not} need $\det=\pm 1$. E.g.\ $\det=2$ over $\F_5$ is invertible because $2\not\equiv 0\pmod 5$ (indeed $2\inv\equiv 3$), although $2\not\equiv\pm 1\pmod 5$. The ``$\det=\pm 1$'' instinct is from $\GL_n(\Z)$, a different group.
 \end{pitfall}
 
 \begin{wex}{Invertibility test over $\F_5$ and over $\F_3$}
@@ -2539,7 +2539,7 @@ using $20\equiv 6$, $-5\equiv 2$, $-10\equiv 4$, $15\equiv 1\pmod 7$.
 
 \begin{wex}{Noncommutativity is real}
 With $A=\begin{psmallmatrix}2&1\\1&1\end{psmallmatrix}$, $B=\begin{psmallmatrix}0&2\\1&1\end{psmallmatrix}$ over $\F_3$ as above, show $AB\neq BA$.
-\wrec $\GL_2$ is nonabelian for $n\ge 2$; to \emph{prove} it for specific matrices, just compute both products and exhibit one differing entry.
+\wrec $\GL_n(F)$ is nonabelian for $n\ge 2$; to \emph{prove} it for specific matrices, just compute both products and exhibit one differing entry.
 \wsol We found $AB\equiv\begin{psmallmatrix}1&2\\1&0\end{psmallmatrix}$. Now
 \[
 BA=\begin{pmatrix}0&2\\1&1\end{pmatrix}\begin{pmatrix}2&1\\1&1\end{pmatrix}
@@ -2578,7 +2578,7 @@ Compute $\ord{T}$ for $T=\begin{psmallmatrix}1&1\\0&1\end{psmallmatrix}$ in $\GL
 \wsol By induction $T^k=\begin{psmallmatrix}1&k\\0&1\end{psmallmatrix}$ (each multiplication adds $1$ to the top-right). We need $k\equiv 0\pmod p$:
 over $\F_3$, smallest such $k$ is $3$, so $\ord{T}=3$ (indeed $T^3=\begin{psmallmatrix}1&3\\0&1\end{psmallmatrix}\equiv I$);
 over $\F_5$, smallest is $5$, so $\ord{T}=5$.
-\emph{Check:} $3\mid 48$ and $5\mid\ord{\GL_2(\F_5)}=(25-1)(25-5)=24\cdot 20=480$. The element order equals the characteristic $p$ --- a hallmark of unipotent elements.
+\emph{Check:} $3\mid 48$ and $5\mid\ord{\GL_2(\F_5)}=(25-1)(25-5)=24\cdot 20=480$. The element order equals the characteristic $p$ --- a hallmark of nonidentity unipotent elements of $\GL_2(\F_p)$.
 \end{wex}
 
 \begin{wex}{Order of a diagonal matrix via $\lcm$}
@@ -2681,7 +2681,7 @@ Compute $\ord{\GL_2(\F_5)}$ and $\ord{\SL_2(\F_5)}$.
 \wrec Same Method at $p=5$; the only new wrinkle is $\ord{\F_5^\times}=4$.
 \wsol $\ord{\GL_2(\F_5)}=(5^2-1)(5^2-5)=(25-1)(25-5)=24\cdot 20=480$.
 $\ord{\SL_2(\F_5)}=480/(5-1)=480/4=120$.
-\emph{Check:} $120\cdot 4=480$. Also $\ord{\SL_2(\F_5)}=120=\ord{S_5}/{?}$ --- in fact $\SL_2(\F_5)$ has order $120$ but is \emph{not} $\isom S_5$ (it is the binary icosahedral group); equal order does not force isomorphism. The arithmetic check $480/4=120$ is what we needed.
+\emph{Check:} $120\cdot 4=480$. Also $\ord{\SL_2(\F_5)}=120=\ord{S_5}$ --- in fact $\SL_2(\F_5)$ has order $120$ but is \emph{not} $\isom S_5$ (it is the binary icosahedral group); equal order does not force isomorphism. The arithmetic check $480/4=120$ is what we needed.
 \end{wex}
 
 \begin{wex}{$\SL$ as the kernel: locating a matrix's coset}
@@ -2726,7 +2726,7 @@ and $\det(AB)\equiv 2\cdot 0-1\cdot 1=-1\equiv 2\pmod 3$. Both paths give $2$. T
 \dgi{Objects:} Four nodes: $\GL_2(\F_3)\times\GL_2(\F_3)$ (upper left; pairs of invertible $2\times 2$ matrices over $\F_3$), $\GL_2(\F_3)$ (upper right; a single invertible matrix), $\F_3^\times\times\F_3^\times$ (lower left; pairs of nonzero scalars in $\F_3$), and $\F_3^\times$ (lower right; a single nonzero scalar in $\F_3$).
 \dgi{Arrows:} The top arrow ``multiply'' sends $(A,B)\mapsto AB$ (matrix multiplication in $\GL_2(\F_3)$). The left arrow $\det\times\det$ sends $(A,B)\mapsto(\det A,\det B)$ (applying $\det$ to each component). The bottom arrow ``multiply'' sends $(x,y)\mapsto xy$ (multiplication in $\F_3^\times$). The right arrow $\det$ sends $C\mapsto\det C$.
 \dgi{What commutes:} The square commutes: (right-then-down) $= \det\circ\text{multiply}:(A,B)\mapsto\det(AB)$, and (down-then-right) $= \text{multiply}\circ(\det\times\det):(A,B)\mapsto\det A\cdot\det B$. These are equal: $\det(AB)=\det A\cdot\det B$.
-\dgi{Why it commutes:} This is exactly the multiplicativity of the determinant, the foundational property $\det(AB)=\det A\,\det B$ that holds over any field. Chase the pair $(A,B)$: right-then-down gives $\det(AB)$; down-then-right gives $(\det A,\det B)$ then $\det A\cdot\det B$. These agree because $\det$ is a ring homomorphism from $M_n(F)$ to $F$.
+\dgi{Why it commutes:} This is exactly the multiplicativity of the determinant, the foundational property $\det(AB)=\det A\,\det B$ that holds over any field. Chase the pair $(A,B)$: right-then-down gives $\det(AB)$; down-then-right gives $(\det A,\det B)$ then $\det A\cdot\det B$. These agree because $\det$ is multiplicative, i.e.\ a homomorphism of multiplicative monoids $M_n(F)\to F$ (it is not additive, so it is not a ring homomorphism).
 \dgi{Why this matters here:} The diagram encodes the definition of a group homomorphism in categorical language. Saying ``$\det$ is a group homomorphism'' is exactly saying this square commutes: the multiplication operations in $\GL_2(\F_3)$ and $\F_3^\times$ are compatible via $\det$. The worked example on $A$ and $B$ verifies it on a specific pair as a sanity check.
 \dgi{Concrete example:} With $A=\begin{psmallmatrix}2&1\\1&1\end{psmallmatrix}$, $B=\begin{psmallmatrix}1&1\\0&2\end{psmallmatrix}$ over $\F_3$: $\det A=1$, $\det B=2$, $\det A\cdot\det B=2$, and $\det(AB)=2$ (computed directly from $AB$). Both routes give $2$, confirming commutativity.
 \dgi{Common pitfall:} Students sometimes think the square commutes only for specific $(A,B)$ and needs to be checked case by case. In fact, $\det(AB)=\det A\cdot\det B$ is an identity of polynomial functions in the entries of $A$ and $B$; commutativity of this square is a universal algebraic fact, not a lucky coincidence for particular matrices.
