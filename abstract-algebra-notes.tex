@@ -30188,10 +30188,10 @@ Each of the following is a Euclidean domain.
 $b\neq0$ take $q=ab^{-1}$, $r=0$. Fields are (degenerately) Euclidean.
 \item[(c)] $\F[x]$ for a field $\F$, with $\Nm(f)=\deg f$ (and $\Nm(0)=0$). This is
 polynomial long division; it works precisely because the leading coefficient of $b$ is a
-unit. (Theorem 8.2 below.)
+unit. (Theorem~\ref{thm:fxeuclid@c8} below.)
 \item[(d)] $\Z[i]=\{a+bi : a,b\in\Z\}$, the Gaussian integers, with
 $\Nm(a+bi)=a^2+b^2$. Division is ``divide in $\C$, then round to the nearest lattice
-point'' (Theorem 8.3 below).
+point'' (Theorem~\ref{thm:zieuclid@c8} below).
 \end{enumerate}
 \end{definition}
 
@@ -30322,7 +30322,7 @@ $252=18\cdot 14$, $198=18\cdot 11$, confirming $18\divides 252,198$.
 
 \subsection*{Division in $\F[x]$}
 
-\begin{theorem}[{$\F[x]$ is Euclidean}]
+\begin{theorem}[{$\F[x]$ is Euclidean}]\label{thm:fxeuclid@c8}
 If $\F$ is a field then $\F[x]$ with $\Nm(f)=\deg f$ is a Euclidean domain: for
 $a,b\in\F[x]$ with $b\neq0$ there are unique $q,r$ with $a=qb+r$ and $r=0$ or
 $\deg r<\deg b$.
@@ -30398,7 +30398,7 @@ $x-1\divides x^3-1=(x-1)(x^2+x+1)$. \checkmark
 
 \subsection*{Division in the Gaussian integers $\Z[i]$}
 
-\begin{theorem}[{$\Z[i]$ is Euclidean}]
+\begin{theorem}[{$\Z[i]$ is Euclidean}]\label{thm:zieuclid@c8}
 The Gaussian integers $\Z[i]$ with $\Nm(a+bi)=a^2+b^2$ form a Euclidean domain. Concretely,
 for $\alpha,\beta\in\Z[i]$ with $\beta\neq0$ there exist $q,r\in\Z[i]$ with
 $\alpha=q\beta+r$ and $\Nm(r)\le\tfrac12\Nm(\beta)<\Nm(\beta)$.
@@ -30526,7 +30526,7 @@ context: $\Z[x]$ is a UFD that is not a PID (so UFD $\not\Rightarrow$ PID), and
 $\Z[\tfrac{1+\sqrt{-19}}2]$ is a PID that is \emph{not} Euclidean (so PID $\not\Rightarrow$
 ED). The latter is proved using universal side divisors.
 \[\begin{tikzcd}[column sep=large]
-\text{ED} \arrow[r, Rightarrow, "{\text{Prop. 8.1}}"] & \text{PID} \arrow[r, Rightarrow, "{\text{8.2}}"] & \text{UFD}
+\text{ED} \arrow[r, Rightarrow, "{\text{Prop. 8.1}}"] & \text{PID} \arrow[r, Rightarrow, "{\text{8.3}}"] & \text{UFD}
 \end{tikzcd}\]
 
 \begin{dgx}
@@ -30536,7 +30536,7 @@ ED). The latter is proved using universal side divisors.
   explicit reference labels, serving as a precise theorem-map.
 \dgi{Arrows:} Two labeled double implications. The label ``Prop.\ 8.1'' on the first arrow
   names the result proved in this section: every ED is a PID, witnessed by the minimal-norm
-  generator argument. The label ``8.2'' on the second arrow refers to Section 8.2, where
+  generator argument. The label ``8.3'' on the second arrow refers to Section 8.3, where
   the PID $\Rightarrow$ UFD implication is established. Neither arrow represents a ring
   homomorphism; both are logical entailments between domain classes.
 \dgi{What commutes:} Again a linear chain; the relevant statement is the transitivity
@@ -30552,14 +30552,14 @@ ED). The latter is proved using universal side divisors.
   the reader immediately locate the proof of each step, making the chapter's logical
   structure self-documenting.
 \dgi{Concrete example:} $\Z[i]$ (Gaussian integers) is an ED (proved in this section via
-  the rounding argument), hence a PID (Prop.\ 8.1), hence a UFD (Section 8.2). The chain
+  the rounding argument), hence a PID (Prop.\ 8.1), hence a UFD (Section 8.3). The chain
   is witnessed concretely: $\langle 11+3i, 1+8i\rangle = \langle 1-2i\rangle$ in $\Z[i]$.
 \dgi{Common pitfall:} Seeing ``Prop.\ 8.1'' on the first arrow, students sometimes think
   the proposition \emph{is} the implication diagram. The diagram is a schematic summary;
   the proposition is the actual proof that every ideal of an ED has a minimal-norm
   generator. The diagram does not prove the result---it just records where it lives.
 \dgi{Takeaway:} The point of this diagram is that the two-step implication
-  $\text{ED}\xRightarrow{\text{Prop.\ 8.1}}\text{PID}\xRightarrow{\text{8.2}}\text{UFD}$
+  $\text{ED}\xRightarrow{\text{Prop.\ 8.1}}\text{PID}\xRightarrow{\text{8.3}}\text{UFD}$
   maps each class to its proof reference, so the reader knows exactly which theorems
   establish the refinement hierarchy.
 \end{dgx}
