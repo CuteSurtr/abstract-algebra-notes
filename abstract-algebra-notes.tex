@@ -5283,17 +5283,17 @@ Label the vertices of the square cyclically $1,2,3,4$. The generator $r$ is rota
 \begin{center}
 \begin{tikzpicture}[scale=1.2]
   \coordinate (v1) at (-1,1);
-  \coordinate (v2) at (1,1);
+  \coordinate (v2) at (-1,-1);
   \coordinate (v3) at (1,-1);
-  \coordinate (v4) at (-1,-1);
+  \coordinate (v4) at (1,1);
   \draw[thick] (v1)--(v2)--(v3)--(v4)--cycle;
   \draw[dashed] (v1)--(v3);
   \fill (v1) circle (1.6pt); \fill (v2) circle (1.6pt);
   \fill (v3) circle (1.6pt); \fill (v4) circle (1.6pt);
   \node[above left] at (v1) {$1$};
-  \node[above right] at (v2) {$2$};
+  \node[below left] at (v2) {$2$};
   \node[below right] at (v3) {$3$};
-  \node[below left] at (v4) {$4$};
+  \node[above right] at (v4) {$4$};
   \node at (0,0) {\small $r=(1\,2\,3\,4)$};
   \node[right] at (1.2,0) {\small $s$: axis $1$--$3$};
 \end{tikzpicture}
