@@ -16804,7 +16804,7 @@ $\operatorname{Out}(G)=\Aut(G)/\Inn(G)=\Aut(G)$.
 \item Let $G$ be a group with subgroups $H$ and $K$ with $H \le K$.
 \begin{enumerate}
 \item[(a)] Prove that if $H$ is characteristic in $K$ and $K$ is normal in $G$ then $H$ is normal in $G$.
-\item[(b)] Prove that if $H$ is characteristic in $K$ and $K$ is characteristic in $G$ then $H$ is characteristic in $G$. Use this to prove that the Klein 4-group $V_4$ is characteristic in $S_4$.
+\item[(b)] Prove that if $H$ is characteristic in $K$ and $K$ is characteristic in $G$ then $H$ is characteristic in $G$. Use this to prove that the Klein 4-group $V_4$ contained in $A_4$ is characteristic in $S_4$.
 \item[(c)] Give an example to show that if $H$ is normal in $K$ and $K$ is characteristic in $G$ then $H$ need not be normal in $G$.
 \end{enumerate}
 
@@ -16897,8 +16897,8 @@ kernel is $C_G(H)$. Apply this with $G=S_3$ and $H=\langle(1\,2\,3)\rangle$ to c
 the image in $\Aut(H)$.
 
 \item Show that for $n\ge3$, $n\ne6$, every automorphism of $S_n$ is inner, so
-$\Aut(S_n)\isom S_n$. (You may cite the count $|\Inn(S_n)|=n!$ once $Z(S_n)=1$ is shown;
-just prove $Z(S_n)=1$ for $n\ge3$.)
+$\Aut(S_n)\isom S_n$. (You may cite the bound $|\Aut(S_n)|\le n!$ for $n\ne6$ from Exercise 18(d) above;
+then it suffices to prove $Z(S_n)=1$ for $n\ge3$, since this gives $|\Inn(S_n)|=n!$.)
 
 \item Let $G=\Z_p\times\Z_{p^2}$ for $p$ prime. Determine which elements have order $p$,
 and use this to bound $|\Aut(G)|$ from above by counting ordered images of a generating
@@ -16917,8 +16917,9 @@ iff the natural map $G\to\Aut(G)$ is an isomorphism. Prove $S_3$ is complete.
 and show $\Aut(\Z_{2^n})\isom\Z_2\times\Z_{2^{n-2}}$ for $n\ge3$ (so it is \emph{not}
 cyclic).
 
-\item Suppose $|G|=pq$ with $p<q$ primes and $p\nmid q-1$. Using the conjugation
-homomorphism $G\to\Aut(\Syl_q)\isom\Zn{q-1}$ argue that the Sylow $q$-subgroup is
+\item Suppose $|G|=pq$ with $p<q$ primes and $p\nmid q-1$, and let $Q$ be the Sylow $q$-subgroup (normal, since its index $p$ is the
+smallest prime dividing $|G|$). Using the conjugation
+homomorphism $G\to\Aut(Q)\isom\Zn{q-1}$ argue that the Sylow $q$-subgroup is
 central, hence $G$ is cyclic.
 
 \item Let $\varphi$ be an automorphism of a finite group $G$ that fixes only the
