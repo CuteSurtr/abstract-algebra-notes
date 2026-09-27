@@ -33277,7 +33277,7 @@ R[x] \arrow[r, hook] & F[x]
 \dgi{Objects:} Two polynomial rings: $R[x]$, where $R$ is a UFD (e.g.\ $\Z$ or $k[t]$),
   and $F[x]$, where $F = \Frac(R)$ is the fraction field of $R$ (e.g.\ $\Q$ or $k(t)$).
   Both are integral domains; $F[x]$ is additionally a Euclidean domain, so it has a
-  division algorithm and unique factorization that $R[x]$ may lack at the quotient level.
+  division algorithm that $R[x]$ may lack.
 \dgi{Arrows:} A single hooked arrow $R[x] \hookrightarrow F[x]$ is the natural
   inclusion/embedding: a polynomial $a_n x^n + \cdots + a_0 \in R[x]$ is sent to itself,
   now viewed with coefficients in $F$ (each $a_i \in R$ maps to $a_i/1 \in F$). The hook
@@ -33345,8 +33345,8 @@ present in the middle).
 \item Compute $c=\gcd(a_0,\dots,a_n)$ in $R$ (in $\Z$: factor each $|a_i|$, take the min
 power of each prime; or run the Euclidean algorithm pairwise).
 \item Divide: $f_1=f/c$. Then $f=c\,f_1$ with $f_1$ \emph{primitive}.
-\item \textbf{Check:} verify $\gcd$ of the coefficients of $f_1$ is $1$ (some prime fails
-to divide \emph{some} coefficient).
+\item \textbf{Check:} verify $\gcd$ of the coefficients of $f_1$ is $1$ (every prime fails
+to divide \emph{some} coefficient, i.e.\ no prime divides all of them).
 \end{enumerate}
 \end{method}
 
@@ -33476,7 +33476,7 @@ it over $\Z$, and factoring over a field is easier.
 \item Try to factor the primitive $f$ over $\Q$ (rational root test for linear factors;
 quadratic formula; known irreducibility criteria).
 \item If $f$ is irreducible over $\Q$, then (being primitive) it is irreducible in $\Z[x]$
-by Gauss (c). If $f=AB$ over $\Q$, clear denominators and rescale to get $f=A'B'$ over
+(a nonunit constant cannot divide the primitive $f$, so a factorization into nonunits of $\Z[x]$ has two nonconstant factors and is already one over $\Q$). If $f=AB$ over $\Q$, use Gauss (c): clear denominators and rescale to get $f=A'B'$ over
 $\Z$ with $\deg A'=\deg A$, $\deg B'=\deg B$.
 \item \textbf{Check:} multiply the $\Z$-factors back out and confirm you recover $f$.
 \end{enumerate}
@@ -33500,14 +33500,14 @@ irreducible; $x-2$ is primitive and irreducible.)
 
 \begin{wex}{Irreducibility transfers: primitive + irreducible over $\Q$}
 Show $f(x)=x^3-3x-1\in\Z[x]$ is irreducible in $\Z[x]$.
-\wrec $f$ is primitive (leading coeff $1$). By Gauss (c) it suffices to show $f$ is
-irreducible over $\Q$; for a cubic, irreducibility over $\Q$ is equivalent to having no
+\wrec $f$ is primitive (leading coeff $1$). Hence it suffices to show $f$ is
+irreducible over $\Q$ (Corollary ``Irreducibles of $R[x]$'' below); for a cubic, irreducibility over $\Q$ is equivalent to having no
 rational root.
 \wsol
 Rational root test: any rational root is an integer dividing the constant term $-1$, so
 $\pm1$. Compute $f(1)=1-3-1=-3\neq0$, $f(-1)=-1+3-1=1\neq0$. No rational root, so the
 cubic $f$ has no linear factor over $\Q$; a cubic with no linear factor is irreducible over
-$\Q$. Since $f$ is primitive, Gauss (c) gives: $f$ is irreducible in $\Z[x]$.
+$\Q$. Since $f$ is primitive, it is irreducible in $\Z[x]$: a nonunit constant cannot divide $f$, so a factorization of $f$ into nonunits of $\Z[x]$ would have two nonconstant factors, i.e.\ would be a factorization over $\Q$.
 \emph{Check:} if $f$ factored in $\Z[x]$ it would be (degree)$1+2$ or $3$ with a unit; the
 degree-$1$ factor would force an integer root $\pm1$, already ruled out. Consistent.
 \end{wex}
@@ -33661,7 +33661,7 @@ diagram of implications is
   (PIDs: every ideal is principal, e.g.\ $\Z$ and $\Z[i]$), and unique factorization domains
   (UFDs: every nonzero nonunit factors uniquely into irreducibles, e.g.\ $\Z$, $\Z[x]$,
   $F[x_1,\dots,x_n]$). Each node is a property of a ring.
-\dgi{Arrows:} Two double-headed arrows encode strict implications (not reversible). The
+\dgi{Arrows:} Two double-line implication arrows ($\Rightarrow$) encode strict implications (not reversible). The
   first says every Euclidean domain is a PID (the Euclidean algorithm produces a gcd, which
   generates any ideal). The second says every PID is a UFD (by the ascending-chain/divisibility
   argument). Both are one-way: neither arrow reverses.
@@ -33739,7 +33739,7 @@ no constant irreducible --- consistent with the multiplicativity $\cont(f)=\cont
 primitivity.} Example: $2x+4=2(x+2)$ is irreducible \emph{over $\Q$} (it is a unit times
 a linear factor, and units in $\Q[x]$ are nonzero constants, so $x+2$ is a unit-multiple)
 --- but in $\Z[x]$ it is \emph{reducible}, $2x+4=2\cdot(x+2)$, because $2$ is not a unit in
-$\Z$. Gauss (c) only promotes \emph{primitive} polynomials. Always extract the content
+$\Z$. Irreducibility passes from $\Q[x]$ to $\Z[x]$ only for \emph{primitive} polynomials (Corollary ``Irreducibles of $R[x]$''). Always extract the content
 first.
 \end{pitfall}
 
