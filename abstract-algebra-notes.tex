@@ -6743,7 +6743,7 @@ s\,r^k=r^{-k}\,s\qquad(\text{equivalently }r^k s=s\,r^{-k}),
 \]
 which we will use repeatedly.
 
-\begin{wex}{$C_{D_8}(r)=\gen{r}$}
+\begin{wex}{$C_{D_8}(r)=\gen{r}$}\label{wex:cent-d8-r@c2}
 Compute the centralizer of the rotation $r$ in $D_8$.
 \wrec This is a single-element centralizer in a group with a relation $sr=r\inv s$. By the method, powers of $r$ are free ($\gen{r}\subseteq C_{D_8}(r)$); the relation predicts that a reflection commutes with $r^k$ iff $r^{2k}=1$, so we only need to test the reflections and apply that test with $k=1$.
 \wsol The rotations $\{1,r,r^2,r^3\}=\gen{r}$ all commute with $r$ (powers of the same element commute). Now test a reflection $sr^j$:
@@ -7474,7 +7474,7 @@ conjugation reshuffles $A$ as a set.
 \begin{wex}{Reading off $\varphi$ for $A=\gen r$ in $D_8$: every reflection inverts $\gen r$}
 With $D_8=\gen{r,s\st r^4=s^2=1,\ srs=r\inv}$ and $A=\{1,r,r^2,r^3\}=\gen r$, the
 centralizer and normalizer are already known: $C_{D_8}(A)=\gen r$ (Worked
-Example~\ref{p:cent-subgroup@c2} region, $C_{D_8}(r)=\gen r$) and $N_{D_8}(A)=D_8$ (index $2$).
+Example~\ref{wex:cent-d8-r@c2}, $C_{D_8}(r)=\gen r$) and $N_{D_8}(A)=D_8$ (index $2$).
 Use Proposition~\ref{p:df-conj-hom-mrg@c2} to identify the permutation $\varphi(g)\in S_A$.
 \wrec The kernel of $\varphi$ is $C_{D_8}(A)=\gen r$, so $\varphi$ collapses the rotations
 and is determined by what a single reflection does to $A$. The relation
