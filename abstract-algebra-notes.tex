@@ -45843,19 +45843,17 @@ invariant factor.
 
 \begin{wex}{Three invariant factors over $\F_2$}
 Over $F = \F_2$, suppose the Smith normal form of $xI - A$ for a $4 \times 4$ matrix
-$A$ is $\diag\big(1,\ x+1,\ x+1,\ x^2+1\big)$ -- wait, check divisibility. Recompute
-with the correct chain: a $4\times4$ operator has SNF
-$\diag(1, x+1, x+1, x^2(x+1))$. List the invariant factors and the dimension.
+$A$ is $\diag\big(1,\ x+1,\ x+1,\ x^2+1\big)$. List the invariant factors and check the dimension.
 \wrec The invariant factors are the nonconstant diagonal entries, and they must form
 a divisibility chain $a_1 \mid a_2 \mid a_3$.
-\wsol The nonconstant entries are $x+1,\ x+1,\ x^2(x+1)$. Check the chain:
-$x+1 \mid x+1 \mid x^2(x+1)$, valid over $\F_2$. Hence
+\wsol The nonconstant entries are $x+1,\ x+1,\ x^2+1$. Check the chain: over $\F_2$ we have
+$x^2+1 = (x+1)^2$, so $x+1 \mid x+1 \mid x^2+1$ (over $\Q$ the chain would fail, since
+$x+1 \nmid x^2+1$ there). Hence
 \[
-  a_1 = x+1,\qquad a_2 = x+1,\qquad a_3 = x^2(x+1) = x^3 + x^2 .
+  a_1 = x+1,\qquad a_2 = x+1,\qquad a_3 = x^2+1 = (x+1)^2 .
 \]
-\emph{Sanity check.} $\sum \deg a_i = 1 + 1 + 3 = 5$. Since this must equal $\dim V$,
-the matrix is $5\times 5$, not $4 \times 4$; with $a_1=a_2=x+1$, $a_3 = x^2(x+1)$ the
-operator lives on $V = \F_2^{5}$. (The lesson: $\sum \deg a_i = \dim V$ is the audit
+\emph{Sanity check.} $\sum \deg a_i = 1 + 1 + 2 = 4 = \dim V$, as it must be for a
+$4 \times 4$ matrix. (The lesson: $\sum \deg a_i = \dim V$ is the audit
 that catches an inconsistent SNF.)
 \end{wex}
 
@@ -45982,10 +45980,8 @@ b_2 = -2$.
 \end{wex}
 
 \begin{wex}{Building the RCF from invariant factors}
-The invariant factors of a $5 \times 5$ rational matrix $A$ are $a_1 = x-1$,
-$a_2 = (x-1)(x+2)$, $a_3 = (x-1)^2(x+2)$... check degrees first. Use
-$a_1 = x+3$, $a_2 = (x+3)(x-1)$, $a_3 = ?$ to total dimension $5$. Take
-$a_1 = x+3,\ a_2 = (x+3)(x-1)$, and find $a_3$, then write the RCF.
+A $5 \times 5$ rational matrix $A$ has three invariant factors, of which
+$a_1 = x+3$ and $a_2 = (x+3)(x-1)$. Find $a_3$, then write the RCF.
 \wrec $\sum \deg a_i = \dim V = 5$ and $a_1 \mid a_2 \mid a_3$. The RCF is the direct
 sum of companion matrices.
 \wsol $\deg a_1 = 1,\ \deg a_2 = 2$, so $\deg a_3 = 2$ to reach $5$. The chain forces
@@ -46018,17 +46014,18 @@ companion blocks.
 \[
   xI - A = \begin{pmatrix} x-1 & -1 & 0 \\ 0 & x-1 & 0 \\ 0 & 0 & x-2 \end{pmatrix}.
 \]
-The $(1,2)$ entry $-1$ is a unit; use it to clear the $(1,1)$ entry. Column-swap
-$C_1 \leftrightarrow C_2$ then negate to bring a $1$ to $(1,1)$ and eliminate:
+The $(1,2)$ entry $-1$ is a unit; move it to position $(1,1)$ and use it to clear its row and column.
+Column-swap $C_1 \leftrightarrow C_2$ and negate $C_1$ to bring a $1$ to $(1,1)$, then eliminate
+with $C_2 - (x-1)C_1$ and $R_2 + (x-1)R_1$:
 \[
   \to
-  \begin{pmatrix} 1 & 0 & 0 \\ x-1 & 0 & 0 \\ 0 & 0 & x-2 \end{pmatrix}
+  \begin{pmatrix} 1 & x-1 & 0 \\ -(x-1) & 0 & 0 \\ 0 & 0 & x-2 \end{pmatrix}
   \to
   \begin{pmatrix} 1 & 0 & 0 \\ 0 & (x-1)^2 & 0 \\ 0 & 0 & x-2 \end{pmatrix}.
 \]
 Now reorder to a divisibility chain. The nonconstant entries are $(x-1)^2$ and
-$x - 2$, which are coprime; combining a coprime pair into a single invariant factor
-gives $a_1 = $ the gcd-part... here $\gcd = 1$, so there is one invariant factor
+$x - 2$, which are coprime; since $\gcd\big((x-1)^2, x-2\big) = 1$, the block
+$\diag\big((x-1)^2, x-2\big)$ has Smith normal form $\diag\big(1, (x-1)^2(x-2)\big)$, so there is one invariant factor
 \[
   a_1(x) = (x-1)^2(x-2) = x^3 - 4x^2 + 5x - 2 .
 \]
@@ -46090,7 +46087,7 @@ $V_T$ is a cyclic $F[x]$-module, $m = 1$) iff $m_T = c_T$.
 \end{corollary}
 
 \begin{wex}{Char and min polynomials from a Smith normal form}
-The invariant factors of $A \in \Mat_4(\Q)$ are $a_1 = x+1$, $a_2 = (x+1)(x-3)$. Find
+The invariant factors of $A \in \Mat_3(\Q)$ are $a_1 = x+1$, $a_2 = (x+1)(x-3)$. Find
 $c_A$, $m_A$, and decide whether $A$ is diagonalizable over $\Q$.
 \wrec $c_A = \prod a_i$, $m_A = a_2$ (largest). Diagonalizability $\iff m_A$ splits
 into distinct linear factors.
@@ -46103,34 +46100,32 @@ into distinct linear factors.
 \]
 $m_A$ is a product of \emph{distinct} linear factors over $\Q$, so $A$ is
 diagonalizable.
-\emph{Sanity check.} $\deg c_A = 3$, but the matrix is $4 \times 4$; that is
-inconsistent, so the data is impossible -- recompute. Take instead $a_1 = x+1$,
-$a_2 = (x+1)^2(x-3)$: then $\deg a_1 + \deg a_2 = 1 + 3 = 4 = \dim V$ and
-$a_1 \mid a_2$. Now $c_A = (x+1)^3(x-3)$, $m_A = (x+1)^2(x-3)$. Since $m_A$ has the
-repeated factor $(x+1)^2$, $A$ is \emph{not} diagonalizable. (Again the degree audit
-$\sum \deg a_i = \dim V$ is what flags bad data.) \checkmark
+\emph{Sanity check.} $\deg c_A = 3 = \dim V$, as it must be for a $3 \times 3$ matrix
+(the degree audit $\sum \deg a_i = \dim V$ is what flags bad data). Contrast: if instead
+$A \in \Mat_4(\Q)$ had $a_1 = x+1$, $a_2 = (x+1)^2(x-3)$, then $c_A = (x+1)^3(x-3)$ and
+$m_A = (x+1)^2(x-3)$; since $m_A$ has the repeated factor $(x+1)^2$, that $A$ is
+\emph{not} diagonalizable. \checkmark
 \end{wex}
 
 \begin{wex}{Recovering invariant factors from $c$ and $m$}
-A matrix $A \in \Mat_6(\Q)$ has $c_A(x) = (x-2)^4(x-5)^2$ and $m_A(x) =
-(x-2)^2(x-5)$. Determine the invariant factors (hence the RCF block sizes).
+A matrix $A \in \Mat_6(\Q)$ has $c_A(x) = (x-2)^4(x-5)^2$, $m_A(x) =
+(x-2)^2(x-5)$ and $\dim_\Q \ker(A-2I) = 2$. Determine the invariant factors (hence the RCF block sizes).
 \wrec $a_m = m_A$ is the last invariant factor; the remaining $a_i$ divide it and
 multiply (with $a_m$) to $c_A$. Match prime powers factor-by-factor with descending
 exponents.
 \wsol Work prime-by-prime, listing exponents of $(x-2)$ and $(x-5)$ in each $a_i$
 from the largest down, where $a_m$ carries the exponents in $m_A$, namely $(2,1)$.
-For $(x-2)$: total exponent $4$ in $c_A$, top exponent $2$; the partition of $4$ with
-largest part $2$ is $2+2$. For $(x-5)$: total $2$, top $1$; partition $1+1$. Aligning
-from the largest factor:
-\[
-  a_2 = (x-2)^2(x-5)^1 = m_A, \qquad a_1 = (x-2)^2(x-5)^1 .
-\]
-Wait -- that double counts $(x-5)$. Re-pad: $(x-5)$ contributes $1$ to $a_2$ and $1$
-to $a_1$; $(x-2)$ contributes $2$ to $a_2$ and $2$ to $a_1$. So both factors are
-$(x-2)^2(x-5)$:
+For $(x-2)$: total exponent $4$ in $c_A$, top exponent $2$; the partitions of $4$ with
+largest part $2$ are $2+2$ and $2+1+1$. The number of parts is the number of invariant
+factors divisible by $x-2$, which equals $\dim\ker(A-2I) = 2$ (each summand $\Q[x]/(a_i)$
+with $(x-2)\mid a_i$ contributes a $1$-dimensional kernel of $x-2$), so the partition is
+$2+2$. For $(x-5)$: total $2$, top $1$; partition $1+1$. Aligning from the largest
+factor, $(x-2)$ contributes $2$ to $a_2$ and $2$ to $a_1$, and $(x-5)$ contributes $1$ to each:
 \[
   a_1(x) = (x-2)^2(x-5), \qquad a_2(x) = (x-2)^2(x-5) = m_A .
 \]
+(Without the kernel condition, $x-2,\ (x-2)(x-5),\ (x-2)^2(x-5)$ would fit the same
+$c_A$ and $m_A$: the pair $(c_A, m_A)$ alone does not determine the invariant factors.)
 \emph{Sanity check.} $a_1 \mid a_2$ (equal), product $= (x-2)^4(x-5)^2 = c_A$
 \checkmark, largest $= (x-2)^2(x-5) = m_A$ \checkmark, $\sum\deg = 3+3 = 6 = \dim V$
 \checkmark. The RCF is $C_{a_1}\oplus C_{a_2}$, two $3\times3$ blocks.
@@ -46217,8 +46212,8 @@ Over $\Q$, how many similarity classes of $4 \times 4$ matrices have characteris
 polynomial $c(x) = (x-1)^4$?
 \wrec Each class corresponds to one valid invariant-factor chain $a_1 \mid \cdots \mid
 a_m$ with $\prod a_i = (x-1)^4$. Since the only prime here is $x-1$, this is the same
-as partitioning the exponent $4$ into a nondecreasing... (descending into $a_m$)
-list.
+as partitioning the exponent $4$ (the parts, in nondecreasing order, are the exponents
+of $a_1, \dots, a_m$).
 \wsol Invariant factors are powers $(x-1)^{e_1} \mid \cdots \mid (x-1)^{e_m}$ with
 $e_1 \le \cdots \le e_m$ and $\sum e_i = 4$, each $e_i \ge 1$. These are exactly the
 partitions of $4$:
