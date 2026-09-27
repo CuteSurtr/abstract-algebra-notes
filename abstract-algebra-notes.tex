@@ -63910,7 +63910,7 @@ List the prime ideals of $\Z[x]$ and identify the maximal ones.
 
 \subsection*{The Zariski topology: closed sets and basic opens}
 
-We now topologize $\Spec R$ by mimicking the vanishing-set construction $Z(\cdot)$ and ideal-of-set construction $I(\cdot)$ of S3/S7. Write $X=\Spec R$.
+We now topologize $\Spec R$ by mimicking the vanishing-set construction $Z(\cdot)$ and ideal-of-set construction $I(\cdot)$ of Sections~15.3 and~15.7. Write $X=\Spec R$.
 
 \begin{definition}[{$V(\fa)$ and the Zariski topology}]
 For a subset $E\subseteq R$ let
@@ -63958,7 +63958,7 @@ Let $f,g,g_1,\dots,g_n\in R$, $X=\Spec R$.
 \end{proposition}
 
 \begin{proof}[Idea]
-(1) $f$ a unit $\iff$ no prime contains it; $f$ nilpotent $\iff$ every prime contains it ($\nil R=\bigcap\fp$). (3) $D(f)\subseteq\bigcup D(g_i)$ says every prime containing $(g_1,\dots,g_n)$ contains $f$, i.e.\ $f\in\bigcap_{(g_i)\subseteq\fp}\fp=\rad(g_1,\dots,g_n)$. (4) Localization $R\to R_f$ gives a bijection of primes of $R_f$ with primes of $R$ missing $\set{1,f,f^2,\dots}$, i.e.\ with $D(f)$, and it is bicontinuous. (5) Quasi-compactness: if $X=\bigcup_i D(g_i)$ then $(g_i)=R$ (no prime omits all $g_i$), so $1=\sum_{j=1}^m a_jg_{i_j}$ is a finite relation, and the corresponding $D(g_{i_1}),\dots,D(g_{i_m})$ already cover $X$.
+(1) $f$ a unit $\iff$ no prime contains it; $f$ nilpotent $\iff$ every prime contains it ($\nil R=\bigcap\fp$). (3) $D(f)\subseteq\bigcup D(g_i)$ says every prime containing $(g_1,\dots,g_n)$ contains $f$, i.e.\ $f\in\bigcap_{(g_i)\subseteq\fp}\fp=\rad(g_1,\dots,g_n)$. (4) Localization $R\to R_f$ gives a bijection of primes of $R_f$ with primes of $R$ missing $\set{1,f,f^2,\dots}$, i.e.\ with $D(f)$, and it is bicontinuous. (5) Quasi-compactness: if $X=\bigcup_i D(g_i)$ then $(g_i)=R$ (no prime contains all $g_i$), so $1=\sum_{j=1}^m a_jg_{i_j}$ is a finite relation, and the corresponding $D(g_{i_1}),\dots,D(g_{i_m})$ already cover $X$.
 \end{proof}
 
 \begin{method}{Reading $\Spec$ from the ideal theory of $R$}
@@ -63980,7 +63980,7 @@ Show any two distinct points of $\Spec R$ are topologically distinguishable, yet
 \begin{wex}{Quasi-compact but not compact: an infinite cover with no finite subcover of an open subset}
 Show $\Spec R$ is quasi-compact, but exhibit an open subset of some $\Spec R$ whose cover has no finite subcover.
 \wrec $\Spec R$ itself is always quasi-compact by the unit-relation argument; non-quasi-compact \emph{open subsets} arise in non-Noetherian rings.
-\wsol Quasi-compactness of $X$ was proved above. For the failure on an open subset, take $R=k[x_1,x_2,\dots]$ (infinitely many variables) and $U=\bigcup_{i\ge1}D(x_i)$, the complement of the closed set $V(x_1,x_2,\dots)$. Given any finite subfamily $D(x_{i_1}),\dots,D(x_{i_m})$, consider the prime $\fp=(x_{i_1},\dots,x_{i_m})$ (prime since $R/\fp\cong k[x_k:k\notin\set{i_1,\dots,i_m}]$ is a domain). It contains each $x_{i_j}$, so $\fp\notin D(x_{i_j})$ for every $j$; yet $\fp\in U$, since it omits any $x_k$ with $k\notin\set{i_1,\dots,i_m}$, whence $\fp\in D(x_k)\subseteq U$. Thus the finite union fails to cover $U$, and no finite subcover exists. Sanity check: $U$ is quasi-compact iff it is a \emph{finite} union of basic opens (S8 Exercise 12); here it is genuinely infinite, consistent with $R$ non-Noetherian.
+\wsol Quasi-compactness of $X$ was proved above. For the failure on an open subset, take $R=k[x_1,x_2,\dots]$ (infinitely many variables) and $U=\bigcup_{i\ge1}D(x_i)$, the complement of the closed set $V(x_1,x_2,\dots)$. Given any finite subfamily $D(x_{i_1}),\dots,D(x_{i_m})$, consider the prime $\fp=(x_{i_1},\dots,x_{i_m})$ (prime since $R/\fp\cong k[x_k:k\notin\set{i_1,\dots,i_m}]$ is a domain). It contains each $x_{i_j}$, so $\fp\notin D(x_{i_j})$ for every $j$; yet $\fp\in U$, since it omits any $x_k$ with $k\notin\set{i_1,\dots,i_m}$, whence $\fp\in D(x_k)\subseteq U$. Thus the finite union fails to cover $U$, and no finite subcover exists. Sanity check: $U$ is quasi-compact iff it is a \emph{finite} union of basic opens (Section~15.8, Exercise 12); here it is genuinely infinite, consistent with $R$ non-Noetherian.
 \end{wex}
 
 \subsection*{Irreducibility, components, and the nilradical}
@@ -64021,7 +64021,7 @@ Compute $\Spec(\Z/12\Z)$ as a topological space and verify it equals $\Spec$ of 
 \begin{wex}{Generic point of $\Spec k[x,y]$ and the curve points}
 With $R=k[x,y]$ ($k$ algebraically closed), identify the generic point and describe the closure of $(f)$.
 \wrec Primes are $(0)$, the $(f)$ for $f$ irreducible, and the maximals $(x-a,y-b)$; closure of $\fp$ is $V(\fp)$.
-\wsol $(0)$ is prime (the domain $k[x,y]$), and $\overline{\set{(0)}}=V(0)=\Spec R$, so $(0)$ is the generic point of the irreducible space $\Spec k[x,y]$ ($=$ the plane $\Aff^2$). For an irreducible $f$, $\overline{\set{(f)}}=V(f)=\set{(x-a,y-b):f(a,b)=0}$: exactly the closed points lying on the curve $f=0$. Sanity check: $V(f)$ is irreducible because $(f)$ is prime; its generic point $(f)$ is the curve ``as a whole,'' its closed points are the geometric points on it -- precisely the classical picture of S3 with one extra generic dot.
+\wsol $(0)$ is prime (the domain $k[x,y]$), and $\overline{\set{(0)}}=V(0)=\Spec R$, so $(0)$ is the generic point of the irreducible space $\Spec k[x,y]$ ($=$ the plane $\Aff^2$). For an irreducible $f$, $\overline{\set{(f)}}=V(f)=\set{(f)}\cup\set{(x-a,y-b):f(a,b)=0}$: the point $(f)$ itself together with exactly the closed points lying on the curve $f=0$. Sanity check: $V(f)$ is irreducible because $(f)$ is prime; its generic point $(f)$ is the curve ``as a whole,'' its closed points are the geometric points on it -- precisely the classical picture of Section~15.3 with one extra generic dot.
 \end{wex}
 
 \begin{wex}{An irreducible component count: $\Spec k[x,y]/(xy)$}
@@ -64079,7 +64079,7 @@ Describe $\varphi^{*}\colon\Spec\Z[i]\to\Spec\Z$ for $\varphi\colon\Z\hookrighta
 \end{wex}
 
 \begin{wex}{The projection $k[x]\hookrightarrow k[x,y]$ and vertical-line fibers}
-For $\varphi\colon k[x]\hookrightarrow k[x,y]$ describe $\varphi^{*}\colon\Spec k[x,y]\to\Spec k[x]$ and the fiber over $(x-a)$.
+For $k$ algebraically closed and $\varphi\colon k[x]\hookrightarrow k[x,y]$, describe $\varphi^{*}\colon\Spec k[x,y]\to\Spec k[x]$ and the fiber over $(x-a)$.
 \wrec $\varphi^{*}$ is the projection $\Aff^2\to\Aff^1$; the fiber over a point of the line is the vertical line above it (plus its generic point).
 \wsol $\varphi^{*}(\fq)=\fq\cap k[x]$. Over the closed point $(x-a)\in\Spec k[x]$ the fiber consists of the primes $\fq$ of $k[x,y]$ with $\fq\cap k[x]=(x-a)$: these are the maximal ideals $(x-a,y-b)$ for $b\in k$ together with the height-$1$ prime $(x-a)$ itself (the whole vertical line, its generic point). Over $(0)$ the fiber adds the generic point $(0)$ of the plane and all the ``slanted'' curve primes $(f)$ with $f\notin k[x]$. Sanity check: setting $x=a$, the fiber ring is $k[x,y]/(x-a)\cong k[y]$, whose spectrum is the $y$-line $\set{(y-b)}\cup\set{(0)}$ -- exactly the points found.
 \end{wex}
@@ -64162,7 +64162,7 @@ For $f=x^3+x+1$, locate the closed points of $V(f)\subseteq\Spec\Z[x]$ in the fi
 \begin{wex}{$\Spec k[x]$ over an algebraically closed $k$, and a non-closed comparison}
 Describe $\Spec k[x]$ for $k$ algebraically closed, and contrast with $\Spec\R[x]$.
 \wrec Over $\overline k$ every nonzero prime of $k[x]$ is $(x-a)$; over $\R$ there are also degree-$2$ primes.
-\wsol For $k=\overline k$: $\Spec k[x]=\set{(0)}\cup\set{(x-a):a\in k}$, the generic point plus the affine line $\Aff^1(k)=\mSpec$. For $R=\R[x]$: primes are $(0)$, the $(x-a)$ with $a\in\R$ (residue field $\R$), and the $(x^2+bx+c)$ with negative discriminant (residue field $\C$); the latter ``hide'' a conjugate pair of complex points. Sanity check: $\mSpec\R[x]=\R\sqcup\set{\text{conjugate pairs in }\C}$, so $\Spec\R[x]$ is the line $\R$ together with $\C/(\text{complex conjugation})$ -- exactly the failure of $k$ not being algebraically closed, and the reason the Nullstellensatz bijection $\mSpec\leftrightarrow$ points needs $k=\overline k$.
+\wsol For $k=\overline k$: $\Spec k[x]=\set{(0)}\cup\set{(x-a):a\in k}$, the generic point plus the affine line $\Aff^1(k)=\mSpec$. For $R=\R[x]$: primes are $(0)$, the $(x-a)$ with $a\in\R$ (residue field $\R$), and the $(x^2+bx+c)$ with negative discriminant (residue field $\C$); the latter ``hide'' a conjugate pair of complex points. Sanity check: $\Spec\R[x]=\set{(0)}\sqcup\mSpec\R[x]$, where $\mSpec\R[x]=\R\sqcup\set{\text{conjugate pairs in }\C\setminus\R}$ is in bijection with $\C/(\text{complex conjugation})$ -- exactly the failure of $k$ not being algebraically closed, and the reason the Nullstellensatz bijection $\mSpec\leftrightarrow$ points needs $k=\overline k$.
 \end{wex}
 
 A single diagram records the contravariant dictionary at the heart of the section: the algebraic operations on $R$ on the left, their geometric meaning on $\Spec R$ on the right, with quotients giving closed pieces and localizations giving open pieces.
