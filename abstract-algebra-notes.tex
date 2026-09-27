@@ -3949,9 +3949,9 @@ one glance. It is also a prototype exact sequence for all later examples.
 becomes $1\to\SL_2(\mathbb{F}_p)\hookrightarrow\GL_2(\mathbb{F}_p)\xrightarrow{\det}
 \mathbb{F}_p^\times\to1$, which is exact and shows $|\GL_2(\mathbb{F}_p)|=|\SL_2(\mathbb{F}_p)|\cdot(p-1)$.
 \dgi{Common pitfall:} The two-headed arrowhead on $\det$ is not decoration; it means the map
-is surjective onto $\R^\times$. Omitting it would suggest a short exact sequence with a
-``to $1$'' at the right, which would additionally require that $\det$ is surjective. Here
-the arrowhead already encodes surjectivity.
+is surjective onto $\R^\times$. Without it the sequence would record nothing about
+surjectivity. The equivalent convention is to append ``$\to 1$'' at the right: exactness at
+$\R^\times$ then says exactly that $\det$ is surjective, i.e.\ the sequence is short exact.
 \dgi{Takeaway:} The point of this diagram is that it records in one line all three structural
 facts about $\det$: the kernel is $\SL_2(\R)$, it includes into $\GL_2(\R)$, and the quotient
 maps surjectively onto $\R^\times$.
@@ -4158,7 +4158,7 @@ here. The surjection to a group of order $2$ means the kernel has index $2$, but
 depends on $|S_3|$.
 \dgi{Takeaway:} The point of this diagram is that the sign map yields a short exact sequence
 that cleanly encodes the even/odd splitting of $S_3$ into a single four-node picture, which
-generalizes immediately to $S_n$ for all $n$.
+generalizes immediately to $S_n$ for all $n\geq2$.
 \end{dgx}
 \end{wex}
 
@@ -4179,7 +4179,7 @@ These are equal iff $x+y+1=x+y+2$, i.e.\ $1=2$, which is false. Concretely take 
 \]
 So $\varphi(x+y)\ne\varphi(x)+\varphi(y)$ for this single pair, and $\varphi$ is \emph{not} a
 homomorphism. (The underlying reason: $x\mapsto x+1$ is a \emph{translation}, an affine map
-with nonzero shift; only affine maps with zero shift, $x\mapsto cx$, are additive
+with nonzero shift; among the affine maps $x\mapsto cx+d$, only those with zero shift ($d=0$) are additive
 homomorphisms $\R\to\R$.)
 
 Check: the failure $\varphi(0)\ne0$ was the early-warning sign, and it is genuinely
