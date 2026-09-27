@@ -36782,7 +36782,7 @@ In $M=\F^2$ ($\F$ a field), let $N_1=\F e_1$, $N_2=\F e_2$, $N_3=\F(e_1+e_2)$. I
 \begin{wex}{Splitting a $\Z$-module: $\Zn{30}\isom\Zn2\oplus\Zn3\oplus\Zn5$}
 Decompose $\Zn{30}$ as an internal direct sum of cyclic $\Z$-modules.
 \wrec Iterated CRT via the internal criterion for three submodules.
-\wsol Let $N_1=\Z\overline{15}\isom\Zn2$, $N_2=\Z\overline{10}\isom\Zn3$, $N_3=\Z\overline6\isom\Zn5$ (annihilators $2\Z,3\Z,5\Z$ respectively). Their orders $2,3,5$ are pairwise coprime, so $N_i\cap\sum_{j\neq i}N_j$ has order dividing both $|N_i|$ and $|\sum_{j\neq i}N_j|$ (order $\le 15,10,6$), and $\gcd$ forces $0$ in each case. Sum: $\overline{15}+\overline{10}+\overline6=\overline{31}=\overline1$ generates, so $\sum N_i=M$. Hence $\Zn{30}=N_1\oplus N_2\oplus N_3\isom\Zn2\oplus\Zn3\oplus\Zn5$. \textbf{Check.} $2\cdot3\cdot5=30=|M|$. Consistent.
+\wsol Let $N_1=\Z\overline{15}\isom\Zn2$, $N_2=\Z\overline{10}\isom\Zn3$, $N_3=\Z\overline6\isom\Zn5$ (annihilators $2\Z,3\Z,5\Z$ respectively). Their orders $2,3,5$ are pairwise coprime, so $N_i\cap\sum_{j\neq i}N_j$ has order dividing both $|N_i|$ and $|\sum_{j\neq i}N_j|$ (orders dividing $15,10,6$ respectively, since $N_j+N_k$ is the image of $N_j\oplus N_k$), and $\gcd$ forces $0$ in each case. Sum: $\overline{15}+\overline{10}+\overline6=\overline{31}=\overline1$ generates, so $\sum N_i=M$. Hence $\Zn{30}=N_1\oplus N_2\oplus N_3\isom\Zn2\oplus\Zn3\oplus\Zn5$. \textbf{Check.} $2\cdot3\cdot5=30=|M|$. Consistent.
 \end{wex}
 
 \medskip
@@ -36918,9 +36918,9 @@ The universal property characterizes $R^{(A)}$ \emph{up to unique isomorphism}: 
 \begin{exers}{Exercises (from the text).}
 \item Prove that if $A$ and $B$ are sets of the same cardinality, then the free modules $F(A)$ and $F(B)$ are isomorphic.
 
-\item Assume $R$ is commutative. Prove that $R^n \isom R^m$ if and only if $n=m$, i.e., two free $R$-modules of finite rank are isomorphic if and only if they have the same rank. [Apply Exercise 12 of Section 2 with $I$ a maximal ideal of $R$. You may assume that if $F$ is a field, then $F^n \isom F^m$ if and only if $n=m$; i.e., two finite dimensional vector spaces over $F$ of the same dimension are isomorphic --- this will be proved later in Section 11.1.]
+\item Assume $R$ is commutative. Prove that $R^n \isom R^m$ if and only if $n=m$, i.e., two free $R$-modules of finite rank are isomorphic if and only if they have the same rank. [Apply Exercise 12 of Section 2 with $I$ a maximal ideal of $R$. You may assume that if $F$ is a field, then $F^n \isom F^m$ if and only if $n=m$; i.e., two finite dimensional vector spaces over $F$ are isomorphic if and only if they have the same dimension --- this will be proved later in Section 11.1.]
 
-\item Show that the $F[x]$-modules in Exercises 18 and 19 of Section 1 are both free.
+\item Show that the $F[x]$-modules in Exercises 18 and 19 of Section 1 are both cyclic.
 
 \item An $R$-module $M$ is called a torsion module if for each $m \in M$ there is a nonzero element $r \in R$ such that $rm=0$, where $r$ may depend on $m$ (i.e., $M=\Tor(M)$ in the notation of Exercise 8 of Section 1). Prove that every finite abelian group is a torsion $\Z$-module. Give an example of an infinite abelian group that is a torsion $\Z$-module.
 
@@ -36956,13 +36956,13 @@ M \to M/A_1 M \times \cdots \times M/A_k M \qquad \text{defined by} \qquad m \ma
 \]
 is an $R$-module homomorphism with kernel $A_1 M \cap A_2 M \cap \cdots \cap A_k M$.
 
-\item In the notation of the preceding exercise, assume further that the ideals $A_1, \ldots, A_k$ are pairwise comaximal (i.e., $A_i + A_j = R$ for all $i \neq j$). Prove that
+\item In the notation of the preceding exercise, assume further that $R$ is commutative and the ideals $A_1, \ldots, A_k$ are pairwise comaximal (i.e., $A_i + A_j = R$ for all $i \neq j$). Prove that
 \[
 M/(A_1 \cdots A_k)M \isom M/A_1 M \times \cdots \times M/A_k M.
 \]
 [See the proof of the Chinese Remainder Theorem for rings in Section 7.6.]
 
-\item Let $R$ be a Principal Ideal Domain and let $M$ be an $R$-module that is annihilated by the nonzero, proper ideal $(a)$. Let $a = p_1^{\alpha_1} p_2^{\alpha_2} \cdots p_n^{\alpha_n}$ be the unique factorization of $a$ into distinct prime powers in $R$. Let $M_i$ be the annihilator of $p_i^{\alpha_i}$ in $M$, i.e., $M_i$ is the set $\{m \in M \mid p_i^{\alpha_i} m = 0\}$ --- called the $p_i$-primary component of $M$. Prove that
+\item Let $R$ be a Principal Ideal Domain and let $M$ be an $R$-module that is annihilated by the nonzero, proper ideal $(a)$. Let $a = p_1^{\alpha_1} p_2^{\alpha_2} \cdots p_k^{\alpha_k}$ be the unique factorization of $a$ into distinct prime powers in $R$. Let $M_i$ be the annihilator of $p_i^{\alpha_i}$ in $M$, i.e., $M_i$ is the set $\{m \in M \mid p_i^{\alpha_i} m = 0\}$ --- called the $p_i$-primary component of $M$. Prove that
 \[
 M = M_1 \oplus M_2 \oplus \cdots \oplus M_k.
 \]
@@ -36977,9 +36977,9 @@ M = M_1 \oplus M_2 \oplus \cdots \oplus M_k.
 
 \item Let $I$ be a nonempty index set and for each $i \in I$ let $N_i$ be a submodule of $M$. Prove that the following are equivalent:
 \begin{itemize}
-\item[(i)] the submodule of $M$ generated by all the $N_i$'s is isomorphic to the direct sum of the $N_i$'s
+\item[(i)] the map from the (external) direct sum $\bigoplus_{i \in I} N_i$ to the submodule of $M$ generated by all the $N_i$'s sending a tuple to the sum of its components is an isomorphism (cf. Exercise 20)
 \item[(ii)] if $\{i_1, i_2, \ldots, i_k\}$ is any finite subset of $I$ then $N_{i_1} \cap (N_{i_2} + \cdots + N_{i_k}) = 0$
-\item[(iii)] if $\{i_1, i_2, \ldots, i_k\}$ is any finite subset of $I$ then $N_1 + \cdots + N_k = N_1 \oplus \cdots \oplus N_k$
+\item[(iii)] if $\{i_1, i_2, \ldots, i_k\}$ is any finite subset of $I$ then $N_{i_1} + \cdots + N_{i_k} = N_{i_1} \oplus \cdots \oplus N_{i_k}$
 \item[(iv)] for every element $x$ of the submodule of $M$ generated by the $N_i$'s there are unique elements $a_i \in N_i$ for all $i \in I$ such that all but a finite number of the $a_i$ are zero and $x$ is the (finite) sum of the $a_i$.
 \end{itemize}
 
