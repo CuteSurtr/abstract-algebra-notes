@@ -14742,7 +14742,7 @@ G \arrow[r, "\rho"] & \Sym(A)
 \textbf{Trigger:} a candidate rule $(g,a)\mapsto g\cdot a$, and you must verify it is an action or decide if it is faithful.
 \begin{enumerate}
 \item \textbf{Identity axiom:} check $1\cdot a=a$ for all $a$.
-\item \textbf{Compatibility axiom:} compute $g_1\cdot(g_2\cdot a)$ and $(g_1g_2)\cdot a$ \emph{separately}, then confirm they agree. (Watch the order: a ``$\cdot a$ on the right'' formula like $a\cdot g$ usually needs $g\inv$ to be a \emph{left} action.)
+\item \textbf{Compatibility axiom:} compute $g_1\cdot(g_2\cdot a)$ and $(g_1g_2)\cdot a$ \emph{separately}, then confirm they agree. (Watch the order: a ``$g$ on the right'' formula like $a\cdot g$ usually needs $g\inv$ to be a \emph{left} action.)
 \item \textbf{Kernel:} solve $g\cdot a=a$ \emph{for all} $a\in A$ simultaneously. The $g$ satisfying every equation form $\ker\rho\nor G$.
 \item \textbf{Faithful?} Yes iff $\ker\rho=1$.
 \end{enumerate}
@@ -14838,8 +14838,8 @@ G \arrow[r, "\pi"] \arrow[dr, "{g\,\mapsto\, g\cdot a}"'] & G/G_a \arrow[d, "\Ph
 \dgi{Arrows:} Left diagram: the arrow labelled $\sim$ is the bijection $\Phi:G/G_a\to\orb(a)$ sending $gG_a\mapsto g\cdot a$. Right diagram: $\pi:G\to G/G_a$ is the canonical quotient map $g\mapsto gG_a$; the diagonal arrow $G\to\orb(a)$ is the orbit map $g\mapsto g\cdot a$; $\Phi:G/G_a\to\orb(a)$ is the induced bijection.
 \dgi{What commutes:} The triangle says $\Phi\circ\pi=(\text{orbit map})$: for any $g\in G$, $\Phi(\pi(g))=\Phi(gG_a)=g\cdot a$, which is exactly the orbit map. So both paths from $G$ to $\orb(a)$ agree.
 \dgi{Why it commutes:} Well-definedness of $\Phi$: if $gG_a=hG_a$ then $h\inv g\in G_a$, so $(h\inv g)\cdot a=a$, giving $g\cdot a=h\cdot a$. Thus $\Phi$ does not depend on the coset representative. The equality $\Phi\circ\pi=(\text{orbit map})$ then holds by definition of $\Phi$.
-\dgi{Why this matters here:} The Orbit--Stabilizer theorem's heart is this triangle: it says the orbit map $G\to\orb(a)$ is \emph{not} injective on $G$, but becomes a bijection once we collapse each coset $gG_a$ to a single point. The left bijection records the counting consequence $|\orb(a)|=\idx{G}{G_a}$.
-\dgi{Concrete example:} $G=S_4$ acting on $\{1,2,3,4\}$, $a=1$: $G_1=\Stab(1)\isom S_3$ (order $6$), $\orb(1)=\{1,2,3,4\}$ (size $4$). Then $\Phi:S_4/S_3\to\{1,2,3,4\}$ sends each coset $\sigma S_3\mapsto\sigma(1)$, a bijection of four elements; and $4\cdot6=24=|S_4|$.
+\dgi{Why this matters here:} The Orbit--Stabilizer theorem's heart is this triangle: it says the orbit map $G\to\orb(a)$, which need \emph{not} be injective on $G$ (it is injective iff $G_a=1$), becomes a bijection once we collapse each coset $gG_a$ to a single point. The left bijection records the counting consequence $|\orb(a)|=\idx{G}{G_a}$.
+\dgi{Concrete example:} $G=S_4$ acting on $\{1,2,3,4\}$, $a=1$: $G_1=\Stab(1)\isom S_3$ (order $6$), $\orb(1)=\{1,2,3,4\}$ (size $4$). Then $\Phi:S_4/G_1\to\{1,2,3,4\}$ sends each coset $\sigma G_1\mapsto\sigma(1)$, a bijection of four elements; and $4\cdot6=24=|S_4|$.
 \dgi{Common pitfall:} $\Phi$ is a bijection of \emph{sets}, not a group isomorphism; $G/G_a$ is generally not a group (unless $G_a\nor G$). Do not write $G/G_a\isom\orb(a)$ as groups. Also, well-definedness of $\Phi$ requires checking that different coset representatives give the same orbit element -- this step is the content of the proof and must not be skipped.
 \dgi{Takeaway:} The point of this diagram is that the orbit of $a$ is in bijection with the coset space $G/G_a$, so every orbit size is an index and hence divides $|G|$ when $G$ is finite.
 \end{dgx}
