@@ -40078,7 +40078,7 @@ Identify every linear functional on $V=F^n$ (column vectors) explicitly.
 \begin{wex}{Trace as a functional on $\Mat_n(F)$}
 Show $\tr\colon \Mat_n(F)\to F$, $\tr(A)=\sum_{i}a_{ii}$, is a linear functional, and exhibit a matrix \emph{not} in its kernel.
 \wrec Linearity in the entries makes $\tr$ a map to $F$, hence an element of $\dual{\Mat_n(F)}$.
-\wsol $\tr(A+B)=\sum_i(a_{ii}+b_{ii})=\tr(A)+\tr(B)$ and $\tr(cA)=c\,\tr(A)$, so $\tr\in\dual{\Mat_n(F)}$. The identity $I_n$ has $\tr(I_n)=n\cdot 1$, which is nonzero in $F$ provided $\operatorname{char} F\nmid n$. \textbf{Check:} over $\F_2$ with $n=2$, $\tr(I_2)=1+1=0$, so $I_2\in\ker\tr$ there --- the kernel genuinely depends on the field.
+\wsol $\tr(A+B)=\sum_i(a_{ii}+b_{ii})=\tr(A)+\tr(B)$ and $\tr(cA)=c\,\tr(A)$, so $\tr\in\dual{\Mat_n(F)}$. The identity $I_n$ has $\tr(I_n)=n\cdot 1$, which is nonzero in $F$ provided $\operatorname{char} F\nmid n$. \textbf{Check:} over $\F_2$ with $n=2$, $\tr(I_2)=1+1=0$, so $I_2\in\ker\tr$ there --- whether $I_n$ lies in the kernel depends on the characteristic. A matrix outside $\ker\tr$ over \emph{every} field is the matrix unit $E_{11}$ (entry $1$ in position $(1,1)$, all other entries $0$), since $\tr(E_{11})=1\neq 0$.
 \end{wex}
 
 \begin{wex}{Evaluation and integration on a polynomial space}
@@ -40212,7 +40212,7 @@ Let $V$ have countable basis $v_1,v_2,\dots$ over $F$. Exhibit an element of $V^
 \begin{wex}{Double transpose recovers $T$}
 For $T\colon\Q^2\to\Q^2$, $T(x,y)=(x+2y,\,3x)$, verify the naturality square: $\Phi_W\circ T=T^{**}\circ\Phi_V$ on the vector $v=(1,0)$.
 \wrec The square in the Remark must commute; check it on a vector by chasing both paths.
-\wsol Top-right path: $T(1,0)=(1,3)$, then $\Phi_W(1,3)=\mathrm{ev}_{(1,3)}$. Down-bottom path: $\Phi_V(1,0)=\mathrm{ev}_{(1,0)}$, then $T^{**}$ post-composes with $T^{*}$, giving $\mathrm{ev}_{(1,0)}\circ T^{*}$. For any $f\in\dual{W}$, $(\mathrm{ev}_{(1,0)}\circ T^{*})(f)=T^{*}(f)(1,0)=f(T(1,0))=f(1,3)=\mathrm{ev}_{(1,3)}(f)$. \textbf{Check:} both paths equal $\mathrm{ev}_{(1,3)}$, so the square commutes at $v$. Correct.
+\wsol Top-right path: $T(1,0)=(1,3)$, then $\Phi_W(1,3)=\mathrm{ev}_{(1,3)}$. Down-bottom path: $\Phi_V(1,0)=\mathrm{ev}_{(1,0)}$, then $T^{**}$ precomposes with $T^{*}$, giving $\mathrm{ev}_{(1,0)}\circ T^{*}$. For any $f\in\dual{W}$, $(\mathrm{ev}_{(1,0)}\circ T^{*})(f)=T^{*}(f)(1,0)=f(T(1,0))=f(1,3)=\mathrm{ev}_{(1,3)}(f)$. \textbf{Check:} both paths equal $\mathrm{ev}_{(1,3)}$, so the square commutes at $v$. Correct.
 \end{wex}
 
 \subsection*{Annihilators}
@@ -40395,7 +40395,7 @@ For a linear $T\colon V\to W$, prove $\ker\dual{T}=\operatorname{ann}(\im T)$, a
 \begin{wex}{Rank equality via the transpose}
 Use Theorem~\ref{thm:transpose@c11} to explain why row rank equals column rank for $A=\begin{pmatrix}1&2&3\\2&4&6\end{pmatrix}$ over $\Q$.
 \wrec The matrix of $\dual{T}$ is $A\trans$ and $\rank\dual{T}=\rank T$, so $\rank A=\rank A\trans$; the latter is the row rank of $A$.
-\wsol $A$ has columns all proportional to $(1,2)\trans$, so column rank $=1$, i.e.\ $\rank T=1$. By Theorem~\ref{thm:transpose@c11}, $\rank\dual{T}=\rank A\trans=1$; but $\rank A\trans$ is the column rank of $A\trans=$ row rank of $A$. The two rows $(1,2,3),(2,4,6)$ are proportional, so row rank $=1$ too. \textbf{Check:} both ranks equal $1$; the dimension formula $\dim\ker T=2-1=1$ over the column space confirms the picture. Correct.
+\wsol $A$ has columns all proportional to $(1,2)\trans$, so column rank $=1$, i.e.\ $\rank T=1$. By Theorem~\ref{thm:transpose@c11}, $\rank\dual{T}=\rank A\trans=1$; but $\rank A\trans$ is the column rank of $A\trans=$ row rank of $A$. The two rows $(1,2,3),(2,4,6)$ are proportional, so row rank $=1$ too. \textbf{Check:} both ranks equal $1$; rank--nullity for $T\colon\Q^3\to\Q^2$ gives $\dim\ker T=3-1=2$, and $\dim\ker\dual{T}=\dim\operatorname{ann}(\im T)=2-1=1$ (Proposition~\ref{prop:ann@c11}), consistent with $\rank\dual{T}=2-1=1$. Correct.
 \end{wex}
 
 \subsection*{Summary of the Duality Dictionary}
