@@ -62422,7 +62422,7 @@ If $xy\in\rad\fq$ then $(xy)^m=x^my^m\in\fq$; since $\fq$ is primary, either $x^
 \begin{enumerate}[label=\textup{(\arabic*)},leftmargin=*]
 \item Every prime ideal is primary.
 \item If $\rad\fq=\fm$ is \emph{maximal}, then $\fq$ is primary (an $\fm$-primary ideal). In particular every power $\fm^n$ of a maximal ideal is $\fm$-primary.
-\item More precisely, for $\fm$ maximal: $\fm^n\subseteq\fq\subseteq\fm$ for some $n\ge1$ $\iff$ $\fq$ is $\fm$-primary.
+\item More precisely, for $\fm$ maximal: if $\fm^n\subseteq\fq\subseteq\fm$ for some $n\ge1$, then $\fq$ is $\fm$-primary; the converse holds when $R$ is Noetherian (every ideal of a Noetherian ring contains a power of its radical).
 \end{enumerate}
 \end{proposition}
 
@@ -62456,7 +62456,7 @@ In $R=k[x,y,z]/(xy-z^2)$ verify $\fp=(\bar x,\bar z)$ is prime but $\fp^2$ is no
 
 \subsection*{Primary decomposition and minimality}
 
-We now assemble primary ideals the way primes assemble in arithmetic, but using \emph{intersection} (the ideal-theoretic analogue of taking common zeros / least common multiple) rather than product.
+We now assemble primary ideals the way primes assemble in arithmetic, but using \emph{intersection} (the ideal-theoretic analogue of the least common multiple; geometrically $Z(\fa\cap\fb)=Z(\fa)\cup Z(\fb)$ is the \emph{union} of the zero loci) rather than product.
 
 \begin{definition}[{primary decomposition}]
 A \emph{primary decomposition} of an ideal $\fa$ is an expression
@@ -62524,7 +62524,7 @@ For $x\in R$, $(\fa\colonid x)=\bigcap_i(\fq_i\colonid x)$, so by the colon lemm
 \end{proof}
 
 \begin{remark}
-This is the module-theoretic associated-prime set in disguise. Recall $\fp$ is associated to an $R$-module $M$ if $\fp=\Ann(m)$ for some $m\in M$, i.e.\ $M$ contains a copy of $R/\fp$. Applying this to $M=R/\fa$ recovers $\Ass(\fa)=\Ass_R(R/\fa)$: the relation $\fp=\rad(\fa\colonid x)$ says $\fp$ annihilates a suitable element of $R/\fa$. The geometric reading: $\Ass$ records the ``components and embedded data'' that $\fa$ remembers about its zero locus.
+This is the module-theoretic associated-prime set in disguise. Recall $\fp$ is associated to an $R$-module $M$ if $\fp=\Ann(m)$ for some $m\in M$, i.e.\ $M$ contains a copy of $R/\fp$. Applying this to $M=R/\fa$: since $\Ann(x+\fa)=(\fa\colonid x)$, the first uniqueness theorem says that $\Ass(\fa)$ consists of the primes that are \emph{radicals} of annihilators of elements of $R/\fa$. When $R$ is Noetherian each of these primes is itself such an annihilator (A\&M Proposition 7.17), so $\Ass(\fa)=\Ass_R(R/\fa)$; for non-Noetherian $R$ the two sets can differ. The geometric reading: $\Ass$ records the ``components and embedded data'' that $\fa$ remembers about its zero locus.
 \end{remark}
 
 \begin{definition}[{isolated and embedded primes}]
@@ -62536,12 +62536,12 @@ Let $\fa$ be decomposable, $\Ass(\fa)=\set{\fp_1,\dots,\fp_n}$.
 \begin{enumerate}[label=\textup{(\arabic*)},leftmargin=*]
 \item A prime $\fp$ contains $\fa$ iff $\fp\supseteq\fp_i$ for some $i$; hence the minimal primes over $\fa$ are exactly the isolated members of $\Ass(\fa)$. In particular $\fa$ has only finitely many minimal primes.
 \item $\rad\fa=\bigcap_i\fp_i=\bigcap(\text{isolated }\fp_i)$.
-\item If $\fa=0$: the set of zero-divisors of $R$ is $\bigcup_i\fp_i=\bigcup_x\rad(0\colonid x)$, and the set of nilpotents is $\bigcap_i\fp_i$.
+\item If $\fa=0$: the set of zero-divisors of $R$ is $\bigcup_i\fp_i=\bigcup_{x\ne0}\rad(0\colonid x)$, and the set of nilpotents is $\bigcap_i\fp_i$.
 \end{enumerate}
 \end{proposition}
 
 \begin{proof}[Idea]
-(1) $\fp\supseteq\fa=\bigcap\fq_i$ gives $\fp\supseteq\fq_i$ (a prime containing a finite intersection contains a factor), hence $\fp\supseteq\rad\fq_i=\fp_i$; the minimal such $\fp$ are the minimal $\fp_i$. (2) Radical commutes with finite intersection. (3) For $\fa=0$ each $\fq_i$ has $\rad\fq_i=\fp_i$ and $0=\bigcap\fq_i$; the colon description $D=\bigcup_x\rad(0\colonid x)=\bigcup\fp_i$ identifies zero-divisors, while nilpotents form $\rad(0)=\bigcap\fp_i$.
+(1) $\fp\supseteq\fa=\bigcap\fq_i$ gives $\fp\supseteq\fq_i$ (a prime containing a finite intersection contains a factor), hence $\fp\supseteq\rad\fq_i=\fp_i$; the minimal such $\fp$ are the minimal $\fp_i$. (2) Radical commutes with finite intersection. (3) For $\fa=0$ each $\fq_i$ has $\rad\fq_i=\fp_i$ and $0=\bigcap\fq_i$; the colon description $D=\bigcup_{x\ne0}\rad(0\colonid x)=\bigcup\fp_i$ identifies zero-divisors, while nilpotents form $\rad(0)=\bigcap\fp_i$.
 \end{proof}
 
 \begin{wex}{Associated primes via colon ideals}
@@ -62616,13 +62616,13 @@ A proper ideal $\fa$ is \emph{irreducible} if $\fa=\fb\cap\fc$ (ideals) implies 
 \begin{lemma}[{two Noetherian lemmas}]
 In a Noetherian ring $R$:
 \begin{enumerate}[label=\textup{(\arabic*)},leftmargin=*]
-\item every ideal is a finite intersection of irreducible ideals;
+\item every proper ideal is a finite intersection of irreducible ideals;
 \item every irreducible ideal is primary.
 \end{enumerate}
 \end{lemma}
 
 \begin{proof}[Idea]
-(1) If the set of ideals \emph{not} so expressible were nonempty, Noetherianity gives a maximal counterexample $\fa$; $\fa$ is not irreducible, so $\fa=\fb\cap\fc$ properly, each of $\fb,\fc$ is a finite intersection of irreducibles, hence so is $\fa$ --- contradiction. (2) Pass to $R/\fa$ and show $0$ irreducible $\Rightarrow$ $0$ primary: if $xy=0$, $y\ne0$, the ascending chain $\Ann(x)\subseteq\Ann(x^2)\subseteq\cdots$ stabilizes at $\Ann(x^n)$; then $(x^n)\cap(y)=0$, and irreducibility with $(y)\ne0$ forces $x^n=0$.
+(1) If the set of proper ideals \emph{not} so expressible were nonempty, Noetherianity gives a maximal counterexample $\fa$; $\fa$ is not irreducible, so $\fa=\fb\cap\fc$ properly, each of $\fb,\fc$ is a finite intersection of irreducibles, hence so is $\fa$ --- contradiction. (2) Pass to $R/\fa$ and show $0$ irreducible $\Rightarrow$ $0$ primary: if $xy=0$, $y\ne0$, the ascending chain $\Ann(x)\subseteq\Ann(x^2)\subseteq\cdots$ stabilizes at $\Ann(x^n)$; then $(x^n)\cap(y)=0$, and irreducibility with $(y)\ne0$ forces $x^n=0$.
 \end{proof}
 
 \begin{theorem}[{Lasker--Noether: existence}]
