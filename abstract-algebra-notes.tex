@@ -63853,13 +63853,13 @@ Identify where normality of $A$ enters the argument, and explain via the valuati
 \item Let $A$ be a subring of a field $K$ and $\Omega$ an algebraically closed field. Complete the extension diagram below, where $(B,g)$ is a maximal element (under extension of homomorphisms $A'\to\Omega$, $A\subseteq A'\subseteq K$) and the dashed arrow is the extension to be constructed:
 \[
 \begin{tikzcd}[row sep=large, column sep=large]
-A \arrow[r,hook] \arrow[dr,"f"'] & B \arrow[d,"g"] \arrow[r,hook] & K \\
+A \arrow[r,hook] \arrow[dr,"f"'] & B \arrow[d,dashed,"g"] \arrow[r,hook] & K \\
 & \Omega &
 \end{tikzcd}
 \]
 Prove that $B$ is a valuation ring of $K$ with maximal ideal $\ker g$, and that $\overline A=\bigcap_B B$ over all such valuation rings. Conclude that $A$ is integrally closed in $K$ if and only if $A$ is an intersection of valuation rings of $K$.
 
-\item Let $k=\overline k$ and let $V=Z(I)\subseteq\Aff^n$ be an affine algebraic set with coordinate ring $A=k[x_1,\dots,x_n]/I$. Complete the dictionary diagram below and prove that the labelled correspondence is an inclusion-reversing bijection on the indicated classes:
+\item Let $k=\overline k$ and let $V=Z(I)\subseteq\Aff^n$ be an affine algebraic set with coordinate ring $A=k[x_1,\dots,x_n]/\rad I$ (recall $I(V)=I(Z(I))=\rad I$). Complete the dictionary diagram below and prove that the labelled correspondence is an inclusion-reversing bijection on the indicated classes:
 \[
 \begin{tikzcd}[row sep=1.6em, column sep=2.2em]
 \set{\text{points of }V} \arrow[r,dash,"{Z,\,I}"] \arrow[d,dash] & \set{\text{maximal ideals of }A} \arrow[d,dash] \\
