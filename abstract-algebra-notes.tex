@@ -34470,11 +34470,11 @@ the mod-$p$ criterion.
 
 \item Factor each of the two polynomials: $x^8 - 1$ and $x^6 - 1$ into irreducibles over each of the following rings: (a) $\Z$, (b) $\Z/2\Z$, (c) $\Z/3\Z$.
 
-\item Prove that if $F$ is a field then the polynomial $X^n - x$ has multiple coefficients in the ring $F[[x]]$ of formal power series (cf. Exercise 3 of Section 7.2) is irreducible over $F[[x]]$. [Recall that $F[[x]]$ is a Euclidean Domain --- cf. Exercise 5, Section 7.2 and Example 4, Section 8.1.]
+\item Prove that if $F$ is a field then the polynomial $X^n - x$ which has coefficients in the ring $F[[x]]$ of formal power series (cf. Exercise 3 of Section 7.2) is irreducible over $F[[x]]$. [Recall that $F[[x]]$ is a Euclidean Domain --- cf. Exercise 5, Section 7.2 and Example 4, Section 8.1.]
 
 \item Let $F$ be a field and let $f(x)$ be a polynomial of degree $n$ in $F[x]$. The polynomial $g(x) = x^n f(1/x)$ is called the reverse of $f(x)$.
 (a) Describe the coefficients of $g$ in terms of the coefficients of $f$.
-(b) Prove that $f$ is irreducible if and only if $g$ is irreducible.
+(b) If $f(0) \neq 0$, prove that $f$ is irreducible if and only if $g$ is irreducible.
 
 \item Prove the following variant of Eisenstein's Criterion: let $P$ be a prime ideal of the Unique Factorization Domain $R$ and let $f(x) = a_n x^n + a_{n-1} x^{n-1} + \cdots + a_1 x + a_0$ be a polynomial in $R[x]$, $n \geq 1$. Suppose $a_n \notin P$, $a_{n-1}, \dots, a_0$ are all elements of $P$ and $a_0 \notin P^2$. Prove that $f(x)$ is irreducible in $F[x]$, where $F$ is the quotient field of $R$.
 
@@ -34483,7 +34483,7 @@ the mod-$p$ criterion.
 \item Let $F$ be a field and let $f(x) = a_n x^n + a_{n-1} x^{n-1} + \cdots + a_0 \in F[x]$. The derivative, $D_x(f(x))$, of $f(x)$ is defined by
 \[ D_x(f(x)) = n a_n x^{n-1} + (n-1) a_{n-1} x^{n-2} + \cdots + a_1 \]
 where, as usual, $na = a + a + \cdots + a$ ($n$ times). Note that $D_x(f(x))$ is again a polynomial with coefficients in $F$.
-The polynomial $f(x)$ is said to have a multiple root if there is some field $E$ containing $F$ and some $\alpha \in E$ such that $(x - \alpha)^2$ divides $f(x)$ in $E[x]$. For example, the polynomial $f(x) = (x - 1)^2(x - 2) \in \Q[x]$ has $\alpha = 1$ as a multiple root and the polynomial $g(x) = (x^2 + 1)(x - 2) \in \R[x]$ has no multiple roots in $\R$ (but does have $\alpha = \pm i$ as multiple roots in $\C[x]$). We shall prove in Section 13.5 that a nonconstant polynomial $f(x)$ has a multiple root if and only if $f(x)$ is not relatively prime to its derivative (which can be detected by the Euclidean Algorithm in $F[x]$). Use this criterion to determine whether the following polynomials have multiple roots:
+The polynomial $f(x)$ is said to have a multiple root if there is some field $E$ containing $F$ and some $\alpha \in E$ such that $(x - \alpha)^2$ divides $f(x)$ in $E[x]$. For example, the polynomial $f(x) = (x - 1)^2(x - 2) \in \Q[x]$ has $\alpha = 1$ as a multiple root and the polynomial $g(x) = x^4 + 2x^2 + 1 = (x^2 + 1)^2 \in \R[x]$ has no roots in $\R$ but has $\alpha = \pm i \in \C$ as multiple roots. We shall prove in Section 13.5 that a nonconstant polynomial $f(x)$ has a multiple root if and only if $f(x)$ is not relatively prime to its derivative (which can be detected by the Euclidean Algorithm in $F[x]$). Use this criterion to determine whether the following polynomials have multiple roots:
 (a) $x^3 - 3x - 2 \in \Q[x]$
 (b) $x^3 + 3x + 2 \in \Q[x]$
 (c) $x^6 - 4x^4 + 6x^3 + 4x^2 - 12x + 9 \in \Q[x]$
@@ -34493,7 +34493,8 @@ The polynomial $f(x)$ is said to have a multiple root if there is some field $E$
 (a) Show that the reduction of $f(x)$ modulo both of the nontrivial ideals $(2)$ and $(3)$ of $\Z/6\Z$ is an irreducible polynomial, showing that the condition that $R$ be an integral domain in Proposition 12 is necessary.
 (b) Show that in any factorization $f(x) = g(x) h(x)$ in $\Z/6\Z[x]$ the reduction of $g(x)$ modulo $(2)$ is either $1$ or $x$ and the reduction of $h(x)$ modulo $(2)$ is then either $x$ or $1$, and similarly for the reductions modulo $(3)$. Determine all the factorizations of $f(x)$ in $\Z/6\Z[x]$. [Use the Chinese Remainder Theorem.]
 (c) Show that the ideal $(3, x)$ is a principal ideal in $\Z/6\Z[x]$.
-(d) Show that over the ring $\Z/30\Z[x]$ the polynomial $f(x) = x$ has the factorization
+(d) Show that over the ring $\Z/30\Z[x]$ the polynomial $f(x) = x$ has the factorization $f(x) = (10x + 21)(15x + 16)(6x + 25)$. Prove that the product of any of these factors is again of degree $1$. Prove that the reduction of $f(x)$ modulo any prime in $\Z/30\Z$ is an irreducible polynomial. Determine all the factorizations of $f(x)$ in $\Z/30\Z[x]$. [Consider the reductions modulo $(2)$, $(3)$ and $(5)$ and use the Chinese Remainder Theorem.]
+(e) Generalize part (d) to $\Z/n\Z[x]$ where $n$ is the product of $k$ distinct primes.
 \end{exers}
 
 \begin{exers}{Practice problems.}
@@ -34537,7 +34538,7 @@ The polynomial $f(x)$ is said to have a multiple root if there is some field $E$
 
 \item Let $f(x) = x^4 + 1$. Show $f$ is irreducible over $\Q$ but factors into two quadratics over $\R$, and exhibit the factorization. Then describe its splitting behavior over $\F_p$ in terms of whether $-1$, $2$, or $-2$ is a square mod $p$.
 
-\item Suppose $f \in \Z[x]$ is monic and $\bar f \in \F_p[x]$ is irreducible for some prime $p$ with $\deg \bar f = \deg f$. Prove $f$ is irreducible in $\Q[x]$. Then show by example that the hypothesis $\deg \bar f = \deg f$ cannot be dropped.
+\item Suppose $f \in \Z[x]$ and $\bar f \in \F_p[x]$ is irreducible for some prime $p$ with $\deg \bar f = \deg f$. Prove $f$ is irreducible in $\Q[x]$. Then show by example (necessarily with $f$ not monic) that the hypothesis $\deg \bar f = \deg f$ cannot be dropped.
 
 \item Prove that $f(x,y) = y^3 + x^2 y - x^3 + x \in \Q[x][y]$ is irreducible by viewing it as a polynomial in $y$ over the UFD $\Q[x]$ and applying Eisenstein at the prime $x \in \Q[x]$.
 
@@ -34560,10 +34561,10 @@ in each case, saying whether the target is a field.
 
 \item The factorization $f = gh$ in $\Z[x]$ should be compatible with reduction. Verify commutativity of
 \[\begin{tikzcd}[column sep=huge]
-\Z[x] \arrow[r, "\bmod p"] \arrow[d, "f \mapsto"'] & \F_p[x] \arrow[d, "\bar f \mapsto"] \\
+\Z[x] \arrow[r, "\bmod p"] \arrow[d, "h \mapsto gh"'] & \F_p[x] \arrow[d, "u \mapsto \bar g u"] \\
 \Z[x] \arrow[r, "\bmod p"'] & \F_p[x]
 \end{tikzcd}\]
-concretely for $f = (x+1)(x+3) = x^2 + 4x + 3$ and $p = 2$: reduce first then multiply, and multiply first then reduce, and check the two results agree.
+concretely for $g = x+1$, $h = x+3$ (so $f = gh = x^2 + 4x + 3$) and $p = 2$: reduce first then multiply, and multiply first then reduce, and check the two results agree.
 
 \item Relate factoring over $\Z$ and over $\Q = \operatorname{Frac}(\Z)$ via the inclusion $\Z[x] \hookrightarrow \Q[x]$. For $f(x) = 2x^2 + 4x + 2$, exhibit its factorization in $\Z[x]$ and in $\Q[x]$, and use Gauss's Lemma to explain the relation between the two along
 \[\begin{tikzcd}[column sep=large] \Z[x] \arrow[r, hook] & \Q[x] \end{tikzcd}\]
