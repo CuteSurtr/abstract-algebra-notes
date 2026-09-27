@@ -27396,7 +27396,7 @@ And, as in the proposition,
 (1-t)(1+t)=1+t-t-t^2=1-1=0,
 \]
 so $1-t$ and $1+t$ are nonzero zero divisors: $\Z[\Zn{2}]$ is not a domain.
-\emph{Check.} The map $\Z[\Zn{2}]\to\Z\times\Z$, $a+bt\mapsto(a+b,\,a-b)$ is a ring isomorphism;
+\emph{Check.} The map $\Z[\Zn{2}]\to\Z\times\Z$, $a+bt\mapsto(a+b,\,a-b)$ is an injective ring homomorphism (not an isomorphism: its image is $\{(u,v): u\equiv v\pmod 2\}$, which misses $(1,0)$);
 under it $1+t\mapsto(2,0)$ and $1-t\mapsto(0,2)$, whose product is $(0,0)$ -- confirming the zero
 divisor relation in a transparent way.
 \end{wex}
@@ -27434,21 +27434,21 @@ In $\Z[\Zn{2}]$ ($t^2=1$) compute $(2+3t)(1-t)$.
 \[
 (2+3t)(1-t)=2\cdot1-2t+3t-3t^2=2-2t+3t-3=(2-3)+(-2+3)t=-1+t.
 \]
-\emph{Check.} Via the isomorphism $a+bt\mapsto(a+b,a-b)$: $2+3t\mapsto(5,-1)$, $1-t\mapsto(0,2)$;
+\emph{Check.} Via the injective homomorphism $a+bt\mapsto(a+b,a-b)$ into $\Z\times\Z$: $2+3t\mapsto(5,-1)$, $1-t\mapsto(0,2)$;
 product $(0,-2)$. Inverting, $a+b=0$, $a-b=-2$ gives $a=-1,b=1$, i.e. $-1+t$. Matches.
 \end{wex}
 
-\begin{wex}{Group ring over a field has the same units as $G$? Not so.}
-Show $\F_2[\Zn{2}]$ has a nontrivial nilpotent, so its unit structure differs from $\Zn{2}$.
+\begin{wex}{A nonzero nilpotent in the group ring $\F_2[\Zn{2}]$}
+Show $\F_2[\Zn{2}]$ has a nontrivial nilpotent, and find its units.
 \wrec In characteristic $2$, $(1+t)^2=1+2t+t^2=1+0+1=0$, a nilpotent zero divisor; nilpotents
 are never units.
 \wsol With $\Zn{2}=\{1,t\}$, $t^2=1$, over $\F_2$ (so $2=0$):
 \[
 (1+t)^2=1+2t+t^2=1+0+1=2=0.
 \]
-Hence $1+t$ is nilpotent and a zero divisor. The group $G=\Zn{2}$ has two elements, but
-$\F_2[\Zn{2}]$ has $4$ elements $\{0,1,t,1+t\}$ with $1+t$ nilpotent, so it is a $4$-element
-local ring, far from the group $G$ embedded inside it.
+Hence $1+t$ is nilpotent and a zero divisor. The ring
+$\F_2[\Zn{2}]$ has $4$ elements $\{0,1,t,1+t\}$; $0$ and the nilpotent $1+t$ are not units, while $1\cdot 1=t\cdot t=1$, so $\units{\F_2[\Zn{2}]}=\{1,t\}$: the units are exactly the elements of the group $\Zn{2}$. It is a $4$-element
+local ring whose unique maximal ideal is $\{0,1+t\}$.
 \emph{Check.} $1+t\neq0$ yet $(1+t)^2=0$: a nonzero nilpotent. It cannot be a unit (a unit times
 itself is a unit, but $(1+t)^2=0$ is not), confirming $RG$ is not a domain even over a field.
 \end{wex}
