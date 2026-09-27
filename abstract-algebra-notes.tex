@@ -30701,7 +30701,7 @@ the definition. \checkmark
 \item[(e)] $a = 91442056588823$, $b = 779086434385541$ (the Euclidean Algorithm requires only 7 steps for these integers).
 \end{enumerate}
 
-\item For each of the following pairs of integers $a$ and $n$, show that $a$ is relatively prime to $n$ and determine the inverse of $a$ mod $n$ (cf. Section 3 of the Preliminaries chapter).
+\item For each of the following pairs of integers $a$ and $n$, show that $a$ is relatively prime to $n$ and determine the inverse of $a$ mod $n$ (cf.\ D\&F, Section 0.3).
 \begin{enumerate}
 \item[(a)] $a = 13$, $n = 20$.
 \item[(b)] $a = 69$, $n = 89$.
@@ -30726,17 +30726,17 @@ as $t$ ranges over the integers. [If $x$, $y$ is a solution to $ax + by = N$, sh
 \item[(c)] $85x + 145y = 505$.
 \end{enumerate}
 
-\item ({\it The Postage Stamp Problem}) Let $a$ and $b$ be two relatively prime positive integers. Prove that every sufficiently large positive integer $N$ can be written as a linear combination $ax + by$ of $a$ and $b$ where $x$ and $y$ are both nonnegative, i.e., there is an integer $N_0$ such that for all $N \geq N_0$ the equation $ax + by = N$ can be solved with both $x$ and $y$ nonnegative integers. Prove in fact that the integer $ab - a - b$ cannot be written as a nonnegative integer combination of $a$ and $b$ but that every integer greater than $ab - a - b$ is a positive linear combination of $a$ and $b$ (so every ``postage'' greater than $ab - a - b$ can be obtained using only stamps in denominations $a$ and $b$).
+\item ({\it The Postage Stamp Problem}) Let $a$ and $b$ be two relatively prime positive integers. Prove that every sufficiently large positive integer $N$ can be written as a linear combination $ax + by$ of $a$ and $b$ where $x$ and $y$ are both nonnegative, i.e., there is an integer $N_0$ such that for all $N \geq N_0$ the equation $ax + by = N$ can be solved with both $x$ and $y$ nonnegative integers. Prove in fact that the integer $ab - a - b$ cannot be written as a nonnegative integer combination of $a$ and $b$ but that every integer greater than $ab - a - b$ is a nonnegative integer combination of $a$ and $b$ (so every ``postage'' greater than $ab - a - b$ can be obtained using only stamps in denominations $a$ and $b$).
 
 \item Find a generator for the ideal $(85, 1 + 13i)$ in $\Z[i]$, i.e., a greatest common divisor for $85$ and $1 + 13i$, by the Euclidean Algorithm. Do the same for the ideal $(47 - 13i, 53 + 56i)$.
 
-\item Let $F = \mathbb{Q}(\sqrt{D})$ be a quadratic field with associated quadratic integer ring $\mathcal{O}$ and field norm $N$ as in Section 7.1.
+\item Let $F = \mathbb{Q}(\sqrt{D})$ be a quadratic field ($D\neq 0,1$ a squarefree integer) with associated quadratic integer ring $\mathcal{O}=\Z[\omega]$, where $\omega=\sqrt{D}$ if $D\equiv 2,3\pmod 4$ and $\omega=\frac{1+\sqrt{D}}{2}$ if $D\equiv 1\pmod 4$, and field norm $N(a+b\sqrt{D})=(a+b\sqrt{D})(a-b\sqrt{D})=a^2-Db^2$ ($a,b\in\Q$), as in D\&F, Section 7.1.
 \begin{enumerate}
 \item[(a)] Suppose $D$ is $-1$, $-2$, $-3$, $-7$ or $-11$. Prove that $\mathcal{O}$ is a Euclidean Domain with respect to $N$. [Modify the proof for $\Z[i]$ ($D = -1$) in the text. For $D = -3, -7, -11$ prove that every element of $F$ differs from an element in $\mathcal{O}$ by an element whose norm is at most $(1 + |D|)^2/(16|D|)$, which is less than $1$ for these values of $D$. Plotting the points of $\mathcal{O}$ in $\mathbb{C}$ may be helpful.]
 \item[(b)] Suppose that $D = -43$, $-67$, or $-163$. Prove that $\mathcal{O}$ is not a Euclidean Domain with respect to any norm. [Apply the same proof as for $D = -19$ in the text.]
 \end{enumerate}
 
-\item Prove that the ring of integers $\mathcal{O}$ in the quadratic integer ring $\mathbb{Q}(\sqrt{2})$ is a Euclidean Domain with respect to the norm given by the absolute value of the field norm $N$ in Section 7.1.
+\item Prove that the ring of integers $\mathcal{O}=\Z[\sqrt{2}]$ in the quadratic field $\mathbb{Q}(\sqrt{2})$ is a Euclidean Domain with respect to the norm given by the absolute value of the field norm $N(a+b\sqrt{2})=a^2-2b^2$ (cf. the previous exercise).
 
 \item Prove that the quotient ring $\Z[i]/I$ is finite for any nonzero ideal $I$ of $\Z[i]$. [Use the fact that $I = (\alpha)$ for some nonzero $\alpha$ and then use the Division Algorithm in this Euclidean Domain to see that every coset of $I$ is represented by an element of norm less than $N(\alpha)$.]
 \end{exers}
@@ -31106,7 +31106,7 @@ Every ideal principal $\imp$ (i) gcds exist and are Bezout combinations $d=ax+by
 \begin{exers}{Exercises (from the text).}
 \item Prove that in a Principal Ideal Domain two ideals $(a)$ and $(b)$ are comaximal (cf. Section 7.6) if and only if a greatest common divisor of $a$ and $b$ is $1$ (in which case $a$ and $b$ are said to be \emph{coprime} or \emph{relatively prime}).
 
-\item Prove that any two nonzero elements of a P.I.D. have a least common multiple (cf. Exercise 11, Section 8.1).
+\item Prove that any two nonzero elements $a,b$ of a P.I.D. have a least common multiple, i.e., an element $e$ with $a\divides e$ and $b\divides e$ such that $e\divides e'$ whenever $a\divides e'$ and $b\divides e'$ (cf. D\&F, Exercise 11 of Section 8.1).
 
 \item Prove that a quotient of a P.I.D. by a prime ideal is again a P.I.D.
 
@@ -31118,7 +31118,7 @@ Every ideal principal $\imp$ (i) gcds exist and are Bezout combinations $d=ax+by
 
 \item Let $R$ be the quadratic integer ring $\Z[\sqrt{-5}]$. Define the ideals $I_2 = (2, 1 + \sqrt{-5})$, $I_3 = (3, 2 + \sqrt{-5})$, and $I_3' = (3, 2 - \sqrt{-5})$.
 \begin{itemize}
-\item[(a)] Prove that $I_2$, $I_3$, and $I_3'$ are nonprincipal ideals in $R$. [Note that Example 2 following Proposition 1 proves this for $I_3$.]
+\item[(a)] Prove that $I_2$, $I_3$, and $I_3'$ are nonprincipal ideals in $R$. [D\&F prove this for $I_3$ in Section 8.1 (Example 2 following Proposition 1) by comparing norms.]
 \item[(b)] Prove that the product of two nonprincipal ideals can be principal by showing that $I_2^2$ is the principal ideal generated by $2$, i.e., $I_2^2 = (2)$.
 \item[(c)] Prove similarly that $I_2 I_3 = (1 - \sqrt{-5})$ and $I_2 I_3' = (1 + \sqrt{-5})$ are principal. Conclude that the principal ideal $(6)$ is the product of $4$ ideals: $(6) = I_2^2 I_3 I_3'$.
 \end{itemize}
@@ -31137,7 +31137,7 @@ Every ideal principal $\imp$ (i) gcds exist and are Bezout combinations $d=ax+by
 \item[(c)] Let $F$ be the fraction field of the Bezout Domain $R$. Prove that every element of $F$ can be written in the form $a/b$ with $a$ and $b$ relatively prime elements of $R$ (cf. Exercise 1).
 \end{itemize}
 
-\item Prove that if $R$ is a Principal Ideal Domain and $D$ is a multiplicatively closed subset of $R$, then $D^{-1}R$ is also a P.I.D. (cf. Section 7.5).
+\item Prove that if $R$ is a Principal Ideal Domain and $D$ is a multiplicatively closed subset of $R$ with $0\notin D$, then $D^{-1}R$ is also a P.I.D. (cf. Section 7.5).
 \end{exers}
 
 \begin{exers}{Practice problems.}
