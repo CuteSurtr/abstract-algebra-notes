@@ -1408,7 +1408,7 @@ Reading the targets off the bottom row: $1\mapsto3,\ 2\mapsto4,\ 3\mapsto5,\ 4\m
   (the transposition), and $3\to3$ (fixed point vertical arrow), illustrating the same
   pattern with the simplest nontrivial case.
 \dgi{Common pitfall:} Students sometimes read a multi-step path (e.g.\ $1\to3\to5\to1$)
-  as a single arrow labelled by the composition $\sigma^2$, but each arrow in the diagram
+  as a single arrow labelled by the composition $\sigma^3$, but each arrow in the diagram
   represents \emph{one application} of $\sigma$.  Reading the path as composition conflates
   the picture with the orbit diagram, which is a different object.
 \dgi{Takeaway:} The point of this diagram is that cycle notation is just a compressed
@@ -1531,7 +1531,7 @@ $\sigma\tau$ are conjugate via $\tau\sigma=\tau(\sigma\tau)\tau\inv$), but they 
 different points ($3$ versus $5$), confirming $\sigma\tau\ne\tau\sigma$.
 \end{wex}
 
-\begin{wex}{A product of overlapping $3$-cycles}
+\begin{wex}{A product of two overlapping cycles}
 In $S_5$ compute $(1\,2\,4\,3)(1\,3\,5)$.
 \wrec Two cycles sharing the points $1$ and $3$: overlapping, so we cannot just
 juxtapose -- we must track points, rightmost cycle first.
@@ -1835,7 +1835,7 @@ Cycle notation just repackages this table; the one above is the cycle $(1\,3\,4)
 \end{remark}
 
 \begin{remark}[Conventions for writing cycles]\label{r:cycleconv-mrg@c1}
-Two bookkeeping conventions are standard, the second of which D\&F adopts explicitly.
+Three bookkeeping conventions are standard; D\&F adopts the first two explicitly and remarks on the third.
 \begin{enumerate}
 \item ($1$-cycles omitted.) Fixed points are not written. To pin down a canonical display
 one may further agree to begin each cycle with the smallest number it moves and to list the
@@ -1926,7 +1926,7 @@ orbits from the smallest point: $1\mapsto5\mapsto3\mapsto1$ and $2\mapsto4\mapst
 Check: two $3$-cycles, support $3+3=6$, no fixed points; order $\lcm(3,3)=3$.
 \end{wex}
 
-\begin{wex}{Identity written as a $1$-cycle}
+\begin{wex}{Identity written as the symbol $1$}
 Simplify $(1\,3)(2\,4)(1\,3)(2\,4)$ in $S_4$ and write the result using the convention of
 Remark~\ref{r:cycleconv-mrg@c1}.
 \wrec A product of commuting transpositions repeated; recognizing each transposition is its
@@ -2032,7 +2032,7 @@ Reading the bottom node: $\lcm$ divides every common multiple $m$ (dashed unique
 \item Write $\sigma$ in disjoint cycle notation. If a product is given with overlapping cycles, multiply it out first (right-to-left) until the cycles are disjoint.
 \item Record the length of each disjoint cycle: $k_1,k_2,\dots,k_r$.
 \item Output $\ord{\sigma}=\lcm(k_1,\dots,k_r)$.
-\item Sanity check: $\ord{\sigma}\mid n!$ and $\ord{\sigma}\le n$ \emph{is false in general}; instead each $k_j\le n$ and $\sum k_j\le n$. Verify by computing $\sigma^{\ord{\sigma}}$ on one moved point.
+\item Sanity check: $\ord{\sigma}\mid n!$ always holds, but $\ord{\sigma}\le n$ \emph{is false in general} (e.g.\ $\ord{(1\,2\,3)(4\,5)}=6>5$); what does hold is $k_j\le n$ for each $j$ and $\sum k_j\le n$. Verify by computing $\sigma^{\ord{\sigma}}$ on one moved point \emph{of every cycle} (it must fix each of them); a single moved point is not enough.
 \end{enumerate}
 \textbf{Trigger:} use this \emph{whenever} a problem asks for the order of an explicit permutation, or the order of an element of $S_n$, $A_n$, or any group of permutations.
 \end{method}
@@ -2123,7 +2123,7 @@ We can picture $\sigma$ as rotation of a labeled $n$-clock (here $n=6$): each ap
 \dgi{What commutes:} There is one closed loop: following all six arrows returns to the starting point, expressing $\sigma^6=\id$. More precisely, the composition of the six arrows $1\to2\to3\to4\to5\to6\to1$ is the identity map on $\{1,\dots,6\}$. No proper sub-loop (of length $1,2,3$) returns to its start, witnessing that no proper divisor of $6$ is the order of $\sigma$.
 \dgi{Why it commutes:} Starting at any node $i$, applying $\sigma$ six times sends $i\mapsto i+1\mapsto\cdots\mapsto i+6\equiv i\pmod{6}$, returning to $i$. In general $\sigma^m(i)=i+m\pmod{6}$, which equals $i$ iff $6\mid m$. The diagram makes this visible: going around the full hexagon ($m=6$ steps) closes the loop; going halfway ($m=3$) lands at the antipodal node, not the start.
 \dgi{Why this matters here:} This diagram serves as a concrete, pictorial proof of Lemma~\ref{l:cycleorder@c1} for $n=6$: the order of a $6$-cycle is $6$. It replaces the algebraic argument ``$\sigma^m=\id$ iff $6\mid m$'' with the visual fact that you must traverse the full hexagon to return home. It also motivates thinking of a $k$-cycle as a rotation of a labeled $k$-gon, an intuition that generalizes Lemma~\ref{l:cycleorder@c1} to arbitrary $k$.
-\dgi{Concrete example:} Take $n=4$ and $\sigma=(1\,2\,3\,4)$. The square $1\to2\to3\to4\to1$ closes after $4$ steps, confirming $\ord{\sigma}=4$. After $2$ steps, $\sigma^2=(1\,3)(2\,4)$, which swaps opposite corners---not the identity---showing $2\nmid\text{order}$ in the sense that a partial traversal does not return home.
+\dgi{Concrete example:} Take $n=4$ and $\sigma=(1\,2\,3\,4)$. The square $1\to2\to3\to4\to1$ closes after $4$ steps, confirming $\ord{\sigma}=4$. After $2$ steps, $\sigma^2=(1\,3)(2\,4)$, which swaps opposite corners---not the identity---showing that the order is not $2$ (although $2$ divides it): a partial traversal does not return home.
 \dgi{Common pitfall:} Students sometimes count the number of nodes (here $6$) and confuse it with the number of arrows or think the order could be less than $6$ because the diagram looks ``symmetric.'' The symmetry is rotational, not reflective: there is no sub-loop of length $2$ or $3$ that closes, even though $2$ and $3$ divide $6$.
 \dgi{Takeaway:} The point of this diagram is that a $k$-cycle acts as a rotation of a labeled $k$-gon, so it takes exactly $k$ applications to return every element to its starting position, proving the order is exactly $k$.
 \end{dgx}
@@ -2217,7 +2217,7 @@ Here $d=\ord{\sigma}=\lcm$ of the cycle lengths is exactly the integer for which
 \dgi{Why this matters here:} Theorem~\ref{t:lcm@c1} computed $\ord{\sigma}=d=\lcm(k_1,\dots,k_r)$ by identifying $\ker(\text{power map})=d\Z$. This diagram packages that result as an isomorphism: $\varphi$ is injective (trivial kernel on $\Zn{d}$) and surjective (every power $\sigma^k$ is hit), so $\langle\sigma\rangle\isom\Zn{d}$. The diagram summarizes the entire structure of the cyclic group generated by $\sigma$ in one picture.
 \dgi{Concrete example:} Take $\sigma=(1\,2\,3)\in S_3$, so $d=3$. The power map $\Z\to\langle\sigma\rangle$ sends $0\mapsto\id$, $1\mapsto(1\,2\,3)$, $2\mapsto(1\,3\,2)$, $3\mapsto\id$, and has kernel $3\Z$. The quotient $\pi:\Z\to\Z/3\Z$ has the same kernel. The induced $\varphi:\Z/3\Z\to\langle(1\,2\,3)\rangle$ sending $\bar{0}\mapsto\id$, $\bar{1}\mapsto(1\,2\,3)$, $\bar{2}\mapsto(1\,3\,2)$ is an isomorphism, confirming $\langle(1\,2\,3)\rangle\isom\Z/3\Z$.
 \dgi{Common pitfall:} The dashed arrow $\varphi$ is an isomorphism only because the kernel of the power map equals $d\Z$ exactly. If one mistakenly used a different modulus $d'\neq d$, the induced map would fail to be well-defined or would not be injective. One must first establish $\ord{\sigma}=d$ before invoking the universal property; the diagram does not itself prove $\ord{\sigma}=d$.
-\dgi{Takeaway:} The point of this diagram is that the universal property of $\Z/d\Z$ as the quotient of $\Z$ by its order-$d$ subgroup upgrades Theorem~\ref{t:lcm@c1}'s order formula into a structural isomorphism $\langle\sigma\rangle\isom\Z/\operatorname{lcm}(k_1,\dots,k_r)\Z$.
+\dgi{Takeaway:} The point of this diagram is that the universal property of $\Z/d\Z$ as the quotient of $\Z$ by its index-$d$ subgroup $d\Z$ upgrades Theorem~\ref{t:lcm@c1}'s order formula into a structural isomorphism $\langle\sigma\rangle\isom\Z/\operatorname{lcm}(k_1,\dots,k_r)\Z$.
 \end{dgx}
 \end{remark}
 
@@ -2234,7 +2234,7 @@ A \emph{cycle} is a string of integers $(a_1\,a_2\,\cdots\,a_m)$ representing th
 \end{definition}
 
 \begin{remark}\label{r:notdisjoint-mrg@c1}
-In a product of cycles a number \emph{may} appear in more than one cycle; the product is still a well-defined permutation, computed right-to-left, but it is not yet in the standard ``product of disjoint cycles'' form. One must multiply such an expression out before reading off cycle lengths. This is the situation flagged in the first Caution above, and the worked example ``Overlapping cycles: multiply first'' carries out the multiplication.
+In a product of cycles a number \emph{may} appear in more than one cycle; the product is still a well-defined permutation, computed right-to-left, but it is not yet in the standard ``product of disjoint cycles'' form. One must multiply such an expression out before reading off cycle lengths. This is the situation flagged in the first Caution after Theorem~\ref{t:lcm@c1}, and the worked example ``Overlapping cycles: multiply first'' carries out the multiplication.
 \end{remark}
 
 \begin{wex}{The book's $S_{13}$ permutation in cycle notation}
