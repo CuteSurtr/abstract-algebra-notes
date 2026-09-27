@@ -63097,7 +63097,7 @@ Prove the analogue of (4.5), that the prime ideals $\fp_i$ depend only on $N$ (a
 \item In $\Z$ give the minimal primary decomposition of the ideal $(360)$, identify the prime belonging to each component, and verify that $\rad(360)$ is the squarefree radical of $360$. Then decide which (if any) of the associated primes are embedded.
 \item In $k[x,y]$ let $\fq=(x^3,\,xy,\,y^2)$. Compute the quotient ring $k[x,y]/\fq$ explicitly as a finite-dimensional $k$-vector space, give a basis, and use the description ``every zero-divisor is nilpotent'' to decide whether $\fq$ is primary. If it is, name the prime $\fp=\rad\fq$ to which it belongs.
 \item Let $R=k[x,y,z]$ and $\fa=(xy,\,yz,\,zx)$. Show $\fa=(x,y)\cap(y,z)\cap(z,x)$, conclude that $\fa$ is radical, and list the minimal primes of $\fa$. Describe $Z(\fa)\subseteq\Aff^3$ as a union of irreducible components and match each component to its prime.
-\item Let $\fq$ be a $\fp$-primary ideal and let $x\in R$ with $x\notin\fp$. Using only the definition of primary, prove directly that the colon ideal $(\fq\colonid x)$ equals $\fq$. Then exhibit, in $k[x,y]$ with $\fq=(x^2,y)$, an element $x$ with $x\in\fq$ for which $(\fq\colonid x)=R$.
+\item Let $\fq$ be a $\fp$-primary ideal and let $x\in R$ with $x\notin\fp$. Using only the definition of primary, prove directly that the colon ideal $(\fq\colonid x)$ equals $\fq$. Then exhibit, in $k[x,y]$ with $\fq=(x^2,y)$, an element $f\in\fq$ for which $(\fq\colonid f)=R$.
 \item In $R=k[x,y]$ consider $\fa=(x^2,\,xy^2)$. Find a minimal primary decomposition of $\fa$ with exactly two components, identify the isolated and embedded primes, and compute $\rad\fa$. Confirm your decomposition by checking that each given generator of $\fa$ lies in both primary components.
 \item Let $\fp=(x,z)$ in $R=k[x,y,z]/(z^2-x^2 y)$ (the Whitney-umbrella coordinate ring). Show $\fp$ is prime by exhibiting $R/\fp$ as a polynomial ring, and decide whether $\fp^2$ is primary by testing the relation $\bar z^2=\bar x^2\bar y$ against the primary definition.
 \item Let $A=\Z/12\Z$ regarded as a $\Z$-module. Compute $\Ass_\Z(A)$ by finding, for each prime $p\mid 12$, an element of $A$ whose annihilator is $(p)$. Then reconcile your answer with the minimal primary decomposition of the ideal $(12)\subseteq\Z$.
@@ -63129,7 +63129,7 @@ R/\fa \arrow[r,"\overline{\lambda}"'] & S^{-1}R\,/\,S^{-1}\fa
 \end{tikzcd}
 \]
 Deduce that $\fq_\fp$ depends only on $\fa$ and $\fp$, not on the chosen minimal decomposition.
-\item Let $R$ be Noetherian and $\fp\in\Spec R$. Complete the inverse-limit tower of symbolic powers and the parallel tower of ordinary powers, with vertical maps the natural surjections $R/\fp^{(n+1)}\twoheadrightarrow R/\fp^{(n)}$ and the horizontal maps induced by $\fp^n\subseteq\fp^{(n)}$:
+\item Let $R$ be Noetherian and $\fp\in\Spec R$. Complete the inverse-limit tower of symbolic powers and the parallel tower of ordinary powers, with horizontal maps the natural surjections $R/\fp^{(n+1)}\twoheadrightarrow R/\fp^{(n)}$ (and $R/\fp^{n+1}\twoheadrightarrow R/\fp^{n}$) and the vertical maps $R/\fp^n\to R/\fp^{(n)}$ induced by $\fp^n\subseteq\fp^{(n)}$:
 \[
 \begin{tikzcd}[row sep=1.6em, column sep=1.8em]
 \cdots \arrow[r,twoheadrightarrow] & R/\fp^{(3)} \arrow[r,twoheadrightarrow] & R/\fp^{(2)} \arrow[r,twoheadrightarrow] & R/\fp^{(1)} \\
