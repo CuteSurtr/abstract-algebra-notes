@@ -3106,7 +3106,7 @@ We can picture the cyclic subgroup $\gen{i}=\{1,i,-1,-i\}$ as a clock with the r
 \dgi{Why it commutes:} Chase $1$ around: $i^1 = i$, $i^2 = -1$, $i^3 = -i$, $i^4 = 1$. The fourth power returns to the identity because $i^2 = -1$ and $(-1)^2 = 1$ in $Q_8$, so $i^4 = (i^2)^2 = (-1)^2 = 1$. No shorter power returns to $1$ (each intermediate value is distinct), confirming $\operatorname{ord}(i) = 4$.
 \dgi{Why this matters here:} This picture appears immediately after the proposition asserting $\operatorname{ord}(i) = 4$. It gives a geometric reason: the orbit of $1$ under repeated left-multiplication by $i$ visits exactly $4$ distinct elements before cycling, so the period is $4$, not $1$ or $2$. It also makes visible why $-1$ is ``halfway around,'' matching $i^2 = -1$.
 \dgi{Concrete example:} In $\mathbb{Z}/4\mathbb{Z}$ under addition, the map $x \mapsto x + 1$ gives the same $4$-cycle: $0 \to 1 \to 2 \to 3 \to 0$. The identification $0 \leftrightarrow 1$, $1 \leftrightarrow i$, $2 \leftrightarrow -1$, $3 \leftrightarrow -i$ gives an explicit isomorphism $\langle i \rangle \cong \mathbb{Z}/4\mathbb{Z}$.
-\dgi{Common pitfall:} Students sometimes read the arrows as right-multiplication ($x \mapsto xi$) rather than left-multiplication ($x \mapsto ix$). In an abelian group these coincide, but in $Q_8$ they can differ for other choices of acting element. Here the caption names ``multiply by $i$'' as a left action, which matches $i \cdot 1 = i$, not $1 \cdot i = i$ (which happens to agree only because $1$ is the identity). For non-identity nodes, $ix$ and $xi$ can differ in $Q_8$.
+\dgi{Common pitfall:} Students sometimes read the arrows as right-multiplication ($x \mapsto xi$) rather than left-multiplication ($x \mapsto ix$). In an abelian group these coincide, but in $Q_8$ they can differ for other choices of acting element. Here, however, every node lies in the cyclic (hence abelian) subgroup $\langle i \rangle$, so $ix = xi$ for each node and the two readings give the same arrows; the distinction matters only for $x \notin \langle i \rangle$, e.g.\ $ij = k$ but $ji = -k$.
 \dgi{Takeaway:} The point of this diagram is that the four elements $1, i, -1, -i$ form a single closed orbit under left-multiplication by $i$, giving a visual proof that $\operatorname{ord}(i) = 4$ and that $\langle i \rangle$ is cyclic of order $4$.
 \end{dgx}
 
@@ -3438,8 +3438,9 @@ provided $a,b\in G$ satisfy $a^4=1$, $a^2=b^2$, $bab\inv=a\inv$. This is the pre
 
 D\&F introduce $Q_8$ by \emph{listing} its eight elements and then specifying the products
 directly; from those products every one of the $64$ entries of the multiplication table is
-determined, and the book records that table in full. Associativity is taken as part of the
-data (it can be checked by hand, as below). We record the book's listing form of the
+determined. Writing the table out is left to the reader (Exercise~2 below). The book does not
+verify associativity here: it calls the check tedious and says it will be proved later by
+less computational means (one triple is checked by hand below). We record the book's listing form of the
 definition and the immediate facts it draws from it; the relation form, the picture, and the
 $8\times8$ table appear above and are not repeated here.
 
