@@ -31366,17 +31366,17 @@ Two ingredients. \emph{Existence:} a PID is Noetherian, so the ascending chain c
 \]
 
 \begin{dgx}
-\dgi{Objects:} Four classes of integral domains, listed left to right in strictly decreasing generality:
+\dgi{Objects:} Four classes of integral domains, listed left to right in strictly increasing generality:
   Euclidean domains (ED), principal ideal domains (PID), unique factorization domains (UFD),
   and arbitrary integral domains (domain).  Each node represents a class of rings, not a single ring.
-\dgi{Arrows:} Each double-headed arrow $\Rightarrow$ is a class inclusion: every ED is a PID,
+\dgi{Arrows:} Each double arrow $\Rightarrow$ is a class inclusion: every ED is a PID,
   every PID is a UFD, every UFD is an integral domain.  There are no arrows going right to left,
   signalling that each inclusion is strict.
 \dgi{What commutes:} The chain is a linear sequence, not a square, so commutativity is trivial:
   the unique path from ED to domain passes through PID and UFD.  What matters is the direction
   and the absence of reverse arrows.
-\dgi{Why it commutes:} ED $\Rightarrow$ PID: a Euclidean algorithm produces the gcd, which generates
-  every ideal.  PID $\Rightarrow$ UFD: in a PID, ACC on principal ideals gives existence of
+\dgi{Why it commutes:} ED $\Rightarrow$ PID: in a nonzero ideal $I$ a nonzero element $d$ of minimal norm
+  generates $I$ (dividing $a\in I$ by $d$ leaves a remainder in $I$ of smaller norm, hence $0$).  PID $\Rightarrow$ UFD: in a PID, ACC on principal ideals gives existence of
   irreducible factorizations, and every irreducible is prime (because $\gen{p}$ is maximal hence
   prime), giving uniqueness.  UFD $\Rightarrow$ domain: a UFD is by definition a domain.
 \dgi{Why this matters here:} This diagram is the structural punchline of the section.  After
@@ -31389,8 +31389,8 @@ Two ingredients. \emph{Existence:} a PID is Noetherian, so the ascending chain c
   $\Z[\sqrt{-5}]$ is a domain but not a UFD (the element $6$ has two genuinely different
   irreducible factorizations).
 \dgi{Common pitfall:} Students sometimes read the implication chain as ``every UFD has a
-  Euclidean algorithm'' or conflate PID and UFD.  Neither reverse arrow exists: the structures
-  are genuinely more restrictive left to right.  In particular, having unique factorization does
+  Euclidean algorithm'' or conflate PID and UFD.  Neither reverse arrow exists: each class
+  is genuinely more restrictive than the one to its right.  In particular, having unique factorization does
   not by itself guarantee that every ideal is principal.
 \dgi{Takeaway:} The point of this diagram is that the standard classes of ``nice'' domains form a
   strict linear hierarchy, and each step genuinely loses structure, as witnessed by concrete
