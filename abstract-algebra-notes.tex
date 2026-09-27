@@ -19435,11 +19435,11 @@ axis is where it pierces the surrounding sphere.
 \filldraw[black] (0.6,0.6) circle (1.2pt);
 \filldraw[black] (2.1,2.1) circle (1.2pt);
 \node[font=\scriptsize] at (2.35,2.05) {$r=4$};
-% vertex axis (r=3): body diagonal A2 -- C
-\draw[very thick] (A2) -- (C);
-\filldraw[black] (A2) circle (1.2pt);
-\filldraw[black] (C) circle (1.2pt);
-\node[font=\scriptsize] at (0.45,0.95) {$r=3$};
+% vertex axis (r=3): body diagonal B -- D2 (A2 -- C would be drawn on top of the face axis)
+\draw[very thick] (B) -- (D2);
+\filldraw[black] (B) circle (1.2pt);
+\filldraw[black] (D2) circle (1.2pt);
+\node[font=\scriptsize] at (0.45,2.95) {$r=3$};
 % edge axis (r=2): midpoint of edge BC to midpoint of opposite edge A2-D2
 \coordinate (mBC) at (2,1);
 \coordinate (mAD2) at (0.7,1.7);
@@ -19658,9 +19658,9 @@ table.
 \draw[dashed] (1,1) -- (1.8,1.8);
 \fill (1,1) circle (1.2pt); \fill (1.8,1.8) circle (1.2pt);
 \node[font=\footnotesize, below] at (1,1) {face axis (4-fold)};
-% vertex axis (body diagonal A to opposite vertex C2)
-\draw[dashed] (A) -- (C2);
-\node[font=\footnotesize, left] at (A) {vertex axis (3-fold)};
+% vertex axis (body diagonal B to opposite vertex D2; A -- C2 would lie on top of the face axis)
+\draw[dashed] (B) -- (D2);
+\node[font=\footnotesize, left] at (D2) {vertex axis (3-fold)};
 % edge axis (midpoints of two opposite edges)
 \coordinate (mAB) at (1,0);
 \coordinate (mC2D2) at (1.8,2.8);
