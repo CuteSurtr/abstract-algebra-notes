@@ -1,0 +1,141 @@
+% ===== preamble =====
+\usepackage[T1]{fontenc}\usepackage{lmodern}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{cancel}
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage{tikz}\usetikzlibrary{positioning,arrows.meta}
+\usepackage{tikz-cd}
+% ---- unified diagram house styles (lattices / Cayley graphs) ----
+\usetikzlibrary{calc,positioning,arrows.meta}
+\tikzset{
+  ltdot/.style={circle,fill=black,inner sep=1.5pt},
+  ltedge/.style={black!50,line width=0.7pt},
+  ltlab/.style={font=\footnotesize,fill=white,inner sep=1.6pt},
+  cgdot/.style={circle,fill=black,inner sep=1.5pt},
+  cgr/.style={black!80,line width=0.9pt,-{Stealth[length=2.2mm]}},
+  cgs/.style={black!45,line width=1pt,densely dashed},
+  cglab/.style={font=\footnotesize,fill=white,inner sep=1.4pt},
+  ltcorr/.style={black!35,line width=0.6pt,densely dotted},
+}
+\usepackage[hidelinks]{hyperref}
+
+% (per-chapter \thesection override removed -- the book class numbers sections as
+%  chapter.section natively, which reproduces the original "N.M" numbering since the
+%  chapters are numbered 1-16.)
+\setlength{\parindent}{0pt}\setlength{\parskip}{3pt}
+\makeatletter
+\renewcommand*\l@section{\@dottedtocline{1}{0pt}{2.8em}}
+\makeatother
+
+% ---- theorem environments (results numbered 15.x.y) ----
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+
+% ---- worked example (clean, no box; shares the result counter) ----
+\newenvironment{wex}[1]{%
+  \par\addvspace{\medskipamount}\refstepcounter{theorem}%
+  \noindent\textbf{Worked Example~\thetheorem.}\enspace\textit{#1.}\par\nobreak\smallskip}%
+  {\par\addvspace{\medskipamount}}
+\newcommand{\wrec}{\par\smallskip\noindent\textit{Recognition.}\enspace\ignorespaces}
+\newcommand{\wsol}{\par\smallskip\noindent\textit{Solution.}\enspace\ignorespaces}
+
+% ---- method / strategy block (rule-delimited, no color) ----
+\newenvironment{method}[1]{%
+  \par\addvspace{\medskipamount}\noindent\rule{\linewidth}{0.4pt}\par\nobreak\vskip2pt
+  \noindent\textbf{Method.}\enspace\textit{#1}\par\nobreak\smallskip}%
+  {\par\nobreak\vskip2pt\noindent\rule{\linewidth}{0.4pt}\par\addvspace{\medskipamount}}
+
+% ---- caution note (run-in, no color) ----
+\newenvironment{pitfall}{%
+  \par\addvspace{\smallskipamount}\noindent\textbf{\textit{Caution.}}\enspace\ignorespaces}%
+  {\par\addvspace{\smallskipamount}}
+
+% ---- exercise list ----
+\newenvironment{exers}[1]{\par\medskip\noindent\textbf{#1}\par\nopagebreak
+  \begin{enumerate}[leftmargin=*,labelsep=0.6em,itemsep=2pt,topsep=2pt]}
+  {\end{enumerate}}
+
+% ---- math shortcuts (inherited from the algebra notes) ----
+\newcommand{\Z}{\mathbb{Z}}\newcommand{\Q}{\mathbb{Q}}\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}\newcommand{\F}{\mathbb{F}}\newcommand{\HH}{\mathbb{H}}
+\newcommand{\Zn}[1]{\mathbb{Z}/#1\mathbb{Z}}
+\newcommand{\Zns}[1]{(\mathbb{Z}/#1\mathbb{Z})^{\times}}
+\newcommand{\inv}{^{-1}}\newcommand{\gen}[1]{\langle #1\rangle}
+\newcommand{\sgr}{\leq}\newcommand{\psgr}{<}\newcommand{\pgtr}{>}\newcommand{\st}{\mid}
+\newcommand{\nor}{\trianglelefteq}\newcommand{\pnor}{\vartriangleleft}
+\newcommand{\imp}{\ensuremath{\implies}}\newcommand{\eqv}{\ensuremath{\iff}}
+\DeclareMathOperator{\lcm}{lcm}\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Sym}{Sym}\DeclareMathOperator{\im}{im}\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\charac}{char}\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\nil}{nil}\DeclareMathOperator{\ann}{Ann}\DeclareMathOperator{\rad}{rad}
+\DeclareMathOperator{\Mat}{M}\DeclareMathOperator{\End}{End}\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\Nm}{N}\DeclareMathOperator{\rank}{rank}\DeclareMathOperator{\Tor}{Tor}
+\DeclareMathOperator{\Ext}{Ext}\DeclareMathOperator{\coker}{coker}
+\newcommand{\ord}[1]{|#1|}\newcommand{\isom}{\cong}\newcommand{\es}{\varnothing}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+\newcommand{\GL}{\mathrm{GL}}\newcommand{\SL}{\mathrm{SL}}
+\newcommand{\idx}[2]{[#1:#2]}\newcommand{\Zpos}{\mathbb{Z}^{+}}
+\newcommand{\units}[1]{#1^{\times}}\newcommand{\divides}{\mid}\newcommand{\ndivides}{\nmid}
+\newcommand{\tensor}{\otimes}
+\newcommand{\set}[1]{\{\,#1\,\}}
+\DeclareMathOperator{\Span}{Span}\DeclareMathOperator{\tr}{tr}\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\diag}{diag}\DeclareMathOperator{\proj}{proj}
+\newcommand{\trans}{^{\mathsf{T}}}\newcommand{\dual}[1]{#1^{*}}
+\DeclareMathOperator{\Gal}{Gal}\DeclareMathOperator{\Fix}{Fix}\DeclareMathOperator{\Frob}{Frob}
+\DeclareMathOperator{\disc}{disc}\DeclareMathOperator{\Tr}{Tr}
+\newcommand{\extp}{\wedge}
+
+% ---- Chapter 15/16 (commutative algebra) additions ----
+\DeclareMathOperator{\Spec}{Spec}\DeclareMathOperator{\mSpec}{mSpec}
+\DeclareMathOperator{\Jac}{Jac}\DeclareMathOperator{\hgt}{ht}
+\DeclareMathOperator{\Ass}{Ass}\DeclareMathOperator{\Supp}{Supp}
+\DeclareMathOperator{\Min}{Min}\DeclareMathOperator{\Proj}{Proj}
+\DeclareMathOperator{\len}{length}\DeclareMathOperator{\dpth}{depth}
+\DeclareMathOperator{\trdeg}{tr.deg}\DeclareMathOperator{\gr}{gr}
+\newcommand{\Aff}{\mathbb{A}}\newcommand{\Pj}{\mathbb{P}}
+% fraktur ideal notation (Atiyah-Macdonald convention)
+\newcommand{\fa}{\mathfrak{a}}\newcommand{\fb}{\mathfrak{b}}\newcommand{\fc}{\mathfrak{c}}
+\newcommand{\fp}{\mathfrak{p}}\newcommand{\fq}{\mathfrak{q}}\newcommand{\fm}{\mathfrak{m}}
+\newcommand{\fn}{\mathfrak{n}}\newcommand{\fr}{\mathfrak{r}}\newcommand{\fN}{\mathfrak{N}}
+\newcommand{\fR}{\mathfrak{R}}\newcommand{\fQ}{\mathfrak{Q}}\newcommand{\fP}{\mathfrak{P}}
+\newcommand{\colonid}{\,:\,}
+\DeclareMathOperator{\Ker}{Ker}\DeclareMathOperator{\Coker}{Coker}\DeclareMathOperator{\adj}{adj}
+
+% ---- macros from earlier chapters (Ch1-14) not present in the Ch16 base, unioned in ----
+\DeclareMathOperator{\Alt}{Alt}\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\Inn}{Inn}\DeclareMathOperator{\Stab}{Stab}
+\DeclareMathOperator{\Orb}{Orb}\DeclareMathOperator{\orb}{orb}
+\DeclareMathOperator{\Syl}{Syl}\DeclareMathOperator{\Func}{Func}
+\newcommand{\Frat}{\Phi}\newcommand{\Phimap}{\Phi}
+\newcommand{\PGL}{\mathrm{PGL}}\newcommand{\PSL}{\mathrm{PSL}}\newcommand{\sdp}{\rtimes}
+\DeclareMathOperator{\LC}{LC}\DeclareMathOperator{\LM}{LM}\DeclareMathOperator{\LT}{LT}
+\DeclareMathOperator{\cont}{cont}\DeclareMathOperator{\multideg}{multideg}\DeclareMathOperator{\res}{res}
+\DeclareMathOperator{\charpoly}{c}\DeclareMathOperator{\minpoly}{m}
+\DeclareMathOperator{\nullity}{null}\DeclareMathOperator{\tor}{Tor}
+
+% ---- sanity-check marker: render as a filled black box (was a checkmark) ----
+% \ensuremath works in both math and text mode, so every existing \checkmark
+% (bare in text, $\checkmark$ in math, or inside display math) prints \blacksquare.
+\renewcommand{\checkmark}{\ensuremath{\blacksquare}}
+
+% ---- diagram explanation block (commutative-diagram reading guide) ----
+\newenvironment{dgx}{%
+  \par\addvspace{\smallskipamount}%
+  \noindent\rule{\linewidth}{0.3pt}\par\nobreak\vskip1pt%
+  \begingroup\small\noindent\textbf{Diagram explanation.}\par\nobreak\smallskip}%
+  {\par\endgroup\vskip1pt\noindent\rule{\linewidth}{0.3pt}\par\addvspace{\smallskipamount}}
+\newcommand{\dgi}[1]{\par\smallskip\noindent\textbf{#1}\enspace\ignorespaces}
+
+% ---- relocated worked-solution block (exercise + full student solution) ----
+\newcommand{\exhead}[1]{\par\addvspace{\medskipamount}\noindent\rule{\linewidth}{0.4pt}\par\nobreak\vskip1pt\noindent\textbf{Exercise}\,\textnormal{[#1]}\textbf{.}\enspace\ignorespaces}
+\newcommand{\sii}[1]{\par\smallskip\noindent\textit{#1}\enspace\ignorespaces}
