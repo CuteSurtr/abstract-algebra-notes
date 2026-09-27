@@ -44287,18 +44287,18 @@ $\mathrm{SU}(2)$ consists of the complex $2\times 2$ matrices $P$ satisfying $P^
 \begin{proposition}[Normal form of an element]\label{art:su2so3:form@c11}
 Every element of $\mathrm{SU}(2)$ has the form
 \[
-P=\begin{pmatrix} a & -\overline{b}\\[1pt] b & \phantom{-}\overline{a}\end{pmatrix},\qquad a,b\in\C,\quad a\overline{a}+b\overline{b}=1 .
+P=\begin{pmatrix} \phantom{-}a & b\\[1pt] -\overline{b} & \overline{a}\end{pmatrix},\qquad a,b\in\C,\quad a\overline{a}+b\overline{b}=1 .
 \]
 Conversely every such matrix lies in $\mathrm{SU}(2)$.
 \end{proposition}
 
 \begin{proof}
-Write $P=\begin{psmallmatrix} a & u\\ b & v\end{psmallmatrix}$ with $a,b,u,v\in\C$. When $\det P=1$ the relation $P^{*}=P^{-1}$ reads
+Write $P=\begin{psmallmatrix} a & b\\ u & v\end{psmallmatrix}$ with $a,b,u,v\in\C$. When $\det P=1$ the relation $P^{*}=P^{-1}$ reads
 \[
-\begin{pmatrix}\overline{a}&\overline{b}\\ \overline{u}&\overline{v}\end{pmatrix}
-=\begin{pmatrix}\phantom{-}v & -u\\ -b & \phantom{-}a\end{pmatrix},
+\begin{pmatrix}\overline{a}&\overline{u}\\ \overline{b}&\overline{v}\end{pmatrix}
+=\begin{pmatrix}\phantom{-}v & -b\\ -u & \phantom{-}a\end{pmatrix},
 \]
-since for a $2\times 2$ matrix of determinant $1$ the inverse is $\begin{psmallmatrix} v & -u\\ -b & a\end{psmallmatrix}$. Comparing entries gives $v=\overline{a}$ and $u=-\overline{b}$, and then $\det P=a\overline{a}+b\overline{b}=1$. The converse is the same computation read backwards.
+since for a $2\times 2$ matrix of determinant $1$ the inverse is $\begin{psmallmatrix} v & -b\\ -u & a\end{psmallmatrix}$. Comparing entries gives $v=\overline{a}$ and $u=-\overline{b}$, and then $\det P=av-bu=a\overline{a}+b\overline{b}=1$. The converse is the same computation read backwards.
 \end{proof}
 
 Writing $a=x_0+x_1 i$ and $b=x_2+x_3 i$ turns the constraint $a\overline{a}+b\overline{b}=1$ into $x_0^2+x_1^2+x_2^2+x_3^2=1$. This is the heart of the section.
@@ -44493,7 +44493,7 @@ So in the basis $(\mathbf{i},\mathbf{j},\mathbf{k})\leftrightarrow\R^3$ the matr
 \begin{wex}{The kernel is exactly $\set{\pm I}$}
 Show that $-I$ acts trivially on $V$, and that no element of a non-polar latitude can.
 \wrec $\ker\gamma=\set{\pm I}$ by Theorem~\ref{art:su2so3:spin@c11}; the kernel is detected by which $P$ commute with all of $E$.
-\wsol For $P=-I$: $\gamma_{-I}(U)=(-I)U(-I)^{*}=U$, so $-I\in\ker\gamma$, confirming $\gamma_P=\gamma_{-P}$. Now take any $P$ with $\tr P=2c$, $-1<c<1$, so $P=cI+sB$ with $B\in E$, $s\ne0$. If $P$ centralized all of $E$ it would centralize $\mathbf{i},\mathbf{j},\mathbf{k}$; but $B\mathbf{i}\ne\mathbf{i}B$ whenever $B\notin\Span\set{I,\mathbf{i}}$ (e.g.\ $\mathbf{j}\mathbf{i}=-\mathbf{k}\ne\mathbf{k}=\mathbf{i}\mathbf{j}$), so $P$ cannot commute with all of $E$. \textbf{Check:} only $c=\pm1$ (forcing $s=0$, $P=\pm I$) survives, so $\ker\gamma=\set{\pm I}$, a group of order $2$, and $\gamma$ is two-to-one as claimed.
+\wsol For $P=-I$: $\gamma_{-I}(U)=(-I)U(-I)^{*}=U$, so $-I\in\ker\gamma$, confirming $\gamma_P=\gamma_{-P}$. Now take any $P$ with $\tr P=2c$, $-1<c<1$, so $P=cI+sB$ with $B\in E$, $s\ne0$. If $P$ centralized all of $E$ it would centralize $\mathbf{i},\mathbf{j},\mathbf{k}$; but $B=x_1\mathbf{i}+x_2\mathbf{j}+x_3\mathbf{k}$ has $\mathbf{i}B-B\mathbf{i}=2x_2\mathbf{k}-2x_3\mathbf{j}$, so $B$ commutes with $\mathbf{i}$ only when $B=\pm\mathbf{i}$, and $\pm\mathbf{i}$ does not commute with $\mathbf{j}$ ($\mathbf{j}\mathbf{i}=-\mathbf{k}\ne\mathbf{k}=\mathbf{i}\mathbf{j}$). Since $s\ne0$, $P=cI+sB$ commutes with exactly the matrices that $B$ commutes with, so $P$ cannot commute with all of $E$. \textbf{Check:} only $c=\pm1$ (forcing $s=0$, $P=\pm I$) survives, so $\ker\gamma=\set{\pm I}$, a group of order $2$, and $\gamma$ is two-to-one as claimed.
 \end{wex}
 
 \begin{wex}{Composition of induced rotations}
