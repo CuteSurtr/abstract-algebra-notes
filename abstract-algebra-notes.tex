@@ -42476,7 +42476,7 @@ The reduction algorithm has a clean geometric reading: each row operation is an 
 \end{center}
 
 \begin{pitfall}
-The last-column pivot test decides \emph{consistency}, not uniqueness. A system can be consistent yet have infinitely many solutions (free columns of $A'$, as in the underdetermined example), and can be inconsistent regardless of how many free columns $A'$ has. Keep the two columns of bookkeeping separate: a pivot in $B'$ kills all solutions; a free column in $A'$ multiplies the solutions. Also: over a general field do not ``divide'' carelessly --- type (iii) scaling requires the pivot entry to be a \emph{unit}, which is automatic in a field but fails for matrices over a mere ring.
+The last-column pivot test decides \emph{consistency}, not uniqueness. A system can be consistent yet have infinitely many solutions (free columns of $A'$, as in the underdetermined example), and can be inconsistent regardless of how many free columns $A'$ has. Keep the two columns of bookkeeping separate: a pivot in $B'$ kills all solutions; a free column in $A'$ multiplies the solutions. Also: over a ring that is not a field do not ``divide'' carelessly --- type (iii) scaling requires the pivot entry to be a \emph{unit}, which is automatic in a field but fails for matrices over a mere ring.
 \end{pitfall}
 
 \begin{remark}[Bridge to the abstract chapter]
@@ -42547,7 +42547,7 @@ The sign can also be read from \textbf{inversions}: an inversion of $p$ is a pai
 \begin{wex}{Sign by three routes}
 Compute $\operatorname{sgn}(p)$ for $p=(1\,3\,4)(2\,5)\in\Sym_5$ using transpositions, cycle lengths, and inversions.
 \wrec $\operatorname{sgn}$ is multiplicative; an $r$-cycle has sign $(-1)^{r-1}$; or count inversions of the one-line image.
-\wsol \emph{Transpositions:} $(1\,3\,4)=(1\,4)(1\,3)$ (two transpositions, even) and $(2\,5)$ is one transposition (odd), so $\operatorname{sgn}(p)=(+1)(-1)=-1$. \emph{Cycle lengths:} a $3$-cycle has sign $(-1)^{2}=+1$, a $2$-cycle has sign $(-1)^{1}=-1$; product $=-1$. \emph{Inversions:} the one-line image is $(p(1),\dots,p(5))=(3,5,4,1,2)$; counting pairs $i<j$ with $p(i)>p(j)$ gives $9$ inversions, and $(-1)^9=-1$. \textbf{Check:} all three routes give $\operatorname{sgn}(p)=-1$, so $p$ is odd.
+\wsol \emph{Transpositions:} $(1\,3\,4)=(1\,4)(1\,3)$ (two transpositions, even) and $(2\,5)$ is one transposition (odd), so $\operatorname{sgn}(p)=(+1)(-1)=-1$. \emph{Cycle lengths:} a $3$-cycle has sign $(-1)^{2}=+1$, a $2$-cycle has sign $(-1)^{1}=-1$; product $=-1$. \emph{Inversions:} the one-line image is $(p(1),\dots,p(5))=(3,5,4,1,2)$; counting pairs $i<j$ with $p(i)>p(j)$ gives $7$ inversions, namely $(1,4),(1,5),(2,3),(2,4),(2,5),(3,4),(3,5)$, and $(-1)^7=-1$. \textbf{Check:} all three routes give $\operatorname{sgn}(p)=-1$, so $p$ is odd.
 \end{wex}
 
 The four nonzero entries of the $4\times4$ permutation matrix for $q=(1\,4\,5\,2)$ restricted to $\set{1,2,4,5}$ illustrate the ``one $1$ per row and column'' pattern; the schematic below shows where the $1$'s sit for the $3$-cycle $p=(1\,2\,3)$ (so $P=e_{21}+e_{32}+e_{13}$):
@@ -42629,7 +42629,7 @@ Group the $n!$ terms of Theorem~\ref{art:perm_det:leibniz@c11} by the value $v=p
 \end{proof}
 
 \begin{remark}
-The $i,j$ \textbf{cofactor} is $\operatorname{cof}(A)_{ij}=(-1)^{i+j}\det A_{ji}$ (note the transposed indices). Artin uses the cofactor matrix to write the inverse: $A^{-1}=\det(A)^{-1}\operatorname{cof}(A)$ when $\det A\ne0$. For hand computation, expand along whichever row or column has the most zeros.
+The $i,j$ entry of the \textbf{cofactor matrix} is $\operatorname{cof}(A)_{ij}=(-1)^{i+j}\det A_{ji}$ (note the transposed indices: it is the $(j,i)$ cofactor $(-1)^{j+i}\det A_{ji}$ in the sense of the proof above). Artin uses the cofactor matrix to write the inverse: $A^{-1}=\det(A)^{-1}\operatorname{cof}(A)$ when $\det A\ne0$. For hand computation, expand along whichever row or column has the most zeros.
 \end{remark}
 
 \begin{wex}{A $3\times3$ determinant, two ways}
