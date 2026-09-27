@@ -67159,7 +67159,7 @@ If $R$ is Dedekind and $S\subseteq R$ is multiplicatively closed with $0\notin S
 
 \item If $I$ and $J$ are nonzero fractional ideals for the Dedekind Domain $R$ prove there are elements $\alpha, \beta \in K$ such that $\alpha I$ and $\beta J$ are nonzero integral ideals in $R$ that are relatively prime.
 
-\item Suppose $I$ and $J$ are nonzero ideals in the Dedekind Domain $R$. Prove that there is an ideal $I_1 \subseteq I$ that is relatively prime to $J$. [Use Corollary 19 to find an ideal $I_2$ with $I_2 I = (a)$ and $(I_2, J) = R$. If $I_2 = P_1 \cdots P_n$, choose $b \in R$ with $b \in P_i - P_i^2$ and $b \equiv 1 \bmod P$ for every prime $P$ dividing $J$. Show that $(b) = I_2 I_1$ for some ideal $I_1$ and consider $(a) I_1$ to prove that $I_1 \subseteq I$.]
+\item Suppose $I$ and $J$ are nonzero ideals in the Dedekind Domain $R$. Prove that there is an ideal $I_1 \cong I$ that is relatively prime to $J$. [Use Corollary 19 to find an ideal $I_2$ with $I_2 I = (a)$ and $(I_2, J) = R$. If $I_2 = P_1^{e_1} \cdots P_n^{e_n}$, choose $b \in R$ with $b \in P_i^{e_i} - P_i^{e_i+1}$ and $b \equiv 1 \bmod P$ for every prime $P$ dividing $J$. Show that $(b) = I_2 I_1$ for some ideal $I_1$ and consider $(a) I_1$ to prove that $I_1 \cong I$.]
 
 \item Prove that every finitely generated torsion module over a Dedekind Domain $R$ is isomorphic to a direct sum $R/I_1 \oplus R/I_2 \oplus \cdots \oplus R/I_n$ with unique nonzero ideals $I_1, \ldots, I_n$ of $R$ satisfying $I_1 \subseteq I_2 \subseteq \cdots \subseteq I_n$ (called the invariant factors of $M$). [cf. Section 12.1.]
 
@@ -67170,7 +67170,7 @@ If $R$ is Dedekind and $S\subseteq R$ is multiplicatively closed with $0\notin S
 \item Suppose $R$ is a Dedekind Domain.
 \begin{enumerate}
 \item[(a)] Show that $I \sim J$ if and only if $I \cong J$ as $R$-modules defines an equivalence relation on the set of nonzero fractional ideals of $R$. Let $C(R)$ be the corresponding set of $R$-module isomorphism classes and let $[I] \in C(R)$ denote the equivalence class containing the fractional ideal $I$ of $R$.
-\item[(b)] Show that the multiplication $[I][J] = [I \oplus J]$ gives a well defined binary operation with respect to which $C(R)$ is an abelian group with identity $1 = [R]$.
+\item[(b)] Show that the multiplication $[I][J] = [IJ]$ gives a well defined binary operation with respect to which $C(R)$ is an abelian group with identity $1 = [R]$.
 \item[(c)] Prove that the abelian group $C(R)$ in (b) is isomorphic to the class group of $R$.
 \end{enumerate}
 
@@ -67206,9 +67206,9 @@ If $R$ is Dedekind and $S\subseteq R$ is multiplicatively closed with $0\notin S
 \item Suppose $F$ and $K$ are algebraic number fields with $\Q \subseteq F \subseteq K$, with rings of integers $O_F$ and $O_K$, respectively. Since $O_F \subseteq O_K$, the ring $O_K$ is naturally a module over $O_F$.
 \begin{enumerate}
 \item[(a)] Prove $O_K$ is a torsion free $O_F$-module of rank $n = [K : F]$. [Compute ranks over $\Z$.] If $O_K$ is free over $O_F$ then $O_K$ is said to have a relative integral basis over $O_F$.
-\item[(b)] Prove that if $F$ has class number 1 then $O_K$ has a relative integral basis over $O_F$. If $K = \Q(\sqrt{-5}, \sqrt{2})$ then the ring of integers $O_K$ is given by $O_K = \Z + \Z\sqrt{2} + \Z\sqrt{-10} + \Z\omega$ where $\omega = (\sqrt{-10} + \sqrt{2})/2$.
+\item[(b)] Prove that if $F$ has class number 1 then $O_K$ has a relative integral basis over $O_F$. If $K = \Q(\sqrt{-5}, \sqrt{2})$ then the ring of integers $O_K$ is given by $O_K = \Z + \Z\sqrt{-5} + \Z\sqrt{-10} + \Z\omega$ where $\omega = (\sqrt{-10} + \sqrt{2})/2$.
 \item[(c)] If $F_1 = \Q(\sqrt{2})$ prove that $O_K$ has a relative integral basis over $O_{F_1}$ and find an explicit basis $\{\alpha, \beta\}$: $O_K = O_{F_1} \cdot \alpha + O_{F_1} \cdot \beta$.
-\item[(d)] If $F_2 = \Q(\sqrt{-5})$, show that $P_3 = (3, 1 + \sqrt{-5}) = (3, 5 - \sqrt{-5})$ is a prime ideal of $O_{F_2}$ that is not principal and that $O_K = O_{F_2} \cdot 1 + (1/3) P_3 \cdot \omega$. [Check that $\sqrt{-10} = -(5 - \sqrt{-5})\omega/3$.] Conclude that the Steinitz class of $O_K$ as a module over $O_{F_2}$ is the nontrivial class of $P_3$ in the class group of $O_{F_2}$ and so there is no relative integral basis of $O_K$ over $O_{F_2}$.
+\item[(d)] If $F_2 = \Q(\sqrt{-5})$, show that $P_3 = (3, 1 - \sqrt{-5}) = (3, 5 + \sqrt{-5})$ is a prime ideal of $O_{F_2}$ that is not principal and that $O_K = O_{F_2} \cdot 1 + (1/3) P_3 \cdot \omega$. [Check that $\sqrt{-10} = (5 + \sqrt{-5})\omega/3$.] Conclude that the Steinitz class of $O_K$ as a module over $O_{F_2}$ is the nontrivial class of $P_3$ in the class group of $O_{F_2}$ and so there is no relative integral basis of $O_K$ over $O_{F_2}$.
 \item[(e)] Determine whether $O_K$ has a relative integral basis over the ring of integers of the remaining quadratic subfield $F_3 = \Q(\sqrt{-10})$ of $K$.
 \end{enumerate}
 
@@ -67226,7 +67226,7 @@ Suppose that $S \neq A - \{0\}$, and let $H$, $H'$ be the ideal class groups of 
 
 \item Let $A$ be a local domain which is not a field and in which the maximal ideal $\fm$ is principal and $\bigcap_{n=1}^{\infty} \fm^n = 0$. Prove that $A$ is a discrete valuation ring.
 
-\item Let $M$ be a finitely-generated torsion module over a Dedekind domain. Prove that $M$ is flat $\Leftrightarrow M$ is torsion-free. [Use Chapter 3, Exercise 13 and Chapter 7, Exercise 16.]
+\item Let $M$ be a finitely-generated module over a Dedekind domain. Prove that $M$ is flat $\Leftrightarrow M$ is torsion-free. [Use Chapter 3, Exercise 13 and Chapter 7, Exercise 16.]
 
 \item Let $M$ be a finitely-generated torsion module ($T(M) = M$) over a Dedekind domain $A$. Prove that $M$ is uniquely representable as a finite direct sum of modules $A/\fp_i^{n_i}$, where $\fp_i$ are non-zero prime ideals of $A$. [For each $\fp \neq 0$, $M_\fp$ is a torsion $A_\fp$-module; use the structure theorem for modules over a principal ideal domain.]
 
