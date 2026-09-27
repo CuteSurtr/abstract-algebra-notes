@@ -30631,8 +30631,11 @@ divisor.
 that rules out \emph{all} norms.
 \begin{enumerate}
 \item Identify $\units R$ (often just $\{\pm1\}$), so $\tilde R=\units R\cup\{0\}$ is small.
-\item Find the candidate universal side divisors: the nonzero nonunits of smallest possible
-``size'' (e.g.\ smallest field norm). Usually only a few elements, like $2$ and $3$.
+\item Find \emph{all} candidate universal side divisors by applying the definition to one
+well-chosen $x$: a universal side divisor $u$ divides $x-z$ for some $z\in\tilde R$, so it is a
+nonunit divisor of one of these finitely many elements (e.g.\ for $x=2$ and $\tilde R=\{0,\pm1\}$:
+a divisor of $2$ or $3$). Do not simply take the elements of smallest field norm: the norm in
+the Proposition is an unknown Euclidean norm, not the field norm.
 \item For each candidate $u$, exhibit an $x$ such that $u\nmid(x-z)$ for \emph{every}
 $z\in\tilde R$. This kills $u$.
 \item If no universal side divisor exists, the contrapositive of the Proposition shows
@@ -30646,10 +30649,11 @@ The ring $R=\Z\!\left[\tfrac{1+\sqrt{-19}}2\right]$ is a principal ideal domain 
 \end{theorem}
 
 \begin{proof}[Sketch]
-One shows $\units R=\{\pm1\}$, so $\tilde R=\{0,\pm1\}$, and that the nonzero nonunits of
-smallest field norm are (associates of) $2$ and $3$. If $R$ were Euclidean it would have a
-universal side divisor $u$, necessarily one of these. But neither $2$ nor $3$ is a
-universal side divisor: taking $x=\tfrac{1+\sqrt{-19}}2$, one checks $u\nmid(x-z)$ for
+One shows $\units R=\{\pm1\}$, so $\tilde R=\{0,\pm1\}$. If $R$ were Euclidean it would have a
+universal side divisor $u$. Taking $x=2$ in the definition, $u$ divides $2$, $1$ or $3$, and
+$u\nmid 1$ since $u$ is not a unit. The field norm $\Nm(a+b\tfrac{1+\sqrt{-19}}2)=a^2+ab+5b^2$
+never equals $2$ or $3$, so $2$ and $3$ are irreducible in $R$ and $u\in\{\pm2,\pm3\}$. But
+neither $\pm2$ nor $\pm3$ is a universal side divisor: taking $x=\tfrac{1+\sqrt{-19}}2$, one checks $u\nmid(x-z)$ for
 $z\in\{0,1,-1\}$ in each case (the relevant norm equations have no solution in $R$). With no
 universal side divisor, the Proposition forces $R$ non-Euclidean. That $R$ is nonetheless a
 PID is shown by a Dedekind--Hasse style norm argument; the details are in Section 8.2.
@@ -31048,7 +31052,7 @@ Let $\omega=\tfrac{1+\sqrt{-19}}{2}$ and $R=\Z[\omega]$, the ring of integers of
 \end{theorem}
 
 \begin{proof}[Indication]
-\textbf{Not Euclidean.} The key is the notion of a \emph{universal side divisor}: in any Euclidean domain that is not a field, there exists a nonzero nonunit $u$ such that for every $x\in R$ there is $z\in\{0\}\cup\units{R}$ with $u\divides (x-z)$ --- equivalently every residue class of $R/\gen{u}$ is represented by $\{0\}\cup\units{R}$. For $R=\Z[\omega]$ one checks $\units{R}=\{\pm 1\}$ (the norm form $a^2+ab+5b^2$ equals $1$ only at $(\pm 1,0)$). The nonunits of smallest norm are the rational integers $\pm 2$ (norm $4$) and $\pm 3$ (norm $9$), so the only candidates $u$ of minimal nonunit norm are $2$ and $3$. Testing them shows neither is a universal side divisor: $R/\gen{2}$ and $R/\gen{3}$ have order $\Nm(2)=4$ and $\Nm(3)=9$ respectively, too large to be covered by the three residues $\{0,\pm 1\}$. Hence $R$ has no universal side divisor, so $R$ is not Euclidean for \emph{any} norm.
+\textbf{Not Euclidean.} The key is the notion of a \emph{universal side divisor}: in any Euclidean domain that is not a field, there exists a nonzero nonunit $u$ such that for every $x\in R$ there is $z\in\{0\}\cup\units{R}$ with $u\divides (x-z)$ --- equivalently every residue class of $R/\gen{u}$ is represented by $\{0\}\cup\units{R}$. For $R=\Z[\omega]$ one checks $\units{R}=\{\pm 1\}$ (the norm form $a^2+ab+5b^2$ equals $1$ only at $(\pm 1,0)$). Taking $x=2$, a universal side divisor $u$ divides $2-0$, $2-1$ or $2+1$, i.e.\ $2$, $1$ or $3$, and $u\nmid 1$ since $u$ is not a unit. For $b\neq 0$ the norm form equals $(a+\tfrac b2)^2+\tfrac{19}{4}b^2\ge 5$, and for $b=0$ it is $a^2$, so it never takes the values $2$ or $3$; hence $2$ and $3$ are irreducible in $R$ and the only candidates are $u=\pm 2$ and $u=\pm 3$. Testing them shows neither is a universal side divisor: $R/\gen{2}$ and $R/\gen{3}$ have order $\Nm(2)=4$ and $\Nm(3)=9$ respectively, too large to be covered by the three residues $\{0,\pm 1\}$. Hence $R$ has no universal side divisor, so $R$ is not Euclidean for \emph{any} norm.
 
 \textbf{Is a PID.} One uses the \emph{Dedekind--Hasse} criterion: an integral domain $R$ is a PID iff there is a function $N\colon R\to\Z_{\ge 0}$ (a Dedekind--Hasse norm) with $N(a)>0$ for $a\neq 0$ such that for all nonzero $a,b\in R$, either $a\in\gen{b}$ or there is a nonzero $r\in\gen{a,b}$ with $N(r)<N(b)$. The field norm $\Nm$ is shown to be a Dedekind--Hasse norm on $\Z[\omega]$ by a direct (case) verification: given $a,b$, the quotient $a/b\in\Q(\sqrt{-19})$ can be approximated by an element of $R$ closely enough (or, when it cannot, one multiplies by a small element) to produce such an $r$. This makes every ideal principal, so $R$ is a PID. Full details are in Dummit \& Foote, $\S$8.1--8.2.
 \end{proof}
@@ -31161,7 +31165,7 @@ is a ring isomorphism. (Hint: surjectivity uses $1=ax+by$; for injectivity show 
 
 \item Let $R$ be a PID and $p\in R$ irreducible. Prove that the only ideals of $R$ containing $\gen{p^2}$ are $\gen{1}=R$, $\gen{p}$, and $\gen{p^2}$, and deduce that $R/\gen{p^2}$ is a local ring whose unique maximal ideal is $\gen{p}/\gen{p^2}$. (Hint: an ideal containing $\gen{p^2}$ is $\gen{d}$ with $d\divides p^2$; the divisors of $p^2$ up to units are $1,p,p^2$.)
 
-\item Let $\omega=\tfrac{1+\sqrt{-19}}{2}$ and $R=\Z[\omega]$, with field norm $\Nm(a+b\omega)=a^2+ab+5b^2$. Prove that $R$ has no universal side divisor, hence is \emph{not} a Euclidean domain for any norm; you may use that $\units{R}=\{\pm1\}$ and that $R$ is a PID (via the Dedekind--Hasse criterion). Conclude that $\{\text{ED}\}\subsetneq\{\text{PID}\}$ is strict. (Hint: a universal side divisor of minimal nonunit norm would be $2$ or $3$, but $|R/\gen{2}|=\Nm(2)=4$ and $|R/\gen{3}|=\Nm(3)=9$ exceed the three residues $\{0,\pm1\}$.)
+\item Let $\omega=\tfrac{1+\sqrt{-19}}{2}$ and $R=\Z[\omega]$, with field norm $\Nm(a+b\omega)=a^2+ab+5b^2$. Prove that $R$ has no universal side divisor, hence is \emph{not} a Euclidean domain for any norm; you may use that $\units{R}=\{\pm1\}$ and that $R$ is a PID (via the Dedekind--Hasse criterion). Conclude that $\{\text{ED}\}\subsetneq\{\text{PID}\}$ is strict. (Hint: taking $x=2$ shows that a universal side divisor divides $2$ or $3$; since $a^2+ab+5b^2$ never equals $2$ or $3$, it must be $\pm2$ or $\pm3$. But $|R/\gen{2}|=\Nm(2)=4$ and $|R/\gen{3}|=\Nm(3)=9$ exceed the three residues $\{0,\pm1\}$.)
 
 \item Let $\F$ be a field. Show that the formal power series ring $\F[[x]]$ is a PID whose only nonzero proper ideals are $\gen{x^n}$ for $n\ge1$, and identify $\units{\F[[x]]}$. (Hint: a power series is a unit iff its constant term is nonzero; for a nonzero ideal let $n$ be the minimal order of its elements and show the ideal equals $\gen{x^n}$.)
 \end{exers}
