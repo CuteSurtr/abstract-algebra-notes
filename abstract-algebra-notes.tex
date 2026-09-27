@@ -10831,7 +10831,7 @@ The operation reduces representatives mod $N$: e.g.\ $(\overline 2 + N) + (\over
 
 \begin{wex}{A non-example: when the product is \emph{not} well defined}
 In $G = S_3$ take $H = \gen{(1\,2)} = \{e, (1\,2)\}$ (order $2$, \emph{not} normal). Show directly that $(aH)(bH) = (ab)H$ fails to be well defined.
-\wrec Normality test fails because $S_3$ is non-abelian and $H$ has index $3$; demonstrate failure by choosing two representatives of one coset and getting different output cosets.
+\wrec Normality test fails: conjugating $(1\,2)$ by $(1\,2\,3)$ gives $(2\,3) \notin H$ (computed below); demonstrate failure by choosing two representatives of one coset and getting different output cosets.
 \wsol Write $\sigma = (1\,2\,3)$ and $\tau = (1\,2)$, so $H = \{e,\tau\}$ and $S_3 = \{e,\sigma,\sigma^2,\tau,\sigma\tau,\sigma^2\tau\}$ (compose right-to-left, so the rightmost permutation acts first). Consider the coset $\sigma H = \{\sigma,\ \sigma\tau\}$, which has the two representatives $\sigma$ and $\sigma\tau$.
 
 Multiply on the right by $\sigma H$ using each representative:
@@ -11073,7 +11073,7 @@ Let $H \le G$ with $\idx{G}{H} = 2$. Show $H \nor G$.
 \item If $g \notin H$: then $gH \ne H$, so $gH$ must be the other left coset, $gH = G\setminus H$. Similarly $Hg \ne H$ forces $Hg = G \setminus H$. Hence $gH = G\setminus H = Hg$.
 \end{itemize}
 In both cases $gH = Hg$, so by Theorem~\ref{thm:normalchar@c3}$(3)$, $H \nor G$.
-\emph{Check:} this recovers $A_n \nor S_n$ ($\idx{S_n}{A_n} = 2$) and $\gen{r} \nor D_{2n}$ ($\idx{D_{2n}}{\gen{r}} = 2$, since $|\gen{r}| = n$ and $|D_{2n}| = 2n$) without any computation. \emph{Caution:} index $3$ does \emph{not} force normality --- $\gen{s} \le D_8$ has index $4$ and is not normal (next example), and $\gen{(1\,2)} \le S_3$ has index $3$ and is not normal.
+\emph{Check:} this recovers $A_n \nor S_n$ ($\idx{S_n}{A_n} = 2$) and $\gen{r} \nor D_{2n}$ ($\idx{D_{2n}}{\gen{r}} = 2$, since $|\gen{r}| = n$ and $|D_{2n}| = 2n$) without any computation. \emph{Caution:} index $\ge 3$ does \emph{not} force normality --- $\gen{s} \le D_8$ has index $4$ and is not normal (next example), and $\gen{(1\,2)} \le S_3$ has index $3$ and is not normal.
 \end{wex}
 
 \begin{wex}{A non-normal subgroup: $\gen{s} \le D_8$ and its conjugates}
@@ -11102,7 +11102,7 @@ So $m\Z \nor \Z$ by Proposition~\ref{prop:kernelnormal@c3}(b). \emph{Check:} $\Z
 \end{wex}
 
 \begin{pitfall}
-\textbf{(1) One $g$ is not enough.} To prove $N \nor G$ you must check $gng\inv \in N$ for \emph{all} $g \in G$. Verifying it for a single $g$ (or even all $g$ in a generating set's elements without closing under products) is not a proof of normality --- though one well-chosen $g$ \emph{is} enough to \emph{disprove} it.
+\textbf{(1) One $g$ is not enough.} To prove $N \nor G$ you need $gng\inv \in N$ for \emph{all} $g \in G$. Verifying it for a single $g$ is not a proof of normality. Checking every $g$ in a generating set $T$ of $G$ does suffice when $N$ is finite (Exercise~29 below), but for infinite $N$ one must in general also check the inverses $t\inv$ ($t \in T$). On the other hand, one well-chosen $g$ \emph{is} enough to \emph{disprove} normality.
 
 \textbf{(2) $gNg\inv \subseteq N$ for all $g$ does give normality --- but mind infinite groups.} In Theorem~\ref{thm:normalchar@c3} the one-sided test $(4)$ works because the hypothesis is quantified over \emph{all} $g$ (we plugged in $g\inv$ too). For a \emph{fixed} $g$, the containment $gNg\inv \subseteq N$ alone does \emph{not} force $gNg\inv = N$ when $N$ is infinite. Standard example: in $G = \GL_2(\Q)$ let $g = \left(\begin{smallmatrix} 2 & 0 \\ 0 & 1\end{smallmatrix}\right)$ and $N = \left\{ \left(\begin{smallmatrix} 1 & x \\ 0 & 1 \end{smallmatrix}\right) : x \in \Z \right\}$. Then $g \left(\begin{smallmatrix}1&x\\0&1\end{smallmatrix}\right) g\inv = \left(\begin{smallmatrix}1&2x\\0&1\end{smallmatrix}\right)$, so $gNg\inv = \left\{\left(\begin{smallmatrix}1&2x\\0&1\end{smallmatrix}\right):x\in\Z\right\} \subsetneq N$ --- proper containment. (Of course this particular $N$ is not normal in $G$; the point is that strict containment $gNg\inv \subsetneq N$ can genuinely happen, so for a single $g$ ``$\subseteq$'' is weaker than ``$=$''. The quantified test in $(4)$ closes the gap by also applying the inclusion at $g\inv$.)
 
