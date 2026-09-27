@@ -9543,7 +9543,7 @@ $G$ is cyclic, so Proposition~\ref{p:cycliclattice@c2} applies: subgroups $\left
   \node[ltlab,above=1.5pt of top] {$\mathbb{Z}/12$};
 \end{tikzpicture}\end{center}
 
-\emph{Check.} Six subgroups, matching the six divisors of $12$. The two ``order-$3$ direction'' steps ($1\to\gen{x^4}\to\gen{x^2}$) and the two ``order-$2$ direction'' steps confirm the $\Zn2\times\Zn3$-style grid for $12=4\cdot3$.
+\emph{Check.} Six subgroups, matching the six divisors of $12$. Every maximal chain from $1$ to $\Zn{12}$ has two index-$2$ steps and one index-$3$ step (e.g.\ $1\to\gen{x^4}\to\gen{x^2}\to\Zn{12}$ has indices $3,2,2$), confirming the $2\times3$ grid for $12=2^2\cdot3$.
 \end{wex}
 
 \begin{wex}{Chain lattice of $\Zn{16}$}
@@ -9634,7 +9634,7 @@ Cyclic of order $18$, so Proposition~\ref{p:cycliclattice@c2}: subgroups $\leftr
 1=\gen{x^{18}},\ \gen{x^9}\ (\ord2),\ \gen{x^6}\ (\ord3),\ \gen{x^3}\ (\ord6),\ \gen{x^2}\ (\ord9),\ \gen{x}=\Zn{18}.
 \]
 
-\emph{Step 2--3 (coverings via prime index).} $1\lessdot\gen{x^9}$ (index $2$), $1\lessdot\gen{x^6}$ (index $3$). Then $\gen{x^9}\lessdot\gen{x^3}$ (orders $2\mid6$, ratio $3$); $\gen{x^6}\lessdot\gen{x^3}$ (orders $3\mid6$, ratio $2$) and $\gen{x^6}\lessdot\gen{x^2}$ (orders $3\mid9$, ratio $3$). Finally $\gen{x^3}\lessdot\Zn{18}$ (index $3$) and $\gen{x^2}\lessdot\Zn{18}$ (index $2$). Note the order-$9$ branch $1\to\gen{x^6}\to\gen{x^2}\to\Zn{18}$ is a length-$3$ chain (powers of $3$), while the order-$2$ direction adds a single rung.
+\emph{Step 2--3 (coverings via prime index).} $1\lessdot\gen{x^9}$ (index $2$), $1\lessdot\gen{x^6}$ (index $3$). Then $\gen{x^9}\lessdot\gen{x^3}$ (orders $2\mid6$, ratio $3$); $\gen{x^6}\lessdot\gen{x^3}$ (orders $3\mid6$, ratio $2$) and $\gen{x^6}\lessdot\gen{x^2}$ (orders $3\mid9$, ratio $3$). Finally $\gen{x^3}\lessdot\Zn{18}$ (index $3$) and $\gen{x^2}\lessdot\Zn{18}$ (index $2$). Note the order-$9$ branch $1\to\gen{x^6}\to\gen{x^2}$ is a length-$2$ chain (powers of $3$), while the order-$2$ direction adds a single rung.
 \begin{center}\begin{tikzpicture}[yscale=1.0,xscale=1.3]
   \node[ltdot] (bot) at (0,0) {};
   \node[ltdot] (x9) at (-1.3,1) {};
@@ -10179,7 +10179,7 @@ being $\gen{\overline{36/d}}$:
   \node[ltlab,above=1.5pt of n36] {$\Zn{36}$};
 \end{tikzpicture}
 \end{center}
-The two ``columns'' are the powers of $2$ in the order; the three ``rows'' the powers of
+The three ``columns'' are the powers of $2$ in the order; the three ``rows'' the powers of
 $3$. \emph{Check:} $\gen{\overline9}$ has order $36/\gcd(36,9)=4$, sitting above
 $\gen{\overline{18}}$ (order $2$) as a $2^2$ vs $2^1$ step.
 \end{wex}
