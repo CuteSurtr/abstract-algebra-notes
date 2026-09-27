@@ -60943,8 +60943,8 @@ F(x) = \begin{cases} e^{-1/x^4} & \text{if } x \neq 0 \\ 0 & \text{if } x = 0 \e
 \item Over $\C$, let $\fa=(xy,\,xz,\,yz)\subseteq\C[x,y,z]$, whose zero set is the union of the three coordinate axes. Complete the lattice of minimal primes over $\fa$ and the matching diagram of irreducible components (ordered by inclusion), and prove the labelled correspondence is the order-reversing bijection of the Nullstellensatz:
 \[
 \begin{tikzcd}[row sep=1.7em, column sep=1.4em]
-& \C[x,y,z] & \\
-(x,y) \arrow[ur,dash] & (x,z) \arrow[u,dash] & (y,z) \arrow[ul,dash]
+(x,y) & (x,z) & (y,z) \\
+& (xy,xz,yz) \arrow[ul,dash] \arrow[u,dash] \arrow[ur,dash] &
 \end{tikzcd}
 \qquad\xleftrightarrow{\ V\ }\qquad
 \begin{tikzcd}[row sep=1.7em, column sep=1.4em]
@@ -60953,22 +60953,22 @@ V(x,y) \arrow[ur,dash] & V(x,z) \arrow[u,dash] & V(y,z) \arrow[ul,dash]
 \end{tikzcd}
 \]
 Identify each $V(\fp_i)$ as one of the coordinate axes, verify $\fa=\rad\fa=(x,y)\cap(x,z)\cap(y,z)$, and state the dimension of each component.
-\item Let $E$ be algebraically closed and $\varphi:E[y_1,\dots,y_m]\to E[x_1,\dots,x_n]$ a $k$-algebra homomorphism, inducing the polynomial map $\varphi^\ast:\Aff^n\to\Aff^m$ on points. Prove the square below commutes (top is $\fb\mapsto V(\fb)$ in $\Aff^m$, bottom is $\fa\mapsto V(\fa)$ in $\Aff^n$, left is contraction $\varphi^{-1}$, right is preimage under $\varphi^\ast$), and deduce that $\overline{\varphi^\ast(\Aff^n)}=V(\ker\varphi)$:
+\item Let $E$ be algebraically closed and $\varphi:E[y_1,\dots,y_m]\to E[x_1,\dots,x_n]$ an $E$-algebra homomorphism, inducing the polynomial map $\varphi^\ast:\Aff^n\to\Aff^m$ on points. Prove the square below commutes (top is $\fb\mapsto V(\fb)$ in $\Aff^m$, bottom is $\fa\mapsto V(\fa)$ in $\Aff^n$, left is extension $\fb\mapsto\varphi(\fb)E[x]$, right is preimage under $\varphi^\ast$), and deduce that $\overline{\varphi^\ast(\Aff^n)}=V(\ker\varphi)$:
 \[
 \begin{tikzcd}[row sep=large, column sep=huge]
-\set{\text{ideals of }E[y]} \arrow[r,"V"] \arrow[d,"\varphi^{-1}"'] & \set{\text{closed sets of }\Aff^m} \arrow[d,"(\varphi^\ast)^{-1}"] \\
+\set{\text{ideals of }E[y]} \arrow[r,"V"] \arrow[d,"{\fb\mapsto\varphi(\fb)E[x]}"'] & \set{\text{closed sets of }\Aff^m} \arrow[d,"(\varphi^\ast)^{-1}"] \\
 \set{\text{ideals of }E[x]} \arrow[r,"V"'] & \set{\text{closed sets of }\Aff^n}
 \end{tikzcd}
 \]
 Conclude that a polynomial map has Zariski-dense image exactly when the comorphism $\varphi$ is injective.
-\item Over an algebraically closed field $E$, let $\fa\subseteq\fb$ be radical ideals of $E[x_1,\dots,x_n]$, so $W=V(\fb)\subseteq V(\fa)=V$ is a closed subvariety. Writing $E[V]=E[x]/\fa$, complete the diagram relating coordinate rings to ideals and prove every arrow is the natural one and the right square is a pullback (fibre product) of rings:
+\item Over an algebraically closed field $E$, let $\fa\subseteq\fb$ be radical ideals of $E[x_1,\dots,x_n]$, so $W=V(\fb)\subseteq V(\fa)=V$ is a closed algebraic subset. Writing $E[V]=E[x]/\fa$, complete the diagram relating coordinate rings to ideals and prove every arrow is the natural one and the square is a pushout of rings, $E[W]\isom E[V]\tensor_{E[x]}E[x]/\fb$ (it is not a pullback unless $\fa=0$):
 \[
 \begin{tikzcd}[row sep=large, column sep=huge]
 E[x] \arrow[r,twoheadrightarrow] \arrow[d,twoheadrightarrow] & E[V] \arrow[d,twoheadrightarrow] \\
 E[x]/\fb \arrow[r,equal] & E[W]
 \end{tikzcd}
 \]
-Identify the kernel of $E[V]\twoheadrightarrow E[W]$ as $\fb/\fa$, prove it is a radical ideal of $E[V]$, and state the resulting inclusion-reversing bijection between closed subvarieties of $V$ and radical ideals of $E[V]$.
+Identify the kernel of $E[V]\twoheadrightarrow E[W]$ as $\fb/\fa$, prove it is a radical ideal of $E[V]$, and state the resulting inclusion-reversing bijection between closed algebraic subsets of $V$ and radical ideals of $E[V]$ (under which the closed subvarieties correspond to the prime ideals).
 \item Over $\C$, let $\fa=(x^2-y)\subseteq\C[x,y]$ and let $\fm_P=(x-a,\,y-a^2)$ for a point $P=(a,a^2)\in V(\fa)$. Complete the diagram exhibiting the quotient $\C[x,y]\to\C[V(\fa)]\to\C[V(\fa)]/(\fm_P/\fa)\isom\C$ and prove the composite is evaluation at $P$:
 \[
 \begin{tikzcd}[row sep=large, column sep=huge]
