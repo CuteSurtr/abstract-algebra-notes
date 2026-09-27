@@ -20349,7 +20349,7 @@ the same data as a pair of maps, one into each factor.
 \[
 \begin{tikzcd}[column sep=large]
  & T \arrow[dl, "f"'] \arrow[dr, "g"] \arrow[d, dashed, "{(f,g)}"] & \\
-A & A\times B \arrow[l, "\pi_1"] \arrow[r, "\pi_2"'] & B
+A & A\times B \arrow[l, two heads, "\pi_1"] \arrow[r, two heads, "\pi_2"'] & B
 \end{tikzcd}
 \]
 The dashed arrow $(f,g)$ is the unique homomorphism making both triangles commute:
@@ -20569,8 +20569,8 @@ and is denoted by $A * B$ --- it is not unique since it depends on $Z_1$, $Z_2$ 
 \begin{exers}{Commutative-diagram exercises.}
   \item Use the universal property of the direct product to build the unique homomorphism $\varphi:\Z\to\Zn8\times\Zn9$ from the two reduction maps, and compute $\ker\varphi$ and $\im\varphi$. Conclude that $\Z/72\Z\isom\Zn8\times\Zn9$ (CRT).
   \[\begin{tikzcd}[column sep=large]
-    & \Z \arrow[dl, "f"'] \arrow[dr, "g"] \arrow[d, dashed, "{(f,g)}"] & \\
-    \Zn8 & \Zn8\times\Zn9 \arrow[l, "\pi_1"] \arrow[r, "\pi_2"'] & \Zn9
+    & \Z \arrow[dl, two heads, "f"'] \arrow[dr, two heads, "g"] \arrow[d, dashed, "{(f,g)}"] & \\
+    \Zn8 & \Zn8\times\Zn9 \arrow[l, two heads, "\pi_1"] \arrow[r, two heads, "\pi_2"'] & \Zn9
   \end{tikzcd}\]
   \item \textbf{(Functoriality.)} For the reductions $f:\Zn4\to\Zn2$ and $g:\Zn6\to\Zn3$, describe the unique map $f\times g:\Zn4\times\Zn6\to\Zn2\times\Zn3$ making both squares commute, and compute $\ker(f\times g)=\ker f\times\ker g$ explicitly (state its isomorphism type and order).
   \[\begin{tikzcd}[column sep=large]
@@ -20579,14 +20579,14 @@ and is denoted by $A * B$ --- it is not unique since it depends on $Z_1$, $Z_2$ 
   \end{tikzcd}\]
   \item Show that the ``co-universal'' property \emph{fails} for maps out of $\Z\times\Z$ into a nonabelian target. Taking $T=S_3$, exhibit homomorphisms $\alpha:\Z\to S_3$ with $\alpha(1)=(1\,2\,3)$ and $\beta:\Z\to S_3$ with $\beta(1)=(1\,2)$, and identify the precise obstruction that prevents any homomorphism $\Phi:\Z\times\Z\to S_3$ from restricting to $\alpha$ on the first factor and $\beta$ on the second --- even though the standard generators $(1,0)$ and $(0,1)$ commute in $\Z\times\Z$. State the general principle (which pairs $\alpha,\beta$ \emph{do} extend to such a $\Phi$).
   \[\begin{tikzcd}[column sep=large]
-    \Z \arrow[dr, "\iota_1"'] \arrow[drr, bend left, "\alpha"] & & \\
+    \Z \arrow[dr, hook, "\iota_1"'] \arrow[drr, bend left, "\alpha"] & & \\
     & \Z\times\Z \arrow[r, dashed, "\Phi?"] & S_3 \\
-    \Z \arrow[ur, "\iota_2"] \arrow[urr, bend right, "\beta"'] & &
+    \Z \arrow[ur, hook, "\iota_2"] \arrow[urr, bend right, "\beta"'] & &
   \end{tikzcd}\]
   \item Prove that the projections $\pi_1,\pi_2$ of $A\times B$ form the universal cone: if $(P,p_1,p_2)$ satisfies the same universal property, then there is a unique isomorphism $u:P\to A\times B$ with $\pi_1\circ u=p_1$ and $\pi_2\circ u=p_2$. (Use the mediating maps $u:P\to A\times B$ and $v:A\times B\to P$ and the uniqueness clause to force $vu=\id_P$ and $uv=\id_{A\times B}$.)
   \[\begin{tikzcd}[column sep=large]
     & P \arrow[dl, "p_1"'] \arrow[dr, "p_2"] \arrow[d, dashed, "u"] & \\
-    A & A\times B \arrow[l, "\pi_1"] \arrow[r, "\pi_2"'] & B
+    A & A\times B \arrow[l, two heads, "\pi_1"] \arrow[r, two heads, "\pi_2"'] & B
   \end{tikzcd}\]
 \end{exers}
 
@@ -21037,7 +21037,7 @@ A=\diag(2,12),\qquad \det A = 24 = \det A_0,\quad d_1=\gcd(4,6)=2,
 since the first invariant factor is the gcd of the entries and the product of the two is the determinant. Hence $G\isom\Z_2\times\Z_{12}$, invariant factors $2\mid 12$. The sequence
 \[
 \begin{tikzcd}
-0 \arrow[r] & \Z^2 \arrow[r, "A"] & \Z^2 \arrow[r] & G \arrow[r] & 0
+0 \arrow[r] & \Z^2 \arrow[r, hook, "A"] & \Z^2 \arrow[r, two heads] & G \arrow[r] & 0
 \end{tikzcd}
 \]
 is exact with $A$ in diagonal Smith normal form.
@@ -21056,7 +21056,7 @@ commutes for every $p$. Hence $G\isom\prod_p G_p$ is natural in $G$ (the CRT/pri
 \item (The $p$-th power sequence.) For a finite abelian $p$-group $A$, draw and verify exactness of
 \[
 \begin{tikzcd}
-0 \arrow[r] & A[p] \arrow[r] & A \arrow[r, "p\cdot"] & A \arrow[r] & A/pA \arrow[r] & 0,
+0 \arrow[r] & A[p] \arrow[r, hook] & A \arrow[r, "p\cdot"] & A \arrow[r, two heads] & A/pA \arrow[r] & 0,
 \end{tikzcd}
 \]
 where $p\cdot$ is multiplication by $p$, and show $A[p]\isom A/pA$ as $\F_p$-vector spaces of equal rank.
@@ -21542,8 +21542,8 @@ Every group of order $2p$, $pq$ (nonabelian case), or $12$ (nonabelian) arises a
 \end{dgx}
 Here $H$ is the normal Sylow subgroup, $K$ a complement (Sylow subgroup of complementary order), $s$ the splitting, and the isomorphism type is fixed by $\varphi=\,$``conjugation'' $\colon K\to\Aut(H)$. A \emph{direct} product is the special case $\varphi$ trivial, where the second projection also splits and both factors are normal:
 \[\begin{tikzcd}[column sep=large]
- & G \arrow[dl, "\pi_1"'] \arrow[dr, "\pi_2"] \arrow[d, "{=}", dashed] & \\
-H & H\times K \arrow[l, "p_1"] \arrow[r, "p_2"'] & K
+ & G \arrow[dl, two heads, "\pi_1"'] \arrow[dr, two heads, "\pi_2"] \arrow[d, "{=}", dashed] & \\
+H & H\times K \arrow[l, two heads, "p_1"] \arrow[r, two heads, "p_2"'] & K
 \end{tikzcd}\]
 \begin{dgx}
 \dgi{Objects:} Four nodes: $G$ at the top (a group abstractly given or arrived at via the classification argument); $H$ at the lower-left (a normal subgroup of $G$, the normal Sylow subgroup in the classification); $K$ at the lower-right (the complementary subgroup, also normal in the direct-product case); and $H\times K$ at the center bottom (the direct product, serving as the ``canonical model'' the diagram identifies $G$ with).
@@ -21799,7 +21799,7 @@ must reproduce.
 
 \[\begin{tikzcd}[column sep=large]
  & T \arrow[dl, "f"'] \arrow[dr, "g"] \arrow[d, dashed, "{(f,g)}"] & \\
-H & H\times K \arrow[l, "\pi_1"] \arrow[r, "\pi_2"'] & K
+H & H\times K \arrow[l, two heads, "\pi_1"] \arrow[r, two heads, "\pi_2"'] & K
 \end{tikzcd}\]
 
 \begin{dgx}
@@ -22192,7 +22192,7 @@ $(xy)^2=x^2y^2[y,x]$, the $n=2$ instance of the centered power formula $(xy)^n=x
 \item State and prove the universal property of abelianization: the quotient $\pi\colon G\to G/G'$ is \emph{initial} among homomorphisms from $G$ to abelian groups. Fill in the dashed unique factorization in the triangle below and justify both existence and uniqueness. \\
 \emph{Answer.} Given $\varphi\colon G\to A$ with $A$ abelian, set $\overline{\varphi}([x])=\varphi(x)$. \emph{Existence:} $G'\le\ker\varphi$ (commutators map to $1$ in the abelian $A$), so $\overline{\varphi}$ is well-defined and $\varphi=\overline{\varphi}\circ\pi$. \emph{Uniqueness:} $\pi$ is surjective, so any map agreeing with $\varphi$ after $\pi$ is determined on every $[x]$. Hence $G/G'$ is the universal abelian quotient.
 \[\begin{tikzcd}[column sep=large]
-G \arrow[r, "\pi"] \arrow[dr, "\varphi"'] & G/G' \arrow[d, dashed, "\overline{\varphi}"] \\
+G \arrow[r, two heads, "\pi"] \arrow[dr, "\varphi"'] & G/G' \arrow[d, dashed, "\overline{\varphi}"] \\
 & A
 \end{tikzcd}\]
 
@@ -22247,7 +22247,7 @@ H \arrow[r, equal] & H
 \item Draw the abelianization short exact sequence $1\to G'\to G\to G/G'\to1$ and prove that every abelian quotient $G/N$ factors through it, i.e.\ $G/N$ is abelian $\iff G'\le N$. Indicate the induced commuting triangle when $G'\le N$. \\
 \emph{Answer.} The sequence is exact: $G'\nor G$ with cokernel $G/G'$. By Proposition~\ref{prop:commutator@c5}(2), $G/N$ is abelian $\iff G'\le N$; in that case the third isomorphism theorem gives $G/N\isom(G/G')/(N/G')$, so $G\to G/N$ factors as $G\xrightarrow{\pi}G/G'\to G/N$, and the triangle below commutes. Functoriality: a homomorphism $G\to H$ carries $G'$ into $H'$, inducing $G/G'\to H/H'$.
 \[\begin{tikzcd}[column sep=normal, row sep=large]
-1 \arrow[r] & G' \arrow[r, hook] & G \arrow[r, two heads, "\pi"] \arrow[dr, two heads] & G/G' \arrow[d, dashed] \arrow[r] & 1 \\
+1 \arrow[r] & G' \arrow[r, hook] & G \arrow[r, two heads, "\pi"] \arrow[dr, two heads] & G/G' \arrow[d, dashed, two heads] \arrow[r] & 1 \\
 & & & G/N &
 \end{tikzcd}\]
 
@@ -22648,7 +22648,7 @@ $g\colon T\to B$ factors uniquely through $A\times B$,
 \[
 \begin{tikzcd}[column sep=large]
 & T \arrow[dl, "f"'] \arrow[dr, "g"] \arrow[d, dashed, "{(f,g)}"] & \\
-A & A\times B \arrow[l, "\pi_1"] \arrow[r, "\pi_2"'] & B
+A & A\times B \arrow[l, two heads, "\pi_1"] \arrow[r, two heads, "\pi_2"'] & B
 \end{tikzcd}
 \]
 \begin{dgx}
@@ -23930,7 +23930,7 @@ The conjugation action of (L3) is the workhorse. We picture it as:
 \[
 \begin{tikzcd}[column sep=large, row sep=large]
 G \arrow[r, "\varphi"] \arrow[dr, two heads, "{\text{quotient}}"'] & \Sym(\Syl_p(G))\isom S_{n_p} \\
- & G/\ker\varphi \arrow[u, hook, "{\bar\varphi}"']
+ & G/\ker\varphi \arrow[u, dashed, hook, "{\bar\varphi}"']
 \end{tikzcd}
 \]
 Here $\ker\varphi=\operatorname{core}_G(N_G(P))$ and the factorization $\varphi=\bar\varphi\circ(\text{quotient})$ is the first isomorphism theorem; $\bar\varphi$ is injective.
@@ -24101,7 +24101,7 @@ By the Lemma, any simple $G$ of order $60$ has a subgroup of index $5$ and there
 The whole argument is the action-on-cosets / action-on-Sylows machine pushed to its limit:
 \[
 \begin{tikzcd}[column sep=large]
-G \arrow[r, "\rho"] \arrow[dr, hook, "{G\,\isom\,A_5}"'] & S_5 \\
+G \arrow[r, hook, "\rho"] \arrow[dr, hook, "{G\,\isom\,A_5}"'] & S_5 \\
  & A_5 \arrow[u, hook]
 \end{tikzcd}
 \qquad
@@ -24306,7 +24306,7 @@ Thus there are exactly four groups of order $28$: $\Zn{28}$, $\Zn2\times\Zn{14}$
 \[
 \begin{tikzcd}[column sep=large, row sep=large]
 G \arrow[r, "\varphi"] \arrow[dr, two heads, "{\text{quotient}}"'] & \Sym(\Syl_p(G))\isom S_{n_p} \\
- & G/\ker\varphi \arrow[u, hook, "{\bar\varphi}"']
+ & G/\ker\varphi \arrow[u, dashed, hook, "{\bar\varphi}"']
 \end{tikzcd}
 \]
 \\\emph{Answer key.} The stabilizer of $P$ under conjugation is $N_G(P)$, so $\ker\varphi=\bigcap_{P'\in\Syl_p(G)}\Stab(P')=\bigcap_{g}gN_G(P)g\inv$, the intersection of all conjugates of $N_G(P)$. This is normal in $G$ (an intersection of conjugates) and contained in $N_G(P)$; any normal $K\nor G$ with $K\sgr N_G(P)$ satisfies $K=gKg\inv\sgr gN_G(P)g\inv$ for all $g$, hence $K\sgr\ker\varphi$ --- so $\ker\varphi$ is the largest such, i.e.\ the core. The first isomorphism theorem factors $\varphi=\bar\varphi\circ(\text{quotient})$ with $\bar\varphi$ injective, so $G/\ker\varphi\hookrightarrow S_{n_p}$ and $|G/\ker\varphi|\mid n_p!$. For $|G|=36$, $p=3$: $n_3\in\{1,4\}$; if $n_3=4$ then $36\nmid4!=24$, so $\ker\varphi\neq1$, and transitivity gives $\ker\varphi\neq G$. Hence $1\neq\ker\varphi\nor G$ is proper and $G$ is not simple (and if $n_3=1$, $P_3\nor G$ directly).
@@ -24433,7 +24433,7 @@ $\Phi \circ \iota = \varphi$, i.e.\ $\Phi(s) = \varphi(s)$ for all $s \in S$. In
 a diagram, the dashed arrow exists and is unique making the triangle commute:
 \[
 \begin{tikzcd}[column sep=large]
-  S \arrow[r, "\iota"] \arrow[dr, "\varphi"'] & F(S)
+  S \arrow[r, hook, "\iota"] \arrow[dr, "\varphi"'] & F(S)
     \arrow[d, dashed, "{\exists!\,\Phi}"] \\
   & G
 \end{tikzcd}
@@ -24593,7 +24593,7 @@ is a quotient of a free group. If $G$ is finitely generated, $S$ may be taken
 finite, so $G$ is a quotient of some $F_n$.
 \[
 \begin{tikzcd}[column sep=large]
-  S \arrow[r, "\iota"] \arrow[dr, "\subseteq"'] & F(S)
+  S \arrow[r, hook, "\iota"] \arrow[dr, hook, "\subseteq"'] & F(S)
     \arrow[d, two heads, "\pi"] \\
   & G
 \end{tikzcd}
@@ -25305,7 +25305,7 @@ $\iota\colon S\to F(S)$ and any set map $f\colon S\to G$ into a group $G$, compl
 and prove existence and uniqueness of the dashed arrow in
 \[
 \begin{tikzcd}[column sep=large]
-S \arrow[r, "\iota"] \arrow[dr, "f"'] & F(S)
+S \arrow[r, hook, "\iota"] \arrow[dr, "f"'] & F(S)
   \arrow[d, dashed, "{\exists!\,\bar f}"] \\
 & G
 \end{tikzcd}
@@ -27061,7 +27061,7 @@ Prove that the corresponding valuation ring $R$ is the ring of all rational numb
 \item Let $\varphi:R\to S$ be a ring homomorphism and $\pi:R\to R/\ker\varphi$ the natural projection. State and prove the First Isomorphism Theorem for rings by constructing the dashed map $\overline{\varphi}$ that makes the diagram commute and showing it is an injective homomorphism onto $\im\varphi$:
 \[\begin{tikzcd}[row sep=large,column sep=large]
 R \arrow[r, "\varphi"] \arrow[d, two heads, "\pi"'] & S \\
-R/\ker\varphi \arrow[ur, dashed, "\overline{\varphi}"'] &
+R/\ker\varphi \arrow[ur, dashed, hook, "\overline{\varphi}"'] &
 \end{tikzcd}\]
 Apply this to $\varphi:\Z[x]\to\C$, $f\mapsto f(i)$, to identify $\Z[x]/\gen{x^2+1}$.
 
@@ -27074,14 +27074,14 @@ Instantiate with $R=\Z$, $I_1=\gen{5}$, $I_2=\gen{7}$.
 
 \item State and verify the universal property of the polynomial ring: for any ring homomorphism $\varphi:R\to S$ with $\varphi(1_R)=1_S$ into a commutative ring $S$ and any choice of $s\in S$, there is a unique ring homomorphism $\Phi:R[x]\to S$ extending $\varphi$ with $\Phi(x)=s$, making the diagram commute:
 \[\begin{tikzcd}[row sep=large,column sep=large]
-R \arrow[r, "\iota"] \arrow[dr, "\varphi"'] & R[x] \arrow[d, dashed, "{\exists!\,\Phi}"] \\
+R \arrow[r, hook, "\iota"] \arrow[dr, "\varphi"'] & R[x] \arrow[d, dashed, "{\exists!\,\Phi}"] \\
 & S
 \end{tikzcd}\]
 Use it to define the homomorphism $\Z[x]\to\Zn{n}[x]$ induced by reduction mod $n$ on coefficients, with $x\mapsto x$.
 
 \item State the universal property of the field of fractions of an integral domain $R$: every injective ring homomorphism $f:R\to F$ into a field $F$ factors uniquely through $\Frac(R)$:
 \[\begin{tikzcd}[column sep=large]
-R \arrow[r, "\iota"] \arrow[dr, "f"'] & \Frac(R) \arrow[d, dashed, "{\exists!\,\bar f}"] \\
+R \arrow[r, hook, "\iota"] \arrow[dr, hook, "f"'] & \Frac(R) \arrow[d, dashed, "{\exists!\,\bar f}"] \\
 & F
 \end{tikzcd}\]
 Verify the property explicitly for $R=\Z$, $F=\R$, $f$ the inclusion, by giving the formula for $\bar f$ on $a/b$.
@@ -27648,7 +27648,7 @@ by identifying $\ker\varphi$ explicitly and proving $\overline{\varphi}$ is an i
 
 \item (Universal property of $R[x]$.) Let $R$ be a commutative ring, $S$ a commutative $R$-algebra with structure map $\alpha\colon R\to S$, and fix $s\in S$. Prove there is a unique ring homomorphism $\Phi$ making
 \[\begin{tikzcd}[row sep=large,column sep=large]
-R \arrow[r, "\iota"] \arrow[dr, "\alpha"'] & R[x] \arrow[d, dashed, "\exists!\,\Phi"] \\
+R \arrow[r, hook, "\iota"] \arrow[dr, "\alpha"'] & R[x] \arrow[d, dashed, "\exists!\,\Phi"] \\
 & S
 \end{tikzcd}\]
 commute with $\Phi(x)=s$, where $\iota$ is the inclusion of constants. Describe $\Phi$ on a general polynomial.
@@ -27661,7 +27661,7 @@ after passing to the quotient by $I_1\cap I_2$. Precisely: prove $r\mapsto(r+I_1
 
 \item (Universal property of fractions.) Let $R$ be an integral domain and $f\colon R\to F$ an injective ring homomorphism into a field $F$. Prove there is a unique homomorphism $\bar f$ making
 \[\begin{tikzcd}[column sep=large]
-R \arrow[r, "\iota"] \arrow[dr, "f"'] & \Frac(R) \arrow[d, dashed, "\exists!\,\bar f"] \\
+R \arrow[r, hook, "\iota"] \arrow[dr, hook, "f"'] & \Frac(R) \arrow[d, dashed, "\exists!\,\bar f"] \\
 & F
 \end{tikzcd}\]
 commute, where $\iota(r)=r/1$. Give the formula for $\bar f(a/b)$ and show it is well defined.
