@@ -50152,9 +50152,9 @@ over $F$ if
 \end{enumerate}
 \end{definition}
 
-The second condition forces $K$ to be the \emph{smallest} field in which
-$f$ splits: any subfield of $K$ over which $f$ already splits must contain
-$F$ and all the $\alpha_i$, hence equals $K$. More generally a splitting
+The second condition forces $K$ to be the \emph{smallest} field containing $F$ in which
+$f$ splits: any subfield of $K$ that contains $F$ and over which $f$ splits
+must contain all the $\alpha_i$, hence equals $K$. More generally a splitting
 field for a \emph{set} of polynomials over $F$ is a field over which each
 member splits and which is generated over $F$ by all of their roots.
 
@@ -50174,8 +50174,8 @@ splitting field $K$ of $f(x)$ over $F$.
 \begin{proof}
 Induct on $n=\deg f$. If $n=1$ then $f$ is already linear and $K=F$ works.
 Assume $n>1$ and the result for all fields and all polynomials of degree
-$<n$. Let $p(x)$ be an irreducible factor of $f(x)$ in $F[x]$. By Theorem
-13.1 (Kronecker) the field $E=F[x]/(p(x))$ is an extension of $F$
+$<n$. Let $p(x)$ be an irreducible factor of $f(x)$ in $F[x]$. By Kronecker's
+theorem (Section~13.1) the field $E=F[x]/(p(x))$ is an extension of $F$
 containing a root $\alpha$ of $p$, hence of $f$. Over $E$ we may write
 $f(x)=(x-\alpha)g(x)$ with $g(x)\in E[x]$ of degree $n-1$. By induction
 $g$ has a splitting field $K$ over $E$; thus $g$ (and therefore $f$)
@@ -50185,7 +50185,7 @@ roots of $f$. So $K$ is a splitting field for $f$ over $F$.
 
 The inductive construction adjoins one root, drops the degree by one, and
 repeats. The next diagram shows the single step of Kronecker's
-construction (Theorem~13.1) that fuels the induction: evaluation
+construction (Section~13.1) that fuels the induction: evaluation
 $x\mapsto\alpha$ realizes $F(\alpha)$ as a quotient of the polynomial ring.
 
 \[
@@ -50196,7 +50196,7 @@ F \arrow[r, hook] \arrow[dr, hook'] & F[x]
 \end{tikzcd}
 \]
 \begin{dgx}
-\dgi{Objects:} Three objects: the base field $F$ (bottom-left and top-left
+\dgi{Objects:} Three objects: the base field $F$ (top-left
 corner); the polynomial ring $F[x]$ (top-right), an integral domain whose
 elements are formal polynomials over $F$; and the quotient ring
 $F[x]/(p(x))$, identified via an isomorphism with the simple extension
@@ -50253,7 +50253,7 @@ has degree $\deg m_{\alpha,F}(x)\le n$, where $\alpha$ is the chosen root;
 indeed $m_{\alpha,F}\mid f$, so this degree is at most $n$. Over
 $F(\alpha)$ the cofactor $g$ has degree $n-1$, and by induction its
 splitting field over $F(\alpha)$ has degree at most $(n-1)!$. By the tower
-law (Theorem 13.2),
+law (Section~13.2),
 \[
    \idx{K}{F}=\idx{K}{F(\alpha)}\,\idx{F(\alpha)}{F}\ \le\ (n-1)!\cdot n=n!.
 \]
@@ -50275,7 +50275,7 @@ left; the successive adjunction fields $F(\alpha_1)$,
 $F(\alpha_1,\alpha_2)$, ...; and the splitting field
 $K=F(\alpha_1,\dots,\alpha_n)$ on the right. Each node is a field, and each
 arrow is an extension of fields of the indicated degree bound.
-\dgi{Arrows:} Each dash arrow $E\dashrightarrow E(\alpha_k)$ represents the
+\dgi{Arrows:} Each undirected edge from $E$ to $E(\alpha_k)$ represents the
 field extension obtained by adjoining one root $\alpha_k$ of the remaining
 cofactor. The label ${\le\,n-k+1}$ over the $k$-th arrow is the bound on
 $[E(\alpha_k):E]$, coming from the degree of the cofactor $g_{k-1}(x)$
@@ -50284,7 +50284,7 @@ at that stage. The arrows are not ring maps but field extensions (inclusions).
 a chain, not a square. The key relation is multiplicativity of degrees via the
 tower law: $[K:F]=[K:F(\alpha_1,\ldots,\alpha_{n-1})]\cdots[F(\alpha_1):F]$.
 Each factor is bounded by the label on the corresponding edge.
-\dgi{Why it commutes:} Applying the tower law (Theorem~13.2) step by step:
+\dgi{Why it commutes:} Applying the tower law (Section~13.2) step by step:
 $[K:F]\le (n)\cdot(n-1)\cdots(1)=n!$. At each step the degree
 $[F(\alpha_1,\dots,\alpha_k):F(\alpha_1,\dots,\alpha_{k-1})]$ is at most the
 degree of the cofactor of $f$ remaining after $k-1$ roots are removed, which
@@ -50628,7 +50628,7 @@ $F$-isomorphism, corresponding to the nontrivial automorphism of
 $\Q(\sqrt2)$; there are exactly $\idx{K}{\Q}=2$ of them.
 \end{wex}
 
-\begin{wex}{Extending an isomorphism between distinct base fields}
+\begin{wex}{Extending a nontrivial automorphism of the base field}
 Let $\varphi:\Q(\sqrt2)\to\Q(\sqrt2)$ be the nontrivial automorphism
 $\sqrt2\mapsto-\sqrt2$. Extend it across the splitting field of
 $f(x)=x^2-\sqrt2$.
@@ -50780,8 +50780,10 @@ $\varphi=\id_F$ together with the algebraic-closedness of $\overline F$.
 \wsol Each $\alpha\in E$ is algebraic over $F$, so $m_{\alpha,F}(x)$ splits
 in $\overline F$. Extending $\id_F$ root-by-root (Zorn over partial
 embeddings) gives an $F$-embedding $\iota:E\hookrightarrow\overline F$.
-\emph{Sanity check:} taking $E=\overline F$ itself recovers the uniqueness
-of the algebraic closure up to $F$-isomorphism.
+\emph{Sanity check:} taking for $E$ a second algebraic closure $\overline{F}'$ of $F$
+gives an $F$-embedding $\overline{F}'\hookrightarrow\overline F$; it is onto, since its
+image is algebraically closed and $\overline F$ is algebraic over it. This recovers the
+uniqueness of the algebraic closure up to $F$-isomorphism.
 \end{wex}
 
 The Frobenius endomorphism organizes the finite-field tower whose union is
@@ -50822,7 +50824,7 @@ taking $p$-th powers in characteristic $p$.
 \dgi{Why this matters here:} This square records that the Frobenius on
 $\overline{\F_p}$ restricts correctly to the Frobenius on each layer
 $\F_{p^n}$. It is the naturality statement organizing the tower
-$\F_p\subset\F_{p^2}\subset\F_{p^3}\subset\cdots$ whose union is
+$\F_p\subset\F_{p^{2!}}\subset\F_{p^{3!}}\subset\cdots$ whose union is
 $\overline{\F_p}$, and it justifies using the single symbol $\phi$ for the
 global Frobenius.
 \dgi{Concrete example:} For $p=2$, $n=2$: $\F_4=\{0,1,\omega,\omega^2\}$ with
@@ -50913,15 +50915,18 @@ structure theorem $\mathrm{Gal}(\Q(\zeta_{12})/\Q)\cong(\Z/12\Z)^\times
 \cong\Z/2\Z\times\Z/2\Z$, whose subgroups correspond to the intermediate
 fields.
 \dgi{Concrete example:} The diagram itself is the running example: the
-biquadratic field $\Q(\sqrt{-3},i)=\Q(\zeta_{12})$ with its two quadratic
-subfields.
+biquadratic field $\Q(\sqrt{-3},i)=\Q(\zeta_{12})$ with two of its three quadratic
+subfields; the third, $\Q(\sqrt3)$ (note $\sqrt3=-i\sqrt{-3}$), is not of the form
+$\Q(\zeta_d)$ and is not drawn.
 \dgi{Common pitfall:} The label ``$\Q(\zeta_3)=\Q(\sqrt{-3})$'' may suggest
 these are obviously equal, but the equality requires the identity
 $\zeta_3=(-1+\sqrt{-3})/2$. Do not assume that containments among cyclotomic
 fields are obvious without verifying the explicit root expressions.
-\dgi{Takeaway:} The point of this diagram is that the subfield lattice of a
-cyclotomic field mirrors the divisor lattice of the index, with each edge
-carrying the relative Euler-phi value as its degree.
+\dgi{Takeaway:} The point of this diagram is that $d\mid e$ gives
+$\Q(\zeta_d)\subseteq\Q(\zeta_e)$ with relative degree $\varphi(e)/\varphi(d)$. The full
+subfield lattice of a cyclotomic field $\Q(\zeta_n)$ is in general larger than these cyclotomic
+subfields (here it also contains $\Q(\sqrt3)$): it corresponds to the subgroup lattice
+of $(\Z/n\Z)^\times$, not to the divisor lattice of $n$.
 \end{dgx}
 
 \begin{wex}{Splitting field of $x^6-1$ over $\F_5$}
@@ -51071,7 +51076,7 @@ irreducibility of $\Phi_n$.
 
 \begin{exers}{Commutative-diagram exercises.}
 
-\item Let $\varphi \colon F \xrightarrow{\sim} F'$ be a field isomorphism, $p \in F[x]$ irreducible with root $\alpha$ in some extension, and $\beta$ a root of $p' = \varphi(p)$. Show the isomorphism $\sigma \colon F(\alpha) \to F'(\beta)$ fixing $\varphi$ and sending $\alpha \mapsto \beta$ makes the square below commute, where the verticals are the inclusions.
+\item Let $\varphi \colon F \xrightarrow{\sim} F'$ be a field isomorphism, $p \in F[x]$ irreducible with root $\alpha$ in some extension, and $\beta$ a root of $p' = \varphi(p)$. Show the isomorphism $\sigma \colon F(\alpha) \to F'(\beta)$ extending $\varphi$ and sending $\alpha \mapsto \beta$ makes the square below commute, where the verticals are the inclusions.
 \[
 \begin{tikzcd}
 F \arrow[r, "\varphi"] \arrow[d, hook] & F' \arrow[d, hook] \\
