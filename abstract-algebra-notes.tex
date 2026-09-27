@@ -12025,7 +12025,7 @@ $\overline{\varphi}$ is an isomorphism onto the image:
 \[
 \begin{tikzcd}[row sep=large,column sep=large]
 G \arrow[r, "\varphi"] \arrow[d, two heads, "\pi"'] & H \\
-G/\ker\varphi \arrow[ur, dashed, "{\overline{\varphi},\ \isom}"'] &
+G/\ker\varphi \arrow[ur, dashed, hook, "\overline{\varphi}"'] &
 \end{tikzcd}
 \]
 \begin{dgx}
@@ -12036,7 +12036,7 @@ G/\ker\varphi \arrow[ur, dashed, "{\overline{\varphi},\ \isom}"'] &
   the natural projection $\pi(g)=g\ker\varphi$; it is surjective (double-head arrow) because
   every coset has a representative.  (3) $\overline{\varphi}:G/\ker\varphi\to\im\varphi\subseteq H$,
   the induced map $\overline{\varphi}(g\ker\varphi)=\varphi(g)$; drawn dashed to signal it is
-  \emph{constructed} by the theorem, not given, and labelled $\isom$ because it is an isomorphism.
+  \emph{constructed} by the theorem, not given, and hooked because it is injective (an isomorphism onto $\im\varphi$).
 \dgi{What commutes:} The triangle commutes: $\overline{\varphi}\circ\pi=\varphi$.  In other words,
   going $G\xrightarrow{\pi}G/\ker\varphi\xrightarrow{\overline{\varphi}}\im\varphi$ gives the same
   result as going $G\xrightarrow{\varphi}\im\varphi$ directly.
@@ -12046,7 +12046,7 @@ G/\ker\varphi \arrow[ur, dashed, "{\overline{\varphi},\ \isom}"'] &
   is the key subtlety: if $g_1\ker\varphi=g_2\ker\varphi$ then $g_2^{-1}g_1\in\ker\varphi$, so
   $\varphi(g_1)=\varphi(g_2)$, confirming the output depends only on the coset, not the representative.
 \dgi{Why this matters here:} This diagram is the geometric content of the First Isomorphism Theorem.
-  It says every homomorphism $\varphi$ factors as surjection-onto-quotient followed by isomorphism;
+  It says every homomorphism $\varphi$ factors as surjection-onto-quotient followed by an isomorphism onto $\im\varphi$;
   the quotient $G/\ker\varphi$ is the universal way to make $\varphi$ injective.
 \dgi{Concrete example:} Let $\varphi:\Z\to\Zn{6}$, $\varphi(a)=\overline{a}$.  Then $\ker\varphi=6\Z$,
   $\pi(a)=a+6\Z$, and $\overline{\varphi}(a+6\Z)=\overline{a}$.  The triangle: $8\mapsto 8+6\Z\mapsto\overline{8}=\overline{2}$,
@@ -12155,7 +12155,7 @@ G/N \arrow[ur, dashed, "{\overline{\psi},\ \exists!}"'] &
   $\psi(g_1)=\psi(g_2)$.  Without this containment $\overline{\psi}$ would not be a function.
 \dgi{Why this matters here:} This is the universal property of the quotient $G/N$: it converts
   any $\psi$ that kills $N$ into a unique factored map through $G/N$.  The First Isomorphism
-  Theorem is the special case $N=\ker\psi$, making $\overline{\psi}$ an isomorphism.
+  Theorem is the special case $N=\ker\psi$, making $\overline{\psi}$ an isomorphism onto $\im\psi$.
 \dgi{Concrete example:} Let $G=\Z$, $N=6\Z$, $K=\Zn{2}$, $\psi(a)=\overline{a}\bmod 2$.
   Since $6\Z\subseteq 2\Z=\ker\psi$, the induced $\overline{\psi}:\Z/6\Z\to\Zn{2}$ sends
   $a+6\Z\mapsto a\bmod 2$.  Check: $\overline{\psi}(4+6\Z)=0$, same as $\psi(4)=0$.
@@ -12195,7 +12195,7 @@ with kernel $N$) is almost always faster.
 
 \begin{pitfall}
 The map $gN\mapsto\varphi(g)$ lands in $\im\varphi$, \emph{not necessarily in all of} $H$.
-$G/\ker\varphi\isom H$ holds only when $\varphi$ is surjective. Writing
+The induced map $G/\ker\varphi\to H$ is an isomorphism only when $\varphi$ is surjective. Writing
 ``$G/\ker\varphi\isom H$'' for a non-surjective $\varphi$ is the single most common error.
 Always check onto, or write $\im\varphi$.
 \end{pitfall}
@@ -13140,7 +13140,7 @@ quotient'' $\Rightarrow$ Fourth.
 \item Let $\varphi:G\to H$ be a homomorphism and $\pi:G\to G/\ker\varphi$ the natural projection. Fill in the unique induced map and prove the triangle commutes:
 \[\begin{tikzcd}[row sep=large,column sep=large]
 G \arrow[r, "\varphi"] \arrow[d, two heads, "\pi"'] & H \\
-G/\ker\varphi \arrow[ur, dashed, "\overline{\varphi}"', "\isom"] &
+G/\ker\varphi \arrow[ur, dashed, hook, "\overline{\varphi}"'] &
 \end{tikzcd}\]
 Show $\overline{\varphi}(g\ker\varphi)=\varphi(g)$ is well-defined and that $\overline{\varphi}$ is an isomorphism onto $\im\varphi$.
 
