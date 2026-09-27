@@ -63344,7 +63344,7 @@ $\rad I\subseteq I(Z(I))$ is clear. For the reverse, the \emph{Rabinowitsch tric
 \end{proof}
 
 \begin{remark}[the geometric dictionary, completed]
-Combined with $\S15.2$: \emph{points} $\leftrightarrow$ maximal ideals; \emph{irreducible} algebraic sets $\leftrightarrow$ prime ideals; \emph{algebraic sets} $\leftrightarrow$ radical ideals; and unique decomposition of an algebraic set into irreducible components mirrors the unique writing of a radical ideal as an intersection of primes. The Nullstellensatz is the statement that $k[\Aff^n]\rightsquigarrow\Aff^n$ loses no information when $k=\overline k$: geometry and the algebra of $k[\Aff^n]$ are the same subject. The variant for arbitrary $k$ (D\&F Cor.~33) recovers $I_k(Z_{\overline k}(I))=\rad I$ by base-changing to $\overline k$.
+Combined with $\S15.2$: \emph{points} $\leftrightarrow$ maximal ideals; \emph{irreducible} algebraic sets $\leftrightarrow$ prime ideals; \emph{algebraic sets} $\leftrightarrow$ radical ideals; and unique decomposition of an algebraic set into irreducible components mirrors the unique writing of a radical ideal as an irredundant intersection of finitely many primes (its minimal primes). The Nullstellensatz is the statement that $k[\Aff^n]\rightsquigarrow\Aff^n$ loses no information when $k=\overline k$: geometry and the algebra of $k[\Aff^n]$ are the same subject. The variant for arbitrary $k$ (D\&F Cor.~33) recovers $I_k(Z_{\overline k}(I))=\rad I$ by base-changing to $\overline k$.
 \end{remark}
 
 \[
@@ -63356,14 +63356,14 @@ Combined with $\S15.2$: \emph{points} $\leftrightarrow$ maximal ideals; \emph{ir
 \]
 \begin{dgx}
 \dgi{Objects:} The left column lists three nested classes of ideals in $k[x_1,\dots,x_n]$ ($k$
-algebraically closed): maximal ideals $\supseteq$ prime ideals $\supseteq$ radical ideals.
+algebraically closed): maximal ideals $\subseteq$ prime ideals $\subseteq$ radical ideals.
 The right column lists the corresponding nested classes of subsets of $\Aff^n$: closed points
-$\supseteq$ irreducible closed sets $\supseteq$ arbitrary algebraic sets.  Each row is a single
+$\subseteq$ irreducible closed sets $\subseteq$ arbitrary algebraic sets.  Each row is a single
 class on each side; the vertical inclusions on both sides record the containment
 maximal $\subseteq$ prime $\subseteq$ radical and point $\subseteq$ irreducible $\subseteq$
 algebraic set.
 
-\dgi{Arrows:} Every dash in the diagram stands for the mutually inverse bijections
+\dgi{Arrows:} Every horizontal dash in the diagram stands for the mutually inverse bijections
 $Z: I \mapsto \set{a\in\Aff^n : f(a)=0 \text{ for all } f\in I}$ (zero-set) and
 $I: S \mapsto \set{f\in k[x_1,\dots,x_n] : f(a)=0 \text{ for all } a\in S}$ (ideal of a set).
 The label $Z,\,I$ on the bottom horizontal dash makes this explicit.
@@ -63383,11 +63383,12 @@ $Z(\fm) = Z(\fm)$ as an algebraic set -- the maps on each row restrict and agree
 \dgi{Why it commutes:} For the top row, the Nullstellensatz Weak Form gives
 $\fm = (x_1 - a_1,\dots, x_n - a_n)$ and $Z(\fm) = \{(a_1,\dots,a_n)\}$,
 a single point.  A single point is irreducible (its ideal is prime) and is an algebraic set
-(it is closed), so the single point sits in all three right-column classes.  The fact that
-maximal $\subset$ prime $\subset$ radical is preserved under $Z$ (and $I$) is because
-$Z$ is inclusion-reversing and $I$ is inclusion-reversing, so their composite $I \circ Z$
-is inclusion-preserving and equals $\rad(\cdot)$ by the Strong Form; two inclusion-reversing
-maps compose to an inclusion-preserving one, keeping the vertical nesting intact.
+(it is closed), so the single point sits in all three right-column classes.  The vertical
+nesting is preserved because the three horizontal bijections are restrictions of a single one:
+by the Strong Form, $Z$ and $I$ are mutually inverse bijections between radical ideals and
+algebraic sets, and under this bijection the maximal ideals correspond to the points (Weak Form)
+and the prime ideals to the irreducible sets (a radical ideal is prime iff its zero set is
+irreducible).
 
 \dgi{Why this matters here:} This diagram is the payoff of the entire section.  It records,
 in one picture, the two-sided Nullstellensatz dictionary: the Weak Form identifies the top
@@ -63400,8 +63401,9 @@ $\Aff^n$ and the algebra of $k[\Aff^n]$ are the same ordered structure.
 \dgi{Concrete example:} Take $n=1$, $k=\C$.  Maximal ideals of $\C[x]$: $(x-a)$ for $a\in\C$;
 corresponding points: $\{a\} \subset \Aff^1$.  Prime ideals: $(0)$ and $(x-a)$; irreducible
 sets: $\Aff^1$ itself (corresponding to $(0)$, the generic point) and individual points.
-Radical ideals: finite intersections $(x-a_1)\cdots(x-a_r)$; algebraic sets: finite subsets
-$\{a_1,\dots,a_r\}$ of $\C$.  In each row $Z$ and $I$ are mutually inverse, and the vertical
+Radical ideals: $(0)$ and the ideals $((x-a_1)\cdots(x-a_r))=(x-a_1)\cap\cdots\cap(x-a_r)$
+with $a_1,\dots,a_r$ distinct ($r=0$ giving $(1)$); algebraic sets: $\Aff^1=Z((0))$ and the finite
+subsets $\{a_1,\dots,a_r\}$ of $\C$.  In each row $Z$ and $I$ are mutually inverse, and the vertical
 inclusions on both sides are the natural ones.
 
 \dgi{Common pitfall:} Students sometimes read the dashes as isomorphisms of rings, or think
