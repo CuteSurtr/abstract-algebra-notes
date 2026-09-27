@@ -41390,7 +41390,7 @@ $\varphi\colon M\to A$ there is a unique $R$-algebra homomorphism
 $\Phi\colon T(M)\to A$ with $\Phi\circ\iota=\varphi$, namely
 \[
   \Phi(m_1\tensor\cdots\tensor m_k)=\varphi(m_1)\cdots\varphi(m_k),\qquad
-  \Phi|_{R}=\id.
+  \Phi(r)=r\cdot 1_A\ \ (r\in R=T^0(M)).
 \]
 Thus $T(M)$ is the universal $R$-algebra containing the image of $M$: every
 $R$-module map out of $M$ into an algebra extends uniquely to a multiplicative
@@ -41417,9 +41417,13 @@ M \arrow[r,"\iota"] \arrow[dr,"\varphi"'] & T(M) \arrow[d,"\exists!\,\Phi"] \\
 \dgi{Why it commutes:} $\Phi$ is defined on pure tensors by
   $\Phi(m_1\tensor\cdots\tensor m_k)=\varphi(m_1)\cdots\varphi(m_k)$.
   For an element $m\in M=T^1(M)$, this gives $\Phi(\iota(m))=\varphi(m)$.
-  Well-definedness: $T(M)$ is a direct sum of free modules $T^k(M)$, so $\Phi$
-  is determined without ambiguity by its values on decomposable tensors, and
-  $R$-bilinearity in each factor forces the extension to be an algebra map.
+  Well-definedness: the map $(m_1,\dots,m_k)\mapsto\varphi(m_1)\cdots\varphi(m_k)$ is
+  $R$-multilinear, so by the universal property of the tensor product it induces an
+  $R$-linear map on each $T^k(M)$ (no freeness is needed, and $T^k(M)$ need not be
+  free: $T^2(\Zn{n})\isom\Zn{n}$ over $\Z$); these assemble to an $R$-linear $\Phi$ on
+  the direct sum $T(M)$, which is multiplicative because it is so on pure tensors
+  (concatenation goes to the product in $A$) and both sides of
+  $\Phi(xy)=\Phi(x)\Phi(y)$ are bilinear in $(x,y)$.
 \dgi{Why this matters here:} This is the central organizing fact of the subsection:
   $T(M)$ is the \emph{free $R$-algebra on $M$}. The diagram says that to give an
   algebra map out of $T(M)$, one need only specify a module map out of $M$; the
@@ -41482,10 +41486,13 @@ N \arrow[r,"\iota_N"'] & T(N)
   Then $T(\psi)(e\tensor e)=e_1\tensor e_1$, embedding the $1$-dimensional
   $T^2(\F^1)$ into the $4$-dimensional $T^2(\F^2)$ as the line $\F(e_1\tensor e_1)$.
   The square checks out: $\iota_{\F^2}(\psi(e))=\iota_{\F^2}(e_1)=e_1=T(\psi)(e)$.
-\dgi{Common pitfall:} Students sometimes think $T(\psi)$ is surjective or an
-  isomorphism whenever $\psi$ is. It is injective when $\psi$ is injective, but
-  surjectivity need not be preserved: $T(\psi)$ can miss tensors in $T(N)$ that
-  mix basis elements not in the image of $\psi$.
+\dgi{Common pitfall:} Students sometimes think $T(\psi)$ is injective whenever $\psi$
+  is. Surjectivity is preserved ($T^k(N)$ is spanned by the pure tensors
+  $\psi(m_1)\tensor\cdots\tensor\psi(m_k)$ when $\psi$ is onto), and so is bijectivity
+  (by functoriality), but over a general ring injectivity is not: for
+  $\psi\colon\Zn2\to\Zn4$, $1\mapsto 2$, the map $T^2(\psi)$ sends the generator
+  $1\tensor 1$ of $\Zn2\tensor_{\Z}\Zn2\isom\Zn2$ to $2\tensor 2=4(1\tensor 1)=0$ in
+  $\Zn4\tensor_{\Z}\Zn4\isom\Zn4$. Over a field, $T(\psi)$ is injective whenever $\psi$ is.
 \dgi{Takeaway:} The point of this diagram is that the tensor algebra construction is
   functorial, so every module map $\psi$ lifts uniquely to an algebra map $T(\psi)$
   that is compatible with the inclusions into the tensor algebras.
