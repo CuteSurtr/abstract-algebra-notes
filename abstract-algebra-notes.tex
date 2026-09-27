@@ -54771,7 +54771,7 @@ List all subfields of $\F_{p^{12}}$ and draw the inclusion lattice.
 
 \begin{dgx}
 \dgi{Objects:} Left lattice: the six subfields of $\F_{p^{12}}$, namely $\F_{p^d}$ for $d\in\{1,2,3,4,6,12\}$, arranged by inclusion with larger fields higher. Right lattice: the six divisors $1,2,3,4,6,12$ arranged by divisibility. The $\cong$ symbol between them labels the order-isomorphism $\F_{p^d}\leftrightarrow d$.
-\dgi{Arrows:} Each dashed edge on the left is a field inclusion $\F_{p^a}\subsetneq\F_{p^b}$ at a covering step ($b/a$ prime). On the right the same edge is the covering relation $a\mid b$ with $b/a$ prime. The $\cong$ arrow between the two sides is not a ring map -- it is a poset isomorphism, asserting that the two Hasse diagrams are combinatorially identical.
+\dgi{Arrows:} Each edge on the left is a field inclusion $\F_{p^a}\subsetneq\F_{p^b}$ at a covering step ($b/a$ prime). On the right the same edge is the covering relation $a\mid b$ with $b/a$ prime. The $\cong$ sign between the two sides is not a ring map -- it is a poset isomorphism, asserting that the two Hasse diagrams are combinatorially identical.
 \dgi{What commutes:} The defining equivalence: $\F_{p^a}\subseteq\F_{p^b}\iff a\mid b$, for all pairs of divisors $a,b$ of $12$. Every edge on the left corresponds to the same edge on the right under this rule.
 \dgi{Why it commutes:} If $a\mid b$, say $b=ak$, then every $\alpha\in\F_{p^a}$ satisfies $\alpha^{p^b}=\alpha$ (apply $\alpha\mapsto\alpha^{p^a}$ $k$ times), so $\F_{p^a}\subseteq\set{\alpha:\alpha^{p^b}=\alpha}=\F_{p^b}$. Conversely, if $\F_{p^a}\subseteq\F_{p^b}$, then $\F_{p^b}$ is a vector space over $\F_{p^a}$, so $p^b=(p^a)^k$ with $k=\idx{\F_{p^b}}{\F_{p^a}}$, i.e.\ $b=ak$ and $a\mid b$. (Comparing sizes alone is not enough: $p^2<p^3$, yet $\F_{p^2}\not\subseteq\F_{p^3}$.) So divisibility is the exact algebraic condition for inclusion.
 \dgi{Why this matters here:} This worked example makes the abstract theorem concrete for $n=12$, a case with a genuinely non-chain subfield lattice (having both $\F_{p^4}$ and $\F_{p^6}$ as incomparable intermediate subfields; the smallest non-chain case is $n=6$, where $\F_{p^2}$ and $\F_{p^3}$ are incomparable). Seeing the $\cong$ sign between the two diagrams is a sanity check: any inclusion question about subfields of $\F_{p^{12}}$ can be answered by pure arithmetic on divisors of $12$.
@@ -54805,7 +54805,7 @@ Express the correspondence of the previous example through subgroups of the cycl
 
 \begin{dgx}
 \dgi{Objects:} Left lattice: five subgroups of $G=\Gal(\F_{p^{12}}/\F_p)\isom\Zn{12}$, namely $\{1\}$, $\gen{\sigma^6}$ (order $2$), $\gen{\sigma^2}$ (order $6$), $\gen{\sigma^3}$ (order $4$), and $G=\gen{\sigma}$ (order $12$), arranged by subgroup inclusion with larger subgroups lower. Right lattice: the corresponding fixed fields $\F_{p^{12}},\F_{p^6},\F_{p^2},\F_{p^3},\F_p$, arranged by field inclusion with larger fields higher.
-\dgi{Arrows:} Dashed edges on the left are subgroup inclusions (going down = larger). Dashed edges on the right are field inclusions (going up = larger). The horizontal $\xleftrightarrow{\Fix}$ arrow is the Galois correspondence $H\mapsto\Fix(H)=\{\alpha\in\F_{p^{12}}:\sigma^k(\alpha)=\alpha\text{ for all }\sigma^k\in H\}$; it is a bijection from subgroups of $G$ to intermediate fields, reversing inclusion.
+\dgi{Arrows:} Edges on the left are subgroup inclusions (going down = larger). Edges on the right are field inclusions (going up = larger). The horizontal $\xleftrightarrow{\Fix}$ arrow is the Galois correspondence $H\mapsto\Fix(H)=\{\alpha\in\F_{p^{12}}:\sigma^k(\alpha)=\alpha\text{ for all }\sigma^k\in H\}$; it is a bijection from subgroups of $G$ to intermediate fields, reversing inclusion.
 \dgi{What commutes:} The anti-isomorphism: $H_1\subseteq H_2$ (as subgroups) if and only if $\Fix(H_1)\supseteq\Fix(H_2)$ (as fields). For instance, $\{1\}\subseteq\gen{\sigma^6}$ corresponds to $\F_{p^{12}}\supseteq\F_{p^6}$, and $\gen{\sigma^6}\subseteq G$ corresponds to $\F_{p^6}\supseteq\F_p$.
 \dgi{Why it commutes:} A larger subgroup imposes more fixed-point conditions, so its fixed field is smaller. Formally: if $H_1\subseteq H_2$ then $\Fix(H_2)\subseteq\Fix(H_1)$ because any $\alpha$ fixed by all of $H_2$ is also fixed by the subset $H_1$. The Fundamental Theorem guarantees this is a bijection (not just a map) for a finite Galois extension.
 \dgi{Why this matters here:} This is the worked-example display of the Galois correspondence for $\F_{p^{12}}/\F_p$. Placing the subgroup and subfield lattices side by side, with $\Fix$ connecting them, makes the anti-isomorphism visually unmistakable: the diagram is upside-down on the left compared to the right. This is the conceptual heart of the example.
@@ -54974,7 +54974,7 @@ Compute $\Gal(\F_{p^{12}}/\F_{p^2})$, its order, and its subgroup/subfield latti
 
 \begin{dgx}
 \dgi{Objects:} Four fields arranged in a diamond: $\F_{p^2}$ at the bottom (the base of the relative extension), $\F_{p^4}$ and $\F_{p^6}$ in the middle (incomparable intermediate fields), and $\F_{p^{12}}$ at the top (the total field). All four are subfields of a fixed $\overline{\F_p}$, and this is the lattice of intermediate fields for the extension $\F_{p^{12}}/\F_{p^2}$.
-\dgi{Arrows:} Each dashed edge is an upward field inclusion at a covering step. $\F_{p^2}\subset\F_{p^4}$ has degree $2$ ($4/2=2$); $\F_{p^2}\subset\F_{p^6}$ has degree $3$ ($6/2=3$); $\F_{p^4}\subset\F_{p^{12}}$ has degree $3$; $\F_{p^6}\subset\F_{p^{12}}$ has degree $2$. The absence of an edge between $\F_{p^4}$ and $\F_{p^6}$ records that $4\nmid6$ and $6\nmid4$.
+\dgi{Arrows:} Each edge is an upward field inclusion at a covering step. $\F_{p^2}\subset\F_{p^4}$ has degree $2$ ($4/2=2$); $\F_{p^2}\subset\F_{p^6}$ has degree $3$ ($6/2=3$); $\F_{p^4}\subset\F_{p^{12}}$ has degree $3$; $\F_{p^6}\subset\F_{p^{12}}$ has degree $2$. The absence of an edge between $\F_{p^4}$ and $\F_{p^6}$ records that $4\nmid6$ and $6\nmid4$.
 \dgi{What commutes:} The covering relations: going up-left from $\F_{p^2}$ to $\F_{p^4}$ to $\F_{p^{12}}$ has the same endpoint as going up-right from $\F_{p^2}$ to $\F_{p^6}$ to $\F_{p^{12}}$; both paths end at the same object $\F_{p^{12}}$. Formally $\F_{p^4}\cdot\F_{p^6}=\F_{p^{\operatorname{lcm}(4,6)}}=\F_{p^{12}}$ and $\F_{p^4}\cap\F_{p^6}=\F_{p^{\gcd(4,6)}}=\F_{p^2}$.
 \dgi{Why it commutes:} The intermediate fields of $\F_{p^{12}}/\F_{p^2}$ correspond to subgroups of $\Gal(\F_{p^{12}}/\F_{p^2})\isom\Zn{6}$. The divisors of $6$ are $1,2,3,6$, giving exponents $2\cdot1,2\cdot2,2\cdot3,2\cdot6=2,4,6,12$. The diamond shape is forced because $2$ and $3$ are the only proper divisors of $6$, and $2,3$ do not divide each other.
 \dgi{Why this matters here:} This is the key output of the worked example: the subfield lattice of a \emph{relative} extension $\F_{p^{12}}/\F_{p^2}$ is the divisor lattice of $6 = 12/2$. This shows that the entire theory (Galois correspondence, divisor lattice, Frobenius structure) applies to relative extensions $\F_{p^n}/\F_{p^d}$ with $n/d$ in place of $n$.
@@ -55214,23 +55214,24 @@ Since $K$ is the splitting field of a separable polynomial $f\in F[x]$ over $F$,
 The picture to memorize is the \emph{diamond}: $KL$ on top, $K$ and $L$ on the two sides, $K\cap L$ at the bottom. The two slanted edges drawn with the \emph{same} relative degree are the two ``equal'' sides of the parallelogram.
 
 \[
-\begin{tikzcd}[row sep=2.0em, column sep=2.0em]
-& KL \arrow[dl,dash]\arrow[dr,dash] & \\
-K \arrow[dr,dash] & & L \arrow[dl,dash] \\
+\begin{tikzcd}[row sep=1.4em, column sep=2.4em]
+& KL \arrow[ddl,dash]\arrow[dr,dash,"n"] & \\
+& & L \arrow[ddl,dash] \\
+K \arrow[dr,dash,"n"'] & & \\
 & K\cap L &
 \end{tikzcd}
 \qquad
 \xleftrightarrow{\ \text{restrict}\ }
 \qquad
 \begin{tikzcd}[row sep=2.0em, column sep=2.0em]
-& \Gal(KL/L) \arrow[d,"\isom"] \\
-& \Gal\bigl(K/(K\cap L)\bigr)
+\Gal(KL/L) \arrow[d,"\isom"] \\
+\Gal\bigl(K/(K\cap L)\bigr)
 \end{tikzcd}
 \]
 
 \begin{dgx}
-\dgi{Objects:} The left lattice has four field nodes: $KL$ (composite, at the top), $K$ (upper-left, a Galois extension of $F$), $L$ (upper-right, an arbitrary extension of $F$), and $K\cap L$ (intersection field, at the bottom). The right diagram has two group nodes: $\Gal(KL/L)$ (the full automorphism group of the composite fixing $L$) and $\Gal(K/(K\cap L))$ (the subgroup of $\Gal(K/F)$ fixing the intersection $K\cap L$).
-\dgi{Arrows:} In the lattice, each dash denotes a field extension (going upward by convention). The double-headed arrow $\xleftrightarrow{\text{restrict}}$ between the two diagrams signals that the correspondence is given by restriction. The downward arrow labeled $\isom$ is the restriction homomorphism $\sigma\mapsto\sigma|_K$, which the theorem asserts is a group isomorphism.
+\dgi{Objects:} The left lattice has four field nodes: $KL$ (composite, at the top), $K$ (lower-left, a Galois extension of $F$), $L$ (upper-right, an arbitrary extension of $F$), and $K\cap L$ (intersection field, at the bottom). The right diagram has two group nodes: $\Gal(KL/L)$ (the full automorphism group of the composite fixing $L$) and $\Gal(K/(K\cap L))$ (the subgroup of $\Gal(K/F)$ fixing the intersection $K\cap L$).
+\dgi{Arrows:} In the lattice, each dash denotes a field extension (going upward by convention); the two short edges $KL/L$ and $K/(K\cap L)$ carry the same label $n$, their common degree $n=[KL:L]=[K:K\cap L]$. The double-headed arrow $\xleftrightarrow{\text{restrict}}$ between the two diagrams signals that the correspondence is given by restriction. The downward arrow labeled $\isom$ is the restriction homomorphism $\sigma\mapsto\sigma|_K$, which the theorem asserts is a group isomorphism.
 \dgi{What commutes:} The key equality is that the restriction map $\Gal(KL/L)\to\Gal(K/F)$, $\sigma\mapsto\sigma|_K$, lands inside $\Gal(K/(K\cap L))$ and is an isomorphism onto it: $\operatorname{im}(\text{restrict}) = \Gal(K/(K\cap L))$. Equivalently, the two ``equal-length'' sides of the diamond satisfy $[KL:L]=[K:K\cap L]$.
 \dgi{Why it commutes:} Take any $\sigma\in\Gal(KL/L)$. Because $K/F$ is normal, $\sigma$ maps $K$ into $K$, so $\sigma|_K\in\Gal(K/F)$. An element of $K$ fixed by every such $\sigma|_K$ is also fixed by every element of $\Gal(KL/L)$, placing it in $L$; so it lies in $K\cap L$. Conversely, any element of $K\cap L$ is already fixed by $\Gal(KL/L)$ (which fixes $L$ pointwise). Hence $\operatorname{Fix}(\operatorname{im}(\text{restrict}))=K\cap L$, and by the Fundamental Theorem of Galois Theory applied to $K/F$, the image equals $\Gal(K/(K\cap L))$. Injectivity: if $\sigma|_K=\id_K$ and $\sigma|_L=\id_L$, then $\sigma=\id_{KL}$ since $K$ and $L$ generate $KL$.
 \dgi{Why this matters here:} This diagram is the geometric core of the theorem: it says the ``missing'' automorphisms of $KL/L$ (compared to all of $\Gal(K/F)$) are exactly those in $\Gal(K/F)$ that already fix the overlap $K\cap L$. The restriction isomorphism converts a question about the composite into a question about an intermediate field of the Galois extension $K/F$, which we can read off from the Galois correspondence.
@@ -56489,7 +56490,7 @@ Prove that $\Fix(A_3)=\Q(\zeta_3)=\Q(\sqrt{-3})$ is the unique quadratic subfiel
 \begin{tikzcd}[row sep=1.5em, column sep=1.1em]
 & D_8 \arrow[ld,dash]\arrow[d,dash]\arrow[rd,dash] & \\
 \gen{r^2,s} \arrow[d,dash]\arrow[rd,dash] & \gen{r} \arrow[d,dash] & \gen{r^2,rs}\arrow[ld,dash]\arrow[d,dash] \\
-\,\cdots\, & \gen{r^2} & \,\cdots\, \\
+\,\cdots\, \arrow[rd,dash] & \gen{r^2} & \,\cdots\, \arrow[ld,dash] \\
 & 1 \arrow[u,dash] &
 \end{tikzcd}
 \]
@@ -56946,7 +56947,7 @@ g(x) = x^6 + 8Ax^5 + 40A^2x^4 + 160A^3x^3 + 400A^4x^2 + (512A^5 - 3125B^4)x - 93
 \end{exers}
 
 \begin{exers}{Commutative-diagram exercises.}
-\item Let $K$ be the splitting field of $x^5-2$ over $\Q$, so $\Gal(K/\Q)\isom F_{20}=\Zn5\rtimes\Zns5$. The subgroup lattice and its $\Fix$-image are partially drawn below. Complete both diagrams by inserting the missing group $\Zn5$ on the left (the index-$2$ subgroup $D_{10}$ is $\Zn5\rtimes\Zn2$; $F_{20}$ has no element of order $10$, so no $\Zn{10}$ occurs) and the missing fixed field on the right, then prove that the dashed correspondence is inclusion-reversing and matches normal subgroups with Galois subextensions of $\Q$:
+\item Let $K$ be the splitting field of $x^5-2$ over $\Q$, so $\Gal(K/\Q)\isom F_{20}=\Zn5\rtimes\Zns5$. The subgroup lattice and its $\Fix$-image are partially drawn below. Complete both diagrams by inserting the missing group $\Zn5$ on the left (the index-$2$ subgroup $D_{10}$ is $\Zn5\rtimes\Zn2$; $F_{20}$ has no element of order $10$, so no $\Zn{10}$ occurs) and the missing fixed field on the right, then prove that the correspondence is inclusion-reversing and matches normal subgroups with Galois subextensions of $\Q$:
 \[
 \begin{tikzcd}[row sep=1.7em, column sep=1.4em]
 F_{20} \arrow[d,dash] \\
@@ -57915,8 +57916,8 @@ R \arrow[r, equal] & R
   Middle-right: $F[a_1,\dots,a_n]$, the polynomial ring (actually a subring of $F$) generated by the coefficients $a_k$ of $f$; since the $a_k\in F$, this is just $F$ itself in the splitting situation, but writing it this way highlights the parallelism with the left column.
   Bottom-right: $R$ again (identifying the two copies by the ``equal'' sign).
 \dgi{Arrows:} Four arrows.
-  (1) Upper dashed vertical: inclusion $R[u]^{\Sym_n}\hookrightarrow R[u_1,\dots,u_n]$, inserting the symmetric subring into the full ring.
-  (2) Lower dashed vertical: inclusion $R\hookrightarrow R[u]^{\Sym_n}$, viewing $R$ as constant symmetric polynomials.
+  (1) Upper vertical edge: inclusion $R[u]^{\Sym_n}\hookrightarrow R[u_1,\dots,u_n]$, inserting the symmetric subring into the full ring.
+  (2) Lower vertical edge: inclusion $R\hookrightarrow R[u]^{\Sym_n}$, viewing $R$ as constant symmetric polynomials.
   (3) Horizontal middle: the evaluation/specialization map $\operatorname{ev}_\alpha\colon R[u]^{\Sym_n}\to F[a_1,\dots,a_n]$ defined by $u_i\mapsto\alpha_i$; since $e_k(\alpha_1,\dots,\alpha_n)=a_k$ by Vieta (Lemma~\ref{art:symmetric:vieta@c14}), this carries $e_k\mapsto a_k$ and is a ring homomorphism.
   (4) Bottom horizontal: the identity/equality $R\xrightarrow{=}R$.
   Well-definedness of $\operatorname{ev}_\alpha$: a polynomial map $u_i\mapsto\alpha_i$ is always a ring homomorphism and needs no coset check; the point is merely that symmetric polynomials evaluated at the roots stay in $F$ (proved in Corollary~\ref{art:symmetric:rational@c14}).
