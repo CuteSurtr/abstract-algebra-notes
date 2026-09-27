@@ -35954,8 +35954,8 @@ to the starting data --- the bijection works.
 
 \dgi{Common pitfall:} Students often read the two arrows as saying there is a \emph{canonical
 isomorphism} $\R^2 \isom \text{something}$, or that the two nodes are the same object.  They are
-not: the left node carries \emph{strictly less} structure ($F$-linear action only) and the right
-node carries \emph{strictly more} ($F[x]$-linear action).  The bijection is between
+not: the left node packages the data as an $F$-vector space together with one operator $T$, the right
+node as a module over the larger ring $F[x]$; neither carries more information than the other.  The bijection is between
 \emph{categories of data}, not between two copies of $V$.  A second pitfall: assuming $T$ can be
 read off from $V$ alone.  It cannot; many different operators on the same $V$ give non-isomorphic
 $F[x]$-modules (they are isomorphic only if the matrices are similar, a fact proved in Chapter 12).
@@ -36427,7 +36427,7 @@ V \arrow[r, "\varphi"'] & W
 \dgi{Why this matters here:} The worked example has just shown that $F[x]$-linearity of $\varphi$ is equivalent to commutativity of this square. This repackages the algebraic condition $\varphi(x \cdot v) = x \cdot \varphi(v)$ into a visual that makes the intertwining requirement impossible to misstate.
 \dgi{Concrete example:} Let $V = W = F^2$, $T = S = \bigl(\begin{smallmatrix}0&1\\0&0\end{smallmatrix}\bigr)$ (the nilpotent Jordan block). The $F[x]$-module homs $\varphi$ are exactly the $F$-linear maps whose matrix $A$ satisfies $AS = SA$, i.e.\ matrices commuting with $T$. These are scalar multiples of $I$ and $T$ plus their span: $A = aI + bT$ for $a,b \in F$, giving a $2$-dimensional commutant.
 \dgi{Common pitfall:} Students sometimes read the diagram as saying $\varphi = T$ or $\varphi = S$; in fact $\varphi$ goes between different spaces (or between two copies of the same space with possibly different operators) and the arrows $T,S$ represent the module structure, not the map being studied. Also, commutativity of the square is a condition on $\varphi$, not a conclusion that follows for free.
-\dgi{Takeaway:} The point of this diagram is that an $F[x]$-module homomorphism is precisely an $F$-linear map that conjugates one operator to the other, making the representation-theory notion of ``intertwiner'' identical to the module-homomorphism notion.
+\dgi{Takeaway:} The point of this diagram is that an $F[x]$-module homomorphism is precisely an $F$-linear map $\varphi$ that intertwines the two operators, $\varphi\circ T=S\circ\varphi$ ($\varphi$ need not be invertible, so it need not conjugate $T$ into $S$), making the representation-theory notion of ``intertwiner'' identical to the module-homomorphism notion.
 \end{dgx}
 \emph{Check:} if $V=W=F^2$ with $T=S=\left(\begin{smallmatrix}0&1\\0&0\end{smallmatrix}\right)$, then the $\varphi$ commuting with $T$ are exactly the matrices $\left(\begin{smallmatrix}a&b\\0&a\end{smallmatrix}\right)$ ($a,b\in F$), a $2$-dimensional space, consistent with $\End_{F[x]}(V)$ being the commutant of $T$.
 \end{wex}
