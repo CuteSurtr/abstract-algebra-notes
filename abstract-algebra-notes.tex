@@ -7050,7 +7050,7 @@ Hence $Z(D_{12})=\{1,r^3\}$, order $2$. \emph{Check:} $\{1,r^3\}=\gen{r^3}$ with
   \node[ltlab,above=1.5pt of top] {$D_8$};
 \end{tikzpicture}\end{center}
 
-The diagram shows $Z(D_8)=\gen{r^2}$ sitting at the bottom of the lattice, directly above the trivial subgroup: it is the unique smallest nontrivial subgroup, contained in all three index-$2$ subgroups $\gen{r}$, $\gen{r^2,s}$, $\gen{r^2,rs}$. This pictures Proposition~\ref{p:center-subgroup@c2} (the center is a normal subgroup, here of order $2$) and the $n=4$ even case of Theorem~\ref{t:center-dihedral@c2}.
+The diagram shows $Z(D_8)=\gen{r^2}$ sitting at the bottom of the lattice, directly above the trivial subgroup: it is the intersection of the three index-$2$ subgroups $\gen{r}$, $\gen{r^2,s}$, $\gen{r^2,rs}$ (the four reflection subgroups of order $2$, not drawn here, are also minimal nontrivial subgroups, but each lies in only one of them). This pictures Proposition~\ref{p:center-subgroup@c2} (the center is a normal subgroup, here of order $2$) and the $n=4$ even case of Theorem~\ref{t:center-dihedral@c2}.
 
 \begin{pitfall}
 A reflection $r^k s$ in $D_{2n}$ is \emph{never} central for $n\ge3$, even when $n$ is even --- the lone central nontrivial element is the half-turn rotation $r^{n/2}$. Students sometimes guess that ``$s$ commutes with the half-turn so $s$ is central''; but centrality requires commuting with \emph{every} element, and $s$ fails against $r$ (since $rs=sr^{-1}\ne sr$).
@@ -7073,7 +7073,7 @@ Equivalently, $g\in N_G(A)$ iff conjugation by $g$ permutes $A$ among itself \em
 \end{definition}
 
 \begin{remark}
-The single equation $gAg\inv=A$ already forces the reverse inclusion automatically: since $x\mapsto gxg\inv$ is injective and $A$ is finite (in our examples), $gAg\inv\subseteq A$ with equal cardinality gives $gAg\inv=A$. For infinite $A$ you must check both inclusions, or equivalently $gAg\inv\subseteq A$ AND $g\inv Ag\subseteq A$.
+The single inclusion $gAg\inv\subseteq A$ already forces the reverse inclusion automatically: since $x\mapsto gxg\inv$ is injective and $A$ is finite (in our examples), $gAg\inv\subseteq A$ with equal cardinality gives $gAg\inv=A$. For infinite $A$ you must check both inclusions, or equivalently $gAg\inv\subseteq A$ AND $g\inv Ag\subseteq A$.
 \end{remark}
 
 \begin{proposition}\label{p:tower@c2}
@@ -7097,7 +7097,7 @@ Use this whenever you must decide which $g$ conjugate a subgroup $H$ \emph{onto 
 \begin{enumerate}
 \item \textbf{Free wins first.} $H\subseteq N_G(H)$ always, and $C_G(H)\subseteq N_G(H)$ always. List those elements; they are in for free.
 \item \textbf{Index-2 shortcut.} If $[G:H]=2$ then $H\nor G$, so $N_G(H)=G$. Stop. (Two cosets $H$ and $gH$; the only options force $gH=Hg$.)
-\item \textbf{Generator test.} Write $H=\gen{a}$ (or list generators). Then $gHg\inv=H$ iff $gag\inv\in H$ for each generator $a$ (a homomorphic image of a generating set generates the image). So test ONLY the generators, not every element.
+\item \textbf{Generator test.} Write $H=\gen{a}$ (or list generators). For \emph{finite} $H$, $gHg\inv=H$ iff $gag\inv\in H$ for each generator $a$ (a homomorphic image of a generating set generates the image, so $gHg\inv\subseteq H$, and $|gHg\inv|=|H|$). So test ONLY the generators, not every element. (For infinite $H$ this gives only $gHg\inv\subseteq H$; also test $g\inv ag\in H$.)
 \item \textbf{Setwise, not pointwise.} You only need $gag\inv$ to land \emph{somewhere} in $H$, not back at $a$. (Pointwise would be the centralizer.)
 \item \textbf{Assemble a subgroup.} $N_G(H)$ is a subgroup containing $H$; use Lagrange to limit its possible order, then confirm with coset reps.
 \end{enumerate}
