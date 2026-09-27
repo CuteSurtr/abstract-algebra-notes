@@ -42158,7 +42158,7 @@ determinant.
 
 \item Prove that if $M$ is a free $R$-module of rank $n$ then $\extp^i(M)$ is a free $R$-module of rank $\binom{n}{i}$ for $i=0,1,2,\dots$.
 
-\item If $A$ is an $R$-algebra in which $a^2=0$ for all $a\in A$ and $\varphi\colon M\to A$ is an $R$-module homomorphism, prove there is a unique $R$-algebra homomorphism $\Phi\colon\extp(M)\to A$ such that $\Phi|_M=\varphi$.
+\item If $A$ is an $R$-algebra and $\varphi\colon M\to A$ is an $R$-module homomorphism with $\varphi(m)^2=0$ for all $m\in M$, prove there is a unique $R$-algebra homomorphism $\Phi\colon\extp(M)\to A$ such that $\Phi|_M=\varphi$.
 
 \item Let $R=\Z[x,y]$ and $I=(x,y)$.
 \begin{enumerate}
@@ -42177,7 +42177,7 @@ determinant.
 
 \item Prove that $z-\tfrac{1}{k!}\mathrm{Alt}(z)=\tfrac{1}{k!}\sum_{\sigma\in S_k}\bigl(z-\epsilon(\sigma)\,\sigma z\bigr)$ for any $k$-tensor $z$ and use this to prove that the kernel of the $R$-module homomorphism $\tfrac{1}{k!}\mathrm{Alt}$ in Proposition 40 is $\mathcal{A}^k(M)$.
 
-\item Prove that the image of $\mathrm{Alt}_k$ is the unique largest subspace of $T^k(V)$ on which each permutation $\sigma$ in the symmetric group $S_k$ acts as multiplication by the scalar $\epsilon(\sigma)$.
+\item Suppose that $-1\ne 1$ in $F$. Prove that the image of $\mathrm{Alt}_k$ is the unique largest subspace of $T^k(V)$ on which each permutation $\sigma$ in the symmetric group $S_k$ acts as multiplication by the scalar $\epsilon(\sigma)$.
 
 \item \leavevmode
 \begin{enumerate}
@@ -42213,7 +42213,7 @@ determinant.
 \end{exers}
 
 \begin{exers}{Additional exercises.}
-\item Let $\dim V = n$. Compute $\dim S(V) = \bigoplus_{k \geq 0} \dim S^k(V)$ restricted to degrees $0 \leq k \leq m$, i.e.\ give a closed form for $\sum_{k=0}^{m} \binom{n+k-1}{k}$, and prove that $\dim \extp(V) = \sum_{k=0}^{n} \binom{n}{k} = 2^n$.
+\item Let $\dim V = n$. Compute $\sum_{k=0}^{m} \dim S^k(V)$, the dimension of the part of $S(V)$ of degree at most $m$ (note $\dim S(V)=\infty$ for $n\ge 1$), i.e.\ give a closed form for $\sum_{k=0}^{m} \binom{n+k-1}{k}$, and prove that $\dim \extp(V) = \sum_{k=0}^{n} \binom{n}{k} = 2^n$.
 
 \item Let $W \subseteq V$ be a subspace with $\dim W = r$ and $\dim V = n$. Prove that the inclusion $W \hookrightarrow V$ induces an injective algebra homomorphism $\extp(W) \to \extp(V)$, and that $\extp^r(W) \to \extp^r(V)$ is injective onto a one-dimensional subspace. Interpret a nonzero element of $\extp^r(W)$ as encoding the subspace $W$.
 
@@ -42250,11 +42250,11 @@ T(V) \arrow[r, "T(\varphi)"] \arrow[d, "\pi_V"'] & T(W) \arrow[d, "\pi_W"] \\
 \end{tikzcd}
 \]
 
-\item Let $0 \to U \xrightarrow{\,i\,} V \xrightarrow{\,p\,} Q \to 0$ be a short exact sequence of finite-dimensional vector spaces, with $\dim U = r$ and $\dim Q = s$. Establish the canonical isomorphism on top exterior powers indicated by the dashed arrow, and use the diagram to prove $\extp^{r+s}(V) \isom \extp^r(U) \tensor \extp^s(Q)$.
+\item Let $0 \to U \xrightarrow{\,i\,} V \xrightarrow{\,p\,} Q \to 0$ be a short exact sequence of finite-dimensional vector spaces, with $\dim U = r$ and $\dim Q = s$. Fix a linear section $\sigma\colon Q\to V$ of $p$ ($p\sigma=\id_Q$) and let the diagonal arrow be $\mu_\sigma(w\tensor\eta)=w\extp\extp^s(\sigma)(\eta)$; this map depends on $\sigma$. Establish the canonical isomorphism on top exterior powers indicated by the dashed arrow (show that $\mu_\sigma\circ(\extp^r(i)\tensor\id)$ is independent of $\sigma$ and bijective), and use the diagram to prove $\extp^{r+s}(V) \isom \extp^r(U) \tensor \extp^s(Q)$.
 \[
 \begin{tikzcd}
 \extp^r(U) \tensor \extp^s(Q) \arrow[r, dashed, "\sim"] \arrow[d, "\extp^r(i)\,\tensor\,\id"'] & \extp^{r+s}(V) \\
-\extp^r(V) \tensor \extp^s(Q) \arrow[ur] &
+\extp^r(V) \tensor \extp^s(Q) \arrow[ur, "\mu_\sigma"'] &
 \end{tikzcd}
 \]
 
