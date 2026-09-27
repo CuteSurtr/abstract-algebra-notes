@@ -51652,13 +51652,13 @@ is separable, so finite extensions $\F_{p^n}/\F_p$ are separable of degree $n$.
 
 \item For any prime $p$ and any nonzero $a \in \mathbb{F}_p$ prove that $x^p - x + a$ is irreducible and separable over $\mathbb{F}_p$. [For the irreducibility: One approach---prove first that if $\alpha$ is a root then $\alpha + 1$ is also a root. Another approach---suppose it's reducible and compute derivatives.]
 
-\item Prove that $x^{p^n} - 1 = \prod_{\alpha \in \mathbb{F}_{p^n}} (x - \alpha)$. Conclude that $\prod_{0 \neq \alpha \in \mathbb{F}_{p^n}} \alpha = (-1)^{p^n}$ so the product of the nonzero elements of a finite field is $+1$ if $p = 2$ and $-1$ if $p$ is odd. For $p$ odd and $n = 1$ derive {\it Wilson's Theorem}: $(p-1)! \equiv -1 \pmod{p}$.
+\item Prove that $x^{p^n-1} - 1 = \prod_{0 \neq \alpha \in \mathbb{F}_{p^n}} (x - \alpha)$. Conclude that $\prod_{0 \neq \alpha \in \mathbb{F}_{p^n}} \alpha = (-1)^{p^n}$ so the product of the nonzero elements of a finite field is $+1$ if $p = 2$ and $-1$ if $p$ is odd. For $p$ odd and $n = 1$ derive {\it Wilson's Theorem}: $(p-1)! \equiv -1 \pmod{p}$.
 
 \item Suppose $K$ is a field of characteristic $p$ which is not a perfect field: $K \neq K^p$. Prove there exist irreducible inseparable polynomials over $K$. Conclude that there exist inseparable finite extensions of $K$.
 
 \item Prove that $f(x)^p = f(x^p)$ for any polynomial $f(x) \in \mathbb{F}_p[x]$.
 
-\item Show that the binomial coefficient $\binom{p^n}{p^i}$ is the coefficient of $x^{p^i}$ in the expansion of $(1+x)^{p^n}$. Working over $\mathbb{F}_p$ show that this is the coefficient of $(x^p)^i$ in $(1 + x^p)^{p^n}$ and hence prove that $\binom{p^n}{p^i} \equiv \binom{p^{n-1}}{p^{i-1}} \pmod{p}$.
+\item Show that the binomial coefficient $\binom{pn}{pi}$ is the coefficient of $x^{pi}$ in the expansion of $(1+x)^{pn}$. Working over $\mathbb{F}_p$ show that this is the coefficient of $(x^p)^i$ in $(1 + x^p)^{n}$ and hence prove that $\binom{pn}{pi} \equiv \binom{n}{i} \pmod{p}$.
 
 \item Let $f(x_1, x_2, \ldots, x_n) \in \mathbb{Z}[x_1, x_2, \ldots, x_n]$ be a polynomial in the variables $x_1, x_2, \ldots, x_n$ with integer coefficients. For any prime $p$ prove that the polynomial
 \[ f(x_1, x_2, \ldots, x_n)^p - f(x_1^p, x_2^p, \ldots, x_n^p) \in \mathbb{Z}[x_1, x_2, \ldots, x_n] \]
@@ -51757,7 +51757,7 @@ and prove it commutes (i.e. $\sigma$ restricts to the identity on the prime fiel
 \]
 Show the diagram commutes, and prove that the fixed field of $\sigma^m$ on $\F_{p^n}$ equals $\F_{p^m}$. Conclude $\F_{p^m}$ is the unique subfield of $\F_{p^n}$ of degree $m$ over $\F_p$.
 
-\item Let $F$ have characteristic $p$ and let $\alpha \in \overline{F}$ be purely inseparable over $F$ with $\alpha^{p} = a \in F$. Let $K = F(\alpha)$ and consider the Frobenius maps making the square
+\item Let $F$ have characteristic $p$ and let $\alpha \in \overline{F}$, $\alpha \notin F$, be purely inseparable over $F$ with $\alpha^{p} = a \in F$. Let $K = F(\alpha)$ and consider the Frobenius maps making the square
 \[
 \begin{tikzcd}
 F \arrow[r, "\subseteq"] \arrow[d, "{x \mapsto x^p}"'] & K \arrow[d, "{x \mapsto x^p}"] \\
