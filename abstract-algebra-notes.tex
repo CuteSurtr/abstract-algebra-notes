@@ -28190,7 +28190,7 @@ R/\ker\varphi \arrow[ur, dashed, hook, "\overline{\varphi}"'] &
 \end{tikzcd}\]
 Apply this to $\varphi\colon\R[x]\to\C$, $x\mapsto i$, to obtain $\R[x]/\gen{x^2+1}\isom\C$.
 
-\item (CRT as an isomorphism.) Let $m,n$ be coprime positive integers and define $\psi\colon\Z\to\Zn{m}\times\Zn{n}$ by $\psi(a)=(a\bmod m,\,a\bmod n)$. Show $\psi$ is a surjective homomorphism with kernel $\gen{mn}$, and fill in the induced isomorphism on the bottom row:
+\item (CRT as an isomorphism.) Let $m,n$ be coprime positive integers and define $\psi\colon\Z\to\Zn{m}\times\Zn{n}$ by $\psi(a)=(a\bmod m,\,a\bmod n)$. Show $\psi$ is a surjective homomorphism with kernel $\gen{mn}$, and fill in the induced isomorphism (the dashed diagonal):
 \[\begin{tikzcd}[row sep=large,column sep=large]
 \Z \arrow[r, "\psi"] \arrow[d, two heads] & \Zn{m}\times\Zn{n} \\
 \Zn{mn} \arrow[ur, dashed, "\sim"'] &
@@ -28492,7 +28492,7 @@ M \text{ maximal} \arrow[r, Rightarrow] & P \text{ prime} \arrow[r, Rightarrow] 
 \]
 \begin{dgx}
 \dgi{Objects:} The three nodes are not rings or groups but \emph{properties} that an ideal $I \subsetneq R$ can satisfy: being maximal (strongest), being prime (intermediate), and being a proper ideal (weakest).
-\dgi{Arrows:} Two double-headed implication arrows ($\Rightarrow$).  The left arrow, ``$M$ maximal $\Rightarrow$ $P$ prime,'' is Corollary~\ref{cor:maxprime@c7}: $R/M$ a field implies $R/M$ a domain.  The right arrow, ``$P$ prime $\Rightarrow$ $I$ proper,'' is definitional: the prime ideal condition explicitly requires $P \subsetneq R$.
+\dgi{Arrows:} Two double-line implication arrows ($\Rightarrow$).  The left arrow, ``$M$ maximal $\Rightarrow$ $P$ prime,'' is Corollary~\ref{cor:maxprime@c7}: $R/M$ a field implies $R/M$ a domain.  The right arrow, ``$P$ prime $\Rightarrow$ $I$ proper,'' is definitional: the prime ideal condition explicitly requires $P \subsetneq R$.
 \dgi{What commutes:} Transitivity of implication: maximal $\Rightarrow$ prime $\Rightarrow$ proper.  So maximal $\Rightarrow$ proper directly, which is also clear from the definition of maximal.
 \dgi{Why it commutes:} Left arrow: $R/M$ is a field (Theorem~\ref{thm:maxfield@c7}), every field is an integral domain (nonzero elements are units, hence not zero-divisors), so $R/M$ is a domain and $M$ is prime (Theorem~\ref{thm:primedomain@c7}).  Right arrow: prime ideals are defined to be proper by assumption.
 \dgi{Why this matters here:} The diagram is a roadmap for the section: it tells you the logical hierarchy and reminds you that \emph{neither arrow reverses} --- the counterexamples (prime-not-maximal: $\gen x \subsetneq \Z[x]$; proper-not-prime: $\gen 4 \subsetneq \Z$) are essential knowledge, not edge cases.
@@ -28738,9 +28738,9 @@ R \arrow[r, "\varphi"] \arrow[d, two heads, "\pi"'] & S \\
 R/I \arrow[ur, dashed, "\overline{\varphi}"'] &
 \end{tikzcd}\]
 
-\item Let $R$ be a commutative ring with $1$ and let $I_1,I_2$ be comaximal ideals. Prove the map $r\mapsto(r+I_1,\,r+I_2)$ induces a ring isomorphism, so that the bottom arrow below is well defined and an isomorphism. Identify its kernel before passing to the quotient.
-\[\begin{tikzcd}[row sep=large,column sep=large]
-R \arrow[r, "{r\mapsto(r,r)}"] \arrow[d, two heads, "\pi"'] & R/I_1\times R/I_2 \\
+\item Let $R$ be a commutative ring with $1$ and let $I_1,I_2$ be comaximal ideals. Prove the map $r\mapsto(r+I_1,\,r+I_2)$ induces a ring isomorphism, so that the dashed arrow below is well defined and an isomorphism. Identify its kernel before passing to the quotient.
+\[\begin{tikzcd}[row sep=large,column sep=huge]
+R \arrow[r, "{r\mapsto(r+I_1,\,r+I_2)}"] \arrow[d, two heads, "\pi"'] & R/I_1\times R/I_2 \\
 R/(I_1\cap I_2) \arrow[ur, dashed, "\sim"'] &
 \end{tikzcd}\]
 
@@ -29289,7 +29289,7 @@ $a/b\mapsto f(a)f(b)\inv$.
 \[\begin{tikzcd}[row sep=large,column sep=large] R \arrow[r, "\iota"] \arrow[d, two heads, "\pi"'] & D^{-1}R \\ R/J \arrow[ur, dashed, hook, "\overline{\iota}"'] & \end{tikzcd}\]
 
 \item (CRT as an isomorphism.) Let $R$ be a commutative ring with ideals $I_1,I_2$ satisfying $I_1+I_2=R$. Prove that the dashed map below, induced by $\varphi\colon r\mapsto(r+I_1,\,r+I_2)$, is a ring isomorphism, and identify $\ker\varphi$ as $I_1\cap I_2=I_1 I_2$.
-\[\begin{tikzcd}[column sep=large] R \arrow[r, "{r\mapsto(r,r)}"] \arrow[d, two heads, "\pi"'] & R/I_1 \times R/I_2 \\ R/(I_1\cap I_2) \arrow[ur, dashed, "\isom"'] & \end{tikzcd}\]
+\[\begin{tikzcd}[column sep=huge] R \arrow[r, "{r\mapsto(r+I_1,\,r+I_2)}"] \arrow[d, two heads, "\pi"'] & R/I_1 \times R/I_2 \\ R/(I_1\cap I_2) \arrow[ur, dashed, "\isom"'] & \end{tikzcd}\]
 
 \item (Universal property of fractions for $R$-algebras.) Let $R$ be an integral domain with $F=\Frac(R)$ and let $S$ be a commutative $R$-algebra via $\varphi:R\to S$ in which every nonzero element of $R$ maps to a unit. Using the universal property of fractions, complete the diagram with a unique $R$-algebra map $\Phi$, and state precisely the condition on $\varphi$ that makes $\Phi$ exist.
 \[\begin{tikzcd}[column sep=large] R \arrow[r, hook, "\iota"] \arrow[dr, "\varphi"'] & F \arrow[d, dashed, "\exists!\,\Phi"] \\ & S \end{tikzcd}\]
@@ -29374,7 +29374,7 @@ R/(I_1\cap I_2) \arrow[ur, dashed, "{\overline{\varphi}}"', "{\isom}"]
 \]
 \begin{dgx}
 \dgi{Objects:} Three rings arranged in a triangle. The top-left vertex is $R$ itself (the ambient commutative ring with $1$). The top-right vertex is the product ring $R/I_1\times R/I_2$ (pairs of cosets, with coordinate-wise addition and multiplication). The bottom vertex is the quotient ring $R/(I_1\cap I_2)$, which equals $R/(I_1 I_2)$ under comaximality.
-\dgi{Arrows:} $\varphi\colon R\to R/I_1\times R/I_2$, $r\mapsto(r+I_1,r+I_2)$, is the simultaneous-reduction map (a ring homomorphism whose kernel is $I_1\cap I_2$). $\pi\colon R\twoheadrightarrow R/(I_1\cap I_2)$ (double-headed arrow) is the canonical surjective quotient map, $r\mapsto r+(I_1\cap I_2)$. $\overline{\varphi}\colon R/(I_1\cap I_2)\to R/I_1\times R/I_2$ (dashed arrow) is the induced map guaranteed by the First Isomorphism Theorem; it satisfies $\overline{\varphi}(r+(I_1\cap I_2))=(r+I_1,r+I_2)$.
+\dgi{Arrows:} $\varphi\colon R\to R/I_1\times R/I_2$, $r\mapsto(r+I_1,r+I_2)$, is the simultaneous-reduction map (a ring homomorphism whose kernel is $I_1\cap I_2$; it is onto when $I_1+I_2=R$, the case drawn here). $\pi\colon R\twoheadrightarrow R/(I_1\cap I_2)$ (double-headed arrow) is the canonical surjective quotient map, $r\mapsto r+(I_1\cap I_2)$. $\overline{\varphi}\colon R/(I_1\cap I_2)\to R/I_1\times R/I_2$ (dashed arrow) is the induced map guaranteed by the First Isomorphism Theorem; it satisfies $\overline{\varphi}(r+(I_1\cap I_2))=(r+I_1,r+I_2)$.
 \dgi{What commutes:} The triangle commutes: $\varphi = \overline{\varphi}\circ\pi$. That is, going directly across the top (apply $\varphi$) gives the same result as going down then diagonally up (apply $\pi$ then $\overline{\varphi}$).
 \dgi{Why it commutes:} Take any $r\in R$. Along the top: $r\mapsto(r+I_1,r+I_2)$. Along the bottom path: $r\xmapsto{\pi} r+(I_1\cap I_2)\xmapsto{\overline{\varphi}}(r+I_1,r+I_2)$. These agree by definition of $\overline{\varphi}$. Well-definedness of $\overline{\varphi}$: if $r+(I_1\cap I_2)=r'+(I_1\cap I_2)$ then $r-r'\in I_1\cap I_2$, so $r-r'\in I_1$ and $r-r'\in I_2$, giving $(r+I_1,r+I_2)=(r'+I_1,r'+I_2)$; hence $\overline{\varphi}$ does not depend on the choice of coset representative.
 \dgi{Why this matters here:} This diagram records the First Isomorphism Theorem step in the proof of CRT. The text has just established that $\ker\varphi=I_1\cap I_2$; the diagram makes visible that $\varphi$ factors through the quotient by its own kernel, and that under comaximality the dashed arrow $\overline{\varphi}$ upgrades to an isomorphism (marked $\isom$). Without seeing this factorization, the isomorphism $R/(I_1\cap I_2)\isom R/I_1\times R/I_2$ can look unmotivated.
@@ -30537,7 +30537,7 @@ context: $\Z[x]$ is a UFD that is not a PID (so UFD $\not\Rightarrow$ PID), and
 $\Z[\tfrac{1+\sqrt{-19}}2]$ is a PID that is \emph{not} Euclidean (so PID $\not\Rightarrow$
 ED). The latter is proved using universal side divisors.
 \[\begin{tikzcd}[column sep=large]
-\text{ED} \arrow[r, Rightarrow, "{\text{Prop. 8.1}}"] & \text{PID} \arrow[r, Rightarrow, "{\text{8.3}}"] & \text{UFD}
+\text{ED} \arrow[r, Rightarrow, "{\text{Sec. 8.1}}"] & \text{PID} \arrow[r, Rightarrow, "{\text{Sec. 8.3}}"] & \text{UFD}
 \end{tikzcd}\]
 
 \begin{dgx}
@@ -30545,9 +30545,9 @@ ED). The latter is proved using universal side divisors.
   $\text{PID}$ (principal ideal domains), $\text{UFD}$ (unique factorization domains).
   Unlike the opening diagram, this version omits the bare ``domain'' node and carries
   explicit reference labels, serving as a precise theorem-map.
-\dgi{Arrows:} Two labeled double implications. The label ``Prop.\ 8.1'' on the first arrow
-  names the result proved in this section: every ED is a PID, witnessed by the minimal-norm
-  generator argument. The label ``8.3'' on the second arrow refers to Section 8.3, where
+\dgi{Arrows:} Two labeled double implications. The label ``Sec.\ 8.1'' on the first arrow
+  points to this section, where it is proved that every ED is a PID, witnessed by the minimal-norm
+  generator argument. The label ``Sec.\ 8.3'' on the second arrow refers to Section 8.3, where
   the PID $\Rightarrow$ UFD implication is established. Neither arrow represents a ring
   homomorphism; both are logical entailments between domain classes.
 \dgi{What commutes:} Again a linear chain; the relevant statement is the transitivity
@@ -33696,7 +33696,7 @@ diagram of implications is
 \dgi{Common pitfall:} Students sometimes read the double-arrow as a two-way implication (an
   ``iff''). It is not: the arrows go only left-to-right. Seeing $\Z[x]$ in UFD is often
   mistakenly used to claim it is a PID; the very point of the preceding proposition is that
-  the middle implication is strict.
+  the second implication is strict.
 \dgi{Takeaway:} The point of this diagram is that the ring-class hierarchy has exactly these
   implications and no more, and $\Z[x]$ is the canonical example showing UFD does not
   imply PID.
@@ -34139,8 +34139,8 @@ criterion fails --- for example $\bar f$ could become a constant.
 \end{remark}
 
 \[
-\begin{tikzcd}[column sep=huge, row sep=large]
-f=gh \in \Z[x] \arrow[r, two heads, "\bmod p"] \arrow[d, equal] & \bar f=\bar g\,\bar h \in \F_p[x] \arrow[d, equal] \\
+\begin{tikzcd}[column sep=huge, row sep=tiny]
+f=gh \in \Z[x] \arrow[r, mapsto, "\bmod p"] & \bar f=\bar g\,\bar h \in \F_p[x] \\
 {\text{(nontrivial if reducible)}} & {\text{(forces $\bar f$ reducible)}}
 \end{tikzcd}
 \]
@@ -34151,11 +34151,11 @@ contradiction. Upper right: $\bar{f} = \bar{g}\bar{h} \in \F_p[x]$, the reductio
 which form a factorization in $\F_p[x]$. The lower row labels clarify the logical status: on
 the left, the factorization is nontrivial by hypothesis; on the right, it witnesses that
 $\bar{f}$ is reducible.
-\dgi{Arrows:} The horizontal arrow $\bmod p$ is the surjective ring homomorphism $\Z[x]
-\twoheadrightarrow \F_p[x]$ reducing each coefficient mod $p$. The vertical double-lines
-($=$) are equality annotations, not maps; they emphasize that the top row records the same
-object described two ways (as a product, and as a labeled expression). The diagram records the
-functorial action: the ring homomorphism sends the pair $(f, g, h)$ to $(\bar{f}, \bar{g},
+\dgi{Arrows:} The horizontal arrow ($\mapsto$) sends the factorization $f=gh$ to its image under
+the surjective ring homomorphism $\Z[x]\twoheadrightarrow \F_p[x]$ that reduces each coefficient
+mod $p$. There are no vertical arrows: each entry of the bottom row only annotates
+the node above it. The diagram records the
+functorial action: the ring homomorphism sends the triple $(f, g, h)$ to $(\bar{f}, \bar{g},
 \bar{h})$ preserving the multiplication.
 \dgi{What commutes:} The central equality is $\overline{gh} = \bar{g}\bar{h}$, i.e., the
 reduction homomorphism commutes with multiplication: applying $\bmod p$ to the product $gh$
