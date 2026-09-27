@@ -19730,11 +19730,11 @@ Problems are drawn from Dummit \& Foote, Artin (\emph{Algebra}), and Fraleigh (\
 \item [DF 4.1.4] Let $S_3$ act on the $9$ ordered pairs $\{(i,j)\st 1\le i,j\le 3\}$ by $\sigma\cdot(i,j)=(\sigma(i),\sigma(j))$. Find the orbits, the cycle decomposition of each $\sigma$ as an element of $S_9$, and a stabilizer for one point in each orbit.
 \item [DF 4.1.5] Repeat the preceding for $S_3$ acting on (a) the $27$ triples $\{(i,j,k)\st 1\le i,j,k\le 3\}$ and (b) the $7$ nonempty subsets of $\{1,2,3\}$.
 \item [DF 4.1.6] With $S_4$ permuting variable indices of integer polynomials in $x_1,x_2,x_3,x_4$, find the orbit of (a) $x_1+x_2$, (b) $x_1x_2+x_3x_4$, (c) $(x_1+x_2)(x_3+x_4)$.
-\item [DF 4.2.1] Label the Klein $4$-group $\{1,a,b,c\}$ as $1,2,4,3$ and verify that the left regular representation sends $a\mapsto(1\,2)(3\,4)$, $b\mapsto(1\,4)(2\,3)$, $c\mapsto(1\,3)(2\,4)$; then relabel as $1,2,3,4$ and show the image in $S_4$ is the same subgroup.
+\item [DF 4.2.1] Label the Klein $4$-group $\{1,a,b,c\}$ as $1,2,4,3$ and verify that the left regular representation sends $a\mapsto(1\,2)(3\,4)$, $b\mapsto(1\,4)(2\,3)$, $c\mapsto(1\,3)(2\,4)$; then relabel $1,a,b,c$ as $1,4,2,3$ and show the image in $S_4$ is the same subgroup.
 \item [DF 4.2.2] List $S_3$ as $1,(1\,2),(2\,3),(1\,3),(1\,2\,3),(1\,3\,2)$ labelled $1,\dots,6$ and exhibit the image of each element under the left regular representation $S_3\to S_6$.
 \item [DF 4.2.3] For $D_8=\gen{r,s}$ labelled $1,r,r^2,r^3,s,sr,sr^2,sr^3 \mapsto 1,\dots,8$, exhibit the image of each element under the left regular representation $D_8\to S_8$; relabel by $1,3,5,7,2,4,6,8$ and show the two resulting subgroups of $S_8$ differ.
 \item [DF 4.2.4] Use the left regular representation of $Q_8$ to produce two elements of $S_8$ generating a subgroup isomorphic to $Q_8$.
-\item [DF 4.2.5] For $D_8=\gen{r,s}$ and $H=\gen{s}$, exhibit the image of each element of $D_8$ under $\pi_H:D_8\to S_4$ from left multiplication on cosets of $H$, deduce $\pi_H$ is faithful, and compare with the labellings in parts (b),(c).
+\item [DF 4.2.5] For $D_8=\gen{r,s}$ and $H=\gen{s}$, label the cosets $1H,rH,r^2H,r^3H$ as $1,2,3,4$: (a) exhibit the image of each element of $D_8$ under $\pi_H:D_8\to S_4$ from left multiplication on these cosets and deduce $\pi_H$ is faithful; (b) relabel the cosets as $1,3,2,4$ and show the resulting image is a different subgroup of $S_4$; (c) for $K=\gen{sr}$, with cosets $1K,rK,r^2K,r^3K$ labelled $1,2,3,4$, show $\pi_K(D_8)$ is the same subgroup of $S_4$ as in (a).
 \item [DF 4.2.6] For $D_8$ and $N=\gen{r^2}$, exhibit $\pi_N:D_8\to S_4$ on the cosets $1N,rN,sN,srN$; show it is not faithful and that $\pi_N(D_8)\isom V_4$.
 \item [DF 4.3.2] Find all conjugacy classes and their sizes in (a) $D_8$, (b) $Q_8$, (c) $A_4$.
 \item [DF 4.3.3] Find all conjugacy classes and their sizes in (a) $\Z_2\times S_3$, (b) $S_3\times S_3$, (c) $\Z_3\times A_4$.
@@ -19790,7 +19790,7 @@ Problems are drawn from Dummit \& Foote, Artin (\emph{Algebra}), and Fraleigh (\
 \item [Fraleigh 15.4] How many distinguishable blocks if each of the $6$ faces of a cube is painted a different color from $8$ available colors?
 \item [Fraleigh 15.5] Repeat the cube-coloring count when colors may be repeated freely on faces.
 \item [Fraleigh 15.6] How many distinguishable colorings of the $8$ corners of a cube with $4$ colors (repeats allowed)?
-\item [Fraleigh 15.7a] How many distinguishable ways to paint the $4$ edges of a square with $6$ colors if no color is used more than once?
+\item [Fraleigh 15.7a] How many distinguishable ways to paint the $4$ edges of a square of cardboard (which may be turned over) with $6$ colors if no color is used more than once?
 \item [Fraleigh 15.7b] Same as above but the same color may be used on any number of edges.
 \item [Fraleigh 15.8] Six equal wires soldered into the edges of a regular tetrahedron each get a $50$- or $100$-ohm resistor; how many essentially different wirings?
 \item [Fraleigh 15.9a] A $2$ ft rectangular prism with $1$ ft square ends has its $6$ faces painted from $6$ colors with no repeats; how many distinguishable prisms?
@@ -19836,8 +19836,8 @@ Problems are drawn from Dummit \& Foote, Artin (\emph{Algebra}), and Fraleigh (\
 \item [DF 4.4.2] Prove that an abelian group of order $pq$ ($p,q$ distinct primes) is cyclic.
 \item [DF 4.4.6] Prove characteristic subgroups are normal, and give a normal subgroup that is not characteristic.
 \item [DF 4.4.7] If $H$ is the unique subgroup of its order in $G$, prove $H$ is characteristic in $G$.
-\item [DF 4.4.8] Let $H\le K\le G$: (a) if $H$ char $K$ and $K\nor G$ then $H\nor G$; (b) if $H$ char $K$ and $K$ char $G$ then $H$ char $G$, and use this to show $V_4$ char $S_4$; (c) give an example where $H\nor K$ char $G$ but $H\not\nor G$.
-\item [DF 4.4.9] Using $D_8\nor D_{16}$, deduce that every subgroup of $\gen{r}$ is normal in $D_{2n}$.
+\item [DF 4.4.8] Let $H\le K\le G$: (a) if $H$ char $K$ and $K\nor G$ then $H\nor G$; (b) if $H$ char $K$ and $K$ char $G$ then $H$ char $G$, and use this to show that the Klein $4$-group $V_4$ contained in $A_4$ is characteristic in $S_4$; (c) give an example where $H\nor K$ char $G$ but $H\not\nor G$.
+\item [DF 4.4.9] Using [DF 4.4.7] and [DF 4.4.8](a) (every subgroup of the cyclic group $\gen{r}$ is characteristic in $\gen{r}$, and $\gen{r}\nor D_{2n}$), deduce that every subgroup of $\gen{r}$ is normal in $D_{2n}$.
 \item [DF 4.4.10] For abelian normal $A\nor G$ and $\bar G=G/A$, show $\bar G$ acts by conjugation on $A$ via $\bar g\cdot a=gag\inv$ (well defined), and give an example showing this fails if $A$ is non-abelian.
 \item [DF 4.4.15] Prove that each of $\Zns{5}$, $\Zns{9}$, $\Zns{18}$ is cyclic.
 \item [DF 4.4.16] Prove that $\Zns{24}$ is an elementary abelian group of order $8$.
@@ -19862,7 +19862,7 @@ Problems are drawn from Dummit \& Foote, Artin (\emph{Algebra}), and Fraleigh (\
 \item [DF 4.5.34] If $P\nor G$ is a Sylow $p$-subgroup and $H\le G$, prove $P\cap H$ is the unique Sylow $p$-subgroup of $H$.
 \item [DF 4.5.35] For $P\in\Syl_p(G)$ and $N\nor G$, prove $P\cap N\in\Syl_p(N)$ and $PN/N\in\Syl_p(G/N)$.
 \item [DF 4.5.37] Prove that if $N\nor G$ then $n_p(G/N)\le n_p(G)$.
-\item [DF 4.5.40] Prove the strictly upper-triangular matrices in $\GL_n(\F_p)$ form a Sylow $p$-subgroup.
+\item [DF 4.5.40] Prove the upper-triangular matrices with $1$'s on the diagonal form a Sylow $p$-subgroup of $\GL_n(\F_p)$.
 \item [DF 4.5.41] Prove the number of Sylow $p$-subgroups of $\GL_2(\F_p)$ is $p+1$.
 \item [DF 4.5.46] Prove the group of rigid motions of an icosahedron is isomorphic to $A_5$.
 \item [DF 4.5.47] Prove the group of rigid motions of a dodecahedron is isomorphic to $A_5$.
@@ -19921,7 +19921,7 @@ Problems are drawn from Dummit \& Foote, Artin (\emph{Algebra}), and Fraleigh (\
 \item [Fraleigh 11.41] Show the rotations of a cube in space form a group isomorphic to $S_4$.
 \item [Fraleigh 14.19] Let $|G|=p^n$ and $X$ a $G$-set; prove $|X|\equiv|X_G|\pmod p$.
 \item [Fraleigh 14.20] Prove Cauchy's Theorem: if $p$ divides $|G|$ then $G$ has an element of order $p$.
-\item [Fraleigh 14.24] Prove that a finite $p$-group $G$ has nontrivial center $Z(G)$.
+\item [Fraleigh 14.24] Prove that a finite $p$-group $G\ne\{e\}$ has nontrivial center $Z(G)$.
 \item [Fraleigh 14.25] Prove that every group of order $p^2$ is abelian.
 \item [Fraleigh 14.20b] Let $X$ be a $G$-set and $Y\subseteq X$; prove $G_Y=\{g\st gy=y\ \forall y\in Y\}$ is a subgroup of $G$.
 \item [Fraleigh 14.26] Up to isomorphism, how many transitive $\Z_4$-sets are there? Give an action table for each type.
@@ -19930,18 +19930,18 @@ Problems are drawn from Dummit \& Foote, Artin (\emph{Algebra}), and Fraleigh (\
 \item [Fraleigh 14.29] Prove that if $|G|=p^3$ then $|Z(G)|$ is $p$ or $p^3$, and give an example of each.
 \item [Fraleigh 14.30] Prove a finite group $G$ is a $p$-group iff $|G|=p^n$ for some $n\ge 0$.
 \item [Fraleigh 14.31] For $G$ acting on its subgroups by conjugation, state and prove a normality criterion for $H\le G$ in terms of (a) $G_H$, (b) the orbit of $H$.
-\item [Fraleigh 17.15] Prove that if $G$ has precisely one Sylow $p$-subgroup it is normal, so $G$ is not simple.
+\item [Fraleigh 17.15] Let $G$ be finite and let primes $p$ and $q\ne p$ divide $|G|$. Prove that if $G$ has precisely one Sylow $p$-subgroup it is normal, so $G$ is not simple.
 \item [Fraleigh 17.16] Show every group of order $45$ has a normal subgroup of order $9$.
 \item [Fraleigh 17.24] If $P$ is a normal $p$-subgroup of $G$, show $P$ is contained in every Sylow $p$-subgroup.
 \item [Fraleigh 17.26] Prove every group of order $5\cdot7\cdot47$ is abelian and cyclic.
 \item [Fraleigh 17.28] Show every group of order $30$ contains a subgroup of order $15$.
 \item [Fraleigh 17.31] Use conjugation to prove the class equation $|G|=|Z(G)|+n_1+\cdots+n_k$.
-\item [Fraleigh 17.33] Show that for every positive integer $n<15$, if every group of order $n$ is cyclic then $n$ is prime.
+\item [Fraleigh 17.33] Show that for every integer $1<n<15$, if every group of order $n$ is cyclic then $n$ is prime.
 \end{exers}
 
 \subsection*{Hard}
 \begin{exers}{}
-\item [DF 4.1.7] Define a \emph{block} for a transitive $G\le\Sym(A)$ and prove: (a) $G_B=\{\sigma\st\sigma(B)=B\}$ is a subgroup containing $G_a$; (b) the distinct images of a block partition $A$; (c) $S_4$ is primitive on $\{1,2,3,4\}$ while $D_8$ is not primitive on the square's vertices; (d) $G$ is primitive iff each $G_a$ is maximal.
+\item [DF 4.1.7] Define a \emph{block} for a transitive $G\le\Sym(A)$ and prove: (a) if $a\in B$ then $G_B=\{\sigma\st\sigma(B)=B\}$ is a subgroup containing $G_a$; (b) the distinct images of a block partition $A$; (c) $S_4$ is primitive on $\{1,2,3,4\}$ while $D_8$ is not primitive on the square's vertices; (d) $G$ is primitive iff each $G_a$ is maximal.
 \item [DF 4.1.8] Define \emph{doubly transitive} and prove: (a) $S_n$ is doubly transitive on $\{1,\dots,n\}$ for $n\ge 2$; (b) a doubly transitive group is primitive, so $D_8$ is not doubly transitive on the square.
 \item [DF 4.1.9] For $G$ transitive on finite $A$ and $H\nor G$ with $H$-orbits $\mathcal O_1,\dots,\mathcal O_r$: (a) prove $G$ permutes the $\mathcal O_i$ transitively, so all have equal size; (b) prove $|\mathcal O_1|=|H:H\cap G_a|$ and $r=|G:HG_a|$.
 \item [DF 4.1.10] For subgroups $H,K\le G$ define the double coset $HxK$ and prove: (a) it is a union of left cosets of $K$ forming an $H$-orbit; (b) it is a union of right cosets of $H$; (c) double cosets partition $G$; (d) $|HxK|=|K|\cdot|H:H\cap xKx\inv|$; (e) $|HxK|=|H|\cdot|K:K\cap x\inv Hx|$.
@@ -19960,7 +19960,7 @@ Problems are drawn from Dummit \& Foote, Artin (\emph{Algebra}), and Fraleigh (\
 \item [DF 4.3.33] For $n=2k$ even, determine the conjugacy classes of $D_{2n}$ and give the class equation.
 \item [DF 4.3.34] Prove that for a prime $p$ and $P\le S_p$ of order $p$, $|N_{S_p}(P)|=p(p-1)$.
 \item [DF 4.3.35] Find a formula (using the floor function) for the number of conjugacy classes of elements of order $p$ in $S_n$.
-\item [DF 4.3.36] For the left and right regular representations $\pi,\lambda$ with $\sigma_g=\pi(g)$, $\tau_h=\lambda(h)$: (a) prove $\sigma_g,\tau_h$ commute; (b) $\sigma_g=\tau_g$ iff $g$ has order $1$ or $2$ in $Z(G)$; (c) $\sigma_g=\tau_h$ iff $g,h\in Z(G)$, so $\lambda(G)\cap\pi(G)=Z(\lambda(G))=Z(\pi(G))$.
+\item [DF 4.3.36] For the left and right regular representations $\pi,\lambda$ with $\sigma_g=\pi(g)$, $\tau_h=\lambda(h)$ (so $\tau_h(x)=xh\inv$): (a) prove $\sigma_g,\tau_h$ commute; (b) $\sigma_g=\tau_g$ iff $g$ has order $1$ or $2$ in $Z(G)$; (c) $\sigma_g=\tau_h$ iff $g,h\in Z(G)$ and $g=h\inv$, so $\lambda(G)\cap\pi(G)=Z(\lambda(G))=Z(\pi(G))$.
 \item [DF 4.4.3] Prove that under any automorphism of $D_8$, $r$ has at most $2$ images and $s$ at most $4$; deduce $|\Aut(D_8)|\le 8$.
 \item [DF 4.4.4] Show $|\Aut(Q_8)|\le 24$ by similar arguments.
 \item [DF 4.4.5] Use $D_8\nor D_{16}$ to prove $\Aut(D_8)\isom D_8$.
@@ -19990,7 +19990,7 @@ Problems are drawn from Dummit \& Foote, Artin (\emph{Algebra}), and Fraleigh (\
 \item [DF 4.5.55] Prove that normal subsets $U,W$ of a Sylow $p$-subgroup $P$ are conjugate in $G$ iff conjugate in $N_G(P)$; deduce the corresponding statement for central elements.
 \item [DF 4.5.56] For $P\in\Syl_p(G)$ and $M\ge N_G(P)$, prove $\idx{G}{M}\equiv 1\pmod p$.
 \item [DF 4.5.57] If $G$ is finite simple with every proper subgroup abelian and $M,N$ distinct maximal subgroups, prove $M\cap N=1$.
-\item [DF 4.5.58] Prove that a non-abelian group in which every proper subgroup is abelian is not simple.
+\item [DF 4.5.58] Prove that a non-abelian finite group in which every proper subgroup is abelian is not simple.
 \item [DF 4.5.59] Prove that if $|G|=p_1\cdots p_r$ with distinct primes and $p_i\nmid(p_j-1)$ for all $i,j$, then $G$ is cyclic.
 \item [DF 4.5.60] Prove the converse: if $n\ge 2$ and every group of order $n$ is cyclic, then $n=p_1\cdots p_r$ with distinct primes and $p_i\nmid(p_j-1)$.
 \item [DF 4.5.61] Prove that a finite group in which every proper subgroup is abelian is solvable.
@@ -19998,9 +19998,9 @@ Problems are drawn from Dummit \& Foote, Artin (\emph{Algebra}), and Fraleigh (\
 \item [DF 4.6.2] Find all normal subgroups of $S_n$ for all $n\ge 5$.
 \item [DF 4.6.3] Prove $A_n$ is the only proper subgroup of index $<n$ in $S_n$ for all $n\ge 5$.
 \item [DF 4.6.5] Prove that if $G_1\le G_2\le\cdots$ with $G=\bigcup_i G_i$ and each $G_i$ simple, then $G$ is simple.
-\item [DF 4.6.6] For $D\le S_\Omega$ the finitely-moving permutations and $A$ the even ones, prove $A$ is an infinite simple group.
-\item [DF 4.6.7] Prove that if $H\nor S_\Omega$ and $H\ne 1$ then $A\le H$, i.e.\ $A$ is the unique minimal normal subgroup.
-\item [DF 4.6.8] Prove $|D|=|A|=|\Omega|$ and deduce that $S_\Omega\isom S_\Delta$ implies $|\Omega|=|\Delta|$.
+\item [DF 4.6.6] For an infinite set $\Omega$, let $D\le S_\Omega$ be the finitely-moving permutations and $A$ the even ones; prove $A$ is an infinite simple group.
+\item [DF 4.6.7] For $\Omega$ infinite, prove that if $H\nor S_\Omega$ and $H\ne 1$ then $A\le H$, i.e.\ $A$ is the unique minimal normal subgroup.
+\item [DF 4.6.8] For $\Omega$ infinite, prove $|D|=|A|=|\Omega|$ and deduce that $S_\Omega\isom S_\Delta$ implies $|\Omega|=|\Delta|$.
 \item [Artin 6.M.2] Prove $\Aut(G)$ is a group, that $g\mapsto(\text{conjugation by }g)$ is a homomorphism with determined kernel, and that the inner automorphisms form a normal subgroup of $\Aut(G)$.
 \item [Artin 6.M.3] Determine the automorphism groups of (a) $C_4$, (b) $C_8$, (c) $C_2\times C_2$, (d) $D_4$, (e) $Q_8$.
 \item [Artin 6.M.4] For the $n$-dimensional hypercube symmetry group $G_n\le O_n$: (a) use the counting formula and induction to find $|G_n|$; (b) describe $G_n$ explicitly and the stabilizer of $(1,\dots,1)$, checking $G_2\isom D_4$.
@@ -20008,11 +20008,11 @@ Problems are drawn from Dummit \& Foote, Artin (\emph{Algebra}), and Fraleigh (\
 \item [Artin 6.M.8] Of the $\binom{8}{4}=70$ ways to color the edges of an octagon with four black and four white, use Burnside's Formula to count the $D_8$-equivalence classes.
 \item [Artin 7.3.3] For non-abelian $G$ of order $p^3$: (a) possible orders of $Z$; (b) order of $Z(x)$ for $x\notin Z$; (c) possible class equations.
 \item [Artin 7.3.4] Classify the groups of order $8$.
-\item [Artin 7.4.5] For the octahedral group $O$: (a) determine its class equation; (b) find its two proper normal subgroups and show there are no others.
+\item [Artin 7.4.5] For the octahedral group $O$: (a) determine its class equation; (b) find its two nontrivial proper normal subgroups and show there are no others.
 \item [Artin 7.5.11] (a) Show the $S_n$-class of an even permutation $p$ is one $A_n$-class or splits into two of equal order, decided by the centralizer; (b) determine the class equations of $A_4$ and $A_5$; (c) describe the splitting for odd-order permutations.
 \item [Artin 7.5.12] Determine the class equations of $S_6$ and $A_6$.
 \item [Artin 7.6.5] For a $p$-group $G$ and proper $H<G$, prove $N(H)>H$ and that $H$ lies in a normal subgroup of index $p$.
-\item [Artin 7.6.6] For a proper subgroup $H<G$: (a) prove $G$ is not the union of conjugates of $H$; (b) there is a conjugacy class disjoint from $H$.
+\item [Artin 7.6.6] For a proper subgroup $H<G$ of a finite group $G$: (a) prove $G$ is not the union of conjugates of $H$; (b) there is a conjugacy class disjoint from $H$.
 \item [Artin 7.7.8] Compute $|\GL_n(\F_p)|$, find a Sylow $p$-subgroup, and determine the number of Sylow $p$-subgroups.
 \item [Artin 7.8.5] For a non-abelian group $G$ of order $28$ with cyclic Sylow $2$-subgroups: (a) find the numbers of Sylow $2$- and $7$-subgroups; (b) show there is at most one isomorphism class; (c) find the element orders and the class equation.
 \item [Artin 7.8.6] For a group of order $55$: (a) show it is $\gen{x,y\st x^{11}=1,y^5=1,yxy\inv=x^r}$; (b) decide which $r$ are possible; (c) prove there are two isomorphism classes.
@@ -20023,7 +20023,7 @@ Problems are drawn from Dummit \& Foote, Artin (\emph{Algebra}), and Fraleigh (\
 \item [Fraleigh 17.18] For $P\in\Syl_p(G)$ and any $p$-subgroup $H$, prove there is $g$ with $gHg\inv\le P$.
 \item [Fraleigh 17.19] Show every group of order $(35)^3$ has a normal subgroup of order $125$.
 \item [Fraleigh 17.20] Show there are no simple groups of order $255=3\cdot5\cdot17$.
-\item [Fraleigh 17.21] Show there are no simple groups of order $p^r m$ where $p$ is prime, $r\ge 1$, and $m<p$.
+\item [Fraleigh 17.21] Show there are no simple groups of order $p^r m$ where $p$ is prime, $r\ge 1$, $m<p$, and $p^rm$ is not prime.
 \item [Fraleigh 17.22] Prove all simple groups of order at most $20$ are cyclic.
 \item [Fraleigh 17.23] Show a finite group of order $p^n$ has normal subgroups $H_i$ with $|H_i|=p^i$ and $H_i<H_{i+1}$ for $0\le i<n$.
 \item [Fraleigh 17.25] Prove that for a prime $p\ge 3$ and $k\ge 1$, any group of order $2p^k$ is not simple.
