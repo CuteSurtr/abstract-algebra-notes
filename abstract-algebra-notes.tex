@@ -16563,7 +16563,7 @@ $\Phi(\sigma_a\sigma_b)=ab=\Phi(\sigma_a)\Phi(\sigma_b)$. Hence $\Phi$ is an iso
 \dgi{Common pitfall:} The map $\sigma_a\mapsto a$ is an isomorphism of groups, but students
   sometimes confuse the group operations: $\Aut(\Z_n)$ uses \emph{composition} and $\Zns{n}$
   uses \emph{multiplication}.  The diagram records that these match; do not add or compose
-  residues additively on the right side.  Also, $a=0$ is never a unit, so the trivial
+  residues additively on the right side.  Also, for $n\ge2$, $a=0$ is never a unit, so the trivial
   homomorphism $x\mapsto 0$ is not an automorphism and does not appear.
 \dgi{Takeaway:} The point of this diagram is that every automorphism of the cyclic group $\Z_n$
   is exactly ``multiply by a unit,'' giving a canonical isomorphism with the multiplicative
@@ -16589,7 +16589,7 @@ $\Zns{15}\isom\Zns{3}\times\Zns{5}\isom\Z_2\times\Z_4$. The units mod $15$ are
 $\{1,2,4,7,8,11,13,14\}$ (the $8$ residues coprime to $15$).
 \emph{Check:} $\ord{2}$ in $\Zns{15}$: $2,4,8,16\equiv1$, so $\ord{2}=4$; and $\ord{14}$:
 $14\equiv-1$, $14^2\equiv1$, so $\ord{14}=2$. With an order-$4$ and an order-$2$ element and
-no element of order $8$ ($\Z_2\times\Z_4$ has exponent $4$), the group is
+no element of order $8$ (every unit squares to $1$ or $4$, and $4^2\equiv1$, so $u^4\equiv1$ for all units $u$), the group is
 $\Z_2\times\Z_4$, not $\Z_8$. \checkmark
 \end{wex}
 
@@ -16672,7 +16672,7 @@ automorphism. Therefore $\Theta$ is an isomorphism and $\Aut(V_4)\isom S_3$.
   elements is the third --- a relation symmetric in $a,b,c$), so no coset relations are violated.
 \dgi{Why this matters here:} The diagram delivers the punchline $\Aut(V_4)\isom S_3$ visibly: the
   structure of the automorphism group is read off from the symmetry of the nonidentity part of
-  $V_4$.  It also sets up the GL-viewpoint in the remark: permutations of a basis of $\F_2^2$
+  $V_4$.  It also sets up the GL-viewpoint in the remark: permutations of the three nonzero vectors of $\F_2^2$
   are the same data as $\GL_2(\F_2)$.
 \dgi{Concrete example:} The cyclic permutation $a\mapsto b\mapsto c\mapsto a$ in
   $\Sym(\{a,b,c\})$ corresponds to the automorphism $\sigma$ of $V_4$ with $\sigma(a)=b,\
@@ -16770,8 +16770,9 @@ $|\Inn|=1$ (the group is abelian), as it must. \checkmark
 
 \begin{pitfall}
 $\Aut(G_1\times G_2)\ne\Aut(G_1)\times\Aut(G_2)$ in general. The factorization
-$\Aut(A\times B)\isom\Aut(A)\times\Aut(B)$ holds only when $|A|$ and $|B|$ are coprime
-(no ``cross'' homomorphisms). For $\Z_2\times\Z_4$ (both even) it fails: $|\Aut|=8$, not
+$\Aut(A\times B)\isom\Aut(A)\times\Aut(B)$ holds when $|A|$ and $|B|$ are coprime
+(no ``cross'' homomorphisms); for non-coprime orders it may fail, though not always
+(e.g.\ $\Aut(S_3\times\Z_3)\isom\Aut(S_3)\times\Aut(\Z_3)$). For $\Z_2\times\Z_4$ (both even) it fails: $|\Aut|=8$, not
 $|\Aut(\Z_2)|\cdot|\Aut(\Z_4)|=1\cdot2=2$.
 \end{pitfall}
 
