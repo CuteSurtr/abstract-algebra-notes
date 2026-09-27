@@ -44004,7 +44004,7 @@ q(x_1,\dots,x_n)\;=\;\sum_i a_{ii}x_i^2 \;+\; \sum_{i<j} 2a_{ij}\,x_ix_j\;=\;X\t
 The matrix $A$ is uniquely determined by $q$. A general (inhomogeneous) quadratic polynomial is $f(X)=X\trans A X + BX + c$ with $B$ a $1\times n$ row and $c\in\R$.
 \end{definition}
 
-The half-coefficient convention is exactly the one that keeps $A$ free of fractions: the form $x_1^2 + 2x_1x_2 - x_2^2$ has matrix $\begin{psmallmatrix}1&1\\1&-1\end{psmallmatrix}$, not $\begin{psmallmatrix}1&2\\0&-1\end{psmallmatrix}$.
+The half-coefficient convention is exactly the one that makes $A$ symmetric: the form $x_1^2 + 2x_1x_2 - x_2^2$ has matrix $\begin{psmallmatrix}1&1\\1&-1\end{psmallmatrix}$, not $\begin{psmallmatrix}1&2\\0&-1\end{psmallmatrix}$.
 
 \begin{theorem}[Principal axes / Spectral Theorem, matrix form]\label{art:conics:spectral@c11}
 Let $A$ be a real symmetric $n\times n$ matrix. Then there is an orthogonal matrix $P$ (so $P\trans P=I$, i.e.\ $P\trans=P\inv$) such that
@@ -44023,20 +44023,20 @@ The eigenvalues of a real symmetric matrix are real: if $A v=\lambda v$ with $v\
 \begin{enumerate}
 \item Form the symmetric matrix $A=\begin{psmallmatrix}a_{11}&a_{12}\\a_{12}&a_{22}\end{psmallmatrix}$ and read off $\det A$. \emph{Sign of $\det A$ already decides the type:} $\det A>0$ (definite) gives an ellipse, $\det A<0$ (indefinite) a hyperbola, $\det A=0$ a parabola --- up to degenerate cases.
 \item Diagonalize: by Theorem~\ref{art:conics:spectral@c11} an orthogonal $P$ kills the cross term, leaving $\lambda_1 x_1^2+\lambda_2 x_2^2+b_1'x_1+b_2'x_2+c=0$.
-\item Complete the square in each variable with $\lambda_i\ne 0$; this is a translation (Method below) and removes the corresponding linear term.
+\item Complete the square in each variable with $\lambda_i\ne 0$; this is a translation (see the proof of Theorem~\ref{art:conics:conics@c11}) and removes the corresponding linear term.
 \item Rescale by a nonzero constant to normalize the constant term to $-1$ (or, in the parabolic case, to put the equation in the form $a_{11}x_1^2-x_2=0$). Match against the list in Theorem~\ref{art:conics:conics@c11}.
 \end{enumerate}
 \textbf{Shortcut for type only:} if you only need the \emph{type}, arbitrary (not necessarily orthogonal) changes of variable are allowed --- they distort an ellipse but never turn it into a hyperbola or a parabola.
 \end{method}
 
 \begin{theorem}[Classification of plane conics]\label{art:conics:conics@c11}
-Every nondegenerate conic in $\R^2$ is congruent, by an isometry, to exactly one of the following loci, where $a_{11},a_{22}>0$:
+Every nondegenerate conic in $\R^2$ is congruent, by an isometry, to one of the following loci, where $a_{11},a_{22}>0$:
 \[
 \text{Ellipse: } a_{11}x_1^2+a_{22}x_2^2-1=0,\quad
 \text{Hyperbola: } a_{11}x_1^2-a_{22}x_2^2-1=0,\quad
 \text{Parabola: } a_{11}x_1^2-x_2=0 .
 \]
-The remaining loci of a quadratic equation --- a pair of lines, a single line, a point, or the empty set --- are called \emph{degenerate}.
+The type and the coefficients are determined by the conic, except that $a_{11}$ and $a_{22}$ may be interchanged in the equation of an ellipse. The remaining loci of a quadratic equation --- a pair of lines, a single line, a point, or the empty set --- are called \emph{degenerate}.
 \end{theorem}
 
 \begin{proof}
@@ -44059,10 +44059,8 @@ The two operations are different in kind. The orthogonal step (principal axes) \
 \draw[->,gray] (-2.6,0)--(2.6,0) node[right]{$x_1$};
 \draw[->,gray] (0,-1.9)--(0,1.9) node[above]{$x_2$};
 % hyperbola branches
-\draw[very thick,domain=0.95:1.9,smooth,variable=\t] plot ({\t},{1.1*sqrt(\t*\t-0.81)});
-\draw[very thick,domain=0.95:1.9,smooth,variable=\t] plot ({\t},{-1.1*sqrt(\t*\t-0.81)});
-\draw[very thick,domain=0.95:1.9,smooth,variable=\t] plot ({-\t},{1.1*sqrt(\t*\t-0.81)});
-\draw[very thick,domain=0.95:1.9,smooth,variable=\t] plot ({-\t},{-1.1*sqrt(\t*\t-0.81)});
+\draw[very thick,domain=-1.376:1.376,smooth,variable=\t] plot ({0.9*cosh(\t)},{0.99*sinh(\t)});
+\draw[very thick,domain=-1.376:1.376,smooth,variable=\t] plot ({-0.9*cosh(\t)},{0.99*sinh(\t)});
 \node at (0,-2.35) {hyperbola: $\det A<0$};
 \end{scope}
 \begin{scope}[xshift=12.4cm]
@@ -44078,7 +44076,7 @@ The two operations are different in kind. The orthogonal step (principal axes) \
 \begin{wex}{Classify a conic by its discriminant}
 Classify the locus $x_1^2+2x_1x_2-x_2^2+2x_1+2x_2-1=0$ (Artin's example).
 \wrec Method ``Classifying a conic'': the matrix $A$ and $\det A$ decide the type; for type alone an arbitrary change of variable is legal.
-\wsol Here $A=\begin{psmallmatrix}1&1\\1&-1\end{psmallmatrix}$, $B=(2\ 2)$, $c=-1$, and $\det A=-1-1=-2<0$, so $A$ is indefinite and the conic is a hyperbola or degenerate. To confirm, use the nonorthogonal change $x_1\mapsto x_1$, $x_2\mapsto x_2-x_1$ to clear the cross term; the polynomial becomes $x_2^2-2x_1^2+2x_1-1=0$, and completing the square in $x_1$ ($-2(x_1-\tfrac12)^2=-2x_1^2+2x_1-\tfrac12$) gives, after a translation and dropping primes, $x_2^2-2x_1^2-2=0$, i.e.\ $x_1^2-\tfrac12 x_2^2+1=0$. \textbf{Check:} this is the hyperbola form $a_{11}x_1^2-a_{22}x_2^2-1=0$ after scaling, matching the prediction $\det A<0$. The locus is a hyperbola.
+\wsol Here $A=\begin{psmallmatrix}1&1\\1&-1\end{psmallmatrix}$, $B=(2\ 2)$, $c=-1$, and $\det A=-1-1=-2<0$, so $A$ is indefinite and the conic is a hyperbola or degenerate. To confirm, use the nonorthogonal change $x_1\mapsto x_1-x_2$, $x_2\mapsto x_2$ to clear the cross term; the polynomial becomes $x_1^2-2x_2^2+2x_1-1=0$, and completing the square in $x_1$ ($x_1^2+2x_1=(x_1+1)^2-1$) gives, after a translation and dropping primes, $x_1^2-2x_2^2-2=0$, i.e.\ $\tfrac12 x_1^2-x_2^2-1=0$. \textbf{Check:} this is the hyperbola form $a_{11}x_1^2-a_{22}x_2^2-1=0$ with $a_{11}=\tfrac12$, $a_{22}=1$, matching the prediction $\det A<0$. The locus is a hyperbola.
 \end{wex}
 
 \begin{wex}{From eigenvalues to principal axes}
@@ -44174,7 +44172,7 @@ Show directly that a $3\times3$ skew-symmetric matrix is always singular.
 \end{wex}
 
 \begin{remark}
-The two normal-form theorems of this section are the linear-algebra core behind the classification of conics and quadrics: diagonalize the symmetric part (principal axes), translate to kill the linear part (complete the square), and the surviving data --- the signature on the symmetric side, the even rank on the skew side --- is a complete congruence invariant. Sylvester's Law is what makes ``signature'' well defined, and hence what makes the short list of conics in Theorem~\ref{art:conics:conics@c11} genuinely exhaustive.
+The two normal-form theorems of this section are the linear-algebra core behind the classification of conics and quadrics: diagonalize the symmetric part (principal axes), translate to kill the linear part (complete the square), and the surviving data --- the signature on the symmetric side, the even rank on the skew side --- is a complete congruence invariant. Sylvester's Law is what makes ``signature'' well defined, and hence what keeps the types in the short list of conics in Theorem~\ref{art:conics:conics@c11} genuinely distinct (no invertible affine change of variables turns one type into another); exhaustiveness comes from diagonalizing and completing the square.
 \end{remark}
 
 
