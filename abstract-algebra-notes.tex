@@ -5084,7 +5084,8 @@ G\times A \arrow[r, "\text{action }(g{,}a)\mapsto g\cdot a"] \arrow[dr, "\rho\ti
   to get a bijection, then evaluating that bijection. It encodes the equivalence between ``acting''
   and ``having a homomorphism into $\Sym(A)$'', the central result of this section.
 \dgi{Concrete example:} Take $G=\Zn{4}$ acting on $A=\Zn{4}$ by addition (the regular action).
-  Then $\rho(1)=\sigma_1=(1\,2\,3\,4)\in S_4$. The pair $(g,a)=(1,0)$: the top arrow gives
+  Then $\rho(1)=\sigma_1=(0\,1\,2\,3)\in\Sym(\Zn{4})$ (this is $(1\,2\,3\,4)\in S_4$ under
+  the labeling $i\leftrightarrow i+1$ used below). The pair $(g,a)=(1,0)$: the top arrow gives
   $1+0=1$; the diagonal gives $(\sigma_1,0)$ and evaluation gives $\sigma_1(0)=1$. Same answer.
 \dgi{Common pitfall:} Students sometimes think this diagram asserts that $\rho$ is an isomorphism
   or that $\Sym(A)\times A$ and $G\times A$ are identified. They are not: the diagram only records
@@ -5519,7 +5520,7 @@ Equivalently $\ker\rho=\operatorname{core}(H)=\bigcap_{x}xHx\inv$, and as $|H|=2
 normal this intersection is trivial.
 \textbf{Check:} the core is the largest normal subgroup inside $H$; the only normal subgroups of
 $S_3$ are $1$, $A_3$, $S_3$, and the only one contained in the $2$-element $H$ is $1$. For a
-genuinely non-faithful coset action take $G=Q_8$ on the two cosets of $H=\gen{-1}$: there
+genuinely non-faithful coset action take $G=Q_8$ on the four cosets of $H=\gen{-1}$: there
 $\gen{-1}\nor Q_8$, so $\operatorname{core}(H)=\gen{-1}=Z(Q_8)\ne1$ and $\ker\rho=\gen{-1}$.
 \end{wex}
 
