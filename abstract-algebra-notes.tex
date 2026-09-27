@@ -55011,15 +55011,15 @@ has a root modulo $p$ for every prime $p$ but has no root in $\mathbb{Z}$.
 
 \item Prove that $n$ divides $\varphi(p^n - 1)$. [Observe that $\varphi(p^n - 1)$ is the order of the group of automorphisms of a cyclic group of order $p^n - 1$.]
 
-\item Prove that $x^{p^n} - x + 1$ is irreducible over $\mathbb{F}_p$ only when $n = 1$ or $n = p = 2$. [Note that if $\alpha$ is a root then so is $\alpha + a$ for any $a \in \mathbb{F}_{p^n}$. Show that this implies $\mathbb{F}_p(\alpha)$ contains $\mathbb{F}_{p^n}$ and that $[\mathbb{F}_p(\alpha) : \mathbb{F}_{p^n}] = n$.]
+\item Prove that $x^{p^n} - x + 1$ is irreducible over $\mathbb{F}_p$ only when $n = 1$ or $n = p = 2$. [Note that if $\alpha$ is a root then so is $\alpha + a$ for any $a \in \mathbb{F}_{p^n}$. Show that this implies $\mathbb{F}_p(\alpha)$ contains $\mathbb{F}_{p^n}$ and that $[\mathbb{F}_p(\alpha) : \mathbb{F}_{p^n}] = p$.]
 
-\item \emph{(Berlekamp's Factorization Algorithm)} Show that in order to write $f(x)$ as a product of irreducible polynomials in $\mathbb{F}_p[x]$ it suffices to determine the factors $p_1(x), \ldots, p_k(x)$. [If $p(x) = q(x)^N \in \mathbb{F}_p[x]$ with $q(x)$ monic and irreducible, show that $q(x)$ can be determined from $p(x)$ by checking for $p^{\text{th}}$ powers and by computing greatest common divisors involving derivatives.]
+\item \emph{(Berlekamp's Factorization Algorithm)} Let $f(x) \in \mathbb{F}_p[x]$ be a monic polynomial of degree $n$ and let $f(x) = p_1(x) p_2(x) \cdots p_k(x)$, where $p_1(x), p_2(x), \ldots, p_k(x)$ are powers of distinct monic irreducibles in $\mathbb{F}_p[x]$ (this notation is kept in the following exercises). Show that in order to write $f(x)$ as a product of irreducible polynomials in $\mathbb{F}_p[x]$ it suffices to determine the factors $p_1(x), \ldots, p_k(x)$. [If $p(x) = q(x)^N \in \mathbb{F}_p[x]$ with $q(x)$ monic and irreducible, show that $q(x)$ can be determined from $p(x)$ by checking for $p^{\text{th}}$ powers and by computing greatest common divisors involving derivatives.]
 
 \item Let $g(x) \in \mathbb{F}_p[x]$ be any polynomial of degree $< n$. Denote by $R(h(x))$ the remainder of $h(x)$ after division by $f(x)$. Prove the following are equivalent:
 \begin{enumerate}
 \item[(a)] $R(g(x^p)) = g(x)$.
 \item[(b)] $f(x)$ divides $[g(x) - 0][g(x) - 1] \cdots [g(x) - (p-1)]$. [Use the fact that $g(x)^p = g(x^p)$ together with the factorization of $x^p - x$ in $\mathbb{F}_p[x]$.]
-\item[(c)] $p_i(x)$ divides $g(x) - s_i$ for $i = 1, 2, \ldots, k$.
+\item[(c)] $p_i(x)$ divides the product in (b) for $i = 1, 2, \ldots, k$.
 \item[(d)] For each $i = 1, 2, \ldots, k$ there is an $s_i \in \mathbb{F}_p$ such that $p_i(x)$ divides $g(x) - s_i$, i.e., $g(x) \equiv s_i \pmod{p_i(x)}$.
 \end{enumerate}
 
@@ -55050,7 +55050,7 @@ If this were not the case, then for two of the factors, say $p_1(x)$ and $p_2(x)
 
 \item This exercise follows Berlekamp's Factorization Algorithm outlined in the previous exercises to determine the factorization of $f(x) = x^5 + x^2 + 4x + 6$ in $\mathbb{F}_7[x]$.
 \begin{enumerate}
-\item[(a)] Show that $x^7 = x^2 + 6x^4 \pmod{f(x)}$. Similarly compute $x^{14}, x^{21}$, and $x^{28}$ modulo $f(x)$ (note that $x^{14}$ can most easily be computed by squaring the result for $x^7$ and then reducing, etc.) to show that in this case the matrix $A$ in Exercise 15 is
+\item[(a)] Show that $x^7 = x^2 + 3x^3 + 6x^4 \pmod{f(x)}$. Similarly compute $x^{14}, x^{21}$, and $x^{28}$ modulo $f(x)$ (note that $x^{14}$ can most easily be computed by squaring the result for $x^7$ and then reducing, etc.) to show that in this case the matrix $A$ in Exercise 15 is
 \[
 \begin{pmatrix}
 1 & 0 & 5 & 1 & 4 \\
