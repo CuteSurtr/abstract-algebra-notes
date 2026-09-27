@@ -34029,8 +34029,8 @@ $g=ax+b$ with $a\neq 0$, and then $\alpha=-b/a\in F$ is a root of $g$, hence of 
 \begin{remark}
 The hypothesis $\deg f\le 3$ is essential: a degree-$2$ or degree-$3$ reducible polynomial
 \emph{must} shed a linear factor, but a degree-$4$ polynomial can factor as (irreducible
-quadratic)$\times$(irreducible quadratic) with no root at all (e.g.\ $x^4+1$ over $\Q$, which
-has no rational root yet $\bmod 2$ equals $(x+1)^4$ --- see below).
+quadratic)$\times$(irreducible quadratic) with no root at all (e.g.\ $x^4+1=(x^2+x+2)(x^2+2x+2)$ over $\F_3$,
+which has no root in $\F_3$ --- see below).
 \end{remark}
 
 \begin{method}{Degree 2 or 3 irreducibility over $F$}
@@ -34084,13 +34084,13 @@ irreducible; these are the only two irreducible cubics over $\F_2$.
 \end{wex}
 
 \begin{wex}{Why degree 4 needs more than the root test}
-Show $x^4+1$ has no rational root but is reducible over $\F_2$, illustrating the degree bound.
+Show $x^4+1$ has no root in $\F_3$ but is reducible over $\F_3$, illustrating the degree bound.
 \wrec Root test is decisive only for degree $\le 3$; for degree $4$ we must factor.
-\wsol Over $\Q$: candidates $\pm1$, and $f(\pm1)=2\neq0$, so no rational root. But over
-$\F_2$, $x^4+1=(x+1)^4$ since $(x+1)^2=x^2+1$ and $(x^2+1)^2=x^4+1$ in characteristic $2$. So
-$x^4+1$ is \emph{reducible} mod $2$ despite having no root over $\Q$.
-\textbf{Check:} $(x+1)^4=x^4+4x^3+6x^2+4x+1\equiv x^4+1\pmod 2$. (Over $\Q$, $x^4+1$ is
-nonetheless irreducible --- see the cyclotomic example $\Phi_8$ --- so $\F_2$ being a bad
+\wsol Over $\F_3$: $0^4+1=1$, $1^4+1=2$, $2^4+1=17\equiv2$, so no root in $\F_3$. But over
+$\F_3$, $x^4+1=(x^2+x+2)(x^2+2x+2)$, and neither quadratic has a root in $\F_3$. So
+$x^4+1$ is \emph{reducible} over $\F_3$ despite having no root there.
+\textbf{Check:} $(x^2+x+2)(x^2+2x+2)=x^4+3x^3+6x^2+6x+4\equiv x^4+1\pmod 3$. (Over $\Q$, $x^4+1$ is
+nonetheless irreducible --- see the cyclotomic example $\Phi_8$ --- so $3$ being a bad
 prime here does not contradict that.)
 \end{wex}
 
