@@ -54182,7 +54182,7 @@ with relations $\sigma^4=\tau^2=\id$ and $\tau\sigma\tau\inv=\sigma\inv$.
 The four roots of $x^4-2$ are $\theta,i\theta,-\theta,-i\theta=i^k\theta$, so $K=\Q(\theta,i)$. Now $\idx{\Q(\theta)}{\Q}=4$ (Eisenstein at $2$) and $\theta\in\R$ while $i\notin\R$, so $\idx{K}{\Q(\theta)}=2$, giving $\idx{K}{\Q}=8$. The extension is Galois (splitting field of a separable polynomial), so $\abs{G}=8$. The map $\sigma$ permutes the roots cyclically and fixes $i$; computing $\sigma^2(\theta)=i^2\theta=-\theta$, $\sigma^4=\id$, so $\ord\sigma=4$. Complex conjugation $\tau$ fixes $\theta$ and inverts $i$, $\ord\tau=2$. Finally $\tau\sigma\tau\inv(\theta)=\tau\sigma(\theta)=\tau(i\theta)=-i\theta=\sigma^3(\theta)=\sigma\inv(\theta)$ and both fix $i$, so $\tau\sigma\tau\inv=\sigma\inv$: these are the dihedral relations, $G\isom D_8$.
 \end{proof}
 
-The eight elements are $\set{\id,\sigma,\sigma^2,\sigma^3,\tau,\sigma\tau,\sigma^2\tau,\sigma^3\tau}$. The subgroup lattice of $D_8$ has ten subgroups: $1$; three of order $2$ that are \emph{central or otherwise} -- precisely $\gen{\sigma^2}$ (central), $\gen{\tau},\gen{\sigma^2\tau}$ (reflections) and $\gen{\sigma\tau},\gen{\sigma^3\tau}$ (the other reflections), so five of order $2$ in all; three of order $4$ namely $\gen{\sigma}\isom\Zn4$ and the two Klein fours $\gen{\sigma^2,\tau},\gen{\sigma^2,\sigma\tau}$; and $G$. The three subgroups of order $4$ have index $2$, hence are \emph{normal}; $\gen{\sigma^2}$ is the center, also normal; the four reflection subgroups of order $2$ are \emph{not} normal.
+The eight elements are $\set{\id,\sigma,\sigma^2,\sigma^3,\tau,\sigma\tau,\sigma^2\tau,\sigma^3\tau}$. The subgroup lattice of $D_8$ has ten subgroups: $1$; the subgroups of order $2$, \emph{central or otherwise} -- precisely $\gen{\sigma^2}$ (central), $\gen{\tau},\gen{\sigma^2\tau}$ (reflections) and $\gen{\sigma\tau},\gen{\sigma^3\tau}$ (the other reflections), so five of order $2$ in all; three of order $4$ namely $\gen{\sigma}\isom\Zn4$ and the two Klein fours $\gen{\sigma^2,\tau},\gen{\sigma^2,\sigma\tau}$; and $G$. The three subgroups of order $4$ have index $2$, hence are \emph{normal}; $\gen{\sigma^2}$ is the center, also normal; the four reflection subgroups of order $2$ are \emph{not} normal.
 
 The subgroup lattice (top $=G$):
 \[
@@ -54216,8 +54216,8 @@ The subgroup lattice (top $=G$):
 \dgi{Concrete example:} The edge $\gen{\sigma^2,\tau} - G$ records $\gen{\sigma^2,\tau}\subset G$ with
   index $2$, so $\gen{\sigma^2,\tau}\nor G$, and its fixed field $\Fix(\gen{\sigma^2,\tau})=\Q(\sqrt2)$
   is Galois over $\Q$ with group $G/\gen{\sigma^2,\tau}\isom\Zn2$. By contrast, the absence of a direct edge
-  from $\gen{\tau}$ to $G$ (it passes through $\gen{\sigma^2,\tau}$) reflects that $\gen{\tau}$ has index $4$
-  and is not normal.
+  from $\gen{\tau}$ to $G$ (it passes through $\gen{\sigma^2,\tau}$) reflects only that $\gen{\tau}$ is not maximal (it has index $4$);
+  its non-normality is a separate fact ($\sigma\gen{\tau}\sigma\inv=\gen{\sigma^2\tau}$): $\gen{\sigma^2}$ also has no direct edge to $G$, yet it is normal.
 \dgi{Common pitfall:} Students see five order-$2$ subgroups and expect five lines at the third row, but the
   diagram clusters $\gen{\tau},\gen{\sigma^2\tau}$ together (they share a common order-$4$ parent
   $\gen{\sigma^2,\tau}$) and similarly $\gen{\sigma\tau},\gen{\sigma^3\tau}$ (they share $\gen{\sigma^2,\sigma\tau}$).
@@ -54228,7 +54228,7 @@ The subgroup lattice (top $=G$):
   reading the Galois correspondence in the next diagram.
 \end{dgx}
 
-The corresponding subfield lattice, by $E=\Fix(H)$ with $\idx{E}{\Q}=\idx{G}{H}$ (so the picture is the lattice above turned upside down):
+The corresponding subfield lattice, by $E=\Fix(H)$ with $\idx{E}{\Q}=\idx{G}{H}$ (drawn upside down, with $\Q$ on top, so that each $\Fix(H)$ sits where $H$ sits in the lattice above):
 \[
 \begin{tikzcd}[row sep=1.5em, column sep=0.7em]
 & & \Q \arrow[dll,dash]\arrow[d,dash]\arrow[drr,dash] & & \\
@@ -54246,7 +54246,7 @@ The corresponding subfield lattice, by $E=\Fix(H)$ with $\idx{E}{\Q}=\idx{G}{H}$
 \dgi{Arrows:} Every dashed edge is a field inclusion, pointing downward (toward the larger field). As in
   the subgroup lattice, edges are Hasse: $E_1 - E_2$ means $E_1\subset E_2$ with no intermediate field
   between them. No edge is a field homomorphism beyond inclusion.
-\dgi{What commutes:} This is the exact upside-down mirror of the subgroup lattice. Each field $E$ sits at
+\dgi{What commutes:} Since the field lattice is drawn upside down (larger fields lower), this picture has exactly the shape of the subgroup lattice. Each field $E$ sits at
   the same position in this lattice as $\Gal(K/E)$ sits in the subgroup lattice (at height $\idx{E}{\Q}$
   from the top here, versus height $\abs{\Gal(K/E)}$ from the bottom there). The fields in the second row
   correspond to normal subgroups of index $2$, so they are Galois over $\Q$. The central $\Q(i,\sqrt2)$
@@ -54256,13 +54256,13 @@ The corresponding subfield lattice, by $E=\Fix(H)$ with $\idx{E}{\Q}=\idx{G}{H}$
   subgroups sit in row 2 of the subgroup lattice, their fixed fields (degree $2$ over $\Q$) sit in row 2 of
   this lattice. Likewise order-$2$ subgroups give degree-$4$ fields occupying row 3 here.
 \dgi{Why this matters here:} This is the complete field-theoretic output of the Galois correspondence for
-  $D_8$. It distinguishes the five Galois intermediate fields (three quadratics plus $\Q(i,\sqrt2)$ plus $K$
+  $D_8$. It distinguishes the six Galois intermediate fields ($\Q$, the three quadratics, $\Q(i,\sqrt2)$ and $K$
   itself) from the four non-Galois ones (the four degree-$4$ fields fixed by non-normal reflections),
   demonstrating concretely why normality of a subgroup is the deciding criterion.
 \dgi{Concrete example:} Compare $\Q(i)$ (second row, center) with $\Q(\theta)$ (third row, left).
   The field $\Q(i)=\Fix(\gen{\sigma})$ where $\gen{\sigma}\nor G$ (index $2$), so $\Q(i)/\Q$ is Galois
   with group $G/\gen{\sigma}\isom\Zn2$. The field $\Q(\theta)=\Fix(\gen{\tau})$ where $\gen{\tau}$ is
-  not normal, so $\Q(\theta)/\Q$ is not Galois: it contains only one root of $x^4-2$ and misses $i\theta$
+  not normal, so $\Q(\theta)/\Q$ is not Galois: it contains only the two real roots $\pm\theta$ of $x^4-2$ and misses $i\theta$
   and $-i\theta$.
 \dgi{Common pitfall:} Students read the position of $\Q(\theta)$ in row 3 (far from $\Q$ in the diagram)
   and assume it is a ``complicated'' extension, then try to prove it is Galois by listing its automorphisms.
@@ -54278,19 +54278,19 @@ Here is the key reading of normality. The three index-$2$ subgroups $\gen{\sigma
 \begin{wex}{$\Fix(\gen{\tau})=\Q(\theta)$ is not Galois over $\Q$}
 Identify the fixed field of complex conjugation $\tau$ and explain why it is not normal over $\Q$.
 \wrec $\tau$ fixes $\theta=2^{1/4}\in\R$; by Artin $\idx{K}{\Fix(\gen{\tau})}=2$, so $\Fix(\gen{\tau})$ is a degree-$4$ field. Non-normality of $\gen{\tau}$ in $G$ predicts the field is not Galois over $\Q$.
-\wsol $\tau$ fixes $\theta$ and $\Q$, so $\Q(\theta)\subseteq\Fix(\gen{\tau})$; since $\idx{\Q(\theta)}{\Q}=4=\idx{G}{\gen{\tau}}$, equality holds, $\Fix(\gen{\tau})=\Q(\theta)$. Now $\gen{\tau}$ is not normal: $\sigma\tau\sigma\inv$ sends $\theta\mapsto\sigma\tau(i^{-1}... )$; directly $\sigma\gen{\tau}\sigma\inv=\gen{\sigma\tau\sigma\inv}=\gen{\sigma^2\tau}\neq\gen{\tau}$. Correspondingly $\Q(\theta)$ contains only the real root $\theta$ of $x^4-2$, not the conjugates $i\theta,-i\theta$, so it is not a splitting field and not normal over $\Q$. Sanity check: $\abs{\Aut(\Q(\theta)/\Q)}=2$ (only $\theta\mapsto\pm\theta$ stay in the real field $\Q(\theta)$) while $\idx{\Q(\theta)}{\Q}=4$, so by characterization (3) it is indeed not Galois.
+\wsol $\tau$ fixes $\theta$ and $\Q$, so $\Q(\theta)\subseteq\Fix(\gen{\tau})$; since $\idx{\Q(\theta)}{\Q}=4=\idx{G}{\gen{\tau}}$, equality holds, $\Fix(\gen{\tau})=\Q(\theta)$. Now $\gen{\tau}$ is not normal: $\sigma\tau\sigma\inv$ sends $\theta\mapsto\sigma\tau(-i\theta)=\sigma(i\theta)=-\theta$ and $i\mapsto-i$, so $\sigma\tau\sigma\inv=\sigma^2\tau$ and $\sigma\gen{\tau}\sigma\inv=\gen{\sigma\tau\sigma\inv}=\gen{\sigma^2\tau}\neq\gen{\tau}$. Correspondingly $\Q(\theta)$ contains only the real roots $\pm\theta$ of $x^4-2$, not the conjugates $i\theta,-i\theta$, so it is not a splitting field and not normal over $\Q$. Sanity check: $\abs{\Aut(\Q(\theta)/\Q)}=2$ (only $\theta\mapsto\pm\theta$ stay in the real field $\Q(\theta)$) while $\idx{\Q(\theta)}{\Q}=4$, so by characterization (3) it is indeed not Galois.
 \end{wex}
 
 \begin{wex}{$\Fix(\gen{\sigma^2})=\Q(i,\sqrt2)$ is Galois over $\Q$}
 Find the fixed field of the center $\gen{\sigma^2}$ and identify $\Gal$ of that field over $\Q$.
 \wrec $\gen{\sigma^2}$ is the center of $D_8$, hence normal; its fixed field is degree $\idx{G}{\gen{\sigma^2}}=4$ and Galois over $\Q$ with group $G/\gen{\sigma^2}$.
-\wsol $\sigma^2$ sends $\theta\mapsto-\theta$ and fixes $i$, so it fixes $\theta^2=\sqrt2$ and $i$; thus $\Q(i,\sqrt2)\subseteq\Fix(\gen{\sigma^2})$, and both are degree $4$ over $\Q$, so equal. Since $\gen{\sigma^2}\nor G$, the field $\Q(i,\sqrt2)$ is Galois over $\Q$ with $\Gal\isom G/\gen{\sigma^2}$. As $D_8/Z(D_8)\isom V_4$, we get $\Gal(\Q(i,\sqrt2)/\Q)\isom V_4$. Sanity check: $\Q(i,\sqrt2)=\Q(i,\sqrt2)$ is itself a biquadratic field $\Q(\sqrt{-1},\sqrt2)$ whose group is visibly $V_4$ (independent sign changes on $i,\sqrt2$), agreeing with $D_8/Z\isom V_4$.
+\wsol $\sigma^2$ sends $\theta\mapsto-\theta$ and fixes $i$, so it fixes $\theta^2=\sqrt2$ and $i$; thus $\Q(i,\sqrt2)\subseteq\Fix(\gen{\sigma^2})$, and both are degree $4$ over $\Q$, so equal. Since $\gen{\sigma^2}\nor G$, the field $\Q(i,\sqrt2)$ is Galois over $\Q$ with $\Gal\isom G/\gen{\sigma^2}$. As $D_8/Z(D_8)\isom V_4$, we get $\Gal(\Q(i,\sqrt2)/\Q)\isom V_4$. Sanity check: $\Q(i,\sqrt2)$ is itself a biquadratic field $\Q(\sqrt{-1},\sqrt2)$ whose group is visibly $V_4$ (independent sign changes on $i,\sqrt2$), agreeing with $D_8/Z\isom V_4$.
 \end{wex}
 
 \begin{wex}{The three quadratic subfields and which subgroups give them}
 Determine the three quadratic subfields of $K=\Q(\theta,i)$ and the subgroups they correspond to.
 \wrec Quadratic subfields $\leftrightarrow$ index-$2$ (order-$4$) subgroups of $G$; there are exactly three subgroups of order $4$ in $D_8$.
-\wsol The order-$4$ subgroups are $\gen{\sigma}$ (cyclic), $\gen{\sigma^2,\tau}$, and $\gen{\sigma^2,\sigma\tau}$. Their fixed fields: $\Fix(\gen{\sigma})=\Q(i)$ (since $\sigma$ fixes $i$ and moves $\theta$); $\Fix(\gen{\sigma^2,\tau})=\Q(\sqrt2)$ (both fix $\theta^2=\sqrt2$ but move $i$); $\Fix(\gen{\sigma^2,\sigma\tau})=\Q(\sqrt{-2})$ (one checks $\sigma\tau$ fixes $i\theta^2=i\sqrt2$, and $\sigma^2$ fixes it too, with $(i\sqrt2)^2=-2$). All three are normal, so all three quadratics are Galois over $\Q$. Sanity check: the three quadratic subfields of any field containing $\Q(\sqrt2,i)$ that are $\Q(\sqrt d)$ must have $d\in\set{2,-1,-2}$ up to squares, and indeed $2\cdot(-1)=-2$, so $\set{\Q(\sqrt2),\Q(i),\Q(\sqrt{-2})}$ is exactly the $V_4$ family of quadratics inside $\Q(i,\sqrt2)$.
+\wsol The order-$4$ subgroups are $\gen{\sigma}$ (cyclic), $\gen{\sigma^2,\tau}$, and $\gen{\sigma^2,\sigma\tau}$. Their fixed fields: $\Fix(\gen{\sigma})=\Q(i)$ (since $\sigma$ fixes $i$ and moves $\theta$); $\Fix(\gen{\sigma^2,\tau})=\Q(\sqrt2)$ (both fix $\theta^2=\sqrt2$, and $\tau$ moves $i$); $\Fix(\gen{\sigma^2,\sigma\tau})=\Q(\sqrt{-2})$ (one checks $\sigma\tau$ fixes $i\theta^2=i\sqrt2$, and $\sigma^2$ fixes it too, with $(i\sqrt2)^2=-2$). All three are normal, so all three quadratics are Galois over $\Q$. Sanity check: the three quadratic subfields of any field containing $\Q(\sqrt2,i)$ that are $\Q(\sqrt d)$ must have $d\in\set{2,-1,-2}$ up to squares, and indeed $2\cdot(-1)=-2$, so $\set{\Q(\sqrt2),\Q(i),\Q(\sqrt{-2})}$ is exactly the $V_4$ family of quadratics inside $\Q(i,\sqrt2)$.
 \end{wex}
 
 \begin{wex}{A non-normal reflection subgroup and its conjugate field}
@@ -54390,7 +54390,7 @@ Identify $\Fix(\gen{c})$ where $c\colon\zeta_p\mapsto\zeta_p\inv$ is complex con
 \begin{wex}{Galois over an intermediate field that is not Galois over the base}
 In $K=\Q(\theta,i)$ with $\theta=2^{1/4}$, show $K/\Q(\theta)$ is Galois even though $\Q(\theta)/\Q$ is not.
 \wrec ``Galois'' is relative: $K/E$ is always Galois for any intermediate $E$ (it is the splitting field of the same separable polynomial over $E$), but $E/F$ is Galois only when $\Gal(K/E)\nor\Gal(K/F)$.
-\wsol Over $E=\Q(\theta)$, the polynomial $x^4-2=(x-\theta)(x+\theta)(x^2+\theta^2)$ has $K=E(i)$ as splitting field, separable, so $K/E$ is Galois with $\Gal(K/E)=\gen{\tau}$ of order $2$. But $\gen{\tau}$ is not normal in $D_8$, so $E/\Q$ is not Galois -- consistent with $\Q(\theta)$ containing only one real root of $x^4-2$. Sanity check: $\idx{K}{E}=2=\abs{\gen{\tau}}$ confirms $K/E$ Galois by (3); and the failure of normality of $\gen{\tau}$ in $G$ is exactly the obstruction (3) of the Fundamental Theorem to $E/\Q$ being Galois.
+\wsol Over $E=\Q(\theta)$, the polynomial $x^4-2=(x-\theta)(x+\theta)(x^2+\theta^2)$ has $K=E(i)$ as splitting field, separable, so $K/E$ is Galois with $\Gal(K/E)=\gen{\tau}$ of order $2$. But $\gen{\tau}$ is not normal in $D_8$, so $E/\Q$ is not Galois -- consistent with $\Q(\theta)$ containing only the two real roots $\pm\theta$ of $x^4-2$. Sanity check: $\idx{K}{E}=2=\abs{\gen{\tau}}$ confirms $K/E$ Galois by (3); and the failure of normality of $\gen{\tau}$ in $G$ is exactly the obstruction (3) of the Fundamental Theorem to $E/\Q$ being Galois.
 \end{wex}
 
 \begin{remark}
