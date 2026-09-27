@@ -223,7 +223,7 @@ $c$ & $c$ & $b$ & $a$ & $e$\\
 \item \textbf{Closure (G0):} every entry of the body lies in $\{e,a,b,c\}$ -- no new symbols appear.
 \item \textbf{Identity (G2):} some row equals the column header and its column equals the row header. Here the $e$-row reads $e\,a\,b\,c$ and the $e$-column reads $e\,a\,b\,c$, so $e$ is the identity.
 \item \textbf{Inverses (G3):} the identity $e$ appears in \emph{every} row and \emph{every} column. Here $e$ sits on the diagonal of each, so each element is its own inverse ($x\inv=x$).
-\item \textbf{Latin square (necessary for G3, helps spot errors):} each element appears exactly once per row and once per column (cancellation laws in tabular form). Check: every row and column is a permutation of $e,a,b,c$.
+\item \textbf{Latin square (necessary for a group, helps spot errors):} each element appears exactly once per row and once per column (cancellation laws in tabular form). Check: every row and column is a permutation of $e,a,b,c$.
 \item \textbf{Associativity (G1):} \emph{not} visible at a glance; must be checked separately (or inherited from a known model). For $V_4$ it follows from $V_4\isom\Zn2\times\Zn2$.
 \end{enumerate}
 \textbf{Recognition.} Use a Cayley table whenever $|G|$ is small: it certifies G0, G2, G3 and the cancellation/Latin-square property visually, leaving only associativity to argue.
@@ -253,7 +253,7 @@ b & b & c & e & a\\
 c & c & a & a & b
 \end{array}
 \]
-\wrec Run the table-reading checklist and stop at the first violated condition. Trigger: a proposed finite operation -- always test the Latin-square property first, since a repeated entry in a row or column instantly kills the cancellation laws and hence (G3).
+\wrec Run the table-reading checklist and stop at the first violated condition. Trigger: a proposed finite operation -- always test the Latin-square property first, since a repeated entry in a row or column instantly kills the cancellation laws, which every group satisfies (they follow from (G1)--(G3)).
 \wsol
 Closure: all entries in $\{e,a,b,c\}$. OK.
 Identity: row/column $e$ match the headers, so $e$ is an identity. OK.
@@ -275,7 +275,7 @@ G \arrow[r, "R_{a\inv}:\,y\mapsto y a\inv"'] & G
 \dgi{Arrows:} Top horizontal: left translation $L_a$, the map $x\mapsto ax$, acting on $G$ from the left by the fixed element $a$. Bottom horizontal: right translation $R_{a\inv}$, the map $y\mapsto ya\inv$, acting from the right by $a\inv$. Left vertical: the inversion map $(\cdot)\inv$, sending $x$ to $x\inv$. Right vertical: the same inversion map $(\cdot)\inv$, sending $ax$ to $(ax)\inv$. All four maps are bijections of $G$ to itself.
 \dgi{What commutes:} Down-then-right equals right-then-down: $R_{a\inv}\circ(\cdot)\inv=(\cdot)\inv\circ L_a$. Explicitly, for every $x\in G$: $(ax)\inv=(x\inv)a\inv$.
 \dgi{Why it commutes:} Chase a generic $x\in G$ along both paths. \emph{Right then down:} first apply $L_a$ to get $ax$, then invert to get $(ax)\inv=x\inv a\inv$ by Proposition~\ref{p:invlaws@c1}(b). \emph{Down then right:} first invert $x$ to get $x\inv$, then apply $R_{a\inv}$ to get $x\inv a\inv$. Both paths yield $x\inv a\inv$, and they agree because $(ab)\inv=b\inv a\inv$ holds in any group.
-\dgi{Why this matters here:} The remark uses this square to explain the rearrangement theorem in a conceptual way: $L_a$ is a bijection because its inverse as a set-map is exactly $R_{a\inv}\circ(\cdot)\inv\circ(\cdot)\inv = R_{a\inv}$, i.e.\ the diagram displays how inversion converts left multiplication into right multiplication. It also shows that the cancellation-law content ($L_a$ injective) is captured by a simple conjugation via the inversion involution.
+\dgi{Why this matters here:} The remark uses this square to explain the rearrangement theorem in a conceptual way: $L_a$ is a bijection because the square writes it as $L_a=(\cdot)\inv\circ R_{a\inv}\circ(\cdot)\inv$, a composite of bijections (inversion is its own inverse and $R_{a\inv}$ has inverse $R_a$), so its inverse as a set-map is $(\cdot)\inv\circ R_a\circ(\cdot)\inv=L_{a\inv}$; i.e.\ the diagram displays how inversion converts left multiplication into right multiplication. It also shows that the cancellation-law content ($L_a$ injective) is captured by a simple conjugation via the inversion involution.
 \dgi{Concrete example:} In $G=S_3$, take $a=(1\,2)$. Then $L_a$ maps $(1\,3)$ to $(1\,2)(1\,3)=(1\,3\,2)$. Inverting: $((1\,2)(1\,3))\inv=(1\,3\,2)\inv=(1\,2\,3)$. Other path: invert $(1\,3)$ to get $(1\,3)$ (a transposition is its own inverse), then right-multiply by $a\inv=(1\,2)$: $(1\,3)(1\,2)=(1\,2\,3)$. Both yield $(1\,2\,3)$.
 \dgi{Common pitfall:} Students sometimes expect inversion to intertwine $L_a$ with $L_{a\inv}$ (left-multiply by $a\inv$), but the socks-shoes law reverses the side: $(ax)\inv=x\inv a\inv$ is right multiplication by $a\inv$, not left. The diagram makes this reversal of side unavoidable and visible.
 \dgi{Takeaway:} The point of this diagram is that inversion in a group converts left multiplication by $a$ into right multiplication by $a\inv$, so the two translations are intertwined by the inversion involution rather than being related by a naive left-to-left substitution.
