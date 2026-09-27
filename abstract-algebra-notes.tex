@@ -34941,7 +34941,7 @@ A \emph{monomial ordering} on $F[x_1,\dots,x_n]$ is a total order $>$ on the set
 \item[(i)] $>$ is a well-ordering (every nonempty set of monomials has a least element), and
 \item[(ii)] $>$ is compatible with multiplication: if $x^\alpha > x^\beta$ then $x^\gamma x^\alpha > x^\gamma x^\beta$ for every $\gamma$, i.e. $\alpha>\beta \imp \alpha+\gamma > \beta+\gamma$.
 \end{enumerate}
-We identify monomials with their exponent vectors, so a monomial ordering is a total well-order on $\Z_{\ge 0}^n$ respecting addition. Condition (i) forces $x^\alpha \ge 1 = x^0$ for all $\alpha$.
+We identify monomials with their exponent vectors, so a monomial ordering is a total well-order on $\Z_{\ge 0}^n$ respecting addition. Conditions (i) and (ii) together force $x^\alpha \ge 1 = x^0$ for all $\alpha$: if $x^\alpha < 1$ then (ii) gives $1 > x^\alpha > x^{2\alpha} > x^{3\alpha} > \cdots$, a set of monomials with no least element, contradicting (i).
 \end{definition}
 
 \begin{definition}
@@ -35018,16 +35018,16 @@ Verify that $>_{\mathrm{lex}}$ on $\Z_{\ge0}^2$ satisfies the additive compatibi
 
 \begin{wex}{Sorting a polynomial under all three orders}
 Write $f = x^2 y + x y^2 + y^3 + x^2 + 1$ in $F[x,y]$, $x>y$, in descending order under lex, grlex, and grevlex.
-\wrec Routine application of all three definitions to one polynomial, to see how the leading term moves.
+\wrec Routine application of all three definitions to one polynomial, to see where the three orders agree and where they differ.
 \wsol Exponents and degrees: $x^2y:(2,1)|3$, $xy^2:(1,2)|3$, $y^3:(0,3)|3$, $x^2:(2,0)|2$, $1:(0,0)|0$.
 
 \emph{Lex} (first coordinate, then second): $x^2y\,(2,1) > x^2\,(2,0) > xy^2\,(1,2) > y^3\,(0,3) > 1$. So $\LT_{\mathrm{lex}}=x^2y$.
 
 \emph{Grlex} (degree, then lex): degree $3$ block $\{(2,1),(1,2),(0,3)\}$ ordered by lex gives $x^2y>xy^2>y^3$; then degree $2$: $x^2$; then degree $0$: $1$. So $\LT_{\mathrm{grlex}}=x^2y$.
 
-\emph{Grevlex} (degree, then right-to-left, negative wins): in the degree-$3$ block compare with the reversed rule. $(2,1)$ vs $(1,2)$: difference $(1,-1)$, rightmost entry $-1$ negative, so $xy^2$ wins; $(1,2)$ vs $(0,3)$: difference $(1,-1)$, so $y^3$ wins. Thus $y^3 > xy^2 > x^2y$; then $x^2$; then $1$. So $\LT_{\mathrm{grevlex}}=y^3$.
+\emph{Grevlex} (degree, then right-to-left, negative wins): in the degree-$3$ block compare with the reversed rule. $(2,1)$ vs $(1,2)$: difference $(1,-1)$, rightmost entry $-1$ negative, so $x^2y$ wins; $(1,2)$ vs $(0,3)$: difference $(1,-1)$, so $xy^2$ wins. Thus $x^2y > xy^2 > y^3$; then $x^2$; then $1$. So $\LT_{\mathrm{grevlex}}=x^2y$.
 
-\emph{Check.} In two variables grlex and grevlex order the top-degree block in opposite directions when total degrees are equal, exactly as the differences $(1,-1)$ predict.
+\emph{Check.} In two variables grevlex coincides with grlex: if $|\alpha|=|\beta|$ and $\alpha\ne\beta$ then $\alpha-\beta=(d,-d)$ with $d\ne 0$, and its rightmost entry $-d$ is negative exactly when its leftmost entry $d$ is positive. The two graded orders first differ in three variables, as in the comparison of $x^2z^2$ and $xy^3$ above.
 \end{wex}
 
 \begin{pitfall}
