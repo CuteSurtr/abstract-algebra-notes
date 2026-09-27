@@ -27759,7 +27759,7 @@ The content of Theorem~\ref{thm:first-iso@c7} is the factorization triangle: eve
 \[
 \begin{tikzcd}[row sep=large,column sep=large]
 R \arrow[r, "\varphi"] \arrow[d, two heads, "\pi"'] & S \\
-R/\ker\varphi \arrow[ur, dashed, "\overline{\varphi}"', "\isom"] &
+R/\ker\varphi \arrow[ur, dashed, hook, "\overline{\varphi}"'] &
 \end{tikzcd}
 \]
 The dashed arrow is an isomorphism \emph{onto its image} $\varphi(R)\subseteq S$.
@@ -27767,10 +27767,10 @@ The dashed arrow is an isomorphism \emph{onto its image} $\varphi(R)\subseteq S$
 \dgi{Objects:} Three objects: $R$, a ring (the domain); $S$, a ring (the codomain); and $R/\ker\varphi$, the quotient ring of $R$ by the two-sided ideal $\ker\varphi$. Note $\varphi(R)\subseteq S$ is the image subring, not all of $S$.
 \dgi{Arrows:} $\varphi:R\to S$ is the given ring homomorphism. $\pi:R\twoheadrightarrow R/\ker\varphi$ is the canonical surjective projection, $r\mapsto r+\ker\varphi$. The dashed arrow $\overline\varphi:R/\ker\varphi\xrightarrow{\;\isom\;}\varphi(R)$ is the induced ring isomorphism defined by $\overline\varphi(r+\ker\varphi)=\varphi(r)$; it is both injective (the kernel of $\varphi$ has been killed) and surjective onto $\varphi(R)$.
 \dgi{What commutes:} The triangle commutes: $\overline\varphi\circ\pi=\varphi$. Concretely, for every $r\in R$, applying $\pi$ then $\overline\varphi$ gives $\varphi(r)$, the same as applying $\varphi$ directly.
-\dgi{Why it commutes:} Chase a generic $r\in R$. Via $\pi$: $r\mapsto r+\ker\varphi$. Via $\overline\varphi$: $r+\ker\varphi\mapsto\varphi(r)$. So the composite is $\varphi(r)$, matching the direct arrow. Well-definedness of $\overline\varphi$: if $r+\ker\varphi=r'+\ker\varphi$ then $r-r'\in\ker\varphi$, so $\varphi(r)-\varphi(r')=\varphi(r-r')=0$, hence $\varphi(r)=\varphi(r')$. This is the critical check confirming that the ideal used for the quotient is exactly $\ker\varphi$, neither more nor less.
-\dgi{Why this matters here:} This diagram is the First Isomorphism Theorem made visual. Every ring homomorphism decomposes canonically into a surjection followed by an isomorphism. This is why the theorem is the workhorse of ring theory: to identify $R/I\isom S$, one builds $\varphi:R\twoheadrightarrow S$ with $\ker\varphi=I$ and reads off the isomorphism from this triangle.
+\dgi{Why it commutes:} Chase a generic $r\in R$. Via $\pi$: $r\mapsto r+\ker\varphi$. Via $\overline\varphi$: $r+\ker\varphi\mapsto\varphi(r)$. So the composite is $\varphi(r)$, matching the direct arrow. Well-definedness of $\overline\varphi$: if $r+\ker\varphi=r'+\ker\varphi$ then $r-r'\in\ker\varphi$, so $\varphi(r)-\varphi(r')=\varphi(r-r')=0$, hence $\varphi(r)=\varphi(r')$. This check uses only that the ideal we quotient by is contained in $\ker\varphi$ (compare Theorem~\ref{thm:univ@c7}); that it is all of $\ker\varphi$ is what makes $\overline\varphi$ injective.
+\dgi{Why this matters here:} This diagram is the First Isomorphism Theorem made visual. Every ring homomorphism decomposes canonically into a surjection followed by an injection (an isomorphism onto $\varphi(R)$). This is why the theorem is the workhorse of ring theory: to identify $R/I\isom S$, one builds $\varphi:R\twoheadrightarrow S$ with $\ker\varphi=I$ and reads off the isomorphism from this triangle.
 \dgi{Concrete example:} $R=\Z$, $S=\Zn{n}$, $\varphi(k)=k\bmod n$. Then $\ker\varphi=n\Z$, $\pi:\Z\twoheadrightarrow\Z/n\Z$, and $\overline\varphi:\Z/n\Z\xrightarrow{\;\isom\;}\Zn{n}$ sends $k+n\Z\mapsto k\bmod n$. The triangle commutes: $(k+n\Z)\mapsto k\bmod n = \varphi(k)$.
-\dgi{Common pitfall:} The dashed arrow $\overline\varphi$ is an isomorphism \emph{onto its image} $\varphi(R)$, not onto all of $S$ (unless $\varphi$ is surjective). Students sometimes read the label ``$\isom$'' and conclude $R/\ker\varphi\isom S$; the correct conclusion is $R/\ker\varphi\isom\varphi(R)$. The diagram is drawn with the dashed arrow targeting $S$ only because $\varphi(R)$ lives inside $S$.
+\dgi{Common pitfall:} The dashed arrow $\overline\varphi$ is an isomorphism \emph{onto its image} $\varphi(R)$, not onto all of $S$ (unless $\varphi$ is surjective). This is why it is drawn as a hooked (injective) arrow into $S$. Students sometimes read the triangle as saying $R/\ker\varphi\isom S$; the correct conclusion is $R/\ker\varphi\isom\varphi(R)$. The diagram is drawn with the dashed arrow targeting $S$ only because $\varphi(R)$ lives inside $S$.
 \dgi{Takeaway:} The point of this diagram is that every ring homomorphism factors uniquely as a surjection onto a quotient followed by an injection, so any ring map is, up to isomorphism, completely described by its kernel.
 \end{dgx}
 
@@ -27789,7 +27789,7 @@ R/I \arrow[ur, dashed, "\exists!\,\overline{\varphi}"'] &
 \dgi{Why it commutes:} For any $r\in R$: along $\pi$ then $\overline\varphi$, we get $r\mapsto r+I\mapsto\varphi(r)$; along $\varphi$ directly, $r\mapsto\varphi(r)$. They agree by the very definition of $\overline\varphi$. Well-definedness: if $r+I=r'+I$ then $r-r'\in I\subseteq\ker\varphi$, so $\varphi(r-r')=0$, i.e. $\varphi(r)=\varphi(r')$. This is why the condition $I\subseteq\ker\varphi$ is the necessary and sufficient hypothesis.
 \dgi{Why this matters here:} This universal property is the mechanism behind all three remaining isomorphism theorems. Whenever we want to factor a map through a quotient, we need only check that the ideal being quotiented by is contained in the kernel; the induced map then exists and is unique. The theorem after the diagram also records $\ker\overline\varphi=\ker\varphi/I$, from which the First Isomorphism Theorem is recovered as the special case $I=\ker\varphi$.
 \dgi{Concrete example:} Let $R=\Z$, $I=6\Z$, $S=\Zn{2}$, and $\varphi(n)=n\bmod 2$. Since $6\Z\subseteq 2\Z=\ker\varphi$, there is a unique $\overline\varphi:\Z/6\Z\to\Zn{2}$ with $\overline\varphi(n+6\Z)=n\bmod 2$. Indeed $\ker\overline\varphi=2\Z/6\Z=\{\overline 0,\overline 2,\overline 4\}$, consistent with $\ker\overline\varphi=\ker\varphi/I=(2\Z)/(6\Z)$.
-\dgi{Common pitfall:} Students sometimes apply this theorem without verifying $I\subseteq\ker\varphi$; the induced map $\overline\varphi$ simply does not exist if $I\not\subseteq\ker\varphi$ (a coset representative in $I$ would map to $0$ but another representative outside $I$ would not). Always check the kernel containment before claiming an induced map exists.
+\dgi{Common pitfall:} Students sometimes apply this theorem without verifying $I\subseteq\ker\varphi$; the induced map $\overline\varphi$ simply does not exist if $I\not\subseteq\ker\varphi$ (if some $i\in I$ has $\varphi(i)\neq 0$, then $0$ and $i$ represent the same coset $0+I=i+I$ but have different images $0\neq\varphi(i)$). Always check the kernel containment before claiming an induced map exists.
 \dgi{Takeaway:} The point of this diagram is that any ring map $\varphi$ whose kernel contains $I$ factors uniquely through the quotient $R/I$, making $\pi$ the universal map out of $R$ that kills $I$.
 \end{dgx}
 Moreover $\ker\overline\varphi=\ker\varphi/I$, so $\overline\varphi$ is injective iff $I=\ker\varphi$ (recovering Theorem~\ref{thm:first-iso@c7}).
@@ -27819,7 +27819,7 @@ Let $R$ be a ring.
 
 (3rd) Apply Theorem~\ref{thm:univ@c7} to $\varphi=\pi_J:R\to R/J$, whose kernel is $J\supseteq I$, to get a surjection $\overline{\pi_J}:R/I\to R/J$ with kernel $J/I$. Then Theorem~\ref{thm:first-iso@c7} yields $(R/I)/(J/I)\isom R/J$.
 
-(4th) By Theorem~\ref{thm:univ@c7}, ideals/subrings of $R/I$ pull back along $\pi$ to ideals/subrings of $R$ containing $\ker\pi=I$, and push forward as $J\mapsto J/I$; these are mutually inverse and preserve inclusion. (Same argument as the group lattice theorem applied to the absorbing structure.)
+(4th) Since $\pi$ is a surjective ring homomorphism (Theorem~\ref{thm:quotient@c7}), ideals/subrings of $R/I$ pull back along $\pi$ to ideals/subrings of $R$ containing $\ker\pi=I$, and push forward as $J\mapsto J/I$; these are mutually inverse and preserve inclusion. (Same argument as the group lattice theorem applied to the absorbing structure.)
 \end{proof}
 
 \begin{method}{Recognizing a quotient: identify $R/I$ via a surjection with the right kernel}
@@ -28176,7 +28176,7 @@ is a ring homomorphism whose kernel is $n\Z$, where $n$ is the characteristic of
 \item (First Isomorphism Theorem, factoring through the quotient.) Let $\varphi\colon R\to S$ be a ring homomorphism and $\pi\colon R\to R/\ker\varphi$ the natural projection. Prove there is a unique injective homomorphism $\overline{\varphi}$ making the diagram commute, and that $\overline{\varphi}$ is an isomorphism onto $\im\varphi$:
 \[\begin{tikzcd}[row sep=large,column sep=large]
 R \arrow[r, "\varphi"] \arrow[d, two heads, "\pi"'] & S \\
-R/\ker\varphi \arrow[ur, dashed, "\overline{\varphi}"', "\isom"] &
+R/\ker\varphi \arrow[ur, dashed, hook, "\overline{\varphi}"'] &
 \end{tikzcd}\]
 Apply this to $\varphi\colon\R[x]\to\C$, $x\mapsto i$, to obtain $\R[x]/\gen{x^2+1}\isom\C$.
 
