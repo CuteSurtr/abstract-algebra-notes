@@ -29560,7 +29560,7 @@ and that the solution $x$ is unique mod $n = n_1 n_2 \cdots n_k$.
 \[
 x = a_1 t_1 n_1' + a_2 t_2 n_2' + \cdots + a_k t_k n_k' \bmod n.
 \]
-Note that the elements $t_i$ can be quickly found by the Euclidean Algorithm as described in Section 2 of the Preliminaries chapter (writing $a n_i + b n_i' = (n_i, n_i') = 1$ gives $t_i = b$) and that these then quickly give the solutions to the system of congruences above for any choice of $a_1, a_2, \ldots, a_k$.
+Note that the elements $t_i$ can be quickly found by the Euclidean Algorithm as described in Section~8.1 (writing $a n_i + b n_i' = (n_i, n_i') = 1$ gives $t_i = b$) and that these then quickly give the solutions to the system of congruences above for any choice of $a_1, a_2, \ldots, a_k$.
 \item[(c)] Solve the simultaneous system of congruences
 \[
 x \equiv 1 \bmod 8, \quad x \equiv 2 \bmod 25, \quad \text{and} \quad x \equiv 3 \bmod 81
@@ -29612,8 +29612,8 @@ Let $P$ be the subset of elements $(a_i)_{i \in I}$ in the direct product $\prod
 \begin{enumerate}
 \item[(a)] Assume all $\mu_{ji}$ are group homomorphisms. Show that $P$ is a subgroup of the direct product group (cf. Exercise 15, Section 5.1).
 \item[(b)] Assume the hypotheses in (a), and let $I = \Z^+$ (usual ordering). For each $i \in I$ let $\mu_i : P \to A_i$ be the projection of $P$ onto its $i$th component. Show that if each $\mu_{ji}$ is surjective, then so is $\mu_i$ for all $i$ (so each $A_i$ is a quotient group of $P$).
-\item[(c)] Show that if all $A_i$ are commutative rings with 1 and all $\mu_{ji}$ are ring homomorphisms that send 1 to 1, then $A$ may likewise be given the structure of a commutative ring with 1 such that all $\mu_i$ are ring homomorphisms.
-\item[(d)] Under the hypotheses in (c) prove that the inverse limit has the following \emph{universal property}: if $D$ is any group and $\pi_i : D \to A_i$ are group homomorphisms such that $\pi_i = \mu_{ji} \circ \pi_j$ whenever $i \leq j$, then there is a unique homomorphism $\pi : D \to P$ such that $\mu_i \circ \pi = \pi_i$ for all $i$.
+\item[(c)] Show that if all $A_i$ are commutative rings with 1 and all $\mu_{ji}$ are ring homomorphisms that send 1 to 1, then $P$ may likewise be given the structure of a commutative ring with 1 such that all $\mu_i$ are ring homomorphisms.
+\item[(d)] Under the hypotheses in (a) prove that the inverse limit has the following \emph{universal property}: if $D$ is any group and $\pi_i : D \to A_i$ are group homomorphisms such that $\pi_i = \mu_{ji} \circ \pi_j$ whenever $i \leq j$, then there is a unique homomorphism $\pi : D \to P$ such that $\mu_i \circ \pi = \pi_i$ for all $i$.
 \end{enumerate}
 
 \item Let $p$ be a prime, let $I = \Z^+$, let $A_i = \Z/p^i\Z$ and let $\mu_{ji}$ be the natural projection maps $\mu_{ji} : a \pmod{p^j} \mapsto a \pmod{p^i}$. The inverse limit $\varprojlim \Z/p^i\Z$ is called the ring of \emph{$p$-adic integers}, and is denoted by $\Z_p$.
@@ -29621,8 +29621,8 @@ Let $P$ be the subset of elements $(a_i)_{i \in I}$ in the direct product $\prod
 \item[(a)] Show that every element of $\Z_p$ may be written uniquely as an infinite formal sum $b_0 + b_1 p + b_2 p^2 + b_3 p^3 + \cdots$ with each $b_i \in \{0, 1, \ldots, p-1\}$. Describe the rules for adding and multiplying such formal sums corresponding to addition and multiplication in the ring $\Z_p$. [Write a least residue in each $\Z/p^i\Z$ in its base $p$ expansion and then describe the maps $\mu_{ji}$.] (Note in particular that $\Z_p$ is uncountable.)
 \item[(b)] Prove that $\Z_p$ is an integral domain that contains a copy of the integers.
 \item[(c)] Prove that $b_0 + b_1 p + b_2 p^2 + b_3 p^3 + \cdots$ as in (a) is a unit in $\Z_p$ if and only if $b_0 \neq 0$.
-\item[(d)] Prove that $p \Z_p$ is the unique maximal ideal of $\Z_p$ and $\Z_p / p \Z_p \cong \Z/p\Z$ (where $p = 0 + 1p + 0p^2 + 0p^3 + \cdots$). Prove that every ideal of $\Z_p$ is of the form $p^n \Z_p$ for some integer $n \geq 0$.
-\item[(e)] Show that if $a_1 \neq 0 \pmod{p}$ then there is an element $a = (a_i)$ in the direct limit $\Z_p$ satisfying $a_i^p \equiv 1 \pmod{p^i}$ and $\mu_{j1}(a_j) = a_1$ for all $j$. Deduce that $\Z_p$ contains $p-1$ distinct $(p-1)^{\text{st}}$ roots of 1.
+\item[(d)] Prove that $p \Z_p$ is the unique maximal ideal of $\Z_p$ and $\Z_p / p \Z_p \cong \Z/p\Z$ (where $p = 0 + 1p + 0p^2 + 0p^3 + \cdots$). Prove that every nonzero ideal of $\Z_p$ is of the form $p^n \Z_p$ for some integer $n \geq 0$.
+\item[(e)] Show that if $a_1 \neq 0 \pmod{p}$ then there is an element $a = (a_i)$ in the inverse limit $\Z_p$ satisfying $a_i^{p-1} \equiv 1 \pmod{p^i}$ and $\mu_{j1}(a_j) = a_1$ for all $j$. Deduce that $\Z_p$ contains $p-1$ distinct $(p-1)^{\text{st}}$ roots of 1.
 \end{enumerate}
 \end{exers}
 
@@ -29664,7 +29664,7 @@ and write the complete solution set as a residue class mod $280$.
 \begin{exers}{Additional exercises.}
 \item Let $R$ be a commutative ring with $1$ and let $I,J$ be comaximal ideals. Prove that $I^a$ and $J^b$ are comaximal for all positive integers $a,b$.
 
-\item (Idempotents from the CRT.) Let $R$ be a commutative ring with $1$ and suppose $R\isom R_1\times R_2$. Show that $R$ contains a nontrivial idempotent $e$ (i.e. $e^2=e$, $e\neq 0,1$), and conversely that a nontrivial idempotent $e\in R$ yields a decomposition $R\isom Re\times R(1-e)$ as rings, where $Re$ and $R(1-e)$ are rings with identities $e$ and $1-e$ respectively.
+\item (Idempotents from the CRT.) Let $R$ be a commutative ring with $1$ and suppose $R\isom R_1\times R_2$ with $R_1$ and $R_2$ nonzero. Show that $R$ contains a nontrivial idempotent $e$ (i.e. $e^2=e$, $e\neq 0,1$), and conversely that a nontrivial idempotent $e\in R$ yields a decomposition $R\isom Re\times R(1-e)$ as rings, where $Re$ and $R(1-e)$ are rings with identities $e$ and $1-e$ respectively.
 
 \item Let $R$ be a commutative ring with $1$ in which $I_1,\dots,I_k$ are pairwise comaximal. Prove the surjectivity half of the CRT directly: construct, for each $i$, an element $e_i\in R$ with $e_i\equiv 1\pmod{I_i}$ and $e_i\equiv 0\pmod{I_j}$ for $j\neq i$, and use the $e_i$ to solve any prescribed system of congruences.
 
@@ -29684,7 +29684,7 @@ R/(I\cap J) \arrow[ur, dashed, "\overline{\varphi}"', "\isom"] &
 \end{tikzcd}\]
 Prove the dashed map is well defined, injective (using $\ker\varphi=I\cap J$), and surjective (using $I+J=R$).
 
-\item For $n=mk$ with $\gcd(m,k)=1$, draw and justify the commutative square exhibiting the CRT isomorphism for $\Zn{n}$. Label the top arrow $\overline{1}\mapsto(\overline{1},\overline{1})$ and explain why each vertical reduction map is a ring homomorphism:
+\item For $n=mk$ with $\gcd(m,k)=1$, draw and justify the commutative triangle exhibiting the CRT isomorphism for $\Zn{n}$. Label the top arrow $1\mapsto(\overline{1},\overline{1})$ and explain why the top map and the vertical reduction map are ring homomorphisms:
 \[\begin{tikzcd}[row sep=large,column sep=large]
 \Z \arrow[r] \arrow[d, two heads] & \Zn{m}\times\Zn{k} \\
 \Zn{n} \arrow[ur, dashed, "\isom"'] &
