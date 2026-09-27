@@ -40576,8 +40576,11 @@ D(e_{\sigma(1)},\dots,e_{\sigma(n)}) = \operatorname{sgn}(\sigma)\,D(e_1,\dots,e
 = \operatorname{sgn}(\sigma)\,D(I).
 \]
 Hence $D(A) = D(I)\sum_\sigma \operatorname{sgn}(\sigma)\prod_j a_{\sigma(j)\,j}$.
-Setting $D(I)=1$ both forces the Leibniz formula and shows it indeed defines an
-alternating $n$-linear function with $\det I = 1$.
+Setting $D(I)=1$ forces the Leibniz formula, which proves uniqueness. For existence,
+one checks directly that the Leibniz formula is $n$-linear (each term contains exactly one
+entry from each column) and alternating: if $A_k=A_l$ with $k\neq l$, the terms for $\sigma$
+and $\sigma\circ(k\,l)$ have equal products and opposite signs, so they cancel in pairs.
+At $A=I$ only $\sigma=\id$ contributes, so $\det I = 1$.
 \end{proof}
 
 \begin{wex}{$2\times 2$ from the axioms, over $\Q$}
