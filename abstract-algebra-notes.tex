@@ -54447,7 +54447,7 @@ The relativity in the last example is the most common source of confusion. Being
 \item[(e)] Prove that the splitting field of $x^4-2x^2-2$ over $\mathbb{Q}$ is of degree 8 with dihedral Galois group.
 \end{enumerate}
 
-\item Let $K/F$ be any finite extension and let $\alpha\in K$. Let $L$ be a Galois extension of $F$ containing $K$ and let $H\leq\Gal(L/F)$ be the subgroup corresponding to $K$. Define the \emph{norm} of $\alpha$ from $K$ to $F$ to be
+\item Let $K/F$ be any finite separable extension and let $\alpha\in K$. Let $L$ be a Galois extension of $F$ containing $K$ and let $H\leq\Gal(L/F)$ be the subgroup corresponding to $K$. Define the \emph{norm} of $\alpha$ from $K$ to $F$ to be
 \[
 N_{K/F}(\alpha)=\prod_\sigma \sigma(\alpha),
 \]
@@ -54489,7 +54489,7 @@ a sum of Galois conjugates of $\alpha$.
 \]
 is nonzero. Compute $\dfrac{\beta}{\sigma\beta}$ using the fact that $\alpha$ has norm 1 to $F$.]
 
-\item Prove that the rational solutions $a,b\in\mathbb{Q}$ of Pythagoras' equation $a^2+b^2=1$ are of the form $a=\dfrac{s^2-t^2}{s^2+t^2}$ and $b=\dfrac{2st}{s^2+t^2}$ for some $s,t\in\mathbb{Q}$ and hence show that any right triangle with integer sides has sides of lengths $(m^2-n^2,2mn,m^2+n^2)$ for some integers $m,n$. [Note that $a^2+b^2=1$ is equivalent to $N_{\mathbb{Q}(i)/\mathbb{Q}}(a+ib)=1$, then use Hilbert's Theorem 90 above with $\beta=s+it$.]
+\item Prove that the rational solutions $a,b\in\mathbb{Q}$ of Pythagoras' equation $a^2+b^2=1$ are of the form $a=\dfrac{s^2-t^2}{s^2+t^2}$ and $b=\dfrac{2st}{s^2+t^2}$ for some $s,t\in\mathbb{Q}$ and hence show that any right triangle with integer sides has sides of lengths $((m^2-n^2)d,2mnd,(m^2+n^2)d)$ for some integers $m,n,d$. [Note that $a^2+b^2=1$ is equivalent to $N_{\mathbb{Q}(i)/\mathbb{Q}}(a+ib)=1$, then use Hilbert's Theorem 90 above with $\beta=s+it$.]
 
 \item Generalize the previous problem to determine all the rational solutions of the equation $a^2+Db^2=1$ for $D\in\mathbb{Z}$, $D>0$, $D$ not a perfect square in $\mathbb{Z}$.
 
@@ -54501,15 +54501,15 @@ and compute $\beta-\sigma\beta$.]
 
 \item Let $\alpha=\sqrt{(2+\sqrt{2})(3+\sqrt{3})}$ (positive real square roots) and consider the extension $E=\mathbb{Q}(\alpha)$.
 \begin{enumerate}
-\item[(a)] Show that $a=(2+\sqrt{2})(3+\sqrt{3})$ is not a square in $F=\mathbb{Q}(\sqrt{2},\sqrt{3})$. [If $a=c^2$, $c\in F$, then also $a\varphi(a)=(2+\sqrt{2})^2 6(3)=(c\varphi c)^2$ for the automorphism $\varphi\in\Gal(F/\mathbb{Q})$ fixing $\mathbb{Q}(\sqrt{2})$. Since $c\varphi c=N_{F/\mathbb{Q}(\sqrt{2})}(c)\in\mathbb{Q}(\sqrt{2})$ conclude that this implies $\sqrt{6}\in\mathbb{Q}(\sqrt{2})$, a contradiction.]
+\item[(a)] Show that $a=(2+\sqrt{2})(3+\sqrt{3})$ is not a square in $F=\mathbb{Q}(\sqrt{2},\sqrt{3})$. [If $a=c^2$, $c\in F$, then also $a\varphi(a)=(2+\sqrt{2})^2\cdot 6=(c\varphi c)^2$ for the automorphism $\varphi\in\Gal(F/\mathbb{Q})$ fixing $\mathbb{Q}(\sqrt{2})$. Since $c\varphi c=N_{F/\mathbb{Q}(\sqrt{2})}(c)\in\mathbb{Q}(\sqrt{2})$ conclude that this implies $\sqrt{6}\in\mathbb{Q}(\sqrt{2})$, a contradiction.]
 \item[(b)] Conclude from (a) that $[E:\mathbb{Q}]=8$. Prove that the roots of the minimal polynomial over $\mathbb{Q}$ for $\alpha$ are the 8 elements $\pm\sqrt{(2\pm\sqrt{2})(3\pm\sqrt{3})}$.
-\item[(c)] Let $\beta=\sqrt{(2-\sqrt{2})(3+\sqrt{3})}$. Show that $\alpha\beta=\sqrt{2}\sqrt{3}(3+\sqrt{3})\in F$ so that $\beta\in E$. Show similarly that the other roots are also elements of $E$ so that $E$ is a Galois extension of $\mathbb{Q}$. Show that the elements of the Galois group are precisely the maps determined by mapping $\alpha$ to one of the eight elements in (b).
-\item[(d)] Let $\sigma\in\Gal(E/\mathbb{Q})$ be the automorphism which maps $\alpha$ to $\beta$. Show that since $\sigma(\alpha^2)=\beta^2$ that $\sigma(\sqrt{2})=-\sqrt{2}$ and $\sigma(\sqrt{3})=\sqrt{3}$. From $\alpha\beta=\sqrt{2}\sqrt{3}(3+\sqrt{3})$ conclude that $\sigma(\alpha\beta)=-\alpha\beta$ and hence $\sigma(\beta)=-\alpha$. Show that $\sigma$ is an element of order 4 in $\Gal(E/\mathbb{Q})$.
+\item[(c)] Let $\beta=\sqrt{(2-\sqrt{2})(3+\sqrt{3})}$. Show that $\alpha\beta=\sqrt{2}(3+\sqrt{3})\in F$ so that $\beta\in E$. Show similarly that the other roots are also elements of $E$ so that $E$ is a Galois extension of $\mathbb{Q}$. Show that the elements of the Galois group are precisely the maps determined by mapping $\alpha$ to one of the eight elements in (b).
+\item[(d)] Let $\sigma\in\Gal(E/\mathbb{Q})$ be the automorphism which maps $\alpha$ to $\beta$. Show that since $\sigma(\alpha^2)=\beta^2$ that $\sigma(\sqrt{2})=-\sqrt{2}$ and $\sigma(\sqrt{3})=\sqrt{3}$. From $\alpha\beta=\sqrt{2}(3+\sqrt{3})$ conclude that $\sigma(\alpha\beta)=-\alpha\beta$ and hence $\sigma(\beta)=-\alpha$. Show that $\sigma$ is an element of order 4 in $\Gal(E/\mathbb{Q})$.
 \item[(e)] Show similarly that the map $\tau$ defined by $\tau(\alpha)=\sqrt{(2+\sqrt{2})(3-\sqrt{3})}$ is an element of order 4 in $\Gal(E/\mathbb{Q})$. Prove that $\sigma$ and $\tau$ generate the Galois group, $\sigma^4=\tau^4=1$, $\sigma^2=\tau^2$ and that $\sigma\tau=\tau\sigma^3$.
 \item[(f)] Conclude that $\Gal(E/\mathbb{Q})\cong Q_8$, the quaternion group of order 8.
 \end{enumerate}
 
-\item Let $f(x)\in F[x]$ be an irreducible polynomial of degree $n$ over the field $F$, let $L$ be the splitting field of $f(x)$ over $F$ and let $\alpha$ be a root of $f(x)$ in $L$. If $K$ is any Galois extension of $F$ contained in $L$, show that the polynomial $f(x)$ splits into a product of $m$ irreducible polynomials each of degree $d$ over $K$, where $m=[F(\alpha)\cap K:F]$ and $d=[K(\alpha):K]$ (cf.\ also the generalization in Exercise 4 of Section 4). [If $H$ is the subgroup of the Galois group of $L$ over $F$ corresponding to $K$ then the roots of $f(x)$ over $K$ correspond to the orbits of $H$ on the roots of $f(x)$. Use then Exercise 9 of Section 4.1.]
+\item Let $f(x)\in F[x]$ be an irreducible polynomial of degree $n$ over the field $F$, let $L$ be the splitting field of $f(x)$ over $F$ and let $\alpha$ be a root of $f(x)$ in $L$. If $K$ is any Galois extension of $F$ contained in $L$, show that the polynomial $f(x)$ splits into a product of $m$ irreducible polynomials each of degree $d$ over $K$, where $m=[F(\alpha)\cap K:F]$ and $d=[K(\alpha):K]$ (cf.\ also the generalization in Exercise 4 of Section 4). [If $H$ is the subgroup of the Galois group of $L$ over $F$ corresponding to $K$ then the irreducible factors of $f(x)$ over $K$ correspond to the orbits of $H$ on the roots of $f(x)$. Use then Exercise 9 of Section 4.1.]
 
 \item Let $k$ be a field and let $k(t)$ be the field of rational functions in the variable $t$. Define the maps $\sigma$ and $\tau$ of $k(t)$ to itself by $\sigma f(t)=f\left(\dfrac{1}{1-t}\right)$ and $\tau f(t)=f\left(\dfrac{1}{t}\right)$ for $f(t)\in k(t)$.
 \begin{enumerate}
@@ -54541,7 +54541,7 @@ and compute $\beta-\sigma\beta$.]
 
 \begin{exers}{Additional exercises.}
 \item Let $K$ be the splitting field of $x^3-5$ over $\Q$, so $K=\Q(\sqrt[3]{5},\zeta_3)$. Prove $\idx{K}{\Q}=6$ and $\Gal(K/\Q)\isom S_3$, then use the Fundamental Theorem to list every intermediate field, give each as an explicit generated subfield, and determine precisely which are Galois over $\Q$.
-\item Let $K/F$ be a finite Galois extension with $G=\Gal(K/F)$, and let $E=\Fix(H)$ for $H\sgr G$. Prove that the number of distinct fields of the form $\sigma(E)$, $\sigma\in G$, equals the index $\idx{G}{N_G(H)}$ of the normalizer of $H$, and that $E/F$ is Galois exactly when this number is $1$. Illustrate with the four conjugate fields $\Q(2^{1/4}),\Q(i\,2^{1/4}),\Q((1{+}i)2^{1/4}),\Q((1{-}i)2^{1/4})$ inside $\Q(2^{1/4},i)$.
+\item Let $K/F$ be a finite Galois extension with $G=\Gal(K/F)$, and let $E=\Fix(H)$ for $H\sgr G$. Prove that the number of distinct fields of the form $\sigma(E)$, $\sigma\in G$, equals the index $\idx{G}{N_G(H)}$ of the normalizer of $H$, and that $E/F$ is Galois exactly when this number is $1$. Illustrate with the four non-Galois quartic fields $\Q(2^{1/4}),\Q(i\,2^{1/4}),\Q((1{+}i)2^{1/4}),\Q((1{-}i)2^{1/4})$ inside $\Q(2^{1/4},i)$, which fall into two conjugacy classes of two fields each (here $\idx{G}{N_G(H)}=2$).
 \item Let $K/F$ be Galois with $G=\Gal(K/F)$ abelian. Prove that every intermediate field $E$ is Galois over $F$ and that $\Gal(E/F)\isom G/\Gal(K/E)$ is again abelian. Conversely, give a Galois extension $K/F$ in which some intermediate field $E$ has $E/F$ \emph{not} Galois, and pinpoint the non-normal subgroup responsible.
 \item Let $K/F$ be a finite Galois extension of degree $p^2$ for a prime $p$, with $G=\Gal(K/F)$ abelian. Show that the number of intermediate fields $E$ with $\idx{E}{F}=p$ is either $1$ (when $G\isom\Zn{p^2}$) or $p+1$ (when $G\isom\Zn p\times\Zn p$), and that all such $E$ are Galois over $F$. Deduce that $\Q(\zeta_{p^2})$ for an odd prime $p$ has a unique subfield of degree $p$ over $\Q$.
 \item Let $K=\Q(\sqrt[4]{3},i)$, the splitting field of $x^4-3$ over $\Q$. Prove $\Gal(K/\Q)\isom D_8$, and partition the ten subgroups of $D_8$ into normal and non-normal; for each normal subgroup name the corresponding intermediate field as a Galois extension of $\Q$ and give its Galois group, and for each non-normal subgroup exhibit the (non-Galois) fixed field and a conjugate of it.
@@ -54585,7 +54585,7 @@ E_2 \arrow[dr,dash] & \cdots & \rule{2.4em}{0.4pt} \arrow[dl,dash] \\
 & K &
 \end{tikzcd}
 \]
-filling in all three order-$2$ subgroups and the corresponding three degree-$3$ subfields. Prove that $\gen{(1\,2\,3)}$ is the unique normal proper nontrivial subgroup, hence $E_2=\Fix(\gen{(1\,2\,3)})$ is the unique intermediate field Galois over $F$, with $\Gal(E_2/F)\isom\Zn2$.
+filling in all three order-$2$ subgroups and the corresponding three degree-$3$ subfields. Prove that $\gen{(1\,2\,3)}$ is the unique normal proper nontrivial subgroup, hence $E_2=\Fix(\gen{(1\,2\,3)})$ is the unique intermediate field $E$ with $F\subsetneq E\subsetneq K$ that is Galois over $F$, with $\Gal(E_2/F)\isom\Zn2$.
 \item Let $F\subseteq E\subseteq K$ be a tower with $K/F$ Galois, $H=\Gal(K/E)\sgr G=\Gal(K/F)$. Complete the diagram of inclusions and Galois groups
 \[
 \begin{tikzcd}[row sep=2em, column sep=2.4em]
