@@ -34832,7 +34832,7 @@ Try $g = \alpha + 1$. Compute $g^2 = (\alpha+1)^2 = \alpha^2 + 2\alpha + 1 = (-1
 
 \item Let $\varphi$ denote Euler's $\varphi$-function. Prove the identity $\sum_{d \mid n} \varphi(d) = n$, where the sum is extended over all the divisors $d$ of $n$. [First observe that the identity is valid when $n = p^m$ is the power of a prime $p$ since the sum telescopes. Write $n = p^m n'$ where $p$ does not divide $n'$. Prove that $\sum_{d \mid n} \varphi(d) = \sum_{d'' \mid p^m} \varphi(d'') \sum_{d' \mid n'} \varphi(d')$ by multiplying out the right hand side and using the multiplicativity of $\varphi(ab) = \varphi(a)\varphi(b)$ when $a$ and $b$ are relatively prime. Use induction to complete the proof. This problem may be done alternatively by letting $Z$ be the cyclic group of order $n$ and showing that since $Z$ contains a unique subgroup of order $d$ for each $d$ dividing $n$, the number of elements of $Z$ of order $d$ is $\varphi(d)$. Then $|Z|$ is the sum of $\varphi(d)$ as $d$ runs over all divisors of $n$.]
 
-\item Let $G$ be a finite subgroup of order $n$ of the multiplicative group $F^{\times}$ of nonzero elements of the field $F$. Let $\varphi$ denote Euler's $\varphi$-function and let $\psi(d)$ denote the number of elements of $G$ of order $d$. Prove that $\psi(d) \leq \varphi(d)$ for every divisor $d$ of $n$. In particular conclude that $\psi(n) \geq 1$, so that $G$ is a cyclic group. [Observe that for any integer $N \geq 1$ the polynomial $x^N - 1$ has at most $N$ roots in $F$. Conclude that for any integer $N$ we have $\sum_{d \mid N} \psi(d) \leq N$. Since $\sum_{d \mid N} \varphi(d) = N$ by the previous exercise, show by induction that $\psi(d) \leq \varphi(d)$ for every divisor $d$ of $n$. Since $\sum_{d \mid n} \psi(d) = n = \sum_{d \mid n} \varphi(d)$ show that this implies $\psi(d) = \varphi(d)$ for every divisor $d$ of $n$.]
+\item Let $G$ be a finite subgroup of order $n$ of the multiplicative group $F^{\times}$ of nonzero elements of the field $F$. Let $\varphi$ denote Euler's $\varphi$-function and let $\psi(d)$ denote the number of elements of $G$ of order $d$. Prove that $\psi(d) = \varphi(d)$ for every divisor $d$ of $n$. In particular conclude that $\psi(n) \geq 1$, so that $G$ is a cyclic group. [Observe that for any integer $N \geq 1$ the polynomial $x^N - 1$ has at most $N$ roots in $F$. Conclude that for any integer $N$ we have $\sum_{d \mid N} \psi(d) \leq N$. Since $\sum_{d \mid N} \varphi(d) = N$ by the previous exercise, show by induction that $\psi(d) \leq \varphi(d)$ for every divisor $d$ of $n$. Since $\sum_{d \mid n} \psi(d) = n = \sum_{d \mid n} \varphi(d)$ show that this implies $\psi(d) = \varphi(d)$ for every divisor $d$ of $n$.]
 
 \item Prove that the additive and multiplicative groups of a field are never isomorphic. [Consider three cases: when $|F|$ is finite, when $-1 \neq 1$ in $F$, and when $-1 = 1$ in $F$.]
 \end{exers}
@@ -34850,11 +34850,11 @@ Try $g = \alpha + 1$. Compute $g^2 = (\alpha+1)^2 = \alpha^2 + 2\alpha + 1 = (-1
 
 \item Use Eisenstein's criterion (with the prime $p=3$) to prove $f(x)=x^5-6x^3+12x^2-18x+24$ is irreducible in $\Q[x]$.
 
-\item Show that $f(x)=x^4-10x^2+1$ is irreducible in $\Q[x]$, even though it has a root modulo every prime. (Hint: rule out rational roots and the two quadratic-times-quadratic possibilities over $\Z$.)
+\item Show that $f(x)=x^4-10x^2+1$ is irreducible in $\Q[x]$, even though it is reducible modulo every prime. (Hint: rule out rational roots and the two quadratic-times-quadratic possibilities over $\Z$.)
 
 \item Apply Eisenstein after a substitution to prove the cyclotomic polynomial $\Phi_7(x)=x^6+x^5+x^4+x^3+x^2+x+1$ is irreducible in $\Q[x]$.
 
-\item Use reduction modulo $2$ to prove $f(x)=x^4+x^2+x+1\in\Z[x]$ is irreducible in $\Q[x]$. (First factor its reduction in $\F_2[x]$.)
+\item Use reduction modulo $2$ to prove $f(x)=x^4+x^2+x+1\in\Z[x]$ is irreducible in $\Q[x]$. (First factor its reduction in $\F_2[x]$ into irreducibles and use the degrees of the factors to rule out a product of two quadratics in $\Z[x]$; then rule out a linear factor with the Rational Root Theorem.)
 
 \item Show that $f(x)=x^3-3x-1$ is irreducible in $\Q[x]$ by checking it has no root in $\F_2$ (after reducing) and no rational root.
 
@@ -34871,9 +34871,9 @@ Try $g = \alpha + 1$. Compute $g^2 = (\alpha+1)^2 = \alpha^2 + 2\alpha + 1 = (-1
 \end{exers}
 
 \begin{exers}{Additional exercises.}
-\item Prove that $f(x)=x^4-7x^2+1$ is irreducible in $\Q[x]$. (No rational roots; show no factorization into two monic quadratics over $\Z$ is possible by solving the integer coefficient system.)
+\item Prove that $f(x)=x^4-5x^2+1$ is irreducible in $\Q[x]$. (No rational roots; show no factorization into two monic quadratics over $\Z$ is possible by solving the integer coefficient system.)
 
-\item Let $p$ be prime. Prove Eisenstein's criterion: if $f(x)=a_nx^n+\dots+a_0\in\Z[x]$ satisfies $p\divides a_i$ for $i<n$, $p\ndivides a_n$, and $p^2\ndivides a_0$, then $f$ has no factorization into two polynomials of smaller degree in $\Z[x]$, hence (with $f$ primitive) is irreducible in $\Q[x]$. Carry out the argument via reduction mod $p$ in $\F_p[x]$.
+\item Let $p$ be prime. Prove Eisenstein's criterion: if $f(x)=a_nx^n+\dots+a_0\in\Z[x]$ satisfies $p\divides a_i$ for $i<n$, $p\ndivides a_n$, and $p^2\ndivides a_0$, then $f$ has no factorization into two polynomials of smaller degree in $\Z[x]$, hence is irreducible in $\Q[x]$ (and, if $f$ is primitive, in $\Z[x]$). Carry out the argument via reduction mod $p$ in $\F_p[x]$.
 
 \item Show that $f(x,y)=y^3+x^2y^2+x^3y+x\in\Q[x][y]$ is irreducible by applying Eisenstein's criterion in the ring $\Q[x][y]$ to the prime $x$ of $\Q[x]$.
 
@@ -34901,7 +34901,7 @@ Let $f(x)=x^4+1$. Compute the image of $f$ in $\F_2[x]$ and in $\F_3[x]$, and fa
 \end{tikzcd}\]
 Show $\bar f$ is irreducible in $\F_2[x]$, conclude $\F_2[x]/(\bar f)$ is a field, determine its order, and explain how this forces $f$ to be irreducible in $\Q[x]$.
 
-\item Let $R=\Z[x]$. Here $\Frac(R)=\Q(x)$ is not the relevant field; instead consider the inclusion $\Z[x]\hookrightarrow\Q[x]$ and the factorization of $f(x)=2x^2-4$ in each. Draw the diagram
+\item Let $R=\Z[x]$. Here $\Frac(R)=\Q(x)$ is not the relevant field; instead consider the inclusion $\Z[x]\hookrightarrow\Q[x]$ and the factorization of $f(x)=2x^2-2$ in each. Draw the diagram
 \[\begin{tikzcd}[column sep=large] \Z[x] \arrow[r, hook] & \Q[x] \end{tikzcd}\]
 and explain, via Gauss's Lemma and content, why $f$ is reducible in both but its irreducible factorizations differ only by units of $\Q$.
 
