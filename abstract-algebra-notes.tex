@@ -24456,7 +24456,7 @@ a diagram, the dashed arrow exists and is unique making the triangle commute:
   --- is obtained by applying or quotienting this one diagram.
 \dgi{Concrete example:} Take $S=\{a,b\}$, $G=S_3$, $\varphi(a)=(1\,2)$,
   $\varphi(b)=(1\,2\,3)$. The unique $\Phi\colon F_2\to S_3$ sends any word, e.g.\
-  $aba^{-1}$, to $(1\,2)(1\,2\,3)(1\,2)=(1\,3)$. No relation among $(1\,2)$ and
+  $aba^{-1}$, to $(1\,2)(1\,2\,3)(1\,2)=(1\,3\,2)$. No relation among $(1\,2)$ and
   $(1\,2\,3)$ needs to be checked; the map is automatic.
 \dgi{Common pitfall:} Students often think defining $\Phi$ requires checking that
   the images satisfy some relation. For a \emph{free} group there are \emph{no}
@@ -24625,7 +24625,7 @@ finite, so $G$ is a quotient of some $F_n$.
   3\Z$. The exact sequence is $0\to 3\Z\to\Z\to\Z/3\to 0$, the standard one.
 \dgi{Common pitfall:} The inclusion $S\hookrightarrow G$ is NOT a homomorphism (it
   is a set map into a group); only $\pi$ is a homomorphism. Do not confuse the set
-  map $\subseteq$ with the group homomorphism $\iota\colon S\to F(S)$. Also, $\pi$
+  map $\subseteq$ with the group homomorphism $\pi\colon F(S)\to G$. Also, $\pi$
   is generally far from injective; $\ker\pi$ can be enormous (e.g.\ infinite even
   if $G$ is finite).
 \dgi{Takeaway:} The point of this diagram is that every group --- no matter how
@@ -24806,9 +24806,9 @@ want a map out of it (or to prove a presentation describes a known group).
         homomorphism $\bar\Psi\colon\gen{S\mid R}\to H$ exists with
         $\bar\Psi(\bar s)=h_s$.
   \item \textbf{For an isomorphism}, build maps both ways, or show $\bar\Psi$ is
-        onto and that $|{\gen{S\mid R}}|\le|H|$ (a presentation can only make a
-        group \emph{smaller} than the ``intended'' one, never larger --- see the
-        order-bound pitfall).
+        onto and that $|{\gen{S\mid R}}|\le|H|$ (ontoness gives $|\gen{S\mid R}|\ge|H|$; the reverse bound needs a separate
+        argument, e.g.\ a normal form, since missing relations can make the presented
+        group \emph{larger} than intended --- see the order-bound pitfall).
 \end{enumerate}
 \end{method}
 
@@ -24993,7 +24993,7 @@ closure of the relators, and $G=F(S)/N$:
   free world to the presented group.
 \end{dgx}
 Here each ``$\nor$'' is normal containment in the chain
-$F(S)\sgr N\sgr 1$, and $q$ is the quotient map of Theorem~\ref{thm:vondyck@c6}. The
+$1\sgr N\sgr F(S)$, and $q$ is the quotient map of Theorem~\ref{thm:vondyck@c6}. The
 relators $R$ generate $N$ \emph{as a normal subgroup} (not merely as a subgroup),
 which is what allows finitely many relations to encode an infinite kernel.
 
@@ -25078,7 +25078,7 @@ Proposition~\ref{prop:fp@c6}(3). Do not conflate these three notions.
 \end{pitfall}
 
 \begin{remark}[Summary of the universal-property bookkeeping]
-Three universal properties govern this section, each saying ``a map on generators
+Two universal properties govern this section, each saying ``a map on generators
 extends uniquely, once the right conditions hold'':
 \[
 \begin{tikzcd}[column sep=normal, row sep=small]
@@ -25304,7 +25304,7 @@ State precisely what ``$\bar f$ extends $f$'' means as commutativity of the
 triangle, and use uniqueness to show that two homomorphisms out of $F(S)$ agreeing
 on $\iota(S)$ coincide. Instantiate with $S=\{x,y\}$, $G=\Zn{2}\times\Zn{2}$,
 $x\mapsto(1,0)$, $y\mapsto(0,1)$, and identify the resulting map with the
-abelianization surjection $F_2\twoheadrightarrow\Zn{2}\times\Zn{2}$.
+abelianization $F_2\twoheadrightarrow\Z\times\Z$ followed by reduction mod $2$.
 
 \item (Von Dyck factorization.) Let $G=\gen{S\mid R}=F(S)/N$ with quotient map
 $q\colon F(S)\to G$, where $N$ is the normal closure of $R$, and let
