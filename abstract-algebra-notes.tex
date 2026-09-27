@@ -4916,13 +4916,13 @@ The invariants of Remark~\ref{r:invariants@c1} run only one way: matching them d
 \item Projections $\pi_1,\pi_2$ of $A\times B$: find their kernels.
 \item $g\mapsto g\inv$ is a homomorphism iff $G$ is abelian.
 \item $g\mapsto g^2$ is a homomorphism iff $G$ is abelian.
-\item $z\mapsto z^k$ on the roots of unity: surjective homomorphism, not an
+\item $z\mapsto z^k$ (fixed $k>1$) on the group of all roots of unity in $\C^\times$: surjective homomorphism, not an
    isomorphism.
 \item Prove $\operatorname{Aut}(G)$ is a group under composition.
 \item $q\mapsto kq$ ($k\in\Q^\times$) is an automorphism of $\Q$.
 \item $A$ abelian: $a\mapsto a^k$ is a homomorphism; an automorphism for $k=-1$.
-\item Fixed-point-free order-$2$ automorphism $\Rightarrow G$ abelian.
-\item $x\neq y$ of order $2$ generating $G$ $\Rightarrow G\isom D_{2n}$,
+\item $G$ finite with a fixed-point-free order-$2$ automorphism $\Rightarrow G$ abelian.
+\item $G$ finite, $x\neq y$ of order $2$ generating $G$ $\Rightarrow G\isom D_{2n}$,
    $n=|xy|$.
 \item $\varphi(r)=$ rotation matrix, $\varphi(s)=$ reflection: homomorphism
    $D_{2n}\to GL_2(\R)$, injective.
@@ -4967,8 +4967,8 @@ The invariants of Remark~\ref{r:invariants@c1} run only one way: matching them d
 
 \begin{exers}{Commutative-diagram exercises.}
 \item (Universal property of $\Z$.) Let $G$ be any group and $g\in G$. Show there is a unique homomorphism $\varphi:\Z\to G$ with $\varphi(1)=g$, namely $\varphi(k)=g^{k}$, making the triangle commute:
-\[\begin{tikzcd}[column sep=large]
-  \Z \arrow[r, dashed, "\exists!\;k\,\mapsto\,g^{k}"] & G
+\[\begin{tikzcd}[row sep=large,column sep=large]
+  \{1\} \arrow[r, hook] \arrow[dr, "1\,\mapsto\,g"'] & \Z \arrow[d, dashed, "\exists!\;k\,\mapsto\,g^{k}"] \\ & G
 \end{tikzcd}\]
 State precisely what ``$\varphi(1)=g$'' forces and why uniqueness follows.
 
