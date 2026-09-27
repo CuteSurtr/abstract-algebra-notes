@@ -13823,7 +13823,7 @@ content sits in (B).
   \item Let $N \nor G$ and $H \nor G$ with $N \sgr H$. Using the lattice (third
         isomorphism) correspondence, justify the induced surjection in
         \[\begin{tikzcd}[row sep=large,column sep=large]
-          G/N \arrow[r, two heads, "q"] & (G/N)\big/(H/N) \\
+          G/N \arrow[r, two heads, "q"] \arrow[dr, two heads, "{gN\,\mapsto\, gH}"'] & (G/N)\big/(H/N) \\
           & G/H \arrow[u, dashed, "\isom"']
         \end{tikzcd}\]
         and prove the dashed map is an isomorphism.
@@ -14406,7 +14406,7 @@ parity.
   diagram relating subgroups of $A_4$ containing $V$ to subgroups of $A_4/V\isom\Z/3\Z$.
   State which subgroups of $A_4$ correspond to the two subgroups of $\Z/3\Z$ and complete:
   \[\begin{tikzcd}[row sep=large,column sep=large]
-    V \arrow[r, hook] \arrow[d, equal] & A_4 \arrow[r, two heads, "q"] \arrow[d, equal] & A_4/V \arrow[d, equal] \\
+    V \arrow[r, hook] \arrow[d, equal] & A_4 \arrow[r, two heads, "q"] \arrow[d, equal] & A_4/V \arrow[d, "\isom"] \\
     V \arrow[r, hook] & A_4 \arrow[r, two heads] & \Z/3\Z
   \end{tikzcd}\]
 
@@ -14421,7 +14421,7 @@ parity.
   $A_4/V\isom\Z/3\Z$, and hence $(S_4/V)/(A_4/V)\isom\Z/2\Z$.
 
 \item Realize the subnormal series $1\nor V\nor A_4\nor S_4$ as a tower of quotient maps
-  and identify each successive quotient. Complete the diagram, labeling each downward
+  and identify each successive quotient. Complete the diagram, labeling each vertical
   inclusion and the quotient factor on each level:
   \[\begin{tikzcd}[row sep=large,column sep=large]
     S_4 \arrow[r, two heads, "p_1"] & S_4/A_4 \\
@@ -18245,7 +18245,7 @@ Isometries do not commute, so order matters and translations do \emph{not} pass 
 
 \subsection*{A Figure with Its Symmetry Axis and Center}
 
-The square below carries the dihedral symmetry group $D_8$: four rotations about its center $c$ (multiples of $90^\circ$) and four reflections, in the two diagonals and the two edge-bisectors. One mirror line $\ell$ and the rotation center $c$ are marked; the reflection in $\ell$ and the quarter-turn about $c$ generate all eight symmetries.
+The square below carries the dihedral symmetry group $D_8$: four rotations about its center $c$ (multiples of $90^\circ$) and four reflections, in the two diagonals and the two edge-bisectors. Two mirror lines, $\ell$ and $\ell'$, and the rotation center $c$ are marked; the reflection in $\ell$ and the quarter-turn about $c$ generate all eight symmetries.
 
 \[
 \begin{tikzpicture}[scale=1.1]
