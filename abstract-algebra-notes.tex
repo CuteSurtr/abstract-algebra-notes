@@ -28490,7 +28490,7 @@ M \text{ maximal} \arrow[r, Rightarrow] & P \text{ prime} \arrow[r, Rightarrow] 
 \dgi{Common pitfall:} The arrows are one-way implications about \emph{ideal properties}, not maps between objects.  A student may try to ``go backwards'' and conclude a prime is maximal --- this fails exactly when $R/P$ is a domain but not a field, e.g.\ $R/\gen x \cong \Z$.
 \dgi{Takeaway:} The point of this diagram is that the three tiers of ideals (maximal, prime, proper) are strictly ordered by implication, and tracking which quotient ring each tier corresponds to (field, domain, nonzero ring) gives the proof of every arrow.
 \end{dgx}
-(neither arrow reverses: $\gen x \subsetneq \Z[x]$ is prime but not maximal; $\gen 0 = 0$ in $\Z$ is prime but not maximal).
+(neither arrow reverses: $\gen x \subsetneq \Z[x]$ is prime but not maximal; $\gen 4 \subsetneq \Z$ is proper but not prime).
 
 \begin{method}{Testing primality via the quotient}
 \textbf{Trigger:} asked whether $P$ is prime in a commutative ring $R$.
@@ -28521,20 +28521,20 @@ Show $P = \gen x$ is prime but not maximal in $\Z[x]$.
 \wsol Evaluation at $0$, $\mathrm{ev}_0 : \Z[x] \to \Z$, $f \mapsto f(0)$, is a surjective homomorphism with kernel $\{f : f(0) = 0\} = \gen x$. So
 \[
 \begin{tikzcd}[column sep=large]
-\Z[x] \arrow[r, two heads, "\mathrm{ev}_0"] & \Z[x]/\gen x \arrow[r, "\isom"] & \Z .
+\Z[x] \arrow[r, two heads, "\pi"] & \Z[x]/\gen x \arrow[r, "\isom"] & \Z .
 \end{tikzcd}
 \]
 \begin{dgx}
 \dgi{Objects:} $\Z[x]$ is the polynomial ring with integer coefficients; $\Z[x]/\gen x$ is the quotient ring forcing $x = 0$, whose elements are cosets $f + \gen x$ (canonically represented by the constant terms); $\Z$ is the ring of integers.
-\dgi{Arrows:} $\mathrm{ev}_0: \Z[x] \twoheadrightarrow \Z[x]/\gen x$ is the canonical surjective quotient map $f \mapsto f + \gen x$, whose kernel is $\gen x = \{f : f(0) = 0\}$.  The second arrow $\Z[x]/\gen x \xrightarrow{\isom} \Z$ is the natural isomorphism sending $f + \gen x$ to $f(0)$, the constant term of (any representative of) the coset.
+\dgi{Arrows:} $\pi: \Z[x] \twoheadrightarrow \Z[x]/\gen x$ is the canonical surjective quotient map $f \mapsto f + \gen x$, whose kernel is $\gen x = \{f : f(0) = 0\}$.  The second arrow $\Z[x]/\gen x \xrightarrow{\isom} \Z$ is the natural isomorphism sending $f + \gen x$ to $f(0)$, the constant term of (any representative of) the coset.
 \dgi{What commutes:} The composite $\Z[x] \to \Z[x]/\gen x \xrightarrow{\isom} \Z$ equals the evaluation-at-zero map $\mathrm{ev}_0: f \mapsto f(0)$ directly.  That is, reducing mod $\gen x$ and then reading the constant term is the same as plugging in $x = 0$.
-\dgi{Why it commutes:} Well-definedness of the isomorphism: if $f + \gen x = g + \gen x$, then $f - g \in \gen x$, so $x \mid (f-g)$, so $f(0) - g(0) = 0$.  Hence $f(0) = g(0)$, and the map is well-defined.  It is a ring homomorphism because evaluation at any point is a homomorphism, and it is an isomorphism because every integer $n$ is the constant polynomial's constant term.
+\dgi{Why it commutes:} Well-definedness of the isomorphism: if $f + \gen x = g + \gen x$, then $f - g \in \gen x$, so $x \mid (f-g)$, so $f(0) - g(0) = 0$.  Hence $f(0) = g(0)$, and the map is well-defined.  It is a ring homomorphism because evaluation at any point is a homomorphism; it is surjective because every integer $n$ is the constant term of the constant polynomial $n$, and injective because $f(0) = 0$ means $x \mid f$, i.e.\ $f + \gen x = \gen x$.
 \dgi{Why this matters here:} The composite identifies $\Z[x]/\gen x$ concretely as $\Z$.  Since $\Z$ is an integral domain (no zero divisors) but not a field ($2$ has no inverse), the diagram simultaneously proves $\gen x$ is prime (Theorem~\ref{thm:primedomain@c7}) and not maximal (Theorem~\ref{thm:maxfield@c7}), giving the key counterexample to ``prime $\imp$ maximal.''
-\dgi{Concrete example:} Take $f = 3x^2 + 5x + 7$.  Upper path: $\mathrm{ev}_0(f) = 7$.  Lower path: $f + \gen x \mapsto$ constant term $= 7$.  For the zero-divisor test in $\Z[x]/\gen x$: $(2 + \gen x)(3 + \gen x) = 6 + \gen x \neq \gen x$ in $\Z[x]/\gen x \cong \Z$, confirming no zero divisors.
+\dgi{Concrete example:} Take $f = 3x^2 + 5x + 7$.  Directly: $\mathrm{ev}_0(f) = 7$.  Along the diagram: $f \mapsto f + \gen x \mapsto$ constant term $= 7$.  For the zero-divisor test in $\Z[x]/\gen x$: $(2 + \gen x)(3 + \gen x) = 6 + \gen x \neq \gen x$ in $\Z[x]/\gen x \cong \Z$, confirming no zero divisors.
 \dgi{Common pitfall:} Students sometimes confuse $\Z[x]/\gen x \cong \Z$ with the statement that $\gen x$ is prime in $\Z$ (which makes no sense, as $\gen x \not\subseteq \Z$).  The prime in question is $\gen x \subsetneq \Z[x]$, and the domain produced is $\Z$, not $\Z/x\Z$ (a meaningless expression).
 \dgi{Takeaway:} The point of this diagram is that quotienting $\Z[x]$ by $\gen x$ is the same as setting $x = 0$, yielding $\Z$, which is an integral domain but not a field, so $\gen x$ is prime but not maximal in $\Z[x]$.
 \end{dgx}
-Now $\Z$ is an integral domain, so $\gen x$ is \emph{prime} (Theorem~\ref{thm:primedomain@c7}). But $\Z$ is \emph{not} a field ($2$ has no inverse in $\Z$), so $\gen x$ is \emph{not maximal} (Theorem~\ref{thm:maxfield@c7}). \textbf{Check:} indeed $\gen x \subsetneq \gen{2,x} \subsetneq \Z[x]$, a strict chain of ideals above $\gen x$, confirming non-maximality; the strictly larger $\gen{2,x}$ is the maximal ideal sitting over it.
+Now $\Z$ is an integral domain, so $\gen x$ is \emph{prime} (Theorem~\ref{thm:primedomain@c7}). But $\Z$ is \emph{not} a field ($2$ has no inverse in $\Z$), so $\gen x$ is \emph{not maximal} (Theorem~\ref{thm:maxfield@c7}). \textbf{Check:} indeed $\gen x \subsetneq \gen{2,x} \subsetneq \Z[x]$, a strict chain of ideals above $\gen x$, confirming non-maximality; the strictly larger $\gen{2,x}$ is a maximal ideal sitting over it (so is $\gen{p,x}$ for every prime $p$).
 \end{wex}
 
 \begin{wex}{Prime vs.\ maximal in $\Zn n$}
@@ -28564,7 +28564,7 @@ Let $\F$ be a field. Show $\gen y$ is prime but not maximal in $\F[x,y]$.
 \[
 \F[x,y]/\gen y \;\isom\; \F[x].
 \]
-$\F[x]$ is an integral domain (no zero divisors among polynomials), so $\gen y$ is \emph{prime}. It is not a field ($x$ has no inverse), so $\gen y$ is \emph{not maximal}. \textbf{Check:} $\gen y \subsetneq \gen{x,y} \subsetneq \F[x,y]$, and $\F[x,y]/\gen{x,y} \isom \F$ is a field, so $\gen{x,y}$ is the maximal ideal above $\gen y$.
+$\F[x]$ is an integral domain (no zero divisors among polynomials), so $\gen y$ is \emph{prime}. It is not a field ($x$ has no inverse), so $\gen y$ is \emph{not maximal}. \textbf{Check:} $\gen y \subsetneq \gen{x,y} \subsetneq \F[x,y]$, and $\F[x,y]/\gen{x,y} \isom \F$ is a field, so $\gen{x,y}$ is a maximal ideal above $\gen y$ (so is $\gen{x-a,y}$ for every $a\in\F$).
 \end{wex}
 
 \begin{pitfall}
