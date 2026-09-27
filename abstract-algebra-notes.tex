@@ -40329,15 +40329,15 @@ V \arrow[r, "T"] \arrow[dr, "{\dual{T}(f)\,=\,f\circ T}"'] & W \arrow[d, "f"] \\
 \end{dgx}
 
 \begin{theorem}[Matrix of the transpose]\label{thm:transpose@c11}
-Let $T\colon V\to W$ be linear, with $\dim V=n$, $\dim W=m$. Fix bases $\mathcal B=\set{v_1,\dots,v_n}$ of $V$ and $\mathcal C=\set{w_1,\dots,w_m}$ of $W$, and let $A=\Mat_{\mathcal C}^{\mathcal B}(T)\in\Mat_{m\times n}(F)$ be the matrix of $T$. Then with respect to the dual bases $\mathcal C^{*}=\set{w_1^{*},\dots,w_m^{*}}$ of $\dual{W}$ and $\mathcal B^{*}=\set{v_1^{*},\dots,v_n^{*}}$ of $\dual{V}$, the matrix of $\dual{T}$ is the transpose:
+Let $T\colon V\to W$ be linear, with $\dim V=n$, $\dim W=m$. Fix bases $\mathcal B=\set{v_1,\dots,v_n}$ of $V$ and $\mathcal C=\set{w_1,\dots,w_m}$ of $W$, and let $A=\Mat^{\mathcal C}_{\mathcal B}(T)\in\Mat_{m\times n}(F)$ be the matrix of $T$. Then with respect to the dual bases $\mathcal C^{*}=\set{w_1^{*},\dots,w_m^{*}}$ of $\dual{W}$ and $\mathcal B^{*}=\set{v_1^{*},\dots,v_n^{*}}$ of $\dual{V}$, the matrix of $\dual{T}$ is the transpose:
 \[
-\Mat_{\mathcal B^{*}}^{\mathcal C^{*}}\bigl(\dual{T}\bigr)\;=\;A\trans .
+\Mat^{\mathcal B^{*}}_{\mathcal C^{*}}\bigl(\dual{T}\bigr)\;=\;A\trans .
 \]
 Consequently $\rank(\dual{T})=\rank(T)$ (row rank $=$ column rank).
 \end{theorem}
 
 \begin{proof}
-Write $A=(a_{ij})$, so $T(v_j)=\sum_{i=1}^m a_{ij}w_i$. The $(j,i)$ entry of the matrix of $\dual{T}$ is the $v_j^{*}$-coordinate of $\dual{T}(w_i^{*})$, namely $\bigl(\dual{T}(w_i^{*})\bigr)(v_j)=(w_i^{*}\circ T)(v_j)=w_i^{*}\Bigl(\sum_{k}a_{kj}w_k\Bigr)=a_{ij}$. Hence the matrix of $\dual{T}$ has $(j,i)$ entry $a_{ij}$, i.e.\ it is $A\trans$. The rank equality is then $\rank(A\trans)=\rank(A)$.
+Write $A=(a_{ij})$, so $T(v_j)=\sum_{i=1}^m a_{ij}w_i$. The $(j,i)$ entry of the matrix of $\dual{T}$ is the $v_j^{*}$-coordinate of $\dual{T}(w_i^{*})$, namely $\bigl(\dual{T}(w_i^{*})\bigr)(v_j)=(w_i^{*}\circ T)(v_j)=w_i^{*}\Bigl(\sum_{k}a_{kj}w_k\Bigr)=a_{ij}$. Hence the matrix of $\dual{T}$ has $(j,i)$ entry $a_{ij}$, i.e.\ it is $A\trans$. For the rank equality: $f\in\ker\dual{T}$ iff $f\circ T=0$ iff $f$ vanishes on $\im T$, so $\ker\dual{T}=\operatorname{ann}(\im T)$, which has dimension $m-\rank T$ by Proposition~\ref{prop:ann@c11}; rank--nullity for $\dual{T}\colon\dual{W}\to\dual{V}$ then gives $\rank\dual{T}=m-(m-\rank T)=\rank T$. Since $\rank\dual{T}=\rank A\trans$ is the row rank of $A$ and $\rank T$ is its column rank, this also proves that row rank equals column rank.
 \end{proof}
 
 The functor $T\mapsto\dual{T}$ turns the transpose square into the algebraic shadow of the diagram below: applying $\Hom_F(-,F)$ to $T\colon V\to W$ produces $\dual{T}\colon\dual{W}\to\dual{V}$, and post-composing with a third map shows contravariance.
