@@ -65789,8 +65789,8 @@ $M_n=\gen{1/p^n+\Z}\isom\Zn{p^n}$, totally ordered by $M_0\subsetneq M_1\subsetn
 An \emph{ascending} chain need not stabilize (take $M_0\subsetneq M_1\subsetneq\cdots$), so $M$ is
 not Noetherian. But any \emph{descending} chain of submodules is a descending subchain of the
 $M_n$, which is well-ordered downward (each $M_n$ is finite), so it stabilizes: $M$ is Artinian.
-Sanity check: the submodule lattice is the chain $\set{M_n}_{n\ge0}$, order-isomorphic to
-$\mathbb{N}\cup\set{\infty}$ -- bounded below, unbounded above -- exactly the asymmetry between DCC and ACC.
+Sanity check: the submodule lattice is the chain $\set{M_n}_{n\ge0}\cup\set{M}$, order-isomorphic to
+$\mathbb{N}\cup\set{\infty}$ (with $M$ as $\infty$) -- well-ordered, so every descending chain stabilizes, yet containing the infinite strictly ascending chain $M_0\subsetneq M_1\subsetneq\cdots$ -- exactly the asymmetry between DCC and ACC.
 \end{wex}
 
 \subsection*{Length and the Jordan--Holder theorem}
@@ -65820,15 +65820,15 @@ Length-additivity and uniqueness follow from the Schreier refinement theorem: an
 composition series have isomorphic refinements, and a composition series admits no proper
 refinement, so the two series are already equivalent. For the chain-condition statement: a
 composition series is a maximal finite chain, which forces both DCC and ACC; conversely if both
-hold, build a series by repeatedly choosing a minimal nonzero submodule of each successive quotient,
-which terminates by DCC and is finite by ACC.
+hold, build a series by repeatedly choosing a minimal nonzero submodule of each successive quotient
+(such a submodule exists by DCC); the resulting strictly ascending chain terminates by ACC.
 \end{proof}
 
 \begin{method}{Computing length}
 To find $\len_R(M)$: (i) for a vector space, $\len_k(V)=\dim_k V$ since the simple
 $k$-modules are copies of $k$; (ii) use additivity $\len(M)=\len(M')+\len(M'')$ across
-$0\to M'\to M\to M''\to0$ to break $M$ along a filtration; (iii) for $R$ itself, filter by
-powers of an ideal and read off the dimensions of the successive quotients as $R/\fm$-vector spaces.
+$0\to M'\to M\to M''\to0$ to break $M$ along a filtration; (iii) for a local Artinian ring $R$ with
+maximal ideal $\fm$, filter by the powers $\fm^i$ and read off the dimensions of the successive quotients $\fm^i/\fm^{i+1}$ as $R/\fm$-vector spaces.
 \end{method}
 
 \begin{wex}{Length of $\Zn{p^k}$ as a $\Z$-module}
@@ -66178,7 +66178,7 @@ Let $R$ be a $k$-algebra with $\dim_k R<\infty$. Show $R$ is Artinian, and bound
 \wsol Any descending chain of ideals $\fa_1\supseteq\fa_2\supseteq\cdots$ is a descending chain of
 $k$-subspaces; their dimensions form a non-increasing sequence of non-negative integers bounded by
 $\dim_k R$, so it stabilizes. Hence $R$ is Artinian, and $\len_R(R)\le\dim_k R$ (each simple factor has
-$k$-dimension $\ge1$). Sanity check: for $R=k[x]/(f)$, $\dim_k R=\deg f$ and $\len_R(R)=\deg f$ (length
+$k$-dimension $\ge1$). Sanity check: for $R=k[x]/(f)$ with $f$ a product of linear factors over $k$, $\dim_k R=\deg f$ and $\len_R(R)=\deg f$ (length
 equals $k$-dimension here since every residue field is $k$), so the bound is sharp; for a matrix
 algebra such as $\Mat_2(k)$, $\dim_k=4$ but as a left module over itself it is the sum of its two
 columns, a semisimple module of $\len=2$ (not simple), so the bound can be strict.
@@ -66200,7 +66200,7 @@ components of $\Spec R$.
 \begin{wex}{Krull dimension contrasts: Artinian vs.\ DVR vs.\ Dedekind}
 Place $\Zn{p^k}$, $\Z_{(p)}$, and $\Z$ on the dimension scale and say which are Artinian.
 \wrec Artinian = Noetherian $+\dim0$; a DVR is a Noetherian local domain of $\dim1$ with principal
-maximal ideal (equivalently a local PID, integrally closed); a Dedekind domain is a Noetherian,
+maximal ideal (equivalently a local PID that is not a field; it is integrally closed); a Dedekind domain is a Noetherian,
 integrally closed domain of $\dim1$.
 \wsol $\Zn{p^k}$ is Artinian local: Noetherian (finite) with the single prime $(\bar p)$ maximal, so
 $\dim=0$. The localization $\Z_{(p)}$ is a DVR: Noetherian local with primes $(0)\subsetneq(p)$, so
@@ -66246,7 +66246,7 @@ Let $R$ be a commutative ring with $1$ and let $\mathcal{J}$ denote its Jacobson
 \begin{enumerate}
 \item[(a)] Show that $d_1(R_1) = d_1(R) = m$ and that $d_p(R_1) = d_p(R)$. Deduce that we may assume $R = R_1$. [Use the Going-up and Going-down Theorems (cf. Theorem 26, Section 15.3) to prove the second equality.]
 \item[(b)] When $R = R_1$ show that $d_p(R) \geq d_1(R)$ by exhibiting an explicit chain of prime ideals of length $m$.
-\item[(c)] When $R = R_1$ show that any nonzero prime ideal of $R$ contains an element $f$ such that $R/(f)$ is transcendental over $R$ of transcendence degree $1$. Use induction to show that $d_p(R) \leq d_1(R)$, and deduce that $d_p(R) = d_1(R)$.
+\item[(c)] When $R = R_1$ show that any nonzero prime ideal of $R$ contains an irreducible element $f$, and that $R/(f)$ is an integral domain whose field of fractions has transcendence degree $m-1$ over $k$. Use induction to show that $d_p(R) \leq d_1(R)$, and deduce that $d_p(R) = d_1(R)$.
 \end{enumerate}
 
 \item Let $R$ be a Noetherian local ring with maximal ideal $M$.
@@ -66264,7 +66264,7 @@ Let $R$ be a commutative ring with $1$ and let $\mathcal{J}$ denote its Jacobson
 \begin{exers}{Exercises (Atiyah \& Macdonald).}
 \item Let $\fq_1 \cap \cdots \cap \fq_n = 0$ be a minimal primary decomposition of the zero ideal in a Noetherian ring, and let $\fq_i$ be $\fp_i$-primary. Let $\fp_i^{(r)}$ be the $r$th \emph{symbolic power} of $\fp_i$ (Chapter 4, Exercise 13). Show that for each $i = 1, \ldots, n$ there exists an integer $r_i$ such that $\fp_i^{(r_i)} \subseteq \fq_i$.
 
-Suppose we allow $i$ to range over those suffixes such that $\fp_i$ is minimal (i.e., $\fq_i$ is an isolated primary component). Then $A_{\fp_i}$ is an Artin local ring, hence if $\fm_i$ is its maximal ideal we have $\fm_i^r = 0$ for all sufficiently large $r$, hence $\fp_i = \fp_i^{(r)}$ for all large $r$.
+Suppose we allow $i$ to range over those suffixes such that $\fp_i$ is minimal (i.e., $\fq_i$ is an isolated primary component). Then $A_{\fp_i}$ is an Artin local ring, hence if $\fm_i$ is its maximal ideal we have $\fm_i^r = 0$ for all sufficiently large $r$, hence $\fq_i = \fp_i^{(r)}$ for all large $r$.
 
 If $\fq_i$ is an embedded primary component, then $A_{\fp_i}$ is \emph{not} Artinian, hence the powers $\fm_i^r$ are all distinct, and so the $\fp_i^{(r)}$ are all distinct. Hence in the given primary decomposition we can replace $\fq_i$ by any of the infinite set of $\fp_i$-primary ideals $\fp_i^{(r)}$ where $r \geq r_i$, and so there are infinitely many minimal primary decompositions of $0$ which differ only in the $\fp_i$-component.
 
@@ -66293,7 +66293,7 @@ Prove that i) $\Rightarrow$ ii) $\Rightarrow$ iii) $\Rightarrow$ iv). [Use Exerc
 
 If $f$ is integral and the fibres of $f^*$ are finite, is $f$ necessarily finite?
 
-\item In Chapter 5, Exercise 16, show that if $X$ is a finite covering of $L$ (i.e., the number of points of $X$ lying over a given point of $L$ is finite and bounded).
+\item In Chapter 5, Exercise 16, show that $X$ is a finite covering of $L$ (i.e., the number of points of $X$ lying over a given point of $L$ is finite and bounded).
 
 \item Let $A$ be a Noetherian ring and $\fq$ a $\fp$-primary ideal in $A$. Consider chains of primary ideals from $\fq$ to $\fp$. Show that all such chains are of finite bounded length, and that all maximal chains have the same length.
 \end{exers}
@@ -66331,7 +66331,7 @@ Throughout, $R$ is a commutative ring with $1$, ideals are written in fraktur, a
 \end{tikzcd}
 \]
 State which two nodes are the maximal ideals and verify $R/\Jac(R)\isom\F_2\times\F_3$.
-\item Let $R=\Z_{(p)}$ be the localization of $\Z$ at $(p)$, a DVR with maximal ideal $\fm=(p)$, and for each $n\ge1$ let $R_n=R/(p^n)=\Zn{p^n}$ be the Artinian local quotient. Complete the commuting square of the quotient maps and verify that the bottom map is the canonical reduction with kernel $(p^{n-1})R_n$:
+\item Let $R=\Z_{(p)}$ be the localization of $\Z$ at $(p)$, a DVR with maximal ideal $\fm=(p)$, and for each $n\ge1$ let $R_n=R/(p^n)=\Zn{p^n}$ be the Artinian local quotient. Complete the commuting square of the quotient maps and verify that the right-hand map $\rho$ is the canonical reduction with kernel $(p^{n-1})R_n$:
 \[
 \begin{tikzcd}[row sep=large, column sep=huge]
 R \arrow[r,twoheadrightarrow,"{\pi_n}"] \arrow[d,twoheadrightarrow,"{\pi_{n-1}}"'] & R_n=\Zn{p^n} \arrow[d,twoheadrightarrow,"{\rho}"] \\
