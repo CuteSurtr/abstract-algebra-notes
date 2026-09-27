@@ -37284,7 +37284,7 @@ since $15\equiv1\pmod2$. And
 \[
 \bar2\tensor\bar5=10(\bar1\tensor\bar1)=\bar0,
 \]
-since $10\equiv0\pmod2$ (equivalently $\bar2\tensor\bar5=\bar1\tensor\overline{10}=\bar1\tensor\bar0=0$). \textbf{Check:} both $\bar3$ and $\bar5$ are nonzero, yet $\bar2\tensor\bar5=0$ --- a concrete instance of ``$m\tensor n=0$ with $m,n\neq0$''. The image of $\bar a\tensor\bar b$ is $\overline{ab}\in\Zn2$, matching $\bar3\tensor\bar5\mapsto\overline{15}=\bar1$ and $\bar2\tensor\bar5\mapsto\overline{10}=\bar0$. Correct.
+since $10\equiv0\pmod2$ (equivalently $\bar2\tensor\bar5=\bar1\tensor\overline{10}=\bar1\tensor\bar0=0$). \textbf{Check:} both $\bar2$ and $\bar5$ are nonzero, yet $\bar2\tensor\bar5=0$ --- a concrete instance of ``$m\tensor n=0$ with $m,n\neq0$''. The image of $\bar a\tensor\bar b$ is $\overline{ab}\in\Zn2$, matching $\bar3\tensor\bar5\mapsto\overline{15}=\bar1$ and $\bar2\tensor\bar5\mapsto\overline{10}=\bar0$. Correct.
 \end{wex}
 
 \begin{pitfall}
@@ -37410,7 +37410,7 @@ For fixed $r$, $(m,n)\mapsto (rm)\tensor n$ is $R$-balanced (using commutativity
 \end{proof}
 
 \begin{remark}
-Over commutative $R$, every $R$-bilinear map is $R$-balanced (not conversely: $(u,v)\mapsto\overline{uv}$, the complex conjugate of $uv$, is a $\C$-balanced map $\C\times\C\to\C$ that is not $\C$-bilinear), and one writes $r(m\tensor n)$ unambiguously. The earlier examples $\Zn m\tensor_\Z\Zn n\isom\Zn{\gcd(m,n)}$, $\R^2\tensor_\R\R^2\isom\R^4$, $\C\tensor_\R\R^n\isom\C^n$ are all instances. Tensor distributes over direct sums: $M\tensor_R\big(\bigoplus_i N_i\big)\isom\bigoplus_i(M\tensor_R N_i)$, which together with $R\tensor_R N\isom N$ computes all tensor products of finitely generated modules over a PID.
+Over commutative $R$, every $R$-bilinear map is $R$-balanced (not conversely: $(u,v)\mapsto\overline{uv}$, the complex conjugate of $uv$, is a $\C$-balanced map $\C\times\C\to\C$ that is not $\C$-bilinear), and one writes $r(m\tensor n)$ unambiguously. The earlier examples $\Zn m\tensor_\Z\Zn n\isom\Zn{\gcd(m,n)}$, $\R^2\tensor_\R\R^2\isom\R^4$, $\C\tensor_\R\R^n\isom\C^n$ are all instances. Tensor distributes over direct sums: $M\tensor_R\big(\bigoplus_i N_i\big)\isom\bigoplus_i(M\tensor_R N_i)$, which together with $R\tensor_R N\isom N$ and $R/(a)\tensor_R R/(b)\isom R/(a,b)$ computes all tensor products of finitely generated modules over a PID.
 \end{remark}
 
 \begin{method}{Tensor products over a PID / commutative ring}
@@ -37447,7 +37447,7 @@ Over $R=\Z$, compute $(\Zn4\oplus\Zn6)\tensor_\Z\Zn9$.
 &\isom\Zn{\gcd(4,9)}\oplus\Zn{\gcd(6,9)}=\Zn1\oplus\Zn3\isom\Zn3.
 \end{aligned}
 \]
-\textbf{Check:} $\gcd(4,9)=1\Rightarrow$ first block $0$; $\gcd(6,9)=3\Rightarrow$ second block $\Zn3$. The generator $(\bar0,\bar1)\tensor\bar1$ has order $3$ (since $3\cdot(\bar0,\bar1)\tensor\bar1=(\bar0,\bar3)\tensor\bar1$ and $\bar3\tensor\bar1$ has order dividing $\gcd(6,9)=3$). Correct.
+\textbf{Check:} $\gcd(4,9)=1\Rightarrow$ first block $0$; $\gcd(6,9)=3\Rightarrow$ second block $\Zn3$. The generator $(\bar0,\bar1)\tensor\bar1$ has order $3$ (it corresponds to the generator $\bar1\tensor\bar1\neq0$ of the block $\Zn6\tensor_\Z\Zn9\isom\Zn3$, and $3\cdot\big((\bar0,\bar1)\tensor\bar1\big)=(\bar0,\bar3)\tensor\bar1$ corresponds to $\bar3\tensor\bar1=3(\bar1\tensor\bar1)=0$). Correct.
 \end{wex}
 
 \begin{wex}{Free $\tensor$ free: $R^m\tensor_R R^n\isom R^{mn}$}
