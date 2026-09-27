@@ -27865,7 +27865,7 @@ p(0)=0\eqv a_0=0\eqv p(x)=a_1x+a_2x^2+\cdots=x\,(a_1+a_2x+\cdots)\in\gen{x},
 and conversely every $x\cdot g(x)$ has constant term $0$. So $\ker(\mathrm{ev}_0)=\gen{x}$, and Theorem~\ref{thm:first-iso@c7} gives $\R[x]/\gen{x}\isom\R$.
 \[
 \begin{tikzcd}[row sep=large,column sep=large]
-\R[x] \arrow[r, "\mathrm{ev}_0"] \arrow[d, two heads, "\pi"'] & \R \\
+\R[x] \arrow[r, two heads, "\mathrm{ev}_0"] \arrow[d, two heads, "\pi"'] & \R \\
 \R[x]/\gen{x} \arrow[ur, dashed, "\isom"'] &
 \end{tikzcd}
 \]
@@ -27951,7 +27951,7 @@ Being a kernel, $\Mat_n(I)$ is a two-sided ideal of $\Mat_n(R)$. Theorem~\ref{th
 \]
 \[
 \begin{tikzcd}[row sep=large,column sep=large]
-\Mat_n(R) \arrow[r, "\Phi"] \arrow[d, two heads, "\pi_*"'] & \Mat_n(R/I) \\
+\Mat_n(R) \arrow[r, two heads, "\Phi"] \arrow[d, two heads, "\pi_*"'] & \Mat_n(R/I) \\
 \Mat_n(R)/\Mat_n(I) \arrow[ur, dashed, "\isom"'] &
 \end{tikzcd}
 \]
@@ -28206,14 +28206,14 @@ Use it to define the evaluation map $\Z[x]\to\Zn{5}$ sending $x\mapsto 3$ and co
 
 \item (Universal property of fractions.) Let $R$ be an integral domain with field of fractions $\Frac(R)$ and embedding $\iota\colon R\to\Frac(R)$. Prove that any injective homomorphism $f\colon R\to F$ into a field $F$ extends uniquely to $\bar f$:
 \[\begin{tikzcd}[column sep=large]
-R \arrow[r, "\iota"] \arrow[dr, "f"'] & \Frac(R) \arrow[d, dashed, "\exists!\,\bar f"] \\
+R \arrow[r, hook, "\iota"] \arrow[dr, hook, "f"'] & \Frac(R) \arrow[d, dashed, "\exists!\,\bar f"] \\
 & F
 \end{tikzcd}\]
 Why must $f$ be injective for $\bar f$ to be well defined?
 
 \item (Pulling back ideals through a quotient.) Let $I\subseteq J$ be ideals of $R$ and consider the projections $\pi\colon R\to R/I$ and $q\colon R/I\to R/J$. Show that $q\circ\pi=\pi_J$, the projection $R\to R/J$, and deduce the third isomorphism theorem $(R/I)/(J/I)\isom R/J$:
 \[\begin{tikzcd}[row sep=large,column sep=large]
-R \arrow[r, "\pi"] \arrow[dr, "\pi_J"'] & R/I \arrow[d, "q"] \\
+R \arrow[r, two heads, "\pi"] \arrow[dr, two heads, "\pi_J"'] & R/I \arrow[d, two heads, "q"] \\
 & R/J
 \end{tikzcd}\]
 Illustrate with $R=\Z$, $I=\gen{12}$, $J=\gen{4}$.
@@ -28388,7 +28388,7 @@ Show $M = \gen{x^2+1}$ is a maximal ideal of $\R[x]$.
 \wsol Define $\varphi : \R[x] \to \C$ by $\varphi(f) = f(i)$ (evaluation at $i$). It is a surjective ring homomorphism (it hits $a + bi$ via $a + bx$). Its kernel is $\{f : f(i) = 0\}$; since $x^2 + 1 = (x-i)(x+i)$ is the minimal polynomial of $i$ over $\R$, $\ker\varphi = \gen{x^2+1}$. By the First Isomorphism Theorem,
 \[
 \begin{tikzcd}[row sep=large,column sep=large]
-\R[x] \arrow[r, "\varphi"] \arrow[d, two heads, "\pi"'] & \C \\
+\R[x] \arrow[r, two heads, "\varphi"] \arrow[d, two heads, "\pi"'] & \C \\
 \R[x]/\gen{x^2+1} \arrow[ur, dashed, "\overline\varphi"', "\isom"] &
 \end{tikzcd}
 \]
@@ -28746,7 +28746,7 @@ R/(I_1\cap I_2) \arrow[ur, dashed, "\sim"'] &
 
 \item Let $R$ be an integral domain with field of fractions $\Frac(R)$, $\iota\colon R\to\Frac(R)$ the inclusion. Suppose $f\colon R\to F$ is an injective ring homomorphism into a field $F$. State and prove the universal property of the field of fractions exhibited by the diagram, identifying the formula for $\bar f$.
 \[\begin{tikzcd}[column sep=large]
-R \arrow[r, "\iota"] \arrow[dr, "f"'] & \Frac(R) \arrow[d, dashed, "\exists!\,\bar f"] \\
+R \arrow[r, hook, "\iota"] \arrow[dr, hook, "f"'] & \Frac(R) \arrow[d, dashed, "\exists!\,\bar f"] \\
 & F
 \end{tikzcd}\]
 
@@ -28921,7 +28921,7 @@ homomorphism $\bar f\colon\Frac(R)\to F$ with $\bar f\circ\iota=f$, namely
 \]
 Moreover $\bar f$ is itself injective. In a diagram:
 \[\begin{tikzcd}[column sep=large,row sep=large]
-R \arrow[r, hook, "\iota"] \arrow[dr, "f"'] & \Frac(R) \arrow[d, dashed, "\exists!\,\bar f"] \\
+R \arrow[r, hook, "\iota"] \arrow[dr, hook, "f"'] & \Frac(R) \arrow[d, dashed, hook, "\exists!\,\bar f"] \\
 & F
 \end{tikzcd}\]
 \begin{dgx}
@@ -29187,7 +29187,7 @@ ring homomorphisms from $R$ to fields that are injective: every such $f$ factors
 through $\iota$. This is the same shape of statement as the First Isomorphism Theorem
 triangle and the universal property of $R[x]$; recognizing the pattern
 \[\begin{tikzcd}[column sep=large]
-R \arrow[r, "\iota"] \arrow[dr, "f"'] & \Frac(R) \arrow[d, dashed, "\exists!"] \\
+R \arrow[r, hook, "\iota"] \arrow[dr, hook, "f"'] & \Frac(R) \arrow[d, dashed, "\exists!"] \\
 & F
 \end{tikzcd}\]
 \begin{dgx}
@@ -29283,16 +29283,16 @@ $a/b\mapsto f(a)f(b)\inv$.
 
 \begin{exers}{Commutative-diagram exercises.}
 \item (Universal property of fractions.) Let $R$ be an integral domain with fraction field $F=\Frac(R)$ and embedding $\iota:R\to F$. Let $f:R\to K$ be an injective ring homomorphism into a field $K$. Prove there is a unique ring homomorphism $\bar f$ making the diagram commute, and show $\bar f$ is injective.
-\[\begin{tikzcd}[column sep=large] R \arrow[r, "\iota"] \arrow[dr, "f"'] & \Frac(R) \arrow[d, dashed, "\exists!\,\bar f"] \\ & K \end{tikzcd}\]
+\[\begin{tikzcd}[column sep=large] R \arrow[r, hook, "\iota"] \arrow[dr, hook, "f"'] & \Frac(R) \arrow[d, dashed, "\exists!\,\bar f"] \\ & K \end{tikzcd}\]
 
 \item Let $R$ be commutative, $D$ multiplicatively closed with $0\notin D$, and $\iota:R\to D^{-1}R$ the canonical map with $J=\ker\iota=\{r:dr=0\text{ for some }d\in D\}$. Show $\iota$ factors through $R/J$ and that the induced map is injective, giving the diagram below (a fractions version of the First Isomorphism Theorem). Identify the dashed arrow explicitly.
-\[\begin{tikzcd}[row sep=large,column sep=large] R \arrow[r, "\iota"] \arrow[d, two heads, "\pi"'] & D^{-1}R \\ R/J \arrow[ur, dashed, "\overline{\iota}"'] & \end{tikzcd}\]
+\[\begin{tikzcd}[row sep=large,column sep=large] R \arrow[r, "\iota"] \arrow[d, two heads, "\pi"'] & D^{-1}R \\ R/J \arrow[ur, dashed, hook, "\overline{\iota}"'] & \end{tikzcd}\]
 
 \item (CRT as an isomorphism.) Let $R$ be a commutative ring with ideals $I_1,I_2$ satisfying $I_1+I_2=R$. Prove that the dashed map below, induced by $\varphi\colon r\mapsto(r+I_1,\,r+I_2)$, is a ring isomorphism, and identify $\ker\varphi$ as $I_1\cap I_2=I_1 I_2$.
 \[\begin{tikzcd}[column sep=large] R \arrow[r, "{r\mapsto(r,r)}"] \arrow[d, two heads, "\pi"'] & R/I_1 \times R/I_2 \\ R/(I_1\cap I_2) \arrow[ur, dashed, "\isom"'] & \end{tikzcd}\]
 
 \item (Universal property of fractions for $R$-algebras.) Let $R$ be an integral domain with $F=\Frac(R)$ and let $S$ be a commutative $R$-algebra via $\varphi:R\to S$ in which every nonzero element of $R$ maps to a unit. Using the universal property of fractions, complete the diagram with a unique $R$-algebra map $\Phi$, and state precisely the condition on $\varphi$ that makes $\Phi$ exist.
-\[\begin{tikzcd}[column sep=large] R \arrow[r, "\iota"] \arrow[dr, "\varphi"'] & F \arrow[d, dashed, "\exists!\,\Phi"] \\ & S \end{tikzcd}\]
+\[\begin{tikzcd}[column sep=large] R \arrow[r, hook, "\iota"] \arrow[dr, "\varphi"'] & F \arrow[d, dashed, "\exists!\,\Phi"] \\ & S \end{tikzcd}\]
 
 \item Let $R$ be a commutative ring and $D\subseteq D'$ two multiplicatively closed subsets with $0\notin D'$. Show the canonical maps fit into a commutative triangle and that there is a unique ring homomorphism $\theta:D^{-1}R\to D'^{-1}R$ filling it in. Give $\theta$ on a fraction $\frac{r}{d}$.
 \[\begin{tikzcd}[column sep=large] R \arrow[r, "\iota_D"] \arrow[dr, "\iota_{D'}"'] & D^{-1}R \arrow[d, dashed, "\theta"] \\ & D'^{-1}R \end{tikzcd}\]
@@ -29368,7 +29368,7 @@ and $R/(I_1\cdots I_k)\isom R/I_1\times(R/I_2\times\cdots\times R/I_k)$, as clai
 The structural picture is the factorization of $\varphi$ through the quotient by the kernel (First Isomorphism Theorem): writing $\pi$ for the quotient map $R\to R/(I_1\cap I_2)$, there is a unique $\overline{\varphi}$ with $\varphi=\overline{\varphi}\circ\pi$, and under comaximality $\overline{\varphi}$ is an isomorphism.
 \[
 \begin{tikzcd}[row sep=large,column sep=large]
-R \arrow[r, "\varphi"] \arrow[d, two heads, "\pi"'] & R/I_1\times R/I_2 \\
+R \arrow[r, two heads, "\varphi"] \arrow[d, two heads, "\pi"'] & R/I_1\times R/I_2 \\
 R/(I_1\cap I_2) \arrow[ur, dashed, "{\overline{\varphi}}"', "{\isom}"]
 \end{tikzcd}
 \]
@@ -29386,7 +29386,7 @@ And the clean comaximal statement, with the two natural coordinate projections o
 \[
 \begin{tikzcd}[row sep=large,column sep=huge]
 & R/I_1 \\
-R \arrow[r, two heads, "\pi"] \arrow[ur, "{r\mapsto r+I_1}"] \arrow[dr, "{r\mapsto r+I_2}"'] & R/(I_1\cap I_2) \arrow[r, "{\isom}", "{\overline{\varphi}}"'] & R/I_1\times R/I_2 \arrow[ul, "{\mathrm{pr}_1}"'] \arrow[dl, "{\mathrm{pr}_2}"]\\
+R \arrow[r, two heads, "\pi"] \arrow[ur, two heads, "{r\mapsto r+I_1}"] \arrow[dr, two heads, "{r\mapsto r+I_2}"'] & R/(I_1\cap I_2) \arrow[r, "{\isom}", "{\overline{\varphi}}"'] & R/I_1\times R/I_2 \arrow[ul, two heads, "{\mathrm{pr}_1}"'] \arrow[dl, two heads, "{\mathrm{pr}_2}"]\\
 & R/I_2
 \end{tikzcd}
 \]
@@ -29702,20 +29702,20 @@ Prove the dashed map is well defined, injective (using $\ker\varphi=I\cap J$), a
 
 \item (Universal property of $R[x]$.) Let $R$ be a commutative ring with $1$, let $S$ be a commutative $R$-algebra via $\psi\colon R\to S$, and fix $s\in S$. Show there is a unique ring homomorphism $\Phi\colon R[x]\to S$ extending $\psi$ with $\Phi(x)=s$, by completing the diagram and proving uniqueness:
 \[\begin{tikzcd}[row sep=large,column sep=large]
-R \arrow[r, "\iota"] \arrow[dr, "\psi"'] & R[x] \arrow[d, dashed, "\exists!\,\Phi"] \\
+R \arrow[r, hook, "\iota"] \arrow[dr, "\psi"'] & R[x] \arrow[d, dashed, "\exists!\,\Phi"] \\
 & S
 \end{tikzcd}\]
 Then describe $\ker\Phi$ when $R=S=\Z$ and $s=2$.
 
 \item (Universal property of fractions.) Let $R$ be an integral domain with field of fractions $\Frac(R)$, and let $f\colon R\to F$ be an injective ring homomorphism into a field $F$. Prove there is a unique $\bar f$ making the triangle commute, and explain why injectivity of $f$ is needed:
 \[\begin{tikzcd}[column sep=large]
-R \arrow[r, "\iota"] \arrow[dr, "f"'] & \Frac(R) \arrow[d, dashed, "\exists!\,\bar f"] \\
+R \arrow[r, hook, "\iota"] \arrow[dr, hook, "f"'] & \Frac(R) \arrow[d, dashed, "\exists!\,\bar f"] \\
 & F
 \end{tikzcd}\]
 
 \item Let $\varphi\colon R\to S$ be a surjective ring homomorphism of commutative rings with $1$. Using the First Isomorphism Theorem for rings, complete the factorization and identify $\overline{\varphi}$:
 \[\begin{tikzcd}[row sep=large,column sep=large]
-R \arrow[r, "\varphi"] \arrow[d, two heads, "\pi"'] & S \\
+R \arrow[r, two heads, "\varphi"] \arrow[d, two heads, "\pi"'] & S \\
 R/\ker\varphi \arrow[ur, dashed, "\overline{\varphi}"', "\isom"] &
 \end{tikzcd}\]
 Apply this with $R=\Z[x]$, $\varphi$ evaluation at $i\in\C$ landing in $\Z[i]$, to identify $\ker\varphi$ and the resulting isomorphism.
@@ -32603,7 +32603,7 @@ $I[x]$, which is why $R[x]/I[x]\isom(R/I)[x]$.
   \item Fix a prime $p$ and let $r_p\colon\Z[x]\to\F_p[x]$ be reduction mod $p$. For
         $f\in\Z[x]$ monic, show that the diagram
         \[\begin{tikzcd}[column sep=large]
-          \Z[x] \arrow[r, two heads, "{r_p}"] \arrow[d] & \F_p[x] \arrow[d] \\
+          \Z[x] \arrow[r, two heads, "{r_p}"] \arrow[d, two heads] & \F_p[x] \arrow[d, two heads] \\
           \Z[x]/(f) \arrow[r, dashed, "{\bar r_p}"] & \F_p[x]/(\bar f)
         \end{tikzcd}\]
         commutes, where the vertical maps are the quotient projections. Conclude that if
@@ -32612,7 +32612,7 @@ $I[x]$, which is why $R[x]/I[x]\isom(R/I)[x]$.
         in $\F_3[x]$ and hence $f$ is irreducible in $\Q[x]$.
   \item Let $p=x^2-2\in\Q[x]$. Compare the factorization of $p$ along
         \[\begin{tikzcd}[column sep=large]
-          \Q[x] \arrow[r, "\iota"] & \R[x]
+          \Q[x] \arrow[r, hook, "\iota"] & \R[x]
         \end{tikzcd}\]
         explaining how $p$ irreducible in $\Q[x]$ can become reducible after extending the
         coefficient field, and relate this to $\Q[x]/(p)\isom\Q(\sqrt2)$.
