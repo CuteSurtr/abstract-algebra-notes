@@ -51422,9 +51422,9 @@ exponents, exactly mirroring the subfield/degree dictionary.
 \dgi{Objects:} Four finite fields, all of characteristic $p$. At the bottom is the prime
   field $\F_p$. At the middle level on the left is $\F_{p^m}$ and on the right $\F_{p^n}$
   (subfields of degree $m$ and $n$ over $\F_p$, respectively). At the top is $\F_{p^{mn}}$,
-  the compositum, which equals $\F_{p^{\operatorname{lcm}(m,n)}}$ in general and specifically
-  $\F_{p^{mn}}$ when $\gcd(m,n)=1$.
-\dgi{Arrows:} Each unlabeled dashed edge denotes a field inclusion $\subseteq$ (a subfield
+  which contains both; it is their compositum exactly when $\gcd(m,n)=1$ (in general the
+  compositum is $\F_{p^{\operatorname{lcm}(m,n)}}$, which can be smaller).
+\dgi{Arrows:} Each edge denotes a field inclusion $\subseteq$ (a subfield
   embedding). The edges are labeled by the degree of the extension: the left lower edge
   $\F_p\subset\F_{p^m}$ has degree $m$; the right lower edge $\F_p\subset\F_{p^n}$ has
   degree $n$; the left upper edge $\F_{p^m}\subset\F_{p^{mn}}$ has degree
@@ -51438,7 +51438,7 @@ exponents, exactly mirroring the subfield/degree dictionary.
   $p^k$; it exists and is unique because it is the splitting field of $x^{p^k}-x$. The
   containment $\F_{p^k}\subseteq\F_{p^\ell}$ holds iff $k\mid\ell$, and then
   $[\F_{p^\ell}:\F_{p^k}]=\ell/k$. The degree labels in the diagram are all special cases
-  of this rule: $[F_{p^{mn}}:\F_{p^m}]=mn/m=n$ and $[\F_{p^{mn}}:\F_{p^n}]=mn/n=m$.
+  of this rule: $[\F_{p^{mn}}:\F_{p^m}]=mn/m=n$ and $[\F_{p^{mn}}:\F_{p^n}]=mn/n=m$.
 \dgi{Why this matters here:} The diagram makes the divisibility-governs-containment rule
   visually explicit, bridging the abstract theorem that $\F_{p^m}\subseteq\F_{p^n}\Leftrightarrow
   m\mid n$ to the concrete tower-degree formula. It also sets up the general compositum claim
@@ -51447,17 +51447,17 @@ exponents, exactly mirroring the subfield/degree dictionary.
   $\F_{64}=\F_{2^6}$. The diagram becomes: $\F_2\subset\F_4$ (degree $2$), $\F_2\subset\F_8$
   (degree $3$), $\F_4\subset\F_{64}$ (degree $3$), $\F_8\subset\F_{64}$ (degree $2$). Both
   paths from $\F_2$ to $\F_{64}$ give total degree $6$.
-\dgi{Common pitfall:} The diagram applies when $\gcd(m,n)=1$; the top field is $\F_{p^{mn}}$
-  only in that case. In general the top is $\F_{p^{\operatorname{lcm}(m,n)}}$, which can be
-  strictly smaller than $\F_{p^{mn}}$. For example, $m=n=2$ gives the top as
+\dgi{Common pitfall:} The top field $\F_{p^{mn}}$ is the compositum $\F_{p^m}\F_{p^n}$
+  only when $\gcd(m,n)=1$. In general the compositum is $\F_{p^{\operatorname{lcm}(m,n)}}$, which can be
+  strictly smaller than $\F_{p^{mn}}$. For example, $m=n=2$ gives the compositum
   $\F_{p^2}$, not $\F_{p^4}$.
 \dgi{Takeaway:} The point of this diagram is that the subfield structure of finite fields is
   completely controlled by divisibility of exponents, so the degree of any subfield tower can
   be read off by arithmetic on the exponents alone.
 \end{dgx}
 
-Here the top vertex is the compositum $\F_{p^m}\F_{p^n}=\F_{p^{\lcm(m,n)}}$,
-which equals $\F_{p^{mn}}$ exactly when $\gcd(m,n)=1$; the upper edges are then
+The top vertex $\F_{p^{mn}}$ contains the compositum $\F_{p^m}\F_{p^n}=\F_{p^{\lcm(m,n)}}$
+and equals it exactly when $\gcd(m,n)=1$; the upper edges are
 labeled by the relative degrees $\idx{\F_{p^{mn}}}{\F_{p^m}}=n$ and
 $\idx{\F_{p^{mn}}}{\F_{p^n}}=m$. More generally,
 $\F_{p^m}\subseteq\F_{p^n}$ if and only if $m\mid n$, and then
