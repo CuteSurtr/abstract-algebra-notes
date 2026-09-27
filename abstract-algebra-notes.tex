@@ -57812,7 +57812,7 @@ Now set $p=g-Q(e_1,\dots,e_{n-1})$, a difference of symmetric polynomials, hence
 \[
 g=Q(e_1,\dots,e_{n-1})+e_n\,h .
 \]
-Uniqueness (algebraic independence of the $e_i$) is checked by tracking the lexicographically leading term in the algorithm below: distinct $G$ produce distinct leading monomials in the $u_i$, so $G\mapsto G(e)$ is injective.
+Uniqueness (algebraic independence of the $e_i$) is checked by tracking the lexicographically leading term in the algorithm below: distinct monomials $e_1^{b_1}\cdots e_n^{b_n}$ have distinct leading monomials $u_1^{b_1+\cdots+b_n}u_2^{b_2+\cdots+b_n}\cdots u_n^{b_n}$, each with coefficient $1$; so if $G\ne0$, the largest leading monomial among the $e$-monomials occurring in $G$ appears in $G(e)$ with the nonzero coefficient it has in $G$, and $G\mapsto G(e)$ is injective.
 \end{proof}
 
 \begin{method}{Lexicographic leading-term algorithm: reduce a symmetric $g$ to a polynomial in the $e_i$.}
@@ -57914,11 +57914,11 @@ R \arrow[r, equal] & R
   (3) Horizontal middle: the evaluation/specialization map $\operatorname{ev}_\alpha\colon R[u]^{\Sym_n}\to F[a_1,\dots,a_n]$ defined by $u_i\mapsto\alpha_i$; since $e_k(\alpha_1,\dots,\alpha_n)=a_k$ by Vieta (Lemma~\ref{art:symmetric:vieta@c14}), this carries $e_k\mapsto a_k$ and is a ring homomorphism.
   (4) Bottom horizontal: the identity/equality $R\xrightarrow{=}R$.
   Well-definedness of $\operatorname{ev}_\alpha$: a polynomial map $u_i\mapsto\alpha_i$ is always a ring homomorphism and needs no coset check; the point is merely that symmetric polynomials evaluated at the roots stay in $F$ (proved in Corollary~\ref{art:symmetric:rational@c14}).
-\dgi{What commutes:} The square formed by arrows (2), (3), (4), and the inclusion $R\hookrightarrow F[a_1,\dots,a_n]$ commutes: going right-then-up ($R\to F[a_1,\dots,a_n]$) and going down-then-right ($R\to R\to F[a_1,\dots,a_n]$) both land a constant $r\in R$ at $r\in F[a_1,\dots,a_n]$.
+\dgi{What commutes:} The square formed by arrows (2), (3), (4), and the inclusion $R\hookrightarrow F[a_1,\dots,a_n]$ commutes: going right-then-up ($R\to R\to F[a_1,\dots,a_n]$: arrow (4), then the inclusion) and going up-then-right ($R\to R[u]^{\Sym_n}\to F[a_1,\dots,a_n]$: arrows (2) and (3)) both land a constant $r\in R$ at $r\in F[a_1,\dots,a_n]$.
   The upper-left triangle is not a commuting square but an inclusion chain: $R\subseteq R[u]^{\Sym_n}\subseteq R[u_1,\dots,u_n]$.
 \dgi{Why it commutes:} Take a constant $r\in R$.
-  Along the left-then-bottom path: $r$ is already in $R[u]^{\Sym_n}$ (constant polynomial), and $\operatorname{ev}_\alpha(r)=r\in F$.
-  Along the bottom path: $r\mapsto r$ by the equality arrow.
+  Along the up-then-right path: $r$ is already in $R[u]^{\Sym_n}$ (constant polynomial), and $\operatorname{ev}_\alpha(r)=r\in F$.
+  Along the right-then-up path: $r\mapsto r$ by the equality arrow, then $r\mapsto r$ by the inclusion.
   These agree because evaluating a constant polynomial at any point returns that constant; no $u_i$ are substituted.
   The key nontrivial commutativity is $\operatorname{ev}_\alpha(e_k)=a_k$, which is exactly Vieta's theorem: the coefficient of $x^{n-k}$ in $\prod_i(x-\alpha_i)$ is $(-1)^k e_k(\alpha)=(-1)^k a_k$.
 \dgi{Why this matters here:} This diagram is the geometric summary of Corollary~\ref{art:symmetric:rational@c14} and the Fundamental Theorem together.
@@ -57930,7 +57930,7 @@ R \arrow[r, equal] & R
   The power sum $p_2=\alpha_1^2+\alpha_2^2=e_1^2-2e_2=9-2=7\in\Q$, even though $\alpha_i\notin\Q$.
   The horizontal arrow in the diagram sends $e_1\mapsto 3$, $e_2\mapsto 1$, entirely within $\Q$.
 \dgi{Common pitfall:} Students read the horizontal arrow as an isomorphism $R[u]^{\Sym_n}\cong F[a_1,\dots,a_n]$ and conclude the two rings are the same.
-  They are \emph{not} in general isomorphic as abstract rings; the arrow is an evaluation homomorphism that is surjective onto $F[a_1,\dots,a_n]$ but may have a nontrivial kernel (when the $\alpha_i$ satisfy polynomial relations beyond those forced by $f$).
+  They are \emph{not} in general isomorphic as abstract rings; the arrow is an evaluation homomorphism, not an isomorphism: in the basic case $R=F$ it is onto $F[a_1,\dots,a_n]=F$, and its kernel is the maximal ideal $(e_1-a_1,\dots,e_n-a_n)$ of the polynomial ring $F[e_1,\dots,e_n]$ -- never zero, and consisting exactly of the relations forced by $f$.
   What matters is the \emph{image}: every symmetric combination of the roots is a polynomial in the $a_k$, hence in $F$.
 \dgi{Takeaway:} The point of this diagram is that the Fundamental Theorem converts the abstract statement ``symmetric functions of roots are rational'' into a concrete factorization: every such function factors through the elementary symmetric functions $e_k$, which are sent to the coefficients $a_k\in F$ by Vieta, so the result lands in $F$ automatically.
 \end{dgx}
