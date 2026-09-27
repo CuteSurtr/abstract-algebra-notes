@@ -36192,14 +36192,14 @@ So, for example, $f_{2,1} : z \mapsto (\bar{z}, z)$, where $\bar{z}$ is the comp
 \begin{exers}{Commutative-diagram exercises.}
 \item (Universal property of the free module.) Let $A$ be a set and $R^{(A)}$ the free $R$-module on $A$ with inclusion $\iota\colon A\to R^{(A)}$. State and prove that for every $R$-module $M$ and every set map $f\colon A\to M$ there is a unique $R$-homomorphism $\Phi$ making the diagram commute:
 \[\begin{tikzcd}[column sep=large]
-A \arrow[r, "\iota"] \arrow[dr, "f"'] & R^{(A)} \arrow[d, dashed, "\exists!\,\Phi"] \\
+A \arrow[r, hook, "\iota"] \arrow[dr, "f"'] & R^{(A)} \arrow[d, dashed, "\exists!\,\Phi"] \\
  & M
 \end{tikzcd}\]
 Then show any two $R$-modules with this universal property for $A$ are uniquely isomorphic.
 
 \item Let $\varphi\colon M\to N$ be a surjective $R$-homomorphism and $\pi\colon M\to M/\ker\varphi$ the quotient map. Show there is a unique isomorphism $\bar\varphi$ making the triangle commute, and label every arrow:
 \[\begin{tikzcd}[column sep=large]
-M \arrow[r, "\varphi"] \arrow[dr, "\pi"'] & N \\
+M \arrow[r, two heads, "\varphi"] \arrow[dr, two heads, "\pi"'] & N \\
  & M/\ker\varphi \arrow[u, dashed, "\bar\varphi"']
 \end{tikzcd}\]
 
@@ -36211,14 +36211,14 @@ with $\psi(a)=na$ (for a fixed integer $n>1$) and $\varphi$ the reduction map. V
 
 \item (Splitting.) Let
 \[\begin{tikzcd}[column sep=normal]
-0 \arrow[r] & A \arrow[r, "\psi"] & B \arrow[r, "\varphi"] & C \arrow[r] & 0
+0 \arrow[r] & A \arrow[r, hook, "\psi"] & B \arrow[r, two heads, "\varphi"] & C \arrow[r] & 0
 \end{tikzcd}\]
 be a short exact sequence of $R$-modules. Prove that the existence of a section $s\colon C\to B$ with $\varphi\circ s=\id_C$ implies $B\isom A\oplus C$, and draw the diagram exhibiting the isomorphism.
 
 \item Suppose both rows are short exact (with zeros prepended and appended) and the squares commute in
 \[\begin{tikzcd}[column sep=normal]
-A \arrow[r, "f"] \arrow[d, "\alpha"] & B \arrow[r, "g"] \arrow[d, "\beta"] & C \arrow[d, "\gamma"] \\
-A' \arrow[r, "f'"] & B' \arrow[r, "g'"] & C'
+A \arrow[r, hook, "f"] \arrow[d, "\alpha"] & B \arrow[r, two heads, "g"] \arrow[d, "\beta"] & C \arrow[d, "\gamma"] \\
+A' \arrow[r, hook, "f'"] & B' \arrow[r, two heads, "g'"] & C'
 \end{tikzcd}\]
 Prove that if $\alpha$ and $\gamma$ are isomorphisms then $\beta$ is an isomorphism (the short five lemma).
 
@@ -36291,7 +36291,7 @@ $M/N$ is already an abelian group (cosets of the subgroup $N$). We must check th
 Let $N\sgr M$ and let $\varphi\colon M\to L$ be an $R$-module homomorphism with $N\subseteq\ker\varphi$. Then there is a \emph{unique} $R$-module homomorphism $\overline{\varphi}\colon M/N\to L$ with $\overline{\varphi}\circ\pi=\varphi$, namely $\overline{\varphi}(m+N)=\varphi(m)$. The diagram commutes:
 \[
 \begin{tikzcd}[column sep=large]
-M \arrow[r, "\varphi"] \arrow[d, "\pi"'] & L \\
+M \arrow[r, "\varphi"] \arrow[d, two heads, "\pi"'] & L \\
 M/N \arrow[ur, dashed, "\exists!\,\overline{\varphi}"'] &
 \end{tikzcd}
 \]
@@ -36621,20 +36621,20 @@ is the smallest submodule of $M$ containing $A$.
 \begin{exers}{Commutative-diagram exercises.}
 \item (Universal property of the quotient.) Let $N\sgr M$ and let $\pi\colon M\to M/N$ be the canonical projection. Prove that for every $R$-module homomorphism $f\colon M\to L$ with $N\subseteq\ker f$ there is a \emph{unique} $R$-module homomorphism $\bar f\colon M/N\to L$ making the diagram commute:
 \[\begin{tikzcd}[column sep=large]
-M \arrow[r, "\pi"] \arrow[dr, "f"'] & M/N \arrow[d, dashed, "{\exists!\,\bar f}"] \\
+M \arrow[r, two heads, "\pi"] \arrow[dr, "f"'] & M/N \arrow[d, dashed, "{\exists!\,\bar f}"] \\
 & L
 \end{tikzcd}\]
 
 \item (Free module / universal property.) Let $A$ be a set, $R^{(A)}$ the free $R$-module on $A$, and $\iota\colon A\to R^{(A)}$ the inclusion of basis. Given an $R$-module $M$ and any set map $f\colon A\to M$, show there is a unique $R$-module homomorphism $\Phi\colon R^{(A)}\to M$ with $\Phi\circ\iota=f$:
 \[\begin{tikzcd}[column sep=large]
-A \arrow[r, "\iota"] \arrow[dr, "f"'] & R^{(A)} \arrow[d, dashed, "{\exists!\,\Phi}"] \\
+A \arrow[r, hook, "\iota"] \arrow[dr, "f"'] & R^{(A)} \arrow[d, dashed, "{\exists!\,\Phi}"] \\
 & M
 \end{tikzcd}\]
 Deduce that every $R$-module is a quotient of a free $R$-module.
 
 \item (Factoring a homomorphism.) Let $f\colon M\to N$ be an $R$-module homomorphism. Using the universal property of the quotient, construct the canonical factorization through $\bar f$ and prove $\bar f$ is injective:
 \[\begin{tikzcd}[column sep=large]
-M \arrow[r, "\pi"] \arrow[rr, bend left=30, "f"] & M/\ker f \arrow[r, dashed, "\bar f"'] & N
+M \arrow[r, two heads, "\pi"] \arrow[rr, bend left=30, "f"] & M/\ker f \arrow[r, dashed, hook, "\bar f"'] & N
 \end{tikzcd}\]
 Conclude the First Isomorphism Theorem $M/\ker f\isom\im f$.
 
@@ -36810,7 +36810,7 @@ the set of finitely-supported functions $A\to R$, written as formal finite sums 
 Let $A$ be a set and $\iota:A\to R^{(A)}$ the canonical inclusion. For every $R$-module $M$ and every set map $f:A\to M$, there is a \emph{unique} $R$-module homomorphism $\Phi:R^{(A)}\to M$ with $\Phi\circ\iota=f$, namely $\Phi\big(\sum_a r_a\,a\big)=\sum_a r_a\,f(a)$.
 \[
 \begin{tikzcd}[column sep=large]
-A \arrow[r, "\iota"] \arrow[dr, "f"'] & R^{(A)} \arrow[d, dashed, "\exists!\,\Phi"] \\
+A \arrow[r, hook, "\iota"] \arrow[dr, "f"'] & R^{(A)} \arrow[d, dashed, "\exists!\,\Phi"] \\
 & M
 \end{tikzcd}
 \]
@@ -36835,7 +36835,7 @@ Equivalently, restriction $\Hom_R(R^{(A)},M)\to\operatorname{Map}(A,M)$, $g\maps
 Every $R$-module $M$ is a quotient of a free module. If $A\subseteq M$ generates $M$ (e.g.\ $A=M$), the universal map $\Phi:R^{(A)}\to M$ determined by $a\mapsto a$ is surjective, giving a short exact sequence
 \[
 \begin{tikzcd}[column sep=normal]
-0 \arrow[r] & \ker\Phi \arrow[r] & R^{(A)} \arrow[r, two heads, "\Phi"] & M \arrow[r] & 0
+0 \arrow[r] & \ker\Phi \arrow[r, hook] & R^{(A)} \arrow[r, two heads, "\Phi"] & M \arrow[r] & 0
 \end{tikzcd}
 \qquad\text{and}\qquad
 M\isom R^{(A)}/\ker\Phi .
@@ -36853,7 +36853,7 @@ M\isom R^{(A)}/\ker\Phi .
 Moreover $M$ is finitely generated iff $M$ is a quotient of some $R^n$.
 \[
 \begin{tikzcd}[column sep=large]
-A \arrow[r, "\iota"] \arrow[dr, hook, "\subseteq"'] & R^{(A)} \arrow[d, two heads, "\Phi"] \\
+A \arrow[r, hook, "\iota"] \arrow[dr, hook, "\subseteq"'] & R^{(A)} \arrow[d, two heads, "\Phi"] \\
 & M
 \end{tikzcd}
 \]
@@ -37134,7 +37134,7 @@ module with basis map $\iota\colon A\to R^{(A)}$, $M$ any $R$-module, and
 $f\colon A\to M$ any set map. State and prove the universal property by
 constructing the unique $R$-homomorphism $\Phi$ making the triangle commute:
 \[\begin{tikzcd}[column sep=large]
-A \arrow[r, "\iota"] \arrow[dr, "f"'] & R^{(A)} \arrow[d, dashed, "{\exists!\,\Phi}"] \\
+A \arrow[r, hook, "\iota"] \arrow[dr, "f"'] & R^{(A)} \arrow[d, dashed, "{\exists!\,\Phi}"] \\
  & M
 \end{tikzcd}\]
 Then prove that this universal property characterizes $R^{(A)}$ up to unique
@@ -37152,7 +37152,7 @@ that every free module is projective.
 
 \item (Splitting a short exact sequence.) Given
 \[\begin{tikzcd}[column sep=normal]
-0 \arrow[r] & A \arrow[r, "\psi"] & B \arrow[r, "\varphi"] & C \arrow[r] & 0
+0 \arrow[r] & A \arrow[r, hook, "\psi"] & B \arrow[r, two heads, "\varphi"] & C \arrow[r] & 0
 \end{tikzcd}\]
 prove the equivalence of: (a) there is $s\colon C\to B$ with $\varphi s=\id_C$;
 (b) there is $r\colon B\to A$ with $r\psi=\id_A$; (c) $B\isom A\oplus C$
@@ -37639,7 +37639,7 @@ B \arrow[r, two heads, "g"'] & C
 
 \item Let $R$ be commutative and let
 \[\begin{tikzcd}[column sep=normal]
-0 \arrow[r] & A \arrow[r, "\psi"] & B \arrow[r, "\varphi"] & C \arrow[r] & 0
+0 \arrow[r] & A \arrow[r, hook, "\psi"] & B \arrow[r, two heads, "\varphi"] & C \arrow[r] & 0
 \end{tikzcd}\]
 be a short exact sequence of $R$-modules. Prove that for any $R$-module $N$ the induced sequence
 \[\begin{tikzcd}[column sep=normal]
@@ -37698,7 +37698,7 @@ Two boundary cases pin down the language. With $0$ the zero module:
 \begin{definition}[Short exact sequence]
 A \emph{short exact sequence (SES)} is an exact sequence of the form
 \[\begin{tikzcd}[column sep=normal]
-0 \arrow[r] & A \arrow[r, "\psi"] & B \arrow[r, "\varphi"] & C \arrow[r] & 0.
+0 \arrow[r] & A \arrow[r, hook, "\psi"] & B \arrow[r, two heads, "\varphi"] & C \arrow[r] & 0.
 \end{tikzcd}\]
 \begin{dgx}
 \dgi{Objects:} $0$ is the zero module (placed at both ends). $A$, $B$, $C$ are $R$-modules. The zero modules bookend the sequence to enforce injectivity at the left and surjectivity at the right.
@@ -38031,7 +38031,7 @@ An $R$-module $Q$ is \emph{injective} if for every injection $\iota\colon A\hook
 B$ and every homomorphism $f\colon A\to Q$ there is an extension $\tilde f\colon B\to Q$
 with $\tilde f\circ\iota=f$:
 \[\begin{tikzcd}[column sep=large]
-0 \arrow[r] & A \arrow[r, "\iota"] \arrow[d, "f"'] & B \arrow[dl, dashed, "\exists\,\tilde f"] \\
+0 \arrow[r] & A \arrow[r, hook, "\iota"] \arrow[d, "f"'] & B \arrow[dl, dashed, "\exists\,\tilde f"] \\
  & Q &
 \end{tikzcd}\]
 \begin{dgx}
@@ -38173,7 +38173,7 @@ generally Dedekind domains); over a general ring use Baer's Criterion.
 Let $0\to A\xrightarrow{\psi}B\xrightarrow{\varphi}C\to0$ be a SES of $R$-modules and $D$
 any $R$-module. Then the induced sequences
 \[\begin{tikzcd}[column sep=normal]
-0 \arrow[r] & \Hom_R(D,A) \arrow[r, "\psi_*"] & \Hom_R(D,B) \arrow[r, "\varphi_*"] & \Hom_R(D,C)
+0 \arrow[r] & \Hom_R(D,A) \arrow[r, hook, "\psi_*"] & \Hom_R(D,B) \arrow[r, "\varphi_*"] & \Hom_R(D,C)
 \end{tikzcd}\]
 \begin{dgx}
 \dgi{Objects:} Each node is a Hom-set: $\operatorname{Hom}_R(D,A)$ is the abelian group of all $R$-module homomorphisms from $D$ to $A$, and similarly for $B$ and $C$. The fixed module $D$ is the source; applying $\operatorname{Hom}_R(D,-)$ to the SES $0\to A\to B\to C\to 0$ produces this three-term sequence.
@@ -38186,7 +38186,7 @@ any $R$-module. Then the induced sequences
 \dgi{Takeaway:} The point of this diagram is that applying $\operatorname{Hom}_R(D,-)$ to a SES preserves the left two exactness conditions but can fail to be surjective at the right, with projectivity of $D$ being exactly the condition that restores full exactness.
 \end{dgx}
 \[\begin{tikzcd}[column sep=normal]
-0 \arrow[r] & \Hom_R(C,D) \arrow[r, "\varphi^*"] & \Hom_R(B,D) \arrow[r, "\psi^*"] & \Hom_R(A,D)
+0 \arrow[r] & \Hom_R(C,D) \arrow[r, hook, "\varphi^*"] & \Hom_R(B,D) \arrow[r, "\psi^*"] & \Hom_R(A,D)
 \end{tikzcd}\]
 \begin{dgx}
 \dgi{Objects:} Each node is again a Hom-set, but now the fixed module $D$ is the \emph{target} and the source varies. $\operatorname{Hom}_R(C,D)$, $\operatorname{Hom}_R(B,D)$, $\operatorname{Hom}_R(A,D)$ are abelian groups. Applying the contravariant $\operatorname{Hom}_R(-,D)$ reverses the order of the original $A\to B\to C$.
@@ -38216,7 +38216,7 @@ exactly when $D$ is injective.
 Let $A\xrightarrow{\psi}B\xrightarrow{\varphi}C\to0$ be exact (right exact) and $M$ a right
 $R$-module. Then
 \[\begin{tikzcd}[column sep=normal]
-M\tensor_R A \arrow[r, "1\tensor\psi"] & M\tensor_R B \arrow[r, "1\tensor\varphi"] & M\tensor_R C \arrow[r] & 0
+M\tensor_R A \arrow[r, "1\tensor\psi"] & M\tensor_R B \arrow[r, two heads, "1\tensor\varphi"] & M\tensor_R C \arrow[r] & 0
 \end{tikzcd}\]
 \begin{dgx}
 \dgi{Objects:} $M\otimes_R A$, $M\otimes_R B$, $M\otimes_R C$ are tensor products of the right $R$-module $M$ with left $R$-modules $A$, $B$, $C$ respectively. The terminal $0$ signals right-exactness: the last map is surjective.
@@ -38299,7 +38299,7 @@ injective.
 a=\tfrac{q}{2}\cdot2\tensor\bar a=\tfrac q2\tensor 2\bar a=\tfrac q2\tensor\bar0=0$), the
 sequence becomes
 \[\begin{tikzcd}[column sep=normal]
-0 \arrow[r] & \Q \arrow[r, "\times2"] & \Q \arrow[r] & 0 \arrow[r] & 0.
+0 \arrow[r] & \Q \arrow[r, "\times2", "\isom"'] & \Q \arrow[r] & 0 \arrow[r] & 0.
 \end{tikzcd}\]
 \begin{dgx}
 \dgi{Objects:} The four nodes after the initial $0$ arise from tensoring $0\to\Z\xrightarrow{\times2}\Z\to\Zn2\to0$ with $\Q$. The left two nodes are $\Q\otimes_\Z\Z\isom\Q$; the third is $\Q\otimes_\Z\Zn2=0$; the final $0$ is $\Q\otimes_\Z0=0$.
@@ -38574,7 +38574,7 @@ where $f(n) = (n, -n)$ and $g(a,b) = a + b$. Verify that $\im f = \ker g$, i.e.\
 \item Show that $\Zn{2}$ is \emph{not} a projective $\Zn{4}$-module. (Show the surjection $\Zn{4} \to \Zn{2}$ does not split, i.e.\ the identity map $\Zn{2} \to \Zn{2}$ does not lift through it.)
 
 \item Prove that the short exact sequence
-\[\begin{tikzcd}[column sep=normal] 0 \arrow[r] & \Z \arrow[r, "2"] & \Z \arrow[r] & \Zn{2} \arrow[r] & 0 \end{tikzcd}\]
+\[\begin{tikzcd}[column sep=normal] 0 \arrow[r] & \Z \arrow[r, hook, "2"] & \Z \arrow[r, two heads] & \Zn{2} \arrow[r] & 0 \end{tikzcd}\]
 of $\Z$-modules does not split. Compare with problem 8.
 
 \item Let $0 \to A \xrightarrow{\psi} B \xrightarrow{\varphi} C \to 0$ be a short exact sequence of $R$-modules. Prove the following are equivalent: (a) the sequence splits; (b) there is an $R$-module homomorphism $\lambda : B \to A$ with $\lambda \circ \psi = \id_A$; (c) there is an $R$-module homomorphism $\mu : C \to B$ with $\varphi \circ \mu = \id_C$. In each splitting case prove $B \isom A \oplus C$.
@@ -38638,14 +38638,14 @@ and use it to prove the canonical isomorphism $R \tensor_R N \isom N$ as $R$-mod
 
 \item (Snake Lemma) Given a commutative diagram of $R$-modules with exact rows
 \[\begin{tikzcd}[column sep=normal]
-& A \arrow[r] \arrow[d, "a"] & B \arrow[r] \arrow[d, "b"] & C \arrow[r] \arrow[d, "c"] & 0 \\
-0 \arrow[r] & A' \arrow[r] & B' \arrow[r] & C' &
+& A \arrow[r] \arrow[d, "a"] & B \arrow[r, two heads] \arrow[d, "b"] & C \arrow[r] \arrow[d, "c"] & 0 \\
+0 \arrow[r] & A' \arrow[r, hook] & B' \arrow[r] & C' &
 \end{tikzcd}\]
 state the snake lemma (the existence of the connecting map $\delta : \ker c \to \coker a$ and the resulting six-term exact sequence $\ker a \to \ker b \to \ker c \xrightarrow{\delta} \coker a \to \coker b \to \coker c$), and prove that $\delta$ is well defined.
 
 \item (Splitting via a section) Let $0 \to A \xrightarrow{\psi} B \xrightarrow{\varphi} C \to 0$ be a short exact sequence of $R$-modules. Suppose a homomorphism $\mu : C \to B$ exists with $\varphi \circ \mu = \id_C$, as in
 \[\begin{tikzcd}[column sep=large]
-0 \arrow[r] & A \arrow[r, "\psi"] & B \arrow[r, "\varphi"] & C \arrow[r] \arrow[l, dashed, bend left, "\mu"] & 0
+0 \arrow[r] & A \arrow[r, hook, "\psi"] & B \arrow[r, two heads, "\varphi"] & C \arrow[r] \arrow[l, dashed, bend left, "\mu"] & 0
 \end{tikzcd}\]
 Prove that $B = \psi(A) \oplus \mu(C)$ and hence $B \isom A \oplus C$.
 
@@ -38939,7 +38939,7 @@ The single most useful property of a basis is the following universal property, 
 Let $\mathcal{B}=\set{e_i}_{i\in I}$ be a basis of $V$ and let $W$ be any $F$-vector space. For every function $f\colon\mathcal{B}\to W$ there is a unique $F$-linear map $T\colon V\to W$ with $T(e_i)=f(e_i)$ for all $i$. Pictorially, writing $\iota\colon\mathcal{B}\hookrightarrow V$ for the inclusion:
 \[
 \begin{tikzcd}[column sep=large]
-\mathcal{B} \arrow[r, "\iota"] \arrow[dr, "f"'] & V \arrow[d, dashed, "\exists!\,T"] \\
+\mathcal{B} \arrow[r, hook, "\iota"] \arrow[dr, "f"'] & V \arrow[d, dashed, "\exists!\,T"] \\
 & W
 \end{tikzcd}
 \]
@@ -39083,7 +39083,7 @@ The quotient is characterized by a universal property dual to that of a basis: i
 Let $W\sgr V$ and $\pi\colon V\to V/W$ the projection. For any linear $T\colon V\to U$ with $W\subseteq\ker T$, there is a unique linear $\bar T\colon V/W\to U$ with $\bar T\circ\pi=T$:
 \[
 \begin{tikzcd}[column sep=large]
-V \arrow[r, "T"] \arrow[d, "\pi"'] & U \\
+V \arrow[r, "T"] \arrow[d, two heads, "\pi"'] & U \\
 V/W \arrow[ur, dashed, "\exists!\,\bar T"'] &
 \end{tikzcd}
 \]
@@ -39111,7 +39111,7 @@ If $\dim V<\infty$ and $W\sgr V$, then $\dim(V/W)=\dim V-\dim W$. Consequently, 
 encoded by the short exact sequence
 \[
 \begin{tikzcd}
-0 \arrow[r] & \ker T \arrow[r, "\iota"] & V \arrow[r, "T"] & \im T \arrow[r] & 0.
+0 \arrow[r] & \ker T \arrow[r, hook, "\iota"] & V \arrow[r, two heads, "T"] & \im T \arrow[r] & 0.
 \end{tikzcd}
 \]
 \begin{dgx}
@@ -39229,8 +39229,8 @@ In the following exercises let $V$ be a vector space of arbitrary dimension over
 \item (Universal property of the quotient.) Let $W\le V$ be a subspace with projection $\pi:V\to V/W$, and let $T:V\to U$ be a linear map of $F$-vector spaces with $W\subseteq\ker T$. Prove there is a unique linear map $\overline{T}:V/W\to U$ making the diagram
 \[
 \begin{tikzcd}
-V \arrow[r,"T"] \arrow[d,"\pi"'] & U \\
-V/W \arrow[ur,"\overline{T}"'] &
+V \arrow[r,"T"] \arrow[d,two heads,"\pi"'] & U \\
+V/W \arrow[ur,dashed,"\overline{T}"'] &
 \end{tikzcd}
 \]
 commute, i.e. $\overline{T}\circ\pi=T$. Compute $\dim\im\overline{T}$ in terms of $\dim V$, $\dim W$, and $\dim\ker T$.
@@ -39238,7 +39238,7 @@ commute, i.e. $\overline{T}\circ\pi=T$. Compute $\dim\im\overline{T}$ in terms o
 \item (First isomorphism theorem for vector spaces.) Let $T:V\to U$ be a linear map of finite-dimensional $F$-vector spaces. Using the previous universal property, construct the isomorphism $\overline{T}:V/\ker T \xrightarrow{\ \isom\ } \im T$ fitting into
 \[
 \begin{tikzcd}
-V \arrow[r,"T"] \arrow[d,"\pi"'] & U \\
+V \arrow[r,"T"] \arrow[d,two heads,"\pi"'] & U \\
 V/\ker T \arrow[r,"\overline{T}","\isom"'] & \im T \arrow[u,hook]
 \end{tikzcd}
 \]
@@ -39247,7 +39247,7 @@ and deduce $\dim V=\dim\ker T+\dim\im T$ directly from this diagram.
 \item (Short exact sequence splits.) Let $W\le V$ be a subspace of a finite-dimensional $F$-vector space, giving the short exact sequence
 \[
 \begin{tikzcd}
-0 \arrow[r] & W \arrow[r,"\iota"] & V \arrow[r,"\pi"] & V/W \arrow[r] & 0,
+0 \arrow[r] & W \arrow[r,hook,"\iota"] & V \arrow[r,two heads,"\pi"] & V/W \arrow[r] & 0,
 \end{tikzcd}
 \]
 where $\iota$ is inclusion and $\pi$ the projection. Prove this sequence splits, i.e. there is a linear map $s:V/W\to V$ with $\pi\circ s=\id_{V/W}$, and deduce $V\isom W\oplus(V/W)$ and hence $\dim V=\dim W+\dim(V/W)$.
@@ -39255,8 +39255,8 @@ where $\iota$ is inclusion and $\pi$ the projection. Prove this sequence splits,
 \item (Functoriality of $V\mapsto V/W$.) Let $T:V\to V'$ be a linear map and let $W\le V$, $W'\le V'$ be subspaces with $T(W)\subseteq W'$. Prove there is a unique linear map $\overline{T}:V/W\to V'/W'$ making
 \[
 \begin{tikzcd}
-V \arrow[r,"T"] \arrow[d,"\pi"'] & V' \arrow[d,"\pi'"] \\
-V/W \arrow[r,"\overline{T}"'] & V'/W'
+V \arrow[r,"T"] \arrow[d,two heads,"\pi"'] & V' \arrow[d,two heads,"\pi'"] \\
+V/W \arrow[r,dashed,"\overline{T}"'] & V'/W'
 \end{tikzcd}
 \]
 commute, and show that if $S:V'\to V''$ satisfies $S(W')\subseteq W''$ then $\overline{S\circ T}=\overline{S}\circ\overline{T}$ and $\overline{\id_V}=\id_{V/W}$.
@@ -39264,7 +39264,7 @@ commute, and show that if $S:V'\to V''$ satisfies $S(W')\subseteq W''$ then $\ov
 \item (Universal property of the direct sum.) Let $U_1,U_2$ be $F$-vector spaces with $V=U_1\oplus U_2$ and inclusions $\iota_1:U_1\to V$, $\iota_2:U_2\to V$. Given linear maps $f_1:U_1\to Z$ and $f_2:U_2\to Z$ into an $F$-vector space $Z$, prove there is a unique linear map $f:V\to Z$ with $f\circ\iota_1=f_1$ and $f\circ\iota_2=f_2$, as in
 \[
 \begin{tikzcd}
-U_1 \arrow[r,"\iota_1"] \arrow[dr,"f_1"'] & V \arrow[d,dashed,"f"] & U_2 \arrow[l,"\iota_2"'] \arrow[dl,"f_2"] \\
+U_1 \arrow[r,hook,"\iota_1"] \arrow[dr,"f_1"'] & V \arrow[d,dashed,"f"] & U_2 \arrow[l,hook',"\iota_2"'] \arrow[dl,"f_2"] \\
 & Z &
 \end{tikzcd}
 \]
@@ -40022,7 +40022,7 @@ commutes, where $T_A(x) = Ax$. State precisely the equation among $T, A, \beta_V
 \item (Universal property of the direct sum.) Let $U, W$ be $\F$-vector spaces with inclusions $\iota_U : U \to U \oplus W$ and $\iota_W : W \to U \oplus W$. Given any $\F$-vector space $Z$ and linear maps $f : U \to Z$, $g : W \to Z$, show there is a unique linear map $h : U \oplus W \to Z$ making
 \[
 \begin{tikzcd}
-U \arrow[dr, "f"'] \arrow[r, "\iota_U"] & U \oplus W \arrow[d, "h"] & W \arrow[l, "\iota_W"'] \arrow[dl, "g"] \\
+U \arrow[dr, "f"'] \arrow[r, hook, "\iota_U"] & U \oplus W \arrow[d, dashed, "h"] & W \arrow[l, hook', "\iota_W"'] \arrow[dl, "g"] \\
 & Z &
 \end{tikzcd}
 \]
@@ -40031,7 +40031,7 @@ commute. When $U, W, Z$ are finite-dimensional, describe the matrix of $h$ as a 
 \item (Universal property of the tensor product.) Let $V, W, Z$ be $\F$-vector spaces and let $\otimes : V \times W \to V \tensor W$ be the canonical bilinear map. Prove that for every bilinear map $b : V \times W \to Z$ there is a unique linear map $\tilde b : V \tensor W \to Z$ with
 \[
 \begin{tikzcd}
-V \times W \arrow[r, "\otimes"] \arrow[dr, "b"'] & V \tensor W \arrow[d, "\tilde b"] \\
+V \times W \arrow[r, "\otimes"] \arrow[dr, "b"'] & V \tensor W \arrow[d, dashed, "\tilde b"] \\
 & Z
 \end{tikzcd}
 \]
