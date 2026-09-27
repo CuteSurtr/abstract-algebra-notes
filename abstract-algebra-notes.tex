@@ -7892,10 +7892,10 @@ Let $H=\gen{x}$ and $K=\gen{y}$ with $\ord{\gen{x}}=\ord{\gen{y}}$. Define $\var
 \end{proof}
 
 \begin{method}{How to recognize a cyclic group and reduce a power $x^t$}
-\emph{Recognition trigger:} use this whenever a group (or subgroup) is presented as ``all powers of a single element,'' or you can exhibit one element whose order equals $\ord{\gen{x}}$, $\mu_n$, or $|G|$. Concretely:
+\emph{Recognition trigger:} use this whenever a group (or subgroup) is presented as ``all powers of a single element,'' or you can exhibit one element whose order equals the order $|G|$ of the (finite) group, e.g.\ $n=|\mu_n|$. Concretely:
 \begin{enumerate}
 \item \textbf{Find a candidate generator} $x$ and compute $\ord{x}=n$ (least $n>0$ with $x^n=1$).
-\item \textbf{Check it fills the group:} if $\ord{x}=\ord{\gen{x}}$ (Prop.~\ref{p:ordgen@c2}) -- e.g. $n=|G|$ -- then $G=\gen{x}$ is cyclic with $G=\{1,x,\dots,x^{n-1}\}$.
+\item \textbf{Check it fills the group:} if $G$ is finite and $\ord{x}=|G|$, then $\ord{\gen{x}}=\ord{x}=|G|$ (Prop.~\ref{p:ordgen@c2}), so $G=\gen{x}$ is cyclic with $G=\{1,x,\dots,x^{n-1}\}$.
 \item \textbf{To reduce a power $x^t$:} divide $t=qn+k$ with $0\le k<n$ (division algorithm); then $x^t=(x^n)^q x^k=x^k$. The reduced exponent is $k=t\bmod n$.
 \item \textbf{To test $x^t=1$:} by the gcd Lemma~\ref{l:gcd@c2}, $x^t=1\eqv n\mid t$.
 \end{enumerate}
@@ -8331,7 +8331,7 @@ Translation to $\Zn n$ (additive): $x^k$ becomes $\overline k=k\cdot\overline 1$
 \item \textbf{Order $\to$ generator.} The unique subgroup of order $d$ is $\gen{\overline{n/d}}$ (the cyclic span of the step $n/d$). Its elements are the multiples of $n/d$ in $\Zn n$.
 \item \textbf{Generator $\to$ order.} For an arbitrary $\overline a$, first collapse: $\gen{\overline a}=\gen{\overline{\gcd(a,n)}}$, and $\ord{\overline a}=n/\gcd(a,n)$.
 \item \textbf{Containment.} $\gen{\overline a}\sgr\gen{\overline b}\iff \gcd(b,n)\mid\gcd(a,n)$. Equivalently $|\gen{\overline a}|\,\big|\,|\gen{\overline b}|$ (smaller order sits inside larger order).
-\item \textbf{Lattice.} Draw the divisor lattice of $n$ \emph{upside down}: put $\Zn n$ (order $n$, divisor $n$) on top, $\{0\}$ (order $1$) at the bottom; an edge goes between two subgroups when one order divides the other with prime index.
+\item \textbf{Lattice.} Draw the divisor lattice of $n$ \emph{upside down}, with $\gen{\overline s}$ at the divisor $s$: $\Zn n=\gen{\overline 1}$ (order $n$) goes on top, $\{0\}=\gen{\overline n}$ (order $1$) at the bottom; an edge goes between two subgroups when one order divides the other with prime index.
 \end{enumerate}
 \end{method}
 
