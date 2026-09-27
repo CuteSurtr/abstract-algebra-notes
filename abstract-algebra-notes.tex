@@ -64960,13 +64960,13 @@ The dimension of a ring is, before anything else, a measure of how long a chain 
 \[
 \fp_0\subsetneq\fp_1\subsetneq\cdots\subsetneq\fp_n
 \]
-is a strictly increasing sequence of primes; its \emph{length} is $n$ (the number of strict inclusions, one less than the number of primes). This is the same convention used for the dimension of a variety as ``number of nested irreducible closed subsets''.
+is a strictly increasing sequence of primes; its \emph{length} is $n$ (the number of strict inclusions, one less than the number of primes). This is the same convention used for the dimension of a variety as the number of strict inclusions in a longest chain of nested irreducible closed subsets.
 
 \begin{definition}[{Krull dimension}]
 The \emph{Krull dimension} $\dim A$ of a ring $A$ is the supremum of the lengths $n$ of chains of prime ideals $\fp_0\subsetneq\fp_1\subsetneq\cdots\subsetneq\fp_n$ in $A$. The \emph{height} of a prime $\fp$, written $\hgt\fp$, is the supremum of the lengths of chains $\fp_0\subsetneq\cdots\subsetneq\fp_n=\fp$ descending from $\fp$; equivalently $\hgt\fp=\dim A_\fp$, the dimension of the local ring at $\fp$. Dually the \emph{coheight} (or dimension of $\fp$) is the sup of lengths of chains ascending from $\fp$, equal to $\dim(A/\fp)$.
 \end{definition}
 
-The two halves of a prime split the ambient dimension: chains through $\fp$ are a descending chain (counted by $\hgt\fp=\dim A_\fp$) glued to an ascending one (counted by $\dim A/\fp$), so $\hgt\fp+\dim(A/\fp)\le\dim A$ always, with equality the typical ``catenary'' situation. Under the order anti-isomorphism $\fq\mapsto\fq A_\fp$ between primes contained in $\fp$ and primes of the localization $A_\fp$, height becomes ordinary dimension --- this is localization as ``concentrating near the point $\fp$''.
+The two halves of a prime split the ambient dimension: chains through $\fp$ are a descending chain (counted by $\hgt\fp=\dim A_\fp$) glued to an ascending one (counted by $\dim A/\fp$), so $\hgt\fp+\dim(A/\fp)\le\dim A$ always, with equality the typical ``catenary'' situation. Under the inclusion-preserving bijection $\fq\mapsto\fq A_\fp$ between primes contained in $\fp$ and primes of the localization $A_\fp$, height becomes ordinary dimension --- this is localization as ``concentrating near the point $\fp$''.
 
 \begin{remark}
 Geometrically, $\Spec A$ carries the Zariski topology in which irreducible closed sets are exactly $V(\fp)$ for $\fp$ prime, and $V(\fp)\subseteq V(\fq)\iff\fq\subseteq\fp$. A chain of primes $\fp_0\subsetneq\cdots\subsetneq\fp_n$ is therefore a chain of irreducible closed subsets $V(\fp_0)\supsetneq\cdots\supsetneq V(\fp_n)$, so $\dim A$ is the longest such tower. This is the prime ideal serving as ``the common generalization of the primes of arithmetic and the points of geometry'' (A\&M, Introduction): in $\Z$ the chain $(0)\subsetneq(p)$ has length $1$; in $k[x]$ the chain $(0)\subsetneq(x-a)$ also has length $1$; both rings are one-dimensional, arithmetic and geometric for the same reason.
@@ -65041,7 +65041,7 @@ The polynomial for the $\fq$-adic filtration $(\fq^nM)$ is denoted $\chi_\fq^M(n
 \end{proposition}
 
 \begin{proof}[Idea]
-Put $G(A)=\gr_\fq(A)$ and $G(M)=\bigoplus M_n/M_{n+1}$. Then $G_0(A)=A/\fq$ is Artin, $G(A)$ is Noetherian generated in degree one, and $G_n(M)=M_n/M_{n+1}$ is a finite-length $A/\fq$-module. By the degree-one corollary, $\len(M_n/M_{n+1})=f(n)$ is a polynomial of degree $\le s-1$ for large $n$. Since $\len(M/M_n)=\sum_{r=0}^{n-1}\len(M_r/M_{r+1})$ and the successive difference $\len(M/M_{n+1})-\len(M/M_n)=f(n)$, the sum is a polynomial $g(n)$ of degree $\le s$. Independence of the stable filtration follows because any two stable $\fq$-filtrations have bounded difference (Artin--Rees), forcing the same degree and leading term.
+Put $G(A)=\gr_\fq(A)$ and $G(M)=\bigoplus M_n/M_{n+1}$. Then $G_0(A)=A/\fq$ is Artin, $G(A)$ is Noetherian generated in degree one, and $G_n(M)=M_n/M_{n+1}$ is a finite-length $A/\fq$-module. By the degree-one corollary, $\len(M_n/M_{n+1})=f(n)$ is a polynomial of degree $\le s-1$ for large $n$. Since $\len(M/M_n)=\sum_{r=0}^{n-1}\len(M_r/M_{r+1})$ and the successive difference $\len(M/M_{n+1})-\len(M/M_n)=f(n)$, the sum is a polynomial $g(n)$ of degree $\le s$. Independence of the stable filtration follows because any two stable $\fq$-filtrations have bounded difference (Lemma~\ref{lem:stable@c15}), forcing the same degree and leading term.
 \end{proof}
 
 \begin{proposition}[{$\fq$ and $\fm$ give the same degree}]
@@ -65108,7 +65108,7 @@ The proof is a cycle of three inequalities. \emph{$\delta(A)\ge d(A)$}: if $x_1,
 \end{proof}
 
 \begin{corollary}[{$\dim A$ is finite; embedding count}]
-Every Noetherian local ring has finite Krull dimension, and $\dim A\le\dim_k(\fm/\fm^2)$ where $k=A/\fm$. Consequently, in any Noetherian ring every prime has finite height, so $\Spec$ of a Noetherian ring satisfies the descending chain condition on irreducible closed sets.
+Every Noetherian local ring has finite Krull dimension, and $\dim A\le\dim_k(\fm/\fm^2)$ where $k=A/\fm$. Consequently, in any Noetherian ring every prime has finite height, so the prime ideals of a Noetherian ring satisfy the descending chain condition (equivalently, the irreducible closed subsets of its $\Spec$ satisfy the ascending chain condition).
 \end{corollary}
 
 \begin{proof}[Idea]
@@ -65122,7 +65122,7 @@ The dimension theorem is the precise sense in which the geometric, the analytic,
 \begin{wex}{The three integers agree for $A=k[x_1,\dots,x_n]_{\fm}$}
 Verify $\dim A=d(A)=\delta(A)=n$ for the local ring of affine $n$-space at the origin $\fm=(x_1,\dots,x_n)$.
 \wrec Compute each integer separately: the chain length, the degree of $\chi_\fm$, and the size of a minimal $\fm$-primary generating set.
-\wsol \emph{Chains}: $(0)\subsetneq(x_1)\subsetneq(x_1,x_2)\subsetneq\cdots\subsetneq(x_1,\dots,x_n)$ has length $n$, so $\dim A\ge n$ (and $=n$ below). \emph{Degree}: $\gr_\fm(A)\isom k[x_1,\dots,x_n]$, with Poincare series $(1-t)^{-n}$, pole order $n$, so $d(A)=n$. \emph{Generators}: $\fm=(x_1,\dots,x_n)$ is $\fm$-primary with $n$ generators, and $\dim_k(\fm/\fm^2)=n$ forces $\delta(A)\ge n$, so $\delta(A)=n$. Sanity check: all three equal $n$, exactly the dimension theorem; and the $x_i$ are a system of parameters because $n=\dim A$.
+\wsol \emph{Chains}: $(0)\subsetneq(x_1)\subsetneq(x_1,x_2)\subsetneq\cdots\subsetneq(x_1,\dots,x_n)$ has length $n$, so $\dim A\ge n$ (and $=n$ below). \emph{Degree}: $\gr_\fm(A)\isom k[x_1,\dots,x_n]$, with Poincare series $(1-t)^{-n}$, pole order $n$, so $d(A)=n$. \emph{Generators}: $\fm=(x_1,\dots,x_n)$ is $\fm$-primary with $n$ generators, and $\delta(A)\ge d(A)=n$ by the first inequality in the proof of the dimension theorem, so $\delta(A)=n$. Sanity check: all three equal $n$, exactly the dimension theorem; and the $x_i$ are a system of parameters because $n=\dim A$.
 \end{wex}
 
 \begin{wex}{Computing dimension from a system of parameters}
@@ -65152,7 +65152,7 @@ Let $A$ be a Noetherian ring and $x\in A$ neither a zero-divisor nor a unit. The
 \end{theorem}
 
 \begin{proof}[Idea]
-Localize at $\fp$, reducing to $A$ local with maximal ideal $\fp$ minimal over $(x)$; then $\dim(A/(x))=0$, so by the dimension theorem $\dim A\le1$. If $\hgt\fp$ were $0$, $\fp$ would be a minimal prime and $x$ (lying in $\fp$) a zero-divisor, contradiction. Hence $\hgt\fp=1$. The local step uses the inequality $\dim A/(x)\ge\dim A-1$ from cutting by one element, together with $\dim A\ge\delta(A)$.
+Localize at $\fp$, reducing to $A$ local with maximal ideal $\fp$ minimal over $(x)$; then $\dim(A/(x))=0$, so by the dimension theorem $\dim A\le1$. If $\hgt\fp$ were $0$, $\fp$ would be a minimal prime and $x$ (lying in $\fp$) a zero-divisor, contradiction. Hence $\hgt\fp=1$. The local step uses the inequality $\dim A/(x)\ge\dim A-1$ from cutting by one element, together with $\dim A\le\delta(A)$.
 \end{proof}
 
 \begin{theorem}[{Krull's height theorem; generalized PIT}]
@@ -65170,7 +65170,7 @@ Let $A=k[x_1,\dots,x_n]$ and $f$ a nonconstant irreducible polynomial. Compute $
 \[
 \dim A/(f)=\dim A-\hgt(f)=n-1
 \]
-(the affine domain $A/(f)$ is catenary, so height and coheight add to $n$). Sanity check: the plane curve $f=0$ in $\Aff^2$ ($n=2$) has dimension $1$, and the surface in $\Aff^3$ ($n=3$) has dimension $2$ --- one equation, one drop, exactly the PIT.
+(in the affine domain $A$ the height and coheight of every prime add up to $\dim A=n$). Sanity check: the plane curve $f=0$ in $\Aff^2$ ($n=2$) has dimension $1$, and the surface in $\Aff^3$ ($n=3$) has dimension $2$ --- one equation, one drop, exactly the PIT.
 \end{wex}
 
 \begin{wex}{Height of $(x,y)$ in $k[x,y,z]$ via the height theorem}
@@ -65206,7 +65206,7 @@ A ring satisfying these is called a \emph{regular local ring}, and a minimal gen
 \end{theorem}
 
 \begin{proof}[Idea]
-(i)$\Rightarrow$(iii) is clear since the degree-one part of $k[t_1,\dots,t_d]$ has dimension $d$. (ii)$\Rightarrow$(iii) is Nakayama. (iii)$\Rightarrow$(i): if $x_1,\dots,x_d$ generate $\fm$, the surjection $k[t_1,\dots,t_d]\to\gr_\fm(A)$, $t_i\mapsto\bar x_i$, is an isomorphism because both sides have Hilbert series of pole order $d=\dim A$, forcing the kernel to be zero. The general inequality $\dim_k(\fm/\fm^2)\ge\dim A$ holds always (Corollary above), so regularity is the case of equality.
+(i)$\Rightarrow$(ii) is clear since the degree-one part of $k[t_1,\dots,t_d]$ has dimension $d$. (ii)$\Rightarrow$(iii) is Nakayama. (iii)$\Rightarrow$(i): if $x_1,\dots,x_d$ generate $\fm$, the surjection $k[t_1,\dots,t_d]\to\gr_\fm(A)$, $t_i\mapsto\bar x_i$, is an isomorphism because both sides have Hilbert series of pole order $d=\dim A$, forcing the kernel to be zero. The general inequality $\dim_k(\fm/\fm^2)\ge\dim A$ holds always (Corollary above), so regularity is the case of equality.
 \end{proof}
 
 \begin{lemma}[{regular $\Rightarrow$ domain}]
@@ -65266,7 +65266,7 @@ Let $A=\bigl(k[x,y]/(y-x^2)\bigr)_{\fm}$ localized at $\fm=(x,y)$. Show $A$ is r
 \begin{wex}{A singular (non-regular) local ring: the node}
 Let $A=\bigl(k[x,y]/(xy)\bigr)_{\fm}$ at $\fm=(x,y)$ (two lines crossing at the origin). Show $\dim A=1$ but the embedding dimension is $2$, so $A$ is not regular.
 \wrec Compute $\dim A$ (a curve, so $1$) and $\dim_k(\fm/\fm^2)$ (count $x,y$ modulo $\fm^2$); regularity needs them equal.
-\wsol $A$ has dimension $1$: $V(xy)$ is a union of two lines, each $1$-dimensional, so $\dim A=1$ (the local ring sees both branches through the origin, but each chain $(0)\subsetneq\fm$-type has length $1$). The cotangent space: $\fm/\fm^2$ is spanned by the images of $x$ and $y$, and the only relation is $xy\in\fm^2$, which is automatic and imposes no linear relation; so $\dim_k(\fm/\fm^2)=2$. Since $2\ne1$, $A$ is not regular. Sanity check: embedding dimension $2>1=\dim A$, the signature of a singular point; the node ``needs'' a $2$-dimensional ambient tangent space to sit in, so it is genuinely singular --- matching $\gr_\fm(A)=k[x,y]/(xy)$, which is not a polynomial ring.
+\wsol $A$ has dimension $1$: $V(xy)$ is a union of two lines, each $1$-dimensional, so $\dim A=1$ (the local ring sees both branches through the origin: its maximal chains of primes are $(x)\subsetneq\fm$ and $(y)\subsetneq\fm$, each of length $1$, while $(0)$ is not prime because $xy=0$). The cotangent space: $\fm/\fm^2$ is spanned by the images of $x$ and $y$, and the only relation is $xy\in\fm^2$, which is automatic and imposes no linear relation; so $\dim_k(\fm/\fm^2)=2$. Since $2\ne1$, $A$ is not regular. Sanity check: embedding dimension $2>1=\dim A$, the signature of a singular point; the node ``needs'' a $2$-dimensional ambient tangent space to sit in, so it is genuinely singular --- matching $\gr_\fm(A)=k[x,y]/(xy)$, which is not a polynomial ring.
 \end{wex}
 
 \begin{wex}{$\dim A[x]=\dim A+1$ for $A=\Z$}
