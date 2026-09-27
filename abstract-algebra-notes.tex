@@ -38404,7 +38404,7 @@ never flat over $\Z$.
 $\gcd(4,6)=2$.
 \item Compute $\Zn4\tensor_\Z\Zn6$ and $\Q\tensor_\Z\Zn5$ from presentations, identifying
 each result.
-\item For a right $R$-module $M$, prove $R\tensor_R M\isom M$ and use it to show $R$ is a
+\item For a left $R$-module $M$, prove $R\tensor_R M\isom M$ and use it to show $R$ is a
 flat module over itself.
 \item Tensor the SES $0\to\Z\xrightarrow{\times5}\Z\to\Zn5\to0$ with $M=\Zn{10}$ and exhibit
 explicitly the failure of injectivity at the left end.
@@ -38414,20 +38414,19 @@ explicitly the failure of injectivity at the left end.
 \begin{exers}{Exercises (from the text).}
 \item Suppose that
 \[
-\begin{array}{ccc}
-A & \xrightarrow{\;\psi\;} & B \\
-\downarrow \alpha & & \downarrow \beta \\
-C & \xrightarrow{\;\varphi\;} & D
+\begin{array}{ccccc}
+A & \xrightarrow{\;\psi\;} & B & \xrightarrow{\;\varphi\;} & C \\
+\downarrow \alpha & & \downarrow \beta & & \downarrow \gamma \\
+A' & \xrightarrow{\;\psi'\;} & B' & \xrightarrow{\;\varphi'\;} & C'
 \end{array}
 \]
 is a commutative diagram of groups and the rows are exact. Prove that
 \begin{enumerate}
-\item[(a)] if $\varphi$ and $\alpha$ are injective and $\psi$ is surjective then $\beta$ is injective. (Here $C \to 0$ means $\psi$ is surjective. Suppose $\beta(b) = 0$. Then since $\varphi(\alpha(a)) = \beta(\psi(a))$ for any $a$, if $b = \psi(a)$ then $\varphi(\alpha(a)) = \beta(\psi(a)) = \beta(b) = 0$, and use the injectivity of $\varphi$ and $\alpha$ to deduce that $a$ and hence also $b$ is $0$.)
-\item[(b)] if $\beta$ and $\varphi$ are injective, then $\alpha$ is injective,
-\item[(c)] if $\beta$ and $\psi$ are surjective, then $\varphi$ is surjective,
-\item[(d)] if $\beta$ is injective and $\varphi, \psi$ are surjective then $\alpha$ is surjective,
-\item[(e)] if $\beta$ is surjective and $\varphi, \psi$ are injective then $\alpha$ is surjective,
-\item[(f)] if $\beta$ is injective, and $\varphi$ and $\psi$ are surjective, then $\alpha$ is surjective.
+\item[(a)] if $\varphi$ and $\alpha$ are surjective, and $\beta$ is injective then $\gamma$ is injective. [If $c \in \ker\gamma$, show there is a $b \in B$ with $\varphi(b) = c$. Show that $\varphi'(\beta(b)) = 0$ and deduce that $\beta(b) = \psi'(a')$ for some $a' \in A'$. Show there is an $a \in A$ with $\alpha(a) = a'$ and that $\beta(\psi(a)) = \beta(b)$. Conclude that $b = \psi(a)$ and hence $c = \varphi(b) = 0$.]
+\item[(b)] if $\psi'$, $\alpha$, and $\gamma$ are injective, then $\beta$ is injective,
+\item[(c)] if $\varphi$, $\alpha$, and $\gamma$ are surjective, then $\beta$ is surjective,
+\item[(d)] if $\beta$ is injective, $\alpha$ and $\varphi$ are surjective, then $\gamma$ is injective,
+\item[(e)] if $\beta$ is surjective, $\gamma$ and $\psi'$ are injective, then $\alpha$ is surjective.
 \end{enumerate}
 \item Suppose
 \[
@@ -38464,7 +38463,7 @@ is a commutative diagram of groups, and the rows are exact. Prove that
 \item Let $R$ and $S$ be rings with $1$ and let $M$ and $N$ be left $R$-modules. Assume also that $M$ is an $(R,S)$-bimodule.
 \begin{enumerate}
 \item[(a)] For $s \in S$ and for $\varphi \in \Hom_R(M,N)$ define $s\varphi : M \to N$ by $(s\varphi)(m) = \varphi(ms)$. Prove that $s\varphi$ is a homomorphism of left $R$-modules, and that this action of $S$ on $\Hom_R(M,N)$ makes it into a left $S$-module.
-\item[(b)] Let $S = R$ and let $M = R$ (as an $(R,R)$-bimodule by left and right ring multiplication on itself). For each $n \in N$ define $\varphi_n \in \Hom_R(R,N)$ by $\varphi_n(r) = rn$, i.e., $\varphi_n$ is the unique $R$-module homomorphism mapping $1_R$ to $n$. Show that $s\varphi_n$ as defined in (a) is the homomorphism $\varphi_{ns}$. Deduce that the map $n \mapsto \varphi_n$ is an isomorphism of left $R$-modules: $N \isom \Hom_R(R,N)$.
+\item[(b)] Let $S = R$ and let $M = R$ (as an $(R,R)$-bimodule by left and right ring multiplication on itself). For each $n \in N$ define $\varphi_n \in \Hom_R(R,N)$ by $\varphi_n(r) = rn$, i.e., $\varphi_n$ is the unique $R$-module homomorphism mapping $1_R$ to $n$. Show that $s\varphi_n$ as defined in (a) is the homomorphism $\varphi_{sn}$. Deduce that the map $n \mapsto \varphi_n$ is an isomorphism of left $R$-modules: $N \isom \Hom_R(R,N)$.
 \end{enumerate}
 \item Let $R$ and $S$ be rings with $1$ and let $M$ and $N$ be left $R$-modules. Assume also that $N$ is an $(R,S)$-bimodule.
 \begin{enumerate}
@@ -38472,7 +38471,7 @@ is a commutative diagram of groups, and the rows are exact. Prove that
 \item[(b)] Let $N = R$ as an $(R,R)$-bimodule as above. Deduce that $\Hom_R(M,R)$ is a right $R$-module --- called the dual module to $M$.
 \end{enumerate}
 \item Let $R$ be a ring with $1$. Let $M$ and $N$ be left $R$-modules and suppose $A$ is an $(R,R)$-bimodule. Prove that $\Hom_R(A,M)$ is a left $R$-module under the action $(r\varphi)(a) = \varphi(ar)$ for $r \in R$ and $\varphi \in \Hom_R(A,M)$ (cf. Exercise 10).
-\item Let $A$ be a nonzero finitely generated abelian group.
+\item Let $A$ be a finitely generated abelian group.
 \begin{enumerate}
 \item[(a)] Prove that $A$ is projective if and only if $A$ is a free $\Z$-module.
 \item[(b)] Prove that $A$ is injective if and only if $A = 0$.
@@ -38483,23 +38482,23 @@ is a commutative diagram of groups, and the rows are exact. Prove that
 \[
 0 \to \Hom_R(D,L) \xrightarrow{\;\psi'\;} \Hom_R(D,M) \xrightarrow{\;\varphi'\;} \Hom_R(D,N) \to 0
 \]
-is a short exact sequence of abelian groups for all $R$-modules $D$ if and only if the original sequence is a split short exact sequence. [To show the sequence is exact, take $D = N$ and show the lift of the identity map in $\Hom_R(N,N)$ to $\Hom_R(N,M)$ is a splitting homomorphism for $\varphi$.]
+is a short exact sequence of abelian groups for all $R$-modules $D$ if and only if the original sequence is a split short exact sequence. [To show the sequence splits, take $D = N$ and show the lift of the identity map in $\Hom_R(N,N)$ to $\Hom_R(N,M)$ is a splitting homomorphism for $\varphi$.]
 \item[(b)] Prove that the associated sequence
 \[
 0 \to \Hom_R(N,D) \xrightarrow{\;\varphi'\;} \Hom_R(M,D) \xrightarrow{\;\psi'\;} \Hom_R(L,D) \to 0
 \]
 is a short exact sequence of abelian groups for all $R$-modules $D$ if and only if the original sequence is a split short exact sequence.
 \end{enumerate}
-\item Let $M$ be a left $R$-module where $R$ is a ring with $1$.
+\item Let $M$ be a left $\Z$-module and let $R$ be a ring with $1$.
 \begin{enumerate}
 \item[(a)] Show that $\Hom_{\Z}(R,M)$ is a left $R$-module under the action $(r\varphi)(r') = \varphi(r'r)$ (see Exercise 10).
-\item[(b)] Suppose that $0 \to A \xrightarrow{\;\psi\;} B$ is an exact sequence of $R$-modules. Prove that if every homomorphism $f$ from $A$ to $M$ lifts to a homomorphism $F$ from $B$ to $M$ with $f = F \circ \psi$, then every homomorphism $f'$ from $A$ to $\Hom_{\Z}(R,M)$ lifts to a homomorphism $F'$ from $B$ to $\Hom_{\Z}(R,M)$ with $f' = F' \circ \psi$. [Given $f'$, show that $f(a) = f'(a)(1)$ defines a homomorphism of $A$ to $M$. If $F$ is a lift of $f$ to $B$, show that $F'(b)(r) = F(rb)$ defines a lift of $f'$ to $B$.]
-\item[(c)] Prove that if $Q$ is an injective $R$-module then $\Hom_{\Z}(R,Q)$ is also an injective $R$-module. (cf. Exercise 31.)
+\item[(b)] Suppose that $0 \to A \xrightarrow{\;\psi\;} B$ is an exact sequence of $R$-modules. Prove that if every $\Z$-module homomorphism $f$ from $A$ to $M$ lifts to a $\Z$-module homomorphism $F$ from $B$ to $M$ with $f = F \circ \psi$, then every $R$-module homomorphism $f'$ from $A$ to $\Hom_{\Z}(R,M)$ lifts to an $R$-module homomorphism $F'$ from $B$ to $\Hom_{\Z}(R,M)$ with $f' = F' \circ \psi$. [Given $f'$, show that $f(a) = f'(a)(1)$ defines a $\Z$-module homomorphism of $A$ to $M$. If $F$ is a lift of $f$ to $B$, show that $F'(b)(r) = F(rb)$ defines an $R$-module homomorphism from $B$ to $\Hom_{\Z}(R,M)$ that lifts $f'$.]
+\item[(c)] Prove that if $Q$ is an injective $\Z$-module then $\Hom_{\Z}(R,Q)$ is an injective $R$-module. (cf. Exercise 19.)
 \end{enumerate}
-\item Let $J$ and $A$ be left $R$-modules and let $M = \Hom_R(J,A)$. Assume that for any $R$-modules $B$ and $C$ that $\Hom_R(B,C)$ is a left $R$-module as in Exercise 12.
+\item Let $J$ be an $(R,R)$-bimodule, let $A$ be a left $R$-module and let $M = \Hom_R(J,A)$.
 \begin{enumerate}
 \item[(a)] For $r \in R$ and for $\varphi \in \Hom_R(J,A)$ define $r\varphi$ by $(r\varphi)(j) = \varphi(jr)$. Prove that $r\varphi$ is a homomorphism of left $R$-modules, and that this action of $R$ on $\Hom_R(J,A)$ makes it into a left $R$-module. (cf. Exercise 10.)
-\item[(b)] If $A$ is an injective $R$-module prove that $M = \Hom_R(J,A)$ is an injective $R$-module.
+\item[(b)] If $A$ is an injective $R$-module and $J$ is flat as a right $R$-module, prove that $M = \Hom_R(J,A)$ is an injective $R$-module. [Use the natural isomorphism $\Hom_R(X,M)\isom\Hom_R(J\tensor_R X,A)$ for left $R$-modules $X$. Flatness cannot be dropped: $\Hom_{\Z}(\Zn2,\Q/\Z)\isom\Zn2$ is not an injective $\Z$-module.]
 \end{enumerate}
 \item Show that if $R$ is a Noetherian ring (cf. Exercise 14 in Section 10.3) and $Q$ is an injective $R$-module then any direct sum of copies of $Q$ is also an injective $R$-module. [Use Baer's Criterion, Proposition 36.]
 \item This exercise proves that $\Q/\Z$ is an injective $\Z$-module (cf. Corollary 35).
@@ -38509,15 +38508,15 @@ is a short exact sequence of abelian groups for all $R$-modules $D$ if and only 
 \end{enumerate}
 \item Let $M$ be any left $R$-module. This exercise proves that $M$ may be embedded in an injective $R$-module.
 \begin{enumerate}
-\item[(a)] Show that $M$ is contained in an injective $\Z$-module $Q$ (cf. Exercise 30).
-\item[(b)] Show that $\Hom_{\Z}(R,M)$ is an injective $R$-module by Exercise 30.
-\item[(c)] Deduce that $M$ is contained in an injective $R$-module. [Use the previous exercise and Exercise 31.]
+\item[(a)] Show that $M$ is contained in an injective $\Z$-module $Q$ (cf. Exercise 18 and Corollary~\ref{cor:divisible@c10}).
+\item[(b)] Show that $\Hom_R(R,M) \subseteq \Hom_{\Z}(R,M) \subseteq \Hom_{\Z}(R,Q)$ as $R$-modules, and that $\Hom_{\Z}(R,Q)$ is an injective $R$-module by Exercise 15.
+\item[(c)] Deduce that $M$ is contained in an injective $R$-module. [Use the $R$-module isomorphism $M \isom \Hom_R(R,M)$ of Exercise 10.]
 \end{enumerate}
 \item This exercise completes the proof of Proposition 34. Suppose that $Q$ is an $R$-module with the property that every short exact sequence $0 \to Q \to M_1 \to M_2 \to 0$ splits and suppose that the sequence $0 \to A \xrightarrow{\;\psi\;} B$ is exact. Prove that every $R$-module homomorphism $f$ from $A$ to $Q$ lifts to an $R$-module homomorphism $F$ from $B$ to $Q$ with $f = F \circ \psi$ (i.e., $Q$ has the injective property with respect to all injections). [Imitate the proof of Proposition 34 (and use the previous exercise) to embed $Q$ into an injective module $I$. Then the splitting property together with Exercise 4 using Exercise 1(b) gives an isomorphism from $Q$ to a direct summand of $I$. Use the fact that the property in Proposition 36 holds for injective modules.]
 \item Prove that the injective hull of the $\Z$-module $\Z$ is $\Q$ and that $\Q$ contains an isomorphic copy of $\Z$ as an essential submodule.
-\item Prove that the injective hull of the $\Z$-module $\Z/p^n\Z$ is the injective hull of $\Z/p\Z$ and deduce that $\Z/p^n\Z$ has $\Q/\Z$ as its injective hull.
+\item Prove that the injective hull of the $\Z$-module $\Z/p^n\Z$ is the injective hull of $\Z/p\Z$ and deduce that $\Z/p^n\Z$ has the Pr\"ufer group $\Z[1/p]/\Z$ (the $p$-primary part of $\Q/\Z$), not $\Q/\Z$ itself, as its injective hull.
 \item If $F$ is a field, prove that the injective hull of $F[x]$ is the rational function field $F(x)$.
-\item Prove that $\Q$ is an injective hull for the $\Z$-module $\Z$ but is not an injective hull for the polynomial ring $R[x]$ in the indeterminate $x$ over the commutative ring $R$.
+\item Prove that the polynomial ring $R[x]$ in the indeterminate $x$ over the commutative ring $R$ is a flat $R$-module.
 \item Let $R$ and $S$ be rings with $1$ and suppose $M$ is a right $R$-module, and $N$ is an $(R,S)$-bimodule. If $M$ is flat over $R$ and $N$ is flat as an $S$-module then prove that $M \otimes_R N$ is flat as a right $S$-module.
 \item Suppose that $R$ is a commutative ring and that $M$ and $N$ are flat $R$-modules. Prove that $M \otimes_R N$ is a flat $R$-module. (See the previous exercise.)
 \item Prove that the (right) module $M \otimes_R S$ obtained by changing the base from the ring $R$ to the ring $S$ by some homomorphism $f : R \to S$ with $f(1_R) = 1_S$ (cf. Example 6 following Corollary 12 in Section 4) of the flat (right) $R$-module $M$ is the flat (right) $S$-module $M \otimes_R S$.
@@ -38528,7 +38527,7 @@ is a short exact sequence of abelian groups for all $R$-modules $D$ if and only 
 \item[(b)] Suppose $D_1 \subseteq D_2 \subseteq \cdots$ is an ascending chain of left ideals of $R$ and let $D = \bigcup_i D_i$. Show that if (I) is satisfied for each $D_i$ then (I) is satisfied for $D$.
 \item[(c)] Use Zorn's Lemma to prove that (I) is satisfied for every left ideal of $R$. Prove that this implies $A$ is flat as follows. Let $B$ be a submodule of the $R$-module $C$. By the previous exercises it suffices to consider the case where $C = R^n$ is a finitely generated free module; use induction on $n$, the case $n = 1$ being the assumption that (I) holds, together with parts (a) and (b), to complete the proof. [Use the commutative diagram with exact rows obtained from $0 \to K \to R^n \to R \to 0$, where $K = R^{n-1}$, and apply the snake lemma.]
 \end{enumerate}
-\item \emph{(A Flatness Criterion for quotients)} Suppose $A = F/K$ where $F$ is flat (e.g., if $F$ is free) and $K$ is an $R$-submodule of $F$. Show that $A = F/K$ is flat if and only if $K \cap FI = KI$ for every finitely generated ideal $I$ of $R$. (Use the flatness criterion in the preceding exercise.) [Use the previous exercise: the image of $A \otimes I$ in $A$ is $(K + FI)/K$ and the kernel of the map from $F \otimes I$ to $FI$ is $K \cap FI$; show $A \otimes I \to A$ is injective if and only if these are equal.]
+\item \emph{(A Flatness Criterion for quotients)} Suppose $A = F/K$ where $F$ is flat (e.g., if $F$ is free) and $K$ is an $R$-submodule of $F$. Show that $A = F/K$ is flat if and only if $K \cap FI = KI$ for every finitely generated ideal $I$ of $R$. (Use the flatness criterion in the preceding exercise.) [Use the previous exercise. Since $F$ is flat, $F \otimes I \isom FI$, and the image of $K \otimes I$ in $FI$ is $KI$; tensoring $0 \to K \to F \to A \to 0$ with $I$ gives $A \otimes I \isom FI/KI$. Under this identification the map $A \otimes I \to A = F/K$ is $FI/KI \to F/K$, whose kernel is $(K \cap FI)/KI$.]
 \item Let $M$ and $N$ be submodules of the $R$-module $L$.
 \begin{enumerate}
 \item[(a)] Suppose $\alpha : A \to M$ and $\beta : A \to N$ are $R$-module homomorphisms. Prove that $X = \{(\alpha(a), -\beta(a)) \mid a \in A\}$ is an $R$-submodule of the direct sum $M \oplus N$ and prove that $\alpha$ and $\beta$ factor through the quotient $(M \oplus N)/X$ (called the \emph{pushout} or \emph{fiber sum} of $\alpha$ and $\beta$) and that there is a commutative diagram
@@ -38541,9 +38540,9 @@ M & \xrightarrow{\;\pi_1\;} & P
 \]
 where $\pi_1$ and $\pi_2$ are the natural maps to the quotient induced by the maps into the first and second components.
 \item[(b)] Suppose $f : M \to D$ and $g : N \to D$ are $R$-module homomorphisms with $f \circ \alpha = g \circ \beta$. Prove that there is a unique $R$-module homomorphism from the pushout $P$ to $D$ making the natural diagram commute.
-\item[(c)] If $M$ and $N$ are submodules of an $R$-module $L$, show that the pushout of the inclusion maps $M \hookrightarrow L$ and $N \hookrightarrow L$ is $L/(M \cap N)$.
+\item[(c)] If $M$ and $N$ are submodules of an $R$-module $L$, show that the pushout of the inclusion maps $M \cap N \hookrightarrow M$ and $M \cap N \hookrightarrow N$ is isomorphic to the submodule $M + N$ of $L$.
 \end{enumerate}
-\item \emph{(Schanuel's Lemma)} If $0 \to K \to P \xrightarrow{\;\varphi\;} M \to 0$ and $0 \to K' \to P' \xrightarrow{\;\varphi'\;} M \to 0$ are exact sequences of $R$-modules where $P$ and $P'$ are projective, prove that $K \oplus P' \isom K' \oplus P$ as $R$-modules. [Show that there is an exact sequence $0 \to \ker \pi \to X \xrightarrow{\;\pi\;} P \to 0$ where $X = \{(x,y) \in P \oplus P' \mid \varphi(x) = \varphi'(y)\}$ is the submodule that is the pullback (or fiber product) of $\varphi$ and $\varphi'$, and the map $\pi$ is the natural projection onto the first component. Show that $\ker \pi \isom K'$ and that this sequence splits since $P$ is projective. Deduce that $X \isom K' \oplus P$. Show similarly that $X \isom K \oplus P'$.] The $R$-modules $M$ and $N$ are said to be \emph{projectively equivalent} if $M \oplus P \isom N \oplus Q$ for some projective $R$-modules $P$ and $Q$. Similarly, $M$ and $N$ are \emph{injectively equivalent} if $M \oplus Q \isom N \oplus Q'$ for some injective modules $Q$, $Q'$. The previous exercise shows $K$ and $K'$ are projectively equivalent.
+\item \emph{(Schanuel's Lemma)} If $0 \to K \to P \xrightarrow{\;\varphi\;} M \to 0$ and $0 \to K' \to P' \xrightarrow{\;\varphi'\;} M \to 0$ are exact sequences of $R$-modules where $P$ and $P'$ are projective, prove that $K \oplus P' \isom K' \oplus P$ as $R$-modules. [Show that there is an exact sequence $0 \to \ker \pi \to X \xrightarrow{\;\pi\;} P \to 0$ where $X = \{(x,y) \in P \oplus P' \mid \varphi(x) = \varphi'(y)\}$ is the submodule that is the pullback (or fiber product) of $\varphi$ and $\varphi'$, and the map $\pi$ is the natural projection onto the first component. Show that $\ker \pi \isom K'$ and that this sequence splits since $P$ is projective. Deduce that $X \isom K' \oplus P$. Show similarly that $X \isom K \oplus P'$.] The $R$-modules $M$ and $N$ are said to be \emph{projectively equivalent} if $M \oplus P \isom N \oplus Q$ for some projective $R$-modules $P$ and $Q$. Similarly, $M$ and $N$ are \emph{injectively equivalent} if $M \oplus Q \isom N \oplus Q'$ for some injective modules $Q$, $Q'$. This exercise shows $K$ and $K'$ are projectively equivalent.
 \end{exers}
 
 \begin{exers}{Practice problems.}
