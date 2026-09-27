@@ -16988,7 +16988,7 @@ actions. We first isolate the relevant vocabulary.
 \begin{definition}[$p$-group, $p$-subgroup]
 A group is a \emph{$p$-group} if every element has order a power of $p$. A finite group is a
 $p$-group if and only if its order is a power of $p$ (this equivalence uses Cauchy's theorem,
-proved below). A subgroup of $G$ that is a $p$-group is a \emph{$p$-subgroup} of $G$.
+which follows from Sylow's theorem below). A subgroup of $G$ that is a $p$-group is a \emph{$p$-subgroup} of $G$.
 \end{definition}
 
 \begin{definition}[Sylow $p$-subgroup]
@@ -17070,8 +17070,8 @@ Now restrict the conjugation action to any $p$-subgroup $Q \le G$ acting on $\ma
 Lemma~\ref{lem:fixed@c4}, $\ord{\mathcal S} \equiv |\mathcal S_0| \pmod p$ where $\mathcal S_0$ is
 the set of $Q$-fixed points. A point $R = gPg\inv \in \mathcal S$ is $Q$-fixed iff
 $Q \le N_G(R)$; one shows $Q \le N_G(R) \imp Q \le R$ (because $QR$ is then a $p$-group
-containing the Sylow $p$-subgroup $R$, forcing $QR = R$). Taking $Q = P$: $P$ fixes itself, so
-$|\mathcal S_0| \ge 1$ and $\ord{\mathcal S} \equiv |\mathcal S_0| \not\equiv 0$, consistent
+containing the Sylow $p$-subgroup $R$, forcing $QR = R$). Taking $Q = P$: $P$ fixes itself and no other point (if $P \le N_G(R)$ then $P \le R$,
+so $P = R$), whence $|\mathcal S_0| = 1$ and $\ord{\mathcal S} \equiv 1 \not\equiv 0$, consistent
 with $p \nmid \ord{\mathcal S}$.
 
 For a general $p$-subgroup $Q$: if $Q$ fixed no point of $\mathcal S$, then $|\mathcal S_0|=0$,
@@ -17132,7 +17132,7 @@ G \arrow[r, "\rho"] & \Sym\bigl(\Syl_p(G)\bigr)
   (the four subgroups $\gen{(123)}, \gen{(124)}, \gen{(134)}, \gen{(234)}$), so $\rho\colon S_4
   \to S_4$ (i.e.\ $S_4$ acting on a $4$-element set).  Conjugating $(123)$ by the transposition
   $(12)$ gives $(213) = (132)$, moving its subgroup to $\gen{(132)} = \gen{(123)}$; conjugating by
-  $(14)$ gives $(143)$, moving to a different Sylow.
+  $(14)$ gives $(423) = (234)$, moving to a different Sylow.
 \dgi{Common pitfall:} Students sometimes think $\rho$ maps $G$ into $\Aut(P)$ rather than into
   $\Sym(\Syl_p(G))$: $\rho$ permutes the \emph{set of subgroups} $\Syl_p(G)$, not the elements
   inside a single $P$.  Also, $\rho$ need not be injective; its kernel (elements normalizing every
