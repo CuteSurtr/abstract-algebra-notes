@@ -32180,7 +32180,7 @@ since $\Z$ is a domain, $\deg(f\cdot y)=\deg f+\deg y=3+1=4$. \checkmark
 
 \subsection*{Integral Domains: $R[x]$ a Domain, Degree Additivity, and Units}
 
-\begin{proposition}[D\&F 9.1, Prop.\ 4]
+\begin{proposition}[D\&F 7.2, Prop.\ 4; 9.1, Prop.\ 1]
 Let $R$ be an integral domain and let $f,g\in R[x]$ be nonzero. Then:
 \begin{enumerate}
   \item[(1)] $\deg(fg)=\deg f+\deg g$;
@@ -32322,7 +32322,7 @@ Prop.\ 2 gives the surjective \emph{reduction mod $p$} homomorphism with kernel 
 \dgi{Arrows:} The single arrow is the \emph{reduction-mod-$p$} ring homomorphism $\varphi: \Z[x] \to \F_p[x]$ defined by $\varphi(\sum_i a_i x^i) = \sum_i \bar{a}_i x^i$, where $\bar{a}_i = a_i \bmod p$. It is surjective (every polynomial in $\F_p[x]$ is hit by any lift of its coefficients to $\Z$), hence the double-head arrow.
 \dgi{What commutes:} This is a single arrow, so there is no path equality to verify. The key identity is $\ker \varphi = (p)[x] = (p)$, the set of polynomials all of whose coefficients are divisible by $p$.
 \dgi{Why it commutes:} $\varphi$ is a ring homomorphism because coefficient-reduction mod $p$ is itself a ring homomorphism $\Z \to \F_p$, and polynomial arithmetic (sum and convolution formulas) is defined coefficient-by-coefficient, so $\varphi(f+g) = \varphi(f)+\varphi(g)$ and $\varphi(fg) = \varphi(f)\varphi(g)$ follow termwise.
-\dgi{Why this matters here:} The surjectivity and kernel computation give, by the First Isomorphism Theorem, $\Z[x]/(p) \isom \F_p[x]$. Since $\F_p[x]$ is a domain, $(p)$ is prime in $\Z[x]$. This single arrow \emph{is} the engine of the reduction-mod-$p$ irreducibility test: if $\varphi(f)$ is irreducible in $\F_p[x]$, then $f$ is irreducible in $\Z[x]$.
+\dgi{Why this matters here:} The surjectivity and kernel computation give, by the First Isomorphism Theorem, $\Z[x]/(p) \isom \F_p[x]$. Since $\F_p[x]$ is a domain, $(p)$ is prime in $\Z[x]$. This single arrow \emph{is} the engine of the reduction-mod-$p$ irreducibility test: if $f$ is monic and $\varphi(f)$ is irreducible in $\F_p[x]$, then $f$ is irreducible in $\Z[x]$. (Monic cannot be dropped: $f=3x+3=3(x+1)$ is reducible in $\Z[x]$, yet $\varphi(f)=x+1$ is irreducible in $\F_2[x]$.)
 \dgi{Concrete example:} With $p=3$: $\varphi(2x^2 + 3x + 7) = 2x^2 + 0\cdot x + 1 = 2x^2 + 1 \in \F_3[x]$. The polynomial $3x \in \ker\varphi$ since all coefficients are divisible by $3$.
 \dgi{Common pitfall:} Students sometimes think $\varphi$ sends $x \mapsto p$ or changes the variable; it does not. Only the \emph{coefficients} are reduced; the indeterminate $x$ is unchanged. Also, surjectivity does not mean $\varphi$ has a ring-homomorphism section: the map $\F_p[x] \to \Z[x]$ sending $\bar{a}_i \mapsto a_i$ (any lift) is a set map but not a ring map.
 \dgi{Takeaway:} The point of this diagram is that reducing coefficients mod a prime $p$ gives a surjective ring homomorphism from $\Z[x]$ onto the simpler Euclidean domain $\F_p[x]$, whose kernel is exactly the ideal $(p)$, proving $(p)$ prime and enabling the reduction-mod-$p$ irreducibility criterion.
@@ -32440,7 +32440,7 @@ R[x]/(x)\isom R.
 With $R=\Z[y]$: $\Z[y][x]=\Z[x,y]$, and $\Z[x,y]/(x)\isom\Z[y]$. Concretely $\bar f$ is $f$
 with every $x$ set to $0$; e.g.\ $\overline{x^2y+3x+y^2+5}=y^2+5$.
 \textbf{Check.} $(x)$ is prime in $\Z[x,y]$ because $\Z[y]$ is a domain (Prop.\ 2(3) with
-$I=(x)$ of $\Z[x,y]$ viewed appropriately, or directly via the domain quotient).
+$R=\Z[x]$ and its prime ideal $I=(x)$ (as $\Z[x]/(x)\isom\Z$), since $I[y]=(x)\subseteq\Z[x][y]=\Z[x,y]$; or directly via the domain quotient).
 \checkmark
 \end{wex}
 
