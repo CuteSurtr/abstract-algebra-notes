@@ -28053,7 +28053,7 @@ is a surjective homomorphism and describe its kernel.
 \item Let $\varphi : R \to S$ be a surjective homomorphism of rings. Prove that the image of the center of $R$ is contained in the center of $S$ (cf. Exercise 7 of Section 1).
 
 \item Let $R$ and $S$ be nonzero rings with identity and denote their respective identities by $1_R$ and $1_S$. Let $\varphi : R \to S$ be a nonzero homomorphism of rings.
-(a) Prove that if $\varphi(1_R) \neq 1_S$ then $\varphi(1_R)$ is a zero divisor in $S$. Deduce that if $S$ is an integral domain then every ring homomorphism from $R$ to $S$ sends the identity of $R$ to the identity of $S$.
+(a) Prove that if $\varphi(1_R) \neq 1_S$ then $\varphi(1_R)$ is a zero divisor in $S$. Deduce that if $S$ is an integral domain then every nonzero ring homomorphism from $R$ to $S$ sends the identity of $R$ to the identity of $S$.
 (b) Prove that if $\varphi(1_R) = 1_S$ then $\varphi(u)$ is a unit in $S$ and that $\varphi(u^{-1}) = \varphi(u)^{-1}$ for each unit $u$ of $R$.
 
 \item Let $I$ and $J$ be ideals of $R$.
@@ -28082,7 +28082,7 @@ holds in $R$, where the binomial coefficient $\binom{n}{k}$ is interpreted in $R
 
 \item The \emph{characteristic} of a ring $R$ is the smallest positive integer $n$ such that $1 + 1 + \cdots + 1 = 0$ ($n$ times) in $R$; if no such integer exists the characteristic of $R$ is said to be 0. For example, $\Z/n\Z$ is a ring of characteristic $n$ for each positive integer $n$ and $\Z$ is a ring of characteristic 0.
 (a) Prove that the map $\Z \to R$ defined by
-\[ k \mapsto \begin{cases} 1 + 1 + \cdots + 1 \;(k \text{ times}) & \text{if } k > 0 \\ 0 & \text{if } k = 0 \\ -1 - 1 - \cdots - 1 \;(k \text{ times}) & \text{if } k < 0 \end{cases} \]
+\[ k \mapsto \begin{cases} 1 + 1 + \cdots + 1 \;(k \text{ times}) & \text{if } k > 0 \\ 0 & \text{if } k = 0 \\ -1 - 1 - \cdots - 1 \;(-k \text{ times}) & \text{if } k < 0 \end{cases} \]
 is a ring homomorphism whose kernel is $n\Z$, where $n$ is the characteristic of $R$ (this explains the use of the terminology "characteristic 0" instead of the archaic phrase "characteristic $\infty$" for rings in which no sum of $1$'s is zero).
 (b) Determine the characteristics of the rings $\Q$, $\Z[x]$, $\Z/n\Z[x]$.
 (c) Prove that if $p$ is a prime and if $R$ is a commutative ring of characteristic $p$, then $(a + b)^p = a^p + b^p$ for all $a, b \in R$.
@@ -28160,7 +28160,7 @@ is a ring homomorphism whose kernel is $n\Z$, where $n$ is the characteristic of
 \begin{exers}{Additional exercises.}
 \item Let $R$ be a commutative ring with $1$ and let $N=\nil(R)$ be its set of nilpotent elements. Prove $N$ is an ideal and that $R/N$ has no nonzero nilpotent elements (i.e.\ $\nil(R/N)=\{0\}$).
 
-\item Let $\varphi\colon R\to S$ be a ring homomorphism of commutative rings with $1$, and let $Q\subseteq S$ be a prime ideal. Prove $\varphi^{-1}(Q)$ is a prime ideal of $R$. Give an example showing $\varphi^{-1}$ of a maximal ideal need not be maximal.
+\item Let $\varphi\colon R\to S$ be a ring homomorphism of commutative rings with $1$ such that $\varphi(1_R)=1_S$, and let $Q\subseteq S$ be a prime ideal. Prove $\varphi^{-1}(Q)$ is a prime ideal of $R$. Give an example showing $\varphi^{-1}$ of a maximal ideal need not be maximal.
 
 \item Let $R=\Z[i]=\{a+bi:a,b\in\Z\}$, the Gaussian integers. Show the map $\Z[x]\to\Z[i]$, $x\mapsto i$, is a surjective homomorphism with kernel $\gen{x^2+1}$, hence $\Z[i]\isom\Z[x]/\gen{x^2+1}$. Then prove $\Z[i]/\gen{1+i}\isom\Zn{2}$.
 
@@ -28189,7 +28189,7 @@ Verify surjectivity explicitly for $m=4$, $n=9$ by exhibiting a preimage of $(1,
 
 \item (Universal property of the polynomial ring.) Let $R$ be a commutative ring, $S$ a commutative $R$-algebra via $\iota\colon R\to S$, and $s\in S$. Prove there is a unique ring homomorphism $\operatorname{ev}_s\colon R[x]\to S$ with $\operatorname{ev}_s|_R=\iota$ and $\operatorname{ev}_s(x)=s$, making the diagram commute:
 \[\begin{tikzcd}[row sep=large,column sep=large]
-R \arrow[r, "\iota"] \arrow[dr, "\iota"'] & R[x] \arrow[d, dashed, "\exists!\,\operatorname{ev}_s"] \\
+R \arrow[r, hook] \arrow[dr, "\iota"'] & R[x] \arrow[d, dashed, "\exists!\,\operatorname{ev}_s"] \\
 & S
 \end{tikzcd}\]
 Use it to define the evaluation map $\Z[x]\to\Zn{5}$ sending $x\mapsto 3$ and compute the image of $x^2+x+1$.
