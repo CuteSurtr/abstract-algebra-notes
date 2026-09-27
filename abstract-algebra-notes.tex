@@ -22044,8 +22044,8 @@ H\sdp K$ is the canonical inclusion $h\mapsto(h,1)$, indicated by the hooked arr
 \twoheadrightarrow K$ is the canonical surjection $(h,k)\mapsto k$, the projection onto the quotient
 factor; it is surjective (two-headed). The rightward $K\to 1$ is the unique map to the trivial group.
 The curved arrow $s\colon K\to H\sdp K$, $k\mapsto(1,k)$, is a \emph{section} (splitting): it satisfies
-$\pi\circ s=\id_K$, meaning the sequence splits. This $s$ need not have image in the center of
-$H\sdp K$ unless $K$ normalizes $H$ trivially (i.e.\ $[H,K]=1$).
+$\pi\circ s=\id_K$, meaning the sequence splits. Its image $s(K)$ need not centralize $H$;
+it does exactly when $K$ acts on $H$ trivially (i.e.\ $[H,K]=1$).
 \dgi{What commutes:} The exactness conditions: $\im(1\to H)=1=\ker(H\hookrightarrow H\sdp K)$;
 $\im(H\hookrightarrow H\sdp K)=H=\ker(H\sdp K\twoheadrightarrow K)$; $\im(H\sdp K
 \twoheadrightarrow K)=K=\ker(K\to 1)$. Additionally the section satisfies $\pi\circ s=\id_K$:
@@ -22068,8 +22068,8 @@ $\Sym_3\twoheadrightarrow\Zn{2}$ is the sign map; and the section $s\colon\Zn{2}
 $1\mapsto(1\,2)$ (a transposition). The section does \emph{not} centralize $H=A_3$, confirming a
 semidirect (not direct) product.
 \dgi{Common pitfall:} Seeing a split exact sequence, students sometimes assume the product must be
-direct. Splitting means the section $s$ exists, but the extension is direct only when $s(K)$ is
-central --- equivalently $K\nor H\sdp K$. In the semidirect case $K$ is \emph{not} normal, and
+direct. Splitting means the section $s$ exists, but the extension is direct only when $s(K)$
+centralizes $H$ --- equivalently $K\nor H\sdp K$. In the semidirect case $K$ is \emph{not} normal, and
 conjugation by $s(k)$ acts nontrivially on $H$.
 \dgi{Takeaway:} The point of this diagram is that splitting of the short exact sequence
 $1\to H\to H\sdp K\to K\to 1$ captures the existence of $s$ but not centrality, so direct products
@@ -22396,7 +22396,7 @@ The diagram
 \dgi{Objects:} The five nodes are: the trivial group $1$ (appearing at both ends), the normal
 subgroup $H$ (a group), the semidirect product $H\sdp_\varphi K$ (the middle group, containing
 copies of both $H$ and $K$), and the complement $K$ (a group). This is a short exact sequence
-of groups with an extra retraction arrow.
+of groups with an extra section arrow (a right inverse of $\pi$).
 \dgi{Arrows:} $\iota\colon H\to H\sdp K$, $\iota(h)=(h,1)$, is the inclusion of $H$ as the
 first factor (a normal subgroup embedding). $\pi\colon H\sdp K\to K$, $\pi(h,k)=k$, is the
 projection onto the second factor (a surjective homomorphism, drawn with two heads). $s\colon
@@ -22427,7 +22427,7 @@ splitting $s\colon K\to H\sdp K$, and this splitting encodes the entire conjugat
 commutes, where $\iota(h)=(h,1)$, $\pi(h,k)=k$, $s(k)=(1,k)$. Exactness is
 $\im\iota=\ker\pi=H\times\{1\}$, and $\pi s=\id_K$ is the splitting. Conversely a direct product is the
 case where $s(K)\nor G$ as well, i.e. both inclusions are normal. (D\&F: the extension splits $\eqv$
-$K$ has a complement $\eqv$ $G$ is a semidirect product.)
+$H$ has a complement in $G$ $\eqv$ $G$ is a semidirect product.)
 \end{remark}
 
 \begin{corollary}[Trivial action $=$ direct product]
@@ -22668,7 +22668,9 @@ $g$.
 \dgi{Common pitfall:} The dashed arrow goes \emph{into} $A\times B$, not out of it. Students
 sometimes read the projections $\pi_1,\pi_2$ as the given data and $(f,g)$ as a projection; it is
 the reverse. Also, the universality only produces a homomorphism $(f,g)$; it does not say $T\isom
-A\times B$ (that would require $f,g$ to be isomorphisms and $T$ to have the right order).
+A\times B$; $(f,g)$ is an isomorphism exactly when it is bijective (for finite groups, exactly when
+$\ker f\cap\ker g=1$ and $\ord T=\ord A\,\ord B$, as for $\Zn6\to\Zn2\times\Zn3$ above, although neither
+$f$ nor $g$ is an isomorphism).
 \dgi{Takeaway:} The point of this diagram is that the direct product $A\times B$ is the unique
 (up to isomorphism) group equipped with projections $\pi_1,\pi_2$ such that any two homomorphisms
 out of a test group $T$ factor through it, a property the semidirect product lacks because its two
