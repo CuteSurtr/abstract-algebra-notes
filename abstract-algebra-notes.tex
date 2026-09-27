@@ -13168,13 +13168,13 @@ K \arrow[u, hook] \arrow[r, two heads] & K/H \arrow[u, hook']
 
 
 \section{Composition Series and the H\"older Program}
-\subsection*{Composition series, Jordan--Holder, and solvable groups}
+\subsection*{Composition series, Jordan--H\"older, and solvable groups}
 
 This section organizes a finite group into ``smallest reasonable pieces'' and records
-(via the Jordan--Holder theorem below) that the multiset of those pieces is an invariant of
+(via the Jordan--H\"older theorem below) that the multiset of those pieces is an invariant of
 the group. The pieces are simple groups,
 and the assembly data is a chain of subgroups, each normal in the next. Two large results
-are quoted (their proofs are beyond the scope of this section): the Jordan--Holder theorem
+are quoted (their proofs are beyond the scope of this section): the Jordan--H\"older theorem
 and the simplicity of $A_n$ for $n\ge 5$.
 
 \begin{definition}[Subnormal series]
@@ -13256,7 +13256,7 @@ $V=\{1,(12)(34),(13)(24),(14)(23)\}\nor A_4$ is a proper nontrivial normal subgr
 $A_4$ is \emph{not} simple. \qedhere
 \end{proof}
 
-\begin{theorem}[Jordan--Holder; stated]
+\begin{theorem}[Jordan--H\"older; stated]
 Let $G\ne 1$ be a finite group. Then:
 \begin{enumerate}
 \item[\textup{(1)}] $G$ has a composition series; and
@@ -13292,11 +13292,11 @@ the common subgroup $N_{r-1}\cap M_{s-1}$. (D\&F outline a full proof in the exe
 \end{proof}
 
 \begin{remark}[A composition series is NOT a factorization]
-Jordan--Holder records the factors but \emph{not} how they are assembled.
+Jordan--H\"older records the factors but \emph{not} how they are assembled.
 $\Zn{4}$ and $\Zn{2}\times\Zn{2}$ have the \emph{same} composition factors
 ($\Zn 2,\Zn 2$) yet are non-isomorphic; likewise $\Zn 6$ and $S_3$ both have factors
 $\Zn 2,\Zn 3$. The extension problem ``which $G$ have a given factor multiset'' is exactly
-the hard half of the Holder program below.
+the hard half of the H\"older program below.
 \end{remark}
 
 \begin{method}{Building a composition series and reading off its factors}
@@ -13313,7 +13313,7 @@ step is automatically normal; in general a subgroup of index $2$ is always norma
 prime index $p\ge 3$ does \emph{not} by itself force normality.
 \item Factor of each step $=$ quotient $N_{i+1}/N_i$; identify it by its order. Order $p$
 prime $\Rightarrow\Zn p$. A nonabelian simple step (e.g. $A_5$) is read off as that group.
-\item \textit{Check.} (Jordan--Holder sanity): $\prod_i |N_{i+1}/N_i|=|G|$, and every factor
+\item \textit{Check.} (Jordan--H\"older sanity): $\prod_i |N_{i+1}/N_i|=|G|$, and every factor
 is simple. The multiset of factors must not depend on which maximal steps you chose.
 \end{enumerate}
 \end{method}
@@ -13340,11 +13340,11 @@ Each factor is of prime order, hence simple. So this is a composition series, wi
 \[\boxed{\Zn 2,\ \Zn 2,\ \Zn 3}.\]
 \textit{Check.} $2\cdot 2\cdot 3=12=|\Zn{12}|$. A \emph{different} chain
 $0\nor\gen 4\nor\gen 2\nor\Zn{12}$ (with $|\gen4|=3$, $|\gen2|=6$) has indices $3,2,2$,
-giving factors $\Zn 3,\Zn 2,\Zn 2$ --- the same multiset, as Jordan--Holder requires.
+giving factors $\Zn 3,\Zn 2,\Zn 2$ --- the same multiset, as Jordan--H\"older requires.
 
 Both chains are vertical towers, each rung labeled by its composition factor; the two
 \emph{differ in the order} of the factors but produce the \emph{same multiset}
-$\{\Zn2,\Zn2,\Zn3\}$ --- exactly the Jordan--Holder invariance.
+$\{\Zn2,\Zn2,\Zn3\}$ --- exactly the Jordan--H\"older invariance.
 \begin{center}\begin{tikzpicture}[yscale=1.25,xscale=1.0]
   % ---- chain 1:  0 <| <6> <| <3> <| Z/12  (orders 1,2,4,12) ----
   \node[ltdot] (Ab) at (0,0) {};
@@ -13433,7 +13433,7 @@ solvable.
 
 \begin{proof}
 A nonabelian simple group $G$ has exactly one composition series, $1\nor G$, whose only
-factor is $G/1\isom G$ --- nonabelian. By Jordan--Holder these are the composition factors,
+factor is $G/1\isom G$ --- nonabelian. By Jordan--H\"older these are the composition factors,
 and at least one (the only one) is nonabelian, so by the test (iii) above $G$ is not
 solvable. \qedhere
 \end{proof}
@@ -13503,7 +13503,7 @@ is
 \[
 1\ \nor\ A_5\ \nor\ S_5,
 \]
-with factors $A_5/1\isom A_5$ and $S_5/A_5\isom\Zn 2$. By Jordan--Holder these (up to order
+with factors $A_5/1\isom A_5$ and $S_5/A_5\isom\Zn 2$. By Jordan--H\"older these (up to order
 and isomorphism) are \emph{the} composition factors of $S_5$. The factor $A_5$ is
 nonabelian --- for instance $(123)$ and $(124)$ lie in $A_5$ but do not commute, since
 $(123)(124)=(13)(24)$ while $(124)(123)=(14)(23)$ --- hence $A_5$ is not of prime order.
@@ -13618,7 +13618,7 @@ previous worked example.
   $\Zn 2, \Zn 2, \Zn 2$ yet are non-isomorphic; the tower encodes factors, not the assembly.
 \dgi{Takeaway:} The point of this diagram is that a composition series is a vertical tower
   whose edge labels are exactly the simple composition factors, giving a canonical
-  group-theoretic ``atomic decomposition'' that Jordan--Holder guarantees is unique up to
+  group-theoretic ``atomic decomposition'' that Jordan--H\"older guarantees is unique up to
   reordering.
 \end{dgx}
 
@@ -13675,9 +13675,9 @@ exactly a short exact sequence with simple quotient:
 Iterating this --- peeling off one simple quotient at a time --- is precisely the top-down
 construction of a composition series in the Existence theorem.
 
-\begin{remark}[The Holder program]
-Jordan--Holder reduces the classification of all finite groups to two problems, jointly
-called the \emph{Holder program}:
+\begin{remark}[The H\"older program]
+Jordan--H\"older reduces the classification of all finite groups to two problems, jointly
+called the \emph{H\"older program}:
 \begin{enumerate}
 \item[\textbf{(A)}] \textbf{Classify the finite simple groups} --- the possible composition
 factors. This was completed (the Classification of Finite Simple Groups, ca.\ 2004): every
@@ -13700,7 +13700,7 @@ content sits in (B).
 \item Find a composition series for the quasidihedral group of order 16 (cf. Exercise 11, Section 2.5). Deduce that $QD_{16}$ is solvable.
 \item Use Cauchy's Theorem and induction to show that a finite abelian group has a subgroup of order $n$ for each positive divisor $n$ of its order.
 \item Prove that subgroups and quotient groups of a solvable group are solvable.
-\item Prove part (1) of the Jordan--Holder Theorem by induction on $|G|$.
+\item Prove part (1) of the Jordan--H\"older Theorem by induction on $|G|$.
 \item If $G$ is a finite group and $H \nor G$ prove that there is a composition series of $G$, one of whose terms is $H$.
 \item Let $G$ be a finite group. Prove that the following are equivalent:
 (i) $G$ is solvable
@@ -13708,8 +13708,8 @@ content sits in (B).
 (iii) all composition factors of $G$ are of prime order
 (iv) $G$ has a chain of subgroups $1 = N_0 \le N_1 \le N_2 \le \dots \le N_s = G$ such that each $N_i$ is a normal subgroup of $G$ and $N_{i+1}/N_i$ is abelian, $0 \le i \le s-1$.
 [For (iv), prove that a minimal normal subgroup $M$ of $G$ is necessarily abelian and then use induction. To see that $M$ is abelian, let $N \nor M$ be of prime index (by (iii)) and show that $x^{-1}y^{-1}xy \in N$ for all $x, y \in M$ (cf. Exercise 40, Section 1). Apply the same argument to $gNg^{-1}$ to show that $x^{-1}y^{-1}xy$ lies in the intersection of all $G$-conjugates of $N$, and use the minimality of $M$ to conclude that $x^{-1}y^{-1}xy = 1$.]
-\item Prove the following special case of part (2) of the Jordan--Holder Theorem: assume the finite group $G$ has two composition series $1 = N_0 \nor N_1 \nor \dots \nor N_r = G$ and $1 = M_0 \nor M_1 \nor M_2 = G$. Show that $r = 2$ and that the list of composition factors is the same. [Use the Second Isomorphism Theorem.]
-\item Prove part (2) of the Jordan--Holder Theorem by induction on $\min\{r,s\}$. [Apply the inductive hypothesis to $H = N_{r-1} \cap M_{s-1}$ and use the preceding exercise.]
+\item Prove the following special case of part (2) of the Jordan--H\"older Theorem: assume the finite group $G$ has two composition series $1 = N_0 \nor N_1 \nor \dots \nor N_r = G$ and $1 = M_0 \nor M_1 \nor M_2 = G$. Show that $r = 2$ and that the list of composition factors is the same. [Use the Second Isomorphism Theorem.]
+\item Prove part (2) of the Jordan--H\"older Theorem by induction on $\min\{r,s\}$. [Apply the inductive hypothesis to $H = N_{r-1} \cap M_{s-1}$ and use the preceding exercise.]
 \item Prove that if $H$ is a nontrivial normal subgroup of the solvable group $G$ then there is a nontrivial subgroup $A$ of $H$ with $A \nor G$ and $A$ abelian.
 \item Prove (without using the Feit--Thompson Theorem) that the following are equivalent:
 (i) every group of odd order is solvable
@@ -13724,7 +13724,7 @@ content sits in (B).
 
   \item Find all composition factors of the dihedral group $D_{16}$ (order $16$).
         Is the list of factors the same as for $\Zn{16}$? Explain in light of the
-        Jordan--Holder theorem.
+        Jordan--H\"older theorem.
 
   \item Write down a composition series for $S_4$. Identify each composition factor
         as a specific simple group, and confirm the product of the factor orders
@@ -13775,7 +13775,7 @@ content sits in (B).
 \end{exers}
 
 \begin{exers}{Additional exercises.}
-  \item Prove the Jordan--Holder theorem in the special case $\ord{G} = p^3$ ($p$ prime):
+  \item Prove the Jordan--H\"older theorem in the special case $\ord{G} = p^3$ ($p$ prime):
         show directly that any two composition series of such a $G$ have the same
         length and isomorphic factors (all isomorphic to $\Zn{p}$).
 
@@ -14624,11 +14624,11 @@ parity.
 \item [DF 3.4.3] Find a composition series for the quasidihedral group of order $16$ and deduce $QD_{16}$ is solvable.
 \item [DF 3.4.4] Use Cauchy's Theorem and induction to show a finite abelian group has a subgroup of order $n$ for each $n\mid|G|$.
 \item [DF 3.4.5] Prove that subgroups and quotient groups of a solvable group are solvable.
-\item [DF 3.4.6] Prove part (1) of the Jordan--Holder Theorem by induction on $|G|$.
+\item [DF 3.4.6] Prove part (1) of the Jordan--H\"older Theorem by induction on $|G|$.
 \item [DF 3.4.7] Prove that if $G$ is finite and $H\nor G$, there is a composition series of $G$ with $H$ as a term.
 \item [DF 3.4.8] Prove the equivalence of (i) solvable, (ii) a chain with cyclic factors, (iii) all composition factors of prime order, (iv) a chain of $G$-normal subgroups with abelian factors.
-\item [DF 3.4.9] Prove the special case of Jordan--Holder part (2) for series of lengths $r$ and $2$, showing $r=2$ and matching factors.
-\item [DF 3.4.10] Prove part (2) of the Jordan--Holder Theorem by induction on $\min\{r,s\}$.
+\item [DF 3.4.9] Prove the special case of Jordan--H\"older part (2) for series of lengths $r$ and $2$, showing $r=2$ and matching factors.
+\item [DF 3.4.10] Prove part (2) of the Jordan--H\"older Theorem by induction on $\min\{r,s\}$.
 \item [DF 3.4.11] Prove that a nontrivial $H\nor G$ in a solvable $G$ contains a nontrivial abelian $A\nor G$.
 \item [DF 3.4.12] Prove (without Feit--Thompson) that ``every group of odd order is solvable'' is equivalent to ``the only simple groups of odd order have prime order.''
 \item [DF 3.5.7] Prove that the group of rigid motions of a tetrahedron is isomorphic to $A_4$.
@@ -65734,7 +65734,7 @@ Sanity check: the submodule lattice is the chain $\set{M_n}_{n\ge0}\cup\set{M}$,
 $\mathbb{N}\cup\set{\infty}$ (with $M$ as $\infty$) -- well-ordered, so every descending chain stabilizes, yet containing the infinite strictly ascending chain $M_0\subsetneq M_1\subsetneq\cdots$ -- exactly the asymmetry between DCC and ACC.
 \end{wex}
 
-\subsection*{Length and the Jordan--Holder theorem}
+\subsection*{Length and the Jordan--H\"older theorem}
 
 The right finiteness measure for modules carrying both chain conditions is \emph{length}. It
 behaves like dimension for vector spaces and is the bookkeeping device behind every later count.
@@ -65749,7 +65749,7 @@ The integer $n$ is the \emph{length} of the series. If a composition series exis
 have \emph{finite length}, written $\len_R(M)<\infty$.
 \end{definition}
 
-\begin{theorem}[{Jordan--Holder}]
+\begin{theorem}[{Jordan--H\"older}]
 If $M$ has a composition series, then \emph{every} composition series of $M$ has the same length
 $n=\len_R(M)$, and the multiset of simple factors $\set{M_i/M_{i-1}}$ is determined up to
 isomorphism and reordering. Moreover $M$ has finite length iff $M$ is both Artinian and Noetherian,
@@ -65795,7 +65795,7 @@ Show that for a finite-dimensional $k$-vector space $V$, $\len_k(V)=\dim_k V$.
 \wrec The only simple $k$-module is $k$ itself; a composition series is a complete flag.
 \wsol Choose a basis $v_1,\dots,v_d$ and set $V_i=\Span(v_1,\dots,v_i)$. Then
 $0=V_0\subsetneq V_1\subsetneq\cdots\subsetneq V_d=V$ has factors $V_i/V_{i-1}\isom k$, all simple,
-so $\len_k(V)=d=\dim_k V$. Sanity check: Jordan--Holder says length is basis-independent, which here
+so $\len_k(V)=d=\dim_k V$. Sanity check: Jordan--H\"older says length is basis-independent, which here
 recovers the well-definedness of $\dim_k V$; over a field, Artinian = Noetherian = finite-dimensional.
 \end{wex}
 
@@ -65913,7 +65913,7 @@ $(2)\Rightarrow(3)$: in a Noetherian ring the zero ideal contains a product $\fp
 necessarily distinct) primes; dimension $0$ makes each $\fp_i$ maximal, so $0$ contains a product of
 maximal ideals and again the filtration by these products has finite-dimensional vector-space
 quotients, giving $\len_R(R)<\infty$.
-$(3)\Rightarrow(1)$: a module of finite length is Artinian (and Noetherian) by Jordan--Holder.
+$(3)\Rightarrow(1)$: a module of finite length is Artinian (and Noetherian) by Jordan--H\"older.
 \end{proof}
 
 \begin{corollary}[{$R/\Jac$ is a product of fields}]
