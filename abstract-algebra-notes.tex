@@ -64876,25 +64876,25 @@ and apply (10.13). Thus use the isomorphism
 \[
 \varprojlim_n \left( \varprojlim_m M/(\fa^m M + \fb^n M) \right) \cong \varprojlim_p M/(\fa^p M + \fb^p M)
 \]
-and the inclusions $(\fa + \fb)^p \subseteq \fa^p + \fb^p \subseteq (\fa + \fb)^p$.]
+and the inclusions $(\fa + \fb)^{2p} \subseteq \fa^p + \fb^p \subseteq (\fa + \fb)^p$.]
 
 \item Let $A$ be a Noetherian ring, $\fa$ an ideal of $A$, $\widehat{A}$ the $\fa$-adic completion. For any $x \in A$ let $\widehat{x}$ be the image of $x$ in $\widehat{A}$. Prove that $\fa$ is contained in the Jacobson radical of $A$ if and only if every maximal ideal of $A$ is closed for the $\fa$-topology. (A Noetherian topological ring in which the topology is defined by an ideal contained in the Jacobson radical is called a \emph{Zariski ring}. Examples are local rings and ($\fa$-adic) completions.)
 
-\item Let $A$ be a Noetherian ring, $\fa$ an ideal of $A$, and $\widehat{A}$ the $\fa$-adic completion. Prove that $\widehat{A}$ is faithfully flat over $A$ if and only if $A$ is a Zariski ring (for the $\fa$-topology). [For ``only if'' use Exercise 5(ii) of Chapter 1, and Exercise 16 of Chapter 3.]
+\item Let $A$ be a Noetherian ring, $\fa$ an ideal of $A$, and $\widehat{A}$ the $\fa$-adic completion. Prove that $\widehat{A}$ is faithfully flat over $A$ if and only if $A$ is a Zariski ring (for the $\fa$-topology). [Since $\widehat{A}$ is flat over $A$, it is enough (Chapter 3, Exercise 16) to show that $M \to \widehat{M}$ is injective for all finitely generated $M$ if and only if $A$ is a Zariski ring; now use (10.19) and Exercise 6.]
 
 \item Let $A$ be the local ring of a point in $\C^n$ (i.e., the ring of all rational functions $f/g \in \C(z_1, \ldots, z_n)$ with $g(0) \neq 0$), let $B$ be the ring of power series in $z_1, \ldots, z_n$ which converge in some neighborhood of the origin, and let $C$ be the ring of formal power series in $z_1, \ldots, z_n$, so that $A \subseteq B \subseteq C$. Show that $B$ is a local ring and that its completion for the maximal ideal topology is $C$. Assuming that $B$ is Noetherian, prove that $B$ is $A$-flat. [Use Chapter 3, Exercise 17, and Exercise 7 above.]
 
 \item Let $A$ be a local ring, $\fm$ its maximal ideal. Assume that $A$ is $\fm$-adically complete. For any polynomial $f(x) \in A[x]$, let $\bar{f}(x) \in (A/\fm)[x]$ denote its reduction mod $\fm$. Prove \emph{Hensel's lemma}: if $f(x)$ is monic of degree $n$ and if there exist coprime monic polynomials $\bar{g}(x)$, $\bar{h}(x) \in (A/\fm)[x]$ of degrees $r$, $n - r$ with $\bar{f}(x) = \bar{g}(x)\bar{h}(x)$, then we can lift $\bar{g}(x)$, $\bar{h}(x)$ back to monic polynomials $g(x)$, $h(x) \in A[x]$ such that $f(x) = g(x)h(x)$.
 
-[Assume inductively that we have constructed $g_k(x)$, $h_k(x) \in A[x]$ such that $g_k(x)h_k(x) - f(x) \equiv 0 \pmod{\fm^k A[x]}$. Then use the fact that since $g(x)$ and $h(x)$ are coprime we can find $\bar{a}_k(x)$, $\bar{b}_k(x)$, of degrees $\leq n - r$, $r$ respectively, such that $x^k = \bar{a}_k(x)\bar{g}(x) + \bar{b}_k(x)\bar{h}(x)$, where $p$ is any integer such that $1 \leq p \leq n$. Finally, use the completeness of $A$ to show that the sequences $g_k(x)$, $h_k(x)$ converge to the required $g(x)$, $h(x)$.]
+[Assume inductively that we have constructed $g_k(x)$, $h_k(x) \in A[x]$ such that $g_k(x)h_k(x) - f(x) \equiv 0 \pmod{\fm^k A[x]}$. Then use the fact that since $\bar{g}(x)$ and $\bar{h}(x)$ are coprime we can find $\bar{a}_p(x)$, $\bar{b}_p(x)$, of degrees $\leq n - r$, $r$ respectively, such that $x^p = \bar{a}_p(x)\bar{g}(x) + \bar{b}_p(x)\bar{h}(x)$, where $p$ is any integer such that $1 \leq p \leq n$. Finally, use the completeness of $A$ to show that the sequences $g_k(x)$, $h_k(x)$ converge to the required $g(x)$, $h(x)$.]
 
 \item \begin{enumerate}
-\item[i)] With the notation of Exercise 9, deduce from Hensel's lemma that if $\bar{f}(x)$ has a simple root $a \in A/\fm$, then $f(x)$ has a simple root $a \in A$ such that $\bar{a} = a \bmod \fm$.
+\item[i)] With the notation of Exercise 9, deduce from Hensel's lemma that if $\bar{f}(x)$ has a simple root $\alpha \in A/\fm$, then $f(x)$ has a simple root $a \in A$ such that $\alpha = a \bmod \fm$.
 \item[ii)] Show that 2 is a square in the ring of 7-adic integers.
 \item[iii)] Let $f(x, y) \in k[x, y]$, where $k$ is a field, and assume that $f(0, y)$ has $y = a_0$ as a simple root. Prove that there exists a formal power series $y(x) = \sum_{n=0}^{\infty} a_n x^n$ such that $f(x, y(x)) = 0$. (This gives the ``analytic branch'' of the curve $f = 0$ through the point $(0, a_0)$.)
 \end{enumerate}
 
-\item Show that the converse of (10.26) is false, even if we assume that $A$ is local and that $\widehat{A}$ is a finitely-generated $A$-module. [Take $A$ to be the ring of all $C^{\infty}$ functions of $x$ at $x = 0$, and use Borel's Theorem (every power series occurs as the Taylor expansion of some $C^{\infty}$ function).]
+\item Show that the converse of (10.26) is false, even if we assume that $A$ is local and that $\widehat{A}$ is a finitely-generated $A$-module. [Take $A$ to be the ring of germs of $C^{\infty}$ functions of $x$ at $x = 0$, and use Borel's Theorem (every power series occurs as the Taylor expansion of some $C^{\infty}$ function).]
 
 \item If $A$ is Noetherian, then $A[[x_1, \ldots, x_n]]$ is a faithfully flat $A$-algebra. [Express $A \to A[[x_1, \ldots, x_n]]$ as a composition of flat extensions, and use Exercise 5(v) of Chapter 1.]
 \end{exers}
@@ -64912,13 +64912,13 @@ and the inclusions $(\fa + \fb)^p \subseteq \fa^p + \fb^p \subseteq (\fa + \fb)^
 \begin{exers}{Additional exercises.}
 \item Let $G$ be a filtered abelian group with filtration $(G_n)$ and let $H=\bigcap_n G_n$. Prove that the completion map $\phi\colon G\to\widehat G$ factors as $G\twoheadrightarrow G/H\hookrightarrow\widehat G$, that $\widehat G\isom\widehat{G/H}$ for the quotient filtration, and conclude that completion depends only on the Hausdorff quotient. Deduce $\ker\phi=H$.
 \item Let $R$ be Noetherian, $\fa\subseteq R$ an ideal, and $\widehat R$ the $\fa$-adic completion. Using flatness of $\widehat R$ over $R$ (Proposition on $\widehat R$ flat), prove that for finitely generated ideals $\fb,\fc$ one has $\widehat{(\fb:\fc)}=(\widehat\fb:\widehat\fc)$ in $\widehat R$, and that $\widehat{\Ann_R(M)}\subseteq\Ann_{\widehat R}(\widehat M)$ with equality when $M$ is finitely generated.
-\item Let $(R,\fm)$ be a Noetherian local domain that is \emph{not} a field, with $\dim_{R/\fm}(\fm/\fm^2)=1$. Prove that $\gr_\fm(R)\isom (R/\fm)[t]$ as graded rings, deduce that $\bigcap_n\fm^n=0$ via Krull, and conclude that $R$ is a discrete valuation ring with completion $\widehat R\isom (R/\fm)[[t]]$.
-\item Let $R$ be Noetherian and $0\to M'\to M\to M''\to0$ a short exact sequence of finitely generated $R$-modules. Prove that the associated graded sequence $0\to\gr(M')\to\gr(M)\to\gr(M'')\to0$ (for the $\fa$-adic filtrations, with $M'$ given the induced filtration $\fa^nM\cap M'$) is exact, and explain precisely where the Artin--Rees lemma is used to replace the induced filtration on $M'$ by the $\fa$-adic one without changing $\gr(M')$ up to bounded shift.
+\item Let $(R,\fm)$ be a Noetherian local domain that is \emph{not} a field, with $\dim_{R/\fm}(\fm/\fm^2)=1$. Prove that $\gr_\fm(R)\isom (R/\fm)[t]$ as graded rings, deduce that $\bigcap_n\fm^n=0$ via Krull, and conclude that $R$ is a discrete valuation ring. Show that $\widehat R\isom k[[t]]$ for $R=k[x]_{(x)}$, but that in general $\widehat R\not\isom(R/\fm)[[t]]$: for $R=\Z_{(p)}$, $\widehat R=\Z_p$ has characteristic $0$ while $\F_p[[t]]$ has characteristic $p$.
+\item Let $R$ be Noetherian and $0\to M'\to M\to M''\to0$ a short exact sequence of finitely generated $R$-modules. Prove that the associated graded sequence $0\to\gr(M')\to\gr(M)\to\gr(M'')\to0$ (for the $\fa$-adic filtrations, with $M'$ given the induced filtration $\fa^nM\cap M'$) is exact, and explain why this needs no Artin--Rees, while Artin--Rees is what shows that the induced filtration on $M'$ and the $\fa$-adic one have bounded difference (hence give the same topology and the same completion $\widehat{M'}$). Show by the example $M=k[x,y]$, $M'=(x,y^2)$, $\fa=(x,y)$ that the two graded modules $\gr(M')$ can nevertheless differ, even up to a shift.
 \item Let $f(x)=x^3-x-1\in\Z_3[x]$. Show that $\bar f\in\F_3[x]$ has no root in $\F_3$, hence Hensel's lemma gives \emph{no} $3$-adic root, but that $f$ \emph{does} acquire a root in the unramified extension of $\Z_3$ with residue field $\F_{27}$. Contrast this with $g(x)=x^2-7$ over $\Z_3$, and decide whether $g$ has a root in $\Z_3$.
 \end{exers}
 
 \begin{exers}{Commutative-diagram exercises.}
-\item Complete the inverse-limit tower defining $\Z_p=\varprojlim\Z/p^n\Z$ together with its projections, and prove that the dashed map is the \emph{unique} ring homomorphism making every triangle commute (the universal property of the inverse limit). Fill in the skeleton, labelling each $\theta_{n}$ as the reduction $\Z/p^{n+1}\Z\twoheadrightarrow\Z/p^n\Z$:
+\item Complete the inverse-limit tower defining $\Z_p=\varprojlim\Z/p^n\Z$ together with its projections, and prove the universal property of the inverse limit: for every ring $T$ with ring maps $T\to\Z/p^n\Z$ compatible with the $\theta_n$ there is a \emph{unique} ring homomorphism $T\to\Z_p$ making every triangle commute. Fill in the skeleton, labelling each $\theta_{n}$ as the reduction $\Z/p^{n+1}\Z\twoheadrightarrow\Z/p^n\Z$:
 \[
 \begin{tikzcd}[column sep=2.0em, row sep=2.6em]
 \cdots \arrow[r] & |[alias=A]| \Z/p^{3}\Z \arrow[r,"\theta_2"] & |[alias=B]| \Z/p^{2}\Z \arrow[r,"\theta_1"] & |[alias=C]| \Z/p\Z \\
@@ -64934,14 +64934,14 @@ Then prove $\ker\pi_n=p^n\Z_p$ and that the induced maps $\Z_p/p^n\Z_p\to\Z/p^n\
 \end{tikzcd}
 \]
 Prove the right-hand square commutes, identify $\ker\widehat f$, and explain why surjectivity of $\widehat g$ uses that the system $(M'/(\fa^nM\cap M'))$ is a surjective inverse system.
-\item Let $R$ be Noetherian, $\fa\subseteq\fb$ ideals, and write $\widehat{R}^{\fa},\widehat{R}^{\fb}$ for the two adic completions. The identity of $R$ is filtration-compatible (since $\fb^n\subseteq\fa^n$ is false in general; use instead that the $\fb$-topology is coarser when $\fb\subseteq\fa$ -- here take $\fa\subseteq\fb$ so the $\fa$-topology refines the $\fb$-topology). Complete the square below, in which the horizontal arrows are completion maps and the vertical arrows are induced by $R/\fa^n\twoheadrightarrow R/\fb^n$, and prove it commutes:
+\item Let $R$ be Noetherian, $\fa\subseteq\fb$ ideals, and write $\widehat{R}^{\fa},\widehat{R}^{\fb}$ for the two adic completions. The identity of $R$ is filtration-compatible from the $\fa$-adic to the $\fb$-adic filtration, since $\fa^n\subseteq\fb^n$ (the $\fa$-topology refines the $\fb$-topology). Complete the square below, in which the horizontal arrows are completion maps and the vertical arrows are induced by $R/\fa^n\twoheadrightarrow R/\fb^n$, and prove it commutes:
 \[
 \begin{tikzcd}[row sep=large, column sep=huge]
 R \arrow[r,"\phi^{\fa}"] \arrow[d,equal] & \widehat{R}^{\fa} \arrow[d,"\psi"] \\
 R \arrow[r,"\phi^{\fb}"'] & \widehat{R}^{\fb}
 \end{tikzcd}
 \]
-Prove that $\psi$ is the unique continuous ring homomorphism with $\psi\circ\phi^{\fa}=\phi^{\fb}$, and that $\psi$ is surjective with $\ker\psi=\bigcap_n(\widehat{\fb}^{\,n}/\,\text{relations})$ described as the closure of $\widehat{R}^{\fa}\fb^\infty$; identify $\psi$ concretely for $R=\Z$, $\fa=(p^2)$, $\fb=(p)$.
+Prove that $\psi$ is the unique continuous ring homomorphism with $\psi\circ\phi^{\fa}=\phi^{\fb}$, that $\ker\psi=\bigcap_n\fb^n\widehat{R}^{\fa}$, and that $\psi$ need not be surjective (for $R=k[x,y]$, $\fa=(x)$, $\fb=(x,y)$ it is the inclusion $k[y][[x]]\hookrightarrow k[[x,y]]$); identify $\psi$ concretely for $R=\Z$, $\fa=(p^2)$, $\fb=(p)$.
 \item Let $R$ be Noetherian local with maximal ideal $\fm$. Complete the diagram exhibiting $\gr_\fm(R)\isom\gr_{\widehat\fm}(\widehat R)$ degree by degree, where the rows are the defining short exact sequences and the vertical isomorphisms come from $\widehat R/\widehat\fm^{\,n}\isom R/\fm^n$:
 \[
 \begin{tikzcd}[row sep=large, column sep=large]
