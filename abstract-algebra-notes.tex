@@ -55102,14 +55102,14 @@ f(x) = (x^2 + 3x + 5)(x^3 + 4x^2 + 4x + 4) \in \mathbb{F}_7[x].
 \[
 \begin{tikzcd}[row sep=1.7em, column sep=1.6em]
 & \F_{p^{18}} \arrow[dl,dash]\arrow[dr,dash] & \\
-\F_{p^6} \arrow[d,dash] & & \F_{p^9} \arrow[dll,dash]\arrow[d,dash] \\
+\F_{p^6} \arrow[d,dash]\arrow[drr,dash] & & \F_{p^9} \arrow[d,dash] \\
 \F_{p^2} \arrow[dr,dash] & & \F_{p^3} \arrow[dl,dash] \\
 & \F_p &
 \end{tikzcd}
 \qquad\longleftrightarrow\qquad
 \begin{tikzcd}[row sep=1.7em, column sep=1.6em]
 & 18 \arrow[dl,dash]\arrow[dr,dash] & \\
-6 \arrow[d,dash] & & 9 \arrow[dll,dash]\arrow[d,dash] \\
+6 \arrow[d,dash]\arrow[drr,dash] & & 9 \arrow[d,dash] \\
 2 \arrow[dr,dash] & & 3 \arrow[dl,dash] \\
 & 1 &
 \end{tikzcd}
@@ -55481,10 +55481,16 @@ K \arrow[dr,dash] & & L \arrow[dl,dash] \\
 State why $\Fix\bigl(\Gal(KL/L)\bigr)\cap K=K\cap L$.
 \item Take $K=\Q(\sqrt[3]2,\zeta_3)$, the splitting field of $x^3-2$ over $\Q$, with $\Gal(K/\Q)\isom S_3$. Draw the full subgroup lattice of $S_3$ and, beside it, the inverted lattice of intermediate fields of $K/\Q$, completing the tikz-cd skeleton below so that each subgroup sits opposite its fixed field. Prove that the unique normal subgroup of order $3$ corresponds to the unique Galois quadratic subfield $\Q(\zeta_3)$.
 \[
-\begin{tikzcd}[row sep=1.8em, column sep=1.6em]
-& S_3 \arrow[d,dash] & & & & \Q \arrow[d,dash] & \\
-& \gen{(123)} \arrow[dl,dash]\arrow[d,dash]\arrow[dr,dash] & & & & {?} \arrow[dl,dash]\arrow[d,dash]\arrow[dr,dash] & \\
-{?} & {?} & {?} & & {?} & {?} & {?}
+\begin{tikzcd}[row sep=2.2em, column sep=1.3em]
+& & & S_3 \arrow[dlll,dash]\arrow[dl,dash]\arrow[dr,dash]\arrow[drrr,dash] & & & \\
+\gen{(123)} \arrow[drrr,dash] & & {?} \arrow[dr,dash] & & {?} \arrow[dl,dash] & & {?} \arrow[dlll,dash] \\
+& & & {?} & & &
+\end{tikzcd}
+\qquad\qquad
+\begin{tikzcd}[row sep=2.2em, column sep=1.3em]
+& & & \Q \arrow[dlll,dash]\arrow[dl,dash]\arrow[dr,dash]\arrow[drrr,dash] & & & \\
+{?} \arrow[drrr,dash] & & {?} \arrow[dr,dash] & & {?} \arrow[dl,dash] & & {?} \arrow[dlll,dash] \\
+& & & {?} & & &
 \end{tikzcd}
 \]
 \item Let $K/F$ and $K'/F$ be Galois with $K\cap K'=F$. Complete the diagram exhibiting the injection $\Gal(KK'/F)\hookrightarrow\Gal(K/F)\times\Gal(K'/F)$ as an isomorphism, and prove the two projection triangles commute, where each $\pi$ is restriction:
