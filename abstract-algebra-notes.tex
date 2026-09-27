@@ -47880,8 +47880,8 @@ column first). Then
   \,\oplus\, \Z^{\,r},
 \]
 with $d_1 \mid d_2 \mid \cdots \mid d_k$ and $d_i > 1$; the $d_i$ are the
-\emph{invariant factors} and $r$ (the number of zero columns of the square
-diagonal block, i.e.\ generators with no relation) is the free rank. The group
+\emph{invariant factors} and $r$ (the number of zero rows,
+i.e.\ generators with no relation) is the free rank. The group
 is finite iff $r = 0$.
 \end{theorem}
 
@@ -47915,8 +47915,8 @@ already clear):
 \]
 Now work on $\begin{psmallmatrix} 4 & 6 \\ 6 & 6 \end{psmallmatrix}$. Move a
 smallest entry; $C_2 \mapsto C_2 - C_1$ gives $\begin{psmallmatrix} 4 & 2 \\ 6 & 0
-\end{psmallmatrix}$, then swap columns and reduce: with smallest entry $2$ in the
-corner, $R_2 \mapsto R_2 - 2R_1$ and a column clear give
+\end{psmallmatrix}$, then swap columns: with smallest entry $2$ in the
+corner the first column is already clear, and $C_2 \mapsto C_2 - 2C_1$ gives
 $\begin{psmallmatrix} 2 & 0 \\ 0 & 6 \end{psmallmatrix}$ (and $2 \mid 6$). Hence
 \[
   A' = Q A P = \begin{pmatrix} 1 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 6 \end{pmatrix},
@@ -47940,7 +47940,8 @@ vector lets us delete a generator, collapsing the matrix.
 \[
   A = \begin{pmatrix} 3 & 8 & 7 & 9 \\ 2 & 4 & 6 & 6 \\ 1 & 2 & 2 & 1 \end{pmatrix}.
 \]
-The third row has a leading $1$ (column $1$). Clear the rest of that row, then use
+The third row has a leading $1$ (column $1$). Clear the rest of that row (column operations) and of that
+column (row operations), then use
 the entry $1$ to delete generator $v_3$ and its column (operation (iv)). After
 clearing one is left, by repeated reductions, with a single relation: the matrix
 collapses to the $1\times 1$ matrix $[4]$. (Concretely, column reductions drive the
@@ -47949,9 +47950,9 @@ deletes another generator, and a final division leaves $[4]$.) Hence
 \[
   V \isom \Z/4\Z .
 \]
-Check: the same module is presented by the $2\times 1$ matrix
-$\begin{psmallmatrix} 4 \\ 0 \end{psmallmatrix}$ exactly when there is a free
-generator; here there is none, so $V$ is finite cyclic of order $4$, and indeed
+Check: $A$ has rank $3$, the number of generators, so $V$ has no free part (by
+contrast, the $2\times 1$ matrix $\begin{psmallmatrix} 4 \\ 0 \end{psmallmatrix}$ presents
+$\Z/4\Z \oplus \Z$, its zero row being a free generator); thus $V$ is finite cyclic of order $4$, and indeed
 $\gcd$ of the $3\times 3$ minors of $A$ equals $4$.
 \end{wex}
 
