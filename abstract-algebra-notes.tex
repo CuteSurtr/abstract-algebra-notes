@@ -31597,7 +31597,7 @@ Both $1+i$ ($\Nm = 2$) and $2+i$ ($\Nm = 5$) have prime norm, hence are irreduci
 
 \item Suppose $R$ is a UFD and $p$ is irreducible. Prove $p$ is prime, appealing to uniqueness of factorization.
 
-\textit{Answer.} Suppose $p \divides ab$, say $ab = pc$. Factor $a$, $b$, and $c$ into irreducibles. Then
+\textit{Answer.} Suppose $p \divides ab$, say $ab = pc$. If $a$ or $b$ is $0$ or a unit, then $p$ divides $a$ or $b$ directly (e.g.\ $b = a\inv pc$ if $a$ is a unit). Otherwise factor $a$, $b$, and $c$ into irreducibles, absorbing $c$ into $p$ if $c$ is a unit. Then
 \[
 \Big(\prod_i p_i\Big)\Big(\prod_j q_j\Big) = p \cdot \prod_k r_k
 \]
@@ -31643,7 +31643,7 @@ with $\Nm(3) = 9$, $\Nm(7) = 49$, $\Nm(1 \pm 2\sqrt{-5}) = 1 + 20 = 21$. Each fa
 \[
 \gen{x} \subsetneq \gen{\tfrac{x}{2}} \subsetneq \gen{\tfrac{x}{4}} \subsetneq \cdots,
 \]
-so ACC on principal ideals fails. Hence $x$ admits no finite factorization into irreducibles, and existence of irreducible factorizations is not automatic in a domain; UFDs must assume it.
+so ACC on principal ideals fails. This chain alone does not rule out a factorization of $x$, so argue directly: the units of $R$ are $\pm 1$, and a nonzero $f \in R$ with constant term $0$ is never irreducible, since $f = 2 \cdot \tfrac{f}{2}$ with $2$ and $\tfrac{f}{2}$ nonunits of $R$. So every irreducible of $R$ has nonzero constant term, hence so does every product of irreducibles, while $x$ has constant term $0$. Hence $x$ admits no finite factorization into irreducibles, and existence of irreducible factorizations is not automatic in a domain; UFDs must assume it.
 \end{exers}
 
 \begin{exers}{Commutative-diagram exercises.}
