@@ -53453,8 +53453,8 @@ Problems below are drawn from Dummit \& Foote, Artin (\emph{Algebra}), and Frale
 \item [DF 13.5.2] Find all irreducible polynomials of degrees $1,2,4$ over $\F_2$ and prove their product is $x^{16}-x$.
 \item [DF 13.5.3] Prove $d\mid n$ if and only if $x^d-1$ divides $x^n-1$.
 \item [DF 13.5.4] For an integer $a>1$, prove $d\mid n$ iff $a^d-1\mid a^n-1$; conclude $\F_{p^d}\subseteq\F_{p^n}$ iff $d\mid n$.
-\item [DF 13.5.6] Prove $x^{p^n}-1=\prod_{\alpha\in\F_{p^n}}(x-\alpha)$; conclude the product of the nonzero elements of $\F_{p^n}$ is $+1$ if $p=2$ and $-1$ if $p$ odd, and derive Wilson's Theorem $(p-1)!\equiv-1\pmod p$.
-\item [DF 13.5.9] Show $\binom{p^n}{p^i}$ is the coefficient of $x^{p^i}$ in $(1+x)^{p^n}$ and prove $\binom{p^n}{p^i}\equiv\binom{p^{n-1}}{p^{i-1}}\pmod p$.
+\item [DF 13.5.6] Prove $x^{p^n-1}-1=\prod_{0\neq\alpha\in\F_{p^n}}(x-\alpha)$; conclude the product of the nonzero elements of $\F_{p^n}$ is $+1$ if $p=2$ and $-1$ if $p$ odd, and derive Wilson's Theorem $(p-1)!\equiv-1\pmod p$.
+\item [DF 13.5.9] Show $\binom{pn}{pi}$ is the coefficient of $x^{pi}$ in $(1+x)^{pn}$; working over $\F_p$, show it is the coefficient of $(x^p)^i$ in $(1+x^p)^n$, and conclude $\binom{pn}{pi}\equiv\binom{n}{i}\pmod p$.
 \item [DF 13.6.1] If $m,n$ are coprime, $\zeta_m$ a primitive $m$th root and $\zeta_n$ a primitive $n$th root of unity, prove $\zeta_m\zeta_n$ is a primitive $mn$th root of unity.
 \item [DF 13.6.2] If $\zeta_n$ is a primitive $n$th root of unity and $d\mid n$, prove $\zeta_n^d$ is a primitive $(n/d)$th root of unity.
 \item [DF 13.6.3] Prove that if a field contains the $n$th roots of unity for $n$ odd then it also contains the $2n$th roots of unity.
@@ -53514,7 +53514,7 @@ Problems below are drawn from Dummit \& Foote, Artin (\emph{Algebra}), and Frale
 \item [DF 13.5.10] For $f(x_1,\dots,x_n)\in\Z[x_1,\dots,x_n]$ and any prime $p$, prove $f(x_1,\dots,x_n)^p-f(x_1^p,\dots,x_n^p)$ has all coefficients divisible by $p$.
 \item [DF 13.5.11] If $F$ is perfect, $K\supseteq F$, and $f\in F[x]$ has no repeated irreducible factors in $F[x]$, prove $f$ has no repeated irreducible factors in $K[x]$.
 \item [DF 13.6.7] Use Mobius inversion to prove $\Phi_m(x)=\prod_{d\mid m}(x^d-1)^{\mu(m/d)}$.
-\item [DF 13.6.8] For $\ell$ prime, determine the factorization of $\Phi_\ell(x)$ modulo $p$: degree-$f$ irreducible factors where $f=\mathrm{ord}_\ell(p)$, $(\ell-1)/f$ of them; in particular factor $\Phi_7(x)$ in $\F_2[x]$ and for $p\bmod 7$.
+\item [DF 13.6.8] For primes $\ell$ and $p$, determine the factorization of $\Phi_\ell(x)$ modulo $p$: $(x-1)^{\ell-1}$ if $p=\ell$, and for $p\neq\ell$ a product of $(\ell-1)/f$ distinct irreducible factors of degree $f=\mathrm{ord}_\ell(p)$; in particular factor $\Phi_7(x)$ in $\F_2[x]$ and for $p\bmod 7$.
 \item [DF 13.6.11] Determine the rational canonical form over $\F_p$ of the Frobenius map $\varphi:x\mapsto x^p$ on the $n$-dimensional $\F_p$-space $\F_{p^n}$.
 \item [DF 13.6.12] Determine the Jordan canonical form (over a field containing all eigenvalues) of the Frobenius map $\varphi$ on $\F_{p^n}$.
 \item [DF 13.6.13] (Wedderburn) Prove that a finite division ring $D$ is a field, following Witt's class-equation / cyclotomic argument.
@@ -53541,7 +53541,7 @@ Problems below are drawn from Dummit \& Foote, Artin (\emph{Algebra}), and Frale
 \item [Fraleigh 41.3] Using the proof of Theorem $41.11$, show the regular $9$-gon is not constructible.
 \item [Fraleigh 42.12] Show a finite field of $p^n$ elements has exactly one subfield of $p^m$ elements for each divisor $m$ of $n$.
 \item [Fraleigh 42.13] Show $x^{p^n}-x$ is the product of all monic irreducible polynomials in $\Z_p[x]$ of degree $d$ dividing $n$.
-\item [Fraleigh 42.14] (a) For $a\not\equiv0\pmod p$ show $x^2\equiv a\pmod p$ is solvable iff $a^{(p-1)/2}\equiv1\pmod p$; (b) decide whether $x^2-6$ is irreducible in $\Z_{17}[x]$.
+\item [Fraleigh 42.14] Let $p$ be an odd prime. (a) For $a\not\equiv0\pmod p$ show $x^2\equiv a\pmod p$ is solvable iff $a^{(p-1)/2}\equiv1\pmod p$; (b) decide whether $x^2-6$ is irreducible in $\Z_{17}[x]$.
 \end{exers}
 
 
