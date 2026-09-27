@@ -55150,7 +55150,7 @@ Then show the restriction map $\Gal(\F_{p^n}/\F_{p^d})\twoheadrightarrow\Gal(\F_
 \[
 \begin{tikzcd}
 \F_p[x] \arrow[r,"\operatorname{ev}_\alpha"] \arrow[d,twoheadrightarrow,"\pi"'] & \F_{p^n} \\
-\F_p[x]/(g(x)) \arrow[ru,"\overline{\operatorname{ev}_\alpha}"',hook] &
+\F_p[x]/(g(x)) \arrow[ru,"\overline{\operatorname{ev}_\alpha}"',dashed,hook] &
 \end{tikzcd}
 \]
 Identify $\ker(\operatorname{ev}_\alpha)$, explain why the image is exactly $\F_{p^d}$, and use this to justify why $g(x)\mid x^{p^n}-x$ precisely when $d\mid n$.
@@ -55503,9 +55503,9 @@ State why $\Fix\bigl(\Gal(KL/L)\bigr)\cap K=K\cap L$.
 \item Let $K/F$ and $K'/F$ be Galois with $K\cap K'=F$. Complete the diagram exhibiting the injection $\Gal(KK'/F)\hookrightarrow\Gal(K/F)\times\Gal(K'/F)$ as an isomorphism, and prove the two projection triangles commute, where each $\pi$ is restriction:
 \[
 \begin{tikzcd}[row sep=2.2em, column sep=2.6em]
-& \Gal(KK'/F) \arrow[dl,"\pi_K"']\arrow[dr,"\pi_{K'}"]\arrow[dd,"\isom"] & \\
+& \Gal(KK'/F) \arrow[dl,two heads,"\pi_K"']\arrow[dr,two heads,"\pi_{K'}"]\arrow[dd,"\isom"] & \\
 \Gal(K/F) & & \Gal(K'/F) \\
-& \Gal(K/F)\times\Gal(K'/F) \arrow[ul,"\operatorname{pr}_1"]\arrow[ur,"\operatorname{pr}_2"'] &
+& \Gal(K/F)\times\Gal(K'/F) \arrow[ul,two heads,"\operatorname{pr}_1"]\arrow[ur,two heads,"\operatorname{pr}_2"'] &
 \end{tikzcd}
 \]
 Explain precisely where the hypothesis $K\cap K'=F$ is used to upgrade the injection to a surjection.
