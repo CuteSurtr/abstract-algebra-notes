@@ -55362,7 +55362,7 @@ Two cases. \emph{Finite base field:} then $K$ is a finite field, and its multipl
 \end{proof}
 
 \begin{remark}
-The classical Lagrange recipe makes the infinite-field argument constructive. Let $\alpha=\alpha_1,\dots,\alpha_m$ and $\beta=\beta_1,\dots,\beta_n$ be the distinct roots (in a splitting field) of the minimal polynomials of $\alpha$ and $\beta$, with $\beta$ separable so the $\beta_j$ are distinct. Choose $c\in F$ avoiding the finitely many ``bad'' values $c=(\alpha_i-\alpha)/(\beta-\beta_j)$ for $j\neq1$. Then $\gamma=\alpha+c\beta$ has the property that the polynomials $m_{\alpha,F}(x)$ and $m_{\beta,F}(\gamma-cx)$ share exactly the one common root $x=\beta$ in the splitting field, so $\beta\in F(\gamma)$, hence $\alpha\in F(\gamma)$, and $F(\gamma)=F(\alpha,\beta)$.
+The classical Lagrange recipe makes the infinite-field argument constructive. Let $\alpha=\alpha_1,\dots,\alpha_m$ and $\beta=\beta_1,\dots,\beta_n$ be the distinct roots (in a splitting field) of the minimal polynomials of $\alpha$ and $\beta$, with $\beta$ separable so the $\beta_j$ are distinct. Choose $c\in F$ avoiding the finitely many ``bad'' values $c=(\alpha_i-\alpha)/(\beta-\beta_j)$ for $j\neq1$. Then $\gamma=\alpha+c\beta$ has the property that the polynomials $m_{\beta,F}(x)$ and $m_{\alpha,F}(\gamma-cx)$, both in $F(\gamma)[x]$, share exactly the one common root $x=\beta$ in the splitting field (a simple root of $m_{\beta,F}$), so their gcd in $F(\gamma)[x]$ is $x-\beta$ and $\beta\in F(\gamma)$, hence $\alpha\in F(\gamma)$, and $F(\gamma)=F(\alpha,\beta)$.
 \end{remark}
 
 \begin{method}{To produce a primitive element of $F(\alpha,\beta)$ over an infinite $F$: try $\gamma=\alpha+c\beta$ for small integers $c$, and verify $[F(\gamma):F]=[F(\alpha,\beta):F]$.}
@@ -55393,12 +55393,12 @@ Show $\F_{16}=\F_2(\gamma)$ for a generator $\gamma$ of $\F_{16}^{\times}$, and 
 
 \begin{wex}{Choosing a good $c$ by the Lagrange criterion}
 For $\alpha=\sqrt2$ (conjugates $\pm\sqrt2$) and $\beta=\sqrt3$ (conjugates $\pm\sqrt3$) over $\Q$, list the ``bad'' constants $c$ and confirm $c=1$ is admissible.
-\wrec The bad $c$ are $c=(\alpha_i-\alpha)/(\beta-\beta_j)$ over conjugates $\alpha_i\neq\alpha$ paired with $\beta_j\neq\beta$; any other $c$ gives a primitive $\gamma=\alpha+c\beta$.
-\wsol The only conjugate $\alpha_i\neq\alpha=\sqrt2$ is $-\sqrt2$, and the only $\beta_j\neq\beta=\sqrt3$ is $-\sqrt3$. The single bad value is
+\wrec The bad $c$ are $c=(\alpha_i-\alpha)/(\beta-\beta_j)$ over \emph{all} conjugates $\alpha_i$ of $\alpha$ (including $\alpha_i=\alpha$, which gives $c=0$) paired with $\beta_j\neq\beta$; any other $c$ gives a primitive $\gamma=\alpha+c\beta$.
+\wsol The conjugates of $\alpha=\sqrt2$ are $\pm\sqrt2$, and the only $\beta_j\neq\beta=\sqrt3$ is $-\sqrt3$. Taking $\alpha_i=\alpha$ gives the bad value $c=0$ (indeed $\gamma=\sqrt2$ is not primitive); the only other bad value, from $\alpha_i=-\sqrt2$, is
 \[
 c=\frac{\alpha_i-\alpha}{\beta-\beta_j}=\frac{-\sqrt2-\sqrt2}{\sqrt3-(-\sqrt3)}=\frac{-2\sqrt2}{2\sqrt3}=-\sqrt{\tfrac23}\notin\Q.
 \]
-So \emph{no} rational $c$ is bad, and in particular $c=1$ works: $\gamma=\sqrt2+\sqrt3$ is primitive, recovering the previous example. Sanity check: the criterion's geometric meaning is that $\alpha+c\beta=\alpha_i+c\beta_j$ for some conjugate pair, which would let two conjugates of $\gamma$ collide; here that requires an irrational $c$, so every $c\in\Q$ keeps all four conjugates $\pm\sqrt2\pm\sqrt3$ distinct.
+So the only rational bad value is $c=0$, and in particular $c=1$ works: $\gamma=\sqrt2+\sqrt3$ is primitive, recovering the previous example. Sanity check: the criterion's geometric meaning is that $\alpha+c\beta=\alpha_i+c\beta_j$ for some conjugate pair, which would let two conjugates of $\gamma$ collide; here that requires $c=0$ or an irrational $c$, so every nonzero $c\in\Q$ keeps all four conjugates $\pm\sqrt2\pm c\sqrt3$ distinct.
 \end{wex}
 
 \subsection*{Separability is essential: a non-simple extension}
