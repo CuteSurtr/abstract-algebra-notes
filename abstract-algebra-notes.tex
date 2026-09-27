@@ -11181,7 +11181,7 @@ and let $\overline{G} = G/\langle v^4 \rangle$ be the quotient of $G$ by the sub
 (c) Prove that $\overline{G} \isom \Z/12\Z$. (Thus $(\Z/24\Z)/(12\Z/24\Z) \isom \Z/12\Z$, just as if we inverted and cancelled the $24\Z$'s.)
 
 \item Let $G = \Z_4 \times \Z_4$ be given in terms of the following generators and relations:
-$G = \langle x, y \mid x^4 = y^4 = 1, \ xy = yx \rangle$.
+$G = \langle x, y \mid x^4 = y^4 = 1, \ xy = yx \rangle$. Let $\overline{G} = G/\langle x^2y^2 \rangle$ (note that every subgroup of the abelian group $G$ is normal).
 (a) Show that the order of $\overline{G}$ is 8.
 (b) Exhibit each element of $\overline{G}$ in the form $\overline{x}^a \overline{y}^b$, for some integers $a$ and $b$.
 (c) Find the order of each of the elements of $\overline{G}$ exhibited in (b).
@@ -11210,7 +11210,7 @@ $G = \langle x, y \mid x^4 = y^4 = 1, \ xy = yx \rangle$.
 
 \item Let $N$ be a finite subgroup of $G$ and suppose $G = \langle T \rangle$ and $N = \langle S \rangle$ for some subsets $S$ and $T$ of $G$. Prove that $N$ is normal in $G$ if and only if $tSt\inv \subseteq N$ for all $t \in T$.
 
-\item Let $N \nor G$ and let $g \in G$. Prove that $gN = Ng$ if and only if $g \in N_G(N)$.
+\item Let $N \le G$ and let $g \in G$. Prove that $gN = Ng$ if and only if $g \in N_G(N)$.
 
 \item Prove that if $H \le G$ and $N$ is a normal subgroup of $H$ then $H \le N_G(N)$. Deduce that $N_G(N)$ is the largest subgroup of $G$ in which $N$ is normal (i.e., is the join of all subgroups $H$ for which $N \nor H$).
 
@@ -11299,7 +11299,7 @@ $G = \langle x, y \mid x^4 = y^4 = 1, \ xy = yx \rangle$.
     \end{tikzcd}\]
     Apply this to $\varphi: \Z \to \Z/n\Z$ to recover $\Z/n\Z \isom \Z/n\Z$.
 
-  \item For the homomorphism $\varphi: \R \to \C^\times$, $\varphi(x) = e^{2\pi i x}$, fill in the objects $A$, $B$, $C$ so that the row below is a short exact sequence, and identify $C$:
+  \item For the homomorphism $\varphi: \R \to \C^\times$, $\varphi(x) = e^{2\pi i x}$, fill in the objects $A$ and $C$ so that the row below is a short exact sequence, and identify $C$:
     \[\begin{tikzcd}[column sep=normal]
       1 \arrow[r] & A \arrow[r, hook] & \R \arrow[r, two heads, "\varphi"] & C \arrow[r] & 1
     \end{tikzcd}\]
