@@ -44106,7 +44106,7 @@ The signature $(p,m)$ in Theorem~\ref{art:conics:normal@c11} depends only on the
 \end{theorem}
 
 \begin{proof}
-The number $z$ of zeros is congruence-invariant because $\rank(Q\trans A Q)=\rank A$ for invertible $Q$, so $p+m=\rank A$ is fixed; it remains to show $p$ is fixed. Realize $A$ as a symmetric form $\beta(X,Y)=X\trans A Y$. Let $p$ be the largest dimension of a subspace $U\subseteq\R^n$ on which $\beta$ is \emph{positive definite}, i.e.\ $\beta(u,u)>0$ for all $u\ne0$ in $U$; this number is defined without reference to any basis, hence is a congruence invariant. In the normal-form basis $v_1,\dots,v_n$, the span $U_+$ of the $p$ vectors with $\beta(v_i,v_i)=+1$ is positive definite, so the invariant is $\ge p$. Conversely, if $U$ has dimension $>p$, then $U$ meets the span $V_-$ of the $m+z$ vectors with $\beta(v_i,v_i)\le0$ nontrivially (dimensions add to more than $n$), giving a nonzero $u\in U\cap V_-$ with $\beta(u,u)\le0$, contradicting positive-definiteness on $U$. Hence the invariant equals $p$, so $p$ is determined by the congruence class.
+The number $z$ of zeros is congruence-invariant because $\rank(Q\trans A Q)=\rank A$ for invertible $Q$, so $p+m=\rank A$ is fixed; it remains to show $p$ is fixed. Realize $A$ as a symmetric form $\beta(X,Y)=X\trans A Y$. Let $p_0$ be the largest dimension of a subspace $U\subseteq\R^n$ on which $\beta$ is \emph{positive definite}, i.e.\ $\beta(u,u)>0$ for all $u\ne0$ in $U$; this number is defined without reference to any basis, hence is a congruence invariant. In the normal-form basis $v_1,\dots,v_n$, the span $U_+$ of the $p$ vectors with $\beta(v_i,v_i)=+1$ is positive definite, so the invariant is $\ge p$. Conversely, if $U$ has dimension $>p$, then $U$ meets the span $V_-$ of the $m+z$ vectors with $\beta(v_i,v_i)\le0$ nontrivially (dimensions add to more than $n$), giving a nonzero $u\in U\cap V_-$ with $\beta(u,u)\le0$, contradicting positive-definiteness on $U$. Hence the invariant equals $p$, so $p$ is determined by the congruence class.
 \end{proof}
 
 \begin{pitfall}
@@ -44127,7 +44127,7 @@ Determine the signature of $q(x,y,z)=x^2+2xy+2y^2+4yz+5z^2$ without computing ei
 
 \subsection*{Skew-Symmetric Forms and the Symplectic Basis}
 
-The other side of the bilinear coin: a form with $\langle v,v\rangle=0$ for every $v$. Here there is no orthogonal basis at all, yet the classification is even cleaner --- there is a single normal form, and rank is forced to be even.
+The other side of the bilinear coin: a form with $\langle v,v\rangle=0$ for every $v$. Here, unless the form is zero, there is no orthogonal basis at all, yet the classification is even cleaner --- there is a single normal form, and rank is forced to be even.
 
 \begin{definition}[Skew-symmetric form]
 A bilinear form $\langle\,,\,\rangle$ on $V$ is \textbf{skew-symmetric} (alternating) if $\langle v,v\rangle=0$ for all $v\in V$. Over a field of characteristic $\ne2$ this is equivalent to $\langle u,v\rangle=-\langle v,u\rangle$ for all $u,v$. Its matrix $A$ satisfies $A\trans=-A$ with zero diagonal.
