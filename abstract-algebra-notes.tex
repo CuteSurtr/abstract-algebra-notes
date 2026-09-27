@@ -45252,7 +45252,7 @@ where the $p_i$ are (not necessarily distinct) primes of $R$ and $\alpha_i \ge 1
 The two forms are equivalent (over any PID) by the Chinese Remainder Theorem: if $a=\prod_j p_j^{\beta_j}$ with the $p_j$ distinct, then $R/(a)\isom\bigoplus_j R/(p_j^{\beta_j})$.
 
 \begin{remark}[Converting between the two lists]
-\emph{Invariant factors $\to$ elementary divisors:} factor each $a_i$ into prime powers and list them. \emph{Elementary divisors $\to$ invariant factors:} for each prime $p$ sort its exponents in nondecreasing order and pad with $0$'s on the LEFT so all primes have the same length; the $k$-th invariant factor multiplies the $k$-th exponents across primes. The largest invariant factor $a_m$ is the lcm of all elementary divisors and equals $\mathrm{Ann}(\mathrm{Tor}(M))$'s generator (the order/annihilator).
+\emph{Invariant factors $\to$ elementary divisors:} factor each $a_i$ into prime powers and list them. \emph{Elementary divisors $\to$ invariant factors:} for each prime $p$ sort its exponents in nondecreasing order and pad with $0$'s on the LEFT so all primes have the same length; the $k$-th invariant factor is the product over all primes $p$ of $p$ raised to its $k$-th exponent. The largest invariant factor $a_m$ is the lcm of all elementary divisors and generates $\mathrm{Ann}(\mathrm{Tor}(M))$ (for $R=\Z$: $a_m$ is the exponent of $\mathrm{Tor}(M)$, not its order).
 \end{remark}
 
 \begin{wex}{Both decompositions of one group}
@@ -45361,7 +45361,7 @@ Reading the right column: $M\isom\bigoplus_i R/(a_i)$, where $a_i=0$ contributes
 Let $M=\Z^2/N$ where $N=\Span_\Z\{(6,0),(0,9),(3,3)\}$. Classify $M$ by aligning a basis.
 \wrec The diagram above: diagonalize the $2\times3$ relations matrix to Smith Normal Form, then quotient coordinatewise.
 \wsol Relations as columns: $A=\begin{pmatrix}6&0&3\\0&9&3\end{pmatrix}$ ($2$ generators, $3$ relations). $d_1=\gcd(6,0,3,0,9,3)=3$, so $a_1=3$. $d_2=\gcd$ of $2\times2$ minors: $\det\begin{pmatrix}6&0\\0&9\end{pmatrix}=54$, $\det\begin{pmatrix}6&3\\0&3\end{pmatrix}=18$, $\det\begin{pmatrix}0&3\\9&3\end{pmatrix}=-27$; $\gcd(54,18,27)=9$, so $d_2=9$ and $a_2=d_2/d_1=9/3=3$. Smith Normal Form $\diag(3,3)$ (the extra relation column is dependent). Hence $M\isom\Z/3\Z\oplus\Z/3\Z$ with invariant factors $3,3$ ($3\mid3$).
-Sanity check: $\abs{M}=[\Z^2:N]$. Lattice $N$ contains $(6,0),(0,9),(3,3)$; index $=\abs{\det}$ of a basis of $N$. Reduce: $(3,3),(0,9-? )$; from $(3,3)$ and $(6,0)=2(3,3)-(0,6)$ get $(0,6)$, and $\gcd(6,9)=3$ gives $(0,3)$; so $N$ has basis $(3,3),(0,3)$, $\det=9$, index $9=3\cdot3$. Matches.
+Sanity check: $\abs{M}=[\Z^2:N]$. Lattice $N$ contains $(6,0),(0,9),(3,3)$; index $=\abs{\det}$ of a basis of $N$. From $(3,3)$ and $(6,0)=2(3,3)-(0,6)$ get $(0,6)$, and $\gcd(6,9)=3$ gives $(0,3)$; so $N$ has basis $(3,3),(0,3)$, $\det=9$, index $9=3\cdot3$. Matches.
 \end{wex}
 
 \begin{wex}{Free rank from a wide presentation}
