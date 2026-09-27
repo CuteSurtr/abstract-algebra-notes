@@ -23698,10 +23698,10 @@ Do not confuse derived length with nilpotency class, and do not assume the deriv
 \item Find the upper and lower central series for $A_4$ and $S_4$.
 \item Find the upper and lower central series for $A_5$ and $S_5$.
 \item Prove that $G^i$ is a characteristic subgroup of $G$ for all $i$.
-\item Prove that $Z_i(D_{2^n}) = D_{2^{n-1-i}}$. [Recall Exercise 21, Section 3.2.]
-\item Prove that $\Q$ has no maximal subgroups.
+\item Prove that $Z_i(D_{2^n}) = \gen{r^{2^{n-1-i}}}$ for $0\le i\le n-2$ and $Z_{n-1}(D_{2^n})=D_{2^n}$, where $r$ is the rotation of order $2^{n-1}$.
+\item Prove that $\Q$ has no maximal subgroups. [Recall Exercise 21, Section 3.2.]
 \item Prove that $G^{(i)}$ is a characteristic subgroup of $G$ for all $i$.
-\item Show that if $G'/G''$ and $G''/G'''$ are both cyclic then $G'' = 1$. [You may assume $G''' = 1$. Then $G/G''$ acts by conjugation on the cyclic group $G''$.]
+\item Show that if $G'/G''$ and $G''/G'''$ are both cyclic then $G'' = G'''$. [You may assume $G''' = 1$. Then $G/G''$ acts by conjugation on the cyclic group $G''$.]
 \item Show that there is no group whose commutator subgroup is isomorphic to $S_4$. [Use the preceding exercise.]
 \item Let $p$ be a prime, let $P$ be a $p$-subgroup of the finite group $G$, let $N$ be a normal subgroup of $G$ whose order is relatively prime to $p$ and let $\bar G = G/N$. Prove the following:
 \begin{enumerate}
@@ -23709,7 +23709,7 @@ Do not confuse derived length with nilpotency class, and do not assume the deriv
 \item[(b)] $C_{\bar G}(\bar P) = \overline{C_G(P)}$. [Use part (a).]
 \end{enumerate}
 \item Prove that $\Phi(G)$ is a characteristic subgroup of $G$.
-\item Prove that if $N \leq G$ then $\Phi(N) \leq \Phi(G)$. Give an explicit example where this containment does not hold if $N$ is not normal in $G$.
+\item When $G$ is a finite group prove that if $N \nor G$ then $\Phi(N) \leq \Phi(G)$. Give an explicit example where this containment does not hold if $N$ is not normal in $G$.
 \item Compute $\Phi(S_3)$, $\Phi(A_4)$, $\Phi(S_4)$, $\Phi(A_5)$ and $\Phi(S_5)$.
 \item Say an element $x$ of $G$ is a {\it nongenerator} if for every proper subgroup $H$ of $G$, $\gen{x, H}$ is also a proper subgroup of $G$. Prove that $\Phi(G)$ is the set of nongenerators of $G$ (here $|G| > 1$).
 \item Let $G$ be a finite group. Prove that $\Phi(G)$ is nilpotent. [Use Frattini's Argument to prove that every Sylow subgroup of $\Phi(G)$ is normal in $G$.]
@@ -23733,7 +23733,7 @@ Do not confuse derived length with nilpotency class, and do not assume the deriv
 \item Prove that if $G$ is a finite group in which every proper subgroup is nilpotent, then $G$ is solvable. [Show that a minimal counterexample is simple. Let $M$ and $N$ be distinct maximal subgroups chosen with $|M \cap N|$ as large as possible and apply Part 2 of Theorem 3 to show that $M \cap N = 1$. Now apply the methods of Exercise 53 in Section 4.5.]
 \item Let $p$ be a prime, let $V$ be a nonzero finite dimensional vector space over the field of $p$ elements and let $\varphi$ be an element of $\GL(V)$ of order a power of $p$ (i.e., $V$ is a nontrivial elementary abelian $p$-group and $\varphi$ is an automorphism of $V$ of $p$-power order). Prove that there is some nonzero element $v \in V$ such that $\varphi(v) = v$, i.e., $\varphi$ has a nonzero fixed point on $V$.
 \item Let $V$ be a finite dimensional vector space over the field of $2$ elements and let $\varphi$ be an element of $\GL(V)$ of order $2$ (i.e., $V$ is a nontrivial elementary abelian $2$-group and $\varphi$ is an automorphism of $V$ of order $2$). Prove that the map $v \mapsto v + \varphi(v)$ is a homomorphism from $V$ to itself. Show that every element in the image of this map is fixed by $\varphi$. Deduce that the subspace of elements of $V$ which are fixed by $\varphi$ has dimension $\geq \frac{1}{2}(\dim V)$. (Note that if $G$ is the semidirect product of $V$ with $\gen{\varphi}$, where $V \nor G$ and $\varphi$ acts by conjugation on $V$ by sending each $v \in V$ to $\varphi(v)$, then the fixed points of $\varphi$ on $V$ are $C_V(\varphi)$ and the above map is simply the commutator map: $v \mapsto [v, \varphi]$. In this terminology the problem is to show that $|C_V(\varphi)|^2 \geq |V|$.)
-\item Use the preceding exercise to prove that if $P$ is a $2$-group which has a cyclic center and $M$ is a subgroup of index $2$ in $P$, then the center of $M$ has rank $\leq 2$. [The group $G/M$ of order $2$ acts by conjugation on the $\F_2$ vector space $\{z \in Z(M) \mid z^2 = 1\}$ and the fixed points of this action are in the center of $P$.]
+\item Use the preceding exercise to prove that if $P$ is a $2$-group which has a cyclic center and $M$ is a subgroup of index $2$ in $P$, then the center of $M$ has rank $\leq 2$. [The group $P/M$ of order $2$ acts by conjugation on the $\F_2$ vector space $\{z \in Z(M) \mid z^2 = 1\}$ and the fixed points of this action are in the center of $P$.]
 \end{exers}
 
 \begin{exers}{Practice problems.}
