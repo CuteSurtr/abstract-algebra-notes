@@ -58240,10 +58240,10 @@ The automorphism $\sigma$ permutes the roots cyclically, $m_1\mapsto m_2\mapsto 
 using $\omega^3=1$. The same computation with $\omega$ and $\omega^2$ swapped gives $\sigma(z')=\omega z'$. Cubing, $\sigma(z^3)=(\omega^{-1})^3z^3=z^3$ and likewise $\sigma(z'^3)=z'^3$; since $\sigma$ generates $G$, both $z^3,z'^3$ lie in the fixed field $F$. Finally $z+z'=(m_1+m_1)+(\omega+\omega^2)m_2+(\omega^2+\omega)m_3=2m_1-m_2-m_3$, and adding $s_1=m_1+m_2+m_3=0$ gives $z+z'=3m_1$, i.e.\ $m_1=\tfrac13(z+z')$.
 \end{proof}
 
-To evaluate $z^3$ and $z'^3$ explicitly, Artin introduces the two $\sigma$-conjugate sums
+To evaluate $z^3$ and $z'^3$ explicitly, Artin introduces the two sums (each fixed by $\sigma$ and interchanged by every transposition)
 \[
-A=\omega^2 m_1m_2^2+\omega^2 m_2m_3^2+\omega^2 m_3m_1^2,\qquad
-B=\omega\,m_1^2m_2+\omega\,m_2^2m_3+\omega\,m_3^2m_1,
+A=m_1^2m_2+m_2^2m_3+m_3^2m_1,\qquad
+B=m_1m_2^2+m_2m_3^2+m_3m_1^2,
 \]
 which satisfy
 \[
@@ -58292,11 +58292,11 @@ because $-\tfrac12\pm\tfrac{\sqrt{-3}}{2}=\omega,\omega^2$ exactly. Choosing $z=
 \[
 m_1=\tfrac13(z+z')=\sqrt[3]{\omega}+\sqrt[3]{\omega^2}=2\cos\!\Bigl(\tfrac{2\pi}{9}\Bigr)\approx 1.532.
 \]
-\emph{Check:} $D=81=9^2$ is a square, confirming $G=A_3$; the resolvent cubes $z^3,z'^3$ are the primitive cube roots of $27$, so $z^3z'^3=27^2$ matches $(zz')^3=9^3=729=27^2$. Numerically $g(1.532)\approx 3.596-4.596+1\approx0$.
+\emph{Check:} $D=81=9^2$ is a square, confirming $G=A_3$; the resolvent cubes $z^3=27\omega$ and $z'^3=27\omega^2$ are $27$ times the primitive cube roots of unity, so $z^3z'^3=27^2$ matches $(zz')^3=9^3=729=27^2$. Numerically $g(1.532)\approx 3.596-4.596+1\approx0$.
 \end{wex}
 
 \begin{pitfall}
-The clean cube-root form requires $\omega\in F$. The discriminant test (Theorem~\ref{art:cubic:main@c14}) lives over the original $F$, but the Lagrange resolvent only diagonalizes $\sigma$ after adjoining $\omega$. For an $A_3$ cubic over $\Q$ such as $x^3-3x+1$, the splitting field $K=\Q(\alpha_1)$ is real and does \emph{not} contain $\omega$; Cardano's formula then expresses the real root as a sum of cube roots of \emph{complex} numbers (the casus irreducibilis), even though no genuine complex numbers are needed to name the root.
+The clean cube-root form requires $\omega\in F$. The discriminant test (Theorem~\ref{art:cubic:main@c14}) lives over the original $F$, but the Lagrange resolvent only diagonalizes $\sigma$ after adjoining $\omega$. For an $A_3$ cubic over $\Q$ such as $x^3-3x+1$, the splitting field $K=\Q(\alpha_1)$ is real and does \emph{not} contain $\omega$; Cardano's formula then expresses the real root as a sum of cube roots of \emph{complex} numbers (the casus irreducibilis), even though the root itself is real. The detour through non-real numbers is unavoidable: in the casus irreducibilis no expression of the root by real radicals exists.
 \end{pitfall}
 
 
