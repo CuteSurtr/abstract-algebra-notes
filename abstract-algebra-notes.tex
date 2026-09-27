@@ -56465,21 +56465,19 @@ ignoring any 0's that appear (for example $-1, -2, 0, +3, -4$ has signs $- - + -
 \begin{exers}{Commutative-diagram exercises.}
 \item Let $f(x)=x^3-2\in\Q[x]$, with splitting field $K=\Q(\sqrt[3]2,\zeta_3)$ and $\Gal(K/\Q)\isom S_3$. Complete the Galois-correspondence lattice below by labelling each node on the right with the fixed field $\Fix(H)$ of the indicated subgroup $H\sgr S_3$, give $\idx{\Fix(H)}{\Q}$ for each, and mark which subgroups are normal (hence which fixed fields are Galois over $\Q$):
 \[
-\begin{tikzcd}[row sep=1.6em, column sep=1.2em]
-& 1 \arrow[ld,dash]\arrow[d,dash]\arrow[rd,dash] & \\
-\gen{(12)} \arrow[rd,dash] & \gen{(13)}\arrow[d,dash] & \gen{(23)}\arrow[ld,dash] \\
-& A_3 \arrow[d,dash] & \\
-& S_3 &
+\begin{tikzcd}[row sep=1.8em, column sep=1.1em]
+& & 1 \arrow[lld,dash]\arrow[ld,dash]\arrow[rd,dash]\arrow[rrd,dash] & & \\
+\gen{(12)} \arrow[rrd,dash] & \gen{(13)}\arrow[rd,dash] & & \gen{(23)}\arrow[ld,dash] & A_3 \arrow[lld,dash] \\
+& & S_3 & &
 \end{tikzcd}
 \qquad\xleftrightarrow{\ \Fix\ }\qquad
-\begin{tikzcd}[row sep=1.6em, column sep=1.2em]
-& K \arrow[ld,dash]\arrow[d,dash]\arrow[rd,dash] & \\
-\,?\, \arrow[rd,dash] & \,?\,\arrow[d,dash] & \,?\,\arrow[ld,dash] \\
-& \,?\, \arrow[d,dash] & \\
-& \Q &
+\begin{tikzcd}[row sep=1.8em, column sep=1.1em]
+& & K \arrow[lld,dash]\arrow[ld,dash]\arrow[rd,dash]\arrow[rrd,dash] & & \\
+\,?\, \arrow[rrd,dash] & \,?\,\arrow[rd,dash] & & \,?\,\arrow[ld,dash] & \,?\, \arrow[lld,dash] \\
+& & \Q & &
 \end{tikzcd}
 \]
-Prove that $\Fix(A_3)=\Q(\zeta_3)=\Q(\sqrt{-3})$ is the unique quadratic subfield and is Galois over $\Q$, while the three degree-$2$ subgroups give three conjugate cubic fields that are \emph{not} Galois over $\Q$.
+Prove that $\Fix(A_3)=\Q(\zeta_3)=\Q(\sqrt{-3})$ is the unique quadratic subfield and is Galois over $\Q$, while the three order-$2$ subgroups give three conjugate cubic fields that are \emph{not} Galois over $\Q$.
 \item Let $f(x)=x^4-2\in\Q[x]$ with splitting field $K=\Q(\sqrt[4]2,i)$ and $\Gal(K/\Q)\isom D_8=\gen{r,s\mid r^4=s^2=1,\ srs=r\inv}$, where $r:\sqrt[4]2\mapsto i\sqrt[4]2$ fixing $i$, and $s$ is complex conjugation. Draw the full subgroup lattice of $D_8$ (order $8$, with its three subgroups of order $4$ and five of order $2$) and the corresponding inverted lattice of subfields of $K$, completing the skeleton:
 \[
 \begin{tikzcd}[row sep=1.5em, column sep=1.1em]
