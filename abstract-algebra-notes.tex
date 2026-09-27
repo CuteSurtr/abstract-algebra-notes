@@ -12858,11 +12858,11 @@ invisible to the correspondence (they all collapse).
   same map (just restricted to successively smaller domains); the commutativity of each
   square says ``include first, then project'' equals ``project first, then include.''
 \dgi{What commutes:} Each small square commutes: $\pi|_A\circ(\text{inclusion of }N)
-  =(\text{inclusion of }A/N)\circ\pi|_N$, and similarly for the top square with $A\hookrightarrow
+  =(\text{inclusion of }\{N\}\text{ in }A/N)\circ\pi|_N$, and similarly for the top square with $A\hookrightarrow
   G$. In plain terms: projecting any element of $N$ (or $A$) and then including into $G/N$
   gives the same coset as including into $G$ and then projecting.
 \dgi{Why it commutes:} Chase $n\in N$. Include in $A$ (still $n$), project: $n\mapsto nN=N=
-  \overline{1}$. Or: project $n\mapsto nN=\overline{1}$, include in $\{N\}$: still
+  \overline{1}$. Or: project $n\mapsto nN=\overline{1}$, include in $A/N$: still
   $\overline{1}$. Equal. The same trivial chase works for the top square with any $a\in A$.
   The key is that $\pi$ is defined globally on $G$ and the inclusions are literal set
   inclusions, so order of operations is irrelevant.
@@ -12920,8 +12920,8 @@ $G/N\isom\Z/6$ (right), with faint ties joining matched pairs.
 \begin{center}\begin{tikzpicture}[yscale=1.15,xscale=1.0]
   % ---- LEFT lattice: subgroups of Z/12 containing N=<6> ----
   \node[ltdot] (Lb)  at (0,0)   {};
-  \node[ltdot] (L3)  at (-1.1,1.4) {};
-  \node[ltdot] (L2)  at (1.1,1.4)  {};
+  \node[ltdot] (L3)  at (-1.1,1.1) {};
+  \node[ltdot] (L2)  at (1.1,1.7)  {};
   \node[ltdot] (Lt)  at (0,2.8)  {};
   \begin{scope}[ltedge]
     \draw (Lb)--(L3); \draw (Lb)--(L2);
@@ -12933,8 +12933,8 @@ $G/N\isom\Z/6$ (right), with faint ties joining matched pairs.
   \node[ltlab,above=1.5pt of Lt] {$\Z/12$};
   % ---- RIGHT lattice: all subgroups of G/N = Z/6 ----
   \node[ltdot] (Rb)  at (6,0)   {};
-  \node[ltdot] (R3)  at (4.9,1.4) {};
-  \node[ltdot] (R2)  at (7.1,1.4) {};
+  \node[ltdot] (R3)  at (4.9,1.1) {};
+  \node[ltdot] (R2)  at (7.1,1.7) {};
   \node[ltdot] (Rt)  at (6,2.8)  {};
   \begin{scope}[ltedge]
     \draw (Rb)--(R3); \draw (Rb)--(R2);
