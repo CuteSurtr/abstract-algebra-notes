@@ -62664,12 +62664,12 @@ V(\fp_1) & & V(\fp_2) \\
   the localization $M_\fp \ne 0$; it equals the closed set cut out by $\Ann_R(M)$.
 \dgi{Arrows:} The single arrow is a phantom arrow carrying the label $\subseteq$: it is not
   a ring map or module map, but a set-theoretic containment statement $\Ass(M) \subseteq \Supp(M)$,
-  displayed as a vertical arrow to signal that $\Ass(M)$ sits inside the larger locus $\Supp(M)$.
+  printed as the symbol $\subseteq$ between the two nodes (no arrow is drawn) to signal that $\Ass(M)$ sits inside the larger locus $\Supp(M)$.
   The phantom style means the arrow contributes no actual morphism to the diagram; it is
   purely notational, flagging an inclusion of sets of prime ideals.
 \dgi{What commutes:} There is no composite to equate; the diagram records a single containment.
   The relevant assertion is: if $\fp \in \Ass(M)$ then $M_\fp \ne 0$, so $\fp \in \Supp(M)$.
-  Equivalently, $\Ann_R(m) \subseteq \Ann_R(M)$ implies $\fp = \Ann_R(m) \supseteq \Ann_R(M)$,
+  Equivalently, $\Ann_R(M) \subseteq \Ann_R(m)$ gives $\fp = \Ann_R(m) \supseteq \Ann_R(M)$,
   so $\fp \in V(\Ann M)$.
 \dgi{Why it commutes:} Take any $\fp = \Ann_R(m) \in \Ass(M)$. Then $rm = 0$ for all
   $r \in \Ann_R(M)$, so $\Ann_R(M) \subseteq \fp$, meaning $\fp \supseteq \Ann_R(M)$, i.e.\
@@ -62677,7 +62677,7 @@ V(\fp_1) & & V(\fp_2) \\
   support $M$ without annihilating any single element.
 \dgi{Why this matters here:} The remark identifies $\Supp$ and $\Ass$ as the two layers of
   geometric data attached to a module. The diagram makes the hierarchy visual: $\Ass$ is
-  a strict subset of $\Supp$, recording the embedded data, while $\Supp$ is the full geometric
+  a subset of $\Supp$ (usually a proper one), recording the embedded data, while $\Supp$ is the full geometric
   locus. The minimality statement (both have the same minimal elements) is the key reconciliation,
   explained immediately after by the pairing with $V(\fp_i)$ on the right.
 \dgi{Concrete example:} Take $R = k[x,y]$, $M = R/\fa$ with $\fa = (x) \cap (x,y)^2$.
@@ -62687,24 +62687,24 @@ V(\fp_1) & & V(\fp_2) \\
   prime $(x,y)$ contributing no new geometric locus.
 \dgi{Common pitfall:} Students often read $\Ass(M) \subseteq \Supp(M)$ as an equality and
   conclude that every prime in the support annihilates some element. This fails: a prime can
-  localize $M$ nontrivially without being an annihilator prime. The embedded prime $(x,y)$
-  above shows the gap: it is associated (annihilates a coset) but the point $(x,y)$ is already
-  in the support via the larger component $V((x))$, not because it contributes a new locus.
-\dgi{Takeaway:} The point of this diagram is that $\Ass(M)$ sits strictly inside $\Supp(M)$ in
-  general, with both recording the same minimal primes but $\Ass$ additionally tagging the
+  localize $M$ nontrivially without being an annihilator prime. In the example above, every prime $(x,y-c)$ with $c\ne0$ lies in
+  $\Supp(M)=V((x))$ but is not associated. The embedded prime $(x,y)$ is associated (it is the
+  annihilator of the coset of $x$), yet the point $(x,y)$ is already in the support via the
+  component $V((x))$; it contributes no new locus.
+\dgi{Takeaway:} The point of this diagram is that $\Ass(M)$ sits inside $\Supp(M)$ (usually as a proper subset), with both recording the same minimal primes but $\Ass$ additionally tagging the
   embedded primes that carry nilpotent or higher-order information without enlarging the support.
 \end{dgx}
 
 \begin{dgx}
-\dgi{Objects:} Five nodes forming a diamond. Top: $V(\fa)$, the full closed set (variety) of
+\dgi{Objects:} Four nodes forming a diamond. Top: $V(\fa)$, the full closed set (variety) of
   $\fa$ in $\Spec R$, i.e.\ all primes containing $\fa$. Left and right: $V(\fp_1)$ and $V(\fp_2)$,
   the two irreducible closed subsets corresponding to the two isolated (minimal) associated primes
   $\fp_1, \fp_2$ of $\fa$; geometrically these are the irreducible components of $V(\fa)$.
   Bottom: $\bullet$ labeled $V(\fm)_{\text{embedded}}$, the closed point corresponding to the
   embedded prime $\fm$ (a maximal ideal, or at least a non-minimal associated prime), which
   sits at the intersection of the two components.
-\dgi{Arrows:} All four edges are drawn with dashes (no arrowheads), encoding \emph{specialization}:
-  a dash from $A$ down to $B$ means $B \supseteq A$ as ideals, i.e.\ $V(B) \subseteq V(A)$
+\dgi{Arrows:} All four edges are plain solid lines (no arrowheads), encoding \emph{specialization}:
+  an edge from $A$ down to $B$ means $B \supseteq A$ as ideals, i.e.\ $V(B) \subseteq V(A)$
   (the variety of the smaller ideal contains the variety of the larger ideal as a subspace).
   $V(\fp_1) \subseteq V(\fa)$ and $V(\fp_2) \subseteq V(\fa)$ because $\fp_1, \fp_2$ contain $\fa$.
   $V(\fm) \subseteq V(\fp_1)$ and $V(\fm) \subseteq V(\fp_2)$ because $\fm \supseteq \fp_1$
@@ -62722,10 +62722,11 @@ V(\fp_1) & & V(\fp_2) \\
   both $\fp_1$ and $\fp_2$, making $\fm \in V(\fp_1) \cap V(\fp_2)$.
 \dgi{Why this matters here:} This diagram is the geometric punchline of the entire section: primary
   decomposition in $R$ is the algebraic counterpart of decomposing a variety into irreducible
-  components plus embedded subvarieties. The isolated primes $\fp_1, \fp_2$ give the two components
-  (unique by the first uniqueness theorem); the embedded prime $\fm$ is the extra data attached at
-  their intersection (non-unique, corresponding to the second uniqueness theorem's failure for
-  embedded components). It makes visible why the theory has two kinds of primes.
+  components plus embedded subvarieties. The isolated primes $\fp_1, \fp_2$ give the two components;
+  the embedded prime $\fm$ marks the extra data attached at their intersection. All three primes
+  are determined by $\fa$ (first uniqueness theorem), and so are the isolated components (second
+  uniqueness theorem); only the embedded component $\fq_3$ can change with the decomposition
+  (below, $\fm^2$ may be replaced by $(x^2,y,z)$). It makes visible why the theory has two kinds of primes.
 \dgi{Concrete example:} Take $R = k[x,y,z]$, $\fa = (x,y) \cap (x,z) \cap (x,y,z)^2$ from the
   three-component example. Then $\fp_1 = (x,y)$ (the $z$-axis), $\fp_2 = (x,z)$ (the $y$-axis),
   $\fm = (x,y,z)$ (the origin). $V(\fp_1) \cup V(\fp_2)$ is the union of the two lines;
