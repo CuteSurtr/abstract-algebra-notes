@@ -15022,7 +15022,7 @@ H x K = \{h x k \mid h \in H, \ k \in K\}.
 
 \item Let $G$ act transitively on a finite set $A$ with $|A| > 1$. Prove there exists $g \in G$ that fixes no point of $A$ (Jordan). Suggestion: the number of fixed points averaged over $G$ equals the number of orbits, which is $1$; since the identity fixes all $|A| > 1$ points, some element must fix none.
 
-\item Let $p$ be prime and let $G$ be a group of order $p^n$ act on a finite set $A$. Prove $|A| \equiv |A^G| \pmod p$, where $A^G = \{a \in A : g\cdot a = a \ \forall g\}$ is the fixed-point set. Deduce that if $p \mid |A|$ then $p \mid |A^G|$, so $A^G$ is nonempty whenever $p \mid |A|$, and that a nontrivial $p$-group has nontrivial center.
+\item Let $p$ be prime and let $G$ be a group of order $p^n$ act on a finite set $A$. Prove $|A| \equiv |A^G| \pmod p$, where $A^G = \{a \in A : g\cdot a = a \ \forall g\}$ is the fixed-point set. Deduce that if $p \mid |A|$ then $p \mid |A^G|$ (so $|A^G|\ge p$ as soon as $A^G\ne\es$), that $A^G$ is nonempty whenever $p \nmid |A|$, and that a nontrivial $p$-group has nontrivial center.
 
 \item Compute $\Aut(\Zn{p})$ for $p$ prime and show $|\Aut(\Zn{p})| = p-1$. More generally show $\Aut(\Zn{n}) \isom (\Zn{n})^\times$ and compute its order via Euler's $\varphi$.
 
@@ -15039,7 +15039,7 @@ H x K = \{h x k \mid h \in H, \ k \in K\}.
 \end{exers}
 
 \begin{exers}{Additional exercises.}
-\item (Cauchy via actions) Let $p$ divide $|G|$. Let $G$ act on $X = \{(x_1,\dots,x_p) \in G^p : x_1 x_2 \cdots x_p = 1\}$ by cyclic rotation of coordinates. Show $|X| = |G|^{p-1}$, that $\Zn{p}$ acts on $X$, and apply $|X| \equiv |X^{\Zn{p}}| \pmod p$ to produce an element of order $p$.
+\item (Cauchy via actions) Let $p$ divide $|G|$. Let $\Zn{p}$ act on $X = \{(x_1,\dots,x_p) \in G^p : x_1 x_2 \cdots x_p = 1\}$ by cyclic rotation of coordinates. Show $|X| = |G|^{p-1}$, that $\Zn{p}$ acts on $X$, and apply $|X| \equiv |X^{\Zn{p}}| \pmod p$ to produce an element of order $p$.
 
 \item Let $G$ act $2$-transitively on $A$ (for any two ordered pairs of distinct points there is $g$ carrying one to the other). Prove that for $a \in A$, the stabilizer $\Stab_G(a)$ acts transitively on $A \setminus \{a\}$, and that $|G| = |A|(|A|-1)\,|\Stab_G(a,b)|$ for distinct $a,b$, where $\Stab_G(a,b)$ is the pointwise stabilizer of $\{a,b\}$.
 
