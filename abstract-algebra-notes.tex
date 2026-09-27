@@ -52262,8 +52262,8 @@ $\beta^{d_2} \in \Span_F(1,\dots,\beta^{d_2-1})$ from the two minimal polynomial
 an $F$-combination of the listed monomials. Hence those $d_1 d_2$ monomials span.
 \end{proof}
 
-This is what powers Method 1 for a sum $\alpha + \beta$: inside the $d_1 d_2$-dimensional
-space $F(\alpha,\beta)$ the powers $1, (\alpha+\beta), (\alpha+\beta)^2,\dots,
+This is what powers Method 1 for a sum $\alpha + \beta$: inside the space
+$F(\alpha,\beta)$, of dimension at most $d_1 d_2$, the powers $1, (\alpha+\beta), (\alpha+\beta)^2,\dots,
 (\alpha+\beta)^{d_1 d_2}$ are $d_1 d_2 + 1$ vectors, hence dependent, and a dependence
 relation hands us a polynomial of degree at most $d_1 d_2$ with $\alpha+\beta$ as a
 root.
@@ -52330,14 +52330,18 @@ The polynomial you find may be reducible. A linear dependence among $1,\alpha,\d
 \alpha^n$ produces a degree-$n$ polynomial with $\alpha$ as a root, but the minimal
 polynomial is the \emph{lowest-degree} such polynomial. The dependence you happen to
 write down need not be the shortest one. To be sure you have the minimal polynomial
-by this method, work in an actual \emph{monomial basis} of $K$ over $F$: then a
-dependence among the powers really is forced at the right degree, and no spurious
-factor can hide.
+by this method, work in an actual \emph{monomial basis} of $K$ over $F$ and take the
+\emph{first} dependence: if $n$ is the least integer for which $1,\alpha,\dots,\alpha^n$ are
+dependent, then $n=\idx{F(\alpha)}{F}$ and that relation, divided by its leading
+coefficient, is the minimal polynomial. Counting dimensions alone is not enough unless
+$\alpha$ generates $K$: for $\alpha=\sqrt2$ in $K=\Q(\sqrt2,\sqrt3)$ the five powers
+$1,\alpha,\dots,\alpha^4$ satisfy $\alpha^4-4=0$, but $x^4-4=(x^2-2)(x^2+2)$ is reducible.
 \end{pitfall}
 
 The cure is Lemma~\ref{art:min_poly:lemma@c13}(b) used carefully: the $d_1 d_2$ monomials
 $\alpha^i\beta^j$ \emph{span}, but they need not be \emph{independent}. When they are
-independent they form a basis, and then the degree of $\gamma=\alpha+\beta$ over $F$
+independent they form a basis, and then (for $F$ of characteristic $0$, such as $\Q$;
+in characteristic $p$ this can fail) the degree of $\gamma=\alpha+\beta$ over $F$
 is genuinely $d_1 d_2$ and the polynomial you extracted is minimal. When they are
 dependent, the true basis is smaller, and the minimal polynomial has smaller degree
 than $d_1 d_2$.
@@ -52363,7 +52367,9 @@ one dependence, of degree $4$. Hence $g(x) = x^4 - 10x^2 + 1$ has minimal degree
 $\Q(\gamma) = \Q(\sqrt2,\sqrt3)$.
 \emph{Check:} $g$ has no rational root (candidates $\pm1$ give $-8$) and no factorization
 into two rational quadratics $x^2 + ax + b$, $x^2 - ax + c$ with $a,b,c\in\Q$, since
-matching coefficients forces $a^2 = 2\sqrt6$-type irrationality; degree $4 =
+matching coefficients gives $a(c-b)=0$, $b+c-a^2=-10$, $bc=1$: if $a=0$ then $b,c$ are
+the irrational roots $-5\pm2\sqrt6$ of $y^2+10y+1$, and if $b=c=\pm1$ then $a^2=12$ or
+$a^2=8$, so $a\notin\Q$; degree $4 =
 \idx{K}{\Q}$. \checkmark
 \end{wex}
 
@@ -52379,7 +52385,8 @@ honest basis through a tower.
 \wsol Each $\alpha_i$ has degree $3$ over $\Q$ (Eisenstein on $x^3-2$). Set $F = \Q$,
 $L = \Q(\alpha_1)$, $K = \Q(\alpha_1,\alpha_2)$. Over $L$ the polynomial $f$ already
 has the root $\alpha_1$, so it factors $f(x) = (x-\alpha_1)q(x)$ with $q$ quadratic;
-$\alpha_2$ is a root of $q$, hence has degree at most $2$ over $L$. So
+$\alpha_2$ is a root of $q$, hence has degree at most $2$ over $L$, and exactly $2$
+because $L=\Q(\alpha_1)\subset\R$ while $\alpha_2\notin\R$. So
 $\set{1,\alpha_2}$ is a basis of $K$ over $L$, and combining with the $\Q$-basis
 $\set{1,\alpha_1,\alpha_1^2}$ of $L$, the \emph{six} monomials
 \[
@@ -52443,7 +52450,7 @@ $\alpha$ and $\beta$ satisfy a hidden relation over $F$ (as $\sqrt[3]{2}$ and
 $\omega\sqrt[3]{2}$ do), then $\idx{F(\alpha,\beta)}{F} < d_1 d_2$ and the upper-edge
 degrees are smaller than the labels suggest; the diagram would not apply.
 \dgi{Takeaway:} The point of this diagram is that the tower law forces both routes around the
-diamond to give the same total degree $d_1 d_2$, and this equality is exactly what
+diamond to give the same total degree $d_1 d_2$, and (for $F$ of characteristic $0$) this equality is exactly what
 certifies that a degree-$d_1 d_2$ polynomial found by the power-counting method is the
 true minimal polynomial of $\alpha + \beta$ over $F$.
 \end{dgx}
@@ -52493,8 +52500,9 @@ dependence among powers and trusts a \emph{monomial basis} to certify its degree
 Method 2 names the conjugates and lets the field automorphisms do the cancellation.
 When you can guess the conjugates, Method 2 is faster and self-certifying (a product
 of $\idx{F(\alpha)}{F}$ distinct conjugates is automatically the minimal polynomial).
-When you cannot, Method 1 always terminates -- provided you keep an honest count of
-the dimension, so that the reducible-relation pitfall cannot disguise a proper factor
+When you cannot, Method 1 always terminates -- provided you take the \emph{first}
+dependence among $1,\alpha,\alpha^2,\dots$ (a basis of $K$ lets you detect it), so that the
+reducible-relation pitfall cannot pass off a proper multiple of the minimal polynomial
 as the minimal polynomial.
 \end{remark}
 
