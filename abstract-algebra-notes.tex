@@ -44900,7 +44900,7 @@ Problems are drawn from Dummit \& Foote, Artin (\emph{Algebra}), and Fraleigh (\
 \subsection*{Medium}
 \begin{exers}{}
 \item [DF 11.1.2] Let $V$ be the degree-$\le5$ polynomials over $\Q$; prove $V$ is a $6$-dimensional $\Q$-space with basis $1,x,\dots,x^5$, and that $1,1+x,\dots,1+x+\dots+x^5$ is also a basis.
-\item [DF 11.1.3] Let $\varphi:\R^4\to\R^3$ be linear with $\varphi(1,0,0,0)=1$, $\varphi(1,-1,0,0)=0$, $\varphi(1,-1,1,0)=1$, $\varphi(1,-1,1,-1)=0$; determine $\varphi(a,b,c,d)$.
+\item [DF 11.1.3] Let $\varphi:\R^4\to\R$ be linear with $\varphi(1,0,0,0)=1$, $\varphi(1,-1,0,0)=0$, $\varphi(1,-1,1,0)=1$, $\varphi(1,-1,1,-1)=0$; determine $\varphi(a,b,c,d)$.
 \item [DF 11.1.7] If $\varphi:V\to V$ is linear on an $n$-dimensional $V$ with $\varphi^2=0$, prove $\im\varphi\subseteq\ker\varphi$ and hence $\rank\varphi\le n/2$.
 \item [DF 11.1.11] Prove that any set of linearly independent vectors of $V$ is contained in a basis of $V$.
 \item [DF 11.1.13] Prove $\R^n\isom\R$ as vector spaces over $\Q$ for all $n\in\Zpos$ (hence as additive abelian groups).
@@ -44917,8 +44917,8 @@ Problems are drawn from Dummit \& Foote, Artin (\emph{Algebra}), and Fraleigh (\
 \item [DF 11.2.17] Let $A,C$ be in reduced row echelon form; prove that if they are row equivalent then $A=C$.
 \item [DF 11.2.20] Determine the solutions of the listed systems of linear equations (a)--(e).
 \item [DF 11.2.21] If $A,B$ are row-equivalent $m\times n$ matrices: (a) $AX=0$ and $BX=0$ have the same solutions; (b) any dependence among columns of $A$ holds for $B$; (c) $A,B$ have equally many independent columns.
-\item [DF 11.2.30] Compute a basis for the image and kernel of $\varphi:\R^5\to\R^4$, $\varphi(x,y,z,u,v)=(x+2y+3z+4u+4v,\,-2x-4y+2v,\,x+2y+z-2v,\,x+2y+u-2v,\,x+2y-v)$, via reduced row echelon form.
-\item [DF 11.2.34] For $V=\Mat_2(\R)$ and $\varphi=\tr:V\to V$ (sum of diagonal entries): show the four elementary matrices form a basis, then prove $\varphi$ linear, find its matrix, and find a basis for $\ker\varphi$.
+\item [DF 11.2.30] Compute a basis for the image and kernel of $\varphi:\R^5\to\R^4$, $\varphi(x,y,z,u,v)=(x+2y+3z+4u+4v,\,-2x-4y+2v,\,x+2y+u-2v,\,x+2y-v)$, via reduced row echelon form.
+\item [DF 11.2.34] For $V=\Mat_2(\R)$ and $\varphi=\tr:V\to\R$ (sum of diagonal entries): show the four elementary matrices form a basis, then prove $\varphi$ linear, find its matrix, and find a basis for $\ker\varphi$.
 \item [DF 11.2.37] For $V$ the degree-$\le6$ polynomials over $F$ and $\varphi(f)=f'$, find a basis for $\im\varphi$ and $\ker\varphi$ over each of $F=\R,\F_2,\F_3,\F_5$.
 \item [DF 11.2.38] For square matrices $A,B$, prove $\tr(A\tensor B)=\tr(A)\tr(B)$ for the Kronecker product.
 \item [DF 11.3.4] If $V$ is infinite-dimensional with basis $\mathcal A$, prove $\mathcal A^*=\set{v^*\st v\in\mathcal A}$ does not span $\dual{V}$.
@@ -44941,7 +44941,7 @@ Problems are drawn from Dummit \& Foote, Artin (\emph{Algebra}), and Fraleigh (\
 \item [Artin 3.3.4] If $A'$ comes from $A$ by elementary row operations, prove the rows of $A$ and $A'$ span the same space.
 \item [Artin 3.3.5] For $V=F^n$, prove every subspace $W$ is the solution space of some homogeneous system $AX=0$.
 \item [Artin 3.3.8] Prove $(v_1,\dots,v_n)$ in $F^n$ is a basis iff the matrix of their coordinate vectors is invertible.
-\item [Artin 3.4.1] Show $B=\set{(1,2,0)\trans,(2,1,2)\trans,(3,1,1)\trans}$ is a basis of $\R^3$, find the coordinates of $(1,2,3)\trans$, and the change-of-basis matrix to $B'$.
+\item [Artin 3.4.1] Show $B=\set{(1,2,0)\trans,(2,1,2)\trans,(3,1,1)\trans}$ is a basis of $\R^3$, find the coordinates of $(1,2,3)\trans$, and the change-of-basis matrix from $B$ to $B'=\set{(0,1,0)\trans,(1,0,1)\trans,(2,1,0)\trans}$.
 \item [Artin 3.5.1] Prove $\R^{n\times n}$ is the direct sum of the symmetric ($A\trans=A$) and skew-symmetric ($A\trans=-A$) matrices.
 \item [Artin 3.5.2] Let $W_1$ be the $n\times n$ matrices of trace zero; find a subspace $W_2$ with $\R^{n\times n}=W_1\oplus W_2$.
 \item [Artin 4.1.3] Use the dimension formula to prove the solution space of $AX=0$ ($A$ an $m\times n$ matrix) has dimension at least $n-m$.
@@ -44952,8 +44952,8 @@ Problems are drawn from Dummit \& Foote, Artin (\emph{Algebra}), and Fraleigh (\
 \item [Artin 4.6.4] For $A=\begin{pmatrix}2&2\\1&2\end{pmatrix}$ find $P$ with $P\inv AP$ diagonal and a formula for $A^{30}$.
 \item [Artin 4.6.5] In each case find a complex $P$ with $P\inv AP$ diagonal for the given matrices.
 \item [Artin 4.6.7] Prove that if $A,B$ are $n\times n$ and $A$ is nonsingular, then $AB$ is similar to $BA$.
-\item [Artin 4.7.1] Determine the Jordan form of $\begin{pmatrix}1&1\\0&1\end{pmatrix}$ (and the related blocks of the printed matrix).
-\item [Artin 4.7.2] Prove $A=\tfrac12\begin{pmatrix}1&1\\1&1\end{pmatrix}$ (the printed idempotent) satisfies $A^2=A$ and find its Jordan form.
+\item [Artin 4.7.1] Determine the Jordan form of $\begin{pmatrix}1&1&0\\0&1&0\\0&1&1\end{pmatrix}$.
+\item [Artin 4.7.2] Prove that $A=\begin{pmatrix}1&1&1\\-1&-1&-1\\1&1&1\end{pmatrix}$ satisfies $A^2=A$ and find its Jordan form.
 \item [Artin 5.1.4] Describe geometrically the action of an orthogonal $3\times3$ matrix of determinant $-1$.
 \item [Artin 5.2.1] Use the Cayley--Hamilton theorem to express $A\inv$ via $A$, $(\det A)\inv$, and the coefficients of the characteristic polynomial; verify in the $2\times2$ case.
 \item [Artin 5.4.2] Prove the identity $e^{\tr A}=\det(e^A)$.
@@ -44972,7 +44972,7 @@ Problems are drawn from Dummit \& Foote, Artin (\emph{Algebra}), and Fraleigh (\
 \item [Artin 9.6.1] Verify the Jacobi identity for the bracket $[A,B]=AB-BA$.
 \item [Artin 9.8.5] Determine the centers of $\mathrm{SL}_n(\R)$ and $\mathrm{SL}_n(\C)$.
 \item [Fraleigh 33.6] Give a basis over $\Q$ for $\set{(a+b\sqrt3)/(c+d\sqrt3)\st a,b,c,d\in\Q,\ c+d\sqrt3\ne0}$.
-\item [Fraleigh 33.7] Give a basis for $\R$ over $\set{a+b\sqrt2\st a,b\in\Q}$.
+\item [Fraleigh 33.7] Decide whether $\R$ is finite-dimensional over $\set{a+b\sqrt2\st a,b\in\Q}$, and if so give a basis.
 \item [Fraleigh 33.10] There is a field $E$ with $32$ elements; identify the prime subfield and the dimension of $E$ over it.
 \item [Fraleigh 33.11] Correct, if needed, the definition: vectors in $S$ span $V$ iff each $\beta\in V$ is uniquely a linear combination of vectors in $S$.
 \item [Fraleigh 33.12] Correct, if needed, the definition: $S$ is linearly independent over $F$ iff the zero vector is not a linear combination of vectors in $S$.
@@ -44997,19 +44997,21 @@ Problems are drawn from Dummit \& Foote, Artin (\emph{Algebra}), and Fraleigh (\
 \item [DF 11.2.11] For $\varphi:V\to V$ with $\varphi^2=\varphi$ on finite-dimensional $V$: (a) $\im\varphi\cap\ker\varphi=0$; (b) $V=\im\varphi\oplus\ker\varphi$; (c) a basis exists giving a diagonal matrix of $0$s and $1$s.
 \item [DF 11.2.16] Prove by induction that any augmented matrix can be put in reduced row echelon form by elementary row operations.
 \item [DF 11.2.18] Prove the row rank of a matrix in reduced row echelon form equals its number of nonzero rows.
-\item [DF 11.2.19] Prove the reduced row echelon forms of the two displayed augmented matrices are the matrices preceding Exercise 16.
+\item [DF 11.2.19] Prove the reduced row echelon forms of the augmented matrices
+\[ \begin{pmatrix} 1 & 1 & 4 & 8 & 0 & -1 & \vline & -1 \\ 1 & 2 & 3 & 9 & 0 & -5 & \vline & -2 \\ 0 & -2 & 2 & -2 & 1 & 14 & \vline & 3 \\ 1 & 4 & 1 & 11 & 0 & -13 & \vline & -4 \end{pmatrix} \qquad \begin{pmatrix} 0 & -3 & 3 & 1 & \vline & 5 \\ 0 & 1 & -1 & 0 & \vline & 0 \\ 0 & 2 & -2 & 0 & \vline & -3 \end{pmatrix} \]
+are the two matrices preceding Exercise 16.
 \item [DF 11.2.23] (Computing inverses) Show $A$ has inverse $B$ iff the systems $AB_j=e_j$ are solvable; iff $A$ is row equivalent to $I$; iff $(A\mid I)$ row reduces to $(I\mid B)$.
-\item [DF 11.2.24] (Solving systems) For $(A'\mid C')$ the reduced row echelon form of $(A\mid C)$: (a) more zero rows in $A'$ than in $(A'\mid C')$ means no solutions; (b) $r=n$ gives a unique solution; (c) $r<n$ gives infinitely many, with the nonpivotal variables free.
+\item [DF 11.2.24] (Solving systems) For $(A'\mid C')$ the reduced row echelon form of $(A\mid C)$: (a) more zero rows in $A'$ than in $(A'\mid C')$ means no solutions; by (a) we may assume that $A'$ and $(A'\mid C')$ have the same number, $r$, of nonzero rows (so $r\le n$, where $n$ is the number of unknowns, i.e.\ of columns of $A$); (b) $r=n$ gives a unique solution; (c) $r<n$ gives infinitely many solutions if the field is infinite, with the nonpivotal variables free.
 \item [DF 11.2.25] (Spans, independence, dependencies) For vectors $v_1,\dots,v_n$ with coordinate matrix $A$ and reduced form $A'$, prove the stated criteria (a)--(e) for relations, independent/dependent columns, dimension, and a basis of the span.
 \item [DF 11.2.26] For $V=\R^5$ and the five listed vectors $v_1,\dots,v_5$: verify the reduced row echelon form, conclude $\dim W=3$ with $v_1,v_2,v_4$ a basis, and read off all dependence relations.
 \item [DF 11.2.27] For a matrix $A'$ in reduced row echelon form: (a) nonzero rows and pivotal columns are independent and nonpivotal columns depend on the pivotal ones; (b) row rank equals column rank.
 \item [DF 11.2.27b] Use the preceding exercises and Exercise 15 to prove in general that the row rank and column rank of any matrix are equal.
-\item [DF 11.2.31] (Image and kernel) For $\varphi:V\to W$ with matrix $A$ and reduced form $A'$: (a) the image has dimension $r$ with the pivotal columns giving a basis; (b) the kernel is described by $AX=0$, with $\varphi$ injective iff rank $n$ and $\dim\ker\varphi=n-r$.
+\item [DF 11.2.31] (Image and kernel) For $\varphi:V\to W$ with matrix $A$ and reduced form $A'$: (a) the image has dimension $r$ with the columns of $A$ corresponding to the pivotal columns of $A'$ giving a basis; (b) the kernel is described by $AX=0$, with $\varphi$ injective iff rank $n$ and $\dim\ker\varphi=n-r$.
 \item [DF 11.2.35] For $V=\R^5$, $W=\R^4$ and the explicit $\varphi$, prove $A$ and $A'$ as displayed, conclude $\dim\im\varphi=3$ with the stated basis, and find the $2$-dimensional kernel basis.
 \item [DF 11.2.36] For $V$ the degree-$\le5$ rationals and $\varphi(f)=x^2f''-6xf'+12f$, prove $\varphi$ is linear and find bases for its image and kernel.
 \item [DF 11.2.39] For a subfield $F\subseteq K$ and linear $\psi:V\to W$ of finite-dimensional $F$-spaces: (a) $1\tensor\psi$ is $K$-linear $K\tensor_F V\to K\tensor_F W$; (b) its matrix in the bases $1\tensor v_i$, $1\tensor w_j$ equals the matrix of $\psi$.
-\item [DF 11.3.1] For finite-dimensional $V$, prove $\varphi\mapsto\varphi^{**}$ in Theorem 20 is a ring isomorphism $\End(V)\to\End(\dual{V})$.
-\item [DF 11.3.3] For $\Ann(S)=\set{f\in\dual{V}\st f(v)=0\ \forall v\in S}$, prove (a)--(f): subspace, the sum/intersection identities, $W_1=W_2\eqv\Ann(W_1)=\Ann(W_2)$, span-invariance, the dual-basis description, and $\dim\Ann(W)=\dim V-\dim W$.
+\item [DF 11.3.1] For $V$ of finite dimension $n$ over $F$, prove that $\varphi\mapsto\dual{\varphi}$ (Theorem~\ref{thm:transpose@c11}) is a vector space isomorphism $\End(V)\to\End(\dual{V})$ but not a ring homomorphism when $n>1$, and exhibit an $F$-algebra isomorphism $\End(V)\to\End(\dual{V})$.
+\item [DF 11.3.3] For finite-dimensional $V$ and $\Ann(S)=\set{f\in\dual{V}\st f(v)=0\ \forall v\in S}$ ($S\subseteq V$), prove (a)--(f): subspace, the sum/intersection identities, $W_1=W_2\eqv\Ann(W_1)=\Ann(W_2)$, span-invariance, the dual-basis description, and $\dim\Ann(W)=\dim V-\dim W$.
 \item [DF 11.3.5] If $V$ is infinite-dimensional with basis $\mathcal A$, prove $\dual{V}$ is isomorphic to the direct product of copies of $F$ indexed by $\mathcal A$, hence $\dim\dual{V}>\dim V$.
 \item [DF 11.4.3] For a commutative ring $R$ with $1$, an $R$-module $V$, and $x_1,\dots,x_n\in V$ with $A(x_1,\dots,x_n)\trans=0$, prove $(\det A)x_i=0$ for all $i$.
 \item [DF 11.4.4] (Determinants by elimination) Prove the effect of each elementary row operation on $\det A$, that $\det A\ne0$ iff $A$ row reduces to $I$, and the formula $\det A=(-1)^s(u_1\cdots u_t)\inv$.
@@ -45018,12 +45020,12 @@ Problems are drawn from Dummit \& Foote, Artin (\emph{Algebra}), and Fraleigh (\
 \item [DF 11.5.2] Fill in the proof of Proposition 33 that $S/I=\bigoplus_{k\ge0}S_k/I_k$, including $S_kI_j\subseteq I_{k+j}$ and well-definedness of multiplication.
 \item [DF 11.5.3] Show the image of $\mathrm{Sym}_2$ for the $\Z$-module $\Z$ consists of the $2$-tensors $a(1\tensor1)$ with $a$ even; conclude $1\tensor1$ is not in the image.
 \item [DF 11.5.5] Prove that if $M$ is free of rank $n$ then $\extp^i(M)$ is free of rank $\binom{n}{i}$ for all $i$.
-\item [DF 11.5.6] If $A$ is an $R$-algebra with $a^2=0$ for all $a$ and $\varphi:M\to A$ is $R$-linear, prove there is a unique $R$-algebra map $\Phi:\extp(M)\to A$ with $\Phi|_M=\varphi$.
+\item [DF 11.5.6] If $A$ is an $R$-algebra and $\varphi:M\to A$ is $R$-linear with $\varphi(m)^2=0$ for all $m\in M$, prove there is a unique $R$-algebra map $\Phi:\extp(M)\to A$ with $\Phi|_M=\varphi$.
 \item [DF 11.5.7] For $R=\Z[x,y]$, $I=(x,y)$: (a) characterize the equality $ax+by=a'x+b'y$; (b) prove the displayed map is a well-defined alternating $R$-bilinear map $I\times I\to R/I$.
 \item [DF 11.5.8] For an integral domain $R$ with fraction field $F$: (a) $\extp^2 F=0$; (b) for a submodule $I\subseteq F$, $\extp^i I$ is torsion for $i\ge2$; (c) exhibit $R$ and $I$ with $\extp^i I\ne0$ for all $i$.
 \item [DF 11.5.9] For $R=\Z[G]$ with $G=\{1,\sigma\}$ and $M=\Z e_1\oplus\Z e_2$ with $\sigma(e_1)=e_1+2e_2$, $\sigma(e_2)=-e_2$: prove $M$ is an $R$-module and $\extp^2 M$ has order $2$ generated by $e_1\wedge e_2$.
 \item [DF 11.5.10] Prove $z-\tfrac1{k!}\mathrm{Alt}(z)=\tfrac1{k!}\sum_{\sigma\in S_k}(z-\epsilon(\sigma)\sigma z)$ and use it to identify $\ker\bigl(\tfrac1{k!}\mathrm{Alt}\bigr)$ with $\mathcal A^k(M)$.
-\item [DF 11.5.11] Prove the image of $\mathrm{Alt}_k$ is the unique largest subspace of $T^k(V)$ on which each $\sigma\in S_k$ acts as multiplication by $\epsilon(\sigma)$.
+\item [DF 11.5.11] Suppose that $-1\ne1$ in $F$. Prove the image of $\mathrm{Alt}_k$ is the unique largest subspace of $T^k(V)$ on which each $\sigma\in S_k$ acts as multiplication by $\epsilon(\sigma)$.
 \item [DF 11.5.13] For a field with $-1\ne1$, prove $V\tensor_F V=S^2(V)\oplus\extp^2(V)$: every $2$-tensor splits uniquely into symmetric and alternating parts.
 \item [DF 11.5.14] Prove that if $M$ is a direct factor of $N$ then $T(M)$ (resp.\ $S(M)$, $\extp(M)$) is a subalgebra of $T(N)$ (resp.\ $S(N)$, $\extp(N)$).
 \item [Artin 1.7] Find a formula for the $n$th power of the displayed unipotent matrix and prove it by induction.
@@ -45053,7 +45055,7 @@ Problems are drawn from Dummit \& Foote, Artin (\emph{Algebra}), and Fraleigh (\
 \item [Artin 8.8.4] For a real skew-symmetric $A$: (a) prove $\det A\ge0$; (b) if $A$ has integer entries, prove $\det A$ is a perfect square.
 \item [Artin 8.M.7] For a real $m\times n$ matrix $A$, prove there exist orthogonal $P\in\mathrm{O}_m$, $Q\in\mathrm{O}_n$ with $PAQ$ diagonal and nonnegative entries (singular value decomposition).
 \item [Artin 8.M.8] Prove the polar decomposition: every nonsingular matrix $A$ is uniquely $A=UP$ with $P$ positive definite Hermitian and $U$ unitary.
-\item [Artin 9.4.8] On $W$ = Hermitian $2\times2$ matrices: (a) $P\cdot A=PAP^*$ is an action of $\mathrm{SL}_2(\C)$; (b) the form $(A,A')=\det(A+A')-\det A-\det A'$ has signature $(3,1)$; (c) build a homomorphism $\mathrm{SL}_2(\C)\to\mathrm{O}_{3,1}$ with kernel $\{\pm1\}$.
+\item [Artin 9.4.8] On $W$ = Hermitian $2\times2$ matrices: (a) $P\cdot A=PAP^*$ is an action of $\mathrm{SL}_2(\C)$; (b) the form $(A,A')=\det(A+A')-\det A-\det A'$ has signature $(1,3)$, so its negative has the Lorentz signature $(3,1)$; (c) build a homomorphism $\mathrm{SL}_2(\C)\to\mathrm{O}_{3,1}$ with kernel $\{\pm1\}$.
 \item [Artin 9.8.6] Determine all normal subgroups of $\GL_2(\R)$ that contain its center.
 \item [Artin 9.M.4] For quaternions $\alpha=a+bi+cj+dk$: (a) compute $\alpha\overline\alpha$; (b) every $\alpha\ne0$ has an inverse; (c) the unit quaternions form a group $\isom\mathrm{SU}_2$.
 \end{exers}
