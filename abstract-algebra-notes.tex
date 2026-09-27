@@ -11388,7 +11388,7 @@ Each node on the right is a left coset $g_i H = \{g_i h : h \in H\}$, a subset o
 equal size; cosets are \emph{not} subgroups in general.
 \dgi{Arrows:} Each horizontal arrow $H \to g_i H$, labelled $g_i \cdot{}$ and marked
 $\isom$, is the left-multiplication bijection $h \mapsto g_i h$.  It is a bijection of
-\emph{sets} (not a group homomorphism unless $g_i \in N_G(H)$); the $\isom$ symbol here
+\emph{sets} (not a group homomorphism unless $g_i = 1$, since it sends $1$ to $g_i$); the $\isom$ symbol here
 records equal cardinality, not isomorphism of groups.
 \dgi{What commutes:} There is no composable path here; the diagram is a family of parallel
 bijections, not a square with two routes.  The key equality it encodes is
@@ -11401,7 +11401,7 @@ cosets $g_1 H, \ldots, g_k H$ partition $G$ (proved just above the diagram), and
 has the same size $\ord{H}$.  Adding sizes gives $\ord{G} = k \cdot \ord{H}$, so $\ord{H}$
 divides $\ord{G}$ and $k = \idx{G}{H}$.
 \dgi{Concrete example:} Take $G = S_3$, $H = \{e, (12)\}$ (order 2).  The cosets are
-$H = \{e,(12)\}$, $(13)H = \{(13),(132)\}$, $(23)H = \{(23),(123)\}$; each has 2 elements
+$H = \{e,(12)\}$, $(13)H = \{(13),(123)\}$, $(23)H = \{(23),(132)\}$; each has 2 elements
 and they partition $S_3$, giving $\ord{S_3} = 3 \cdot 2 = 6$.
 \dgi{Common pitfall:} Students sometimes read the $\isom$ label as a group isomorphism
 $H \isom g_i H$ and conclude $g_i H$ is itself a subgroup.  It is not: $g_i H$ lacks the
@@ -11597,7 +11597,7 @@ is exactly the ambiguity counted out.  The diagram makes the lattice structure v
 reminds the reader of all four sets involved.
 \dgi{Concrete example:} In $G = S_4$, let $H = \{e,(12),(34),(12)(34)\} \isom V_4$ and
 $K = \{e,(13),(24),(13)(24)\} \isom V_4$.  Then $H \cap K = \{e\}$, $\ord{H}=\ord{K}=4$,
-$|HK| = 4 \cdot 4/1 = 16 > \ord{S_4} = 24$... wait, this exceeds $S_4$, so pick
+$|HK| = 4 \cdot 4/1 = 16$, so this $HK$ is a $16$-element subset of $S_4$ that is not a subgroup (as $16 \nmid 24$). For a smaller picture, pick
 $H = \gen{(12)}$, $K = \gen{(13)}$; then $|H \cap K|=1$, $|HK|=4$, and the diamond has
 $H \cap K = \{e\}$ at the bottom.
 \dgi{Common pitfall:} Students often assume $HK$ is a subgroup from the diagram because it
@@ -11658,13 +11658,14 @@ $3\mapsto4$, $4\mapsto1\mapsto2$ gives
 \[
   (12)(1234)=(234)\quad(\text{a }3\text{-cycle, order }3).
 \]
-But every element of $HK=H\cup (12)H$ has order dividing $4$ or equal to $2$ (the coset
-$(12)H$ consists of $(12)\cdot\{\text{powers of }(1234)\}$, none of which is a $3$-cycle).
+This product lies in $(12)H \subseteq KH$. On the other hand $HK = H \cup H(12)$ (as $K = \{e,(12)\}$), and
+computing right to left, $(1234)(12) = (134)$, $(13)(24)(12) = (1423)$, $(1432)(12) = (243)$.
 Concretely
-\[ HK=\{e,(1234),(13)(24),(1432),(12),(12)(1234),(12)(13)(24),(12)(1432)\}, \]
-and a
-$3$-cycle like $(234)$ has order $3\nmid 8$ and is not in this list. So
+\[ HK=\{e,(1234),(13)(24),(1432),(12),(134),(1423),(243)\}, \]
+and the
+$3$-cycle $(234)$ is not in this list. So
 $(12)(1234)\in KH$ but $\notin HK$, hence $HK\neq KH$ and \textbf{$HK$ is not a subgroup}.
+(Directly: $HK$ contains the $3$-cycle $(134)$, while a subgroup of order $8$ has no element of order $3$.)
 \textbf{Check:} $|HK|=8$ as a set is correct (the eight listed elements are distinct), yet
 the set fails closure --- exactly the situation the criterion predicts when $HK\neq KH$.
 \end{wex}
