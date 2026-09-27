@@ -40410,7 +40410,7 @@ For finite-dimensional $V$ over $F$ the constructions of this section assemble i
 The contravariant functor $\Hom_F(-,F)$ ties these together: it sends $V\rightsquigarrow\dual{V}$, $T\rightsquigarrow\dual{T}$, subspaces to their annihilators, and --- applied twice --- returns $V$ to itself.
 
 \begin{exers}{Exercises (from the text).}
-\item Let $V$ be a finite dimensional vector space. Prove that the map $\varphi \mapsto \varphi^{**}$ in Theorem 20 gives a ring isomorphism of $\End(V)$ with $\End(V^*)$.
+\item Let $V$ be a vector space over $F$ of dimension $n<\infty$. Prove that the map $\varphi \mapsto \varphi^{*}$ of Theorem~\ref{thm:transpose@c11} is a vector space isomorphism of $\End(V)$ with $\End(V^*)$, but is not a ring homomorphism when $n>1$. Exhibit an $F$-algebra isomorphism from $\End(V)$ to $\End(V^*)$.
 
 \item Let $V$ be the collection of polynomials with coefficients in $\Q$ in the variable $x$ of degree at most 5 with $1, x, x^2, \ldots, x^5$ as basis. Prove that the following are elements of the dual space of $V$ and express them as linear combinations of the dual basis:
 \begin{enumerate}
@@ -40438,9 +40438,9 @@ The contravariant functor $\Hom_F(-,F)$ ties these together: it sends $V\rightsq
 \begin{exers}{Practice problems.}
 \item Let $V = \F^3$ and let $\set{e_1, e_2, e_3}$ be the standard basis. For the linear functional $\varphi \in \dual{V}$ defined by $\varphi(a_1, a_2, a_3) = a_1 - 2a_2 + a_3$, write $\varphi$ as a linear combination of the dual basis $\set{e_1^*, e_2^*, e_3^*}$.
 
-\item Let $V$ be a vector space over $\F$ with basis $\set{v_1, v_2}$, and let $\set{v_1^*, v_2^*}$ be the dual basis of $\dual{V}$. Consider the new basis $\set{w_1, w_2}$ with $w_1 = v_1 + v_2$ and $w_2 = v_1 - v_2$. Compute the dual basis $\set{w_1^*, w_2^*}$ explicitly as linear combinations of $v_1^*$ and $v_2^*$.
+\item Let $V$ be a vector space with basis $\set{v_1, v_2}$ over a field $\F$ with $\operatorname{char}\F\neq 2$, and let $\set{v_1^*, v_2^*}$ be the dual basis of $\dual{V}$. Consider the new basis $\set{w_1, w_2}$ with $w_1 = v_1 + v_2$ and $w_2 = v_1 - v_2$. Compute the dual basis $\set{w_1^*, w_2^*}$ explicitly as linear combinations of $v_1^*$ and $v_2^*$.
 
-\item Let $V = \F[x]_{\le 2}$ be the space of polynomials of degree at most $2$. Define functionals $\varphi_0, \varphi_1, \varphi_2 \in \dual{V}$ by $\varphi_i(p) = p(i)$ for $i = 0, 1, 2$. Show that $\set{\varphi_0, \varphi_1, \varphi_2}$ is a basis of $\dual{V}$, and find the basis $\set{p_0, p_1, p_2}$ of $V$ for which it is the dual basis.
+\item Let $\F$ be a field with $\operatorname{char}\F\neq 2$, and let $V = \F[x]_{\le 2}$ be the space of polynomials of degree at most $2$. Define functionals $\varphi_0, \varphi_1, \varphi_2 \in \dual{V}$ by $\varphi_i(p) = p(i)$ for $i = 0, 1, 2$. Show that $\set{\varphi_0, \varphi_1, \varphi_2}$ is a basis of $\dual{V}$, and find the basis $\set{p_0, p_1, p_2}$ of $V$ for which it is the dual basis.
 
 \item Let $\dim V = n$. Prove that for every nonzero $v \in V$ there exists $\varphi \in \dual{V}$ with $\varphi(v) \ne 0$. Conclude that the only vector annihilated by every functional in $\dual{V}$ is $0$.
 
@@ -41222,7 +41222,7 @@ A \begin{pmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \end{pmatrix} = 0.
 \]
 Prove that $(\det A) x_i = 0$ for all $i \in \{1, 2, \ldots, n\}$.
 
-\item ({\it Computing Determinants of Matrices}) This exercise outlines the use of Gauss-Jordan elimination (cf. the exercises in Section 3) to compute determinants. This is the most efficient general procedure for computing large determinants. Let $A$ be an $n \times n$ matrix.
+\item ({\it Computing Determinants of Matrices}) This exercise outlines the use of Gauss-Jordan elimination (cf. the exercises in Section 2) to compute determinants. This is the most efficient general procedure for computing large determinants. Let $A$ be an $n \times n$ matrix.
 \begin{enumerate}
 \item[(a)] Prove that the elementary row operations have the following effect on determinants:
 \begin{enumerate}
