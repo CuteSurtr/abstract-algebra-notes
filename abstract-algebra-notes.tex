@@ -19680,15 +19680,18 @@ Theorem~\ref{art:burnside:cf@c4}. The action is on $S = $ the $15$ unordered fac
 sending $\{$top$,$bottom$\}$ to itself; Artin records $\lvert\Stab(U)\rvert = 8$ (rotations about
 the vertical axis together with the $180^\circ$ flips). Then
 $\lvert\Orb(U)\rvert = \ord O / \lvert\Stab(U)\rvert = 24/8 = 3$ --- the three axis-directions.
-For a pair of adjacent faces $U'$, the stabilizer has order $24/12 = 2$, giving orbit size $12$.
+For a pair of adjacent faces $U'$, the stabilizer consists of the identity and the half-turn
+about the axis through the midpoint of their common edge, so it has order $2$, giving orbit
+size $24/2 = 12$.
 $3 + 12 = 15$ exhausts $S$.
-\emph{(ii) Orbit count by Burnside.} We expect $N = 2$. One computes $\lvert\Fix(g)\rvert$ on the
-$15$ pairs class by class; the average is
+\emph{(ii) Orbit count by Burnside.} We expect $N = 2$. Class by class on the $15$ pairs: the
+identity fixes all $15$; each of the $6$ quarter-turns about a face axis fixes only the pair of
+faces on its axis; each of the $3$ face half-turns fixes $3$ pairs (the three pairs of opposite
+faces); the $8$ vertex rotations fix none (they permute the faces in two $3$-cycles); each of
+the $6$ edge half-turns fixes the $3$ pairs of faces it swaps. So
 \[
-N = \frac{1}{24}\sum_{g\in O}\lvert\Fix(g)\rvert = \frac{1}{24}\bigl(15 + \cdots\bigr) = 2,
+N = \frac{1}{24}\sum_{g\in O}\lvert\Fix(g)\rvert = \frac{1}{24}\bigl(15 + 6\cdot 1 + 3\cdot 3 + 8\cdot 0 + 6\cdot 3\bigr) = \frac{48}{24} = 2 .
 \]
-the identity alone fixing all $15$ pairs, the remaining classes contributing the balance to total
-$48 = 2 \cdot 24$.
 \textbf{Check.} Both methods agree with Artin: orbit sizes $3$ and $12$ (summing to $15$), and
 $N = 2$ orbits. The stabilizer order $8$ for an opposite-face pair is exactly the value Artin
 states in Section 6.10.
