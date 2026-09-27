@@ -32759,7 +32759,7 @@ $f(2) = 8 + 8 + 4 = 20 \equiv 0 \pmod 5$, confirming $r=0$. \checkmark
 \begin{pitfall}
 Division is only as forgiving as the coefficient ring. In $\Z[x]$ you may divide by $g$
 with $\Z$-coefficient quotient only when $\LC(g)$ is a unit (e.g. $g$ monic); for instance
-$3x-1$ does not divide $x$ in $\Z[x]$. Over a field $F$ there is never an obstruction:
+$x$ cannot be divided by $3x-1$ with remainder in $\Z[x]$ ($x=q(3x-1)+r$ with $r\in\Z$ forces $q\in\Z$ with $3q=1$), whereas in $\Q[x]$, $x=\tfrac13(3x-1)+\tfrac13$. Over a field $F$ there is never an obstruction:
 every nonzero element is a unit.
 \end{pitfall}
 
@@ -32933,7 +32933,7 @@ $1 + (n-1) = n$ roots.
 \end{proof}
 
 \begin{pitfall}
-Both the integral-domain hypothesis and ``field'' matter. Over $\Zn{8}$ the polynomial
+The integral-domain hypothesis matters (the proof uses nothing more, so the bound holds over any integral domain, e.g.\ $\Z$). Over $\Zn{8}$ the polynomial
 $x^2 - 1$ of degree $2$ has \emph{four} roots: $x \in \{1,3,5,7\}$, because $\Zn{8}$ has
 zero divisors. The step ``$(b-a)q(b)=0 \imp q(b)=0$'' fails when $b-a$ is a zero divisor.
 Over a field this never happens.
@@ -32975,7 +32975,7 @@ $x^2 - \sqrt2\,x + 1$ and $\tfrac{-1\pm i}{\sqrt2}$ giving $x^2 + \sqrt2\,x + 1$
 \textbf{Over $\Q$:} $f$ has no rational root ($\pm1$ give $2$), so no linear factor. The
 only possible factorization is into two quadratics. The $\R$-factorization above involves
 $\sqrt2 \notin \Q$; one checks no factorization $(x^2+ax+b)(x^2+cx+d)$ with $a,b,c,d\in\Q$
-exists (matching coefficients forces $a^2 = 2$, impossible over $\Q$). Hence $x^4+1$ is
+exists (matching coefficients gives $c=-a$, $b+d=a^2$, $a(d-b)=0$, $bd=1$; $a=0$ forces $b^2=-1$, while $a\neq0$ forces $b=d=\pm1$ and $a^2=\pm2$; all impossible over $\Q$). Hence $x^4+1$ is
 \emph{irreducible over $\Q$}. (It is the $8$th cyclotomic polynomial $\Phi_8$.)
 
 \textbf{Over $\F_2$:} here $1 = -1$, so $x^4 + 1 = x^4 - 1 = (x^2-1)^2 = (x-1)^2(x+1)^2$,
@@ -33046,7 +33046,7 @@ iff $p$ is irreducible; equivalently $F[x]/(p)$ is a field iff $p$ is irreducibl
 \end{theorem}
 
 \begin{proof}
-In a PID, the nonzero prime ideals are exactly the maximal ideals, and $(p)$ is prime iff
+In a PID that is not a field (such as $F[x]$), the nonzero prime ideals are exactly the maximal ideals, and $(p)$ is prime iff
 $p$ is irreducible (D\&F 8.2). Concretely: if $p$ is irreducible and $\bar f \neq 0$ in
 $F[x]/(p)$, then $p \ndivides f$, so $\gcd(f,p)=1$; B\'ezout gives $sf + tp = 1$, hence
 $\bar s\,\bar f = \bar 1$ and $\bar f$ is invertible. If $p = ab$ is a proper
