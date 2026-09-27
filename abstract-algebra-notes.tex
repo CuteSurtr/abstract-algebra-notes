@@ -35914,7 +35914,7 @@ This makes $V$ an $F[x]$-module in which $x$ acts as $T$. Conversely, every $F[x
 \end{proof}
 
 \[
-\begin{tikzcd}[column sep=large, row sep=large]
+\begin{tikzcd}[column sep=7em, row sep=large]
 \bigl(V,\ T:V\to V\bigr)
   \arrow[r, shift left=1.2ex, "{p(x)\,\cdot\,v\ :=\ p(T)v}"]
 & \bigl(V \text{ as } F[x]\text{-module}\bigr)
@@ -38424,11 +38424,10 @@ explicitly the failure of injectivity at the left end.
 \begin{exers}{Exercises (from the text).}
 \item Suppose that
 \[
-\begin{array}{ccccc}
-A & \xrightarrow{\;\psi\;} & B & \xrightarrow{\;\varphi\;} & C \\
-\downarrow \alpha & & \downarrow \beta & & \downarrow \gamma \\
-A' & \xrightarrow{\;\psi'\;} & B' & \xrightarrow{\;\varphi'\;} & C'
-\end{array}
+\begin{tikzcd}
+A \arrow[r, "\psi"] \arrow[d, "\alpha"] & B \arrow[r, "\varphi"] \arrow[d, "\beta"] & C \arrow[d, "\gamma"] \\
+A' \arrow[r, "\psi'"] & B' \arrow[r, "\varphi'"] & C'
+\end{tikzcd}
 \]
 is a commutative diagram of groups and the rows are exact. Prove that
 \begin{enumerate}
@@ -38440,11 +38439,10 @@ is a commutative diagram of groups and the rows are exact. Prove that
 \end{enumerate}
 \item Suppose
 \[
-\begin{array}{ccccccccc}
-A & \to & B & \to & C & \to & D & \to & E \\
-\downarrow \alpha & & \downarrow \beta & & \downarrow \gamma & & \downarrow \delta & & \downarrow \varepsilon \\
-A' & \to & B' & \to & C' & \to & D' & \to & E'
-\end{array}
+\begin{tikzcd}
+A \arrow[r] \arrow[d, "\alpha"] & B \arrow[r] \arrow[d, "\beta"] & C \arrow[r] \arrow[d, "\gamma"] & D \arrow[r] \arrow[d, "\delta"] & E \arrow[d, "\varepsilon"] \\
+A' \arrow[r] & B' \arrow[r] & C' \arrow[r] & D' \arrow[r] & E'
+\end{tikzcd}
 \]
 is a commutative diagram of groups, and the rows are exact. Prove that
 \begin{enumerate}
@@ -38542,11 +38540,10 @@ is a short exact sequence of abelian groups for all $R$-modules $D$ if and only 
 \begin{enumerate}
 \item[(a)] Suppose $\alpha : A \to M$ and $\beta : A \to N$ are $R$-module homomorphisms. Prove that $X = \{(\alpha(a), -\beta(a)) \mid a \in A\}$ is an $R$-submodule of the direct sum $M \oplus N$ and prove that $\alpha$ and $\beta$ factor through the quotient $(M \oplus N)/X$ (called the \emph{pushout} or \emph{fiber sum} of $\alpha$ and $\beta$) and that there is a commutative diagram
 \[
-\begin{array}{ccc}
-A & \xrightarrow{\;\beta\;} & N \\
-\downarrow \alpha & & \downarrow \pi_2 \\
-M & \xrightarrow{\;\pi_1\;} & P
-\end{array}
+\begin{tikzcd}
+A \arrow[r, "\beta"] \arrow[d, "\alpha"'] & N \arrow[d, "\pi_2"] \\
+M \arrow[r, "\pi_1"'] & P
+\end{tikzcd}
 \]
 where $\pi_1$ and $\pi_2$ are the natural maps to the quotient induced by the maps into the first and second components.
 \item[(b)] Suppose $f : M \to D$ and $g : N \to D$ are $R$-module homomorphisms with $f \circ \alpha = g \circ \beta$. Prove that there is a unique $R$-module homomorphism from the pushout $P$ to $D$ making the natural diagram commute.
@@ -39633,14 +39630,14 @@ $\Phi$ is linear: $\Mat^{\mathcal{E}}_{\mathcal{B}}(\varphi+\psi)=\Mat^{\mathcal
 
 This is the "matrix functor" on objects: choosing bases turns the space of maps $V\to W$ into a concrete matrix space, compatibly with composition (the multiplication square below, where $\mu$ denotes "compose" and the bottom map is matrix multiplication).
 \[
-\begin{tikzcd}[column sep=2.2em,row sep=large]
+\begin{tikzcd}[column sep=3.5em,row sep=large]
 \Hom_F(U,W)\times\Hom_F(V,U) \arrow[r,"\mu"] \arrow[d,"\Phi\times\Phi"'] & \Hom_F(V,W) \arrow[d,"\Phi"] \\
-\Mat_{m\times p}(F)\times\Mat_{p\times n}(F) \arrow[r,"\cdot"'] & \Mat_{m\times n}(F)
+\Mat_{m\times p}(F)\times\Mat_{p\times n}(F) \arrow[r,"{(A,B)\mapsto AB}"'] & \Mat_{m\times n}(F)
 \end{tikzcd}
 \]
 \begin{dgx}
 \dgi{Objects:} The top-left node is the set of composable pairs of linear maps: $\Hom_F(U,W)\times\Hom_F(V,U)$ with $\dim V=n$, $\dim U=p$, $\dim W=m$.  The top-right node is $\Hom_F(V,W)$.  The bottom-left node is the set of composable matrix pairs $\Mat_{m\times p}(F)\times\Mat_{p\times n}(F)$, and the bottom-right is $\Mat_{m\times n}(F)$.
-\dgi{Arrows:} The top horizontal arrow $\mu$ is composition of linear maps: $(\varphi,\psi)\mapsto\varphi\circ\psi$.  The bottom horizontal arrow $\cdot$ is matrix multiplication: $(A,B)\mapsto AB$.  The left vertical arrow $\Phi\times\Phi$ applies the basis-determined isomorphism $\Phi(\chi)=\Mat^{\text{appropriate bases}}(\chi)$ component-wise; the right vertical arrow $\Phi$ does the same for maps in $\Hom_F(V,W)$.
+\dgi{Arrows:} The top horizontal arrow $\mu$ is composition of linear maps: $(\varphi,\psi)\mapsto\varphi\circ\psi$.  The bottom horizontal arrow $(A,B)\mapsto AB$ is matrix multiplication.  The left vertical arrow $\Phi\times\Phi$ applies the basis-determined isomorphism $\Phi(\chi)=\Mat^{\text{appropriate bases}}(\chi)$ component-wise; the right vertical arrow $\Phi$ does the same for maps in $\Hom_F(V,W)$.
 \dgi{What commutes:} Right-then-down equals down-then-right: $\Phi(\varphi\circ\psi)=\Phi(\varphi)\cdot\Phi(\psi)$, i.e.\ $\Mat(\varphi\circ\psi)=\Mat(\varphi)\Mat(\psi)$.  This is the composition theorem restated as commutativity of this square.
 \dgi{Why it commutes:} Take $(\varphi,\psi)$ in the top-left.  Right-then-down: compose first to get $\varphi\circ\psi$, then take its matrix -- the composition theorem gives $\Mat(\varphi\circ\psi)$.  Down-then-right: take each matrix separately to get $(\Mat(\varphi),\Mat(\psi))$, then multiply -- the composition theorem says this product equals $\Mat(\varphi\circ\psi)$.  The two outcomes are equal by the composition theorem.
 \dgi{Why this matters here:} This square expresses that $\Phi$ is a functor (or, concretely, a ring isomorphism $\End(V)\isom\Mat_n(F)$): it not only sends objects to objects but also respects the multiplicative structure.  It subsumes both the isomorphism theorem for $\Hom$ and the composition theorem in one picture, and explains why $\Mat_{m\times n}(F)$ is the right model for $\Hom_F(V,W)$.
