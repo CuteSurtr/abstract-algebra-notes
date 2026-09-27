@@ -60123,11 +60123,11 @@ groups exactly the role dimension plays for vector spaces.
 
 \item Suppose that $\Ann(m) = P$, i.e., that $Rm \isom R/P$. Prove that if $0 \neq m' \in Rm$ then $\Ann(m') = P$. Deduce that $\Ass_R(R/P) = \set{P}$. [Observe that $R/P$ is an integral domain.]
 
-\item Suppose that $M$ is an $R$-module and that $P$ is a maximal element in the collection of ideals of the form $\Ann(m)$, for $m \in M$. Prove that $P$ is a prime ideal. [If $P = \Ann(m)$ and $ab \in P$, show that $bm \neq 0$ implies $\Ann(m) \subseteq \Ann(bm)$ and use the maximality of $P$ to deduce that $a \in \Ann(bm) = P$.]
+\item Suppose that $M$ is an $R$-module and that $P$ is a maximal element in the collection of ideals of the form $\Ann(m)$, for nonzero $m \in M$. Prove that $P$ is a prime ideal. [If $P = \Ann(m)$ and $ab \in P$, show that $bm \neq 0$ implies $\Ann(m) \subseteq \Ann(bm)$ and use the maximality of $P$ to deduce that $a \in \Ann(bm) = P$.]
 
 \item Suppose $R$ is a Noetherian ring and $M \neq 0$ is an $R$-module. Prove that $\Ass_R(M) \neq \varnothing$. [Use Exercise 32.]
 
-\item If $L$ is a submodule of $M$ with quotient $N \isom M/L$, prove that there are containments $\Ass_R(N) \subseteq \Ass_R(M) \subseteq \Ass_R(L) \cup \Ass_R(N)$, and show that both containments can be proper. [If $Rm \isom R/P$, show that $Rm \cap L = 0$ implies $P \in \Ass_R(N)$ and if $Rm \cap L \neq 0$ then $P \in \Ass_R(L)$ (by Exercise 31). For the second statement, consider $n\Z \subseteq \Z$.]
+\item If $L$ is a submodule of $M$ with quotient $N \isom M/L$, prove that there are containments $\Ass_R(L) \subseteq \Ass_R(M) \subseteq \Ass_R(L) \cup \Ass_R(N)$, and show that both containments can be proper. [If $Rm \isom R/P$, show that $Rm \cap L = 0$ implies $P \in \Ass_R(N)$ and if $Rm \cap L \neq 0$ then $P \in \Ass_R(L)$ (by Exercise 31). For the second statement, consider $n\Z \subseteq \Z$.]
 
 \item Suppose $M$ is an $R$-module and let $S$ be a subset of the prime ideals in $\Ass_R(M)$. Prove there is a submodule $N$ of $M$ with $\Ass_R(N) = S$ and $\Ass_R(M/N) = \Ass_R(M) - S$. [Consider the collection of submodules $N'$ of $M$ with $\Ass_R(N') \subseteq S$. Use Exercise 30 and Zorn's Lemma to show that there is a maximal submodule $N$ subject to $\Ass_R(N) \subseteq S$. If $P \in \Ass_R(M/N)$, there is a submodule $M'/N \isom R/P$. Use the previous exercise to show that $\Ass_R(M') \subseteq \Ass_R(N) \cup \set{P}$ and then use maximality of $N$ to show $P \in \Ass_R(M) - S$, so that $\Ass_R(M/N) \subseteq \Ass_R(M) - S$ and $\Ass_R(N) \subseteq S$. Use the previous exercise again to conclude that equality holds in each.]
 
@@ -60151,7 +60151,7 @@ groups exactly the role dimension plays for vector spaces.
 \item[(c)] If $M = (R/I_1) \times \cdots \times (R/I_n)$ is the direct product of cyclic $R$-modules for ideals $I_i$ in $R$ prove that $\mathcal{F}_R(M) = I_1 I_2 \cdots I_n$.
 \item[(d)] If $R = \Z$ and $M$ is a finitely generated abelian group show that $\mathcal{F}_{\Z}(M) = 0$ if $M$ is infinite and $\mathcal{F}_{\Z}(M) = |M| \Z$ if $M$ is finite.
 \item[(e)] If $I$ is an ideal in $R$ prove that the image of $\mathcal{F}_R(M)$ in the quotient $R/I$ is $\mathcal{F}_{R/I}(M/IM)$.
-\item[(f)] Prove that $\mathcal{F}_R(M/IM) \supseteq (\mathcal{F}_R(M), I) \subseteq R$.
+\item[(f)] Prove that $\mathcal{F}_R(M/IM) \subseteq (\mathcal{F}_R(M), I) \subseteq R$.
 \item[(g)] If $\varphi : M \to M'$ is a surjective $R$-module homomorphism prove $\mathcal{F}_R(M) \subseteq \mathcal{F}_R(M')$.
 \item[(h)] If $0 \to L \to M \to N \to 0$ is a short exact sequence of $R$-modules, prove that $\mathcal{F}_R(L) \mathcal{F}_R(N) \subseteq \mathcal{F}_R(M)$.
 \item[(i)] Suppose $R$ is the polynomial ring $k[x, y, z]$ over the field $k$. Let $M = R/(x, y^2, yz, z^2)$ and let $L$ be the submodule $(x, y, z)/(x, y^2, yz, z^2)$ of $M$. Prove that $\mathcal{F}_R(M)$ is $(x, y^2, yz, z^2)$ and $\mathcal{F}_R(L)$ is $(x, y, z)^2$. (This shows that in general the Fitting ideal of a submodule $L$ of $M$ need not contain the Fitting ideal for $M$.)
@@ -60163,7 +60163,7 @@ groups exactly the role dimension plays for vector spaces.
 
 \item Suppose $\set{g_1, \ldots, g_m}$ is a Grobner basis for the ideal $I$ in $k[x_1, \ldots, x_n]$. Prove that the monomials $m$ not divisible by any $\operatorname{LT}(g_i)$, $1 \leq i \leq m$, give a $k$-vector space basis for the quotient $k[x_1, \ldots, x_n]/I$.
 
-\item Let $I = (x^3 y - x^2 + 1, x^2 y^2 - y^3 - 1)$ as in Example 1 following Proposition 9.26.
+\item Let $I = (x^3 y - x y^2 + 1, x^2 y^2 - y^3 - 1)$ as in Example 1 following Proposition 9.26.
 \begin{enumerate}
 \item[(a)] Use the previous exercise to show that $\set{1, y, y^2, y^3}$ is a basis for the $k$-vector space $k[x, y]/I$.
 \item[(b)] Compute the $4 \times 4$ multiplication table for the basis vectors in (a).
@@ -60180,7 +60180,7 @@ groups exactly the role dimension plays for vector spaces.
 
 \item Let $V = Z(x^3 + y^3 + 7 z^3) \subseteq \C^3$. Then $I(V) = (x^3 + y^3 + 7 z^3)$ in $\C[x, y, z]$ (cf.\ Exercise 24 in Section 3).
 \begin{enumerate}
-\item[(a)] Show that $\overline{\varphi}(z) = z(x^3 - 1)$ defines a $\C$-algebra homomorphism from $k[V]$ to itself.
+\item[(a)] Show that $\overline{\varphi}(x) = x(y^3 - 7z^3)$, $\overline{\varphi}(y) = y(7z^3 - x^3)$, $\overline{\varphi}(z) = z(x^3 - y^3)$ defines a $\C$-algebra homomorphism from $k[V]$ to itself.
 \item[(b)] Let $\varphi : V \to V$ be the morphism corresponding to $\overline{\varphi}$. Observe that $(-2, 1, 1) \in V$ and compute $\varphi((-2, 1, 1)) \in V$.
 \item[(c)] Prove there are infinitely many points $(a, b, c)$ on $V$ with $a, b, c \in \Z$ and the greatest common divisor of $a, b,$ and $c$ is 1.
 \end{enumerate}
