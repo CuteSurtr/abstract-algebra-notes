@@ -380,7 +380,7 @@ Consequently $x^a=x^b$ iff $a\equiv b\pmod n$, and the distinct powers of $x$ ar
 
 \begin{wex}{Orders in $\Z$, $\R^{\times}$, and $\C^{\times}$}
 Compute the order of each element in several of the book's standard groups, distinguishing finite from infinite order.
-\wrec Apply Definition~\ref{d:order-mrg@c1} directly: hunt for the least $n$ with $x^n=1$ (additively $nx=0$). The trigger is ``order of an element''; in an infinite group most elements have infinite order, and finite order signals a root of unity or a torsion phenomenon.
+\wrec Apply Definition~\ref{d:order-mrg@c1} directly: hunt for the least $n$ with $x^n=1$ (additively $nx=0$). The trigger is ``order of an element''; in the infinite groups below ($\Z$, $\R^{\times}$, $\C^{\times}$) most elements have infinite order, and finite order signals a root of unity or a torsion phenomenon.
 \wsol
 \emph{In $(\Z,+)$.} Here $x^n$ means $nx$. For $x=0$, $\ord{0}=1$. For any $x\ne0$, $nx=0$ forces $n=0$, so no \emph{positive} $n$ works: $\ord{x}=\infty$. Every nonzero integer has infinite order.
 
@@ -845,7 +845,7 @@ The contrast across these examples is the recurring D\&F theme. The additive gro
 \item Prove a finite group of even order contains an element of order $2$.
 \item If $|x|=n$, prove $1,x,\dots,x^{n-1}$ are distinct, and $|x|\le|G|$.
 \item $|x|=n$. (a) $n$ odd $\Rightarrow x^i\neq x^{-i}$ ($1\le i\le n-1$);
-   (b) $n=2k\Rightarrow x^i=x^{-i}$ iff $i=k$.
+   (b) $n=2k\Rightarrow x^i=x^{-i}$ iff $i=k$ ($1\le i\le n-1$).
 \item If $x$ has infinite order, prove the powers $x^n$ are distinct.
 \item If $|x|=n$, show every power of $x$ lies in $\{1,x,\dots,x^{n-1}\}$.
 \item $G=\{1,a,b,c\}$, order $4$, no element of order $4$. Show the table is unique
@@ -863,9 +863,9 @@ The contrast across these examples is the recurring D\&F theme. The additive gro
   (b) Is $\star$ associative? Is it commutative? Justify each answer with an explicit computation or counterexample.
   (c) Does $\star$ have a (two-sided) identity element? Prove your claim.
 
-\item Let $G$ be a group and let $a,b,c \in G$. Solve each of the following equations for $x$ in terms of $a,b,c$, using only the group axioms (give the unique solution and name the axiom used at each step):
+\item Let $G$ be a group and let $a,b,c \in G$. Solve each of the following equations for $x$ in terms of $a,b,c$, using only the group axioms (give the unique solution in (a) and (c), and name the axiom used at each step):
   (a) $a x b = c$;
-  (b) $x a x = a$ given that $x = x\inv$;
+  (b) $x a x = a$ given that $x = x\inv$ (show that the solutions are exactly the $x$ with $x^2=1$ and $xa=ax$, so $x=1$ always works but need not be the only solution);
   (c) $a x a\inv = b$.
 
 \item Recall $\Zns{n}$ is the set of residues $\overline{a}$ with $\gcd(a,n)=1$ under multiplication mod $n$.
