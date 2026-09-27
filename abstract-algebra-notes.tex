@@ -18292,7 +18292,8 @@ families, the cyclic groups $C_n$ and the dihedral groups $D_n$.
 Fix $\theta=2\pi/n$, write $x=\rho_\theta$ for the rotation through $\theta$ and $y=r$ for the
 standard reflection. The \emph{dihedral group} $D_n$ is the subgroup of $\mathrm{O}(2)$ generated
 by $x$ and $y$. Its $2n$ elements are the $n$ rotations $x^k$ and the $n$ reflections $x^k y$ for
-$0\le k\le n-1$.
+$0\le k\le n-1$. (This is Artin's notation: the group of order $2n$ that D\&F write $D_{2n}$ is
+$D_n$ here, so the symmetry group of the square, written $D_8$ above, is $D_4$ below.)
 \end{definition}
 
 The single rule needed to multiply in $D_n$ is the commutation law between a rotation and a
@@ -18469,7 +18470,8 @@ images of a point lie on a circle about the fixed centroid $p$.
 
 \begin{corollary}[Symmetry groups of bounded plane figures]\label{art:finite_orthogonal:bounded@c4}
 Let $G$ be a finite subgroup of the group of all isometries of the plane (in particular, the
-symmetry group of a bounded plane figure). For suitable coordinates $G$ is one of the groups
+symmetry group of a bounded plane figure, when that group is finite; a disk has the infinite
+symmetry group $\mathrm{O}(2)$). For suitable coordinates $G$ is one of the groups
 $C_n$ or $D_n$.
 \end{corollary}
 
@@ -18507,13 +18509,13 @@ horizontal/vertical midlines. The reflection axes are drawn below.
 \end{tikzpicture}
 \]
 Numbering the vertices $1,2,3,4$ counterclockwise, the rotation $x=\rho$ acts as the $4$-cycle
-$(1\,2\,3\,4)$ and the reflection $y$ in the horizontal midline as $(1\,2)(3\,4)$; one checks
+$(1\,2\,3\,4)$ and the reflection $y$ in the vertical midline as $(1\,2)(3\,4)$; one checks
 $x^4=y^2=1$ and $yx=x\inv y$, realizing $D_4$ as a group of permutations of the four vertices.
 
 \begin{wex}{Symmetries of a regular hexagon}
 Name the full symmetry group of a regular hexagon centered at the origin and list its elements by
 type.
-\wrec The figure is bounded, so its symmetry group is $C_n$ or $D_n$
+\wrec The figure is bounded and has only finitely many symmetries, so its symmetry group is $C_n$ or $D_n$
 (Corollary~\ref{art:finite_orthogonal:bounded@c4}); a regular $n$-gon with $n\ge3$ has both rotations
 and reflections, giving $D_n$.
 \wsol A regular hexagon is carried to itself by rotation through $60^\circ=2\pi/6$, so the
