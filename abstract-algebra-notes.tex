@@ -25754,8 +25754,9 @@ permutation representation, or the order of $G$.
         $i\cdot x_t=j'$, then $j=j'$: \emph{equate} the indices (step (i)) and
         merge their rows, propagating any further forced equalities.
   \item \textbf{Stop} when the table is complete and consistent with all four
-        rules. Always prefer equating (step (i)) over introducing (step (ii)); for
-        finite $G$ this terminates.
+        rules. Always prefer equating (step (i)) over introducing (step (ii)), and
+        make the definitions (ii) systematically (e.g.\ always fill the first
+        blank entry of the table); then for finite $G$ this terminates.
 \end{enumerate}
 \end{method}
 
@@ -25763,8 +25764,10 @@ permutation representation, or the order of $G$.
 The two atomic steps are exactly Artin's (7.11.9): \emph{(i)} equate indices $i$
 and $j$ when the rules force $i=j$, and \emph{(ii)} pick a generator $x_t$ and an
 index $i$ with $i\cdot x_t$ undetermined and set $i\cdot x_t=j$ for a new index
-$j$. One never equates indices unless equality is forced. Giving preference to
-step (i) is what guarantees termination for finite groups.
+$j$. One never equates indices unless equality is forced. For finite groups the
+process terminates provided step (i) is given preference and the definitions (ii)
+are made systematically, so that every surviving index eventually has all its
+entries determined; with a careless order of definitions it can run forever.
 \end{remark}
 
 \medskip
@@ -25930,8 +25933,9 @@ index $\idx{G}{H}$ and a permutation representation, never $|G|$ in isolation; y
 must independently determine $|H|$ (often from the relations, as $\ord{x}=3$
 above). And the algorithm is unforgiving: a single wrong entry forces spurious
 coincidences and collapses the operation. Always prefer equating forced indices
-(step (i)) to introducing new ones (step (ii)) --- this both guarantees
-termination for finite $G$ and minimizes the table.
+(step (i)) to introducing new ones (step (ii)), and make the definitions
+systematically --- together these guarantee termination for finite $G$, and the
+preference for step (i) keeps the table small.
 \end{pitfall}
 
 \medskip
@@ -25947,7 +25951,9 @@ Suppose finitely many repetitions of steps (i) and (ii) yield a consistent table
 compatible with the rules \textnormal{(R1)--(R4)}. Then the table defines a
 permutation representation of $G$ that, after a suitable renumbering, is the
 representation of $G$ on the right cosets of $H$. (For finite $G$, with preference
-given to step (i), the process always terminates.)
+given to step (i) and the definitions (ii) made systematically, so that every
+surviving index eventually has all its entries determined, the process always
+terminates.)
 \end{theorem}
 
 \begin{proof}[Proof sketch]
