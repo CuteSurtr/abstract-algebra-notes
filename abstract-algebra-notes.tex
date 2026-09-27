@@ -62223,7 +62223,7 @@ If these conditions are satisfied, show that $\Spec(A)$ is compact and totally d
 
 \item Let $A$ be a ring, and let $F$ be the $A$-module $A^n$. Show that every set of $n$ generators of $F$ is a basis of $F$. [Let $x_1, \ldots, x_n$ be a set of generators and $e_1, \ldots, e_n$ the canonical basis of $F$. Define $\phi : F \to F$ by $\phi(e_i) = x_i$. Then $\phi$ is surjective and we have to prove that it is an isomorphism. By (3.9) we may assume that $A$ is a local ring. Let $N$ be the kernel of $\phi$ and let $k = A/\fm$ be the residue field of $A$. Since $F$ is a flat $A$-module, the exact sequence $0 \to N \to F \xrightarrow{\phi} F \to 0$ gives an exact sequence $0 \to k \tensor N \to k \tensor F \xrightarrow{1 \tensor \phi} k \tensor F \to 0$. Now $k \tensor F = k^n$ is an $n$-dimensional vector space over $k$; $1 \tensor \phi$ is surjective, hence bijective, hence $k \tensor N = 0$.
 
-Also $N$ is finitely generated, by Chapter 2, Exercise 12, since $N = 0$ by Nakayama's lemma. Hence $\phi$ is an isomorphism.]
+Also $N$ is finitely generated, by Chapter 2, Exercise 12, hence $N = 0$ by Nakayama's lemma. Hence $\phi$ is an isomorphism.]
 
 Deduce that every set of generators of $F$ has at least $n$ elements.
 
@@ -62247,7 +62247,7 @@ $B$ is said to be \emph{faithfully flat} over $A$.
 
 \item Let $A \xrightarrow{f} B \xrightarrow{g} C$ be ring homomorphisms. If $g \circ f$ is flat and $g$ is faithfully flat, then $f$ is flat.
 
-\item Let $f : A \to B$ be a flat homomorphism of rings, let $\fq$ be a prime ideal of $B$ and let $\fp = \fq^c$. Then $f^* : \Spec(B_{\fq}) \to \Spec(A_{\fp})$ is surjective. [For $B_{\fq}$ is flat over $A_{\fp}$ by (3.10), and $B_{\fq}$ is a local ring of $A_{\fp}$, hence faithfully flat by (3.16). Now use Exercise 16.]
+\item Let $f : A \to B$ be a flat homomorphism of rings, let $\fq$ be a prime ideal of $B$ and let $\fp = \fq^c$. Then $f^* : \Spec(B_{\fq}) \to \Spec(A_{\fp})$ is surjective. [For $B_{\fp}$ is flat over $A_{\fp}$ by (3.10), and $B_{\fq}$ is a local ring of $B_{\fp}$, hence is flat over $B_{\fp}$. Hence $B_{\fq}$ is flat over $A_{\fp}$ and satisfies condition iii) of Exercise 16.]
 
 \item Let $A$ be a ring, $M$ an $A$-module. The \emph{support} of $M$ is defined to be the set $\Supp(M)$ of prime ideals $\fp$ of $A$ such that $M_{\fp} \neq 0$. Prove the following results:
 \begin{enumerate}
@@ -62272,7 +62272,7 @@ Is the converse of ii) true?
 
 In particular, if $f \in A$, the image of $\Spec(A_f)$ in $X$ is the basic open set $X_f$ (Chapter 1, Exercise 17).
 \begin{enumerate}
-\item[ii)] Let $f : A \to B$ be a ring homomorphism. Let $X = \Spec(A)$ and $Y = \Spec(B)$, and let $f^* : Y \to X$ be the mapping associated with $f$. Identifying $\Spec(S^{-1}A)$ with its canonical image $S^{-1}X$ in $X$, and $\Spec(S^{-1}B)$ ($= \Spec(f(S)^{-1}B)$) with its canonical image $S^{-1}f^*(Y)$: Show that $S^{-1}f^* : \Spec(S^{-1}B) \to \Spec(S^{-1}A)$ is the restriction of $f^*$ to $S^{-1}Y$, and that $S^{-1}Y = f^{*-1}(S^{-1}X)$.
+\item[ii)] Let $f : A \to B$ be a ring homomorphism. Let $X = \Spec(A)$ and $Y = \Spec(B)$, and let $f^* : Y \to X$ be the mapping associated with $f$. Identifying $\Spec(S^{-1}A)$ with its canonical image $S^{-1}X$ in $X$, and $\Spec(S^{-1}B)$ ($= \Spec(f(S)^{-1}B)$) with its canonical image $S^{-1}Y$ in $Y$, show that $S^{-1}f^* : \Spec(S^{-1}B) \to \Spec(S^{-1}A)$ is the restriction of $f^*$ to $S^{-1}Y$, and that $S^{-1}Y = f^{*-1}(S^{-1}X)$.
 \item[iii)] Let $\fa$ be an ideal of $A$ and let $\fb = \fa^e$ be its extension in $B$. Let $\overline{f} : A/\fa \to B/\fb$ be the homomorphism induced by $f$. Then $\Spec(A/\fa)$ is identified with the closed subspace $V(\fa)$ in $X$, and $\Spec(B/\fb)$ with $V(\fb)$ in $Y$. Show that $\overline{f}^*$ is the restriction of $f^*$ to $V(\fb)$.
 \item[iv)] Let $\fp$ be a prime ideal of $A$. Take $S = A - \fp$ in ii) and then reduce mod $\fp$ as in iii). Deduce that the subspace $f^{*-1}(\fp)$ of $Y$ is naturally homeomorphic to $\Spec(B_{\fp}/\fp B_{\fp}) = \Spec(k(\fp) \tensor_A B)$, where $k(\fp)$ is the residue field of the local ring $A_{\fp}$.
 
@@ -62304,9 +62304,9 @@ The assignment of the ring $A(U)$ to each basic open set $U$ of $X$, and the res
 
 \item Show that the presheaf of Exercise 23 has the following property. Let $(U_i)_{i \in I}$ be a covering of $X$ by basic open sets. For each $i \in I$ let $s_i \in A(U_i)$ be such that, for each pair of indices $i, j$, the images of $s_i$ and $s_j$ in $A(U_i \cap U_j)$ are equal. Then there exists a unique $s \in A (= A(X))$ whose image in $A(U_i)$ is $s_i$, for all $i \in I$. (This essentially implies that the presheaf is a \emph{sheaf}.)
 
-\item Let $f : A \to B$, $g : A \to C$ be ring homomorphisms and let $h : A \to B \tensor_A C$ be defined by $h(x) = f(x) \tensor g(x)$. Let $X, Y, Z, T$ be the prime spectra of $A, B, C, B \tensor_A C$ respectively. Then $h^*(T) = f^*(Y) \cap g^*(Z)$. [Let $\fp \in X$, and let $k = k(\fp)$ be the residue field at $\fp$. By Exercise 21, the fiber $h^{*-1}(\fp)$ is the spectrum of $(B \tensor_A C) \tensor_A k(\fp) \cong (B \tensor_A k) \tensor_k (C \tensor_A k)$. Hence $\fp \in h^*(T) \iff (B \tensor_A k) \tensor_k (C \tensor_A k) \neq 0 \iff B \tensor_A k \neq 0$ and $C \tensor_A k \neq 0 \iff \fp \in f^*(Y) \cap g^*(Z)$.]
+\item Let $f : A \to B$, $g : A \to C$ be ring homomorphisms and let $h : A \to B \tensor_A C$ be defined by $h(x) = f(x) \tensor 1 = 1 \tensor g(x)$. Let $X, Y, Z, T$ be the prime spectra of $A, B, C, B \tensor_A C$ respectively. Then $h^*(T) = f^*(Y) \cap g^*(Z)$. [Let $\fp \in X$, and let $k = k(\fp)$ be the residue field at $\fp$. By Exercise 21, the fiber $h^{*-1}(\fp)$ is the spectrum of $(B \tensor_A C) \tensor_A k(\fp) \cong (B \tensor_A k) \tensor_k (C \tensor_A k)$. Hence $\fp \in h^*(T) \iff (B \tensor_A k) \tensor_k (C \tensor_A k) \neq 0 \iff B \tensor_A k \neq 0$ and $C \tensor_A k \neq 0 \iff \fp \in f^*(Y) \cap g^*(Z)$.]
 
-\item Let $(B_\alpha, g_{\alpha\beta})$ be a direct system of rings and $B$ the direct limit. For each $\alpha$, let $f_\alpha : A \to B_\alpha$ be a ring homomorphism such that $g_{\alpha\beta} \circ f_\alpha = f_\beta$ whenever $\alpha \leq \beta$ (i.e. the $B_\alpha$ form a direct system of $A$-algebras), and let $f : A \to B$ induce the $f_\alpha$. Show that
+\item Let $(B_\alpha, g_{\alpha\beta})$ be a direct system of rings and $B$ the direct limit. For each $\alpha$, let $f_\alpha : A \to B_\alpha$ be a ring homomorphism such that $g_{\alpha\beta} \circ f_\alpha = f_\beta$ whenever $\alpha \leq \beta$ (i.e. the $B_\alpha$ form a direct system of $A$-algebras), and let $f : A \to B$ be the homomorphism induced by the $f_\alpha$. Show that
 \[
 f^*(\Spec(B)) = \bigcap_\alpha f_\alpha^*(\Spec(B_\alpha)).
 \]
