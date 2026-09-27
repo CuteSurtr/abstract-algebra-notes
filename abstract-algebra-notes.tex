@@ -66797,7 +66797,7 @@ The slogan to carry from Atiyah--Macdonald is the local-to-global one. A DVR is 
 
 \begin{proposition}[{Prop.~14: the two motivating classes}]
 \begin{enumerate}[label=\textup{(\arabic*)},leftmargin=*]
-\item Every PID is a Dedekind domain.
+\item Every PID that is not a field is a Dedekind domain.
 \item The ring of integers $\mathcal{O}_K$ of an algebraic number field $K$ is a Dedekind domain.
 \end{enumerate}
 \end{proposition}
@@ -66818,11 +66818,11 @@ For an integral domain $R$ with fraction field $K\ne R$, the following are equiv
 \end{theorem}
 
 \begin{proof}[Idea]
-(1)$\Rightarrow$(2): localizing preserves Noetherian, integrally closed, and dimension $1$, so $R_P$ is a local Noetherian integrally closed domain of dimension $1$, i.e.\ a DVR. (2)$\Rightarrow$(1): integral closure and "primes are maximal" are local properties, and a domain that is locally a DVR is integrally closed of dimension $1$. (1)$\Leftrightarrow$(3): invertibility $AA'=R$ is a local statement, $(AA')_P=A_P(A_P)'$; each $R_P$ being a DVR makes $A_P$ invertible (Prop.~11), so $AA'=R$ globally. Conversely invertible fractional ideals make $R$ Noetherian and each $R_P$ a local ring with all fractional ideals invertible, hence a DVR (Prop.~11). (3)$\Leftrightarrow$(4) is the projective $=$ invertible dictionary (Prop.~10). (1)$\Rightarrow$(5): a minimal primary decomposition $I=Q_1\cap\cdots\cap Q_n$ has pairwise comaximal radicals (primes are maximal), so $\bigcap Q_i=\prod Q_i$, and each $P$-primary $Q_i$ is a prime power $P_i^{m_i}$ because $R_{P_i}$ is a DVR. (5)$\Rightarrow$(3): one shows invertible primes are maximal and that the factorization forces every nonzero prime to be invertible, whence every ideal -- and then every fractional ideal -- is invertible. Uniqueness in (5) is the cancellation argument: in $P_1\cdots P_n=P_1'\cdots P_m'$ a minimal $P_1'$ contains some $P_i$ and is contained in some $P_j'$, forcing equality and allowing cancellation of the invertible $P_1'$.
+(1)$\Rightarrow$(2): localizing preserves Noetherian, integrally closed, and dimension $1$, so $R_P$ is a local Noetherian integrally closed domain of dimension $1$, i.e.\ a DVR. (2)$\Rightarrow$(1): integral closure and "primes are maximal" are local properties, and a domain that is locally a DVR is integrally closed of dimension $1$. (1)$\Leftrightarrow$(3): invertibility $AA'=R$ is a local statement, $(AA')_P=A_P(A_P)'$; each $R_P$ being a DVR makes $A_P$ invertible (Prop.~11), so $AA'=R$ globally. Conversely invertible fractional ideals make $R$ Noetherian and each $R_P$ a local ring with all fractional ideals invertible, hence a DVR (Prop.~11). (3)$\Leftrightarrow$(4) is the projective $=$ invertible dictionary (the paragraph after Prop.~9). (1)$\Rightarrow$(5): a minimal primary decomposition $I=Q_1\cap\cdots\cap Q_n$ has pairwise comaximal radicals (primes are maximal), so $\bigcap Q_i=\prod Q_i$, and each $P$-primary $Q_i$ is a prime power $P_i^{m_i}$ because $R_{P_i}$ is a DVR. (5)$\Rightarrow$(3): one shows invertible primes are maximal and that the factorization forces every nonzero prime to be invertible, whence every ideal -- and then every fractional ideal -- is invertible. Uniqueness in (5) is the cancellation argument: in $P_1\cdots P_n=P_1'\cdots P_m'$ a minimal $P_1'$ contains some $P_i$, which in turn contains some $P_j'$; minimality of $P_1'$ forces $P_j'=P_i=P_1'$, allowing cancellation of the invertible $P_1'$.
 \end{proof}
 
 \begin{remark}
-The logic of (5)$\Rightarrow$(3) is purely multiplicative and reverses the historical order. Dedekind \emph{defined} his domains by property (5) -- unique factorization of ideals -- precisely to repair the failure of unique factorization of \emph{elements} in rings of integers (Section 9.3). It was Noether who recognized the structural characterization (1). The two viewpoints, "ideals factor" and "Noetherian $+$ integrally closed $+$ dimension $1$," are the same world seen from arithmetic and from geometry respectively.
+The logic of (5)$\Rightarrow$(3) is purely multiplicative and reverses the historical order. Dedekind \emph{defined} his domains by property (5) -- unique factorization of ideals -- precisely to repair the failure of unique factorization of \emph{elements} in rings of integers (Section 8.3). It was Noether who recognized the structural characterization (1). The two viewpoints, "ideals factor" and "Noetherian $+$ integrally closed $+$ dimension $1$," are the same world seen from arithmetic and from geometry respectively.
 \end{remark}
 
 \begin{corollary}[{Cor.~16: unique factorization in $\mathcal O_K$}]
@@ -66916,7 +66916,7 @@ Let $C$ be a nonsingular irreducible affine curve over an algebraically closed f
 \begin{wex}{$k[x,y]/(y^2-x^3)$ is not Dedekind}
 Show the cuspidal cubic coordinate ring $R=k[x,y]/(y^2-x^3)$ fails to be Dedekind.
 \wrec A Dedekind domain is integrally closed; the cusp is a singular point, so normality fails.
-\wsol Writing $t=y/x$ in the fraction field, $t^2=y^2/x^2=x^3/x^2=x$ and $t^3=tx=y$, so $t$ is integral over $R$ ($t^2-x=0$) but $t\notin R$. Thus $R$ is not integrally closed and not Dedekind; its integral closure is $k[t]$, the coordinate ring of the smooth normalization $\Aff^1$. Sanity check: this matches Worked Example~16.3 above, where $\fm=(x,y)$ was a non-invertible ideal -- non-invertibility of some ideal is exactly the failure of Theorem~15(3) caused by the singular point.
+\wsol Writing $t=y/x$ in the fraction field, $t^2=y^2/x^2=x^3/x^2=x$ and $t^3=tx=y$, so $t$ is integral over $R$ ($t^2-x=0$) but $t\notin R$. Thus $R$ is not integrally closed and not Dedekind; its integral closure is $k[t]$, the coordinate ring of the smooth normalization $\Aff^1$. Sanity check: this matches Worked Example~16.3.6 above, where $\fm=(x,y)$ was a non-invertible ideal -- non-invertibility of some ideal is exactly the failure of Theorem~15(3) caused by the singular point.
 \end{wex}
 
 \subsection*{The group of fractional ideals and the class group}
@@ -67000,7 +67000,7 @@ Let $R$ be Dedekind and $A=\prod P_i^{e_i}$, $B=\prod P_i^{f_i}$ ($e_i,f_i\ge0$)
 \end{proposition}
 
 \begin{proof}[Idea]
-(1) is "contain $=$ divide" read off exponents. For (2): $A+B$ is the smallest ideal containing both, so it divides any common upper bound; matching exponents gives the min, and dually $A\cap B$ gives the max.
+(1) is "contain $=$ divide" read off exponents. For (2): $A+B$ is the smallest ideal containing both, so every common divisor of $A$ and $B$ (an ideal containing both) contains $A+B$, i.e.\ divides it; matching exponents gives the min, and dually $A\cap B$ gives the max.
 \end{proof}
 
 \begin{proposition}[{Prop.~18: Chinese Remainder Theorem}]
@@ -67043,7 +67043,7 @@ Compute $(3+i)+(1+3i)$ and $(3+i)\cap(1+3i)$ in $\Z[i]$ via factorization.
 \begin{wex}{Every ideal of $\Z[\sqrt{-5}]$ needs at most two generators}
 Illustrate Corollary~19(3) on $\fp_2=(2,1+\sqrt{-5})$.
 \wrec Two-generation: pick any nonzero $a\in I$, then $I=Ra+Rb$; here $a=2$.
-\wsol $\fp_2$ is already exhibited with two generators $2$ and $1+\sqrt{-5}$, and it is not principal (Worked Example~16.6 style: no element of norm $2$), so two is the minimum. Sanity check: this is sharp -- a non-principal ideal in a Dedekind domain genuinely needs two generators but never more, matching Corollary~19(3).
+\wsol $\fp_2$ is already exhibited with two generators $2$ and $1+\sqrt{-5}$, and it is not principal (as in Worked Example~16.3.7: no element of norm $2$), so two is the minimum. Sanity check: this is sharp -- a non-principal ideal in a Dedekind domain genuinely needs two generators but never more, matching Corollary~19(3).
 \end{wex}
 
 \begin{wex}{Finding a coprime ideal in the inverse class}
@@ -67066,7 +67066,7 @@ Let $R$ be Dedekind with fraction field $K$.
 \end{proposition}
 
 \begin{proof}[Idea]
-(1) multiplication by $a$ is an isomorphism $J\to(a)J$; conversely an isomorphism $I\to J$ (after scaling, $J=R$) makes $I\inv I$ principal. The key reduction in (3) is the splitting $I\oplus J\isom R\oplus IJ$: replacing $I,J$ by coprime integral representatives, the sum map $I\oplus J\to I+J=R$ has kernel $I\cap J=IJ$, giving a short exact sequence $0\to IJ\to I\oplus J\to R\to0$ that splits because $R$ is free. Iterating gives (3); (2) follows by tracking the product class via a determinant.
+(1) multiplication by $a$ is an isomorphism $J\to(a)J$; conversely an $R$-isomorphism $\varphi:I\to J$ is multiplication by the constant $c=\varphi(x)/x\in K^\times$ (since $x\varphi(y)=y\varphi(x)$), so $J=cI$, i.e.\ $I=(c\inv)J$. The key reduction in (3) is the splitting $I\oplus J\isom R\oplus IJ$: replacing $I,J$ by coprime integral representatives, the sum map $I\oplus J\to I+J=R$ has kernel $I\cap J=IJ$, giving a short exact sequence $0\to IJ\to I\oplus J\to R\to0$ that splits because $R$ is free. Iterating gives (3); (2) follows by tracking the product class via a determinant.
 \end{proof}
 
 \begin{theorem}[{Thm.~22: structure of f.g.\ modules over a Dedekind domain}]
@@ -67090,7 +67090,7 @@ A finitely generated torsion-free $M$ embeds in $M\otimes_R K\cong K^n$; project
 A finitely generated module over a Dedekind domain is projective iff it is torsion-free. Moreover the class number is $1$ iff every finitely generated projective $R$-module is free.
 \end{corollary}
 
-\begin{wex}{A PID is a Dedekind domain of class number $1$}
+\begin{wex}{A PID that is not a field is a Dedekind domain of class number $1$}
 Show Theorem~22 reduces to the PID structure theorem when $\operatorname{Cl}(R)=1$.
 \wrec If $h_R=1$ every ideal $I$ is principal, hence $I\isom R$ as a module, so the Steinitz class drops out.
 \wsol When $\operatorname{Cl}(R)=1$, $[I]=[R]$ forces $I\isom R$, so $R^{n-1}\oplus I\isom R^n$ and $M\isom R^n\oplus\bigoplus R/P_i^{e_i}$ -- the elementary-divisor form of the PID theorem. Sanity check: for $R=\Z$, $P_i=(p_i)$, this is $M\isom\Z^n\oplus\bigoplus\Z/p_i^{e_i}\Z$, the classification of finitely generated abelian groups.
@@ -67111,7 +67111,7 @@ Decide whether $\fp_2\oplus\fp_2\isom R\oplus R$ over $R=\Z[\sqrt{-5}]$.
 \begin{wex}{Torsion module over a Dedekind domain}
 Classify $M=R/\fp_2^3\oplus R/\fp_3$ as in Theorem~22 over $R=\Z[\sqrt{-5}]$.
 \wrec This is already in elementary-divisor form: the prime powers are $\fp_2^3$ and $\fp_3^1$, the module is pure torsion (rank $0$).
-\wsol The rank is $0$, so there is no free or Steinitz part; $\Tor(M)=M$ with elementary divisors $\fp_2^3$ and $\fp_3$. Sanity check: the two primes are distinct, so by CRT (Prop.~18) the summands are "coprime" and $M$ cannot be further amalgamated; the elementary divisors $\set{\fp_2^3,\fp_3}$ are the unique invariants.
+\wsol The rank is $0$, so there is no free or Steinitz part; $\Tor(M)=M$ with elementary divisors $\fp_2^3$ and $\fp_3$. Sanity check: the two primes are distinct, so by CRT (Prop.~18) the summands are coprime and combine into the cyclic module $M\isom R/\fp_2^3\fp_3$ (the invariant-factor form); the elementary divisors $\set{\fp_2^3,\fp_3}$ are the unique invariants.
 \end{wex}
 
 \begin{wex}{Quotient $R/I$ is Artinian}
