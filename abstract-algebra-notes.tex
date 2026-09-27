@@ -19068,16 +19068,16 @@ D_6 & 12 & 1 & \text{p6m} \\
 \hline
 \end{array}
 \]
-The five cyclic point groups give one type each ($5$ in all); the dihedral point groups split into $12$ types, the extra ones distinguished by whether a reflection in $\overline G$ is realized by a true reflection or only by a glide, and by the shape (square, rectangular, rhombic, hexagonal) of the underlying lattice.
+The five cyclic point groups give one type each ($5$ in all); the dihedral point groups split into $12$ types, the extra ones distinguished by whether a reflection in $\overline G$ is realized by a true reflection or only by a glide, by the shape (square, rectangular, rhombic, hexagonal) of the underlying lattice, and, for the pair p3m1, p31m (both on the hexagonal lattice, both with true reflections in three directions), by how the mirror lines sit relative to the lattice: in p3m1 every $3$-fold rotation center lies on a mirror line, in p31m some do not.
 \end{theorem}
 
 \begin{remark}
-We do not reproduce the full case analysis; it proceeds point group by point group, in each case pinning down the position of a reflection or glide relative to the lattice. As a sample of the method we treat the point group $D_1=\{1,r\}$ informally below and the brick pattern in detail. The complete verification appears in Artin as the analysis of the cases $C_4$ and $D_4$ (Propositions $6.6.3$ and $6.6.4$).
+We do not reproduce the full case analysis; it proceeds point group by point group, in each case pinning down the position of a reflection or glide relative to the lattice. As a sample of the method we treat the point group $D_1=\{1,r\}$ informally below and the brick pattern in detail. Artin carries out the analysis only for the point groups $C_4$ and $D_4$ (Propositions $6.6.3$ and $6.6.4$), as a model of the method; that the $17$ types exhaust the possibilities is left as an exercise (Artin, Exercise $6.6.6$).
 \end{remark}
 
 \subsection*{Glide vs.\ ordinary reflection: the brick pattern}
 
-The cleanest illustration of why the point group alone is not enough is the running-bond \emph{brick pattern}. Its symmetry group has the same point group $D_2$ as a fully symmetric rectangular pattern, yet it contains \emph{no reflection at all} --- only glides.
+The cleanest illustration of why the point group alone is not enough is a \emph{brick pattern}: a running bond in which every brick carries a diagonal stroke, rising to the right in alternate rows and falling to the right in the rows between. Its symmetry group has the same point group $D_2$ as a fully symmetric rectangular pattern, yet it contains \emph{no reflection at all} --- only glides. (The strokes matter: the plain running bond is \emph{not} an example, since reflection across the middle line of any row preserves it; its group is of type cmm, with a centered lattice.)
 
 \begin{center}
 \begin{tikzpicture}[scale=0.62, line cap=round]
@@ -19087,6 +19087,8 @@ The cleanest illustration of why the point group alone is not enough is the runn
   \pgfmathtruncatemacro{\sh}{mod(\y,2)} % 0 or 1
   \foreach \x in {-1,0,1,2,3} {
     \draw[thick] ({2*\x + \sh*1},\y) rectangle ({2*\x + \sh*1 + 2},\y+1);
+    % diagonal stroke: rising in even rows, falling in odd rows
+    \draw ({2*\x + \sh*1},{\y + \sh}) -- ({2*\x + \sh*1 + 2},{\y + 1 - \sh});
   }
 }
 % clip-like viewport frame
@@ -19099,14 +19101,14 @@ The cleanest illustration of why the point group alone is not enough is the runn
 \draw[dashed, thick] (0,2) -- (6,2);
 \node[anchor=west] at (6.25,2) {\small glide line};
 % basis vectors
-\draw[->, very thick] (0,0) -- (4,0) node[midway,below] {\small $a$};
+\draw[->, very thick] (0,0) -- (2,0) node[midway,below] {\small $a$};
 \draw[->, very thick] (0,0) -- (0,2) node[midway,left] {\small $b$};
 \node[anchor=north] at (3,-0.55) {\small $c=\bigl(\tfrac12,\tfrac12\bigr)$ glide};
 \end{tikzpicture}
 \end{center}
 
 \noindent
-Let the lattice be $L=\Z a+\Z b$ where $a$ spans the length of one brick and $b$ spans two rows. The pattern has a half-turn ($\rho_\pi$, order $2$) about the center of each brick and about the midpoints of its edges; these are all the same element $\rho_\pi$ of the point group. There are no rotations of any other nontrivial angle. Crucially, although the pattern \emph{looks} like it should have a mirror, no reflection actually fixes it: reflecting across a horizontal line through the middle of a row sends the staggered rows out of register. What \emph{does} fix it is the glide reflection across the dashed line, combining that horizontal reflection with the half-period translation $c=(\tfrac12,\tfrac12)$ measured in the basis $(a,b)$. Hence
+Let the lattice be $L=\Z a+\Z b$ where $a$ spans the length of one brick and $b$ spans two rows. The pattern has a half-turn ($\rho_\pi$, order $2$) about the center of each brick and about the midpoints of its short edges; these are all the same element $\rho_\pi$ of the point group. There are no rotations of any other nontrivial angle. Crucially, although the pattern \emph{looks} like it should have a mirror, no reflection actually fixes it: reflecting across a horizontal line through the middle of a row reverses the slant of the strokes in that row, reflecting across a mortar line sends the staggered rows out of register, and every vertical reflection reverses the slant of the strokes. What \emph{does} fix it is the glide reflection across the dashed line, combining the reflection across the middle line of the row just below it with the half-period translation $c=(\tfrac12,\tfrac12)$ measured in the basis $(a,b)$. Hence
 \[
 \overline G=D_2=\{1,\ \rho_\pi,\ r,\ \rho_\pi r\},\qquad\text{but $G$ contains no reflection --- the $r$ in $\overline G$ is realized only by a glide.}
 \]
@@ -19122,11 +19124,11 @@ This is the type \textbf{pgg}; the type \textbf{pmm} has the \emph{same} point g
 \end{method}
 
 \begin{wex}{The point group of the brick pattern is $D_2$, not $C_2$}
-Problem. Determine the point group of the running-bond brick pattern above, and explain why it is $D_2$ even though the group contains no reflection.
+Problem. Determine the point group of the brick pattern above, and explain why it is $D_2$ even though the group contains no reflection.
 \wrec Apply the recipe: first the rotations fix $n$, then the presence of glide/reflection symmetry decides $C_n$ vs.\ $D_n$.
 \wsol
-\emph{Rotations:} the only nontrivial rotational symmetry is the half-turn $\rho_\pi$ about a brick center (or an edge midpoint). No $90^\circ$ or $120^\circ$ rotation preserves the staggered rows, so $n=2$.
-\emph{Reflection or glide:} a horizontal reflection alone fails (the rows are offset), but the glide across the dashed line --- reflection plus the translation by $c=(\tfrac12,\tfrac12)$ --- does preserve the pattern. The point group is the \emph{image} in $\mathrm{O}(2)$, and the linear part of a glide reflection is an honest reflection $r$. So $r\in\overline G$.
+\emph{Rotations:} the only nontrivial rotational symmetry is the half-turn $\rho_\pi$ about a brick center (or the midpoint of a short edge). No $90^\circ$ or $120^\circ$ rotation preserves the staggered rows, so $n=2$.
+\emph{Reflection or glide:} a horizontal reflection alone fails (it reverses the slant of the strokes or puts the offset rows out of register), but the glide across the dashed line --- the reflection across the middle line of the row just below it, followed by the translation by $c=(\tfrac12,\tfrac12)$ --- does preserve the pattern. The point group is the \emph{image} in $\mathrm{O}(2)$, and the linear part of a glide reflection is an honest reflection $r$. So $r\in\overline G$.
 \textbf{Check:} $\overline G$ contains $1,\rho_\pi,r$, hence also $\rho_\pi r$, giving $\overline G=D_2$ of order $4$. Yet $G$ itself has no element with reflection-type fixed line, so $G\ne D_2$ as an isometry group: the point group sees the mirror, the isometry group realizes it only as a glide. This is precisely why $\overline G$ and $L$ do not determine $G$.
 \end{wex}
 
