@@ -7294,7 +7294,7 @@ In particular the stabilizer of a single point $a$ under conjugation is $\mathrm
 \[
 \bigcap_{a\in A}G_a=\{\,g\st ga=ag\ \forall a\in A\,\}=C_G(A),
 \]
-which is the definition of the centralizer. As an intersection of stabilizers it is the kernel of the action of $G$ on the set $A$ (by conjugation), hence a subgroup by Proposition~\ref{p:stab-subgroup@c2}. Taking $A=\{a\}$ gives $\mathrm{Stab}(a)=C_G(a)$.
+which is the definition of the centralizer. As an intersection of stabilizers (each a subgroup by Proposition~\ref{p:stab-subgroup@c2}) it is a subgroup; since $C_G(A)\sgr N_G(A)$ (Proposition~\ref{p:tower@c2}), it is the kernel of the conjugation action of $N_G(A)$ on the set $A$ (in general $G$ itself does not act on $A$, since $gAg\inv$ need not equal $A$). Taking $A=\{a\}$ gives $\mathrm{Stab}(a)=C_G(a)$.
 \end{proof}
 
 \begin{method}{Stabilizer vs.\ kernel: which one is it, and how to compute it}
@@ -7415,7 +7415,7 @@ Hence $C_G(s)=\mathrm{Stab}(s)=\{1,r^2,s,r^2s\}$, order $4$ (a Klein four-group 
 \end{wex}
 
 \begin{wex}{Kernel as $C_G(A)$: centralizer of a subset in $Q_8$}
-Let $G=Q_8=\{\pm1,\pm i,\pm j,\pm k\}$ act on itself by conjugation, and let $A=\{i,j\}$. Compute the centralizer $C_G(A)$, exhibiting it as the kernel $\bigcap_{a\in A}G_a$ of the conjugation action restricted to the set $A$.
+Let $G=Q_8=\{\pm1,\pm i,\pm j,\pm k\}$ act on itself by conjugation, and let $A=\{i,j\}$. Compute the centralizer $C_G(A)$, exhibiting it as the intersection $\bigcap_{a\in A}G_a$ of the point stabilizers, i.e.\ the kernel of the conjugation action of $N_G(A)$ on $A$ ($G$ itself does not act on $A$: $jij\inv=-i\notin A$).
 \wrec ``Fix every element of $A$ under conjugation'' $\Rightarrow$ kernel of the conjugation-on-points action $=C_G(A)$ (Thm.~\ref{t:conj@c2}(b)). Compute $C_G(i)\cap C_G(j)$.
 \wsol Recall in $Q_8$: $i^2=j^2=k^2=-1$, $ij=k$, $ji=-k$, and $-1$ is central. Compute $C_G(i)=\{g\st gi=ig\}$. Since $i$ commutes with $\pm1,\pm i$ and anticommutes with $\pm j,\pm k$ (e.g.\ $ji=-ij$), we get $C_G(i)=\{\pm1,\pm i\}=\gen{i}$, order $4$. Likewise $C_G(j)=\{\pm1,\pm j\}=\gen{j}$, order $4$. Intersect:
 \[
@@ -7423,7 +7423,7 @@ C_G(A)=C_G(i)\cap C_G(j)=\{\pm1,\pm i\}\cap\{\pm1,\pm j\}=\{\pm1\}=Z(Q_8).
 \]
 So the only elements conjugation-fixing both $i$ and $j$ are $\pm1$.
 
-\emph{Check.} Since $i,j$ generate $Q_8$ (as $ij=k$), centralizing both means centralizing everything, so $C_G(\{i,j\})=C_G(Q_8)=Z(Q_8)=\{\pm1\}$. This matches. As a kernel sanity check it is normal: $\{\pm1\}\nor Q_8$, indeed central.
+\emph{Check.} Since $i,j$ generate $Q_8$ (as $ij=k$), centralizing both means centralizing everything, so $C_G(\{i,j\})=C_G(Q_8)=Z(Q_8)=\{\pm1\}$. This matches. It is moreover normal in $Q_8$, indeed central; but being the kernel of the action of $N_G(A)$ on $A$ only guarantees $C_G(A)\nor N_G(A)$ --- e.g.\ $C_{S_3}((1\,2))=\gen{(1\,2)}$ is not normal in $S_3$.
 \end{wex}
 
 \begin{remark}\label{r:os-preview@c2}
