@@ -59569,9 +59569,10 @@ Show that being Noetherian does not pass to subrings, in contrast to quotients.
 \wsol The fraction field $K=\Frac\bigl(k[x_1,x_2,\dots]\bigr)$ is a field, so its only ideals
 are $0$ and $K$ -- trivially Noetherian. But the subring $k[x_1,x_2,\dots]\subseteq K$ is not
 Noetherian, as Worked Example~15.2.4 showed via the chain $(x_1)\subsetneq(x_1,x_2)\subsetneq\cdots$.
-Sanity check: this is why Proposition~A--M~7.2 (a subring $A\subseteq B$ with $B$ Noetherian as
-an $A$-module forces $A$ Noetherian) needs the \emph{module-finiteness} hypothesis -- a bare
-subring inclusion is not enough.
+Sanity check: a positive result needs a \emph{module-finiteness} hypothesis -- if $B$ is Noetherian
+as an $A$-module then its $A$-submodule $A$ is a Noetherian ring -- and a bare subring inclusion is
+not enough. (A--M~7.2 goes the other way: $A$ Noetherian and $B$ finitely generated as an
+$A$-module force $B$ Noetherian.)
 \end{wex}
 
 \begin{wex}{$C(X)$ for $X$ compact infinite Hausdorff is not Noetherian}
@@ -59809,9 +59810,10 @@ two finiteness conditions are opposite sides of the same coin.
 \dgi{Why it commutes:} Chase a chain: if $\fa_1\subseteq\fa_2$ then any $a$ killing all of
 $\fa_2$ also kills all of $\fa_1$, so $\mathcal{Z}(\fa_1)\supseteq\mathcal{Z}(\fa_2)$ -- each
 inclusion reverses. Therefore an ascending chain of ideals that stabilizes forces the
-corresponding descending chain of closed sets to stabilize, and $\mathcal{I}\circ\mathcal{Z}$ on
-algebraic sets satisfies $\mathcal{I}(\mathcal{Z}(\fa))=\rad(\fa)$, so $\mathcal{Z}(\fa)$ determines
-$\fa$ up to radical; chain-stabilization in one category transfers exactly to the other.
+corresponding descending chain of closed sets to stabilize, and every descending
+chain of closed sets arises in this way, because $V=\mathcal{Z}(\mathcal{I}(V))$ for every algebraic set $V$.
+(Over a general field only $\mathcal{I}(\mathcal{Z}(\fa))\supseteq\rad(\fa)$ holds, with equality when $k$ is
+algebraically closed by the Nullstellensatz, so the transfer runs from ideals to closed sets.)
 \dgi{Why this matters here:} This diagram is the punchline of the Basis-Theorem discussion: the
 algebraic theorem (Hilbert, giving ACC in $k[x_1,\dots,x_n]$) \emph{automatically} yields a
 geometric theorem (DCC on varieties in $\Aff^n$, no infinite descent of closed sets). The author
@@ -59823,8 +59825,8 @@ to a descending chain of finite root sets $\mathcal{Z}(f_1)\supseteq\mathcal{Z}(
 since root sets are finite, any descending chain of them stabilizes, matching DCC on closed sets in
 $\Aff^1$.
 \dgi{Common pitfall:} Students often think the top arrows $\mathcal{Z}$ and $\mathcal{I}$ are
-inverse bijections. They are not in general: $\mathcal{I}(\mathcal{Z}(\fa))=\rad(\fa)\ne\fa$
-unless $\fa$ is radical. They become inverse bijections only after restricting to radical ideals and
+inverse bijections. They are not in general: $\mathcal{I}(\mathcal{Z}(\fa))\supseteq\rad(\fa)\supseteq\fa$,
+and both inclusions can be strict ($\fa=(x^2)$ in $k[x]$; $\fa=(x^2+1)$ in $\R[x]$, where $\mathcal{Z}(\fa)=\es$). They become inverse bijections only after restricting to radical ideals and
 algebraic sets (the Nullstellensatz, over algebraically closed fields), which is a later and deeper
 result than what is being recorded here.
 \dgi{Takeaway:} The point of this diagram is that the inclusion-reversing pair $(\mathcal{Z},
@@ -59867,7 +59869,7 @@ is $\mathcal Z(1)$. Hence the Zariski-closed sets of $\Aff^1$ are exactly $\es$,
 subsets, and $\Aff^1$ itself. Sanity check: any strictly descending chain of closed sets
 $\Aff^1\supsetneq F_1\supsetneq F_2\supsetneq\cdots$ must, after the first step, consist of finite
 sets of strictly decreasing cardinality, so it terminates -- DCC holds, as the theorem demands.
-This topology is \emph{not} Hausdorff: any two nonempty open sets meet.
+When $k$ is infinite this topology is \emph{not} Hausdorff: any two nonempty open sets (complements of finite sets) meet; when $k$ is finite it is discrete (Worked Example~15.2.26).
 \end{wex}
 
 \begin{wex}{$\mathcal Z(\fa\fb)=\mathcal Z(\fa)\cup\mathcal Z(\fb)$ in a concrete case}
