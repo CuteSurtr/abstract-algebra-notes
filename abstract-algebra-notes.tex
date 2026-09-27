@@ -44207,7 +44207,7 @@ We argue uniformly; take the orthogonal case, the others being identical with $\
 \end{proof}
 
 \begin{remark}[Dimensions and compactness]
-The \emph{dimension} of a linear group $G$ is, roughly, the number of degrees of freedom of a matrix in $G$. The full space of real $n\times n$ matrices has dimension $n^2$; each independent scalar relation cuts the count by one. Thus $\SL_2$ has dimension $3$ (the single equation $\det P=1$ removes one degree of freedom from the four entries). The orthogonal group $\mathrm{O}_n$ has dimension $\tfrac12 n(n-1)$: the $n^2$ equations of $P\trans P=I$ are symmetric, giving $\binom{n+1}{2}$ independent conditions. The unitary group $\mathrm{U}_n$ has dimension $n^2$ as a real manifold. The groups $\mathrm{O}_n,\mathrm{SO}_n,\mathrm{U}_n,\mathrm{SU}_n$ are \emph{compact}: they are closed (defined by polynomial equations) and bounded (an orthogonal or unitary matrix has columns of length $1$, so all entries lie in $[-1,1]$ or the unit disk). By contrast $\GL_n,\SL_n,\mathrm{Sp}_{2n}$ are \emph{not} compact --- $\SL_2$ contains $\begin{psmallmatrix}t&0\\0&t\inv\end{psmallmatrix}$ with $t\to\infty$.
+The \emph{dimension} of a linear group $G$ is, roughly, the number of degrees of freedom of a matrix in $G$. The full space of real $n\times n$ matrices has dimension $n^2$; each independent scalar relation cuts the count by one. Thus $\SL_2$ has dimension $3$ (the single equation $\det P=1$ removes one degree of freedom from the four entries). The orthogonal group $\mathrm{O}_n$ has dimension $\tfrac12 n(n-1)$: the $n^2$ equations of $P\trans P=I$ are symmetric, giving $\binom{n+1}{2}$ independent conditions. The unitary group $\mathrm{U}_n$ has dimension $n^2$ as a real manifold. The groups $\mathrm{O}_n,\mathrm{SO}_n,\mathrm{U}_n,\mathrm{SU}_n$ are \emph{compact}: they are closed (defined by polynomial equations) and bounded (an orthogonal or unitary matrix has columns of length $1$, so all entries lie in $[-1,1]$ or the unit disk). By contrast $\GL_n$, $\mathrm{Sp}_{2n}$ and, for $n\ge2$, $\SL_n$ are \emph{not} compact ($\SL_1=\set{1}$ is trivial) --- $\SL_2$ contains $\begin{psmallmatrix}t&0\\0&t\inv\end{psmallmatrix}$ with $t\to\infty$.
 \end{remark}
 
 \subsection*{The circle group}
@@ -44326,7 +44326,7 @@ which one checks against Proposition~\ref{art:su2so3:form@c11} entry by entry; s
 \end{proof}
 
 \begin{remark}
-That $S^3$ carries a continuous group law is special: there is no way to make $S^2$ a group, and a theorem of topology says the only spheres admitting continuous group laws are $S^1$ and $S^3$. The norm $\abs{a}^2+\abs{b}^2=\det P$ is multiplicative, which is why unit quaternions are closed under multiplication.
+That $S^3$ carries a continuous group law is special: there is no way to make $S^2$ a topological group, and a theorem of topology says the only spheres of positive dimension admitting continuous group laws are $S^1$ and $S^3$ (the $0$-sphere $S^0=\set{\pm1}$ is the group of order $2$). The norm $\abs{a}^2+\abs{b}^2=\det P$ is multiplicative, which is why unit quaternions are closed under multiplication.
 \end{remark}
 
 \subsection*{Latitudes (Conjugacy Classes) and Longitudes (Subgroups)}
@@ -44455,7 +44455,7 @@ In the orthonormal plane $\Span\set{\mathbf{j},\mathbf{k}}$ orthogonal to the po
 The factor of $2$ in ``angle $2\theta$'' is why $\mathrm{SU}(2)$ is the \emph{spin} group: a full $2\pi$ rotation in $\mathrm{SO}(3)$ comes from a half-loop $\theta\colon 0\to\pi$ in $\mathrm{SU}(2)$, while the loop $\theta\colon 0\to2\pi$ traverses $\mathrm{SU}(2)$ once but $\mathrm{SO}(3)$ twice. The one-dimensional shadow is the double cover $\mathrm{SO}(2)\to\mathrm{SO}(2)$, $\rho_\theta\mapsto\rho_{2\theta}$, whose every fiber is the antipodal pair $\set{\rho_\theta,\rho_{\theta+\pi}}$.
 \end{remark}
 
-The double cover $S^3\to\mathbb{RP}^3$ already shows its character one dimension down, where antipodal identification on the circle gives a circle again:
+The double cover $S^3\to\mathbb{RP}^3$ already shows its character in dimension one, where antipodal identification on the circle gives a circle again:
 
 \begin{center}
 \begin{tikzpicture}[scale=1.0]
