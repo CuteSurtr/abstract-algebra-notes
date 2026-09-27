@@ -41300,8 +41300,8 @@ commute. Explain precisely which property of $\omega$ forces $\extp^n T$ to be a
 
 \item Functoriality of $\extp^n$ on the top power gives the diagram below for $A,B\in\End(V)$. Using $\extp^n(BA)=(\extp^n B)\circ(\extp^n A)$ and that each $\extp^n(\cdot)$ acts as a scalar on the $1$-dimensional space $\extp^n V$, prove $\det(BA)=\det(B)\det(A)$ by filling in and justifying the right-hand square:
 \[
-\begin{tikzcd}
-\extp^n V \arrow[r, "\extp^n A"] \arrow[rr, bend left=30, "\extp^n(BA)"] & \extp^n V \arrow[r, "\extp^n B"] & \extp^n V \\
+\begin{tikzcd}[column sep=large]
+\extp^n V \arrow[r, "\extp^n A"] \arrow[rr, bend left=40, "\extp^n(BA)"] & \extp^n V \arrow[r, "\extp^n B"] & \extp^n V \\
 \F \arrow[u, "\isom"] \arrow[r, "\cdot\,\det A"'] & \F \arrow[u, "\isom"] \arrow[r, "\cdot\,\det B"'] & \F \arrow[u, "\isom"']
 \end{tikzcd}
 \]
@@ -41317,7 +41317,7 @@ commutes with exact rows. Using the natural isomorphism $\extp^{\dim V}V\isom \e
 
 \item Let $V,W$ be $\F$-spaces with $\dim V=m$, $\dim W=n$, and let $S\in\End(V)$, $T\in\End(W)$. Consider $S\oplus T\in\End(V\oplus W)$. Using the canonical isomorphism $\extp^{m+n}(V\oplus W)\isom \extp^m V\tensor\extp^n W$ and naturality, draw and justify the square
 \[
-\begin{tikzcd}
+\begin{tikzcd}[column sep=7em]
 \extp^{m+n}(V\oplus W) \arrow[r, "\extp^{m+n}(S\oplus T)"] \arrow[d, "\isom"'] & \extp^{m+n}(V\oplus W) \arrow[d, "\isom"] \\
 \extp^m V\tensor\extp^n W \arrow[r, "(\extp^m S)\tensor(\extp^n T)"'] & \extp^m V\tensor\extp^n W
 \end{tikzcd}
@@ -41792,8 +41792,8 @@ The universal property of $\extp^{\,k}(M)$, together with the alternating $k$-li
 map it represents, is captured by:
 \[
 \begin{tikzcd}[column sep=large,row sep=large]
-\underbrace{M\times\cdots\times M}_{k} \arrow[r,"\extp"] \arrow[dr,"\Phi"']
-  & \extp^{\,k}(M) \arrow[d,"\exists!\,\varphi"] \\
+\underbrace{M\times\cdots\times M}_{k} \arrow[r,"\extp"] \arrow[dr,"\Phi"',start anchor=base east]
+  & \extp^{\,k}(M) \arrow[d,dashed,"\exists!\,\varphi"] \\
  & N
 \end{tikzcd}
 \]
@@ -42242,8 +42242,8 @@ V \arrow[r, hook, "\iota"] \arrow[dr, "f"'] & T(V) \arrow[d, dashed, "\tilde{f}"
 
 \item The symmetric algebra solves a mapping problem into \emph{commutative} algebras. Let $A$ be a commutative $\F$-algebra and $f \colon V \to A$ linear. Show the dashed arrow $\bar{f}$ exists uniquely and that the lower triangle commutes, where $\pi \colon T(V) \to S(V)$ is the canonical projection and $\tilde{f}$ is from the previous exercise.
 \[
-\begin{tikzcd}
-V \arrow[r, "\iota"] \arrow[drr, "f"'] & T(V) \arrow[r, "\pi"] \arrow[dr, "\tilde{f}"] & S(V) \arrow[d, dashed, "\bar{f}"] \\
+\begin{tikzcd}[row sep=large]
+V \arrow[r, hook, "\iota"] \arrow[drr, bend right=15, "f"'] & T(V) \arrow[r, two heads, "\pi"] \arrow[dr, "\tilde{f}"] & S(V) \arrow[d, dashed, "\bar{f}"] \\
 & & A
 \end{tikzcd}
 \]
@@ -42473,12 +42473,12 @@ The reduction algorithm has a clean geometric reading: each row operation is an 
 \node at (2.6,0.85) {$\{AX : X\in F^n\}$};
 % consistent b: lands in im A
 \draw[->, thick] (0,0) -- (3.6,0.35);
-\node[above] at (3.6,0.35) {$B$ consistent};
+\node[right] at (3.6,0.35) {$B$ consistent};
 \node[below] at (3.6,0.0) {no last-column pivot};
 % inconsistent b: off the column space
 \draw[->, thick, dashed] (0,0) -- (2.2,2.7);
 \node[above right] at (2.2,2.7) {$B$ inconsistent};
-\node[right] at (1.05,1.55) {$0=1$ row};
+\node[right] at (1.4,1.5) {$0=1$ row};
 \end{tikzpicture}
 \end{center}
 
@@ -43007,11 +43007,11 @@ Choose an orthonormal basis $(u,v_2,v_3)$; in it $M$ is similar to the block mat
 \begin{tikzpicture}[scale=1.5]
 \draw[->,thick] (0,0)--(0,1.4) node[above]{$u$ (axis)};
 \draw[gray] (-1.2,-0.45) -- (1.2,-0.45) -- (1.55,0.2) -- (-0.85,0.2) -- cycle;
-\node[gray] at (1.35,-0.32) {$W=u^\perp$};
+\node[gray,anchor=west] at (1.5,-0.3) {$W=u^\perp$};
 \draw[->,very thick] (0,0)--(0.95,-0.1);
 \draw[->,very thick] (0,0)--(-0.25,0.05);
 \draw[->] (0.55,-0.18) arc (-20:200:0.55 and 0.18);
-\node at (0,0.28) {$\theta$};
+\node at (0.2,0.27) {$\theta$};
 \filldraw (0,0) circle (0.8pt);
 \end{tikzpicture}
 \caption{A rotation of $\R^3$ fixes the axis $\R u$ pointwise and spins the perpendicular plane $W=u^\perp$ through the angle $\theta$ (right-hand rule, viewed from the head of $u$).}
@@ -43167,7 +43167,7 @@ By Artin's lemma (5.3.23) the real and imaginary parts each solve the real syste
 \draw[->,thick] (0.92,-0.38)--(0.80,-0.50);
 \fill (0.7071,-0.7071) circle (1.0pt) node[below right] {$X(t)$};
 \draw[->] (0.55,-0.30) arc (-30:-130:0.6);
-\node at (-0.30,-0.62) {$-t$};
+\node[left] at (-0.38,-0.42) {$-t$};
 \end{tikzpicture}
 \end{center}
 
@@ -43306,12 +43306,12 @@ The light cone $\langle v,v\rangle=0$ separates the spacelike region $\langle v,
   \draw[thick] (-1.6,-1.6) -- (1.6,1.6);
   \draw[thick] (-1.6,1.6) -- (1.6,-1.6);
   % labels
-  \node at (0,1.15) {\small $\langle v,v\rangle<0$};
-  \node at (0,-1.15) {\small $\langle v,v\rangle<0$};
+  \node[fill=gray!18,inner sep=2.5pt] at (0,1.1) {\small $\langle v,v\rangle<0$};
+  \node[fill=gray!18,inner sep=2.5pt] at (0,-1.1) {\small $\langle v,v\rangle<0$};
   \node at (1.35,0.32) {\small $>0$};
   \node at (-1.35,0.32) {\small $>0$};
-  \node[anchor=west] at (1.15,1.5) {\small $x_4=x_1$};
-  \node[anchor=west] at (1.15,-1.5) {\small $x_4=-x_1$};
+  \node[anchor=west] at (1.62,1.6) {\small $x_4=x_1$};
+  \node[anchor=west] at (1.62,-1.6) {\small $x_4=-x_1$};
 \end{tikzpicture}
 \end{center}
 
@@ -43865,11 +43865,11 @@ real.)
   \foreach \a in {35,120,250}{
     \fill (\a:1) circle (1.6pt);
   }
-  \node at (35:1.22) {\footnotesize unitary};
+  \node[anchor=south west] at (35:1.02) {\footnotesize unitary};
   % Hermitian (real) eigenvalues on the real axis
   \fill (-0.7,0) circle (1.6pt);
   \fill (1.25,0) circle (1.6pt);
-  \node[below right] at (1.25,0) {\footnotesize Hermitian};
+  \node[below right] at (1.25,-0.1) {\footnotesize Hermitian};
 \end{tikzpicture}
 \end{center}
 
@@ -44055,7 +44055,7 @@ The two operations are different in kind. The orthogonal step (principal axes) \
 \end{remark}
 
 \begin{center}
-\begin{tikzpicture}[scale=0.95]
+\begin{tikzpicture}[scale=0.88]
 % axes
 \draw[->,gray] (-2.6,0)--(2.6,0) node[right]{$x_1$};
 \draw[->,gray] (0,-1.9)--(0,1.9) node[above]{$x_2$};
@@ -45211,8 +45211,8 @@ A finitely generated torsion-free module over a PID is free.
 \end{corollary}
 
 \begin{center}
-\begin{tikzcd}[row sep=small]
-0 \arrow[r] & \mathrm{Tor}(M) \arrow[r] & M \arrow[r] & M/\mathrm{Tor}(M) \arrow[r] & 0 \\
+\begin{tikzcd}
+0 \arrow[r] & \mathrm{Tor}(M) \arrow[r, hook] & M \arrow[r, two heads] & M/\mathrm{Tor}(M) \arrow[r] & 0 \\
 & R/(a_1)\oplus\cdots\oplus R/(a_m) \arrow[u, "\isom"] & & R^r \arrow[u, "\isom"'] &
 \end{tikzcd}
 \end{center}
@@ -46881,9 +46881,9 @@ direct sum and $T$ respects the splitting.
 \begin{tikzcd}[column sep=2.2em, row sep=large]
   K_{\lambda_1} \oplus \cdots \oplus K_{\lambda_r}
     \arrow[r, "T"]
-    \arrow[d, "\isom"', "\sim"]
+    \arrow[d, "\isom"']
   & K_{\lambda_1} \oplus \cdots \oplus K_{\lambda_r}
-    \arrow[d, "\isom", "\sim"'] \\
+    \arrow[d, "\isom"] \\
   V \arrow[r, "T"'] & V
 \end{tikzcd}
 \qquad
