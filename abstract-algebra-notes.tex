@@ -51163,7 +51163,7 @@ is unchanged under field extension. So separability is detected without
 factoring $f$ and without naming a single root.
 \end{remark}
 
-\begin{wex}{Squarefree quadratics over $\Q$}
+\begin{wex}{Separability of two quadratics over $\Q$}
 Decide whether $f(x)=x^2-2$ and $g(x)=x^2-2x+1$ in $\Q[x]$ are separable.
 \wrec Compute $D_x$ and apply $\gcd(f,D_x f)=1$ iff separable; this avoids
 locating the roots.
@@ -51223,7 +51223,8 @@ inseparable if and only if $D_x p=0$.
 \item If $\charac F=p>0$, then $D_x p=0$ if and only if $p(x)=g(x^p)$ for some
 $g(x)\in F[x]$, i.e.\ every exponent appearing in $p$ is a multiple of $p$.
 \end{enumerate}
-A separable polynomial is one whose irreducible factors are each separable.
+In general, a polynomial is separable if and only if it is a product of distinct
+(pairwise non-associate) irreducible polynomials, each of which is separable.
 \end{corollary}
 
 \begin{proof}
@@ -51286,8 +51287,9 @@ root in $F$.
 \end{definition}
 
 \begin{proposition}
-Every irreducible polynomial over a perfect field $F$ is separable, hence so is
-every separable-by-factors polynomial. In particular every field of
+Every irreducible polynomial over a perfect field $F$ is separable; hence a polynomial
+in $F[x]$ is separable if and only if it is a product of distinct (pairwise
+non-associate) irreducible polynomials. Every field of
 characteristic $0$ and every finite field is perfect.
 \end{proposition}
 
@@ -51546,8 +51548,9 @@ multiplicity $p^k$.
 \begin{dgx}
 \dgi{Objects:} Three objects in a chain. On the left is $F$, a field of characteristic $p$.
   In the middle is the quotient ring $F[x]/(x^{p^k}-a)$, which equals the simple extension
-  $F(\alpha)$ because $x^{p^k}-a$ is irreducible over $F$ (its only root in $\overline{F}$
-  is $\alpha$, with multiplicity $p^k$, so no proper factor lies in $F[x]$). On the right is
+  $F(\alpha)$ because $x^{p^k}-a=m_{\alpha,F}(x)$ is irreducible over $F$ (by the definition of
+  purely inseparable; having the single root $\alpha$ does not by itself force irreducibility,
+  e.g.\ $x^p-t^p=(x-t)^p$ over $\F_p(t)$). On the right is
   $\overline{F}$, the algebraic closure, which contains the unique root $\alpha$ satisfying
   $\alpha^{p^k}=a$.
 \dgi{Arrows:} The left arrow $F\hookrightarrow F(\alpha)$ is the canonical inclusion of the
@@ -51593,9 +51596,10 @@ with multiplicity $p$. Sanity check: separable degree $=\deg p_{\mathrm{sep}}=1$
 \end{wex}
 
 \begin{wex}{Separable and inseparable degree split}
-Over $F=\F_2(t)$, factor $p(x)=x^4-t^2$ through Frobenius and read off its
-separable and inseparable degrees.
-\wrec Use $p(x)=p_{\mathrm{sep}}(x^{p^k})$ with $p=2$; the inseparable part is
+Over $F=\F_2(t)$, factor $p(x)=x^4-t^2$ through Frobenius and read off the
+separable and inseparable degrees of its irreducible factor.
+\wrec These degrees are defined only for irreducible polynomials, so factor first; then use
+$p_{\mathrm{sep}}(x^{p^k})$ with $p=2$ on the irreducible factor, the inseparable part being
 the largest $x^{2^k}$ pullback.
 \wsol $x^4-t^2=(x^2)^2-t^2=(x^2-t)(x^2+t)$, but in $\charac2$,
 $x^2+t=x^2-t$, so $x^4-t^2=(x^2-t)^2$. With $x^2-t$ irreducible and inseparable
@@ -51621,7 +51625,7 @@ same number computed directly.
 
 \begin{corollary}
 Over a perfect field every algebraic extension is separable, and the only purely
-inseparable extension is the trivial one $F/F$. Equivalently, finite fields and
+inseparable extension is the trivial one $F/F$. In particular, finite fields and
 $\charac0$ fields have no nontrivial purely inseparable extensions.
 \end{corollary}
 
