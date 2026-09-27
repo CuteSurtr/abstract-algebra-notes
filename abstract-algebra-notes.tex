@@ -26626,7 +26626,7 @@ Thus: field $=$ commutative division ring $\imp$ integral domain.
 \end{definition}
 
 \begin{definition}[Subring]
-A subset $S\subseteq R$ is a \emph{subring} if $S$ is closed under subtraction and multiplication (so $(S,+)\le(R,+)$ and $S$ is closed under $\cdot$). Then $S$ is itself a ring. (D\&F do not require $1_R\in S$.)
+A nonempty subset $S\subseteq R$ is a \emph{subring} if $S$ is closed under subtraction and multiplication (so $(S,+)\le(R,+)$ and $S$ is closed under $\cdot$). Then $S$ is itself a ring. (D\&F do not require $1_R\in S$.)
 \end{definition}
 
 \begin{proposition}[D\&F 7.1, Prop.\ 1]\label{prop:basic@c7}
@@ -26693,7 +26693,7 @@ Given a ring $R$ with $1\neq 0$:
 \end{pitfall}
 
 \begin{pitfall}
-\emph{A zero divisor is never a unit.} If $a$ is a unit with inverse $a^{-1}$ and $ab=0$, then $b = a^{-1}(ab) = a^{-1}\cdot 0 = 0$; so $a$ cannot kill a nonzero $b$. Consequently in any ring, $\units{R}$ and the set of zero divisors are disjoint.
+\emph{A zero divisor is never a unit.} If $a$ is a unit with inverse $a^{-1}$ and $ab=0$, then $b = a^{-1}(ab) = a^{-1}\cdot 0 = 0$; symmetrically, $ba=0$ gives $b=(ba)a^{-1}=0\cdot a^{-1}=0$. So $a$ cannot kill a nonzero $b$ from either side. Consequently in any ring, $\units{R}$ and the set of zero divisors are disjoint.
 \end{pitfall}
 
 % ==================================================================
@@ -26703,7 +26703,7 @@ For which $n$ is $\Zn{n}$ a field? List the zero divisors and units of $\Zn{12}$
 \wsol
 In $\Zn{n}$, $\bar a$ is a unit $\eqv \gcd(a,n)=1$ (B\'ezout: $au+nv=1 \imp au\equiv 1$). And $\bar a\neq 0$ is a zero divisor $\eqv \gcd(a,n)=d>1$: then $\bar a\cdot\overline{(n/d)} = \overline{a(n/d)} = \bar 0$ with $\overline{n/d}\neq 0$.
 
-\emph{Field criterion.} $\Zn{n}$ is a field $\eqv$ every nonzero residue is a unit $\eqv \gcd(a,n)=1$ for all $1\le a\le n-1$ $\eqv n$ is prime. (If $n=st$ with $1<s,t<n$, then $\bar s\,\bar t=\bar 0$ shows $\bar s$ is a zero divisor, so not even a domain.)
+\emph{Field criterion.} For $n\ge 2$, $\Zn{n}$ is a field $\eqv$ every nonzero residue is a unit $\eqv \gcd(a,n)=1$ for all $1\le a\le n-1$ $\eqv n$ is prime. (If $n=st$ with $1<s,t<n$, then $\bar s\,\bar t=\bar 0$ shows $\bar s$ is a zero divisor, so not even a domain.) For $n=1$, $\Zn{1}$ is the zero ring, which is not a field (and $1$ is not prime), so ``$\Zn{n}$ is a field $\eqv$ $n$ is prime'' holds for every $n\ge 1$.
 
 \emph{$\Zn{12}$.} Compute $\gcd(a,12)$ for $a=1,\dots,11$:
 \[
@@ -26794,7 +26794,7 @@ Compute $\charac(R)$ for $R=\Z,\ \Zn{6},\ \Zn{5},\ \Z\times\Zn{3}$, and decide i
 
 \emph{$\Z\times\Zn{3}$.} Identity $(1,\bar 1)$; $n\cdot(1,\bar 1)=(n,\overline n)$. For this to be $(0,\bar 0)$ we need $n=0$ in $\Z$, impossible for $n>0$. So $\charac=0$. (It is not a domain, so $0$ is fine without contradiction.)
 
-\emph{Check.} In $\Zn{6}$: $6\cdot\bar 1=\bar 6=\bar 0$ and $5\cdot\bar 1=\bar 5\neq\bar 0$, confirming $6$ is minimal. The one composite characteristic here ($6$) occurs exactly where zero divisors exist, matching Prop.\ \ref{prop:charprime@c7}. $\checkmark$
+\emph{Check.} In $\Zn{6}$: $6\cdot\bar 1=\bar 6=\bar 0$ and $5\cdot\bar 1=\bar 5\neq\bar 0$, confirming $6$ is minimal. The one composite characteristic here ($6$) occurs in a ring with zero divisors, as Prop.\ \ref{prop:charprime@c7} requires; the converse fails, since $\Z\times\Zn{3}$ has zero divisors ($(1,\bar 0)(0,\bar 1)=(0,\bar 0)$) but characteristic $0$. $\checkmark$
 \end{wex}
 
 % ==================================================================
@@ -26844,7 +26844,7 @@ The finite-domain collapse ($\text{finite domain} \Rightarrow \text{field}$, The
 (A field is both a division ring and a domain; the only thing separating a field from a division ring is commutativity, e.g.\ $\HH$.) For \emph{finite} rings the right column collapses: a finite domain is a field (Thm.\ \ref{thm:finite@c7}), so over finite ground all four boxes for a commutative such ring coincide.
 
 \begin{remark}
-The condition ``no zero divisors'' is exactly cancellation (Prop.\ \ref{prop:cancel@c7}): nonzero elements cancel $\eqv$ there are no zero divisors. This is why $\Zn{n}$ supports cancellation precisely when $n$ is prime, and why solving linear equations $ax=b$ behaves well only in domains.
+The condition ``no zero divisors'' is exactly cancellation (Prop.\ \ref{prop:cancel@c7}): nonzero elements cancel $\eqv$ there are no zero divisors. This is why $\Zn{n}$ ($n\ge 2$) supports cancellation precisely when $n$ is prime, and why solving linear equations $ax=b$ behaves well only in domains.
 \end{remark}
 
 \begin{exers}{Exercises (from the text).}
