@@ -16867,7 +16867,7 @@ order $2$ that is not inner (recall $\Z_2\times\Z_4$ is abelian, so $\Inn=1$).
 $Z(G)$, $\Inn(G)$, and then $\Aut(D_8)$, identifying its order.
 
 \item Let $p$ be prime. Show every nonidentity element of $\Zn{p}$ is a generator and
-deduce $\Aut(\Zn{p})\isom\Zn{p-1}$.
+deduce $\Aut(\Zn{p})\isom\Zn{(p-1)}$.
 
 \item Prove that if $H\ \mathrm{char}\ G$ (characteristic: $\varphi(H)=H$ for all
 $\varphi\in\Aut(G)$) and $K\ \mathrm{char}\ H$, then $K\ \mathrm{char}\ G$.
@@ -16911,7 +16911,7 @@ cyclic).
 
 \item Suppose $|G|=pq$ with $p<q$ primes and $p\nmid q-1$, and let $Q$ be the Sylow $q$-subgroup (normal, since its index $p$ is the
 smallest prime dividing $|G|$). Using the conjugation
-homomorphism $G\to\Aut(Q)\isom\Zn{q-1}$ argue that the Sylow $q$-subgroup is
+homomorphism $G\to\Aut(Q)\isom\Zn{(q-1)}$ argue that the Sylow $q$-subgroup is
 central, hence $G$ is cyclic.
 
 \item Let $\varphi$ be an automorphism of a finite group $G$ that fixes only the
@@ -21158,7 +21158,7 @@ Let $|G|=pq$ with $p<q$.
 \end{theorem}
 
 \begin{proof}
-By Sylow, $n_q\equiv 1\pmod q$ and $n_q\mid p$; since $p<q$ this forces $n_q=1$, so the Sylow $q$-subgroup $Q\isom\Zn q$ is normal. Also $n_p\equiv 1\pmod p$ and $n_p\mid q$, so $n_p\in\{1,q\}$. Let $P\isom\Zn p$ be a Sylow $p$-subgroup. Then $Q\cap P=1$ and $QP=G$, so $G\isom Q\sdp_\varphi P$ with $\varphi\colon P\to\Aut(Q)\isom\Zn{q-1}$. The homomorphisms $\varphi$ correspond to elements of $\Aut(Q)$ of order dividing $p$; there are $p$ such iff $p\mid q-1$, else only the trivial one. If $\varphi$ is trivial, $G\isom\Zn q\times\Zn p\isom\Zn{pq}$. If $p\mid q-1$, any two nontrivial $\varphi,\varphi'$ have images that are the unique subgroup of order $p$ in the cyclic group $\Aut(Q)$, and the resulting semidirect products are isomorphic; this gives one nonabelian class.
+By Sylow, $n_q\equiv 1\pmod q$ and $n_q\mid p$; since $p<q$ this forces $n_q=1$, so the Sylow $q$-subgroup $Q\isom\Zn q$ is normal. Also $n_p\equiv 1\pmod p$ and $n_p\mid q$, so $n_p\in\{1,q\}$. Let $P\isom\Zn p$ be a Sylow $p$-subgroup. Then $Q\cap P=1$ and $QP=G$, so $G\isom Q\sdp_\varphi P$ with $\varphi\colon P\to\Aut(Q)\isom\Zn{(q-1)}$. The homomorphisms $\varphi$ correspond to elements of $\Aut(Q)$ of order dividing $p$; there are $p$ such iff $p\mid q-1$, else only the trivial one. If $\varphi$ is trivial, $G\isom\Zn q\times\Zn p\isom\Zn{pq}$. If $p\mid q-1$, any two nontrivial $\varphi,\varphi'$ have images that are the unique subgroup of order $p$ in the cyclic group $\Aut(Q)$, and the resulting semidirect products are isomorphic; this gives one nonabelian class.
 \end{proof}
 
 \begin{method}{Classifying order $pq$ ($p<q$)}
@@ -21209,7 +21209,7 @@ If $|G|=2p$ with $p$ odd prime, then $G\isom\Zn{2p}$ or $G\isom D_{2p}$. These a
 \end{theorem}
 
 \begin{proof}
-This is the case $p=2$ of Theorem~\ref{thm:pq@c5} after relabelling: write the primes as $2<p$. Since $2\mid p-1$ always, there are exactly two groups. The Sylow $p$-subgroup $P=\gen{r}\isom\Zn p$ is normal. Let $s$ have order $2$. Then $G=\gen{r}\sdp\gen{s}$, and $\Aut(\Zn p)\isom\Zn{p-1}$ has a \emph{unique} element of order $2$, namely $r\mapsto r\inv$. If $s$ acts trivially, $srs\inv=r$ and $G$ is abelian $\isom\Zn{2p}$. If $s$ acts by the order-$2$ automorphism, $srs\inv=r\inv$ and $G\isom D_{2p}$.
+This is the case $p=2$ of Theorem~\ref{thm:pq@c5} after relabelling: write the primes as $2<p$. Since $2\mid p-1$ always, there are exactly two groups. The Sylow $p$-subgroup $P=\gen{r}\isom\Zn p$ is normal. Let $s$ have order $2$. Then $G=\gen{r}\sdp\gen{s}$, and $\Aut(\Zn p)\isom\Zn{(p-1)}$ has a \emph{unique} element of order $2$, namely $r\mapsto r\inv$. If $s$ acts trivially, $srs\inv=r$ and $G$ is abelian $\isom\Zn{2p}$. If $s$ acts by the order-$2$ automorphism, $srs\inv=r\inv$ and $G\isom D_{2p}$.
 \end{proof}
 
 \begin{method}{Telling $\Zn{2p}$ from $D_{2p}$}
@@ -21249,7 +21249,7 @@ Find all groups of orders $14$ and $22$.
 \begin{wex}{Why no third group of order $2p$?}
 Explain why $G$ of order $2p$ cannot be a ``new'' nonabelian group beyond $D_{2p}$.
 \wrec Uses that $\Aut(\Zn p)$ is \emph{cyclic} of order $p-1$, so has a unique involution.
-\wsol The semidirect product $\Zn p\sdp_\varphi\Zn2$ is determined by $\varphi(s)\in\Aut(\Zn p)$ with $\varphi(s)^2=\id$. A cyclic group $\Zn{p-1}$ has exactly one element of order $2$ (since $p$ is odd, $p-1$ is even). So there are exactly two choices for $\varphi(s)$: the identity ($\imp\Zn{2p}$) and the unique involution ($\imp D_{2p}$). No room for a third. \\
+\wsol The semidirect product $\Zn p\sdp_\varphi\Zn2$ is determined by $\varphi(s)\in\Aut(\Zn p)$ with $\varphi(s)^2=\id$. A cyclic group $\Zn{(p-1)}$ has exactly one element of order $2$ (since $p$ is odd, $p-1$ is even). So there are exactly two choices for $\varphi(s)$: the identity ($\imp\Zn{2p}$) and the unique involution ($\imp D_{2p}$). No room for a third. \\
 \textit{Check.} $p=7$: $\Aut(\Zn7)\isom\Zn6$, involution is $r\mapsto r^6=r\inv$, matching $D_{14}$. \checkmark
 \end{wex}
 
@@ -21575,7 +21575,7 @@ A semidirect product $H\sdp K$ collapsing to a \emph{direct} product (or to a sm
 \item Show the two abelian groups of order $12$ are $\Zn{12}$ and $\Zn2\times\Zn6$, and separate them by their element-order spectra. Which has an element of order $12$? What is the exponent of the other, and how many generators does $\Zn{12}$ have?
 \item Distinguish the three abelian groups of order $8$ by counting involutions: verify $\Zn8$, $\Zn4\times\Zn2$, $\Zn2^3$ have $1,3,7$ elements of order $2$ respectively. (For contrast, record the involution counts of the nonabelian $D_8$ and $Q_8$ as well.)
 \item Let $|G|=12$ with $G$ nonabelian and $n_3=4$. Show $G\isom A_4$: count the elements of order $3$ forced by $n_3=4$, deduce that the remaining elements form the unique (normal) Sylow $2$-subgroup $V_4$, and identify $G\isom V_4\sdp\Zn3$.
-\item Let $|G|=2p$ with $p$ an odd prime. Prove that exactly two isomorphism classes exist by counting involutions in $\Aut(\Zn p)$: the Sylow $p$-subgroup is normal, $\Aut(\Zn p)\isom\Zn{p-1}$ has a \emph{unique} element of order $2$, so the order-$2$ action is either trivial ($\imp\Zn{2p}$) or inversion ($\imp D_{2p}$), with no third possibility.
+\item Let $|G|=2p$ with $p$ an odd prime. Prove that exactly two isomorphism classes exist by counting involutions in $\Aut(\Zn p)$: the Sylow $p$-subgroup is normal, $\Aut(\Zn p)\isom\Zn{(p-1)}$ has a \emph{unique} element of order $2$, so the order-$2$ action is either trivial ($\imp\Zn{2p}$) or inversion ($\imp D_{2p}$), with no third possibility.
 \item Determine $g(13)$, $g(14)$, and $g(15)$, justifying each with one line (prime; $2p$; $pq$ with $p\nmid q-1$). Confirm your answers against the census table.
 \item The dicyclic group $\mathrm{Dic}_3$ has order $12$. Give a presentation, list its element-order spectrum, and locate the unique involution inside the presentation. Explain why, like $Q_8$, it has exactly one element of order $2$. (Compare: $Q_8$ is the order-$8$ dicyclic group.)
 \end{exers}
@@ -21593,7 +21593,7 @@ A semidirect product $H\sdp K$ collapsing to a \emph{direct} product (or to a sm
 \[\begin{tikzcd}[column sep=large]
 1 \arrow[r] & \Zn q \arrow[r, hook] & \Zn{pq} \arrow[r, two heads, "\pi"] & \Zn p \arrow[r] \arrow[l, bend right=40, "s"'] & 1
 \end{tikzcd}\]
-with the normal Sylow $q$-subgroup as kernel, and explain why $p\nmid q-1$ forces the conjugation action $\Zn p\to\Aut(\Zn q)\isom\Zn{q-1}$ to be trivial (no element of order $p$ in $\Aut(\Zn q)$). Conclude that the image of the section $s$ is also normal, so the sequence realizes a \emph{direct} product $\Zn{pq}\isom\Zn q\times\Zn p$, and indicate which projection splits it on the other side.
+with the normal Sylow $q$-subgroup as kernel, and explain why $p\nmid q-1$ forces the conjugation action $\Zn p\to\Aut(\Zn q)\isom\Zn{(q-1)}$ to be trivial (no element of order $p$ in $\Aut(\Zn q)$). Conclude that the image of the section $s$ is also normal, so the sequence realizes a \emph{direct} product $\Zn{pq}\isom\Zn q\times\Zn p$, and indicate which projection splits it on the other side.
 \item For the alternating group $A_4=V_4\sdp\Zn3$, draw the split short exact sequence exhibiting the normal Sylow $2$-subgroup $V_4$ as kernel and the Sylow $3$-subgroup as a complement:
 \[\begin{tikzcd}[column sep=large]
 1 \arrow[r] & V_4 \arrow[r, hook] & A_4 \arrow[r, two heads, "\pi"] & \Zn3 \arrow[r] \arrow[l, bend right=40, "s"'] & 1
@@ -22512,7 +22512,7 @@ $21$ is correct. This is the unique nonabelian group of order $21$.
 
 \begin{wex}{The nonabelian group of order $pq$ ($q\mid p-1$)}
 For primes $q<p$ with $q\mid p-1$, build a nonabelian group of order $pq$ as $\Zn p\sdp_\varphi\Zn q$.
-\wrec $\Aut(\Zn p)\isom(\Zn p)^\times\isom\Zn{p-1}$ is cyclic of order $p-1$. Since $q\mid p-1$, this
+\wrec $\Aut(\Zn p)\isom(\Zn p)^\times\isom\Zn{(p-1)}$ is cyclic of order $p-1$. Since $q\mid p-1$, this
 cyclic group has a unique subgroup of order $q$, giving a nontrivial homomorphism
 $\varphi\colon\Zn q\to\Aut(\Zn p)$. (If $q\nmid p-1$ the only homomorphism is trivial and every group
 of order $pq$ is cyclic.)
@@ -22585,14 +22585,14 @@ Let $p>q$ be primes. Classify all groups $G$ of order $pq$ up to isomorphism, di
 $q\nmid p-1$ and $q\mid p-1$.
 \wrec Sylow theory forces a normal Sylow $p$-subgroup $P\isom\Zn p$ and a Sylow $q$-subgroup
 $Q\isom\Zn q$ with $P\cap Q=1$, $PQ=G$. So $G=P\sdp_\varphi Q$ for some
-$\varphi\colon\Zn q\to\Aut(\Zn p)\isom\Zn{p-1}$, and we enumerate such $\varphi$.
+$\varphi\colon\Zn q\to\Aut(\Zn p)\isom\Zn{(p-1)}$, and we enumerate such $\varphi$.
 \wsol \emph{Normality of $P$.} The number $n_p$ of Sylow $p$-subgroups satisfies $n_p\equiv1\pmod p$
 and $n_p\mid q$; since $q<p$ the only possibility is $n_p=1$, so $P\nor G$. Take any
 $Q\in\operatorname{Syl}_q(G)$. Then $P\nor G$, $Q\sgr G$, $P\cap Q=1$ (coprime orders),
 $\ord{PQ}=pq=\ord G$ so $PQ=G$. By Thm.~\ref{thm:internal@c5}, $G=\Zn p\sdp_\varphi\Zn q$ with
-$\varphi\colon\Zn q\to\Aut(\Zn p)$. Now $\Aut(\Zn p)\isom\Zn{p-1}$ is cyclic.
+$\varphi\colon\Zn q\to\Aut(\Zn p)$. Now $\Aut(\Zn p)\isom\Zn{(p-1)}$ is cyclic.
 \begin{itemize}
-\item \textbf{Case $q\nmid p-1$.} A homomorphism $\Zn q\to\Zn{p-1}$ has image of order dividing
+\item \textbf{Case $q\nmid p-1$.} A homomorphism $\Zn q\to\Zn{(p-1)}$ has image of order dividing
 $\gcd(q,p-1)=1$, so $\varphi$ is trivial. Then $G=\Zn p\times\Zn q\isom\Zn{pq}$. Up to isomorphism
 there is \emph{one} group: the cyclic group $\Zn{pq}$.
 \item \textbf{Case $q\mid p-1$.} Now $\gcd(q,p-1)=q$, so there are exactly $q$ homomorphisms
@@ -26692,7 +26692,7 @@ a & 0&1&2&3&4&5&6&7&8&9&10&11\\\hline
 \gcd(a,12) & -&1&2&3&4&1&6&1&4&3&2&1
 \end{array}
 \]
-Units ($\gcd=1$): $\units{\Zn{12}}=\{\bar 1,\bar 5,\bar 7,\bar{11}\}$, so $|\units{\Zn{12}}|=4=\varphi(12)$.
+Units ($\gcd=1$): $\Zns{12}=\{\bar 1,\bar 5,\bar 7,\bar{11}\}$, so $|\Zns{12}|=4=\varphi(12)$.
 Zero divisors ($\gcd>1$, nonzero): $\{\bar 2,\bar 3,\bar 4,\bar 6,\bar 8,\bar 9,\overline{10}\}$, that is $7$ of them.
 
 \textit{Check.} $4 + 7 + 1 = 12 = |\Zn{12}|$ (units $+$ zero divisors $+$ the element $\bar 0$), partitioning $\Zn{12}$ as it must. And e.g.\ $\bar 4\cdot\bar 3 = \overline{12} = \bar 0$ confirms $\bar 4,\bar 3$ are zero divisors. $\checkmark$
@@ -26967,7 +26967,7 @@ Prove that the corresponding valuation ring $R$ is the ring of all rational numb
   (c) the set of $2\times 2$ matrices over $\R$ with zero second row;
   (d) the set of functions $f:\R\to\R$ under pointwise operations.
 
-\item In the ring $\Zn{12}$, list all the zero divisors, all the units $\units{\Zn{12}}$, and all the nilpotent elements. Verify directly that $\Zn{12}$ is not an integral domain.
+\item In the ring $\Zn{12}$, list all the zero divisors, all the units $\Zns{12}$, and all the nilpotent elements. Verify directly that $\Zn{12}$ is not an integral domain.
 
 \item Let $R=\Zn{10}$. Compute $\units{R}$ and show that the idempotents of $R$ (elements with $x^2=x$) are exactly $\{0,1,5,6\}$.
 
@@ -27056,7 +27056,7 @@ R \arrow[r, hook, "\iota"] \arrow[dr, hook, "f"'] & \Frac(R) \arrow[d, dashed, "
 \end{tikzcd}\]
 Verify the property explicitly for $R=\Z$, $F=\R$, $f$ the inclusion, by giving the formula for $\bar f$ on $a/b$.
 
-\item Let $n=p_1^{a_1}\cdots p_k^{a_k}$. Iterate the CRT to produce the ring isomorphism displayed below, and describe the induced isomorphism on unit groups $\units{\Zn{n}}\isom\prod_i\units{\Zn{p_i^{a_i}}}$:
+\item Let $n=p_1^{a_1}\cdots p_k^{a_k}$. Iterate the CRT to produce the ring isomorphism displayed below, and describe the induced isomorphism on unit groups $\Zns{n}\isom\prod_i\Zns{p_i^{a_i}}$:
 \[\begin{tikzcd}[column sep=large]
 \Zn{n} \arrow[r, "\sim"] & \Zn{p_1^{a_1}} \times \cdots \times \Zn{p_k^{a_k}}
 \end{tikzcd}\]
@@ -27115,7 +27115,7 @@ $p,q\in R$ are constants with $pq=1$, i.e. $p\in\units{R}$. Hence $\units{R[x]}\
 
 \begin{pitfall}
 All three statements can fail when $R$ has zero divisors. In $\Zn{4}[x]$, $(2x)(2x)=4x^2=0$,
-so $\deg$ drops (and $R[x]$ acquires zero divisors). And $\units{\Zn{4}[x]}\supsetneq\units{\Zn{4}}$:
+so $\deg$ drops (and $R[x]$ acquires zero divisors). And $\units{\Zn{4}[x]}\supsetneq\Zns{4}$:
 indeed $(1+2x)(1+2x)=1+4x+4x^2=1$, so $1+2x$ is a unit of degree $1$. The hypothesis ``$R$ a
 domain'' in Theorem~\ref{thm:Rx@c7} is essential.
 \end{pitfall}
@@ -27165,7 +27165,7 @@ are units there but not in $\Z[x]$ (where $2$ has no inverse).
 \begin{wex}{Degree drop in $\Zn{4}[x]$}
 In $\Zn{4}[x]$ compute $(2x+1)^2$ and $(2x)(2x)$, and exhibit a unit of positive degree.
 \wrec $\Zn{4}$ is \emph{not} a domain ($2\cdot 2=0$), so degree need not add and units may
-exceed $\units{\Zn{4}}$; I must compute top coefficients directly.
+exceed $\Zns{4}$; I must compute top coefficients directly.
 \wsol $(2x)(2x)=4x^2=0$ in $\Zn{4}[x]$: a product of two degree-$1$ polynomials is $0$, so
 $2x$ is a (nonzero) zero divisor and the degree ``drops'' from an expected $2$ to $-\infty$.
 Next,
@@ -27173,8 +27173,8 @@ Next,
 (2x+1)^2=4x^2+4x+1=0+0+1=1.
 \]
 Thus $1+2x\in\units{\Zn{4}[x]}$ with $(1+2x)^{-1}=1+2x$, a unit of degree $1$.
-\textit{Check.} $\units{\Zn{4}}=\{1,3\}$ has order $2$, yet $1+2x\notin\Zn{4}$, so
-$\units{\Zn{4}[x]}\supsetneq\units{\Zn{4}}$ -- exactly the failure of
+\textit{Check.} $\Zns{4}=\{1,3\}$ has order $2$, yet $1+2x\notin\Zn{4}$, so
+$\units{\Zn{4}[x]}\supsetneq\Zns{4}$ -- exactly the failure of
 Theorem~\ref{thm:Rx@c7}(2) when $R$ is not a domain.
 \end{wex}
 
@@ -28109,7 +28109,7 @@ is a ring homomorphism whose kernel is $n\Z$, where $n$ is the characteristic of
 
 \item Let $\varphi\colon\Z\to\Zn{12}\times\Zn{8}$ be $\varphi(n)=(n\bmod 12,\,n\bmod 8)$. Show $\varphi$ is a ring homomorphism and compute $\ker\varphi$.
 
-\item In $\Zn{20}$ list all idempotents (elements $e$ with $e^2=e$) and all zero divisors. Which elements lie in $\units{\Zn{20}}$?
+\item In $\Zn{20}$ list all idempotents (elements $e$ with $e^2=e$) and all zero divisors. Which elements lie in $\Zns{20}$?
 
 \item Let $R=\Z[x]$ and $I=\gen{x,2}$ (the ideal generated by $x$ and $2$). Describe the elements of $I$ explicitly and prove $R/I\isom\Zn{2}$ as rings.
 
@@ -29627,7 +29627,7 @@ and write the complete solution set as a residue class mod $280$.
 
 \item Decide whether $\Zn{8}\isom\Zn{2}\times\Zn{4}$ as rings. Explain why or why not, referencing the hypotheses of the CRT.
 
-\item Let $n=p_1^{a_1}\cdots p_r^{a_r}$ be the prime factorization of $n>1$. Using the CRT, prove the ring isomorphism $\Zn{n}\isom\prod_{i=1}^{r}\Zn{p_i^{a_i}}$ and deduce the corresponding isomorphism of unit groups $\units{\Zn{n}}\isom\prod_{i=1}^{r}\units{\Zn{p_i^{a_i}}}$.
+\item Let $n=p_1^{a_1}\cdots p_r^{a_r}$ be the prime factorization of $n>1$. Using the CRT, prove the ring isomorphism $\Zn{n}\isom\prod_{i=1}^{r}\Zn{p_i^{a_i}}$ and deduce the corresponding isomorphism of unit groups $\Zns{n}\isom\prod_{i=1}^{r}\Zns{p_i^{a_i}}$.
 
 \item Compute, using the CRT, the last two digits of $7^{2026}$ by working separately modulo $4$ and modulo $25$ and recombining.
 
@@ -32214,7 +32214,7 @@ Show $2x+1\in\units{\Zn{4}[x]}$, and explain why this does not contradict Prop.\
 $(2x+1)(2x+1)=4x^2+4x+1=1$ in $\Zn{4}[x]$ (computed earlier), so $2x+1$ is its own inverse,
 hence a unit of degree $1$.
 \textit{Check.} Prop.\ 4 requires $R$ to be an integral domain; $\Zn{4}$ is not
-($2\cdot2=0$), so $\units{\Zn{4}[x]}\neq\units{\Zn{4}}$. Indeed the nilpotent $2$ produces
+($2\cdot2=0$), so $\units{\Zn{4}[x]}\neq\Zns{4}$. Indeed the nilpotent $2$ produces
 the non-constant unit $1+2x$ (a unit because $2$ is nilpotent: $(1+2x)(1-2x)=1-4x^2=1$).
 \checkmark
 \end{wex}
