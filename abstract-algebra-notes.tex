@@ -4626,7 +4626,7 @@ If $G$ is abelian and $a,b\in H$, write $a=\varphi(x),b=\varphi(y)$ (surjectivit
 \textbf{Trigger:} you suspect two concretely given groups are the same, or the problem says ``show $G\isom H$.''
 \begin{enumerate}
 \item \textbf{Guess the map.} Match generators of $G$ to elements of $H$ that satisfy the same relations; or use a known structural formula ($\exp$, $\log$, $g^k\mapsto k$, a permutation action).
-\item \textbf{Check well-defined + homomorphism:} verify $\varphi(xy)=\varphi(x)\varphi(y)$ on generators / on a spanning set, i.e.\ that the multiplication square commutes.
+\item \textbf{Check well-defined + homomorphism:} verify $\varphi(xy)=\varphi(x)\varphi(y)$ for all $x,y\in G$, i.e.\ that the multiplication square commutes. If $\varphi$ is defined by images of generators, it suffices (and is necessary) to check that these images satisfy the defining relations of $G$; checking the product rule only on pairs of generators is not enough.
 \item \textbf{Check bijective.} Easiest route: show $\varphi$ is injective ($\ker\varphi=\{1\}$, i.e.\ $\varphi(x)=1\imp x=1$) AND $|G|=|H|$ finite; or exhibit an explicit two-sided inverse map.
 \end{enumerate}
 \end{method}
@@ -4643,7 +4643,7 @@ If $G$ is abelian and $a,b\in H$, write $a=\varphi(x),b=\varphi(y)$ (surjectivit
 \end{method}
 
 \begin{pitfall}
-A homomorphism that happens to be a bijection of \emph{sets} is not enough unless it also respects multiplication; conversely a bijective \emph{set} map respecting multiplication is automatically an isomorphism --- but check both halves. Equal order alone never proves $G\isom H$ (e.g.\ $\Zn4\not\isom V_4$).
+A map that happens to be a bijection of \emph{sets} is not enough unless it also respects multiplication; conversely a bijective \emph{set} map respecting multiplication is automatically an isomorphism --- but check both halves. Equal order alone does not prove $G\isom H$ in general (e.g.\ $\Zn4\not\isom V_4$).
 \end{pitfall}
 
 \subsection*{Worked examples: PROVING $G\isom H$}
