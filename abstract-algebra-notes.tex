@@ -44707,17 +44707,17 @@ forces that velocity into a linear subspace, the tangent space $\mathrm{Lie}(G)$
   % the group as a curved arc
   \draw[thick] (-2.6,-0.9) .. controls (-1,0.6) and (1,0.6) .. (2.6,-0.9)
         node[right] {$G$};
-  % identity point
-  \fill (0,0.42) circle (1.6pt);
-  \node[above left] at (0,0.42) {$I$};
+  % identity point: the top of the arc, where the tangent is horizontal
+  \fill (0,0.225) circle (1.6pt);
+  \node[above left] at (0,0.225) {$I$};
   % tangent line at I (Lie(G))
-  \draw[thick] (-1.7,0.42) -- (1.7,0.42);
-  \node at (2.05,0.42) {$\mathrm{Lie}(G)$};
+  \draw[thick] (-1.7,0.225) -- (1.7,0.225);
+  \node[right] at (1.7,0.225) {$\mathrm{Lie}(G)$};
   % velocity vector A along the tangent
-  \draw[->,thick] (0,0.42) -- (1.1,0.42) node[below right] {$A=\varphi'(0)$};
-  % the path e^{tA} as a small curve hugging the surface
-  \draw[->,dashed] (0,0.42) .. controls (0.6,0.55) and (1.1,0.30) .. (1.4,-0.05)
-        node[right] {$\varphi(t)=e^{tA}$};
+  \draw[->,thick] (0,0.225) -- (0.9,0.225) node[above] {$A=\varphi'(0)$};
+  % the path e^{tA}: an arc of G itself, leaving I
+  \draw[->,very thick,black!55] (0,0.225) .. controls (0.36,0.225) and (0.72,0.165) .. (1.074,0.045)
+        node[below left,black] {$\varphi(t)=e^{tA}$};
 \end{tikzpicture}
 \end{center}
 
