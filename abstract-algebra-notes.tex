@@ -65369,9 +65369,9 @@ Sanity check: $\Spec A$ is not equidimensional; the global dimension $2$ comes f
 
 [By $(11.18)$ we have $\dim A_{\fm} = n - 1$. Now
 \[
-\fm/\fm^2 \cong (x_1, \ldots, x_n)/(x_1, \ldots, x_n)^2 + (f)
+\fm/\fm^2 \cong (x_1, \ldots, x_n)/\bigl((x_1, \ldots, x_n)^2 + (f)\bigr)
 \]
-and has dimension $n - 1$ if and only if $\partial f/\partial x_i \in (x_1, \ldots, x_n)$.]
+(with $P$ taken to be the origin) and has dimension $n - 1$ if and only if $f \notin (x_1, \ldots, x_n)^2$, i.e.\ if and only if $\partial f/\partial x_i \notin (x_1, \ldots, x_n)$ for some $i$.]
 
 \item In $(11.21)$ assume that $A$ is complete. Prove that the homomorphism $k[[t_1, \ldots, t_d]] \to A$ given by $t_i \mapsto x_i$ $(1 \leqslant i \leqslant d)$ is injective and that $A$ is a finitely-generated module over $k[[t_1, \ldots, t_d]]$. [Use $(10.24)$.]
 
@@ -65381,14 +65381,14 @@ and has dimension $n - 1$ if and only if $\partial f/\partial x_i \in (x_1, \ldo
 
 Each $\fp_i$ is a prime ideal and therefore the set $S$ is multiplicatively closed. The ring $S^{-1}A$ is Noetherian (Chapter 7, Exercise 9). Each $S^{-1}\fp_i$ has height equal to $m_{i+1} - m_i$, hence $\dim S^{-1}A = \infty$.
 
-\item Reformulate $(11.1)$ in terms of the Grothendieck group $K(A_q)$ (Chapter 7, Exercise 27).
+\item Reformulate $(11.1)$ in terms of the Grothendieck group $K(A_0)$ (Chapter 7, Exercise 26).
 
 \item Let $A$ be a ring (not necessarily Noetherian). Prove that
 \[
 1 + \dim A \leqslant \dim A[x] \leqslant 1 + 2\dim A.
 \]
 
-[Let $f \colon A \to A[x]$ be the embedding and consider the fibre of $f^*$: take $A[x]$ $\to$ $\operatorname{Spec}(A)$ over a prime ideal $\fp$ of $A$. This fibre can be identified with the spectrum of $k \otimes_A A[x]$, where $k$ is the residue field at $\fp$ (Chapter 3, Exercise 21), and $\dim k[x] = 1$. Now use Exercise 7(ii) of Chapter 4.]
+[Let $f \colon A \to A[x]$ be the embedding and consider the fibre of $f^* \colon \operatorname{Spec}(A[x]) \to \operatorname{Spec}(A)$ over a prime ideal $\fp$ of $A$. This fibre can be identified with the spectrum of $k \otimes_A A[x] \cong k[x]$, where $k$ is the residue field at $\fp$ (Chapter 3, Exercise 21), and $\dim k[x] = 1$. Now use Exercise 7(ii) of Chapter 4.]
 
 \item Let $A$ be a Noetherian ring. Then
 \[
@@ -65403,7 +65403,7 @@ Each $\fp_i$ is a prime ideal and therefore the set $S$ is multiplicatively clos
 \item Let $A=k[x,y,z,w]/(xz-yw)$. Show that $f=xz-yw$ is irreducible, deduce $\hgt(f)=1$ by Krull's principal ideal theorem, and compute $\dim A$. Then find $\trdeg_k\Frac(A)$ directly and confirm it agrees.
 \item For $A=k[x,y]_{(x,y)}$ and the $\fm$-primary ideal $\fq=(x^2,xy,y^2)=\fm^2$, compute $\len(A/\fq^n)$ as a function of $n$ for all $n\ge1$, identify the degree and leading coefficient of the resulting Hilbert--Samuel polynomial, and check that the degree equals $\dim A$.
 \item Let $A=k[x,y,z]/(z^2-xy)$ localized at $\fm=(x,y,z)$. Compute $\dim A$ and the embedding dimension $\dim_k(\fm/\fm^2)$, and decide whether $A$ is a regular local ring. Justify your answer geometrically.
-\item Show that $\fq=(x^3,\,y^2,\,xy)$ is $(x,y)$-primary in $A=k[x,y]_{(x,y)}$ by exhibiting an explicit $r$ with $\fm^r\subseteq\fq$, and conclude $\dim A\le 2$. Determine whether $\{x^3,y^2,xy\}$ is a system of parameters and explain.
+\item Show that $\fq=(x^3,\,y^2,\,xy)$ is $(x,y)$-primary in $A=k[x,y]_{(x,y)}$ by exhibiting an explicit $r$ with $\fm^r\subseteq\fq$, and conclude $\dim A\le 3$; then find two of the three generators that already generate an $\fm$-primary ideal and conclude $\dim A\le 2$. Determine whether $\{x^3,y^2,xy\}$ is a system of parameters and explain.
 \item In $A=k[x,y,z]$ bound $\hgt(xy,\,z)$ using Krull's height theorem, then compute the radical $\sqrt{(xy,z)}$, list the minimal primes over $(xy,z)$, and give the height of each. State $\dim A/(xy,z)$.
 \item Let $A=\Z[x]$. Compute $\dim A$, and for the maximal ideal $\fm=(5,x^2+2)$ verify that $\fm$ has height $2$ by exhibiting a maximal-length chain of primes ending at $\fm$ and identifying the residue field $A/\fm$.
 \item Let $A=k[[x_1,\dots,x_n]]$ be the formal power series ring over a field $k$. Using that $A$ is the $\fm$-adic completion of $k[x_1,\dots,x_n]_{(x_1,\dots,x_n)}$, prove $\dim A=n$, exhibit a regular system of parameters, and identify $\gr_\fm(A)$.
@@ -65412,7 +65412,7 @@ Each $\fp_i$ is a prime ideal and therefore the set $S$ is multiplicatively clos
 \begin{exers}{Additional exercises.}
 \item Let $A$ be a Noetherian local ring with maximal ideal $\fm$, and let $x\in\fm$ be neither a unit nor a zero-divisor. Prove $\dim A/(x)=\dim A-1$. (Use Krull's principal ideal theorem for the inequality $\dim A/(x)\ge\dim A-1$ and the dimension theorem for the reverse, comparing characteristic polynomials.)
 \item Let $A$ be a Noetherian local ring of dimension $d$. Prove that elements $x_1,\dots,x_d\in\fm$ form a system of parameters if and only if $\fm$ is the unique prime minimal over $(x_1,\dots,x_d)$, i.e.\ $\sqrt{(x_1,\dots,x_d)}=\fm$. Deduce that any system of parameters generates an $\fm$-primary ideal.
-\item Let $A$ be an affine domain over a field $k$ and let $\fp$ be a prime of $A$. Prove $\hgt\fp+\dim(A/\fp)=\dim A$. (Use Noether normalization and that affine domains are catenary, together with $\dim A=\trdeg_k\Frac(A)$.) Give an example showing the analogous equality can fail for a non-catenary Noetherian ring is not required; instead, illustrate the formula with $\fp=(x)$ in $k[x,y,z]$.
+\item Let $A$ be an affine domain over a field $k$ and let $\fp$ be a prime of $A$. Prove $\hgt\fp+\dim(A/\fp)=\dim A$. (Use Noether normalization and that affine domains are catenary, together with $\dim A=\trdeg_k\Frac(A)$.) Illustrate the formula with $\fp=(x)$ in $k[x,y,z]$.
 \item Let $A$ be a Noetherian local ring with residue field $k=A/\fm$. Prove the inequality $\dim A\le\dim_k(\fm/\fm^2)$, with equality if and only if $A$ is regular. Then prove that a regular local ring is an integral domain, using the Krull intersection theorem and that $\gr_\fm(A)$ is a polynomial ring.
 \item Let $A$ be a Noetherian ring. Prove that for every prime $\fp$, $\hgt\fp$ equals the least number of elements $a_1,\dots,a_r\in\fp$ such that $\fp$ is minimal over $(a_1,\dots,a_r)$. Conclude that in a Noetherian ring every prime has finite height even when $\dim A=\infty$.
 \end{exers}
@@ -65442,7 +65442,7 @@ A \arrow[r] \arrow[d] & A_\fp \arrow[d] \\
 A/\fq \arrow[r] & A_\fp/\fq A_\fp
 \end{tikzcd}
 \]
-Identify which primes of $A$ survive (have nonzero image) under $A\to A_\fp$, and use this to translate a chain of length $\hgt\fp$ descending from $\fp$ into a chain in $A_\fp$.
+Identify which primes $\fq$ of $A$ survive under $A\to A_\fp$ (i.e.\ have $\fq A_\fp\ne A_\fp$), and use this to translate a chain of length $\hgt\fp$ descending from $\fp$ into a chain in $A_\fp$.
 \item Let $B=k[y_1,\dots,y_d]\subseteq A$ be a Noether normalization of an affine domain $A$ over $k$, so $A$ is a finite $B$-module and $B$ is a polynomial ring. For a maximal ideal $\fm\subset A$ with $\fn=\fm\cap B$, complete the diagram of inclusions and prove $\dim A_\fm=\dim B_\fn=d$:
 \[
 \begin{tikzcd}[row sep=large, column sep=huge]
@@ -65450,7 +65450,7 @@ B \arrow[r,hook] \arrow[d] & A \arrow[d] \\
 B_\fn \arrow[r,hook] & A_\fm
 \end{tikzcd}
 \]
-Using lying-over and going-up for the integral extension $B\subseteq A$, show a chain of primes of length $d$ descending from $\fn$ lifts to a chain of the same length descending from $\fm$, and conclude $\dim A=\trdeg_k\Frac(A)=d$.
+Using going-down for the integral extension $B\subseteq A$ (valid because $B$ is integrally closed and $A$ is a domain), show a chain of primes of length $d$ descending from $\fn$ lifts to a chain of the same length descending from $\fm$, and conclude $\dim A=\trdeg_k\Frac(A)=d$.
 \end{exers}
 
 
