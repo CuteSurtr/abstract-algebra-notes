@@ -47424,7 +47424,7 @@ B = \begin{pmatrix}
 5 & 2 & -8 & -8 \\
 -6 & -3 & 8 & 8 \\
 -3 & -1 & 3 & 4 \\
--1 & -1 & 4 & -5
+3 & 1 & -4 & -5
 \end{pmatrix}
 \]
 both have characteristic polynomial $(x-3)(x+1)^3$. Determine whether they are similar and determine the Jordan canonical form for each matrix.
@@ -47482,7 +47482,7 @@ and determine a matrix $P$ which conjugates this matrix into its Jordan canonica
 
 \item Determine the Jordan canonical form for the $n \times n$ matrix over $\mathbb{F}_p$ whose entries are all equal to 1 except that the entries along the main diagonal are all equal to 0.
 
-\item Suppose $V_i$ is the generalized eigenspace of $T$ corresponding to eigenvalue $\lambda_i$. For any $k \geq 0$, prove that the nullity of $T - \lambda_i$ on the subspace $(T - \lambda_i)^k V_i$ is the same as the nullity of $T - \lambda_i$ on $(T - \lambda_i)^{k+1} V_i$ and equals the number of Jordan blocks for $T$ with eigenvalue $\lambda_i$ and size greater than $k$ (so for $k = 0$ this gives the number of Jordan blocks).
+\item Suppose $V_i$ is the generalized eigenspace of $T$ corresponding to eigenvalue $\lambda_i$. For any $k \geq 0$, prove that the nullity of $T - \lambda_i$ on the subspace $(T - \lambda_i)^k V_i$ is the same as the nullity of $T - \lambda_i$ on $(T - \lambda_i)^k V$ and equals the number of Jordan blocks for $T$ with eigenvalue $\lambda_i$ and size greater than $k$ (so for $k = 0$ this gives the number of Jordan blocks).
 
 \item Let $\lambda$ be an eigenvalue of the linear transformation $T$ on the finite dimensional vector space $V$ over the field $F$. Let $r_k = \dim_F (T - \lambda)^k V$ be the rank of the linear transformation $(T - \lambda)^k$ on $V$. For any $k \geq 1$, prove that $r_{k-1} - 2r_k + r_{k+1}$ is the number of Jordan blocks of $T$ corresponding to $\lambda$ of size $k$ [use Exercise 12 in Section 1]. (This gives an efficient method for determining the Jordan canonical form for $T$ by computing the ranks of the matrices $(A - \lambda I)^k$ for a matrix $A$ representing $T$, cf.\ Exercise 31(a) in Section 11.2.)
 
@@ -47533,7 +47533,7 @@ where $I$ is the $n \times n$ identity matrix.
 
 \item Let $P$ be a nonsingular $n \times n$ matrix.
 \begin{enumerate}
-\item[(a)] Prove that $PG(At)P^{-1} = G(PAtP^{-1}) = G(PAP^{-1}t)$. This implies that, up to a change of basis, it suffices to compute $G(At)$ for matrices $A$ in canonical form. The second equality is essentially the first equality, the second equality is immediate because the matrix $tI$ commutes with every matrix.)
+\item[(a)] Prove that $PG(At)P^{-1} = G(PAtP^{-1}) = G(PAP^{-1}t)$. (This implies that, up to a change of basis, it suffices to compute $G(At)$ for matrices $A$ in canonical form.) [Take limits of partial sums to get the first equality. The second equality is immediate because the matrix $tI$ commutes with every matrix.]
 \item[(b)] Prove that if $A$ is the direct sum of matrices $A_1, A_2, \ldots, A_m$, then $G(At)$ is the direct sum of the matrices $G(A_1 t), G(A_2 t), \ldots, G(A_m t)$.
 \item[(c)] Show that if $Z$ is the diagonal matrix with entries $z_1, z_2, \ldots, z_n$ then $G(Zt)$ is the diagonal matrix with entries $G(z_1 t), G(z_2 t), \ldots, G(z_n t)$.
 \end{enumerate}
@@ -47558,9 +47558,9 @@ Deduce that if $J$ is the $r \times r$ elementary Jordan matrix with eigenvalue 
 
 \item For the $4 \times 4$ matrices $D$ and $P$ given in Example 3 of this section:
 \[
-D = \begin{pmatrix} 1 & 2 & -4 & 4 \\ 2 & -1 & 4 & -8 \\ 1 & 0 & 1 & -2 \\ 0 & 1 & -2 & 3 \end{pmatrix} \qquad P = \begin{pmatrix} 0 & 1 & 2 & 0 \\ 2 & 0 & -2 & 1 \\ 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \end{pmatrix}
+D = \begin{pmatrix} 1 & 2 & -4 & 4 \\ 2 & -1 & 4 & -8 \\ 1 & 0 & 1 & -2 \\ 0 & 1 & -2 & 3 \end{pmatrix} \qquad P = \begin{pmatrix} 0 & 1 & 2 & 0 \\ 2 & 0 & -2 & 1 \\ 1 & 0 & 0 & 0 \\ 0 & 0 & 1 & 0 \end{pmatrix}
 \]
-show that
+show that, for $E = \exp(P^{-1}DP)$,
 \[
 E = \begin{pmatrix} e & e & 0 & 0 \\ 0 & e & 0 & 0 \\ 0 & 0 & e & e \\ 0 & 0 & 0 & e \end{pmatrix} \quad \text{and} \quad \exp(D) = \begin{pmatrix} e & 2e & -4e & 4e \\ 2e & -e & 4e & -8e \\ e & 0 & e & -2e \\ 0 & e & -2e & 3e \end{pmatrix}.
 \]
@@ -47582,7 +47582,7 @@ is a group homomorphism (here $K$ is the additive group of the field). (Note how
 
 \item Establish the following properties of derivatives:
 \begin{enumerate}
-\item[(a)] If $G(t) = \sum_{k=0}^{\infty} a_k t^k$ then $\dfrac{d}{dt} G(At) = \sum_{k=1}^{\infty} k a_k (At)^{k-1}$.
+\item[(a)] If $G(t) = \sum_{k=0}^{\infty} a_k t^k$ then $\dfrac{d}{dt} G(At) = A\sum_{k=1}^{\infty} k a_k (At)^{k-1}$.
 \item[(b)] If $v$ is an $n \times 1$ matrix with (constant) entries from $K$ then
 \[ \frac{d}{dt}\big(G(At)v\big) = \left(\frac{d}{dt} G(At)\right) v. \]
 \end{enumerate}
@@ -47590,7 +47590,7 @@ is a group homomorphism (here $K$ is the additive group of the field). (Note how
 \item Deduce from part (a) of the preceding exercise that
 \[ \frac{d}{dt} \exp(At) = A \exp(At). \]
 
-\item Prove that $\exp(At)$ is a fundamental matrix of $(*)$ and that if $C$ is the $n \times 1$ constant vector whose entries are $y_1(0), \dots, y_n(0)$ then $y(t) = \exp(At)C$ is the particular solution to the system $(*)$ satisfying the initial condition $y(0) = C$. (Note how this generalizes the 1-dimensional result that the solution of the single differential equation $y' = ay$ as a basis for the 1-dimensional space of solutions and the unique solution to this differential equation satisfying the initial condition $y(0) = c$ is $y = ce^{at}$.) [Use the preceding exercises.]
+\item Prove that $\exp(At)$ is a fundamental matrix of $(*)$ and that if $C$ is the $n \times 1$ constant vector whose entries are $y_1(0), \dots, y_n(0)$ then $y(t) = \exp(At)C$ is the particular solution to the system $(*)$ satisfying the initial condition $y(0) = C$. (Note how this generalizes the 1-dimensional result that the single differential equation $y' = ay$ has $e^{at}$ as a basis for the 1-dimensional space of solutions and the unique solution to this differential equation satisfying the initial condition $y(0) = c$ is $y = ce^{at}$.) [Use the preceding exercises.]
 
 \item Prove that if $M$ is a fundamental matrix of $(*)$ and if $Q$ is a nonsingular matrix in $M_n(K)$, then $MQ$ is also a fundamental matrix of $(*)$. (The columns of $MQ$ are linear combinations of the columns of $M$.)
 
