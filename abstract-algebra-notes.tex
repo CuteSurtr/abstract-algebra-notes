@@ -62495,7 +62495,7 @@ Find primary decompositions of $\fa=(x^2,xy)\subseteq k[x,y]$ and show minimalit
 \begin{wex}{A three-component decomposition}
 Give a minimal primary decomposition of $\fa=(x^2,xy,xz,yz)\subseteq k[x,y,z]$ and list its primes.
 \wrec Look for the irreducible pieces of $Z(\fa)$: where does $x^2=xy=xz=yz=0$ vanish? On $\set{x=y=0}\cup\set{x=z=0}$ plus possibly an embedded point.
-\wsol One checks $\fa=(x,y)\cap(x,z)\cap(x,y,z)^2$. Indeed an element of the right side is divisible appropriately: membership in $(x,y)\cap(x,z)$ forces the linear and most quadratic terms, and $(x,y,z)^2$ supplies $x^2$; conversely each generator of $\fa$ lies in all three. The radicals are $(x,y)$ (prime), $(x,z)$ (prime), and $\rad(x,y,z)^2=(x,y,z)$ (maximal). Sanity check: $Z(\fa)$ is the union of the two lines $\set{x=y=0}$ (the $z$-axis) and $\set{x=z=0}$ (the $y$-axis); these are the loci of the isolated primes $(x,y)$ and $(x,z)$, while $(x,y,z)$ is the embedded origin where the two lines cross --- three primes, two of dimension $1$ and one embedded point.
+\wsol One checks $\fa=(x,y)\cap(x,z)\cap(x,y,z)^2$. Indeed $(x,y)\cap(x,z)=(x,yz)$ (modulo $x$ this is $(y)\cap(z)=(yz)$ in $k[y,z]$), so an element of the right side is $f=xg+yzh$; since $f\in(x,y,z)^2$ has no linear term, $g$ has zero constant term, i.e.\ $g\in(x,y,z)$, and $f\in x(x,y,z)+(yz)=\fa$. Conversely each generator of $\fa$ lies in all three. The radicals are $(x,y)$ (prime), $(x,z)$ (prime), and $\rad(x,y,z)^2=(x,y,z)$ (maximal). Sanity check: $Z(\fa)$ is the union of the two lines $\set{x=y=0}$ (the $z$-axis) and $\set{x=z=0}$ (the $y$-axis); these are the loci of the isolated primes $(x,y)$ and $(x,z)$, while $(x,y,z)$ is the embedded origin where the two lines cross --- three primes, two of dimension $1$ and one embedded point.
 \end{wex}
 
 \begin{wex}{Decomposing a principal ideal in a UFD}
@@ -62558,7 +62558,7 @@ For $R=\Z$ and $M=\Z/n\Z$, compute $\Ass_R(M)$, and reconcile with $\Ass$ of the
 
 \begin{wex}{Minimal primes of an ideal in $k[x,y,z]$}
 Find the minimal primes over $\fa=(xy,xz)\subseteq k[x,y,z]$ and hence $\rad\fa$.
-\wrec Minimal primes over $\fa$ = isolated associated primes = irreducible components of $Z(\fa)$. Factor $\fa=(x)\cap(y,z)$.
+\wrec Minimal primes over $\fa$ = isolated associated primes, matching (for $k$ algebraically closed) the irreducible components of $Z(\fa)$. Factor $\fa=(x)\cap(y,z)$.
 \wsol $xy,xz\in\fa$ vanish where $x=0$ or where $y=z=0$. Indeed $\fa=(x)\cap(y,z)$: an element divisible by $x$ and lying in $(y,z)$\,---\,check generators $xy=x\cdot y\in(x)\cap(y,z)$, etc.; conversely $(x)\cap(y,z)\subseteq(xy,xz)$ since $f\in(x)$ means $f=xg$, and $f\in(y,z)$ forces $g\in(y,z)$, so $f\in x(y,z)=(xy,xz)$. Both $(x)$ and $(y,z)$ are prime, incomparable, hence both isolated; there are no embedded primes here. Thus the minimal primes are $(x),(y,z)$ and $\rad\fa=(x)\cap(y,z)=\fa$ (so $\fa$ is radical). Sanity check: $Z(\fa)$ is the plane $x=0$ together with the line $y=z=0$ (the $x$-axis), the two irreducible components matching the two minimal primes; $\fa$ radical $\iff$ all components prime, consistent.
 \end{wex}
 
@@ -62601,7 +62601,7 @@ For $\fa=(x^2,xy)$ in $k[x,y]$, recover the $(x)$-primary (isolated) component a
 
 \begin{wex}{Embedded component is not recoverable}
 Explain, using the same $\fa=(x^2,xy)$, why localizing cannot pin down the embedded $(x,y)$-component.
-\wrec Localize at $S=R\setminus(x,y)=R_{(x,y)}$ and watch the isolated component, not the embedded one, get inverted.
+\wrec Localize at $S=R\setminus(x,y)$ (i.e.\ pass to $R_{(x,y)}$) and watch \emph{neither} component get inverted: both radicals $(x)$ and $(x,y)$ lie inside $(x,y)$, so the isolated component survives alongside the embedded one.
 \wsol At $\fp=(x,y)$ the set $S=R\setminus(x,y)$ inverts elements outside the maximal ideal. The isolated component $(x)$ has radical $(x)$, and here $(x)\subseteq(x,y)$, so $S\cap(x)=\es$ and $(x)$ does \emph{not} get blown away; we get $S^{-1}\fa=S^{-1}\bigl((x)\cap\fq_{(x,y)}\bigr)$ involving \emph{both} components. So localization at the embedded prime does not isolate $\fq_{(x,y)}$. Concretely $(S^{-1}\fa)^c$ recovers $\fa$ itself, not a single primary ideal, because $(x,y)$ is not minimal. Sanity check: consistent with the explicit ambiguity $\fq_{(x,y)}\in\set{(x,y)^2,(x^2,y)}$ --- there is no canonical choice, so no localization could return one.
 \end{wex}
 
@@ -62638,7 +62638,7 @@ For a finitely generated module $M$ over a Noetherian ring, the \emph{support} i
 \begin{enumerate}[label=\textup{(\arabic*)},leftmargin=*]
 \item $\Ass(M)\subseteq\Supp(M)$, and the \emph{minimal} elements of the two sets coincide;
 \item $\Supp(M)=\bigcup_{\fp\in\Ass(M)}V(\fp)$, the union of the closed sets cut out by the associated primes;
-\item the isolated primes of $\fa$ are the minimal primes of $\Supp(R/\fa)=V(\fa)$ --- recovering ``isolated primes $=$ irreducible components of $Z(\fa)$.''
+\item the isolated primes of $\fa$ are the minimal primes of $\Supp(R/\fa)=V(\fa)$ --- recovering, for $R=k[x_1,\dots,x_n]$ with $k$ algebraically closed, ``isolated primes $=$ irreducible components of $Z(\fa)$.''
 \end{enumerate}
 This is A\&M's geometric punchline: $\Ass$ records the embedded data, $\Supp$ records the underlying space, and the two agree exactly on the components.
 \end{remark}
@@ -62753,7 +62753,7 @@ It is the \emph{$\fp$-primary component} of $\fp^n$ (the isolated one) --- in ge
 \begin{wex}{Existence forced by Noetherianity, failure without it}
 Show $(0)$ has no primary decomposition in $R=k[x_1,x_2,\dots]/(x_1x_2,x_3x_4,x_5x_6,\dots)$.
 \wrec Lasker--Noether needs Noetherian; this $R$ has infinitely many minimal primes, so $(0)$ cannot be a finite intersection of primaries.
-\wsol Each relation $x_{2i-1}x_{2i}=0$ produces a minimal prime (e.g.\ containing one of each pair), and there are infinitely many such, pairwise incomparable. If $(0)=\fq_1\cap\cdots\cap\fq_m$ were a finite primary decomposition, then by the first uniqueness theorem $(0)$ would have only finitely many minimal primes (the isolated $\rad\fq_i$). But it has infinitely many. Contradiction. Sanity check: $R$ is non-Noetherian (the ideal $(x_1,x_3,x_5,\dots)$ is not finitely generated), so the existence theorem simply does not apply --- exactly the hypothesis that fails.
+\wsol Every prime of $R$ contains $\bar x_{2i-1}$ or $\bar x_{2i}$ for each $i$ (their product is $0$), and for every choice of one variable from each pair the ideal generated by the chosen variables is prime (the quotient is a polynomial ring in the remaining variables); so these ideals are exactly the minimal primes of $R$, and there are infinitely many of them, pairwise incomparable. If $(0)=\fq_1\cap\cdots\cap\fq_m$ were a finite primary decomposition, then by the proposition on isolated primes (the minimal primes over a decomposable ideal are its isolated associated primes) $(0)$ would have only finitely many minimal primes (the isolated $\rad\fq_i$). But it has infinitely many. Contradiction. Sanity check: $R$ is non-Noetherian (the ideal $(x_1,x_3,x_5,\dots)$ is not finitely generated), so the existence theorem simply does not apply --- exactly the hypothesis that fails.
 \end{wex}
 
 \begin{wex}{A primary ideal that is not irreducible}
