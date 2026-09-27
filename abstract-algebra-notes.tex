@@ -148,7 +148,7 @@ On $\R\setminus\{-1\}$ the map $a\mapsto 1+a$ is a bijection onto $\R\setminus\{
 The transport of structure is exactly the commuting square
 \[\begin{tikzcd}[row sep=large,column sep=large]
 (\R\setminus\{-1\})\times(\R\setminus\{-1\}) \arrow[r, "\ast"] \arrow[d, "(1+\,\cdot\,)\times(1+\,\cdot\,)"'] & \R\setminus\{-1\} \arrow[d, "1+\,\cdot\,"] \\
-\R^\times\times\R^\times \arrow[r, "\cdot"'] & \R^\times
+\R^\times\times\R^\times \arrow[r, "{(u,v)\mapsto uv}"'] & \R^\times
 \end{tikzcd}\]
 \begin{dgx}
 \dgi{Objects:} Four nodes, all groups. Top-left: the Cartesian product $(\R\setminus\{-1\})\times(\R\setminus\{-1\})$, where pairs of inputs for the operation $\ast$ live. Top-right: $\R\setminus\{-1\}$, the group under $\ast$ whose group structure we are establishing. Bottom-left: $\R^\times\times\R^\times$, pairs of nonzero reals, i.e.\ inputs for ordinary multiplication. Bottom-right: $\R^\times$, the abelian group of nonzero reals under multiplication. All four are abelian groups (the bottom row is classical; the top row is what we are proving).
@@ -266,7 +266,7 @@ Either observation alone shows this is \textbf{not} a group.
 
 \begin{remark}[Why the table cannot show associativity, and a diagram for cancellation]
 The Latin-square property is equivalent to both cancellation laws but is \emph{strictly weaker} than being a group: there exist Latin squares (``quasigroups'') that are not associative. The cancellation law $ab=ac\Rightarrow b=c$ is exactly the statement that left translation $L_a:x\mapsto ax$ is injective, which on a finite set forces it to be a bijection -- this is the rearrangement theorem. As a commuting square, the inverse map intertwines left and right translations:
-\[\begin{tikzcd}[row sep=large,column sep=large]
+\[\begin{tikzcd}[row sep=large,column sep=6em]
 G \arrow[r, "L_a:\,x\mapsto ax"] \arrow[d, "(\cdot)\inv"'] & G \arrow[d, "(\cdot)\inv"] \\
 G \arrow[r, "R_{a\inv}:\,y\mapsto y a\inv"'] & G
 \end{tikzcd}\]
@@ -295,7 +295,7 @@ Concretely, for $G=\Zn4=\{0,1,2,3\}$ under addition, left translation $L_1:x\map
 \draw[->,thick] (z1) to[bend left=20] (z2);
 \draw[->,thick] (z2) to[bend left=20] (z3);
 \draw[->,thick] (z3) to[bend left=20] (z0);
-\node at (3.4,1) {$L_1$};
+\node at (0,0) {$L_1$};
 \end{tikzpicture}
 \end{center}
 The single $4$-cycle $0\to1\to2\to3\to0$ shows $L_1$ has no fixed point and visits every element once, i.e.\ each row of the $\Zn4$ Cayley table is the cyclic shift of the header.
@@ -955,9 +955,9 @@ Here is the square ($D_8$, $n=4$) with the rotation $r$ and the reflection axis 
 \coordinate (v3) at (1,-1);
 \draw[thick] (v0)--(v1)--(v2)--(v3)--cycle;
 \foreach \p/\n in {v0/0,v1/1,v2/2,v3/3}{\fill (\p) circle (1.6pt);}
-\node[above right] at (v0){$0$};
+\node[above left] at (v0){$0$};
 \node[above left] at (v1){$1$};
-\node[below left] at (v2){$2$};
+\node[below right] at (v2){$2$};
 \node[below right] at (v3){$3$};
 \draw[dashed] (1.4,1.4)--(-1.4,-1.4) node[below]{axis of $s$};
 \draw[->,>=stealth,thick] (0.55,0) arc (0:75:0.55) node[midway,right]{$r$};
@@ -971,7 +971,7 @@ Here is the square ($D_8$, $n=4$) with the rotation $r$ and the reflection axis 
 }
 \draw[thick] (w0)--(w1)--(w2)--(w3)--(w4)--cycle;
 \foreach \k in {0,1,2,3,4}{\fill (w\k) circle (1.6pt);}
-\node[above] at (w0){$0$};
+\node[above right] at (w0){$0$};
 \node[left] at (w1){$1$};
 \node[below left] at (w2){$2$};
 \node[below right] at (w3){$3$};
@@ -2009,10 +2009,10 @@ Use $\lcm$, never the product. $\ord{(1\,2\,3)(4\,5\,6)}=\lcm(3,3)=3$, not $9$.
 \end{pitfall}
 
 The equivalence chain in the proof is exactly a divisibility ladder: every multiple of $\sigma$'s order is a common multiple of the cycle lengths, and conversely. The universal property of $\lcm$ is the same as a coproduct/least-upper-bound condition in the divisibility poset:
-\[\begin{tikzcd}[row sep=large,column sep=large]
-& m & \\
-k_1 \arrow[ur, "\mid"] \arrow[dr, "\mid"'] & \cdots & k_r \arrow[ul, "\mid"'] \arrow[dl, "\mid"] \\
-& \lcm(k_1,\dots,k_r) \arrow[uu, dashed, "\exists!\,\mid" ] &
+\[\begin{tikzcd}[row sep=large,column sep=normal]
+& & m & & \\
+k_1 \arrow[urr, "\mid"] \arrow[drr, "\mid"'] & \cdots & & \cdots & k_r \arrow[ull, "\mid"'] \arrow[dll, "\mid"] \\
+& & \lcm(k_1,\dots,k_r) \arrow[uu, dashed, "\exists!\,\mid" ] & &
 \end{tikzcd}\]
 Reading the bottom node: $\lcm$ divides every common multiple $m$ (dashed unique arrow), and that is precisely the statement ``$\sigma^m=\id\eqv\lcm\mid m$.''
 
@@ -2906,7 +2906,7 @@ The factorization $\ord{\GL_2(\F_p)}=p(p-1)^2(p+1)$ counts the group; it does \e
   \item[(a)] State precisely why $\det$ is a homomorphism, i.e. fill in the labels making the square commute:
   \[\begin{tikzcd}[row sep=large,column sep=large]
     \GL_n(F)\times\GL_n(F) \arrow[r, "m"] \arrow[d, "\det\times\det"'] & \GL_n(F) \arrow[d, "\det"] \\
-    F^\times\times F^\times \arrow[r, "\cdot"'] & F^\times
+    F^\times\times F^\times \arrow[r, "{(a,b)\mapsto ab}"'] & F^\times
   \end{tikzcd}\]
   \item[(b)] Show $\det$ is surjective by exhibiting, for each $c\in F^\times$, a matrix in $\GL_n(F)$ with determinant $c$.
   \item[(c)] Identify $\ker(\det)$ explicitly and name the standard symbol for it.
@@ -2974,9 +2974,9 @@ The relations are NOT symmetric: $ij=k$ but $ji=-k$. The entire multiplication i
   \node[cgdot] (i) at (90:1.6) {};
   \node[cgdot] (j) at (210:1.6) {};
   \node[cgdot] (k) at (330:1.6) {};
-  \draw[cgr] (i) to[bend left=25] node[cglab]{$+$} (j);
-  \draw[cgr] (j) to[bend left=25] node[cglab]{$+$} (k);
-  \draw[cgr] (k) to[bend left=25] node[cglab]{$+$} (i);
+  \draw[cgr] (i) to[bend right=25] node[cglab]{$+$} (j);
+  \draw[cgr] (j) to[bend right=25] node[cglab]{$+$} (k);
+  \draw[cgr] (k) to[bend right=25] node[cglab]{$+$} (i);
   \node[cglab,above=2pt of i] {$i$};
   \node[cglab,below left=2pt of j] {$j$};
   \node[cglab,below right=2pt of k] {$k$};
@@ -4326,7 +4326,7 @@ so $\ord{2^n}=\infty=\ord{n}$.
 Check: image $\varphi(\Z)=\{2^n\st n\in\Z\}=\{\dots,\tfrac14,\tfrac12,1,2,4,\dots\}$, an
 infinite cyclic subgroup of $\R^\times$; injective hom from $\Z$, so $\Z\isom\gen{2}$.
 Consistent with ``injective $\imp$ orders preserved exactly.''
-\[\begin{tikzcd}[column sep=normal]
+\[\begin{tikzcd}[column sep=large]
 1 \arrow[r] & 0 \arrow[r, hook] & \Z \arrow[r, "n\mapsto 2^n", hook] & \R^\times
 \end{tikzcd}\]
 \begin{dgx}
@@ -4696,7 +4696,7 @@ Show the additive group of reals is isomorphic to the multiplicative group of po
 \wsol Let $\varphi(x)=e^x$. \emph{Homomorphism:} $\varphi(x+y)=e^{x+y}=e^x e^y=\varphi(x)\varphi(y)$, the commuting square
 \[\begin{tikzcd}[row sep=large,column sep=large]
 \R\times\R \arrow[r, "+"] \arrow[d, "\exp\times\exp"'] & \R \arrow[d, "\exp"] \\
-\R^{>0}\times\R^{>0} \arrow[r, "\cdot"'] & \R^{>0}
+\R^{>0}\times\R^{>0} \arrow[r, "{(s,t)\mapsto st}"'] & \R^{>0}
 \end{tikzcd}\]
 \begin{dgx}
 \dgi{Objects:} Four corners: $\R\times\R$ (pairs of reals, upper-left), $\R$ (reals, upper-right), $\R^{>0}\times\R^{>0}$ (pairs of positive reals, lower-left), $\R^{>0}$ (positive reals, lower-right). The upper row carries the additive group structure; the lower row carries the multiplicative group structure.
@@ -5173,7 +5173,7 @@ $\ker\rho=1$ and $\rho$ is injective. With $|G|=n$, choosing a labeling $G\leftr
 gives $\Sym(G)\isom S_n$, so $G\isom\rho(G)\sgr S_n$.
 \end{proof}
 
-\[\begin{tikzcd}[column sep=large]
+\[\begin{tikzcd}[column sep=7em]
 G \arrow[r, hook, "\rho\,:\,g\,\mapsto\,(x\mapsto gx)"] & \Sym(G)
 \end{tikzcd}\]
 
@@ -5294,7 +5294,7 @@ Label the vertices of the square cyclically $1,2,3,4$. The generator $r$ is rota
   \node[below left] at (v2) {$2$};
   \node[below right] at (v3) {$3$};
   \node[above right] at (v4) {$4$};
-  \node at (0,0) {\small $r=(1\,2\,3\,4)$};
+  \node[left] at (-1.2,0) {\small $r=(1\,2\,3\,4)$};
   \node[right] at (1.2,0) {\small $s$: axis $1$--$3$};
 \end{tikzpicture}
 \end{center}
@@ -5732,12 +5732,12 @@ the coset and conjugation actions worked above (intermediate kernels, the normal
 \begin{exers}{Commutative-diagram exercises.}
 \item Let $G$ be a group and $A$ a set. Let $\varphi:G\to\Sym(A)$ be a homomorphism, and define $g\cdot a=\varphi(g)(a)$. Prove that this defines a group action by checking the two diagrams below commute for all $g,h\in G$ (here $\cdot_g:A\to A$ denotes $a\mapsto g\cdot a$, and the unlabeled arrow is the identity):
 \[\begin{tikzcd}[row sep=large,column sep=large]
-A \arrow[r, "\cdot_h"] \arrow[dr, "\cdot_{gh}"'] & A \arrow[d, "\cdot_g"] \\
+A \arrow[r, "\textstyle\cdot_h"] \arrow[dr, "\textstyle\cdot_{gh}"'] & A \arrow[d, "\textstyle\cdot_g"] \\
 & A
 \end{tikzcd}
 \qquad
-\begin{tikzcd}[column sep=large]
-A \arrow[r, "\cdot_1"] \arrow[dr, "\id"'] & A \arrow[d, "\id"] \\
+\begin{tikzcd}[row sep=large,column sep=large]
+A \arrow[r, "\textstyle\cdot_1"] \arrow[dr, "\id"'] & A \arrow[d, "\id"] \\
 & A
 \end{tikzcd}\]
 Conversely, prove that any action $G\times A\to A$ arises this way from a unique homomorphism $G\to\Sym(A)$, and state precisely what ``the action is faithful'' means about that homomorphism.
