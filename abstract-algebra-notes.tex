@@ -26474,8 +26474,8 @@ Problems are drawn from Dummit \& Foote, Artin (\emph{Algebra}), and Fraleigh (\
 \item {[DF 6.1.9]} Prove that a finite group $G$ is nilpotent iff $ab = ba$ whenever $a,b \in G$ with $(|a|,|b|)=1$. [Use Part 4 of Theorem 3.]
 \item {[DF 6.1.10]} Prove that $D_{2n}$ is nilpotent iff $n$ is a power of $2$. [Use Exercise 9.]
 \item {[DF 6.1.11]} Give another proof of Proposition 5 assuming $G$ abelian, via the Fundamental Theorem of Finite Abelian Groups.
-\item {[DF 6.1.15]} Prove that $Z_i(D_{2^n}) = D_{2^{n-1-i}}$.
-\item {[DF 6.1.19]} Show that there is no group whose commutator subgroup is isomorphic to $S_4$. [Use the preceding exercise.]
+\item {[DF 6.1.15]} Prove that $Z_i(D_{2^n}) = \gen{r^{2^{n-1-i}}}$ for $0\le i\le n-2$ and $Z_{n-1}(D_{2^n})=D_{2^n}$, where $r$ is the rotation of order $2^{n-1}$.
+\item {[DF 6.1.19]} Show that there is no group whose commutator subgroup is isomorphic to $S_4$. [Use DF 6.1.18.]
 \item {[DF 6.1.21]} Prove that if $N \nor G$ then $\Phi(N) \sgr \Phi(G)$; give an example where this fails when $N$ is not normal.
 \item {[DF 6.1.23]} Prove that $\Phi(G)$ is the set of nongenerators of $G$ (for $|G| > 1$).
 \item {[DF 6.1.24]} Let $G$ be a finite group. Prove that $\Phi(G)$ is nilpotent. [Use Frattini's Argument on the Sylow subgroups of $\Phi(G)$.]
@@ -26516,8 +26516,8 @@ Problems are drawn from Dummit \& Foote, Artin (\emph{Algebra}), and Fraleigh (\
 \item {[Artin 11.4]} How is normality of a subgroup $H \le G$ reflected in the coset-operation table?
 \item {[Artin 11.6]} For the triangle group $G_{pqr} = \gen{x,y,z \st x^p, y^q, z^r, xyz}$, prove it is $D_n$ for $(2,2,n)$, octahedral for $(2,3,4)$, icosahedral for $(2,3,5)$.
 \item {[Artin 11.7]} For reflections $a,b,c$ of the plane in the sides of an equilateral triangle, set $x=ab$, $y=bc$, $z=ca$; prove $x,y,z$ generate a triangle group.
-\item {[Artin M.5]} For subgroups $H, N \nor G$ with $N$ normal: (a) find the kernels of the canonical map restricted to $H$ and $HN$; (b) deduce the Second Isomorphism Theorem.
-\item {[Artin M.6]} For $H \le N$ both normal in $G$, set $\bar H = H/N$, $\bar G = G/N$: (a) prove $\bar H \nor \bar G$; (b) deduce the Third Isomorphism Theorem.
+\item {[Artin M.5]} For subgroups $H, N \sgr G$ with $N$ normal: (a) find the kernels of the canonical map restricted to $H$ and $HN$; (b) deduce the Second Isomorphism Theorem.
+\item {[Artin M.6]} For $N \le H$ both normal in $G$, set $\bar H = H/N$, $\bar G = G/N$: (a) prove $\bar H \nor \bar G$; (b) deduce the Third Isomorphism Theorem.
 \item {[Fraleigh 18.18]} Find a composition series of $S_3 \times S_3$; is $S_3 \times S_3$ solvable?
 \item {[Fraleigh 18.20]} For $G = \Z_{36}$ with the two given subnormal series, build chains $(3)$ and $(4)$ and exhibit the isomorphic factor groups in the rectangular array.
 \item {[Fraleigh 18.21]} Repeat the preceding for $\Z_{24}$ with the two given subnormal series.
@@ -26542,7 +26542,7 @@ Problems are drawn from Dummit \& Foote, Artin (\emph{Algebra}), and Fraleigh (\
 \begin{exers}{}
 \item {[DF 6.1.3]} Prove $G$ finite is nilpotent iff it has a normal subgroup of each order dividing $|G|$, and is cyclic iff it has a unique subgroup of each such order.
 \item {[DF 6.1.7]} Prove subgroups and quotients of nilpotent groups are nilpotent (also for infinite groups); give $G$ with $H \nor G$ where $H$, $G/H$ nilpotent but $G$ is not.
-\item {[DF 6.1.18]} Show that if $G'/G''$ and $G''/G'''$ are both cyclic then $G'' = 1$.
+\item {[DF 6.1.18]} Show that if $G'/G''$ and $G''/G'''$ are both cyclic then $G'' = G'''$.
 \item {[DF 6.1.25]} For a $p$-subgroup $P$ of $G$, $N \nor G$ with $p \nmid |N|$, $\bar G = G/N$: prove $N_{\bar G}(\bar P) = \overline{N_G(P)}$ and $C_{\bar G}(\bar P) = \overline{C_G(P)}$ via Frattini's Argument.
 \item {[DF 6.1.26]} Prove the full set of properties of $\bar P = P/\Phi(P)$ for a finite $p$-group $P$, including Burnside's Basis Theorem and the embedding of prime-to-$p$ automorphisms into $\GL_r(\F_p)$.
 \item {[DF 6.1.31]} Prove every minimal normal subgroup of a finite solvable group is an elementary abelian $p$-group.
