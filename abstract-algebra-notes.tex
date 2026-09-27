@@ -26836,12 +26836,12 @@ Path 1 for $\mathbb{F}_5$: $\mathbb{F}_5$ is commutative with no zero divisors $
 Path 2 for $\mathbb{F}_5$: every nonzero element of $\mathbb{F}_5$ is invertible $\Rightarrow$ division ring $\Rightarrow$ no zero divisors.
 Both paths give the same property of $\mathbb{F}_5$, confirming the square.
 The ring $\Z\times\Z$ is commutative with $1\neq 0$ yet fails the bottom-right condition ($(1,0)(0,1)=(0,0)$), so it lies outside all four boxes.
-\dgi{Common pitfall:} Students sometimes read the two right-hand arrows as saying ``integral domain $\Rightarrow$ division ring'' or the reverse, collapsing the right column into an equivalence.
-The diagram does \emph{not} have a horizontal arrow at the bottom going from integral domain to division ring or vice versa; those classes are incomparable (neither implies the other without extra hypotheses).
-The finite-domain collapse ($\text{finite domain} \Rightarrow \text{field}$, Theorem 7.1 Cor.\ 2) is a \emph{bonus theorem}, not a general arrow in this square.
-\dgi{Takeaway:} The point of this diagram is that ``field'' sits at the intersection of two independent strengthenings of the weakest class, one requiring commutativity (the horizontal direction) and one requiring every nonzero element to be invertible (the vertical direction), so losing either property separately gives a distinct and genuine class of rings.
+\dgi{Common pitfall:} Students sometimes read the square as also saying ``integral domain $\Rightarrow$ division ring'' or the reverse, since both classes sit between field and the bottom-right class.
+The diagram has \emph{no} arrow in either direction between integral domain (top right) and division ring (bottom left); those classes are incomparable ($\Z$ is an integral domain but not a division ring; $\HH$ is a division ring but not an integral domain, since it is not commutative).
+The finite-domain collapse ($\text{finite domain} \Rightarrow \text{field}$, Thm.\ \ref{thm:finite@c7}) is a \emph{bonus theorem}, not a general arrow in this square.
+\dgi{Takeaway:} The point of this diagram is that ``field'' sits at the intersection of two independent strengthenings of the weakest class, one requiring commutativity (the vertical direction) and one requiring every nonzero element to be invertible (the horizontal direction), so losing either property separately gives a distinct and genuine class of rings.
 \end{dgx}
-(A field is both a division ring and a domain; the only thing separating a field from a division ring is commutativity, e.g.\ $\HH$.) For \emph{finite} rings the right column collapses: a finite domain is a field (Thm.\ \ref{thm:finite@c7}), so over finite ground all four boxes for a commutative such ring coincide.
+(A field is both a division ring and a domain; the only thing separating a field from a division ring is commutativity, e.g.\ $\HH$.) For \emph{finite} rings the top row collapses: a finite domain is a field (Thm.\ \ref{thm:finite@c7}), so over finite ground all four boxes for a commutative such ring coincide.
 
 \begin{remark}
 The condition ``no zero divisors'' is exactly cancellation (Prop.\ \ref{prop:cancel@c7}): nonzero elements cancel $\eqv$ there are no zero divisors. This is why $\Zn{n}$ ($n\ge 2$) supports cancellation precisely when $n$ is prime, and why solving linear equations $ax=b$ behaves well only in domains.
