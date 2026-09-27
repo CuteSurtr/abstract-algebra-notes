@@ -41417,8 +41417,8 @@ M \arrow[r,hook,"\iota"] \arrow[dr,"\varphi"'] & T(M) \arrow[d,dashed,"\exists!\
 \dgi{Arrows:} $\iota\colon M\to T(M)$ is the canonical inclusion $M=T^1(M)\hookrightarrow T(M)$,
   embedding $M$ as the degree-$1$ piece. $\varphi\colon M\to A$ is any $R$-module
   homomorphism (not required to be multiplicative). $\Phi\colon T(M)\to A$ is the unique
-  $R$-algebra homomorphism declared to exist by the universal property; the dagger $\exists!$
-  signals both existence and uniqueness.
+  $R$-algebra homomorphism declared to exist by the universal property; the dashed arrow and the label $\exists!$
+  signal both existence and uniqueness.
 \dgi{What commutes:} The triangle commutes: $\Phi\circ\iota=\varphi$. That is, the top
   path ($M\xrightarrow{\iota}T(M)\xrightarrow{\Phi}A$) equals the diagonal ($M\xrightarrow{\varphi}A$).
 \dgi{Why it commutes:} $\Phi$ is defined on pure tensors by
@@ -44477,11 +44477,9 @@ The double cover $S^3\to\mathbb{RP}^3$ already shows its character in dimension 
   % arrow
   \draw[->,thick] (-1.5,0) -- (-0.3,0) node[midway,above] {$/\,\set{\pm1}$};
   % right: quotient circle
-  \draw[thick] (1.5,0) arc (180:360:1 and 0.6);
-  \draw[thick,dashed] (1.5,0) arc (180:0:1 and 0.6);
-  \fill (1.5,0) circle (1.5pt);
-  \fill (3.5,0) circle (1.5pt);
-  \node at (1.5,0.28) {$\set{\pm P}$};
+  \draw[thick] (2.5,0) ellipse (1 and 0.6);
+  \fill (2.5,0.6) circle (1.5pt);
+  \node at (2.5,0.95) {$\set{\pm P}$};
   \node at (2.5,-1.0) {$\mathbb{RP}^1\cong S^1$};
 \end{tikzpicture}
 \end{center}
@@ -45625,7 +45623,7 @@ T\text{-cyclic subspace } F[v]
   relation ``$T$ similar to $S$.'' The right column holds $F[x]$-module-language
   counterparts: the module $V_T$, an $F[x]$-submodule of $V_T$, a cyclic submodule
   $F[x]v$, and an isomorphism $V_T \isom V_S$ of $F[x]$-modules.
-\dgi{Arrows:} Each horizontal double arrow $\longleftrightarrow$ labelled ``same data''
+\dgi{Arrows:} Each horizontal double arrow $\longleftrightarrow$ (the top one is labelled ``same data'')
   is a bijective correspondence, not a ring or module homomorphism. The top arrow is the
   master dictionary: the pair $(V, T)$ is literally the same data as the $F[x]$-module
   $V_T$ defined by $p(x)\cdot v = p(T)(v)$. The lower three rows specialize that
@@ -45775,7 +45773,7 @@ D = \diag(1,\dots,1,a_1,\dots,a_m),\qquad D = Q(xI-A)P^{-1}.
   in place of $xI - A$. Left vertical: $P \colon R^n \xrightarrow{\;\isom\;} R^n$ is
   an invertible column-operation matrix (the column operations multiply $xI - A$ on the right by $P^{-1}$).
   Right vertical: $Q \colon R^n \xrightarrow{\;\isom\;} R^n$ is the row-operation matrix
-  (left-multiplication). Far-right verticals are the identity on $V_T$ and $0$.
+  (left-multiplication). The vertical at $V_T$ is the identity; the two $0$'s are not joined by an arrow.
 \dgi{What commutes:} The left square says $Q \circ (xI-A) = D \circ P$, i.e.\
   $D = Q(xI-A)P^{-1}$. The right square says both cokernels coincide: the bottom surjection
   $R^n \twoheadrightarrow V_T$ is the top one composed with $Q^{-1}$; its kernel is
@@ -46339,9 +46337,9 @@ V_T
   \arrow[r,"\isom","\text{inv.\ factors}"']
   \arrow[d,"\isom"',"\text{elem.\ divisors}"]
   & \displaystyle\bigoplus_{i} F[x]/(a_i)
-  \arrow[d,leftrightarrow,"\text{RCF / Jordan}"] \\
+  \arrow[d,leftrightarrow,"\text{RCF}"] \\
 \displaystyle\bigoplus_{\lambda, k} F[x]/\big((x-\lambda)^{k}\big)
-  \arrow[r,leftrightarrow,"\text{regroup}"']
+  \arrow[r,leftrightarrow,"\text{Jordan}"']
   & \text{normal-form matrix}
 \end{tikzcd}
 \]
@@ -46357,10 +46355,11 @@ V_T
 \dgi{Arrows:} The top arrow $\isom$ (labelled ``inv.\ factors'') is the structure-theorem
   isomorphism grouping $V_T$ by the monic divisibility chain. The left arrow $\isom$
   (labelled ``elem.\ divisors'') is the \emph{other} structure-theorem isomorphism,
-  grouping $V_T$ by prime-power factors. The right vertical double arrow records the
-  translation: a summand $F[x]/(a_i)$ contributes a companion block $C_{a_i}$ to the RCF,
-  while a summand $F[x]/((x-\lambda)^k)$ contributes a Jordan block $J_k(\lambda)$.
-  The bottom horizontal double arrow is the algebraic regrouping: each $a_i$ factors into
+  grouping $V_T$ by prime-power factors. The right vertical double arrow (labelled ``RCF'') records the
+  translation of the top-right decomposition into a matrix: a summand $F[x]/(a_i)$ contributes a companion block $C_{a_i}$ to the RCF.
+  The bottom horizontal double arrow (labelled ``Jordan'') does the same for the bottom-left decomposition:
+  a summand $F[x]/((x-\lambda)^k)$ contributes a Jordan block $J_k(\lambda)$.
+  The two decompositions are related by regrouping: each $a_i$ factors into
   prime powers, and vice versa collecting the prime powers of the same $a_i$ reconstitutes
   $F[x]/(a_i)$ by CRT.
 \dgi{What commutes:} Both paths from $V_T$ to the normal-form matrix lead to the same
@@ -47662,7 +47661,7 @@ by first computing $\dim\ker(A - 2\,\id)$ and $\dim\ker\big((A - 2\,\id)^2\big)$
 \end{exers}
 
 \begin{exers}{Commutative-diagram exercises.}
-\item Let $V$ be a finite-dimensional $\C$-vector space and $T \in \End(V)$ with single eigenvalue $\lambda$, and set $N = T - \lambda\,\id$. For each $j \ge 0$ the inclusion $\ker(N^{j}) \hookrightarrow \ker(N^{j+1})$ and the action of $N$ fit into the diagram
+\item Let $V$ be a finite-dimensional $\C$-vector space and $T \in \End(V)$ with single eigenvalue $\lambda$, and set $N = T - \lambda\,\id$. For each $j \ge 0$ the inclusions of $\ker(N^{j+1})$ and $\ker(N^{j})$ into $V$ and the action of $N$ fit into the diagram
 \[
 \begin{tikzcd}
 \ker(N^{j+1}) \arrow[r,"N"] \arrow[d,hook] & \ker(N^{j}) \arrow[d,hook] \\
@@ -47692,11 +47691,11 @@ commutes. Prove that $S$ and $T$ have the same elementary divisors, hence the sa
 \item Let $T \in \End(V)$ over $\C$ and fix an eigenvalue $\lambda$ with $N = T - \lambda\,\id$. The block $N$ restricts to a chain of maps on the kernel filtration; for a fixed $j$ the diagram
 \[
 \begin{tikzcd}
-\ker(N^{j})/\ker(N^{j-1}) \arrow[r,"\overline{N}"] \arrow[d,equal] & \ker(N^{j-1})/\ker(N^{j-2}) \arrow[d,equal] \\
+\ker(N^{j})/\ker(N^{j-1}) \arrow[r,"\overline{N}"] \arrow[d,leftrightarrow,"\text{basis}"'] & \ker(N^{j-1})/\ker(N^{j-2}) \arrow[d,leftrightarrow,"\text{basis}"] \\
 \set{\text{blocks of size} \ge j} \arrow[r,"{(\text{shift})}"] & \set{\text{blocks of size} \ge j-1}
 \end{tikzcd}
 \]
-indicates the induced map $\overline{N}$ on successive quotients. Prove $\overline{N}$ is injective, and deduce the inequality $\dim\big(\ker(N^{j})/\ker(N^{j-1})\big) \le \dim\big(\ker(N^{j-1})/\ker(N^{j-2})\big)$ on the number of Jordan blocks of size $\ge j$.
+indicates the induced map $\overline{N}$ on successive quotients; each vertical arrow matches the blocks listed below it with a basis of the quotient above it (for each block, the image of one vector of a Jordan basis). Prove $\overline{N}$ is injective, and deduce the inequality $\dim\big(\ker(N^{j})/\ker(N^{j-1})\big) \le \dim\big(\ker(N^{j-1})/\ker(N^{j-2})\big)$ on the number of Jordan blocks of size $\ge j$.
 \end{exers}
 
 
