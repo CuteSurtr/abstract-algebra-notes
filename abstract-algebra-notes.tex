@@ -26927,7 +26927,7 @@ i.e., addition is symmetric difference and multiplication is intersection.
 
 \item Give an example of an infinite Boolean ring.
 
-\item Let $D$ be a squarefree integer, and let $\mathcal{O}$ be the ring of integers in the quadratic field $\Q(\sqrt{D})$. For any positive integer $f$ prove that the set $\mathcal{O}_f = \Z[f\omega] = \{a + bf\omega \mid a, b \in \Z\}$ is a subring of $\mathcal{O}$ containing the identity. Prove that $[\mathcal{O} : \mathcal{O}_f] = f$ (index as additive abelian groups). Prove conversely that a subring of $\mathcal{O}$ containing the identity and having finite index $f$ in $\mathcal{O}$ (as additive abelian group) is equal to $\mathcal{O}_f$. The ring $\mathcal{O}_f$ is called the order of conductor $f$ in the field $\Q(\sqrt{D})$. The ring of integers $\mathcal{O}$ is called the maximal order in $\Q(\sqrt{D})$.
+\item Let $D$ be a squarefree integer, and let $\mathcal{O}$ be the ring of integers in the quadratic field $\Q(\sqrt{D})$. Write $\mathcal{O}=\Z[\omega]$, where $\omega=\sqrt{D}$ if $D\equiv 2,3\pmod 4$ and $\omega=\frac{1+\sqrt{D}}{2}$ if $D\equiv 1\pmod 4$. For any positive integer $f$ prove that the set $\mathcal{O}_f = \Z[f\omega] = \{a + bf\omega \mid a, b \in \Z\}$ is a subring of $\mathcal{O}$ containing the identity. Prove that $[\mathcal{O} : \mathcal{O}_f] = f$ (index as additive abelian groups). Prove conversely that a subring of $\mathcal{O}$ containing the identity and having finite index $f$ in $\mathcal{O}$ (as additive abelian group) is equal to $\mathcal{O}_f$. The ring $\mathcal{O}_f$ is called the order of conductor $f$ in the field $\Q(\sqrt{D})$. The ring of integers $\mathcal{O}$ is called the maximal order in $\Q(\sqrt{D})$.
 
 \item Show for $D = 3, 5, 6$, and $7$ that the group of units $\units{\mathcal{O}}$ of the quadratic integer ring $\mathcal{O}$ is infinite by exhibiting an explicit unit of infinite (multiplicative) order in each case.
 
@@ -27041,7 +27041,7 @@ Prove that the corresponding valuation ring $R$ is the ring of all rational numb
 
 \item Let $R$ be a commutative ring with $1\neq 0$. Prove that $R$ is a field if and only if its only ideals are $(0)$ and $R$.
 
-\item Let $\varphi:R\to S$ be a ring homomorphism with $R$ commutative and $S$ an integral domain. Show that $\ker\varphi$ is a prime ideal of $R$. Show by example (with $S$ a field) that $\ker\varphi$ need not be maximal.
+\item Let $\varphi:R\to S$ be a nonzero ring homomorphism with $R$ commutative and $S$ an integral domain. Show that $\ker\varphi$ is a prime ideal of $R$. Show by example (with $S$ a field) that $\ker\varphi$ need not be maximal.
 
 \item Let $R=C[0,1]$ be the ring of continuous real-valued functions on $[0,1]$ under pointwise operations. For $c\in[0,1]$ let $M_c=\{f \st f(c)=0\}$. Prove $M_c$ is a maximal ideal and that $R/M_c\isom\R$.
 
@@ -27055,14 +27055,14 @@ R/\ker\varphi \arrow[ur, dashed, "\overline{\varphi}"'] &
 \end{tikzcd}\]
 Apply this to $\varphi:\Z[x]\to\C$, $f\mapsto f(i)$, to identify $\Z[x]/\gen{x^2+1}$.
 
-\item Let $I_1,I_2$ be ideals of $R$ with $I_1+I_2=R$ (comaximal). Prove the Chinese Remainder Theorem: the map $r\mapsto(r+I_1,\,r+I_2)$ induces a ring isomorphism, by showing it has kernel $I_1\cap I_2=I_1 I_2$ and is surjective:
+\item Let $I_1,I_2$ be ideals of a commutative ring $R$ with $I_1+I_2=R$ (comaximal). Prove the Chinese Remainder Theorem: the map $r\mapsto(r+I_1,\,r+I_2)$ induces a ring isomorphism, by showing it has kernel $I_1\cap I_2=I_1 I_2$ and is surjective:
 \[\begin{tikzcd}[column sep=large]
 R \arrow[r, "{r\mapsto(r+I_1,\,r+I_2)}"] \arrow[dr, two heads, "\pi"'] & R/I_1 \times R/I_2 \\
 & R/(I_1\cap I_2) \arrow[u, dashed, "\isom"']
 \end{tikzcd}\]
 Instantiate with $R=\Z$, $I_1=\gen{5}$, $I_2=\gen{7}$.
 
-\item State and verify the universal property of the polynomial ring: for any ring homomorphism $\varphi:R\to S$ into a commutative ring $S$ and any choice of $s\in S$, there is a unique ring homomorphism $\Phi:R[x]\to S$ extending $\varphi$ with $\Phi(x)=s$, making the diagram commute:
+\item State and verify the universal property of the polynomial ring: for any ring homomorphism $\varphi:R\to S$ with $\varphi(1_R)=1_S$ into a commutative ring $S$ and any choice of $s\in S$, there is a unique ring homomorphism $\Phi:R[x]\to S$ extending $\varphi$ with $\Phi(x)=s$, making the diagram commute:
 \[\begin{tikzcd}[row sep=large,column sep=large]
 R \arrow[r, "\iota"] \arrow[dr, "\varphi"'] & R[x] \arrow[d, dashed, "{\exists!\,\Phi}"] \\
 & S
