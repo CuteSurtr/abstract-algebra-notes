@@ -43052,7 +43052,7 @@ e^{tA}=\id+\frac{tA}{1!}+\frac{t^2A^2}{2!}+\frac{t^3A^3}{3!}+\cdots=\sum_{k=0}^{
 \]
 \end{definition}
 
-To make sense of an infinite sum of matrices we measure size with the norm $\lVert A\rVert=\bigl(\sum_{i,j}\abs{a_{ij}}^2\bigr)^{1/2}$, which is submultiplicative up to a dimensional constant: $\lVert AB\rVert\le n\,\lVert A\rVert\,\lVert B\rVert$, and hence $\lVert A^k\rVert\le n^{k-1}\lVert A\rVert^k$.
+To make sense of an infinite sum of matrices we measure size with the norm $\lVert A\rVert=\bigl(\sum_{i,j}\abs{a_{ij}}^2\bigr)^{1/2}$, which is submultiplicative up to a dimensional constant: $\lVert AB\rVert\le n\,\lVert A\rVert\,\lVert B\rVert$, and hence $\lVert A^k\rVert\le n^{k-1}\lVert A\rVert^k$ for $k\ge 1$.
 
 \begin{theorem}[Convergence and derivative; Artin 5.4.4]\label{art:matexp:main@c11}
 Let $A\in\Mat_n(\C)$.
@@ -43064,7 +43064,7 @@ Let $A\in\Mat_n(\C)$.
 \end{theorem}
 
 \begin{proof}
-(a) Bound the $(i,j)$ entry of the degree-$k$ term: $\abs{\tfrac{t^k(A^k)_{ij}}{k!}}\le\frac{\abs{t}^k\,\lVert A^k\rVert}{k!}\le\frac{\abs{t}^k\,n^{k-1}\lVert A\rVert^k}{k!}=\frac1n\cdot\frac{(n\abs{t}\,\lVert A\rVert)^k}{k!}$. For $\abs{t}\le r$ these are dominated by the constants $m_k=\frac1n\cdot\frac{(nr\lVert A\rVert)^k}{k!}$, and $\sum_k m_k=\frac1n e^{\,nr\lVert A\rVert}<\infty$ by the ratio test. By the Weierstrass $M$-test each entry series converges absolutely and uniformly on $\abs{t}\le r$.
+(a) The $k=0$ term is the constant matrix $\id$, which does not affect convergence. For $k\ge1$ bound the $(i,j)$ entry of the degree-$k$ term: $\abs{\tfrac{t^k(A^k)_{ij}}{k!}}\le\frac{\abs{t}^k\,\lVert A^k\rVert}{k!}\le\frac{\abs{t}^k\,n^{k-1}\lVert A\rVert^k}{k!}=\frac1n\cdot\frac{(n\abs{t}\,\lVert A\rVert)^k}{k!}$. For $\abs{t}\le r$ these are dominated by the constants $m_k=\frac1n\cdot\frac{(nr\lVert A\rVert)^k}{k!}$, and $\sum_k m_k=\frac1n e^{\,nr\lVert A\rVert}<\infty$ by the ratio test. By the Weierstrass $M$-test each entry series converges absolutely and uniformly on $\abs{t}\le r$.
 
 (b) Each entry of $e^{tA}$ is a power series in $t$ whose term-by-term derivative is again uniformly convergent (same $M$-test, shifted index), so we may differentiate term by term:
 \[
@@ -43076,7 +43076,7 @@ and the $A$ may be pulled out on either side since it commutes with every $A^j$,
 \[
 e^{A+B}=\sum_{k\ge 0}\frac{(A+B)^k}{k!}=\sum_{k\ge 0}\frac1{k!}\sum_{i+j=k}\frac{k!}{i!\,j!}A^iB^j=\Bigl(\sum_{i\ge 0}\frac{A^i}{i!}\Bigr)\Bigl(\sum_{j\ge 0}\frac{B^j}{j!}\Bigr)=e^{A}e^{B}.
 \]
-Absolute convergence is what licenses the rearrangement (Cauchy product), and it is exactly here that commutativity is used.
+Absolute convergence is what licenses the rearrangement (Cauchy product), which needs no commutativity; $AB=BA$ is used only in the binomial expansion of $(A+B)^k$.
 \end{proof}
 
 \begin{corollary}[Artin 5.4.5]
@@ -43117,7 +43117,7 @@ The series is rarely summed directly. Instead:
 \end{itemize}
 \end{method}
 
-\begin{wex}{A coupled decay system by diagonalization}
+\begin{wex}{A coupled growth system by diagonalization}
 Solve $\frac{dX}{dt}=AX$ for $A=\begin{psmallmatrix}3&2\\1&4\end{psmallmatrix}$, with $X=(x_1,x_2)\trans$, then write $e^{tA}$.
 \wrec $A$ has distinct real eigenvalues, so it is diagonalizable; by the method, $e^{tA}=Pe^{tD}P^{-1}$ with $P$ the eigenvector matrix. Each basic solution is $e^{\lambda t}V$ for an eigenvector $V$ (Artin 5.3.13).
 \wsol The characteristic polynomial is $\det(A-\lambda\id)=(3-\lambda)(4-\lambda)-2=\lambda^2-7\lambda+10=(\lambda-5)(\lambda-2)$, so $\lambda=5,2$. For $\lambda=5$: $(A-5\id)V=\begin{psmallmatrix}-2&2\\1&-1\end{psmallmatrix}V=0$ gives $V_1=(1,1)\trans$. For $\lambda=2$: $\begin{psmallmatrix}1&2\\1&2\end{psmallmatrix}V=0$ gives $V_2=(2,-1)\trans$. The two basic solutions are
