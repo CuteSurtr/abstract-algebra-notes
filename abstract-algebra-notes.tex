@@ -64231,17 +64231,17 @@ Prove that $\mSpec k[x, y]$ consists of the primes in (iii). [Use Exercise 20 in
 
 \item Prove that $X = \Spec R$ is irreducible (i.e., any two nonempty open subsets have a nontrivial intersection) if and only if $X_f \cap X_g \neq \es$ for any two nonempty principal open sets $X_f$ and $X_g$. Deduce that $X = \Spec R$ is irreducible if and only if the nilradical of $R$ is a prime ideal. [Use Exercise 10.]
 
-\item Let $G = \gen{a}$ be a group of order 2, let $R = \Z[G] = \set{a + ba \mid a, b \in \Z}$ be the corresponding group ring, and let $X = \Spec R$.
+\item Let $G = \gen{a}$ be a group of order 2, let $R = \Z[G] = \set{m + na \mid m, n \in \Z}$ be the corresponding group ring, and let $X = \Spec R$.
 \begin{enumerate}
 \item[(a)] Prove that the nilradical of $R$ is $(0)$ but is not a prime ideal. Prove that $X = X^{+} \cup X^{-}$ where $X^{+} = Z(1 - a)$ and $X^{-} = Z(1 + a)$. [Use $(1 + a)(1 - a) = 0$.]
 \item[(b)] Prove that the homomorphism $\Z[G] \to \Z$ defined by mapping $a$ to $1$ induces a homeomorphism of $X^{+}$ with $\Spec \Z$, and the homomorphism mapping $a$ to $-1$ induces a homeomorphism of $X^{-}$ with $\Spec \Z$.
 \item[(c)] Prove that $X^{+} \cap X^{-}$ consists of the single element $\fm = (1 + a, 1 - a) = (2, 1 - a)$ and that this is a closed point in $X$.
-\item[(d)] Show that $(1 - a)$ and $(1 + a)$ are the unique non-closed points in $X$, with closures $X^{+}$ and $X^{-}$, respectively. Describe the closed points, $\mSpec R$, in $X$ and prove that $\Spec \Z[\gen{a}]$ can be pictured as fibered over $\Spec \Z$ with $X^{-}$ containing $(1 + a), (3, 1 - a), (5, 1 - a), \ldots$ and $X^{+}$ containing $(1 - a), (3, 1 + a), (5, 1 + a), \ldots$ lying over the primes $(0), (2), (3), (5), \ldots$ of $\Spec \Z$.
+\item[(d)] Show that $(1 - a)$ and $(1 + a)$ are the unique non-closed points in $X$, with closures $X^{+}$ and $X^{-}$, respectively. Describe the closed points, $\mSpec R$, in $X$ and prove that $\Spec \Z[\gen{a}]$ can be pictured as fibered over $\Spec \Z$ with $X^{-}$ containing $(1 + a), \fm, (3, 1 + a), (5, 1 + a), \ldots$ and $X^{+}$ containing $(1 - a), \fm, (3, 1 - a), (5, 1 - a), \ldots$ lying over the primes $(0), (2), (3), (5), \ldots$ of $\Spec \Z$ (the two lines cross at $\fm$).
 \end{enumerate}
 
-\item Let $\mathcal{O}$ be the structure sheaf on $X = \Spec R$, let $U$ be an open set in $X$, and suppose $s, t \in \mathcal{O}(U)$. If $s = a/f_1^n$ on $X_{f_1}$ and $t = b/f_2^n$ on $X_{f_2}$, show that
+\item Let $\mathcal{O}$ be the structure sheaf on $X = \Spec R$, let $U$ be an open set in $X$, and suppose $s, t \in \mathcal{O}(U)$. If $s = a/f_1^n$ on $X_{f_1}$ and $t = b/f_2^m$ on $X_{f_2}$, show that
 \[
-st = (ab f_1^n f_2^n)/(f_1 f_2)^{n+m} \quad \text{and} \quad s + t = (a f_1^m f_2^{m+n} + b f_1^{m+n} f_2^n)/(f_1 f_2)^{n+m}
+st = (ab f_1^m f_2^n)/(f_1 f_2)^{n+m} \quad \text{and} \quad s + t = (a f_1^m f_2^{m+n} + b f_1^{m+n} f_2^n)/(f_1 f_2)^{n+m}
 \]
 on $X_{f_1 f_2}$. Deduce that $\mathcal{O}(U)$ is a commutative ring with identity.
 
@@ -64280,7 +64280,7 @@ is commutative, where the vertical maps are the restriction homomorphisms.
 \end{enumerate}
 
 \item \begin{enumerate}
-\item[(a)] If $M$ is an $R$-module prove that $\Supp(M)$ is a Zariski closed subset of $\Spec R$. [Use Exercise 33 of Section 4.]
+\item[(a)] If $M$ is an $R$-module prove that $\Supp(M)$ is the union of the Zariski closed sets $Z(P)$, $P\in\Supp(M)$. [Use Exercise 33 of Section 4.] Show that $\Supp(M)$ need not be Zariski closed (consider the $\Z$-module $\bigoplus_p\Z/p\Z$).
 \item[(b)] If $M$ is a finitely generated $R$-module prove that $\Supp(M) = Z(\Ann(M)) \subseteq \Spec R$. [Use Exercise 34 of Section 4.]
 \end{enumerate}
 
@@ -64304,7 +64304,7 @@ is commutative, where the vertical maps are the restriction homomorphisms.
 \item Suppose $I = Q_1 \cap \cdots \cap Q_n$ is a minimal primary decomposition of the ideal $I$ in the Noetherian ring $R$ with $P_i = \rad Q_i$, $i = 1, \ldots, n$. This exercise proves that $\Ass_R(R/I) = \set{P_1, \ldots, P_n}$.
 \begin{enumerate}
 \item[(a)] Prove that the natural projection homomorphisms induce an injection of $R/I$ into $R/Q_1 \oplus \cdots \oplus R/Q_n$ and deduce that $\Ass_R(R/I) \subseteq \set{P_1, \ldots, P_n}$. [Use Exercise 34 in Section 1 and the previous exercise.]
-\item[(b)] Let $Q_i' = \bigcap_{j \neq i} Q_j$. Show that the minimality of the decomposition implies that $0 \neq Q_i'/I = (Q_i' + Q_i)/Q_i \subseteq R/Q_i$. Deduce that $\Ass_R(Q_i'/I) = \set{P_i}$. [Use Exercises 33--34 in Section 1 and the previous exercise.] Deduce that $\set{P_i} \in \Ass_R(R/I)$, so that $\Ass_R(R/I) = \set{P_1, \ldots, P_n}$. [Use $Q_i'/I \subseteq R/I$ and Exercise 34 in Section 1.]
+\item[(b)] Let $Q_i' = \bigcap_{j \neq i} Q_j$. Show that the minimality of the decomposition implies that $0 \neq Q_i'/I = (Q_i' + Q_i)/Q_i \subseteq R/Q_i$. Deduce that $\Ass_R(Q_i'/I) = \set{P_i}$. [Use Exercises 33--34 in Section 1 and the previous exercise.] Deduce that $P_i \in \Ass_R(R/I)$, so that $\Ass_R(R/I) = \set{P_1, \ldots, P_n}$. [Use $Q_i'/I \subseteq R/I$ and Exercise 34 in Section 1.]
 \end{enumerate}
 
 \item Let $I$ be the ideal $(x^2, xy, xz, yz)$ in $R = k[x, y, z]$. Prove that $\Ass_R(R/I)$ consists of the primes $\set{(x, y), (x, z), (x, y, z)}$.
@@ -64427,7 +64427,7 @@ Then $f$ does not vanish at any point of $X$, hence is a unit in $C(X)$. But thi
 
 \item Let $X = \Spec R$. Prove that a closed set $V(\fa)$ is irreducible if and only if $\rad\fa$ is a prime ideal, and deduce that the irreducible components of $X$ are exactly the closures $V(\fp)$ of the minimal primes $\fp$ of $R$. Apply this to $R = k[x,y]/(x^2 y, x y^2)$ to list the irreducible components.
 
-\item Let $\fp$ be a prime of $R$ and let $\kappa(\fp) = \Frac(R/\fp)$ be its residue field. For a ring map $\varphi\colon R \to S$, prove that the fiber $(\varphi^{*})^{-1}(\fp) \subseteq \Spec S$ is canonically homeomorphic to $\Spec\bigl(S \tensor_R \kappa(\fp)\bigr)$. Use this to compute the number of points in the fiber of $\Spec \Z[x] \to \Spec \Z$ over $(p)$ for $f = x^2 + 1$ when $p = 2$, $p \equiv 1 \pmod 4$, and $p \equiv 3 \pmod 4$.
+\item Let $\fp$ be a prime of $R$ and let $\kappa(\fp) = \Frac(R/\fp)$ be its residue field. For a ring map $\varphi\colon R \to S$, prove that the fiber $(\varphi^{*})^{-1}(\fp) \subseteq \Spec S$ is canonically homeomorphic to $\Spec\bigl(S \tensor_R \kappa(\fp)\bigr)$. Use this to compute the number of points in the fiber of $\Spec \Z[x]/(f) \to \Spec \Z$ over $(p)$ for $f = x^2 + 1$ when $p = 2$, $p \equiv 1 \pmod 4$, and $p \equiv 3 \pmod 4$.
 
 \item Prove that $X = \Spec R$ is quasi-compact: every open cover by basic open sets $\set{D(g_i)}_{i \in I}$ admits a finite subcover, by showing that $X = \bigcup_i D(g_i)$ forces $(g_i : i \in I) = R$ and extracting a finite unit relation $1 = \sum_{j} a_j g_{i_j}$. Then exhibit a non-Noetherian ring $R$ and an open subset $U \subseteq \Spec R$ that is \emph{not} quasi-compact.
 
@@ -64435,7 +64435,7 @@ Then $f$ does not vanish at any point of $X$, hence is a unit in $C(X)$. But thi
 \end{exers}
 
 \begin{exers}{Commutative-diagram exercises.}
-\item Let $R$ be a ring and $\fa$ an ideal, with quotient $\pi\colon R \twoheadrightarrow R/\fa$ and localization $\lambda\colon R \to R_f$. Complete the diagram below, in which the bottom row records the geometric pieces of $\Spec R$ cut out by these two algebraic operations. Prove that $\pi^{*}$ is a homeomorphism onto the closed set $V(\fa)$ and that $\lambda^{*}$ is a homeomorphism onto the open set $D(f)$, and explain why exactly one composite makes sense when $f \in \fa$.
+\item Let $R$ be a ring and $\fa$ an ideal, with quotient $\pi\colon R \twoheadrightarrow R/\fa$ and localization $\lambda\colon R \to R_f$. Complete the diagram below, in which the bottom row records the geometric pieces of $\Spec R$ cut out by these two algebraic operations. Prove that $\pi^{*}$ is a homeomorphism onto the closed set $V(\fa)$ and that $\lambda^{*}$ is a homeomorphism onto the open set $D(f)$.
 \[
 \begin{tikzcd}[row sep=1.8em, column sep=2.2em]
 R/\fa \arrow[d,dash] & R \arrow[l,twoheadrightarrow,"\pi"'] \arrow[r,"\lambda"] \arrow[d,dash] & R_f \arrow[d,dash] \\
@@ -64465,7 +64465,7 @@ Identify the stalk $\mathcal{O}_{\Spec R, \fp}$ of the structure sheaf at $\fp$ 
 \item Let $f = x^3 - x - 1 \in \Z[x]$ and view $V(f) \subseteq \Spec \Z[x]$ as fibered over $\Spec \Z$ via the inclusion $\Z \hookrightarrow \Z[x]$. Complete the diagram below, in which the fiber over $(p)$ is identified with $\Spec\bigl(\F_p[x]/(\overline{f})\bigr)$, and prove the induced map is a homeomorphism onto the fiber. Use it to count the closed points of the fiber over $(2)$, $(3)$, and $(23)$ from the factorization type of $\overline{f}$ in $\F_p[x]$.
 \[
 \begin{tikzcd}[row sep=large, column sep=huge]
-\Spec\bigl(\F_p[x]/(\overline{f})\bigr) \arrow[r,"\sim"] \arrow[d] & \Spec\bigl(\Z[x]/(f)\bigr) \arrow[d,"\varphi^{*}"] \\
+\Spec\bigl(\F_p[x]/(\overline{f})\bigr) \arrow[r,hook] \arrow[d] & \Spec\bigl(\Z[x]/(f)\bigr) \arrow[d,"\varphi^{*}"] \\
 \Spec \F_p \arrow[r,hook] & \Spec \Z
 \end{tikzcd}
 \]
