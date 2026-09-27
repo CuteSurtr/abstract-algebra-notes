@@ -40249,8 +40249,8 @@ Let $\dim W=k$, $\dim V=n$. Choose a basis $v_1,\dots,v_k$ of $W$ and extend to 
 
 The restriction-to-$W$ map fits into a short exact sequence of dual spaces, the conceptual source of the dimension formula:
 \[
-\begin{tikzcd}[column sep=large]
-0 \arrow[r] & \operatorname{ann}(W) \arrow[r, hook] & \dual{V} \arrow[r, "{\,f\,\mapsto\,f|_W\,}"] & \dual{W} \arrow[r] & 0 .
+\begin{tikzcd}[column sep=huge]
+0 \arrow[r] & \operatorname{ann}(W) \arrow[r, hook] & \dual{V} \arrow[r, two heads, "{\,f\,\mapsto\,f|_W\,}"] & \dual{W} \arrow[r] & 0 .
 \end{tikzcd}
 \]
 
@@ -40487,7 +40487,7 @@ commutes, i.e. $\mathrm{ev}_W \circ T = (T\trans)\trans \circ \mathrm{ev}_V$. Th
 \item (Functoriality of the dual on a short exact sequence.) Let
 \[
 \begin{tikzcd}
-0 \arrow[r] & U \arrow[r, "i"] & V \arrow[r, "p"] & W \arrow[r] & 0
+0 \arrow[r] & U \arrow[r, hook, "i"] & V \arrow[r, two heads, "p"] & W \arrow[r] & 0
 \end{tikzcd}
 \]
 be a short exact sequence of finite-dimensional $\F$-vector spaces. Prove that applying $\dual{(\,\cdot\,)}$ yields the short exact sequence
@@ -41056,7 +41056,7 @@ unique induced map $\widetilde{D}$ when the target is $F$ and $D$ is the
 determinant functional on columns.
 \[
 \begin{tikzcd}[column sep=large, row sep=large]
-V^{\times n} \arrow[r, "\extp"] \arrow[dr, "D"'] & \extp^n V \arrow[d, "\widetilde{D}"] \\
+V^{\times n} \arrow[r, two heads, "\extp"] \arrow[dr, "D"'] & \extp^n V \arrow[d, dashed, "\widetilde{D}"] \\
 & F
 \end{tikzcd}
 \]
@@ -41309,8 +41309,8 @@ commute. Explain precisely which property of $\omega$ forces $\extp^n T$ to be a
 \item Let $0\to W\xrightarrow{i} V\xrightarrow{p} V/W\to 0$ be a short exact sequence of finite-dimensional $\F$-spaces with a $T\in\End(V)$ preserving $W$, inducing $T|_W$ and $\bar T$ so that the diagram
 \[
 \begin{tikzcd}
-0 \arrow[r] & W \arrow[r, "i"] \arrow[d, "T|_W"'] & V \arrow[r, "p"] \arrow[d, "T"] & V/W \arrow[r] \arrow[d, "\bar T"] & 0 \\
-0 \arrow[r] & W \arrow[r, "i"'] & V \arrow[r, "p"'] & V/W \arrow[r] & 0
+0 \arrow[r] & W \arrow[r, hook, "i"] \arrow[d, "T|_W"'] & V \arrow[r, two heads, "p"] \arrow[d, "T"] & V/W \arrow[r] \arrow[d, "\bar T"] & 0 \\
+0 \arrow[r] & W \arrow[r, hook, "i"'] & V \arrow[r, two heads, "p"'] & V/W \arrow[r] & 0
 \end{tikzcd}
 \]
 commutes with exact rows. Using the natural isomorphism $\extp^{\dim V}V\isom \extp^{\dim W}W\tensor\extp^{\dim(V/W)}(V/W)$, prove $\det T=\det(T|_W)\det(\bar T)$.
@@ -41327,7 +41327,7 @@ and conclude $\det(S\oplus T)=\det(S)\det(T)$.
 \item Let $f\colon\Mat_n(\F)\to\F$ be any function that is alternating and $n$-linear in the columns. Show that $f$ factors uniquely through the determinant: there is a unique $c\in\F$ with $f=c\cdot\det$. State this as the commuting triangle
 \[
 \begin{tikzcd}
-\Mat_n(\F) \arrow[r, "\det"] \arrow[dr, "f"'] & \F \arrow[d, "\cdot\, c"] \\
+\Mat_n(\F) \arrow[r, two heads, "\det"] \arrow[dr, "f"'] & \F \arrow[d, "\cdot\, c"] \\
 & \F
 \end{tikzcd}
 \]
@@ -41407,7 +41407,7 @@ map out of $T(M)$.
 The universal property is the commutative triangle:
 \[
 \begin{tikzcd}[column sep=large,row sep=large]
-M \arrow[r,"\iota"] \arrow[dr,"\varphi"'] & T(M) \arrow[d,"\exists!\,\Phi"] \\
+M \arrow[r,hook,"\iota"] \arrow[dr,"\varphi"'] & T(M) \arrow[d,dashed,"\exists!\,\Phi"] \\
  & A
 \end{tikzcd}
 \]
@@ -41619,8 +41619,8 @@ left triangle is the defining property; the right triangle shows $S(M)$ factorin
 the tensor algebra through commutativity):
 \[
 \begin{tikzcd}[column sep=large,row sep=large]
-M \arrow[r,"\iota"] \arrow[dr,"\varphi"'] & S(M) \arrow[d,"\exists!\,\Phi"]
-  & T(M) \arrow[l,"\pi"'] \arrow[dl,"\Psi"] \\
+M \arrow[r,hook,"\iota"] \arrow[dr,"\varphi"'] & S(M) \arrow[d,dashed,"\exists!\,\Phi"]
+  & T(M) \arrow[l,two heads,"\pi"'] \arrow[dl,"\Psi"] \\
  & A &
 \end{tikzcd}
 \]
@@ -42235,7 +42235,7 @@ determinant.
 \item State and prove the universal property of the tensor algebra by completing the diagram below: given any $\F$-algebra $A$ and any $\F$-linear map $f \colon V \to A$, show there is a unique algebra homomorphism $\tilde{f}$ making the triangle commute, where $\iota \colon V \to T(V)$ is the canonical inclusion.
 \[
 \begin{tikzcd}
-V \arrow[r, "\iota"] \arrow[dr, "f"'] & T(V) \arrow[d, dashed, "\tilde{f}"] \\
+V \arrow[r, hook, "\iota"] \arrow[dr, "f"'] & T(V) \arrow[d, dashed, "\tilde{f}"] \\
 & A
 \end{tikzcd}
 \]
@@ -42861,10 +42861,10 @@ The triangularization proof has a clean geometric skeleton: a complete flag $0=W
   \node (W2) at (0,2) {$W_2$};
   \node (Wd) at (0,3) {$\vdots$};
   \node (Wn) at (0,4) {$W_n=V$};
-  \draw[->] (W0) -- (W1);
-  \draw[->] (W1) -- (W2);
-  \draw[->] (W2) -- (Wd);
-  \draw[->] (Wd) -- (Wn);
+  \draw[{Hooks[right]}->] (W0) -- (W1);
+  \draw[{Hooks[right]}->] (W1) -- (W2);
+  \draw[{Hooks[right]}->] (W2) -- (Wd);
+  \draw[{Hooks[right]}->] (Wd) -- (Wn);
   \node[anchor=west] at (1.7,4) {$T(W_k)\subseteq W_k$ (invariant flag)};
   \node[anchor=west] at (1.7,3) {$(T-\lambda_k I)(W_k)\subseteq W_{k-1}$};
   \node[anchor=west] at (1.7,2) {so $(T-\lambda_1 I)\cdots(T-\lambda_n I)$};
@@ -45115,7 +45115,7 @@ If $M$ is finitely generated by $x_1,\dots,x_m$, map $R^m \twoheadrightarrow M$ 
 
 \begin{center}
 \begin{tikzcd}
-R^n \arrow[r, "A"] & R^m \arrow[r, "\pi"] & M \arrow[r] & 0
+R^n \arrow[r, "A"] & R^m \arrow[r, two heads, "\pi"] & M \arrow[r] & 0
 \end{tikzcd}
 \end{center}
 
@@ -45346,8 +45346,8 @@ The structure theorem is bootstrapped from Theorem~\ref{thm:subfree@c12}: presen
 
 \begin{center}
 \begin{tikzcd}[column sep=large, row sep=large]
-0 \arrow[r] & N \arrow[r, hook] \arrow[d, "\isom"'] & R^m \arrow[r, "\pi"] \arrow[d, equal] & M \arrow[r] \arrow[d, "\isom"] & 0 \\
-0 \arrow[r] & \bigoplus_{i=1}^{m} a_i R\,y_i \arrow[r, hook] & \bigoplus_{i=1}^{m} R\,y_i \arrow[r] & \bigoplus_{i=1}^{m} R/(a_i) \arrow[r] & 0
+0 \arrow[r] & N \arrow[r, hook] \arrow[d, "\isom"'] & R^m \arrow[r, two heads, "\pi"] \arrow[d, equal] & M \arrow[r] \arrow[d, "\isom"] & 0 \\
+0 \arrow[r] & \bigoplus_{i=1}^{m} a_i R\,y_i \arrow[r, hook] & \bigoplus_{i=1}^{m} R\,y_i \arrow[r, two heads] & \bigoplus_{i=1}^{m} R/(a_i) \arrow[r] & 0
 \end{tikzcd}
 \end{center}
 
@@ -45515,7 +45515,7 @@ Compute $\det$ of this matrix, find the Smith normal form over $R$, and decide w
 \item Let $R$ be a PID and let $M$ be finitely generated with a presentation
 \[
 \begin{tikzcd}
-R^m \arrow[r,"A"] & R^n \arrow[r,"\pi"] & M \arrow[r] & 0
+R^m \arrow[r,"A"] & R^n \arrow[r,two heads,"\pi"] & M \arrow[r] & 0
 \end{tikzcd}
 \]
 exact, where $A$ is an $n\times m$ matrix. Suppose $U\in\operatorname{GL}_n(R)$ and $V\in\operatorname{GL}_m(R)$ put $A$ into Smith normal form $D=UAV=\diag(a_1,\dots,a_k,0,\dots)$. Draw the commutative diagram relating the two presentations $R^m\xrightarrow{A}R^n$ and $R^m\xrightarrow{D}R^n$ using the vertical isomorphisms induced by $U$ and $V$, and explain why it shows $M\isom\operatorname{coker}(A)\isom\operatorname{coker}(D)=R^{n-k}\oplus\bigoplus_i R/(a_i)$.
@@ -45523,7 +45523,7 @@ exact, where $A$ is an $n\times m$ matrix. Suppose $U\in\operatorname{GL}_n(R)$ 
 \item Let $R$ be a PID and let
 \[
 \begin{tikzcd}
-0 \arrow[r] & T \arrow[r,"\iota"] & M \arrow[r,"q"] & M/T \arrow[r] & 0
+0 \arrow[r] & T \arrow[r,hook,"\iota"] & M \arrow[r,two heads,"q"] & M/T \arrow[r] & 0
 \end{tikzcd}
 \]
 be the short exact sequence where $T$ is the torsion submodule of the finitely generated module $M$. Show this sequence splits by constructing a section $s\colon M/T\to M$ with $q\circ s=\id_{M/T}$, and draw the diagram exhibiting the resulting isomorphism $M\isom T\oplus(M/T)$ (with $M/T$ free).
@@ -45539,7 +45539,7 @@ where $f$ is the $R$-module map sending $1+(a)$ to $c+(b)$. Determine exactly wh
 \item Let $R=\Z$ and consider the map $\varphi\colon\Z^2\to\Z^2$ given by the matrix $A=\begin{pmatrix} 6 & 0\\ 0 & 10 \end{pmatrix}$, fitting into
 \[
 \begin{tikzcd}
-\Z^2 \arrow[r,"A"] & \Z^2 \arrow[r,"\pi"] & M \arrow[r] & 0.
+\Z^2 \arrow[r,"A"] & \Z^2 \arrow[r,two heads,"\pi"] & M \arrow[r] & 0.
 \end{tikzcd}
 \]
 Find $U,V\in\operatorname{GL}_2(\Z)$ with $UAV$ in Smith normal form, and draw the commutative square with vertical maps $V$ and $U$ relating $A$ to its Smith normal form. Read off $M$ in invariant factor form from the diagram.
