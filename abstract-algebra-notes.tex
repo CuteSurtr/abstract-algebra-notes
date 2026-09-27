@@ -60980,7 +60980,7 @@ Identify the kernel of $E[V]\twoheadrightarrow E[W]$ as $\fb/\fa$, prove it is a
 \item Over $\C$, let $\fa=(x^2-y)\subseteq\C[x,y]$ and let $\fm_P=(x-a,\,y-a^2)$ for a point $P=(a,a^2)\in V(\fa)$. Complete the diagram exhibiting the quotient $\C[x,y]\to\C[V(\fa)]\to\C[V(\fa)]/(\fm_P/\fa)\isom\C$ and prove the composite is evaluation at $P$:
 \[
 \begin{tikzcd}[row sep=large, column sep=huge]
-\C[x,y] \arrow[r,twoheadrightarrow,"\pi"] \arrow[dr,"\operatorname{ev}_P"'] & \C[V(\fa)] \arrow[d,twoheadrightarrow,"\overline{\operatorname{ev}_P}"] \\
+\C[x,y] \arrow[r,twoheadrightarrow,"\pi"] \arrow[dr,twoheadrightarrow,"\operatorname{ev}_P"'] & \C[V(\fa)] \arrow[d,twoheadrightarrow,"\overline{\operatorname{ev}_P}"] \\
 & \C
 \end{tikzcd}
 \]
@@ -61070,8 +61070,8 @@ These are pure diagram chases. For the first: a map $M''\to N$ pulls back along 
 Given a commutative diagram with exact rows
 \[
 \begin{tikzcd}[row sep=large, column sep=large]
-0\arrow[r] & M'\arrow[r,"u"]\arrow[d,"f'"] & M\arrow[r,"v"]\arrow[d,"f"] & M''\arrow[r]\arrow[d,"f''"] & 0\\
-0\arrow[r] & N'\arrow[r,"u'"] & N\arrow[r,"v'"] & N''\arrow[r] & 0
+0\arrow[r] & M'\arrow[r,hook,"u"]\arrow[d,"f'"] & M\arrow[r,twoheadrightarrow,"v"]\arrow[d,"f"] & M''\arrow[r]\arrow[d,"f''"] & 0\\
+0\arrow[r] & N'\arrow[r,hook,"u'"] & N\arrow[r,twoheadrightarrow,"v'"] & N''\arrow[r] & 0
 \end{tikzcd}
 \]
 \begin{dgx}
@@ -61583,7 +61583,7 @@ Specialize to $A=\R$, $B=C=\C$ and identify $h$ when $E=\C\times\C$.
 \item Let $\fa\subseteq A$ be an ideal and $M$ an $A$-module. Complete the diagram below, in which the top row is the defining presentation of $A/\fa\tensor_A M$ obtained by tensoring $0\to\fa\to A\to A/\fa\to0$ with $M$, and prove the induced isomorphism $A/\fa\tensor_A M\isom M/\fa M$ (identify the dashed vertical isomorphism and show the right square commutes):
 \[
 \begin{tikzcd}[row sep=large, column sep=large]
-\fa\tensor_A M \arrow[r] \arrow[d,"\mu"'] & A\tensor_A M \arrow[r] \arrow[d,"\isom"] & A/\fa\tensor_A M \arrow[r] \arrow[d,dashed,"\exists!"] & 0 \\
+\fa\tensor_A M \arrow[r] \arrow[d,"\mu"'] & A\tensor_A M \arrow[r,twoheadrightarrow] \arrow[d,"\isom"] & A/\fa\tensor_A M \arrow[r] \arrow[d,dashed,"\exists!"] & 0 \\
 \fa M \arrow[r,hook] & M \arrow[r,twoheadrightarrow] & M/\fa M \arrow[r] & 0
 \end{tikzcd}
 \]
@@ -62381,7 +62381,7 @@ Specialize to $S=\set{f^n}$ to identify the image with the distinguished open $D
 \item Let $0\to L\xrightarrow{f} M\xrightarrow{g} N\to0$ be a short exact sequence of $R$-modules and $S$ a multiplicatively closed set. Complete the diagram below so that the rows are exact and the vertical localization maps make every square commute; then prove that the bottom row is exact (i.e.\ that $S^{-1}$ is an exact functor):
 \[
 \begin{tikzcd}[row sep=large, column sep=large]
-0 \arrow[r] & L \arrow[r,"f"] \arrow[d,"\pi_L"'] & M \arrow[r,"g"] \arrow[d,"\pi_M"'] & N \arrow[r] \arrow[d,"\pi_N"'] & 0 \\
+0 \arrow[r] & L \arrow[r,hook,"f"] \arrow[d,"\pi_L"'] & M \arrow[r,twoheadrightarrow,"g"] \arrow[d,"\pi_M"'] & N \arrow[r] \arrow[d,"\pi_N"'] & 0 \\
 0 \arrow[r] & S^{-1}L \arrow[r,"S^{-1}f"'] & S^{-1}M \arrow[r,"S^{-1}g"'] & S^{-1}N \arrow[r] & 0
 \end{tikzcd}
 \]
@@ -64925,7 +64925,7 @@ and the inclusions $(\fa + \fb)^{2p} \subseteq \fa^p + \fb^p \subseteq (\fa + \f
 \item Complete the inverse-limit tower defining $\Z_p=\varprojlim\Z/p^n\Z$ together with its projections, and prove the universal property of the inverse limit: for every ring $T$ with ring maps $T\to\Z/p^n\Z$ compatible with the $\theta_n$ there is a \emph{unique} ring homomorphism $T\to\Z_p$ making every triangle commute. Fill in the skeleton, labelling each $\theta_{n}$ as the reduction $\Z/p^{n+1}\Z\twoheadrightarrow\Z/p^n\Z$:
 \[
 \begin{tikzcd}[column sep=2.0em, row sep=2.6em]
-\cdots \arrow[r] & |[alias=A]| \Z/p^{3}\Z \arrow[r,"\theta_2"] & |[alias=B]| \Z/p^{2}\Z \arrow[r,"\theta_1"] & |[alias=C]| \Z/p\Z \\
+\cdots \arrow[r,twoheadrightarrow] & |[alias=A]| \Z/p^{3}\Z \arrow[r,twoheadrightarrow,"\theta_2"] & |[alias=B]| \Z/p^{2}\Z \arrow[r,twoheadrightarrow,"\theta_1"] & |[alias=C]| \Z/p\Z \\
 & & |[alias=L]| \Z_p \arrow[to=A,"\pi_3"]\arrow[to=B,"\pi_2"',near start]\arrow[to=C,"\pi_1"'] &
 \end{tikzcd}
 \]
@@ -64933,7 +64933,7 @@ Then prove $\ker\pi_n=p^n\Z_p$ and that the induced maps $\Z_p/p^n\Z_p\to\Z/p^n\
 \item Let $R$ be Noetherian, $\fa$ an ideal, and $0\to M'\xrightarrow{f} M\xrightarrow{g} M''\to0$ a short exact sequence of finitely generated modules. Draw the diagram of $\fa$-adic completions and prove it is a short exact sequence with the rows below commuting (vertical maps are the completion maps $\phi_M$ etc.), citing the exactness of completion and the snake lemma:
 \[
 \begin{tikzcd}[row sep=large, column sep=large]
-0 \arrow[r] & M' \arrow[r,"f"] \arrow[d,"\phi_{M'}"'] & M \arrow[r,"g"] \arrow[d,"\phi_M"'] & M'' \arrow[r] \arrow[d,"\phi_{M''}"] & 0 \\
+0 \arrow[r] & M' \arrow[r,hook,"f"] \arrow[d,"\phi_{M'}"'] & M \arrow[r,twoheadrightarrow,"g"] \arrow[d,"\phi_M"'] & M'' \arrow[r] \arrow[d,"\phi_{M''}"] & 0 \\
 0 \arrow[r] & \widehat{M'} \arrow[r,"\widehat f"'] & \widehat M \arrow[r,"\widehat g"'] & \widehat{M''} \arrow[r] & 0
 \end{tikzcd}
 \]
@@ -64949,8 +64949,8 @@ Prove that $\psi$ is the unique continuous ring homomorphism with $\psi\circ\phi
 \item Let $R$ be Noetherian local with maximal ideal $\fm$. Complete the diagram exhibiting $\gr_\fm(R)\isom\gr_{\widehat\fm}(\widehat R)$ degree by degree, where the rows are the defining short exact sequences and the vertical isomorphisms come from $\widehat R/\widehat\fm^{\,n}\isom R/\fm^n$:
 \[
 \begin{tikzcd}[row sep=large, column sep=large]
-0 \arrow[r] & \fm^{n}/\fm^{n+1} \arrow[r] \arrow[d,"\sim"'] & R/\fm^{n+1} \arrow[r] \arrow[d,"\sim"'] & R/\fm^{n} \arrow[r] \arrow[d,"\sim"] & 0 \\
-0 \arrow[r] & \widehat\fm^{\,n}/\widehat\fm^{\,n+1} \arrow[r] & \widehat R/\widehat\fm^{\,n+1} \arrow[r] & \widehat R/\widehat\fm^{\,n} \arrow[r] & 0
+0 \arrow[r] & \fm^{n}/\fm^{n+1} \arrow[r,hook] \arrow[d,"\sim"'] & R/\fm^{n+1} \arrow[r,twoheadrightarrow] \arrow[d,"\sim"'] & R/\fm^{n} \arrow[r] \arrow[d,"\sim"] & 0 \\
+0 \arrow[r] & \widehat\fm^{\,n}/\widehat\fm^{\,n+1} \arrow[r,hook] & \widehat R/\widehat\fm^{\,n+1} \arrow[r,twoheadrightarrow] & \widehat R/\widehat\fm^{\,n} \arrow[r] & 0
 \end{tikzcd}
 \]
 Prove the left vertical map is an isomorphism for every $n$, that these assemble into a graded ring isomorphism compatible with multiplication, and deduce that $\dim_{R/\fm}\fm^n/\fm^{n+1}=\dim_{R/\fm}\widehat\fm^{\,n}/\widehat\fm^{\,n+1}$ so that $R$ and $\widehat R$ have the same Hilbert function.
