@@ -33879,14 +33879,14 @@ test in this section. Gauss's Lemma licenses moving between $\Z[x]$ and $\Q[x]$;
 $\bmod p$ then converts a potentially hard question over $\Q$ into a finite computation over $\F_p$.
 The multiplicativity means a factorization $f = gh$ in $\Z[x]$ produces a factorization
 $\bar{f} = \bar{g}\bar{h}$ in $\F_p[x]$, so irreducibility of $\bar{f}$ (checkable by finite
-search) certifies irreducibility of $f$.
+search) certifies irreducibility of $f$ over $\Q$, provided $\deg\bar f=\deg f$.
 \dgi{Concrete example:} Take $f = x^3 - 3x - 1 \in \Z[x]$ and $p = 2$. Then
 $\bar{f} = x^3 + x + 1 \in \F_2[x]$; testing both elements of $\F_2$ shows $\bar{f}$ has no
 root, so $\bar{f}$ is irreducible over $\F_2$, and the inclusion $\Z[x] \hookrightarrow \Q[x]$
 together with Gauss's Lemma then yields: $f$ is irreducible over $\Q$.
 \dgi{Common pitfall:} Students sometimes treat the diagram as a full commutative square and seek
-a map $\Q[x] \to \F_p[x]$. No such ring homomorphism exists in general, because $p \cdot 1 = 0$
-in $\F_p$ but $p \neq 0$ in $\Q$; the lower-right corner is intentionally absent. The diagram
+a map $\Q[x] \to \F_p[x]$. No ring homomorphism $\Q[x]\to\F_p[x]$ extends $\bmod p$, because $p \cdot 1 = 0$
+in $\F_p$ while $p$ is a unit in $\Q$ (such a map would send $1 = p\cdot p^{-1}$ to $0$, not to $1$); the lower-right corner is intentionally absent. The diagram
 records only the two maps that genuinely exist and interact at $\Z[x]$.
 \dgi{Takeaway:} The point of this diagram is that the reduction map $\bmod p$ is a ring
 homomorphism, so it converts any factorization of $f$ in $\Z[x]$ into a factorization of
@@ -34161,7 +34161,7 @@ the left.
 \dgi{Concrete example:} Take $f = x^3 - x^2 + 2x - 1$; if we assume $f = (x - 1)(x^2 + 1)$
 over $\Q$ and reduce mod $2$, we get $\bar{f} = x^3 + x^2 + 1$ and $\bar{g} = x + 1$,
 $\bar{h} = x^2 + 1$, so $\bar{g}\bar{h} = (x+1)(x^2+1) = x^3 + x^2 + x + 1 \ne \bar{f}$,
-showing the specific factorization did not survive; a valid example of survival is
+which shows that the assumed factorization is false (indeed $(x-1)(x^2+1) = x^3 - x^2 + x - 1 \neq f$); a genuine factorization always survives reduction, for example
 $f = x^2 - 3x + 2 = (x-1)(x-2)$ reduced mod $5$, giving $\bar{f} = (x+4)(x+3)$ in $\F_5[x]$.
 \dgi{Common pitfall:} Students sometimes read the diagram as saying ``if $\bar{f}$ factors, then
 $f$ factors,'' which is the wrong direction. The homomorphism sends $\Z[x]$ to $\F_p[x]$, not
