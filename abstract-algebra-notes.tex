@@ -6605,7 +6605,7 @@ its kernel. This gives a short exact sequence and is the slickest proof that
 $\SL_n(F)\sgr\GL_n(F)$ --- no checklist needed, because kernels of homomorphisms are
 always subgroups.
 \[\begin{tikzcd}[column sep=normal]
-1 \arrow[r] & \SL_n(F) \arrow[r, hook] & \GL_n(F) \arrow[r, "\det"] & F^\times \arrow[r] & 1
+1 \arrow[r] & \SL_n(F) \arrow[r, hook] & \GL_n(F) \arrow[r, two heads, "\det"] & F^\times \arrow[r] & 1
 \end{tikzcd}\]
 \begin{dgx}
 \dgi{Objects:} Five nodes: the trivial group $1$ (repeated at both ends), the special linear group $\SL_n(F)=\{A\in\GL_n(F)\st\det A=1\}$ (a normal subgroup), the general linear group $\GL_n(F)$ of invertible $n\times n$ matrices over a field $F$, and the multiplicative group $F^\times=F\setminus\{0\}$ of nonzero field elements.
@@ -9215,7 +9215,7 @@ smallest subgroup containing $A$: for \emph{every} subgroup $H$ with $A\subseteq
 inclusion of $A$ into $H$ factors uniquely through $A\hookrightarrow\gen{A}$
 (Definition~\ref{d:gen@c2}). Equivalently, $\gen{A}\sgr H$ whenever $A\subseteq H$.
 \[\begin{tikzcd}[row sep=large,column sep=large]
-A \arrow[r, hook] \arrow[dr, hook'] & \gen{A} \arrow[d, dashed, "\exists!"] \\
+A \arrow[r, hook] \arrow[dr, hook'] & \gen{A} \arrow[d, dashed, hook, "\exists!"] \\
 & H
 \end{tikzcd}\]
 \begin{dgx}
@@ -9308,7 +9308,7 @@ extends to a \emph{unique} homomorphism $F(S)\to G$. This is the precise meaning
 generators satisfy no relations,'' and it is why $S_n=\gen{(1\,2),(1\,2\cdots n)}$ etc.\
 are described by giving generators and relations.
 \[\begin{tikzcd}[row sep=large,column sep=large]
-S \arrow[r, "\iota"] \arrow[dr, "f"'] & F(S) \arrow[d, dashed, "\exists!\,\bar f"] \\
+S \arrow[r, hook, "\iota"] \arrow[dr, "f"'] & F(S) \arrow[d, dashed, "\exists!\,\bar f"] \\
 & G
 \end{tikzcd}\]
 \begin{dgx}
@@ -10699,7 +10699,7 @@ Homomorphism: $\pi(gh) = (gh)N = (gN)(hN) = \pi(g)\pi(h)$, using the quotient pr
 
 The inclusion of $N$ and the projection $\pi$ fit into the triangle
 \[\begin{tikzcd}[row sep=large,column sep=large]
-  N \arrow[r, hook, "\iota"] \arrow[dr, "1"', no head] & G \arrow[d, two heads, "\pi"] \\
+  N \arrow[r, hook, "\iota"] \arrow[dr, "1"'] & G \arrow[d, two heads, "\pi"] \\
   & G/N
 \end{tikzcd}\]
 in which $\pi \circ \iota$ collapses all of $N$ to the identity coset $N$.
@@ -11296,7 +11296,7 @@ $G = \langle x, y \mid x^4 = y^4 = 1, \ xy = yx \rangle$. Let $\overline{G} = G/
   \item Let $\varphi: G \to H$ be a homomorphism and $\pi: G \to G/\ker\varphi$ the natural projection. Prove there is a unique injective homomorphism $\overline{\varphi}$ making the triangle below commute, and that $\overline{\varphi}$ is an isomorphism onto $\im\varphi$:
     \[\begin{tikzcd}[row sep=large,column sep=large]
       G \arrow[r, "\varphi"] \arrow[d, two heads, "\pi"'] & H \\
-      G/\ker\varphi \arrow[ur, dashed, "\overline{\varphi}"'] &
+      G/\ker\varphi \arrow[ur, dashed, hook, "\overline{\varphi}"'] &
     \end{tikzcd}\]
     Apply this to $\varphi: \Z \to \Z/n\Z$ to recover $\Z/n\Z \isom \Z/n\Z$.
 
@@ -11948,9 +11948,9 @@ G \arrow[r, "\varphi"] \arrow[d, two heads, "\pi"'] & H \\
 G/N \arrow[ur, dashed, "\overline{\varphi}"'] &
 \end{tikzcd}\]
 \item For $G=\Z$, $N=12\Z$, complete the induced map $\overline{\varphi}\colon\Z/12\Z\to\Z_4$ and prove it is a surjection with kernel $4\Z/12\Z$ (so it is NOT an isomorphism, since $|\Z/12\Z|=12\neq 4$):
-\[\begin{tikzcd}[row sep=large,column sep=large]
-\Z \arrow[r, "x\mapsto x \bmod 4"] \arrow[d, two heads, "\pi"'] & \Z_4 \\
-\Z/12\Z \arrow[ur, dashed, two heads, "\overline{\varphi}"'] &
+\[\begin{tikzcd}[row sep=large,column sep=huge]
+\Z \arrow[r, two heads, "x\mapsto x \bmod 4"] \arrow[d, two heads, "\pi"'] & \Z_4 \\
+\Z/12\Z \arrow[ur, dashed, "\overline{\varphi}"'] &
 \end{tikzcd}\]
 Determine $\ker(x\mapsto x\bmod 4)$ as a subgroup of $\Z$ and verify $12\Z\subseteq\ker$.
 \item Let $\varphi\colon G\to\im\varphi$ be a surjective homomorphism with kernel $\ker\varphi$. Show the row below is a short exact sequence and label each arrow (inclusion vs.\ quotient):
@@ -12524,7 +12524,7 @@ $A/(A\cap B)=A/\ker\varphi\isom\im\varphi=AB/B$, proving (4).
 The proof is exactly the diagram below: $\varphi$ is the horizontal restriction, $\pi$ is
 the projection from $A$, and the induced map $\overline{\varphi}$ closes the triangle.
 \[\begin{tikzcd}[row sep=large,column sep=large]
-A \arrow[r, "\varphi"] \arrow[d, two heads, "\pi"'] & AB/B \\
+A \arrow[r, two heads, "\varphi"] \arrow[d, two heads, "\pi"'] & AB/B \\
 A/(A\cap B) \arrow[ur, dashed, "\overline{\varphi}"', "\isom"] &
 \end{tikzcd}\]
 
