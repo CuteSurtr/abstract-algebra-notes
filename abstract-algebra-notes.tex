@@ -35869,8 +35869,8 @@ Axioms: (M1) $(m+n)a=ma+na$ and (M3) $n(a+b)=na+nb$ are the laws of integer mult
 
 \begin{wex}{$R$ as a module over itself, and $R^n$}
 Let $R$ be any ring with $1$. Verify that $R$ is a left $R$-module via $r\cdot a:=ra$ (ring multiplication), and that $R^n=\{(a_1,\dots,a_n):a_i\in R\}$ is a left $R$-module via $r(a_1,\dots,a_n)=(ra_1,\dots,ra_n)$.
-\wrec The action ``is'' the ring's own multiplication. The \emph{rule \& why}: the module axioms (M1)--(M4) for this action are exactly the ring axioms (left distributivity, associativity of multiplication, and $1a=a$).
-\wsol For $R$ on itself: (M1) $(r+s)a=ra+sa$ is left distributivity in $R$; (M2) $(rs)a=r(sa)$ is associativity of multiplication; (M3) $r(a+b)=ra+rb$ is right distributivity; (M4) $1a=a$ is the identity axiom. So $R$ is a left $R$-module, called the \emph{left regular module} $\,_RR$. For $R^n$, all axioms hold coordinatewise from the case $n=1$. \emph{Check:} take $R=M_2(\R)$ (noncommutative). With $r=\begin{psmallmatrix}1&0\\0&0\end{psmallmatrix}$, $a=\begin{psmallmatrix}0&1\\0&0\end{psmallmatrix}$ we get $ra=\begin{psmallmatrix}0&1\\0&0\end{psmallmatrix}$ but $ar=\begin{psmallmatrix}0&0\\0&0\end{psmallmatrix}$; the \emph{left} action $r\cdot a=ra$ is the right one to use, and $1\cdot a=I_2 a=a$ confirms (M4).
+\wrec The action ``is'' the ring's own multiplication. The \emph{rule \& why}: the module axioms (M1)--(M4) for this action are exactly the ring axioms (both distributive laws, associativity of multiplication, and $1a=a$).
+\wsol For $R$ on itself: (M1) $(r+s)a=ra+sa$ is right distributivity in $R$; (M2) $(rs)a=r(sa)$ is associativity of multiplication; (M3) $r(a+b)=ra+rb$ is left distributivity; (M4) $1a=a$ is the identity axiom. So $R$ is a left $R$-module, called the \emph{left regular module} $\,_RR$. For $R^n$, all axioms hold coordinatewise from the case $n=1$. \emph{Check:} take $R=M_2(\R)$ (noncommutative). With $r=\begin{psmallmatrix}1&0\\0&0\end{psmallmatrix}$, $a=\begin{psmallmatrix}0&1\\0&0\end{psmallmatrix}$ we get $ra=\begin{psmallmatrix}0&1\\0&0\end{psmallmatrix}$ but $ar=\begin{psmallmatrix}0&0\\0&0\end{psmallmatrix}$; the \emph{left} action $r\cdot a=ra$ is the right one to use, and $1\cdot a=I_2 a=a$ confirms (M4).
 \end{wex}
 
 \begin{wex}{Quotient $R/I$ and $R/I$-modules}
@@ -36012,7 +36012,7 @@ Let $M$ be a left $R$-module and $N\subseteq M$. Then $N\sgr M$ if and only if
 \end{proposition}
 
 \begin{proof}
-($\Rightarrow$) If $N$ is a submodule it contains $0$, and for $x,y\in N$, $r\in R$ we have $ry\in N$ (closure under the action) and then $x+ry\in N$ (closure under $+$). ($\Leftarrow$) Assume (i),(ii). Taking $r=-1$ and $x=0$ in (ii): $0+(-1)y=-y\in N$, so $N$ is closed under negatives. Taking $r=1$: $x+y\in N$, so $N$ is closed under addition. With $0\in N$, $N$ is a subgroup. Finally, taking $x=0$: $0+ry=ry\in N$ for all $r\in R$, $y\in N$, so $N$ is closed under the action. Hence $N\sgr M$.
+($\Rightarrow$) If $N$ is a submodule it contains $0$, and for $x,y\in N$, $r\in R$ we have $ry\in N$ (closure under the action) and then $x+ry\in N$ (closure under $+$). ($\Leftarrow$) Assume (i),(ii). First, $0\in N$: pick $y_0\in N$ by (i) and take $x=y=y_0$, $r=-1$ in (ii) to get $y_0+(-1)y_0=0\in N$. Taking $r=-1$ and $x=0$ in (ii): $0+(-1)y=-y\in N$, so $N$ is closed under negatives. Taking $r=1$: $x+y\in N$, so $N$ is closed under addition. With $0\in N$, $N$ is a subgroup. Finally, taking $x=0$: $0+ry=ry\in N$ for all $r\in R$, $y\in N$, so $N$ is closed under the action. Hence $N\sgr M$.
 \end{proof}
 
 \begin{method}{Applying the Submodule Criterion}
@@ -36069,7 +36069,7 @@ Let $R$ be a commutative ring with $1$. An \emph{$R$-algebra} is a ring $A$ with
 \[
 r\cdot(ab)=(r\cdot a)b=a(r\cdot b)\qquad\text{for all }r\in R,\ a,b\in A.
 \]
-A homomorphism of $R$-algebras is a ring homomorphism that is also $R$-linear.
+A homomorphism of $R$-algebras $A\to B$ is a ring homomorphism that sends $1_A$ to $1_B$ and is also $R$-linear.
 \end{definition}
 
 \begin{wex}{Three quick $R$-algebras}
@@ -36589,7 +36589,7 @@ is the smallest submodule of $M$ containing $A$.
 
 \item Let $\varphi\colon \Z/6\Z\to\Z/6\Z$ be a $\Z$-module homomorphism with $\varphi(\bar 1)=\bar 4$. Compute $\ker\varphi$ and $\im\varphi$ explicitly, and decide whether $\varphi$ is an isomorphism.
 
-\item Let $R$ be a ring with $1$. Show that a left $R$-module $M$ is the same data as an abelian group $M$ together with a ring homomorphism $R\to\End_\Z(M)$.
+\item Let $R$ be a ring with $1$. Show that a left $R$-module $M$ is the same data as an abelian group $M$ together with a ring homomorphism $R\to\End_\Z(M)$ that sends $1_R$ to $\id_M$ (this is where (M4) enters).
 
 \end{exers}
 
