@@ -36519,7 +36519,7 @@ Decide whether $\varphi\colon\R^2\to\R$, $\varphi(x,y)=x^2+y$, is an $\R$-module
 
 \item Prove that $\Hom_{\Z}(\Zn{n}, \Zn{m}) \isom \Zn{(n,m)}$.
 
-\item Let $z$ be a fixed element of the center of $R$. Prove that the map $m \mapsto zm$ is an $R$-module homomorphism from $M$ to itself. Show that for a commutative ring $R$ the map from $R$ to $\End_R(M)$ given by $r \mapsto rz$ is a ring homomorphism (where $z$ is the identity endomorphism).
+\item Let $z$ be a fixed element of the center of $R$. Prove that the map $m \mapsto zm$ is an $R$-module homomorphism from $M$ to itself. Show that for a commutative ring $R$ the map from $R$ to $\End_R(M)$ given by $r \mapsto r\,\id_M$ is a ring homomorphism (where $\id_M$ is the identity endomorphism).
 
 \item Let $\varphi : M \to N$ be an $R$-module homomorphism. Prove that $\varphi(\Tor(M)) \subseteq \Tor(N)$ (cf. Exercise 8 in Section 1).
 
@@ -36529,7 +36529,7 @@ Decide whether $\varphi\colon\R^2\to\R$, $\varphi(x,y)=x^2+y$, is an $\R$-module
 
 \item Let $A_1, A_2, \ldots, A_n$ be $R$-modules and let $B_i$ be a submodule of $A_i$ for each $i = 1, 2, \ldots, n$. Prove that
 \[ (A_1 \times \cdots \times A_n)/(B_1 \times \cdots \times B_n) \isom (A_1/B_1) \times \cdots \times (A_n/B_n). \]
-[Recall Exercise 14 in Section 7.3.]
+[Recall Exercise 14 in Section 5.1.]
 
 \item Let $I$ be a left ideal of $R$ and let $n$ be a positive integer. Prove
 \[ R^n / I R^n \isom \underbrace{R/IR \times \cdots \times R/IR}_{n} \]
@@ -36537,9 +36537,9 @@ where $I R^n$ is defined as in Exercise 5 of Section 1. [Use the preceding exerc
 
 \item Let $I$ be a nilpotent ideal in a commutative ring $R$ (cf. Exercise 37, Section 7.3), let $M$ and $N$ be $R$-modules and let $\varphi : M \to N$ be an $R$-module homomorphism. Show that if the induced map $\bar{\varphi} : M/IM \to N/IN$ is surjective, then $\varphi$ is surjective.
 
-\item Let $R = \Z[x]$ be the ring of polynomials in $x$ and let $A = \Z[\theta_1, \theta_2, \ldots]$ be the ring of polynomials in independent indeterminates $\theta_1, \theta_2, \ldots$. Define an action of $R$ on $A$ as follows: (1) let $1 \in R$ act on $A$ as the identity, (2) for $n \geq 1$ let $x^n \circ 1 = 0$ and $x^n \circ \theta_i = \theta_{i-n}$ for all $i$ (where $\theta_j$ is defined to be $0$ if $j \leq 0$) and (3) extend $\Z$-linearly, i.e., the action of $x^n$ on any element of $A$ is determined by the above and the relation $x^n \circ (a + b) = x^n \circ a + x^n \circ b$, for all $a, b \in A$. \\
-(a) Show that $x^{n+1} \circ \theta_i = x^n \circ (x \circ \theta_i)$ and so the action of monomials $x^n$ on the ring $A$ is associative. \\
-(b) Show by an explicit example that the action of an arbitrary polynomial in $x$ on the ring $A$ is not associative (i.e., $A$ is not an $R$-module under this action).
+\item Let $R = \Z[x]$ be the ring of polynomials in $x$ and let $A = \Z[\theta_1, \theta_2, \ldots]$ be the ring of polynomials in independent indeterminates $\theta_1, \theta_2, \ldots$. Define an action of $R$ on $A$ as follows: (1) let $1 \in R$ act on $A$ as the identity, (2) for $n \geq 1$ let $x^n \circ 1 = \theta_n$, let $x^n \circ \theta_i = \theta_{n+i}$ for all $i \geq 1$, and let $x^n$ act as $0$ on every monomial of total degree at least $2$, and (3) extend $\Z$-linearly in both variables, i.e., $(f+g) \circ a = f \circ a + g \circ a$ and $f \circ (a + b) = f \circ a + f \circ b$ for all $f, g \in R$ and $a, b \in A$. \\
+(a) Show that $x^{p+q} \circ a = x^p \circ (x^q \circ a)$ for all $p, q \geq 0$ and every monomial $a$ (the key case is $x^{p+q} \circ \theta_i = \theta_{p+q+i}$), and deduce that $A$ is a (unital) $R$-module under this action. \\
+(b) Show that the map $\varphi\colon R \to A$, $\varphi(r) = r \circ 1$, is an $R$-module homomorphism with $\varphi(1) = 1$, but is not a ring homomorphism.
 
 \item Let $M$ be an $R$-module. Prove that if $R$ is a commutative ring then $\Hom_R(M, M)$ is an $R$-module. [Show how an element $r$ acting on the map $\varphi$ gives a map $r\varphi$, and that this map is again an $R$-module homomorphism.]
 
