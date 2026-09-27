@@ -38153,8 +38153,8 @@ homomorphism. Correct.
 \begin{pitfall}
 Injectivity is \emph{not} the same as ``$f$ is injective.'' An injective module is a target
 $Q$ with the extension property; it has nothing to do with any one map being one-to-one.
-Likewise ``divisible $\Rightarrow$ injective'' is a theorem \emph{only over $\Z$} (PIDs more
-generally); over a general ring use Baer's Criterion.
+Likewise ``divisible $\Rightarrow$ injective'' is a theorem \emph{only over special rings} ($\Z$, PIDs, and more
+generally Dedekind domains); over a general ring use Baer's Criterion.
 \end{pitfall}
 
 \subsection*{Hom is left exact; tensor is right exact}
@@ -38168,7 +38168,7 @@ any $R$-module. Then the induced sequences
 \begin{dgx}
 \dgi{Objects:} Each node is a Hom-set: $\operatorname{Hom}_R(D,A)$ is the abelian group of all $R$-module homomorphisms from $D$ to $A$, and similarly for $B$ and $C$. The fixed module $D$ is the source; applying $\operatorname{Hom}_R(D,-)$ to the SES $0\to A\to B\to C\to 0$ produces this three-term sequence.
 \dgi{Arrows:} $\psi_*\colon\operatorname{Hom}_R(D,A)\to\operatorname{Hom}_R(D,B)$ is post-composition with $\psi$: $\psi_*(h)=\psi\circ h$. $\varphi_*\colon\operatorname{Hom}_R(D,B)\to\operatorname{Hom}_R(D,C)$ is post-composition with $\varphi$: $\varphi_*(h)=\varphi\circ h$. The leading $0$ forces $\psi_*$ to be injective.
-\dgi{What commutes:} Exactness holds at $\operatorname{Hom}_R(D,A)$: $\psi_*$ is injective (if $\psi h=0$ then $h=0$ since $\psi$ is mono). Exactness at $\operatorname{Hom}_R(D,B)$: $\operatorname{im}\psi_*=\operatorname{ker}\varphi_*$, i.e. $\varphi(\psi(h(d)))=0$ for all $d$ iff $h$ factors through $\psi$.
+\dgi{What commutes:} Exactness holds at $\operatorname{Hom}_R(D,A)$: $\psi_*$ is injective (if $\psi h=0$ then $h=0$ since $\psi$ is mono). Exactness at $\operatorname{Hom}_R(D,B)$: $\operatorname{im}\psi_*=\operatorname{ker}\varphi_*$, i.e. a map $h\colon D\to B$ satisfies $\varphi(h(d))=0$ for all $d$ iff $h$ factors through $\psi$.
 \dgi{Why it commutes:} For $\operatorname{ker}\varphi_*\subseteq\operatorname{im}\psi_*$: if $\varphi\circ h=0$ then $\operatorname{im}h\subseteq\operatorname{ker}\varphi=\operatorname{im}\psi$, so $h$ factors as $h=\psi\circ h'$ for a unique $h'\colon D\to A$ (injectivity of $\psi$ makes $h'$ unique). The right end need not be exact: a map $D\to C$ need not lift to $D\to B$ unless $D$ is projective.
 \dgi{Why this matters here:} This is the covariant left-exactness theorem, the foundational algebraic fact that $\operatorname{Hom}_R(D,-)$ does not destroy exactness at the left, but the right end may fail. The extent of that failure is measured by $\operatorname{Ext}^1$.
 \dgi{Concrete example:} Take $0\to\Z\xrightarrow{\times2}\Z\to\Zn2\to0$ and $D=\Zn2$. Then $\operatorname{Hom}_\Z(\Zn2,\Z)=0$ (no nonzero map), $\operatorname{Hom}_\Z(\Zn2,\Z)=0$, $\operatorname{Hom}_\Z(\Zn2,\Zn2)=\Zn2$. The right arrow cannot be surjective since there is no lift $\Zn2\to\Z$.
@@ -38292,7 +38292,7 @@ sequence becomes
 0 \arrow[r] & \Q \arrow[r, "\times2"] & \Q \arrow[r] & 0 \arrow[r] & 0.
 \end{tikzcd}\]
 \begin{dgx}
-\dgi{Objects:} All four nodes arise from tensoring $0\to\Z\xrightarrow{\times2}\Z\to\Zn2\to0$ with $\Q$. The left two nodes are $\Q\otimes_\Z\Z\isom\Q$; the third is $\Q\otimes_\Z\Zn2=0$; the final $0$ is $\Q\otimes_\Z0=0$.
+\dgi{Objects:} The four nodes after the initial $0$ arise from tensoring $0\to\Z\xrightarrow{\times2}\Z\to\Zn2\to0$ with $\Q$. The left two nodes are $\Q\otimes_\Z\Z\isom\Q$; the third is $\Q\otimes_\Z\Zn2=0$; the final $0$ is $\Q\otimes_\Z0=0$.
 \dgi{Arrows:} The map $\times2\colon\Q\to\Q$ is $1\otimes(\times2)$, i.e. $q\mapsto2q$. The subsequent arrow $\Q\to0$ is the zero map. The initial $0\to\Q$ says the left map is injective.
 \dgi{What commutes:} The sequence is exact at all spots: $0\to\Q\xrightarrow{\times2}\Q\to0\to0$. Exactness at the left $\Q$: $\times2$ is injective (kernel is $\{q\in\Q:2q=0\}=0$). Exactness at the right $\Q$: $\times2$ is surjective (bijection on $\Q$). The middle term $0$ causes no issue.
 \dgi{Why it commutes:} Flatness of $\Q$ over $\Z$ (it is torsion-free, hence flat by the PID criterion) means $1\otimes(\times2)$ inherits the injectivity of $\times2\colon\Z\to\Z$. The collapse $\Q\otimes_\Z\Zn2=0$ occurs because $q\otimes\bar a=\tfrac{q}{2}\otimes2\bar a=\tfrac{q}{2}\otimes\bar0=0$ for all $q,\bar a$.
@@ -38326,7 +38326,7 @@ In $\Zn6$, $4\Zn6=\{\bar0,\bar4,\bar2\}=2\Zn6$ has order $3$, so $\Zn6/4\Zn6$ ha
 i.e. $\isom\Zn2$. Since $\gcd(6,4)=2$, this matches $\Zn{\gcd(6,4)}=\Zn2$. \emph{Check:} the
 formula $\Zn m\tensor\Zn n\isom\Zn{\gcd(m,n)}$ gives $\Zn2$, agreeing. The very fact that
 tensoring with $\Zn6$ turned the injection $\times4$ into a non-injection on a torsion
-quotient again shows $\Zn6$ (and $\Zn4$) are not flat. Correct.
+quotient again shows $\Zn6$ is not flat ($\Zn4$ is not flat either, by the torsion criterion of Prop.~\ref{prop:flat@c10}). Correct.
 \end{wex}
 
 \begin{wex}{Failure then repair of left-exactness}
