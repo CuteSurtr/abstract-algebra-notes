@@ -7971,7 +7971,7 @@ The structure of a finite cyclic group $Z_n=\gen{g}$ is exactly that of a clock 
 \end{tikzpicture}\end{center}
 
 \begin{pitfall}
-When reducing $x^t$, reduce the \emph{exponent} mod $\ord{x}$, never mod $|G|$ unless $x$ generates all of $G$. In $D_8$, $\ord{r}=4$ (so reduce mod $4$), even though $|D_8|=8$; using $8$ would give the wrong answer.
+When reducing $x^t$, reduce the \emph{exponent} mod $\ord{x}$, not mod $|G|$ unless $x$ generates all of $G$. In $D_8$, $\ord{r}=4$ (so reduce mod $4$), even though $|D_8|=8$; using $8$ only gives $r^{103}=r^7$, which is true (as $4\mid8$) but must still be reduced to $r^3$.
 \end{pitfall}
 
 \subsection*{The Order of a Power}
@@ -8340,7 +8340,7 @@ The subgroup of order $d$ is $\gen{\overline{n/d}}$, NOT $\gen{\overline d}$. Mi
 \end{pitfall}
 
 \begin{pitfall}
-The containment direction is reversed from divisibility of the \emph{generators-as-steps}: a \emph{smaller} step $n/d$ generates a \emph{larger} subgroup. Trust the order test: the group of smaller order is contained in the group of larger order, and you check it via $\gcd(b,n)\mid\gcd(a,n)$.
+The containment direction is reversed from divisibility of the \emph{generators-as-steps}: a \emph{smaller} step $n/d$ generates a \emph{larger} subgroup. Trust the order test: $\gen{\overline a}\sgr\gen{\overline b}$ exactly when $|\gen{\overline a}|$ divides $|\gen{\overline b}|$ (a smaller order alone is not enough: in $\Zn{12}$, $\gen{\overline 4}$ of order $3$ is not inside $\gen{\overline 3}$ of order $4$), and you check it via $\gcd(b,n)\mid\gcd(a,n)$.
 \end{pitfall}
 
 \begin{wex}{All subgroups of $\Zn{12}$}
@@ -8567,7 +8567,7 @@ In $\Zn{15}$, exhibit an element of order $15$ as a sum of an order-$3$ and an o
 \ord{\overline 5}=\frac{15}{\gcd(5,15)}=\frac{15}{5}=3,\qquad
 \ord{\overline 3}=\frac{15}{\gcd(3,15)}=\frac{15}{3}=5,
 \]
-with $\gcd(3,5)=1$. By Proposition~\ref{p:coprimeprod-mrg@c2}, $\overline 5+\overline 3=\overline 8$ has order $3\cdot 5=15$, so $\overline 8$ generates $\Zn{15}$. \emph{Check:} directly $\ord{\overline 8}=15/\gcd(8,15)=15/1=15$, confirming $\overline 8$ is a generator, and $\gen{\overline 8}=\gen{\overline 5,\overline 3}=\Zn{15}$, consistent with the proposition's $\gen{x,y}=\gen{xy}$. \emph{Pitfall it guards:} coprimality is essential --- $\overline 5+\overline{10}=\overline 0$ has order $1$, not $15$, because $\ord{\overline 5}=\ord{\overline{10}}=3$ are not coprime.
+with $\gcd(3,5)=1$. By Proposition~\ref{p:coprimeprod-mrg@c2}, $\overline 5+\overline 3=\overline 8$ has order $3\cdot 5=15$, so $\overline 8$ generates $\Zn{15}$. \emph{Check:} directly $\ord{\overline 8}=15/\gcd(8,15)=15/1=15$, confirming $\overline 8$ is a generator, and $\gen{\overline 8}=\gen{\overline 5,\overline 3}=\Zn{15}$, consistent with the proposition's $\gen{x,y}=\gen{xy}$. \emph{Pitfall it guards:} coprimality is essential --- $\overline 5+\overline{10}=\overline 0$ has order $1$, not $3\cdot3=9$, because $\ord{\overline 5}=\ord{\overline{10}}=3$ are not coprime.
 \end{wex}
 
 \begin{wex}{Cyclic or not: $\Zn 8$, $V_4$, and is $\Zn 8\isom\Zn 9$?}
