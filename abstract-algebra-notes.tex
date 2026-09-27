@@ -58882,7 +58882,7 @@ Problems below are drawn from Dummit \& Foote, Artin (\emph{Algebra}), and Frale
 \section{Rings, Ideals, the Nilradical and the Jacobson Radical}
 \subsection*{Rings, ideals, and the quotient correspondence}
 
-Throughout these notes ``ring'' means a commutative ring with identity $1\neq0$, and ring homomorphisms send $1$ to $1$. This is the Atiyah--Macdonald convention, and it is the right setting for commutative algebra: every ring will eventually be read \emph{geometrically} as the ring of functions on a space, and the points of that space will turn out to be its prime ideals. We begin with the algebra and let the geometry surface as we go.
+In this chapter and the next, ``ring'' means a commutative ring with identity $1$ (the zero ring, in which $1=0$, is not excluded), and ring homomorphisms send $1$ to $1$. This is the Atiyah--Macdonald convention, and it is the right setting for commutative algebra: every ring will eventually be read \emph{geometrically} as the ring of functions on a space, and the points of that space will turn out to be its prime ideals. We begin with the algebra and let the geometry surface as we go.
 
 An \emph{ideal} $\fa$ of a ring $A$ is an additive subgroup with $A\fa\subseteq\fa$, i.e.\ $x\in\fa,\ a\in A\Rightarrow ax\in\fa$. The quotient group $A/\fa$ inherits a multiplication making it a ring, the \emph{quotient ring}, and the projection $\phi:A\to A/\fa$, $x\mapsto x+\fa$, is a surjective homomorphism with kernel $\fa$. The single most useful bookkeeping device in the subject is that ideals of $A/\fa$ are exactly the ideals of $A$ that contain $\fa$.
 
@@ -59020,7 +59020,7 @@ Compute $\nil(\Z/n\Z)$ for $n=p_{1}^{a_{1}}\cdots p_{r}^{a_{r}}$.
 \begin{wex}{$\nil\subsetneq\Jac$ in a local ring}
 In $A=\Z_{(p)}$ (integers localized at $p$, i.e.\ fractions $a/b$ with $p\nmid b$), show $\Jac(A)=pA$ but $\nil(A)=(0)$.
 \wrec $\nil$ is the intersection of all primes; $\Jac$ of the maximals. A domain has $\nil=(0)$; a local ring has a single maximal ideal equal to $\Jac$.
-\wsol $A$ is a domain (subring of $\Q$), so it has no nonzero nilpotents: $\nil(A)=(0)$. Its nonunits are exactly the fractions $a/b$ with $p\mid a,\ p\nmid b$, which form the ideal $pA$; this is the unique maximal ideal, so $\Jac(A)=pA\neq(0)$. Sanity check: $1-(p)\cdot y=1-py$ has denominator prime to $p$ and numerator $\equiv1\not\equiv0\pmod p$, hence is a unit of $A$ for all $y$, confirming $p\in\Jac(A)$ via the unit criterion.
+\wsol $A$ is a domain (subring of $\Q$), so it has no nonzero nilpotents: $\nil(A)=(0)$. Its nonunits are exactly the fractions $a/b$ with $p\mid a,\ p\nmid b$, which form the ideal $pA$; this is the unique maximal ideal, so $\Jac(A)=pA\neq(0)$. Sanity check: for $y=c/d\in A$ ($p\nmid d$), $1-py=(d-pc)/d$ has denominator prime to $p$ and numerator $d-pc\equiv d\not\equiv0\pmod p$, hence is a unit of $A$ for all $y$, confirming $p\in\Jac(A)$ via the unit criterion.
 \end{wex}
 
 \begin{wex}{Nilpotents lift units}
@@ -59060,10 +59060,10 @@ Let $\fp_{1},\dots,\fp_{n}$ be ideals, at most two of which are not prime, and l
 \end{proposition}
 
 \begin{proof}[Idea]
-Induct on $n$. If $\fa\subseteq\bigcup_{i}\fp_{i}$ but $\fa\not\subseteq\fp_{j}$ for each $j$, pick $x_{j}\in\fa$ avoiding all $\fp_{i}$ with $i\neq j$ (possible by induction on the union with $\fp_{j}$ removed). If some $x_{j}\notin\fp_{j}$ we are done; otherwise each $x_{j}\in\fp_{j}$, and the element $y=\sum_{i}x_{1}\cdots\widehat{x_{i}}\cdots x_{n}$ (omitting one factor) is constructed to lie in $\fa$ but in no $\fp_{i}$, using primeness, a contradiction.
+Induct on $n$. If $\fa\subseteq\bigcup_{i}\fp_{i}$ but $\fa\not\subseteq\fp_{j}$ for each $j$, pick $x_{j}\in\fa$ avoiding all $\fp_{i}$ with $i\neq j$ (possible by induction on the union with $\fp_{j}$ removed). If some $x_{j}\notin\fp_{j}$, then $x_{j}\in\fa$ lies in no $\fp_{i}$, a contradiction; so each $x_{j}\in\fp_{j}$. For $n=2$ the element $y=x_{1}+x_{2}\in\fa$ lies in neither $\fp_{1}$ nor $\fp_{2}$. For $n\ge3$ some $\fp_{i}$ is prime, say $\fp_{n}$, and $y=x_{n}+x_{1}x_{2}\cdots x_{n-1}\in\fa$ lies in no $\fp_{i}$: for $i<n$ because $x_{n}\notin\fp_{i}$ while $x_{1}\cdots x_{n-1}\in\fp_{i}$, and for $i=n$ because $x_{n}\in\fp_{n}$ while $x_{1}\cdots x_{n-1}\notin\fp_{n}$ by primeness of $\fp_{n}$. Either way this contradicts $\fa\subseteq\bigcup_{i}\fp_{i}$.
 \end{proof}
 
-\begin{wex}{A nonlocal ring made local by recognizing its nonunits}
+\begin{wex}{A local ring recognized by its nonunits}
 Show the formal power series ring $A=k[[t]]$ is local with maximal ideal $\fm=(t)$.
 \wrec Use the recognition criterion: if everything outside $(t)$ is a unit, $A$ is local with maximal ideal $(t)$.
 \wsol A series $f=\sum_{n\ge0}a_{n}t^{n}$ is a unit iff $a_{0}\neq0$: when $a_{0}\neq0$ one solves $fg=1$ recursively for the coefficients of $g$; when $a_{0}=0$, $f\in(t)$ is a nonunit. Thus the nonunits are exactly $(t)$, an ideal, so $A$ is local with $\fm=(t)$ and residue field $A/(t)\isom k$. Sanity check: $1-t\cdot y$ has constant term $1\neq0$ for every $y\in A$, hence is a unit, confirming $t\in\Jac(A)=(t)$ via the unit criterion.
@@ -59149,7 +59149,7 @@ If $\fq\subseteq B$ is prime, then $\fq^{c}=f\inv(\fq)$ is prime in $A$. \textup
 $f$ induces an injection $A/\fq^{c}\hookrightarrow B/\fq$; since $B/\fq$ is a domain and a subring of a domain is a domain, $A/\fq^{c}$ is a domain, so $\fq^{c}$ is prime. Equivalently: $xy\in f\inv(\fq)\Rightarrow f(x)f(y)\in\fq\Rightarrow f(x)\in\fq$ or $f(y)\in\fq\Rightarrow x\in f\inv(\fq)$ or $y\in f\inv(\fq)$.
 \end{proof}
 
-The contraction map on spectra and the two basic homomorphisms (projection, inclusion) fit the square below: the upper map is a quotient $A\to A/\fa$, the right map an inclusion into a localization or extension $A\to B$, and contracting primes commutes with these.
+The contraction map on spectra and the two basic homomorphisms (projection, inclusion) fit the square below: the upper map is a quotient $A\to A/\fa$, the left map a ring homomorphism $f:A\to B$ (for instance an inclusion into a localization or extension), and contracting primes commutes with these.
 \[
 \begin{tikzcd}[row sep=large, column sep=large]
 A \arrow[r,"\phi"] \arrow[d,"f"'] & A/\fa \arrow[d] \\
@@ -59168,8 +59168,8 @@ B \arrow[r] & B/\fa^{e}
 \dgi{Why it commutes:} For the algebra square, the induced right vertical is well-defined precisely because $a \in \fa \Rightarrow f(a) \in f(\fa) \subseteq \fa^{e}$, so different coset representatives of $a + \fa$ map to the same coset in $B/\fa^{e}$. Chasing: take $a \in A$; right-then-down sends $a \mapsto a + \fa \mapsto f(a) + \fa^{e}$; down-then-right sends $a \mapsto f(a) \mapsto f(a) + \fa^{e}$; these are equal. For the Spec square: if $\fq \supseteq \fa^{e}$ (so $\fq \in V(\fa^{e})$) then $f^{-1}(\fq) \supseteq f^{-1}(\fa^{e}) \supseteq \fa$ (since $f(a) \in \fa^{e} \subseteq \fq$ for all $a \in \fa$), so $f^{*}(\fq) \in V(\fa)$, confirming the geometric square commutes.
 \dgi{Why this matters here:} This double diagram is placed immediately after the proof that contraction of a prime is prime ($f^{*}$ is well-defined on $\Spec B \to \Spec A$). It organizes the two fundamental operations -- quotient and extension/contraction -- into a single picture, showing that every ring map $f: A \to B$ simultaneously (1) descends to a map of quotients and (2) dualizes to a map of Specs that intertwines the closed subsets $V(\fa)$ and $V(\fa^{e})$. This is the algebraic backbone of the slogan ``a map of rings induces a map of spaces in the opposite direction.''
 \dgi{Concrete example:} Take $A = \Z$, $B = \Z[i]$, $f$ the inclusion, $\fa = (5)$. Then $\fa^{e} = (5)\Z[i]$, and the algebra square gives $\Z/(5) = \F_{5} \to \Z[i]/(5) \cong \F_{5} \times \F_{5}$. The Spec square: $V((5)) = \{(5)\} \subset \Spec\Z$, and $V((5)\Z[i]) = \{(2+i),(2-i)\} \subset \Spec\Z[i]$, with $f^{*}$ sending both $(2 \pm i)$ to $(5)$, illustrating the ``split prime'' geometry.
-\dgi{Common pitfall:} Students often think the right vertical map $A/\fa \to B/\fa^{e}$ always exists automatically. It requires the explicit well-definedness check: $f(\fa) \subseteq \fa^{e}$ by definition of extension, so the map is well-defined; but if one tried instead to map $B/\fq \to A/\fq^{c}$ for a prime $\fq$, one would need to verify the kernel condition separately.
-\dgi{Takeaway:} The point of this diagram is that every ring homomorphism $f: A \to B$ simultaneously induces a compatible map of quotient rings (algebra square) and a contraction map on prime spectra that pulls back closed subsets $V(\fa^{e})$ into $V(\fa)$ (Spec square), encoding in one picture the algebra-geometry duality at the heart of commutative algebra.
+\dgi{Common pitfall:} Students often think the right vertical map $A/\fa \to B/\fa^{e}$ always exists automatically. It requires the explicit well-definedness check: $f(\fa) \subseteq \fa^{e}$ by definition of extension, so the map is well-defined; and likewise, for a prime $\fq\subseteq B$, the induced map goes $A/\fq^{c}\hookrightarrow B/\fq$ (well defined and injective because $\fq^{c}=f\inv(\fq)$, as in the proof of the proposition above), whereas in general no map $B/\fq\to A/\fq^{c}$ is induced.
+\dgi{Takeaway:} The point of this diagram is that every ring homomorphism $f: A \to B$ simultaneously induces a compatible map of quotient rings (algebra square) and a contraction map on prime spectra that carries $V(\fa^{e})$ into $V(\fa)$, indeed $(f^{*})\inv(V(\fa))=V(\fa^{e})$ (Spec square), encoding in one picture the algebra-geometry duality at the heart of commutative algebra.
 \end{dgx}
 
 \begin{theorem}[{Chinese Remainder Theorem}]
@@ -59235,9 +59235,9 @@ In $A=k[x,y]$, describe $V((xy))$ and relate it to $V((x))$ and $V((y))$.
 \end{wex}
 
 \begin{wex}{Irreducible closed sets are $V(\fp)$ for $\fp$ prime}
-Show $V(\fp)$ is irreducible \textup{(}not a union of two proper closed subsets\textup{)} iff $\fp$ is prime, and that $\overline{\set{\fp}}=V(\fp)$.
+Show that $V(\fa)$ is irreducible \textup{(}nonempty and not a union of two proper closed subsets\textup{)} iff $r(\fa)$ is prime; in particular $V(\fp)$ is irreducible for every prime $\fp$, and $\overline{\set{\fp}}=V(\fp)$.
 \wrec Irreducibility of $V(\fa)$ corresponds to $r(\fa)$ being prime; the closure of a point $\fp$ is the smallest $V$ containing it.
-\wsol The closure of $\set{\fp}$ is the intersection of all closed sets containing $\fp$, namely $V(\fp)$ itself (the smallest $V(\fa)$ with $\fp\in V(\fa)$ is $V(\fp)$). If $\fp$ is prime and $V(\fp)=V(\fb)\cup V(\fc)=V(\fb\fc)$, then $r(\fb\fc)=r(\fp)=\fp$, so $\fp\supseteq\fb\fc$, forcing $\fp\supseteq\fb$ or $\fp\supseteq\fc$, i.e.\ one piece is all of $V(\fp)$. Conversely if $r(\fa)=\fb\cap\fc$ is not prime one splits $V(\fa)$. Sanity check: the generic point $(0)$ of $\Spec\Z$ has closure $V((0))=\Spec\Z$ -- it is dense -- exactly because $(0)$ is the minimal prime of the domain $\Z$, the geometric counterpart of ``$\Spec$ of a domain is irreducible.''
+\wsol The closure of $\set{\fp}$ is the intersection of all closed sets containing $\fp$, namely $V(\fp)$ itself (the smallest $V(\fa)$ with $\fp\in V(\fa)$ is $V(\fp)$). If $\fp$ is prime and $V(\fp)=V(\fb)\cup V(\fc)=V(\fb\fc)$, then $r(\fb\fc)=r(\fp)=\fp$, so $\fp\supseteq\fb\fc$, forcing $\fp\supseteq\fb$ or $\fp\supseteq\fc$, i.e.\ one piece is all of $V(\fp)$; since $V(\fa)=V(r(\fa))$, this covers every $\fa$ with $r(\fa)$ prime. Conversely, if $r(\fa)$ is not prime, then either $r(\fa)=(1)$ and $V(\fa)=\es$, or there are $x,y\notin r(\fa)$ with $xy\in r(\fa)$; then $V(\fa)=V(\fa+(x))\cup V(\fa+(y))$ (a prime containing $\fa$ contains $xy$, hence $x$ or $y$), and both pieces are proper since $x,y\notin r(\fa)=\bigcap_{\fp\supseteq\fa}\fp$. Sanity check: the generic point $(0)$ of $\Spec\Z$ has closure $V((0))=\Spec\Z$ -- it is dense -- exactly because $(0)$ is the minimal prime of the domain $\Z$, the geometric counterpart of ``$\Spec$ of a domain is irreducible.''
 \end{wex}
 
 \begin{wex}{Closed points are the maximal ideals}
