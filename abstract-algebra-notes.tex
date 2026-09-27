@@ -39495,7 +39495,7 @@ F^{n} \arrow[r,"{\Mat_{\mathcal{E}}(\varphi)}"'] & F^{n}
 \dgi{Takeaway:} The point of this diagram is that passing from one basis to another conjugates the matrix of an operator by the change-of-basis matrix $P$, so similarity of matrices is exactly the coordinate-change equivalence relation on operators.
 \end{dgx}
 
-\begin{wex}{The Dummit--Foote diagonalization example}
+\begin{wex}{The Dummit--Foote change-of-basis example}
 Let $V=\Q^3$ and $\varphi(x,y,z)=(9x+4y+5z,\ -4x-3z,\ -6x-4y-2z)$. In the standard basis $\mathcal{B}$,
 \[
 A=\Mat_{\mathcal{B}}(\varphi)=\begin{pmatrix}9&4&5\\ -4&0&-3\\ -6&-4&-2\end{pmatrix}.
@@ -39520,7 +39520,7 @@ Decide whether $A=\begin{pmatrix}2&0\\ 0&3\end{pmatrix}$ and $B=\begin{pmatrix}2
 \wsol $\tr A=5=\tr B$ and $\det A=6=\det B$, so both have characteristic polynomial $t^2-5t+6=(t-2)(t-3)$. Each has distinct eigenvalues $2,3$, hence each is diagonalizable to $\operatorname{diag}(2,3)$. Therefore $A\sim B$. Sanity check: an eigenvector of $B$ for $2$ is $(1,0)$ and for $3$ solve $(B-3I)v=0$: $v=(2,1)$; with $Q=\begin{pmatrix}1&2\\ 0&1\end{pmatrix}$ one verifies $Q^{-1}BQ=\operatorname{diag}(2,3)=A$.
 \end{wex}
 
-\begin{wex}{A change of basis that is not similarity}
+\begin{wex}{Change of basis for a rotation}
 Let $\varphi\colon\R^2\to\R^2$ be rotation by $90^\circ$, $\varphi(x,y)=(-y,x)$. Compute its matrix in $\mathcal{B}=\set{e_1,e_2}$ and in $\mathcal{E}=\set{(1,1),(1,-1)}$, and exhibit the conjugating $P$.
 \wrec The two matrices must be similar (same operator); find $P=\Mat^{\mathcal{E}}_{\mathcal{B}}(\id)$.
 \wsol $\Mat_{\mathcal{B}}(\varphi)=\begin{pmatrix}0&-1\\ 1&0\end{pmatrix}$. For $\mathcal{E}$: $\varphi(1,1)=(-1,1)=0\cdot(1,1)-1\cdot(1,-1)$ and $\varphi(1,-1)=(1,1)=1\cdot(1,1)+0\cdot(1,-1)$, so $\Mat_{\mathcal{E}}(\varphi)=\begin{pmatrix}0&1\\ -1&0\end{pmatrix}$. Sanity check: both have trace $0$, determinant $1$, characteristic polynomial $t^2+1$ (no real eigenvalues, as expected for a rotation). Here $P^{-1}=\begin{pmatrix}1&1\\ 1&-1\end{pmatrix}$ conjugates one to the other.
@@ -39592,7 +39592,7 @@ Let $\varphi\colon\F_2^3\to\F_2^3$ have matrix $A=\begin{pmatrix}1&1&0\\ 0&1&1\\
 \wsol Replace $R_3$ by $R_3+R_1=(0,1,1)$, which equals $R_2$; then $R_3+R_2=0$. So the echelon form has two nonzero rows: $\rank\varphi=2$, hence $\dim\ker\varphi=3-2=1$. A kernel vector: solving $x+y=0,\ y+z=0$ over $\F_2$ gives $x=y=z$, so $(1,1,1)\in\ker\varphi$. Sanity check: $A(1,1,1)\trans=(1+1,\,1+1,\,1+1)\trans=(0,0,0)\trans$, and $1+2=3=\dim\F_2^3$.
 \end{wex}
 
-\begin{wex}{Full-rank square map}
+\begin{wex}{Full-rank map $\Q^4\to\Q^3$}
 Let $B=\begin{pmatrix}1&1&0&2\\ 0&1&1&1\\ 1&0&2&1\end{pmatrix}$ be the matrix of $\varphi\colon\Q^4\to\Q^3$. Compute the rank, the nullity, and conclude whether $\varphi$ is surjective.
 \wrec Row-reduce over $\Q$; surjectivity onto $\Q^3$ means $\rank=3$.
 \wsol Row reduction yields three pivots (the three rows are independent: $R_3-R_1=(0,-1,2,-1)$, and $R_3-R_1+R_2=(0,0,3,0)$ is nonzero, so all three are independent). Thus $\rank\varphi=3$, and $\varphi$ is surjective. By rank--nullity $\dim\ker\varphi=4-3=1$. Sanity check: $\dim\im=3=\dim\Q^3$ confirms surjectivity; a $3\times4$ matrix can have rank at most $3$, achieved here.
@@ -39723,7 +39723,7 @@ Sanity check: $\det(A\tensor B)=(\det A)^{\dim W}(\det B)^{\dim V}=3^2\cdot(-1)^
 \end{wex}
 
 \begin{wex}{Functoriality on simple tensors}
-With $\varphi\colon\Q^2\to\Q^2$, $\varphi=\Mat\begin{pmatrix}1&1\\ 0&1\end{pmatrix}$ and $\psi=\id_{\Q^2}$, evaluate $(\varphi\tensor\psi)(e_1\tensor f_2+e_2\tensor f_1)$.
+With $\varphi\colon\Q^2\to\Q^2$ given by $\Mat(\varphi)=\begin{pmatrix}1&1\\ 0&1\end{pmatrix}$ and $\psi=\id_{\Q^2}$, evaluate $(\varphi\tensor\psi)(e_1\tensor f_2+e_2\tensor f_1)$.
 \wrec Apply $\varphi\tensor\psi$ to each simple tensor separately, using $(\varphi\tensor\psi)(v\tensor w)=\varphi(v)\tensor\psi(w)$.
 \wsol $\varphi(e_1)=e_1$, $\varphi(e_2)=e_1+e_2$, $\psi=\id$. So
 \[
@@ -39979,7 +39979,7 @@ is a basis for $V$.
 
 \item Let $V$ be a $3$-dimensional $\F$-vector space and $W$ a $2$-dimensional $\F$-vector space. Using the isomorphism $\Hom_\F(V,W) \isom \Mat_{2\times 3}(\F)$, state $\dim_\F \Hom_\F(V,W)$. Then exhibit an explicit ordered basis of $\Hom_\F(V,W)$ as a set of maps $E_{ij}$ described in terms of fixed bases of $V$ and $W$.
 
-\item Let $T : \R^2 \to \R^2$ have matrix $\Mat(T) = \begin{pmatrix} 4 & 1 \\ 2 & 3 \end{pmatrix}$ relative to the standard basis. Let $Q = \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix}$ be the change-of-basis matrix from the standard basis to a new basis $\mathcal{B}'$. Compute the matrix of $T$ relative to $\mathcal{B}'$ as $Q^{-1}\,\Mat(T)\,Q$.
+\item Let $T : \R^2 \to \R^2$ have matrix $\Mat(T) = \begin{pmatrix} 4 & 1 \\ 2 & 3 \end{pmatrix}$ relative to the standard basis. Let $Q = \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix}$ be the matrix whose columns are the vectors of a new ordered basis $\mathcal{B}'$, i.e.\ the change-of-basis matrix $\Mat^{\mathcal{S}}_{\mathcal{B}'}(\id)$ from $\mathcal{B}'$ to the standard basis $\mathcal{S}$. Compute the matrix of $T$ relative to $\mathcal{B}'$ as $Q^{-1}\,\Mat(T)\,Q$.
 
 \item Let $S : \R^3 \to \R^2$ and $T : \R^2 \to \R^4$ be linear maps with matrices (in standard bases)
 $\Mat(S) = \begin{pmatrix} 1 & 0 & 2 \\ 0 & 1 & -1 \end{pmatrix}$, $\Mat(T) = \begin{pmatrix} 1 & 1 \\ 0 & 2 \\ 3 & 0 \\ 1 & 1 \end{pmatrix}$.
