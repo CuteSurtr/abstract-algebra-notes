@@ -38701,7 +38701,7 @@ Problems below are drawn from Dummit \& Foote, Artin (\emph{Algebra}), and Frale
 \item [DF 10.1.21] For $R = \Mat_n(F)$ ($n > 1$) and $M$ the matrices with arbitrary first column and zeros elsewhere, show $M$ is a left $R$-submodule of $R$ but not a right $R$-submodule.
 \item [DF 10.2.4] For a $\Z$-module $A$, $a \in A$, and $n > 0$, prove $\varphi_a : \Zn{n} \to A$, $\varphi_a(\bar k) = ka$, is a well-defined $\Z$-module homomorphism iff $na = 0$, and prove $\Hom_{\Z}(\Zn{n}, A) \isom A_n$ where $A_n = \{a \mid na = 0\}$.
 \item [DF 10.2.6] Prove that $\Hom_{\Z}(\Zn{n}, \Zn{m}) \isom \Zn{(n,m)}$.
-\item [DF 10.2.7] For $z$ in the center of $R$, prove $m \mapsto zm$ is an $R$-module endomorphism of $M$, and for commutative $R$ that $r \mapsto rz$ gives a ring homomorphism $R \to \End_R(M)$.
+\item [DF 10.2.7] For $z$ in the center of $R$, prove $m \mapsto zm$ is an $R$-module endomorphism of $M$, and for commutative $R$ that $r \mapsto r\,\id_M$ (multiplication by $r$) gives a ring homomorphism $R \to \End_R(M)$.
 \item [DF 10.2.8] For an $R$-module homomorphism $\varphi : M \to N$, prove $\varphi(\Tor(M)) \subseteq \Tor(N)$.
 \item [DF 10.2.9] For commutative $R$, prove $\Hom_R(R, M) \isom M$ as left $R$-modules.
 \item [DF 10.2.10] For commutative $R$, prove $\Hom_R(R, R) \isom R$ as rings.
@@ -38710,7 +38710,7 @@ Problems below are drawn from Dummit \& Foote, Artin (\emph{Algebra}), and Frale
 \item [DF 10.2.15] For commutative $R$, prove $\Hom_R(M, M)$ is an $R$-module via $(r\varphi)(m) = r\varphi(m)$.
 \item [DF 10.2.16] For a left ideal $I$ of $R$, prove $IM = \{\sum_{\text{finite}} a_i m_i \mid a_i \in I,\ m_i \in M\}$ is a submodule of $M$.
 \item [DF 10.3.1] Prove that if $A$ and $B$ have the same cardinality then the free modules $F(A)$ and $F(B)$ are isomorphic.
-\item [DF 10.3.3] Show that the $F[x]$-modules of Exercises 18 and 19 of Section 1 are both free.
+\item [DF 10.3.3] Show that the $F[x]$-modules of Exercises 18 and 19 of Section 1 are both cyclic.
 \item [DF 10.3.5] For an integral domain $R$, prove that every finitely generated torsion $R$-module has a nonzero annihilator; give a torsion $R$-module whose annihilator is $0$.
 \item [DF 10.3.7] Let $N \le M$ with both $M/N$ and $N$ finitely generated. Prove that $M$ is finitely generated.
 \item [DF 10.3.9] Prove $M$ is irreducible iff $M \neq 0$ and $M$ is cyclic with every nonzero element a generator; determine all irreducible $\Z$-modules.
@@ -38730,14 +38730,14 @@ Problems below are drawn from Dummit \& Foote, Artin (\emph{Algebra}), and Frale
 \item [DF 10.4.18] For a principal ideal $I$ of an integral domain $R$, prove that $I \tensor_R I$ has no nonzero torsion elements.
 \item [DF 10.4.20] For commutative $R$ and ideals $I, J$, exhibit a surjective $R$-module homomorphism $I \tensor_R J \to IJ$, $i \tensor j \mapsto ij$, and give an example where it is not injective.
 \item [DF 10.4.21] If $M$ is both a left and right $R$-module with $rm = mr$ for all $r, m$, show $r_1 r_2$ and $r_2 r_1$ act identically on $M$.
-\item [DF 10.4.24] For a subring $R$ of a commutative ring $S$ and an indeterminate $x$, prove $S[x] \isom S \tensor_R R[x]$ as $S$-algebras.
+\item [DF 10.4.24] For a commutative ring $S$ containing $R$ (with $1_S = 1_R$) and an indeterminate $x$, prove $S[x] \isom S \tensor_R R[x]$ as $S$-algebras.
 \item [DF 10.5.7] For a nonzero finite abelian group $A$, prove $A$ is neither a projective nor an injective $\Z$-module.
 \item [DF 10.5.9] For commutative $R$, prove the tensor product of two free $R$-modules is free, and deduce the tensor product of two projective $R$-modules is projective.
 \item [DF 10.5.10] For an $(R,S)$-bimodule $M$ and left $R$-modules $M, N$, prove $(s\varphi)(m) = \varphi(ms)$ makes $\Hom_R(M,N)$ a left $S$-module; deduce $N \isom \Hom_R(R, N)$ as left $R$-modules.
 \item [DF 10.5.11] For an $(R,S)$-bimodule $N$, prove $(\varphi s)(m) = \varphi(m)s$ makes $\Hom_R(M,N)$ a right $S$-module; deduce $\Hom_R(M, R)$ is a right $R$-module (the dual module).
 \item [DF 10.5.12] For an $(R,R)$-bimodule $A$, prove $(r\varphi)(a) = \varphi(ar)$ makes $\Hom_R(A, M)$ a left $R$-module.
-\item [DF 10.5.13] For a nonzero finitely generated abelian group $A$, prove $A$ is projective iff $A$ is free, and injective iff $A = 0$.
-\item [DF 10.5.16] For a left $R$-module $M$, show $\Hom_{\Z}(R, M)$ is a left $R$-module via $(r\varphi)(r') = \varphi(r'r)$, and if $Q$ is injective then $\Hom_{\Z}(R, Q)$ is an injective $R$-module.
+\item [DF 10.5.13] For a finitely generated abelian group $A$, prove $A$ is projective iff $A$ is free, and injective iff $A = 0$.
+\item [DF 10.5.16] For a left $R$-module $M$, show $\Hom_{\Z}(R, M)$ is a left $R$-module via $(r\varphi)(r') = \varphi(r'r)$, and if $Q$ is an injective $\Z$-module then $\Hom_{\Z}(R, Q)$ is an injective $R$-module.
 \item [DF 10.5.18] For a Noetherian ring $R$ and an injective $R$-module $Q$, show that any direct sum of copies of $Q$ is injective.
 \item [DF 10.5.19] Prove that a quotient of a divisible group is divisible, and deduce $\Q/\Z$ is a divisible group, hence an injective $\Z$-module.
 \item [DF 10.5.21] For commutative $R$ and flat $R$-modules $M, N$, prove $M \tensor_R N$ is flat.
@@ -38770,12 +38770,12 @@ Problems below are drawn from Dummit \& Foote, Artin (\emph{Algebra}), and Frale
 \item [DF 10.1.22] For an $R$-module $A$ that is a ring with identity $1_A$ satisfying $r(ab) = (ra)b = a(rb)$, prove $f(r) = r \cdot 1_A$ is a ring homomorphism into the center of $A$, making $A$ an $R$-algebra whose induced module structure is the original one.
 \item [DF 10.1.23] For $A = \C \times \C$, $\tau_1 = \mathrm{id}$, $\tau_2 = $ conjugation, and $f_{p,q}(z) = (\tau_p(z), \tau_q(z))$: prove each $f_{p,q}$ is an injective ring homomorphism agreeing on $\R$, giving four distinct $\C$-algebra structures; show distinct $f_{p,q}$ make the identity not a $\C$-algebra homomorphism; and show each structure is $\C$-algebra isomorphic to the natural one.
 \item [DF 10.2.13] For a nilpotent ideal $I$ of commutative $R$ and an $R$-module homomorphism $\varphi : M \to N$, show that if $\bar\varphi : M/IM \to N/IN$ is surjective then $\varphi$ is surjective.
-\item [DF 10.2.14] For $R = \Z[x]$ and $A = \Z[\theta_1, \theta_2, \ldots]$ with the action $x^n \circ 1 = 0$, $x^n \circ \theta_i = \theta_{i-n}$ extended $\Z$-linearly: show $x^{n+1} \circ \theta_i = x^n \circ (x \circ \theta_i)$, but give an explicit example showing the action of a general polynomial is not associative, so $A$ is not an $R$-module.
+\item [DF 10.2.14] For $R = \Z[x]$ and $A = \Z[\theta_1, \theta_2, \ldots]$, let $1 \in R$ act as the identity, for $n \ge 1$ let $x^n \circ 1 = \theta_n$ and $x^n \circ \theta_i = \theta_{n+i}$, let $x^n$ act as $0$ on monomials of total degree at least $2$, and extend $\Z$-linearly in both variables: show that $x^{p+q} \circ \theta_i = x^p \circ (x^q \circ \theta_i)$ and that $A$ is a (unital) $R$-module, and that $\varphi(r) = r \circ 1$ is an $R$-module homomorphism $R \to A$ with $\varphi(1) = 1$ that is not a ring homomorphism.
 \item [DF 10.3.2] For commutative $R$, prove $R^n \isom R^m$ iff $n = m$ (apply Exercise 10.2.12 with $I$ a maximal ideal).
 \item [DF 10.3.8] For the ring $S$ of eventually-zero integer sequences (direct sum of copies of $\Z$, no identity), prove $S$ is not finitely generated as a module over itself.
 \item [DF 10.3.10] For commutative $R$, prove an $R$-module $M$ is irreducible iff $M \isom R/I$ for a maximal ideal $I$.
 \item [DF 10.3.11] For irreducible $R$-modules $M_1, M_2$, prove any nonzero homomorphism $M_1 \to M_2$ is an isomorphism; deduce $\End_R(M)$ is a division ring (Schur's Lemma).
-\item [DF 10.3.17] For pairwise comaximal ideals $A_1, \ldots, A_k$ of $R$, prove $M/(A_1 \cdots A_k)M \isom \prod_i M/A_i M$.
+\item [DF 10.3.17] For commutative $R$ and pairwise comaximal ideals $A_1, \ldots, A_k$ of $R$, prove $M/(A_1 \cdots A_k)M \isom \prod_i M/A_i M$.
 \item [DF 10.3.18] For a PID $R$ and a module $M$ annihilated by $(a)$ with $a = \prod_i p_i^{\alpha_i}$, prove $M = M_1 \oplus \cdots \oplus M_k$ where $M_i$ is the $p_i$-primary component.
 \item [DF 10.3.19] For a finite abelian group $M$ of order $\prod_i p_i^{\alpha_i}$, show as a $\Z$-module it is annihilated by $(a)$, each primary component is the Sylow $p_i$-subgroup, and $M$ is the direct product of its Sylow subgroups.
 \item [DF 10.3.20] For a PID $R$, a torsion $R$-module $M$, and a prime $p$, prove the $p$-primary component is a submodule, agrees with the earlier definition when $M$ has nonzero annihilator, and that $M$ is the (possibly infinite) direct sum of its $p$-primary components.
@@ -38783,35 +38783,35 @@ Problems below are drawn from Dummit \& Foote, Artin (\emph{Algebra}), and Frale
 \item [DF 10.3.23] Prove that an arbitrary direct product of free modules need not be free, using $M = \prod_{i \in \Z^+} \Z$ and the countable submodule of finitely-supported tuples.
 \item [DF 10.3.25] Show that the direct limit of $R$-modules $A_i$ over $R$-module maps $\rho_{ij}$ carries a natural $R$-module structure making the $\rho_i$ homomorphisms, and verify its universal property.
 \item [DF 10.3.26] Carry out the analogue for inverse limits: an inverse limit of $R$-modules is an $R$-module satisfying the appropriate universal property.
-\item [DF 10.3.27] For $M = \Z \times \Z \times \cdots$, $R = \End_{\Z}(M)$, and $\varphi_1, \varphi_2 \in R$ the even/odd coordinate projections, prove $\{\varphi_1, \varphi_2\}$ is a free basis of the left $R$-module $R$; deduce $R \isom R^2$ and hence $R \isom R^n$ for all $n$ (free modules over noncommutative rings need not have unique rank).
+\item [DF 10.3.27] For $M = \Z \times \Z \times \cdots$, $R = \End_{\Z}(M)$, and $\varphi_1, \varphi_2 \in R$ given by $\varphi_1(a_1, a_2, \ldots) = (a_1, a_3, a_5, \ldots)$ and $\varphi_2(a_1, a_2, \ldots) = (a_2, a_4, a_6, \ldots)$, prove $\{\varphi_1, \varphi_2\}$ is a free basis of the left $R$-module $R$; deduce $R \isom R^2$ and hence $R \isom R^n$ for all $n$ (free modules over noncommutative rings need not have unique rank).
 \item [DF 10.4.3] Show that $\C \tensor_{\R} \C$ and $\C \tensor_{\C} \C$ are both left $\R$-modules but are not isomorphic as $\R$-modules.
 \item [DF 10.4.6] For an integral domain $R$ with fraction field $Q$, prove $(Q/R) \tensor_R (Q/R) = 0$.
 \item [DF 10.4.8] For an integral domain $R$ with fraction field $Q$ and an $R$-module $N$, construct $U^{-1}N$ (localization at $U = R \setminus \{0\}$), prove it is an $R$-module, prove $Q \tensor_R N \isom U^{-1}N$, deduce $(1/d) \tensor n = 0$ iff $rn = 0$ for some nonzero $r$, and conclude $\Q \tensor_{\Z} A = 0$ iff $A$ is torsion.
 \item [DF 10.4.9] For an integral domain $R$ with fraction field $Q$ and an $R$-module $N$, prove the kernel of $\iota : N \to Q \tensor_R N$ is the torsion submodule of $N$.
-\item [DF 10.4.10] For commutative $R$ and free $N \isom R^n$ with basis $e_1, \ldots, e_n$: prove every element of $M \tensor N$ is uniquely $\sum_i m_i \tensor e_i$, and show this uniqueness fails for merely linearly independent $n_i$ (use $R = \Z$, $M = \Zn{2}$, $2 \tensor 2$).
+\item [DF 10.4.10] For commutative $R$ and free $N \isom R^n$ with basis $e_1, \ldots, e_n$: prove every element of $M \tensor N$ is uniquely $\sum_i m_i \tensor e_i$, and show this uniqueness fails for merely linearly independent $n_i$ (use $R = \Z$, $M = \Zn{2}$, $1 \tensor 2$).
 \item [DF 10.4.15] Show that tensor products do not commute with direct products in general, using extension of scalars from $\Z$ to $\Q$ of $\prod_i \Zn{2^i}$.
 \item [DF 10.4.17] For $I = (2, x) \subseteq \Z[x]$ and $R/I = \Zn{2}$: show $\varphi(p, q) = \tfrac{a_0}{2} b_1 \bmod 2$ is $R$-bilinear, induce a homomorphism $I \tensor_R I \to \Zn{2}$ sending $p \tensor q \mapsto \tfrac{p(0)}{2} q'(0)$, and conclude $2 \tensor x \neq x \tensor 2$ in $I \tensor_R I$.
 \item [DF 10.4.19] For $I = (2, x) \subseteq \Z[x]$, show $2 \tensor x - x \tensor 2$ is a nonzero torsion element of $I \tensor_R I$ annihilated by both $2$ and $x$, generating a submodule isomorphic to $R/I$.
-\item [DF 10.4.22] Verify that the multiplication of Proposition 19 makes $A \tensor_R B$ into an $R$-algebra.
-\item [DF 10.4.25] For a commutative ring $S \supseteq R$ and independent indeterminates $x_1, \ldots, x_n$, prove $S \tensor_R (R[x_1,\ldots,x_n]/I) \isom S[x_1,\ldots,x_n]/IS[x_1,\ldots,x_n]$ as $S$-algebras for every ideal $I$.
+\item [DF 10.4.22] Verify that the multiplication of Proposition 21 makes $A \tensor_R B$ into an $R$-algebra.
+\item [DF 10.4.25] For a commutative ring $S \supseteq R$ with $1_S = 1_R$ and independent indeterminates $x_1, \ldots, x_n$, prove $S \tensor_R (R[x_1,\ldots,x_n]/I) \isom S[x_1,\ldots,x_n]/IS[x_1,\ldots,x_n]$ as $S$-algebras for every ideal $I$.
 \item [DF 10.4.26] For $A = \C \tensor_{\R} \C$: write the multiplication formula in the basis $1, e_2, e_3, e_4$; show $\epsilon_1 = \tfrac12(1 \tensor 1 + i \tensor i)$, $\epsilon_2 = \tfrac12(1 \tensor 1 - i \tensor i)$ are orthogonal idempotents with $A \isom A\epsilon_1 \times A\epsilon_2$; and build an explicit $\C$-algebra isomorphism $A \isom \C \times \C$.
-\item [DF 10.5.1] For the commutative square with exact rows, prove the six implications among injectivity/surjectivity of $\alpha, \beta, \varphi, \psi$ (the four lemma / short five lemma special cases).
+\item [DF 10.5.1] For a commutative diagram with exact rows $A \xrightarrow{\psi} B \xrightarrow{\varphi} C$ and $A' \xrightarrow{\psi'} B' \xrightarrow{\varphi'} C'$ and vertical maps $\alpha, \beta, \gamma$, prove: if $\varphi, \alpha$ are surjective and $\beta$ is injective then $\gamma$ is injective; if $\psi', \alpha, \gamma$ are injective then $\beta$ is injective; if $\varphi, \alpha, \gamma$ are surjective then $\beta$ is surjective; if $\beta$ is surjective and $\gamma, \psi'$ are injective then $\alpha$ is surjective.
 \item [DF 10.5.2] For the two-row commutative ladder with five vertical maps and exact rows, prove: if $\alpha$ is surjective and $\beta, \delta$ injective then $\gamma$ is injective; and if $\varepsilon$ is injective and $\beta, \delta$ surjective then $\gamma$ is surjective (the Five Lemma).
 \item [DF 10.5.5] Prove $A_1 \oplus A_2$ is flat iff both are flat, and more generally an arbitrary direct sum $\bigoplus_i A_i$ is flat iff each $A_i$ is flat.
 \item [DF 10.5.6] Prove that for a ring $R$, every $R$-module is projective iff every $R$-module is injective.
 \item [DF 10.5.8] For a nonzero divisible $\Z$-module $Q$, prove $Q$ is not projective; deduce $\Q$ is not a projective $\Z$-module.
 \item [DF 10.5.14] For $0 \to L \to M \to N \to 0$, prove the induced sequence $0 \to \Hom_R(D,L) \to \Hom_R(D,M) \to \Hom_R(D,N) \to 0$ is exact for all $D$ iff the original sequence splits, and the dual statement for $\Hom_R(-, D)$.
-\item [DF 10.5.15] For a left $R$-module $M$, show $\Hom_{\Z}(R, M)$ is a left $R$-module, prove a lifting-of-homomorphisms transfer property, and deduce that if $Q$ is injective then $\Hom_{\Z}(R, Q)$ is injective.
-\item [DF 10.5.17] For left $R$-modules $J, A$ and $M = \Hom_R(J, A)$, prove $(r\varphi)(j) = \varphi(jr)$ makes $M$ a left $R$-module, and that if $A$ is injective then $M$ is injective.
+\item [DF 10.5.15] For a left $R$-module $M$, show $\Hom_{\Z}(R, M)$ is a left $R$-module, prove a lifting-of-homomorphisms transfer property, and deduce that if $Q$ is an injective $\Z$-module then $\Hom_{\Z}(R, Q)$ is an injective $R$-module.
+\item [DF 10.5.17] For an $(R,R)$-bimodule $J$, a left $R$-module $A$ and $M = \Hom_R(J, A)$, prove $(r\varphi)(j) = \varphi(jr)$ makes $M$ a left $R$-module, and that if $A$ is injective and $J$ is flat as a right $R$-module then $M$ is injective.
 \item [DF 10.5.20] Prove $\Q$ is the injective hull of the $\Z$-module $\Z$, with $\Z$ embedded as an essential submodule.
-\item [DF 10.5.23] Prove the injective hull of $\Zn{p^n}$ equals that of $\Zn{p}$, and deduce $\Zn{p^n}$ has $\Q/\Z$ as its injective hull.
+\item [DF 10.5.23] Prove the injective hull of $\Zn{p^n}$ equals that of $\Zn{p}$, and deduce that the injective hull of $\Zn{p^n}$ is the Pr\"ufer group $\Z[1/p]/\Z$, not $\Q/\Z$.
 \item [DF 10.5.24] If $F$ is a field, prove the injective hull of $F[x]$ is the rational function field $F(x)$.
-\item [DF 10.5.25] Prove $\Q$ is an injective hull for the $\Z$-module $\Z$ but not for the polynomial ring $R[x]$ over a commutative ring $R$.
+\item [DF 10.5.25] Prove that the polynomial ring $R[x]$ over a commutative ring $R$ is a flat $R$-module.
 \item [DF 10.5.26] For rings $R, S$, a right $R$-module $M$ flat over $R$, and an $(R,S)$-bimodule $N$ flat as an $S$-module, prove $M \tensor_R N$ is flat as a right $S$-module.
 \item [DF 10.5.27] Prove $A$ is flat iff for every finitely generated ideal $I$ the map $A \tensor_R I \to A \tensor_R R \isom A$ induced by $I \subseteq R$ is injective.
 \item [DF 10.5.28] Prove the Flatness Criterion: $A$ is flat iff for every finitely generated ideal $I$ the map $A \tensor_R I \to A$, $a \tensor i \mapsto ai$, is injective; reduce via quotients, ascending unions, and Zorn's Lemma to free modules and conclude using the snake lemma.
 \item [DF 10.5.29] For $A = F/K$ with $F$ flat, prove $A$ is flat iff $K \cap FI = KI$ for every finitely generated ideal $I$.
-\item [DF 10.5.30] For submodules $M, N$ of $L$, construct the pushout (fiber sum) $(M \oplus N)/X$ of $\alpha, \beta$, verify its universal property, and show the pushout of the inclusions $M, N \hookrightarrow L$ is $L/(M \cap N)$.
+\item [DF 10.5.30] For submodules $M, N$ of $L$, construct the pushout (fiber sum) $(M \oplus N)/X$ of $\alpha, \beta$, verify its universal property, and show the pushout of the inclusions $M \cap N \hookrightarrow M$, $M \cap N \hookrightarrow N$ is isomorphic to $M + N$.
 \item [DF 10.5.31] Prove Schanuel's Lemma: for exact $0 \to K \to P \to M \to 0$ and $0 \to K' \to P' \to M \to 0$ with $P, P'$ projective, $K \oplus P' \isom K' \oplus P$; conclude $K$ and $K'$ are projectively equivalent.
 \item [Artin 2.2] Prove that a ring $R$ over which every finitely generated module is free is either a field or the zero ring.
 \item [Artin 2.3] For the matrix $A$ of a homomorphism $\varphi : \Z^n \to \Z^m$ of free $\Z$-modules, prove $\varphi$ is injective iff $\mathrm{rank}(A) = n$ over $\R$, and surjective iff the gcd of the $m \times m$ minors of $A$ is $1$.
