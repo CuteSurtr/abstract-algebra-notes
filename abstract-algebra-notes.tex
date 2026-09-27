@@ -28470,7 +28470,7 @@ The implications, and the quotient ladder, are summarized by:
 \[
 \begin{tikzcd}[row sep=large,column sep=huge]
 R \arrow[r, two heads, "\pi_M"] \arrow[d, two heads, "\pi_P"'] & R/M \ \ (\text{field}) \\
-R/P \ \ (\text{domain}) &
+R/P \mathrlap{\ \ (\text{domain})} &
 \end{tikzcd}
 \qquad
 \boxed{\ \text{maximal} \ \imp\ \text{prime}\ }
@@ -30848,7 +30848,7 @@ strictly decreasing norms force the process to halt.
 
 \item Draw the one-arrow refinement ladder
 \[
-\begin{tikzcd}[column sep=large]
+\begin{tikzcd}[column sep=7em]
 \text{field} \arrow[r, Rightarrow, "{\text{trivially Euclidean}}"] & \text{ED}
 \end{tikzcd}
 \]
@@ -31096,7 +31096,7 @@ Witnesses for strictness: $\Z$ is a non-field ED; $\Z[\tfrac{1+\sqrt{-19}}{2}]$ 
 
 The next diagram records, inside a PID, the coincidence of nonzero primes with maximal ideals and the gcd computation $\gen{a,b}=\gen{d}$:
 
-\[\begin{tikzcd}[row sep=large, column sep=huge]
+\[\begin{tikzcd}[row sep=normal, column sep=0pt]
 \gen{a} \arrow[dr, phantom, "\subseteq"] & & \gen{b} \arrow[dl, phantom, "\supseteq"] \\
 & \gen{a,b}=\gen{d}=\gen{\gcd(a,b)} \arrow[d, "{\text{if }d\text{ prime}}"] & \\
 & \gen{d}\ \text{maximal} &
@@ -31186,7 +31186,7 @@ is a ring isomorphism. (Hint: surjectivity uses $1=ax+by$; for injectivity show 
 
 \begin{exers}{Commutative-diagram exercises.}
 \item In $\Z$, consider the divisor lattice of $12$ under \emph{reverse} divisibility ($\gen{a}\subseteq\gen{b}$ iff $b\divides a$):
-\[\begin{tikzcd}[row sep=small, column sep=large]
+\[\begin{tikzcd}[row sep=normal, column sep=large]
 & \gen{1}=\Z & \\
 \gen{2} \arrow[ur, hook] & & \gen{3} \arrow[ul, hook'] \\
 \gen{4} \arrow[u, hook] & & \gen{6} \arrow[u, hook'] \arrow[ull, hook', crossing over] \\
@@ -31411,7 +31411,7 @@ Inside the world of elements, the dual picture is the relation between prime and
 
 \[
 \begin{tikzcd}[row sep=small, column sep=huge]
-\{\text{prime}\} \arrow[r, hook, "{\text{always}}"] & \{\text{irreducible}\} \arrow[l, bend left=25, dashed, "{\text{in a UFD}}"']
+\{\text{prime}\} \arrow[r, hook, "{\text{always}}"] & \{\text{irreducible}\} \arrow[l, bend left=25, dashed, "{\text{in a UFD}}"]
 \end{tikzcd}
 \]
 
@@ -31682,7 +31682,7 @@ R \arrow[r, two heads, "\pi"] & R/\gen{p}
 \item Draw the relationship $\{\text{prime}\} \hookrightarrow \{\text{irreducible}\}$ (always), with a dashed reverse arrow labeled ``in a UFD,'' and instantiate the failure of the reverse arrow in $\Z[\sqrt{-5}]$.
 \[
 \begin{tikzcd}[row sep=small, column sep=huge]
-\{\text{prime}\} \arrow[r, hook, "{\text{always}}"] & \{\text{irreducible}\} \arrow[l, bend left=25, dashed, "{\text{in a UFD}}"']
+\{\text{prime}\} \arrow[r, hook, "{\text{always}}"] & \{\text{irreducible}\} \arrow[l, bend left=25, dashed, "{\text{in a UFD}}"]
 \end{tikzcd}
 \]
 \textit{Answer.} The solid hook is the body's ``prime $\imp$ irreducible,'' valid in any domain. The dashed back-arrow ``irreducible $\imp$ prime'' holds in every UFD, but not in every domain. Failure in $\Z[\sqrt{-5}]$: $2$ is irreducible but not prime, since $2 \divides 6 = (1+\sqrt{-5})(1-\sqrt{-5})$ while $2 \ndivides 1+\sqrt{-5}$ and $2 \ndivides 1-\sqrt{-5}$. So the dashed arrow is absent there, which is exactly why $\Z[\sqrt{-5}]$ is not a UFD.
@@ -34562,11 +34562,11 @@ The polynomial $f(x)$ is said to have a multiple root if there is some field $E$
 For $p = 3$ and $f(x) = x^2 + 6x + 4$, compute the image $\bar f$, and explain why irreducibility of $\bar f$ in $\F_3[x]$ forces irreducibility of $f$ in $\Q[x]$ while reducibility of $\bar f$ tells you nothing.
 
 \item Let $p(x) = x^2 + 1 \in \F_3[x]$. Show $p$ is irreducible, so that $\F_3[x]/(p)$ is a field; identify how many elements it has and describe its elements as cosets $a + bx + (p)$. Draw the quotient as
-\[\begin{tikzcd}[column sep=large] \F_3[x] \arrow[r, two heads, "{\bmod\,(p)}"] & \F_3[x]/(p) \end{tikzcd}\]
+\[\begin{tikzcd}[column sep=huge] \F_3[x] \arrow[r, two heads, "{\bmod\,(p)}"] & \F_3[x]/(p) \end{tikzcd}\]
 and state the image of $x^2$ under this map.
 
 \item Show $x^2 + 1$ is \emph{reducible} in $\F_2[x]$ and in $\F_5[x]$ but irreducible in $\F_3[x]$. Conclude that whether $F[x]/(x^2+1)$ is a field depends on $F$, and indicate the diagram
-\[\begin{tikzcd}[column sep=large] F[x] \arrow[r, two heads, "{\bmod\,(x^2+1)}"] & F[x]/(x^2+1) \end{tikzcd}\]
+\[\begin{tikzcd}[column sep=5.5em] F[x] \arrow[r, two heads, "{\bmod\,(x^2+1)}"] & F[x]/(x^2+1) \end{tikzcd}\]
 in each case, saying whether the target is a field.
 
 \item The factorization $f = gh$ in $\Z[x]$ should be compatible with reduction. Verify commutativity of
@@ -34897,7 +34897,7 @@ Try $g = \alpha + 1$. Compute $g^2 = (\alpha+1)^2 = \alpha^2 + 2\alpha + 1 = (-1
 
 \begin{exers}{Commutative-diagram exercises.}
 \item Let $p(x)=x^2+1\in\Q[x]$, which is irreducible, so that the quotient in the diagram
-\[\begin{tikzcd}[column sep=large] \Q[x] \arrow[r, two heads, "\bmod p(x)"] & \Q[x]/(p(x)) \end{tikzcd}\]
+\[\begin{tikzcd}[column sep=huge] \Q[x] \arrow[r, two heads, "\bmod p(x)"] & \Q[x]/(p(x)) \end{tikzcd}\]
 is a field. Identify this field, exhibit the inverse of the image of $x$, and describe the kernel of the map.
 
 \item For each prime $p$, consider the reduction map
