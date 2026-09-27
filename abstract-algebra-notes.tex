@@ -6190,7 +6190,7 @@ The torsion set need NOT be a subgroup if $G$ is \emph{nonabelian}: in $\GL_2(\R
 \begin{wex}{NON-example: the odd integers}
 Let $O=\{\text{odd integers}\}=\{\dots,-3,-1,1,3,\dots\}\subseteq\Z$. Decide whether $O\sgr(\Z,+)$.
 \wrec A described subset of $(\Z,+)$: run the checklist, but as soon as one clause fails we may stop and declare ``not a subgroup.'' Quickest clause to test for $O$ is the identity, since $0$ is even.
-\wsol \emph{Identity fails:} the additive identity of $\Z$ is $0$, which is even, so $0\notin O$. By Proposition~\ref{p:agree@c2} a subgroup must contain $1_G=0$, so $O$ is \emph{not} a subgroup. \emph{Closure also fails, independently:} $1\in O$ and $3\in O$ but $1+3=4\notin O$ (sum of two odds is even). \emph{Conclusion:} $O\not\sgr\Z$, failing clauses (0) and (1). \emph{Check:} two failures confirm each other; a single one already suffices.
+\wsol \emph{Identity fails:} the additive identity of $\Z$ is $0$, which is even, so $0\notin O$. By Proposition~\ref{p:agree@c2} a subgroup must contain $1_G=0$, so $O$ is \emph{not} a subgroup. \emph{Closure also fails, independently:} $1\in O$ and $3\in O$ but $1+3=4\notin O$ (sum of two odds is even). \emph{Conclusion:} $O\not\sgr\Z$: it lacks the identity $0$ (although $O\neq\es$) and fails clause (1). \emph{Check:} two failures confirm each other; a single one already suffices.
 \end{wex}
 
 \begin{wex}{NON-example vs example inside $D_8$}
@@ -6625,7 +6625,7 @@ always subgroups.
   (d) $\{a/b\in\Q\st\gcd(b,n)=1\}\sgr(\Q,+)$;
   (e) $\{x\in\R^\times\st x^2\in\Q\}\sgr\R^\times$.
 \item Prove each is \emph{not} a subgroup: (a) the $2$-cycles in $S_n$ ($n\ge3$);
-  (b) the reflections in $D_{2n}$; (c) $\{x\st\ord{x}=n\}\cup\{1\}$, $n$ composite;
+  (b) the reflections in $D_{2n}$; (c) $\{x\in G\st\ord{x}=n\}\cup\{1\}$, $n$ composite and $G$ a group containing an element of order $n$;
   (d) the odd integers together with $0$; (e) $\{x\in\R\st x^2\in\Q\}$ in $(\R,+)$.
 \item Show $\{1,r^2,s,sr^2\}$ and $\{1,r^2,sr,sr^3\}$ are subgroups of $D_8$.
 \item Exhibit a group $G$ and an infinite subset $H$ closed under the operation but not a
@@ -6633,7 +6633,7 @@ always subgroups.
 \item Prove a group of order $n>2$ has no subgroup of order $n-1$.
 \item $G$ abelian: prove the torsion set $\{g\st\ord{g}<\infty\}\sgr G$; give a
   non-abelian example where this set is not a subgroup.
-\item Find the torsion subgroup of $\Z\times\Zn{n}$, and show the elements of infinite
+\item Fix $n>1$. Find the torsion subgroup of $\Z\times\Zn{n}$, and show the elements of infinite
   order together with $1$ do not form a subgroup.
 \item For $H,K\sgr G$, prove $H\cup K\sgr G\iff H\subseteq K$ or $K\subseteq H$.
 \item Prove $\SL_n(F)=\{A\in\GL_n(F)\st\det A=1\}\sgr\GL_n(F)$.
