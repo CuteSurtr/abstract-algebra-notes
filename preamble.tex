@@ -1,15 +1,15 @@
-% ===== preamble =====
+% ===== Abstract Algebra Notes: preamble =====
 \usepackage[T1]{fontenc}\usepackage{lmodern}
-\usepackage[margin=0.9in]{geometry}
+\usepackage[letterpaper,margin=1in]{geometry}
 \usepackage{amsmath,amssymb,amsthm,mathtools}
 \usepackage{cancel}
 \usepackage{longtable}
 \usepackage{enumitem}
 \usepackage{microtype}
-\usepackage{tikz}\usetikzlibrary{positioning,arrows.meta}
+\usepackage{tikz}
 \usepackage{tikz-cd}
-% ---- unified diagram house styles (lattices / Cayley graphs) ----
 \usetikzlibrary{calc,positioning,arrows.meta}
+% ---- diagram styles (subgroup lattices, Cayley graphs) ----
 \tikzset{
   ltdot/.style={circle,fill=black,inner sep=1.5pt},
   ltedge/.style={black!50,line width=0.7pt},
@@ -22,15 +22,15 @@
 }
 \usepackage[hidelinks]{hyperref}
 
-% (per-chapter \thesection override removed -- the book class numbers sections as
-%  chapter.section natively, which reproduces the original "N.M" numbering since the
-%  chapters are numbered 1-16.)
-\setlength{\parindent}{0pt}\setlength{\parskip}{3pt}
+% ---- page layout: page number centered in the footer, no running heads ----
+\pagestyle{plain}
+\setlength{\emergencystretch}{2em}
+\raggedbottom
 \makeatletter
 \renewcommand*\l@section{\@dottedtocline{1}{0pt}{2.8em}}
 \makeatother
 
-% ---- theorem environments (results numbered 15.x.y) ----
+% ---- theorem environments (results numbered chapter.section.n) ----
 \theoremstyle{plain}
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{proposition}[theorem]{Proposition}
@@ -38,30 +38,26 @@
 \newtheorem{corollary}[theorem]{Corollary}
 \theoremstyle{definition}
 \newtheorem{definition}[theorem]{Definition}
+\newtheorem{wexthm}[theorem]{Worked Example}
+\newtheorem*{methodthm}{Method}
 \theoremstyle{remark}
-\newtheorem*{remark}{Remark}
+\newtheorem{remark}{Remark}[section]
+\newtheorem*{pitfall}{Caution}
+\newtheorem*{dgx}{Diagram explanation}
 
-% ---- worked example (clean, no box; shares the result counter) ----
-\newenvironment{wex}[1]{%
-  \par\addvspace{\medskipamount}\refstepcounter{theorem}%
-  \noindent\textbf{Worked Example~\thetheorem.}\enspace\textit{#1.}\par\nobreak\smallskip}%
-  {\par\addvspace{\medskipamount}}
+% ---- worked example: \begin{wex}{title} ... \end{wex}, shares the result counter ----
+\newenvironment{wex}[1]{\begin{wexthm}[{#1}]}{\end{wexthm}}
 \newcommand{\wrec}{\par\smallskip\noindent\textit{Recognition.}\enspace\ignorespaces}
 \newcommand{\wsol}{\par\smallskip\noindent\textit{Solution.}\enspace\ignorespaces}
 
-% ---- method / strategy block (rule-delimited, no color) ----
-\newenvironment{method}[1]{%
-  \par\addvspace{\medskipamount}\noindent\rule{\linewidth}{0.4pt}\par\nobreak\vskip2pt
-  \noindent\textbf{Method.}\enspace\textit{#1}\par\nobreak\smallskip}%
-  {\par\nobreak\vskip2pt\noindent\rule{\linewidth}{0.4pt}\par\addvspace{\medskipamount}}
+% ---- method block: \begin{method}{title} ... \end{method} ----
+\newenvironment{method}[1]{\begin{methodthm}[{#1}]}{\end{methodthm}}
 
-% ---- caution note (run-in, no color) ----
-\newenvironment{pitfall}{%
-  \par\addvspace{\smallskipamount}\noindent\textbf{\textit{Caution.}}\enspace\ignorespaces}%
-  {\par\addvspace{\smallskipamount}}
+% ---- items of a diagram explanation ----
+\newcommand{\dgi}[1]{\par\smallskip\noindent\textit{#1}\enspace\ignorespaces}
 
-% ---- exercise list ----
-\newenvironment{exers}[1]{\par\medskip\noindent\textbf{#1}\par\nopagebreak
+% ---- exercise list: \begin{exers}{heading} \item ... \end{exers} ----
+\newenvironment{exers}[1]{\par\medskip\noindent\ifx\relax#1\relax\else\textbf{#1}\par\nopagebreak\fi
   \begin{enumerate}[leftmargin=*,labelsep=0.6em,itemsep=2pt,topsep=2pt]}
   {\end{enumerate}}
 
@@ -128,14 +124,3 @@
 % (bare in text, $\checkmark$ in math, or inside display math) prints \blacksquare.
 \renewcommand{\checkmark}{\ensuremath{\blacksquare}}
 
-% ---- diagram explanation block (commutative-diagram reading guide) ----
-\newenvironment{dgx}{%
-  \par\addvspace{\smallskipamount}%
-  \noindent\rule{\linewidth}{0.3pt}\par\nobreak\vskip1pt%
-  \begingroup\small\noindent\textbf{Diagram explanation.}\par\nobreak\smallskip}%
-  {\par\endgroup\vskip1pt\noindent\rule{\linewidth}{0.3pt}\par\addvspace{\smallskipamount}}
-\newcommand{\dgi}[1]{\par\smallskip\noindent\textbf{#1}\enspace\ignorespaces}
-
-% ---- relocated worked-solution block (exercise + full student solution) ----
-\newcommand{\exhead}[1]{\par\addvspace{\medskipamount}\noindent\rule{\linewidth}{0.4pt}\par\nobreak\vskip1pt\noindent\textbf{Exercise}\,\textnormal{[#1]}\textbf{.}\enspace\ignorespaces}
-\newcommand{\sii}[1]{\par\smallskip\noindent\textit{#1}\enspace\ignorespaces}
