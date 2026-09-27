@@ -64515,7 +64515,7 @@ For a prime $p$ show that the $(p)$-adic topology on $\Z$ satisfies $\bigcap_n p
 \end{wex}
 
 \begin{wex}{A non-Hausdorff adic topology}
-Let $R=\Z\times\Z$ and $\fa=(p)\times R$ truncated -- more simply, take $R=k[x]_{(x)}\times k$ with $\fa=\fm\times k$ where $\fm=xk[x]_{(x)}$. Exhibit $\bigcap_n\fa^n\neq0$.
+Let $R=k[x]_{(x)}\times k$ with $\fa=\fm\times k$ where $\fm=xk[x]_{(x)}$. Exhibit $\bigcap_n\fa^n\neq0$.
 \wrec Hausdorffness can fail when $\fa$ contains an idempotent-like direction killing no power; the intersection $\bigcap\fa^n$ measures the failure.
 \wsol With $\fa=\fm\times k$ we have $\fa^n=\fm^n\times k$ (since $k\cdot k=k$), so $\bigcap_n\fa^n=\bigl(\bigcap_n\fm^n\bigr)\times k=0\times k\neq0$. The topology is not Hausdorff: the whole subgroup $0\times k$ is in the closure of $0$. Sanity check: the offending factor $k$ is a field on which $\fa$ acts as the unit ideal, so no power of $\fa$ shrinks it -- exactly the obstruction Krull's theorem (below) rules out under Jacobson-radical hypotheses.
 \end{wex}
@@ -64550,14 +64550,14 @@ Each $\theta_{n+1}$ is the reduction $R/\fa^{n+1}\twoheadrightarrow R/\fa^n$ (a 
 \dgi{Arrows:} Each horizontal arrow $\theta_{n+1}\colon R/\fa^{n+1}\twoheadrightarrow R/\fa^n$ is the \emph{natural surjective ring homomorphism} (reduction mod $\fa^n$): it sends $a + \fa^{n+1}$ to $a + \fa^n$, which is well-defined since $\fa^{n+1}\subseteq\fa^n$. Each $\pi_n\colon\widehat R\to R/\fa^n$ is the \emph{projection onto the $n$-th stage}: it sends the coherent sequence $(a_m)_{m\ge1}$ to $a_n$. These are the canonical maps from the inverse limit to its factors.
 \dgi{What commutes:} For every $n$, the triangle $\widehat R \xrightarrow{\pi_{n+1}} R/\fa^{n+1} \xrightarrow{\theta_{n+1}} R/\fa^n$ commutes with the projection $\pi_n$: $$\theta_{n+1}\circ\pi_{n+1} = \pi_n.$$ In other words, reducing a coherent sequence one level and then projecting equals projecting directly. This is not one equation but a whole compatible family, one for each consecutive pair $(n,n+1)$.
 \dgi{Why it commutes:} Let $(a_m)\in\widehat R$ be a coherent sequence, so $\theta_{m+1}(a_{m+1})=a_m$ for all $m$. Following the first path: $\pi_{n+1}(a_m)=a_{n+1}$, then $\theta_{n+1}(a_{n+1})=a_n$. Following $\pi_n$: $(a_m)\mapsto a_n$. Both give $a_n$. The equality holds by the \emph{definition} of a coherent sequence: the coherence condition $\theta_{n+1}(a_{n+1})=a_n$ is exactly what living in the inverse limit means. No separate argument is needed; the commutativity is built into the membership criterion of $\varprojlim R/\fa^n$.
-\dgi{Why this matters here:} This diagram is the \emph{definition} made visual. The text has just defined $\widehat R$ as the subgroup of $\prod R/\fa^n$ consisting of coherent sequences; the diagram encodes the universal property of $\varprojlim$: $\widehat R$ is the unique ring (up to isomorphism) fitting over the entire tower compatibly. Every subsequent result in this section -- exactness of completion, flatness of $\widehat R$, and Noetherianity -- is proved by leveraging this tower structure and the surjectivity of the system $(\theta_{n+1})$.
+\dgi{Why this matters here:} This diagram is the \emph{definition} made visual. The text has just defined $\widehat R$ as the subgroup of $\prod R/\fa^n$ consisting of coherent sequences; the diagram encodes the universal property of $\varprojlim$: every ring fitting over the entire tower compatibly maps uniquely into $\widehat R$ compatibly with the projections, which determines $\widehat R$ up to unique isomorphism. Every subsequent result in this section -- exactness of completion, flatness of $\widehat R$, and Noetherianity -- is proved by leveraging this tower structure and the surjectivity of the system $(\theta_{n+1})$.
 \dgi{Concrete example:} Take $R=\Z$ and $\fa=(p)$. Then $R/\fa^n=\Z/p^n\Z$, each $\theta_{n+1}$ reduces a residue mod $p^{n+1}$ to a residue mod $p^n$ (drop the top digit in base $p$), and $\widehat R=\Z_p$ is the ring of $p$-adic integers. A point of $\Z_p$ is a coherent sequence $(a_1,a_2,a_3,\dots)$ with $a_n\in\Z/p^n\Z$ and $a_{n+1}\equiv a_n\pmod{p^n}$, exactly a formal series $\sum_{k\ge0}c_k p^k$. The projections $\pi_n$ send this series to its partial sum mod $p^n$.
 \dgi{Common pitfall:} Students often read $\widehat R$ as sitting \emph{below} the tower because the arrows $\pi_n$ point upward in the diagram, and conclude that $\widehat R$ is a quotient of the $R/\fa^n$. It is the opposite: $\widehat R$ is a \emph{subring} of $\prod R/\fa^n$, with each $\pi_n$ a surjection onto $R/\fa^n$ (not an injection). Concretely, $\Z_p\twoheadrightarrow\Z/p^n\Z$ is onto with kernel $p^n\Z_p$ -- information is \emph{lost} by projection, never gained.
-\dgi{Takeaway:} The point of this diagram is that the completion $\widehat R$ is not merely the limit of an algebraic process but the unique ring sitting compatibly over the entire tower of finite-order approximations $R/\fa^n$, so that knowing $\widehat R$ is equivalent to knowing all residues of every element to every order simultaneously.
+\dgi{Takeaway:} The point of this diagram is that the completion $\widehat R$ is not merely the limit of an algebraic process but the universal ring sitting compatibly over the entire tower of finite-order approximations $R/\fa^n$, so that knowing $\widehat R$ is equivalent to knowing all residues of every element to every order simultaneously.
 \end{dgx}
 
 \begin{remark}
-The inverse-limit description does not depend on a metric and is manifestly functorial: a filtration-compatible homomorphism $f\colon G\to H$ (with $f(G_n)\subseteq H_n$) induces $\widehat f\colon\widehat G\to\widehat H$ on coherent sequences, and $\widehat{g\circ f}=\widehat g\circ\widehat f$. The only drawback is that $\widehat G$ depends on the chosen filtration $(G_n)$, not just on the topology; equivalent filtrations (Lemma~\ref{lem:stable@c15} below) give the same completion.
+The inverse-limit description does not depend on a metric and is manifestly functorial: a filtration-compatible homomorphism $f\colon G\to H$ (with $f(G_n)\subseteq H_n$) induces $\widehat f\colon\widehat G\to\widehat H$ on coherent sequences, and $\widehat{g\circ f}=\widehat g\circ\widehat f$. The only drawback is that this description presupposes a choice of filtration $(G_n)$; the completion itself depends only on the topology, since two filtrations defining the same topology are cofinal in each other and so have the same inverse limit (for instance all stable $\fa$-filtrations, Lemma~\ref{lem:stable@c15} below).
 \end{remark}
 
 \begin{wex}{The $p$-adic integers $\Z_p$}
@@ -64617,7 +64617,7 @@ Let $R$ be Noetherian, $\widehat R$ its $\fa$-adic completion. For every finitel
 \end{proposition}
 
 \begin{proof}[Idea]
-For $M=R^n$ both sides are $\widehat R^{\,n}$ and the map is the identity. A finite presentation $R^p\to R^q\to M\to0$ gives, after applying the right-exact $\widehat R\tensor_R(-)$ and the exact $\widehat{(-)}$ (Proposition~\ref{prop:exact@c15}), a diagram with the two outer vertical maps isomorphisms; the five lemma makes $\widehat R\tensor_R M\to\widehat M$ an isomorphism. Flatness then follows because $\widehat{(-)}$ is exact on finitely generated modules and the comparison is natural.
+For $M=R^n$ both sides are $\widehat R^{\,n}$ and the map is the identity. A finite presentation $R^p\to R^q\to M\to0$ gives, after applying the right-exact $\widehat R\tensor_R(-)$ and the exact $\widehat{(-)}$ (Proposition~\ref{prop:exact@c15}), a diagram whose first two vertical maps are isomorphisms; the five lemma makes $\widehat R\tensor_R M\to\widehat M$ an isomorphism. Flatness then follows because $\widehat{(-)}$ is exact on finitely generated modules and the comparison is natural.
 \end{proof}
 
 \begin{wex}{Completion of an ideal versus the completed ideal}
@@ -64627,7 +64627,7 @@ For $R$ Noetherian and an ideal $\fb\subseteq R$, show $\widehat{\fb}\isom\wideh
 \end{wex}
 
 \begin{wex}{$\widehat{\fa^n}=\widehat{\fa}^{\,n}$ and the topology of $\widehat R$}
-Show $(\fa^n)\widehat{\ } =\widehat\fa^{\,n}$ and that $\widehat R$ is $\widehat\fa$-adically complete with $\bigcap_n\widehat\fa^{\,n}=0$.
+For $R$ Noetherian, show $(\fa^n)\widehat{\ } =\widehat\fa^{\,n}$ and that $\widehat R$ is $\widehat\fa$-adically complete with $\bigcap_n\widehat\fa^{\,n}=0$.
 \wrec Use flatness/identities $\widehat{\fa^n}=\widehat R\fa^n=(\widehat R\fa)^n=\widehat\fa^{\,n}$, then $\widehat R/\widehat\fa^{\,n}\isom R/\fa^n$.
 \wsol By the previous example $\widehat{\fa^n}=\widehat R\fa^n=(\widehat R\fa)^n=\widehat\fa^{\,n}$. Since $\widehat R/\widehat\fa^{\,n}=\widehat R/\widehat{\fa^n}\isom R/\fa^n$, the completion of $\widehat R$ for its $\widehat\fa$-topology is $\varprojlim\widehat R/\widehat\fa^{\,n}=\varprojlim R/\fa^n=\widehat R$, so $\widehat R$ is complete. And $\bigcap_n\widehat\fa^{\,n}=\ker(\widehat R\to\varprojlim R/\fa^n)=0$, so $\widehat R$ is Hausdorff. Sanity check: $\widehat R$ is its own completion (idempotence of completion), exactly as $\Z_p$ completed at $p$ is again $\Z_p$.
 \end{wex}
@@ -64670,7 +64670,7 @@ This is exactly the input identifying $\widehat{M'}$ inside $\widehat M$ that ma
 \begin{wex}{Artin--Rees fails without Noetherian: a non-stable intersection}
 Illustrate that, over a non-Noetherian ring, $(\fa^n M\cap M')$ need not be $\fa$-stable, by recalling A\&M's $C^\infty$ example in spirit.
 \wrec Artin--Rees needs $R$ Noetherian (to make the Rees algebra Noetherian); drop it and the comparison of topologies can break.
-\wsol Let $R$ be the ring of $C^\infty$ functions on $\R$ and $\fa$ the ideal of functions vanishing at $0$. Then $\bigcap_n\fa^n$ contains the flat function $e^{-1/x^2}$ (extended by $0$), which vanishes to infinite order, so $\bigcap_n\fa^n\neq0$; the $\fa$-adic topology is not even Hausdorff, and the clean Artin--Rees comparison cannot hold. Sanity check: $R/\fa\isom\R$ shows $\fa$ is maximal (and by Hadamard's lemma even principal, $\fa=(x)$), yet $R$ is not Noetherian -- e.g.\ the ideal of functions flat at $0$ is not finitely generated -- so the Noetherian hypothesis of Theorem~\ref{thm:ar@c15} fails and the Artin--Rees comparison is unavailable.
+\wsol Let $R$ be the ring of $C^\infty$ functions on $\R$ and $\fa$ the ideal of functions vanishing at $0$. Take $M=R$ and $M'=(h)$ with $h=e^{-1/x^2}$ (extended by $0$). Since $\fa=(x)$ (Hadamard's lemma, see below) and $h=x^n\cdot(h/x^n)$ with $h/x^n$ again smooth, $h\in\fa^n$ for every $n$, so $\fa^n\cap M'=M'$ for all $n$ (in particular $\bigcap_n\fa^n\neq0$: the $\fa$-adic topology is not Hausdorff). If this filtration were $\fa$-stable we would get $\fa M'=M'$, i.e.\ $h=xgh$ for some $g\in R$; then $g(x)=1/x$ wherever $h(x)\neq0$, i.e.\ for all $x\neq0$, which is unbounded near $0$ -- impossible. So $(\fa^n\cap M')$ is not stable, and the subspace topology on $M'$ (indiscrete) differs from its $\fa$-adic topology ($h\notin\fa M'$). Non-Hausdorffness alone would not show this: $E=\bigcap_n\fa^n$ satisfies $\fa E=E$, since a flat $f$ equals $x\cdot(f/x)$ with $f/x$ again flat. Sanity check: $R/\fa\isom\R$ shows $\fa$ is maximal (and by Hadamard's lemma even principal, $\fa=(x)$), yet $R$ is not Noetherian -- e.g.\ the ideal of functions flat at $0$ is not finitely generated -- so the Noetherian hypothesis of Theorem~\ref{thm:ar@c15} fails and the Artin--Rees comparison is unavailable.
 \end{wex}
 
 \begin{wex}{Artin--Rees on $\Z$}
@@ -64730,7 +64730,7 @@ By Artin--Rees the filtration $(\fa^n M\cap E)$ is stable, but $\fa^n M\cap E=E$
 \end{proof}
 
 \begin{remark}
-Both Krull's theorem and the exactness of completion are downstream of Artin--Rees, which is why A\&M give that lemma the central role. The hypotheses cannot be dropped: over the non-Noetherian $C^\infty$ ring the maximal ideal $\fa$ at $0$ has $\bigcap_n\fa^n\neq0$ (the flat function $e^{-1/x^2}$), so Krull's conclusion fails -- the obstruction is exactly non-Noetherianity.
+Both Krull's theorem and the exactness of completion are downstream of Artin--Rees, which is why A\&M give that lemma the central role. The hypotheses cannot be dropped: over the non-Noetherian $C^\infty$ ring the maximal ideal $\fa$ at $0$ has $\bigcap_n\fa^n\neq0$ (the flat function $e^{-1/x^2}$), and no element of $1+\fa$ kills $e^{-1/x^2}$ (such an element $u$ would vanish at every $x\neq0$, hence at $0$ by continuity, while $u(0)=1$), so Krull's conclusion fails -- the obstruction is exactly non-Noetherianity.
 \end{remark}
 
 \begin{wex}{Krull intersection in a Noetherian local domain}
@@ -64758,7 +64758,7 @@ For $R=k[x_1,\dots,x_n]_{(x_1,\dots,x_n)}$, $\fm=(x_1,\dots,x_n)$, identify $\gr
 \end{wex}
 
 \begin{wex}{$\gr_\fa(R)\isom\gr_{\widehat\fa}(\widehat R)$}
-Show completion does not change the associated graded ring.
+For $R$ Noetherian, show completion does not change the associated graded ring.
 \wrec Use $\widehat R/\widehat\fa^{\,n}\isom R/\fa^n$, hence $\widehat\fa^{\,n}/\widehat\fa^{\,n+1}\isom\fa^n/\fa^{n+1}$.
 \wsol From $\widehat R/\widehat\fa^{\,n}\isom R/\fa^n$ (earlier example) the short exact sequences $0\to\widehat\fa^{\,n}/\widehat\fa^{\,n+1}\to\widehat R/\widehat\fa^{\,n+1}\to\widehat R/\widehat\fa^{\,n}\to0$ match those for $R$, giving $\widehat\fa^{\,n}/\widehat\fa^{\,n+1}\isom\fa^n/\fa^{n+1}$ in each degree, compatibly with products. Hence $\gr_{\widehat\fa}(\widehat R)\isom\gr_\fa(R)$. Sanity check: with $R=\Z$, $\fa=(p)$: $\gr_{(p)}(\Z)\isom\F_p[t]\isom\gr_{p\Z_p}(\Z_p)$ -- the graded ring sees only the finite residues $\fa^n/\fa^{n+1}$, which completion preserves.
 \end{wex}
@@ -64796,13 +64796,13 @@ A\&M also record (Proposition 10.16) that if $(R,\fm)$ is Noetherian local then 
 \end{remark}
 
 \begin{theorem}[{Hensel's lemma, statement}]
-Let $(R,\fm)$ be a complete Noetherian local ring with residue field $k=R/\fm$, and let $f\in R[x]$ be monic. If $\bar f\in k[x]$ factors as $\bar f=\bar g\,\bar h$ with $\bar g,\bar h$ \emph{coprime} (in particular if $\bar a\in k$ is a \emph{simple} root of $\bar f$, $\bar f'(\bar a)\neq0$), then the factorization lifts: there exist monic $g,h\in R[x]$ with $f=gh$, $\bar g,\bar h$ the given factors (in the simple-root case, a root $a\in R$ with $f(a)=0$ and $a\equiv\bar a$). The lift is unique.
+Let $(R,\fm)$ be a complete Noetherian local ring with residue field $k=R/\fm$, and let $f\in R[x]$ be monic. If $\bar f\in k[x]$ factors as $\bar f=\bar g\,\bar h$ with $\bar g,\bar h$ monic and \emph{coprime} (in particular if $\bar a\in k$ is a \emph{simple} root of $\bar f$, $\bar f'(\bar a)\neq0$), then the factorization lifts: there exist monic $g,h\in R[x]$ with $f=gh$, $\bar g,\bar h$ the given factors (in the simple-root case, a root $a\in R$ with $f(a)=0$ and $a\equiv\bar a$). The lift is unique.
 \end{theorem}
 
 \begin{wex}{$\Z_p$ is a Noetherian complete DVR}
 Confirm $\Z_p$ is Noetherian and describe its ideals.
 \wrec $\Z_p$ is the $(p)$-adic completion of the Noetherian $\Z$, so Theorem~\ref{thm:noeth@c15} applies; locate its ideals via $\widehat{(p^k)}$.
-\wsol By Theorem~\ref{thm:noeth@c15}, $\Z_p$ is Noetherian. Its nonzero ideals are $p^k\Z_p=\widehat{(p^k)}$ for $k\ge0$, since every nonzero $x\in\Z_p$ is $p^{v}\cdot u$ with $u$ a unit ($v=v_p(x)<\infty$ as $\bigcap p^n\Z_p=0$). Thus $\Z_p$ is a discrete valuation ring: local, with maximal ideal $p\Z_p$, residue field $\F_p$, and $\gr_{(p)}(\Z_p)\isom\F_p[t]$. Sanity check: the ideal chain $\Z_p\supset p\Z_p\supset p^2\Z_p\supset\cdots$ is the unique maximal chain, matching $\dim\Z_p=1$ and the Noetherian conclusion.
+\wsol By Theorem~\ref{thm:noeth@c15}, $\Z_p$ is Noetherian. Its nonzero ideals are $p^k\Z_p=\widehat{(p^k)}$ for $k\ge0$, since every nonzero $x\in\Z_p$ is $p^{v}\cdot u$ with $u$ a unit ($v=v_p(x)<\infty$ as $\bigcap p^n\Z_p=0$). Thus $\Z_p$ is a discrete valuation ring: local, with maximal ideal $p\Z_p$, residue field $\F_p$, and $\gr_{(p)}(\Z_p)\isom\F_p[t]$. Sanity check: the ideals of $\Z_p$ form the single chain $\Z_p\supset p\Z_p\supset p^2\Z_p\supset\cdots\supset0$; its only primes are $p\Z_p$ and $0$, so the longest chain of primes is $0\subsetneq p\Z_p$, matching $\dim\Z_p=1$, and every ascending chain of ideals stops, matching the Noetherian conclusion.
 \end{wex}
 
 \begin{wex}{$k[[x]]$ is a complete DVR}
