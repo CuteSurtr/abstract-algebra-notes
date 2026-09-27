@@ -13132,7 +13132,7 @@ quotient'' $\Rightarrow$ Fourth.
 
 \item Let $G=S_3\times \Zn{2}$. Find all normal subgroups of $G$ and, for each, identify the quotient $G/N$ up to isomorphism. Use the isomorphism theorems to justify your identifications.
 
-\item Let $N\nor G$ with $G/N$ and $N$ both abelian. Prove that the commutator subgroup $G'=[G,G]$ satisfies $G'\le N$. Deduce that $G/G'$ is the largest abelian quotient (the abelianization), and compute $G'$ and $G/G'$ for $G=D_8$.
+\item Let $N\nor G$ with $G/N$ abelian. Prove that the commutator subgroup $G'=[G,G]$ satisfies $G'\le N$. Deduce that $G/G'$ is the largest abelian quotient (the abelianization), and compute $G'$ and $G/G'$ for $G=D_8$.
 
 \item Suppose $G$ has a composition series with factors all isomorphic to $\Zn{p}$ for a fixed prime $p$. Prove $\ord{G}=p^n$ where $n$ is the length, and conversely exhibit such a series for $G=\Zn{p^n}$.
 
@@ -13152,7 +13152,7 @@ Show $\overline{\varphi}(g\ker\varphi)=\varphi(g)$ is well-defined and that $\ov
 \end{tikzcd}\]
 Then specialize to $\varphi=\det:\GL_2(\R)\to\R^{\times}$ and write the resulting sequence explicitly.
 
-\item Let $H\sgr G$ and $N\nor G$. Label every arrow as an inclusion (hook) or quotient and prove the diamond exhibits the Second Isomorphism Theorem, i.e. that the two slanted quotient maps induce the same isomorphism $HN/N\isom H/(H\cap N)$:
+\item Let $H\sgr G$ and $N\nor G$. Label every arrow as an inclusion (hook) or quotient and prove the diamond exhibits the Second Isomorphism Theorem, i.e. that the quotients along the two parallel edges $N\sgr HN$ and $H\cap N\sgr H$ are isomorphic, $HN/N\isom H/(H\cap N)$:
 \[\begin{tikzcd}[row sep=large,column sep=large]
 & HN & \\
 H \arrow[ur, hook] & & N \arrow[ul, hook'] \\
@@ -13166,10 +13166,10 @@ G/H \arrow[r, two heads, "\overline{\varphi}"] \arrow[dr, two heads] & G/K \\
 \end{tikzcd}\]
 Identify $\overline{\varphi}$, its kernel, and the isomorphism realizing $(G/H)/(K/H)\isom G/K$.
 
-\item Take $G=\Zn{12}$, $K=\gen{2}$, $H=\gen{6}$, so $H\le K\nor G$. Draw the lattice-correspondence diagram of the subgroups of $G$ containing $H$ versus the subgroups of $G/H$, labeling each vertical arrow with the quotient map, and verify that $(G/H)/(K/H)\isom G/K$ by computing the orders of all three quotients:
+\item Take $G=\Zn{12}$, $K=\gen{2}$, $H=\gen{6}$, so $H\le K\nor G$. Draw the lattice-correspondence diagram of the subgroups of $G$ containing $H$ versus the subgroups of $G/H$, labeling each horizontal arrow with the quotient map, and verify that $(G/H)/(K/H)\isom G/K$ by computing the orders of all three quotients:
 \[\begin{tikzcd}[row sep=large,column sep=large]
-G \arrow[r, two heads, "\pi"] \arrow[d, hook', "{\text{contains}}"'] & G/H \\
-K \arrow[r, two heads] & K/H \arrow[u, hook']
+G \arrow[r, two heads, "\pi"] & G/H \\
+K \arrow[u, hook] \arrow[r, two heads] & K/H \arrow[u, hook']
 \end{tikzcd}\]
 
 \end{exers}
