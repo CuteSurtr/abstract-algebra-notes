@@ -57622,15 +57622,15 @@ Frame the absolute Galois group of $\Q$ as an inverse limit and state why it is 
 \item Let $p$ be an odd prime, let $s$ and $t$ be independent transcendentals over $\mathbb{F}_p$, and let $F$ be the field $\mathbb{F}_p(s, t)$. Let $\beta$ be a root of $x^2 - sx + t = 0$ and let $\alpha$ be a root of $x^p - \beta = 0$ (in some algebraic closure of $F$). Set $E = F(\beta)$ and $K = F(\alpha)$.
 \begin{enumerate}
 \item[(a)] Prove that $E$ is a Galois extension of $F$ of degree 2 and that $K$ is a purely inseparable extension of $E$ of degree $p$.
-\item[(b)] Prove that $K$ is not a normal extension of $F$. [If it were, conjugate $\beta$ over $F$ to show that $K$ would contain a $p^{\text{th}}$ root of $\beta$ and then also a $p^{\text{th}}$ root of $\beta$, so that $[K : F] > p^2$, a contradiction.]
+\item[(b)] Prove that $K$ is not a normal extension of $F$. [If it were, conjugate $\beta$ over $F$ to show that $K$ would contain a $p^{\text{th}}$ root of $s$ and then also a $p^{\text{th}}$ root of $t$, so that $[K : F] \geq p^2$, a contradiction.]
 \item[(c)] Prove that there is no field $K_0$ such that $F \subseteq K_0 \subseteq K$ with $K_0/F$ purely inseparable and $K/K_0$ separable. [If there were such a field, use Exercise 1 and the fact that the composite of two normal extensions is again normal to show that $K$ would be a normal extension of $F$.]
 \end{enumerate}
 
 \item Under the notation of the previous exercise prove that $\alpha, s$ is a separating transcendence base for $K$ over $\mathbb{F}_p$.
 
-\item Let $p$ be a prime, let $E$ be transcendental over $\mathbb{F}_p$ and let $K$ be obtained by adjoining to $\mathbb{F}_p(t)$ all $p$-power roots of $t$. Prove that $K$ has transcendence degree 1 over $\mathbb{F}_p$ and has no separating transcendence base.
+\item Let $p$ be a prime, let $t$ be transcendental over $\mathbb{F}_p$ and let $K$ be obtained by adjoining to $\mathbb{F}_p(t)$ all $p$-power roots of $t$. Prove that $K$ has transcendence degree 1 over $\mathbb{F}_p$ and has no separating transcendence base.
 
-\item Show that $\mathbb{Q}(k, \sqrt[3]{k^3 - k})$ is not a purely transcendental extension of $\mathbb{Q}$. (This is an example of what is called an \emph{elliptic} function field.)
+\item Show that if $k$ is transcendental over $\mathbb{Q}$ then $\mathbb{Q}(k, \sqrt{k^3 - k})$ is not a purely transcendental extension of $\mathbb{Q}$. (This is an example of what is called an \emph{elliptic} function field.)
 
 \item Let $k$ be the field with 4 elements, $t$ transcendental over $k$, $F = k(t^4 + t)$ and $K = k(t)$.
 \begin{enumerate}
@@ -57640,22 +57640,23 @@ Frame the absolute Galois group of $\Q$ as an inverse limit and state why it is 
 \item[(d)] Describe the lattice of subgroups of the Galois group and the corresponding lattice of subfields of $K$, giving each subfield in the form $k(r)$, for some rational function $r$.
 \end{enumerate}
 
-\item Let $p$ be an odd prime, let $k$ be an algebraically closed field of characteristic $p$ and let $t$ be transcendental over $k$. Suppose $F$ is a degree 2 field extension of $k(t)$. Show that $F$ can be written in the form $k(t, y)$, for some $y \in F$ with $y^2 \in k(t)$ and $y$ transcendental over $k$. If $y^2 = at^3 - t - 1$, find $[F : k(y)]$ and determine if $k(t) \cap k(y)$ is the field $k$.
+\item Let $p$ be an odd prime, let $k$ be an algebraically closed field of characteristic $p$ and let $t$ be transcendental over $k$. Suppose $F$ is a degree 2 field extension of $k(t)$. Show that $F$ can be written in the form $k(t, y)$, for some $y \in F$ with $y^2 \in k(t)$ and $y$ transcendental over $k$. If $y^2 = 4t^3 - t - 1$, find $[F : k(y)]$ and determine if $k(t) \cap k(y)$ is the field $k$.
 
 \item Let $t$ be transcendental over $\mathbb{F}_3$, let $K = \mathbb{F}_3(t)$, let $G = \mathrm{Aut}(K/\mathbb{F}_3)$ and let $F$ be the fixed field of $G$.
 \begin{enumerate}
 \item[(a)] Prove $G \cong S_4$ and deduce that there is a unique field $E$ with $F \subseteq E \subseteq K$ and $[E : F] = 2$. [Recall that $G \cong PGL_2(\mathbb{F}_3)$; show that $GL_2(\mathbb{F}_3)$ permutes the 4 lines in a 2-dimensional vector space over $\mathbb{F}_3$ and the kernel of this permutation representation is the scalar matrices.]
 \item[(b)] Complete the description of the lattice of subfields of $K$ containing $E$:
 \[
-\begin{array}{c}
-K \\[2pt]
-E\!\left(\dfrac{t^2 + 1}{t + 1}\right) \quad\quad E\!\left(\dfrac{t^2 + t}{(t - 1)^3}\right) \\[6pt]
-E(t^3 - t) \quad\quad E\!\left(\dfrac{(t^6 + t^4 + t^2 + 1)^2}{(t^3 + t)^3}\right)
-\end{array}
+\begin{tikzcd}[row sep=1.3em, column sep=0.9em]
+& & & K \arrow[ddlll,dash]\arrow[ddll,dash]\arrow[ddl,dash]\arrow[dd,dash]\arrow[dr,dash]\arrow[drr,dash]\arrow[drrr,dash] & & & \\[1.2em]
+& & & & \square \arrow[ddr,dash] & \square \arrow[dd,dash] & \mathbb{F}_3\!\left(\dfrac{t^2 + 1}{t + 1}\right) \arrow[ddl,dash] \\
+\mathbb{F}_3(t^3 - t) \arrow[ddrrr,dash] & \square \arrow[ddrr,dash] & \square \arrow[ddr,dash] & \mathbb{F}_3\!\left(\dfrac{t^2 + t}{(t - 1)^3}\right) \arrow[dd,dash] & & & \\
+& & & & & \square \arrow[dll,dash] & \\
+& & & \mathbb{F}_3\!\left(\dfrac{(t^6 + t^4 + t^2 + 1)^2}{(t^3 - t)^3}\right) & & &
+\end{tikzcd}
 \]
 Give each subfield in the form $E(r)$ for some rational function $r$. (The lattice of subgroups of $A_4$ appears in Section 3.5).
 \end{enumerate}
-% UNCERTAIN: in 9(b) the exact arrangement/edges of the subfield lattice diagram and which expressions sit at which node; the rational functions transcribed are E((t^2+1)/(t+1)), E((t^2+t)/(t-1)^3), E(t^3-t), E((t^6+t^4+t^2+1)^2/(t^3+t)^3).
 
 \item Prove that a purely transcendental proper extension of a field is never algebraically closed.
 
@@ -57675,16 +57676,15 @@ Give each subfield in the form $E(r)$ for some rational function $r$. (The latti
 
 \item Let $K_0 = \mathbb{Q}$ and for $n \geq 0$ define the field $K_{n+1}$ as the extension of $K_n$ obtained by adjoining to $K_n$ all roots of all cubic polynomials over $K_n$. Let $K$ be the union of the subfields $K_n$, $n \geq 0$. Prove that $K$ is a Galois extension of $\mathbb{Q}$. Prove that every cubic polynomial over $K$ splits completely over $K$. Prove that there are nontrivial abelian extensions of $K$.
 
-\item Let $F$ be the composite of all the splitting fields of irreducible cubics over $\mathbb{Q}$. Prove that the Galois group of $F$ does not contain all quadratic extensions of $K$.
+\item Let $F$ be the composite of all the splitting fields of irreducible cubics over $\mathbb{Q}$. Prove that $F$ does contain all quadratic extensions of $\mathbb{Q}$. [One way is to consider the polynomials $x^3 + 3ax + 2a$ for $a \in \mathbb{Z}^+$.]
 
 \item Let $K_0 = \mathbb{Q}$ and for $n \geq 0$ define the field $K_{n+1}$ as the extension of $K_n$ obtained by adjoining to $K_n$ all radicals of elements in $K_n$. Let $K$ be the union of the subfields $K_n$, $n \geq 0$. Prove that $K$ is a Galois extension of $\mathbb{Q}$. Prove that there are no nontrivial solvable Galois extensions of $K$. Prove that there are nontrivial Galois extensions of $K$.
 
-\item Let $K_0 = \mathbb{Q}$ and for $n \geq 0$ define the field $F_{n+1}$ as the extension of $F_n$ obtained by adjoining to $F_n$ all real radicals of elements in $F_n$. Let $F$ be the union of the subfields $F_n$, $n \geq 0$. Let $K$ be the field of complex conjugation applied restricted to the field $K$ in the previous exercise the maximal real subfield of $K$). Prove that $K$ is a Galois extension of $\mathbb{Q}$.
-% UNCERTAIN: lead text of Exercise 18 is partly illegible/garbled in the scan, particularly the parenthetical defining K and the final clause; transcribed as best reading.
+\item Let $F_0 = \mathbb{Q}$ and for $n \geq 0$ define the field $F_{n+1}$ as the extension of $F_n$ obtained by adjoining to $F_n$ all real radicals of elements in $F_n$. Let $F$ be the union of the subfields $F_n$, $n \geq 0$. Let $K^+$ be the fixed field of complex conjugation restricted to the field $K$ in the previous exercise (the maximal real subfield of $K$). Prove that $F \neq K^+$.
 
 \item This exercise proves that if $K/F$ is a Galois extension of fields, then $\mathrm{Gal}(K/F)$ is isomorphic to $\varprojlim \mathrm{Gal}(L/F)$, where the inverse limit is taken over all the finite Galois extensions $L$ of $F$ contained in $K$.
 \begin{enumerate}
-\item[(a)] Let $K$ be the union of the fields $L$.
+\item[(a)] Show that $K$ is the union of the fields $L$.
 \item[(b)] Prove that the map $\varphi : \mathrm{Gal}(K/F) \to \varprojlim \mathrm{Gal}(L/F)$ defined by mapping $\sigma$ in $\mathrm{Gal}(K/F)$ to $(\ldots, \sigma|_L, \ldots)$, where $\sigma|_L$ is the restriction of $\sigma$ to $L$, is a homomorphism.
 \item[(c)] Prove that $\varphi$ is injective.
 \item[(d)] If $(\ldots, \sigma_L, \ldots) \in \varprojlim \mathrm{Gal}(L/F)$, define $\sigma \in \mathrm{Gal}(K/F)$ by $\sigma(\alpha) = \sigma_L(\alpha)$ if $\alpha \in L$. Prove that $\sigma$ is a well defined automorphism and deduce that $\varphi$ is surjective.
