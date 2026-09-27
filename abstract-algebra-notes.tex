@@ -31255,7 +31255,7 @@ Let $p$ be prime and suppose $p = ab$. Then $p \divides ab$, so by primality $p 
 \end{proof}
 
 \begin{pitfall}
-The converse fails in general: \emph{irreducible does not imply prime} in an arbitrary domain. The standard counterexample is $\Z[\sqrt{-5}]$ (worked below), where $2$ is irreducible but $2 \divides (1+\sqrt{-5})(1-\sqrt{-5})$ while $2$ divides neither factor. The notions coincide exactly in UFDs.
+The converse fails in general: \emph{irreducible does not imply prime} in an arbitrary domain. The standard counterexample is $\Z[\sqrt{-5}]$ (worked below), where $2$ is irreducible but $2 \divides (1+\sqrt{-5})(1-\sqrt{-5})$ while $2$ divides neither factor. The notions coincide in every UFD; conversely, a domain in which every nonzero nonunit is a product of irreducibles and every irreducible is prime is a UFD (see the additional exercises).
 \end{pitfall}
 
 \begin{wex}{Prime implies irreducible, by hand in $\Z$}
@@ -31437,9 +31437,10 @@ Inside the world of elements, the dual picture is the relation between prime and
   UFDs.  Checking that an element is irreducible (no factorization into nonunits) does not
   automatically make it prime (divides a product implies divides a factor); the extra hypothesis
   of unique factorization is essential and cannot be dropped.
-\dgi{Takeaway:} The point of this diagram is that prime and irreducible coincide precisely in
-  UFDs, and the failure of this coincidence is both the definition of ``not a UFD'' and the
-  mechanism by which unique factorization breaks down.
+\dgi{Takeaway:} The point of this diagram is that prime and irreducible coincide in every UFD,
+  and that in a domain where factorizations into irreducibles exist (such as $\Z[\sqrt{-5}]$) the
+  failure of this coincidence is exactly what makes it not a UFD: it is the mechanism by which
+  unique factorization breaks down.
 \end{dgx}
 
 \begin{remark}[The PID-not-Euclidean example, stated]
@@ -31674,7 +31675,7 @@ R \arrow[r, two heads, "\pi"] & R/\gen{p}
 \{\text{prime}\} \arrow[r, hook, "{\text{always}}"] & \{\text{irreducible}\} \arrow[l, bend left=25, dashed, "{\text{in a UFD}}"']
 \end{tikzcd}
 \]
-\textit{Answer.} The solid hook is the body's ``prime $\imp$ irreducible,'' valid in any domain. The dashed back-arrow ``irreducible $\imp$ prime'' holds only in a UFD. Failure in $\Z[\sqrt{-5}]$: $2$ is irreducible but not prime, since $2 \divides 6 = (1+\sqrt{-5})(1-\sqrt{-5})$ while $2 \ndivides 1+\sqrt{-5}$ and $2 \ndivides 1-\sqrt{-5}$. So the dashed arrow is absent there, which is exactly why $\Z[\sqrt{-5}]$ is not a UFD.
+\textit{Answer.} The solid hook is the body's ``prime $\imp$ irreducible,'' valid in any domain. The dashed back-arrow ``irreducible $\imp$ prime'' holds in every UFD, but not in every domain. Failure in $\Z[\sqrt{-5}]$: $2$ is irreducible but not prime, since $2 \divides 6 = (1+\sqrt{-5})(1-\sqrt{-5})$ while $2 \ndivides 1+\sqrt{-5}$ and $2 \ndivides 1-\sqrt{-5}$. So the dashed arrow is absent there, which is exactly why $\Z[\sqrt{-5}]$ is not a UFD.
 
 \item For $R$ a UFD with $F = \Frac(R)$, draw the content factorization $f \mapsto \cont(f) \cdot f_0$ (with $f_0$ primitive) and relate irreducibility in $R[x]$ to $F[x]$ via Gauss's Lemma.
 \[
