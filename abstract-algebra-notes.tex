@@ -7880,7 +7880,7 @@ By B\'ezout, write $\gcd(m,n)=am+bn$ for some $a,b\in\Z$. Then
 \[
 x^{\gcd(m,n)}=x^{am+bn}=(x^m)^a(x^n)^b=1^a\,1^b=1.
 \]
-For the consequence: if $d\mid m$, say $m=dk$, then $x^m=(x^d)^k=1$. Conversely if $x^m=1$, apply the first part to $m$ and $d$ (both kill $x$): $x^{\gcd(m,d)}=1$. But $0\le\gcd(m,d)\le d$ and $d$ is the \emph{least} positive integer with $x^d=1$, so $\gcd(m,d)=d$, i.e. $d\mid m$.
+For the consequence: if $d\mid m$, say $m=dk$, then $x^m=(x^d)^k=1$. Conversely if $x^m=1$, apply the first part to $m$ and $d$ (both kill $x$): $x^{\gcd(m,d)}=1$. But $0<\gcd(m,d)\le d$ (as $d\ge1$) and $d$ is the \emph{least} positive integer with $x^d=1$, so $\gcd(m,d)=d$, i.e. $d\mid m$.
 \end{proof}
 
 \begin{theorem}[Classification of cyclic groups]\label{t:classify@c2}
@@ -8301,7 +8301,7 @@ Let $H=\gen{x}$ be cyclic.
 \begin{proof}
 (1) Let $K\sgr\gen{x}$. If $K=\{1\}=\gen{x^0}$ we are done; otherwise pick the least positive $d$ with $x^d\in K$ (such $d$ exists by well-ordering). Then $\gen{x^d}\sgr K$. Conversely take any $x^a\in K$ and divide: $a=qd+r$ with $0\le r<d$. Then $x^r=x^a(x^d)^{-q}\in K$, and minimality of $d$ forces $r=0$, so $x^a=(x^d)^q\in\gen{x^d}$. Hence $K=\gen{x^d}$ is cyclic.
 
-(2) If $\ord x=\infty$ and $\gen{x^d}=\gen{x^e}$ with $d,e>0$, then $x^d=x^{ek}$ for some $k$, so $d=ek$, and symmetrically $e\mid d$, giving $d=e$. Distinct $d$ give distinct subgroups, and by (1) every subgroup is some $\gen{x^d}$.
+(2) If $\ord x=\infty$ and $\gen{x^d}=\gen{x^e}$ with $d,e>0$, then $x^d=x^{ek}$ for some $k$, so $d=ek$, i.e.\ $e\mid d$, and symmetrically $d\mid e$, giving $d=e$; also $\gen{x^0}=1$ differs from every $\gen{x^e}$ with $e>0$, since $x^e\ne1$. Distinct $d$ give distinct subgroups, and by (1) every subgroup is some $\gen{x^d}$.
 
 (3) Now $\ord x=n$. By the order formula $\ord{x^k}=n/\gcd(k,n)$. For $d\mid n$, set $k=n/d$; then $\gcd(n/d,n)=n/d$, so $\ord{x^{n/d}}=n/(n/d)=d$, giving a subgroup of order $d$. For uniqueness, suppose $K\sgr\gen{x}$ has $|K|=d$. By (1) $K=\gen{x^m}$ with $m$ the least positive exponent in $K$; the same minimality argument as in (1) shows $m\mid n$ (divide $n$ by $m$: $x^n=1\in K$ forces remainder $0$). Then $|K|=\ord{x^m}=n/\gcd(m,n)=n/m=d$, so $m=n/d$ and $K=\gen{x^{n/d}}$. Thus the subgroup of order $d$ is unique. Finally every subgroup has order dividing $n$ (Lagrange), so $d\mapsto\gen{x^{n/d}}$ is a bijection from divisors of $n$ to subgroups.
 \end{proof}
