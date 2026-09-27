@@ -2346,8 +2346,8 @@ Check: $\ord{\tau^2}=3$ and $\ord{\tau^3}=2$ agree with the general fact $\ord{\
    again a full cycle?
 \item If $\sigma=(a_1\cdots a_m)$, show $\sigma^i(a_k)=a_{k+i}$ and $|\sigma|=m$.
 \item Show $\sigma^i$ (for an $m$-cycle) is an $m$-cycle iff $\gcd(i,m)=1$.
-\item (a) Is $(1\,2)(3\,4)(5\,6)(7\,8)(9\,10)$ a power of an $n$-cycle ($n\le10$)?
-   (b) $(1\,2)(3\,4\,5)$, $n\le5$?
+\item (a) Is $(1\,2)(3\,4)(5\,6)(7\,8)(9\,10)$ a power of an $n$-cycle ($n\ge10$)?
+   (b) $(1\,2)(3\,4\,5)$, $n\ge5$?
 \item Order $2$ in $S_n$ iff the cycle type is disjoint $2$-cycles.
 \item $p$ prime: order $p$ iff disjoint $p$-cycles. Counterexample for composite.
 \item Prove the order equals the lcm of the cycle lengths.
@@ -2400,7 +2400,7 @@ S_n\times X \arrow[r, "\rho"'] & X
 \end{tikzcd}
 \qquad
 \begin{tikzcd}[row sep=large,column sep=large]
-\{1\}\times X \arrow[r, "{\id\times\,?}"] \arrow[dr, "\cong"'] & S_n\times X \arrow[d, "\rho"] \\
+\{1\}\times X \arrow[r, "{?\times\id}"] \arrow[dr, "\cong"'] & S_n\times X \arrow[d, "\rho"] \\
 & X
 \end{tikzcd}\]
 Identify the map labelled $?$ in the right-hand triangle, and prove both diagrams commute using only that $\sigma\tau$ means ``apply $\tau$ then $\sigma$'' and that the identity permutation fixes every point.
