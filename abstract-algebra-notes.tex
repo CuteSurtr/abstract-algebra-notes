@@ -60265,9 +60265,9 @@ In all cases the coefficients are complex numbers.
 
 \item Let $A$ be a Noetherian ring, $B$ a finitely generated $A$-algebra, $G$ a finite group of $A$-automorphisms of $B$, and $B^G$ the set of all elements of $B$ which are left fixed by every element of $G$. Show that $B^G$ is a finitely generated $A$-algebra.
 
-\item Let $K$ be a field and $A$ a finitely generated $K$-algebra. If $A$ is a field, then it is a finite algebraic extension of $K$.
+\item If a finitely generated ring $K$ (that is, a finitely generated $\Z$-algebra) is a field, it is a finite field.
 
-[If $K$ has characteristic 0, we have $\Z \subseteq \Q \subseteq A$. Since $A$ is finitely generated over $\Z$ it is finitely generated over $\Q$, hence by (7.9) is a finitely generated $\Q$-module. Now apply (7.8) to obtain a contradiction. Hence $K$ is of characteristic $p > 0$, hence is finitely generated as a $\Z/(p)$-algebra. Use (7.9) to complete the proof.]
+[If $K$ has characteristic 0, we have $\Z \subseteq \Q \subseteq K$. Since $K$ is finitely generated over $\Z$ it is finitely generated over $\Q$, hence by (7.9) is a finitely generated $\Q$-module. Now apply (7.8) to obtain a contradiction. Hence $K$ is of characteristic $p > 0$, hence is finitely generated as a $\Z/(p)$-algebra. Use (7.9) to complete the proof.]
 
 \item Let $X$ be an affine algebraic variety given by a family of equations $f_\alpha(t_1, \ldots, t_n) = 0$ ($\alpha \in I$) (Chapter 1, Exercise 27). Show that there exists a finite subset $I_0$ of $I$ such that $X$ is given by the equations $f_\alpha(t_1, \ldots, t_n) = 0$ for $\alpha \in I_0$.
 
@@ -60280,7 +60280,7 @@ In all cases the coefficients are complex numbers.
 \end{enumerate}
 Show that $A$ is Noetherian.
 
-[Let $\fa \neq 0$ be an ideal in $A$. Choose $x_0$ a non-zero element of $\fa$. Let $\fm_1, \ldots, \fm_r$ be the maximal ideals which contain $x_0$. Since $\fm_1, \ldots, \fm_r$ do not contain $\fa$ there exist $x_j \in \fa$ such that $x_j \notin \fm_{r+j}$ ($1 \leq j \leq s$). Since each $A_{\fm_i}$ ($1 \leq i \leq r$) is Noetherian, the extension of $\fa$ in $A_{\fm_i}$ is finitely generated. Choose elements $x_{s+1}, \ldots, x_t$ in $\fa$ whose images in $A_{\fm_i}$ generate $A_{\fm_i} \fa$ for $i = 1, \ldots, r$. Let $\fa_0 = (x_0, \ldots, x_t)$. Show that $\fa_0$ and $\fa$ have the same extension in $A_{\fm}$ for every maximal ideal $\fm$, and deduce by (3.9) that $\fa_0 = \fa$.]
+[Let $\fa \neq 0$ be an ideal in $A$. Let $\fm_1, \ldots, \fm_r$ be the maximal ideals which contain $\fa$. Choose $x_0 \neq 0$ in $\fa$ and let $\fm_1, \ldots, \fm_{r+s}$ be the maximal ideals which contain $x_0$. Since $\fm_{r+1}, \ldots, \fm_{r+s}$ do not contain $\fa$ there exist $x_j \in \fa$ such that $x_j \notin \fm_{r+j}$ ($1 \leq j \leq s$). Since each $A_{\fm_i}$ ($1 \leq i \leq r$) is Noetherian, the extension of $\fa$ in $A_{\fm_i}$ is finitely generated. Choose elements $x_{s+1}, \ldots, x_t$ in $\fa$ whose images in $A_{\fm_i}$ generate $A_{\fm_i} \fa$ for $i = 1, \ldots, r$. Let $\fa_0 = (x_0, \ldots, x_t)$. Show that $\fa_0$ and $\fa$ have the same extension in $A_{\fm}$ for every maximal ideal $\fm$, and deduce by (3.9) that $\fa_0 = \fa$.]
 
 \item Let $M$ be a Noetherian $A$-module. Show that $M[x]$ (Chapter 2, Exercise 6) is a Noetherian $A[x]$-module.
 
@@ -60288,7 +60288,7 @@ Show that $A$ is Noetherian.
 
 \item Let $A$ be a ring and $A'$ a faithfully flat $A$-algebra (Chapter 3, Exercise 16). If $A'$ is Noetherian, show that $A$ is Noetherian. [Use the ascending chain condition.]
 
-\item Let $f : A \to B$ be a ring homomorphism of finite type and let $f^* : \Spec(B) \to \Spec(A)$ be the mapping associated with $f$. Show that the fibres of $f^*$ are Noetherian subspaces of $B$.
+\item Let $f : A \to B$ be a ring homomorphism of finite type and let $f^* : \Spec(B) \to \Spec(A)$ be the mapping associated with $f$. Show that the fibres of $f^*$ are Noetherian subspaces of $\Spec(B)$.
 
 \item \emph{(Nullstellensatz, strong form.)} Let $k$ be an algebraically closed field, let $A$ denote the polynomial ring $k[t_1, \ldots, t_n]$ and let $\fa$ be an ideal in $A$. Let $V$ be the variety in $k^n$ defined by the ideal $\fa$, so that $V$ is the set of all $x = (x_1, \ldots, x_n) \in k^n$ such that $f(x) = 0$ for all $f \in \fa$. Let $I(V)$ be the ideal of $V$, i.e.\ the ideal of all polynomials $g \in A$ such that $g(x) = 0$ for all $x \in V$. Then $I(V) = r(\fa)$.
 
@@ -60305,7 +60305,7 @@ Show that $A$ is Noetherian.
 \[
 0 \to k \tensor_A E \to k \tensor_A F \xrightarrow{1 \tensor \phi} k \tensor_A M \to 0.
 \]
-Since $k \tensor F$ and $k \tensor M$ are vector spaces over $k$ of the same dimension over $k$, it follows that $1 \tensor \phi$ is an isomorphism, hence $k \tensor E = 0$. By Nakayama's Lemma ($E$ is finitely generated because it is a submodule of $F$, and $A$ is Noetherian).]
+Since $k \tensor F$ and $k \tensor M$ are vector spaces over $k$ of the same dimension over $k$, it follows that $1 \tensor \phi$ is an isomorphism, hence $k \tensor E = 0$, hence $E = 0$ by Nakayama's Lemma ($E$ is finitely generated because it is a submodule of $F$, and $A$ is Noetherian).]
 
 \item Let $A$ be a Noetherian ring, $M$ a finitely generated $A$-module. Then the following are equivalent:
 \begin{enumerate}
@@ -60317,7 +60317,7 @@ In other words, flat $=$ locally free. [Use Exercise 15.]
 
 \item Let $A$ be a ring and $M$ a Noetherian $A$-module. Show (by imitating the proofs of (7.11) and (7.12)) that every submodule $N$ of $M$ has a primary decomposition (Chapter 4, Exercises 20--23).
 
-\item Let $A$ be a ring, $\fp$ a prime ideal of $A$, and $M$ a finitely generated $A$-module. Show that the following are equivalent:
+\item Let $A$ be a Noetherian ring, $\fp$ a prime ideal of $A$, and $M$ a finitely generated $A$-module. Show that the following are equivalent:
 \begin{enumerate}
 \item[(i)] $\fp$ belongs to $0$ in $M$;
 \item[(ii)] there exists $x \in M$ such that $\Ann(x) = \fp$;
@@ -60345,22 +60345,22 @@ State and prove an analogous result for modules.
 \item[(ii)] Suppose that $X$ is irreducible and let $E \in \mathcal{F}$. Show that $E$ is dense in $X$ (i.e., that $\overline{E} = X$) if and only if $E$ contains a non-empty open set in $X$.
 \end{enumerate}
 
-\item Let $X$ be a Noetherian topological space (Chapter 6, Exercise 5) and let $E \subseteq X$. Show that $E \in \mathcal{F}$ if and only if, for each irreducible closed subset $X_0$ of $X$, either $\overline{E \cap X_0} \neq X_0$ or else $E \cap X_0$ contains a non-empty open subset of $X_0$. [Suppose $E \notin \mathcal{F}$. Then the collection of closed sets $X' \subseteq X$ such that $E \cap X'$ is not empty and therefore has a minimal element $X_0$. Show that $X_0$ is irreducible and then that each of the alternatives leads to the conclusion that $E \cap X_0 \in \mathcal{F}$.] The sets belonging to $\mathcal{F}$ are called the \emph{constructible} subsets of $X$.
+\item Let $X$ be a Noetherian topological space (Chapter 6, Exercise 5) and let $E \subseteq X$. Show that $E \in \mathcal{F}$ if and only if, for each irreducible closed subset $X_0$ of $X$, either $\overline{E \cap X_0} \neq X_0$ or else $E \cap X_0$ contains a non-empty open subset of $X_0$. [Suppose $E \notin \mathcal{F}$. Then the collection of closed sets $X' \subseteq X$ such that $E \cap X' \notin \mathcal{F}$ is not empty and therefore has a minimal element $X_0$. Show that $X_0$ is irreducible and then that each of the alternatives leads to the conclusion that $E \cap X_0 \in \mathcal{F}$.] The sets belonging to $\mathcal{F}$ are called the \emph{constructible} subsets of $X$.
 
 \item Let $X$ be a Noetherian topological space and let $E$ be a subset of $X$. Show that $E$ is open in $X$ if and only if, for each irreducible closed subset $X_0$ in $X$, either $E \cap X_0 = \varnothing$ or else $E \cap X_0$ contains a non-empty open subset of $X_0$. [The proof is similar to that of Exercise 21.]
 
 \item Let $A$ be a Noetherian ring, $f : A \to B$ a ring homomorphism of finite type (so that $B$ is Noetherian). Let $X = \Spec(A)$, $Y = \Spec(B)$, and let $f^* : Y \to X$ be the mapping associated with $f$. Then the image under $f^*$ of a constructible subset $E$ of $Y$ is a constructible subset of $X$.
 
-[By Exercise 20 it is enough to take $E = U \cap C$ where $U$ is open and $C$ is closed in $Y$; thus, replacing $B$ by a homomorphic image, we reduce to the case where $E$ is open in $Y$. Since $Y$ is Noetherian, $E$ is quasi-compact, and therefore $E$ is the finite union of open sets of the form $\Spec(B_g)$. Hence reduce to the case $E = Y$. To show that $f^*(Y)$ is constructible, use the criterion of Exercise 21. Let $X_0$ be an irreducible closed subset of $X$ such that $f^*(Y) \cap X_0$ is dense in $X_0$. We have $f^*(Y) \cap X_0 = f^*(f^{*-1}(X_0))$, and $f^{*-1}(X_0) = \Spec((A/\fa) \tensor_A B)$, where $X_0 = \Spec(A/\fa)$. Hence reduce to the case where $A, B$ are integral domains and $f$ is injective (and still of finite type), $X_0 = X$, and $f^*(Y)$ is dense in $X$. There exists $b \neq 0$ in $B$ such that, if $A, B$ are integral domains and $f$ is injective and $X_0 = X$ is an irreducible closed subset of $X$ such that $f^*(Y) \cap X_0$ is dense in $X_0$. We have $f^*(Y) \cap X_0 = f^*(f^{*-1}(X_0))$, so some $f^*(Y_i)$ contains a non-empty open set in $X$. So that $f^*$ has the property in $X$; now use Chapter 5, Exercise 21 to complete the proof.]
+[By Exercise 20 it is enough to take $E = U \cap C$ where $U$ is open and $C$ is closed in $Y$; thus, replacing $B$ by a homomorphic image, we reduce to the case where $E$ is open in $Y$. Since $Y$ is Noetherian, $E$ is quasi-compact, and therefore $E$ is the finite union of open sets of the form $\Spec(B_g)$. Hence reduce to the case $E = Y$. To show that $f^*(Y)$ is constructible, use the criterion of Exercise 21. Let $X_0$ be an irreducible closed subset of $X$ such that $f^*(Y) \cap X_0$ is dense in $X_0$. We have $f^*(Y) \cap X_0 = f^*(f^{*-1}(X_0))$, and $f^{*-1}(X_0) = \Spec((A/\fp) \tensor_A B)$, where $X_0 = \Spec(A/\fp)$ with $\fp$ prime. Hence reduce to the case where $A$ is an integral domain and $f$ is injective. If $Y_1, \ldots, Y_n$ are the irreducible components of $Y$, it is enough to show that some $f^*(Y_i)$ contains a non-empty open set in $X$. So finally we are brought down to the situation in which $A, B$ are integral domains and $f$ is injective (and still of finite type); now use Chapter 5, Exercise 21 to complete the proof.]
 
-\item With the notation and hypotheses of Exercise 23, $f^*$ is an open mapping $\Leftrightarrow$ $f$ has the going-down property (Chapter 5, Exercise 10). [Suppose $f$ has the going-down property. To prove $f^*(Y)$ is open it is enough to show that if $b \neq 0$ in $B$ then $f^*(Y_b)$ is open. In other words, that if $X_0$ is an irreducible closed subset of $X$ and $f^*(Y) \cap X_0$ is dense in $X_0$, then $E \cap X_0$ is dense in $X_0$. By Exercises 20 and 22, $E$ is open in $X$.]
+\item With the notation and hypotheses of Exercise 23, $f^*$ is an open mapping $\Leftrightarrow$ $f$ has the going-down property (Chapter 5, Exercise 10). [Suppose $f$ has the going-down property. As in Exercise 23, reduce to proving that $E = f^*(Y)$ is open in $X$. The going-down property asserts that if $\fp \in E$ and $\fp' \subseteq \fp$, then $\fp' \in E$: in other words, that if $X_0$ is an irreducible closed subset of $X$ and $X_0$ meets $E$, then $E \cap X_0$ is dense in $X_0$. By Exercises 20 and 22, $E$ is open in $X$.]
 
 \item Let $A$ be Noetherian, $f : A \to B$ of finite type and \emph{flat} (i.e., $B$ is flat as an $A$-module). Then $f^* : \Spec(B) \to \Spec(A)$ is an open mapping. [Exercise 24 and Chapter 5, Exercise 11.]
 
 \item (\emph{Grothendieck groups.}) Let $A$ be a Noetherian ring and let $F(A)$ denote the set of all isomorphism classes of finitely generated $A$-modules. Let $C$ be the free abelian group generated by $F(A)$. With each short exact sequence $0 \to M' \to M \to M'' \to 0$ of finitely generated $A$-modules we associate the element $(M') - (M) + (M'')$ of $C$, where $(M)$ is the isomorphism class of $M$. Let $D$ be the subgroup of $C$ generated by these elements, for all short exact sequences. $C/D$ is called the \emph{Grothendieck group} of $A$, and is denoted by $K(A)$. If $M$ is a finitely generated $A$-module, let $\gamma(M)$, or $\gamma_A(M)$ denote the image of $M$ in $K(A)$.
 \begin{enumerate}
-\item[(i)] Show that $K(A)$ has the following universal property: for each additive function $\lambda$ on the class of finitely generated $A$-modules, with values in an abelian group $G$, there exists a unique homomorphism $\lambda_0 : K(A) \to G$ such that $\lambda(M) = \lambda_0(\gamma(M))$ for all $M$. [Use Exercise 18.]
-\item[(ii)] Show that $K(A)$ is generated by the elements $\gamma(A/\fp)$, where $\fp$ is a prime ideal of $A$.
+\item[(i)] Show that $K(A)$ has the following universal property: for each additive function $\lambda$ on the class of finitely generated $A$-modules, with values in an abelian group $G$, there exists a unique homomorphism $\lambda_0 : K(A) \to G$ such that $\lambda(M) = \lambda_0(\gamma(M))$ for all $M$.
+\item[(ii)] Show that $K(A)$ is generated by the elements $\gamma(A/\fp)$, where $\fp$ is a prime ideal of $A$. [Use Exercise 18.]
 \item[(iii)] If $A$ is a field, or more generally if $A$ is a principal ideal domain, then $K(A) \isom \Z$.
 \item[(iv)] Let $f : A \to B$ be a \emph{finite} ring homomorphism. Show that restriction of scalars gives rise to a homomorphism $f_! : K(B) \to K(A)$ such that $f_!(\gamma_B(N)) = \gamma_A(N)$ for a $B$-module $N$. If $g : B \to C$ is another finite ring homomorphism, show that $(g \circ f)_! = f_! \circ g_!$.
 \end{enumerate}
@@ -60370,7 +60370,7 @@ State and prove an analogous result for modules.
 \item[(i)] Show that tensor product of modules over $A$ induces a commutative ring structure on $K_1(A)$, such that $\gamma_1(M) \cdot \gamma_1(N) = \gamma_1(M \tensor N)$. The identity element of this ring is $\gamma_1(A)$.
 \item[(ii)] Show that tensor product induces a $K_1(A)$-module structure on the group $K(A)$, such that $\gamma_1(M) \cdot \gamma(N) = \gamma(M \tensor N)$.
 \item[(iii)] If $A$ is a (Noetherian) local ring, then $K_1(A) \isom \Z$.
-\item[(iv)] Let $f : A \to B$ be a ring homomorphism, $B$ Noetherian. Show that restriction of scalars gives rise to a ring homomorphism $f^! : K_1(A) \to K_1(B)$ such that $f^!(\gamma_1(M)) = \gamma_1(B \tensor_A M)$. [If $M$ is flat and finitely generated over $A$, then $B \tensor_A M$ is flat and finitely generated over $B$.] If $g : B \to C$ (with $C$ Noetherian), then $(f \circ g)^! = f^! \circ g^!$.
+\item[(iv)] Let $f : A \to B$ be a ring homomorphism, $B$ Noetherian. Show that extension of scalars gives rise to a ring homomorphism $f^! : K_1(A) \to K_1(B)$ such that $f^!(\gamma_1(M)) = \gamma_1(B \tensor_A M)$. [If $M$ is flat and finitely generated over $A$, then $B \tensor_A M$ is flat and finitely generated over $B$.] If $g : B \to C$ is another ring homomorphism (with $C$ Noetherian), then $(g \circ f)^! = g^! \circ f^!$.
 \item[(v)] If $f : A \to B$ is a finite ring homomorphism then
 \[
 f_!(f^!(x)y) = x f_!(y)
