@@ -23449,7 +23449,7 @@ G^{(n)}=1
 \dgi{Why it commutes:} The chain is not a commutative square but a sequential filtration. Each step is canonical: $G^{(i+1)}$ is defined as $[G^{(i)},G^{(i)}]$, the commutator subgroup of the previous term. The abelian-quotient property $G^{(i)}/G^{(i+1)}\text{ abelian}$ holds by Proposition~\ref{prop:gprime@c6}(b) applied to $G^{(i)}$, and there is no choice in the construction.
 \dgi{Why this matters here:} This chain is the definition of the derived series in pictorial form, placed immediately before the characterization theorem (Theorem~\ref{thm:solv-char@c6}). It makes visible exactly what solvability demands: a finite number of steps from $G$ to $1$, each with an abelian quotient. The picture motivates conditions (a) and (b) of that theorem simultaneously.
 \dgi{Concrete example:} For $S_4$: $S_4\supset A_4\supset V\supset 1$ with quotients of orders $2$, $3$, $4$ (the last is $V/1\isom\Z_2\times\Z_2$). This is the derived series with $n=3$, each quotient abelian.
-\dgi{Common pitfall:} Students confuse this chain with the lower central series $\gamma_i$. The derived series replaces each group by its own commutator subgroup $[G^{(i)},G^{(i)}]$, while the lower central series uses $[\gamma_i,G]$ (commutators with the whole group). They agree at the first step ($G'=\gamma_2$) but diverge thereafter; $G$ can be solvable without being nilpotent, meaning the derived series reaches $1$ while the lower central series does not.
+\dgi{Common pitfall:} Students confuse this chain with the lower central series $\gamma_i$. The derived series replaces each group by its own commutator subgroup $[G^{(i)},G^{(i)}]$, while the lower central series uses $[\gamma_i,G]$ (commutators with the whole group). They agree at the first step ($G'=\gamma_2$) but can diverge thereafter; $G$ can be solvable without being nilpotent, meaning the derived series reaches $1$ while the lower central series does not.
 \dgi{Takeaway:} The point of this diagram is that solvability is a finiteness condition on iteration of the commutator-subgroup operator: the derived series must reach $1$ in finitely many steps, with each step producing an abelian remainder.
 \end{dgx}
 
@@ -23491,7 +23491,7 @@ Decide solvability of $S_3$, $S_4$, and $S_5$ via the derived series.
 \[
 S_4\;\ge\;A_4\;\ge\;V\;\ge\;1,\qquad |S_4|=24,\ |A_4|=12,\ |V|=4,\ |1|=1,
 \]
-with quotients of orders $2,3,2,2$ -- all abelian. Reaches $1$ in $3$ steps. \textbf{Solvable}, derived length $3$.
+with quotients of orders $2,3,4$ -- all abelian. Reaches $1$ in $3$ steps. \textbf{Solvable}, derived length $3$.
 
 \emph{$S_5$:} $S_5'=A_5$. But $A_5$ is simple and nonabelian, so $(A_5)'=A_5$. The derived series is $S_5\ge A_5\ge A_5\ge\cdots$ and never reaches $1$. \textbf{Not solvable}.
 \textbf{Check:} $|A_5|=60$ is the smallest nonabelian simple order, the precise threshold where $S_n$ stops being solvable; indeed $S_n$ is solvable iff $n\le4$. Consistent.
@@ -23500,7 +23500,7 @@ with quotients of orders $2,3,2,2$ -- all abelian. Reaches $1$ in $3$ steps. \te
 \begin{wex}{Every group of order $pq$ is solvable}
 Let $|G|=pq$ with primes $p<q$. Show $G$ is solvable.
 \wrec Build an explicit abelian (in fact cyclic-prime) series (Theorem~\ref{thm:solv-char@c6}(c)) using Sylow theory: find a normal Sylow subgroup.
-\wsol By Sylow's theorem the number $n_q$ of Sylow $q$-subgroups satisfies $n_q\equiv1\pmod q$ and $n_q\mid p$. Since $p<q$, the only divisor of $p$ that is $\equiv1\pmod q$ is $1$ (the other divisor $p$ satisfies $1\le p<q$, so $p\not\equiv1\pmod q$), so $n_q=1$: the Sylow $q$-subgroup $Q$ is normal, $Q\nor G$, $|Q|=q$, $Q\isom\Z_q$. Then
+\wsol By Sylow's theorem the number $n_q$ of Sylow $q$-subgroups satisfies $n_q\equiv1\pmod q$ and $n_q\mid p$. Since $p<q$, the only divisor of $p$ that is $\equiv1\pmod q$ is $1$ (the other divisor $p$ satisfies $1<p<q$, so $p\not\equiv1\pmod q$), so $n_q=1$: the Sylow $q$-subgroup $Q$ is normal, $Q\nor G$, $|Q|=q$, $Q\isom\Z_q$. Then
 \[
 1\;\nor\;Q\;\nor\;G,\qquad Q/1\isom\Z_q,\quad G/Q\isom\Z_p,
 \]
@@ -23526,7 +23526,7 @@ Let $G$ be a group, $H\le G$ a subgroup, and $N\nor G$ a normal subgroup.
 \end{proof}
 
 \begin{remark}
-The short exact sequence $1\to N\to G\to G/N\to1$ packages (b) and (c): solvability of the two outer terms is equivalent to solvability of the middle term (using (a) is not needed here, only (b),(c)).
+The short exact sequence $1\to N\to G\to G/N\to1$ packages (a), (b) and (c): solvability of the two outer terms is equivalent to solvability of the middle term ((a) and (b) give ``middle $\imp$ outer terms'', since $N\le G$ and $G/N$ is a quotient of $G$; (c) gives the converse).
 \[
 \begin{tikzcd}[column sep=normal]
 1 \arrow[r] & N \arrow[r, hook] & G \arrow[r, two heads, "\pi"] & G/N \arrow[r] & 1
@@ -23673,14 +23673,14 @@ $S_4$ is solvable of order $24=2^3\cdot3$. For $\pi=\{2\}$ exhibit a Hall $\{2\}
 
 \emph{Hall $\{2\}$-subgroup} ($m=2^3=8$): a Sylow $2$-subgroup. Take $P=\gen{(1\,2\,3\,4),\,(1\,3)}\isom D_8$, $|P|=8$. This is a Hall $\{2\}$-subgroup. By Sylow (or Hall conjugacy) all such are conjugate; $n_2\mid3$ and $n_2\equiv1\pmod2$ give $n_2\in\{1,3\}$, and in fact $n_2=3$ -- three conjugate Sylow $2$-subgroups, matching Hall's conjugacy clause.
 
-\emph{Hall $\{3\}$-subgroup} ($m=3$): a Sylow $3$-subgroup, e.g. $\gen{(1\,2\,3)}\isom\Z_3$, order $3$. Here $n_3\equiv1\pmod3$, $n_3\mid8\imp n_3=4$, four conjugates -- again Hall conjugacy.
+\emph{Hall $\{3\}$-subgroup} ($m=3$): a Sylow $3$-subgroup, e.g. $\gen{(1\,2\,3)}\isom\Z_3$, order $3$. Here $n_3\equiv1\pmod3$, $n_3\mid8\imp n_3\in\{1,4\}$, and in fact $n_3=4$ (the eight $3$-cycles lie in four subgroups of order $3$), four conjugates -- again Hall conjugacy.
 
 \emph{The complement viewpoint:} inside the chain $S_4\ge A_4\ge V$, the Hall $\{2\}$-subgroup $D_8$ meets $A_4$ in $V$ (order $4$) and projects onto $S_4/A_4\isom\Z_2$, illustrating that the order-$8$ Hall $\{2\}$-subgroup is a complement to the $\{3\}$-part: its order $8$ and that of any Hall $\{3\}$-subgroup ($3$) are coprime with product $24$.
 \textbf{Check:} Orders multiply correctly: a Hall $\{2\}$-subgroup ($8$) and a Hall $\{3\}$-subgroup ($3$) have coprime orders $8,3$ with $8\cdot3=24=|S_4|$. All Hall $\pi$-subgroups for each fixed $\pi$ are conjugate ($n_2=3$, $n_3=4$ conjugates respectively), as Theorem~\ref{thm:hall@c6}(b) predicts. Consistent.
 \end{wex}
 
 \begin{pitfall}
-Do not confuse derived length with nilpotency class, and do not assume the derived series and lower central series coincide. For $S_3$: derived series reaches $1$ (length $2$) but lower central series stalls at $A_3$. They agree only in special cases; in general $G^{(i)}\le\gamma_{i+1}$ (the inclusion proved in Proposition~\ref{prop:nilp-solv@c6}), and the gap is exactly the failure of nilpotence.
+Do not confuse derived length with nilpotency class, and do not assume the derived series and lower central series coincide. For $S_3$: derived series reaches $1$ (length $2$) but lower central series stalls at $A_3$. They agree only in special cases; in general $G^{(i)}\le\gamma_{i+1}$ (the inclusion proved in Proposition~\ref{prop:nilp-solv@c6}), and this inclusion can be strict even in a nilpotent group: in $D_{16}$ (with $r$ of order $8$) the derived series is $D_{16}\ge\gen{r^2}\ge1$, so $D_{16}^{(2)}=1$, while $\gamma_3(D_{16})=\gen{r^4}\ne1$.
 \end{pitfall}
 
 \begin{exers}{Exercises (from the text).}
