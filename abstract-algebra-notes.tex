@@ -56704,7 +56704,7 @@ Let $F$ have characteristic $0$ and let $f(x)\in F[x]$ with splitting field $K$.
 \begin{wex}{Every quartic is solvable by radicals}
 Explain why $\Gal(f/\Q)\subseteq S_4$ is always solvable, so every degree $\le4$ polynomial has a radical formula.
 \wrec Galois's criterion reduces ``radical formula exists'' to ``the group is solvable''; for $n\le4$ the group sits in $S_n$, and $S_2,S_3,S_4$ are all solvable.
-\wsol $S_4$ has the subnormal series $1\pnor V_4\pnor A_4\pnor S_4$ with quotients $V_4\isom\Zn2\times\Zn2$, $A_4/V_4\isom\Zn3$, $S_4/A_4\isom\Zn2$ -- all abelian. So $S_4$ is solvable, and every subgroup (every possible quartic Galois group: $1,\Zn2,\Zn3,\Zn4,V_4,D_8,A_4,S_4$) is solvable by the closure proposition. By Galois's criterion every quartic is solvable by radicals. Sanity check: the Klein four-group $V_4$ inside $A_4$ is exactly the kernel of the action giving the ``resolvent cubic,'' the classical device for solving quartics -- the group series mirrors the algebraic reduction quartic $\to$ cubic $\to$ quadratics.
+\wsol $S_4$ has the subnormal series $1\pnor V_4\pnor A_4\pnor S_4$ with quotients $V_4\isom\Zn2\times\Zn2$, $A_4/V_4\isom\Zn3$, $S_4/A_4\isom\Zn2$ -- all abelian. So $S_4$ is solvable, and every subgroup (every possible quartic Galois group: $1,\Zn2,\Zn3,\Zn4,V_4,S_3,D_8,A_4,S_4$) is solvable by the closure proposition. By Galois's criterion every quartic is solvable by radicals. Sanity check: the Klein four-group $V_4$ inside $A_4$ is exactly the kernel of the action giving the ``resolvent cubic,'' the classical device for solving quartics -- the group series mirrors the algebraic reduction quartic $\to$ cubic $\to$ quadratics.
 \end{wex}
 
 \subsection*{$S_n$ is not solvable for $n\ge5$, and the insolvable quintic}
@@ -56729,7 +56729,7 @@ The goal is to show $\Gal(f/\Q)=S_5$ (which is non-solvable), via three checks:
 \end{method}
 
 \begin{pitfall}
-Step (3) needs $p=\deg f$ prime. A $p$-cycle plus a transposition generate $S_p$ only because a $p$-cycle is a \emph{single} cycle on all $p$ points; a transposition together with a $4$-cycle in $S_5$, say, need not generate $S_5$. Also, ``two non-real roots'' must be exactly two: if there were $4$ non-real roots, complex conjugation would be a product of two transpositions (an even permutation in $A_5$), and the argument collapses.
+Step (3) needs $p=\deg f$ prime. A $p$-cycle plus a transposition generate $S_p$ because some power of the $p$-cycle (again a $p$-cycle, since $p$ is prime) carries one point of the transposition to the other; for composite $n$ an $n$-cycle and a transposition need not generate $S_n$ ($(1\,2\,3\,4)$ and $(1\,3)$ generate only $D_8\le S_4$), and a transposition together with a $4$-cycle in $S_5$, say, need not generate $S_5$. Also, ``two non-real roots'' must be exactly two: if there were $4$ non-real roots, complex conjugation would be a product of two transpositions (an even permutation in $A_5$), and the argument collapses.
 \end{pitfall}
 
 \begin{wex}{$x^5-6x+3$ has Galois group $S_5$}
@@ -56741,7 +56741,7 @@ Show in full detail that $f(x)=x^5-6x+3$ over $\Q$ has $\Gal(f/\Q)=S_5$ and is n
 
 \emph{Conjugation is a transposition:} complex conjugation restricts to an automorphism of the splitting field; it fixes the $3$ real roots and swaps the conjugate pair, hence acts as a single transposition $\tau\in\Gal(f)$.
 
-\emph{Generate $S_5$:} $\Gal(f)\le S_5$ contains a $5$-cycle $\rho$ and a transposition $\tau$. Relabelling so $\tau=(1\,2)$, some power of $\rho$ is a $5$-cycle sending $1\mapsto2$; a transposition of adjacent points together with a $5$-cycle through them generates $S_5$. Hence $\Gal(f)=S_5$. Since $S_5$ is not solvable, $f$ is not solvable by radicals. Sanity check: $\abs{S_5}=120$ must divide... rather, $\abs{\Gal(f)}=\idx K\Q$ divides $5!=120$ and is divisible by $5$ (transitive) and by $2$ (the transposition); having both a $5$-cycle and a transposition forces the full $120$, and $120=5!$ is the maximum possible for a degree-$5$ polynomial, internally consistent.
+\emph{Generate $S_5$:} $\Gal(f)\le S_5$ contains a $5$-cycle $\rho$ and a transposition $\tau$. Relabelling so $\tau=(1\,2)$, some power of $\rho$ is a $5$-cycle sending $1\mapsto2$; a transposition of adjacent points together with a $5$-cycle through them generates $S_5$. Hence $\Gal(f)=S_5$. Since $S_5$ is not solvable, $f$ is not solvable by radicals. Sanity check: $\abs{\Gal(f)}=\idx K\Q$ divides $5!=120$ and is divisible by $5$ (transitive) and by $2$ (the transposition); having both a $5$-cycle and a transposition forces the full $120$, and $120=5!$ is the maximum possible for a degree-$5$ polynomial, internally consistent.
 \end{wex}
 
 \begin{wex}{A solvable quintic: $x^5-2$ over $\Q$}
@@ -56781,7 +56781,7 @@ The normal subgroup $\Zn5\nor F_{20}$ corresponds to the subfield $\Q(\zeta_5)$,
 \begin{wex}{$x^5-4x+2$ is not solvable by radicals}
 Confirm $f(x)=x^5-4x+2$ has Galois group $S_5$.
 \wrec Same method: Eisenstein at $2$ for irreducibility, then count real roots via $f'$.
-\wsol $f$ is Eisenstein at $2$, hence irreducible, giving a $5$-cycle. $f'(x)=5x^4-4$ has real critical points $x=\pm(4/5)^{1/4}\approx\pm0.946$. Values: $f(-2)=-32+8+2=-22<0$, $f(-1)=-1+4+2=5>0$, $f(1)=1-4+2=-1<0$, $f(2)=32-8+2=26>0$, so $f$ changes sign on $(-2,-1)$, on $(-1,1)$... checking carefully, $f$ has a local max near $x\approx-0.946$ (positive) and local min near $x\approx0.946$ (negative), giving exactly $3$ real roots and $2$ complex ones. Complex conjugation is a transposition; with the $5$-cycle it generates $S_5$. Sanity check: the pattern of signs $f(-2)<0<f(-1)$, $f(-1)>0>f(1)$, $f(1)<0<f(2)$ gives three sign changes hence three real roots, leaving exactly two non-real -- the transposition criterion is met, so $\Gal(f)=S_5$ and $f$ is not solvable by radicals.
+\wsol $f$ is Eisenstein at $2$, hence irreducible, giving a $5$-cycle. $f'(x)=5x^4-4$ has real critical points $x=\pm(4/5)^{1/4}\approx\pm0.946$. Values: $f(-2)=-32+8+2=-22<0$, $f(-1)=-1+4+2=5>0$, $f(1)=1-4+2=-1<0$, $f(2)=32-8+2=26>0$, so $f$ changes sign on $(-2,-1)$, on $(-1,1)$ and on $(1,2)$; since $f'$ has only two real zeros, $f$ has a local max near $x\approx-0.946$ (positive) and local min near $x\approx0.946$ (negative), giving exactly $3$ real roots and $2$ complex ones. Complex conjugation is a transposition; with the $5$-cycle it generates $S_5$. Sanity check: the pattern of signs $f(-2)<0<f(-1)$, $f(-1)>0>f(1)$, $f(1)<0<f(2)$ gives three sign changes hence three real roots, leaving exactly two non-real -- the transposition criterion is met, so $\Gal(f)=S_5$ and $f$ is not solvable by radicals.
 \end{wex}
 
 \begin{wex}{Insolvability is not just ``degree $5$'': a solvable vs.\ insolvable contrast}
