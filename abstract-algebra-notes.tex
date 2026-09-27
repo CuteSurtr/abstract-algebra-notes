@@ -7758,7 +7758,7 @@ $C_G(A)\sgr N_G(A)\sgr G$ of Proposition~\ref{p:tower@c2} at a glance.
 Taking $A=G$ above, $g\mapsto(x\mapsto gxg\inv)$ is a homomorphism $G\to\operatorname{Aut}(G)$
 whose kernel is $Z(G)$. Thus $Z(G)\nor G$ for free.
 \[\begin{tikzcd}[column sep=large]
-1 \arrow[r] & Z(G) \arrow[r, hook] & G \arrow[r, "g\,\mapsto\,gxg^{-1}"] & \operatorname{Aut}(G)
+1 \arrow[r] & Z(G) \arrow[r, hook] & G \arrow[r, "\phi"] & \operatorname{Aut}(G)
 \end{tikzcd}\]
 
 \begin{dgx}
@@ -10229,17 +10229,17 @@ $\varphi:G\to G'$ sends each subgroup $H$ to $\varphi(H)$ and preserves all incl
 it induces an isomorphism of subgroup lattices: the square below commutes for every
 $H\sgr G$.
 \[\begin{tikzcd}[row sep=large,column sep=large]
-H \arrow[r, hook] \arrow[d, mapsto] & G \arrow[d, "\varphi"', "\sim"] \\
+H \arrow[r, hook] \arrow[d, "\varphi|_H"', "\sim"] & G \arrow[d, "\varphi"', "\sim"] \\
 \varphi(H) \arrow[r, hook] & G'
 \end{tikzcd}\]
 \begin{dgx}
 \dgi{Objects:} Four vertices. Top-left: $H$, a subgroup of $G$. Top-right: $G$, a group. Bottom-left: $\varphi(H)$, the image of $H$ under $\varphi$, which is a subgroup of $G'$ (isomorphisms send subgroups to subgroups). Bottom-right: $G'$, a group isomorphic to $G$.
-\dgi{Arrows:} Top horizontal $\hookrightarrow$: the inclusion $H\hookrightarrow G$ (canonical, $H\sgr G$). Right vertical $\varphi:G\xrightarrow{\;\sim\;}G'$: a group isomorphism, bijective and a homomorphism. Left vertical with $\mapsto$: the restriction $H\mapsto\varphi(H)$, meaning the map induced by $\varphi$ on subgroups; it sends each subgroup $H\sgr G$ to its image $\varphi(H)\sgr G'$. Bottom horizontal $\hookrightarrow$: the inclusion $\varphi(H)\hookrightarrow G'$.
-\dgi{What commutes:} The square commutes: the two paths from $H$ to $G'$ are equal. Top-then-right: $H\hookrightarrow G\xrightarrow{\varphi}G'$, sending $h\in H$ to $\varphi(h)\in G'$. Left-then-bottom: $H\mapsto\varphi(H)\hookrightarrow G'$, sending $H$ as a set to $\varphi(H)\subseteq G'$, and any $h\in H$ to $\varphi(h)\in\varphi(H)\subseteq G'$. Both give $h\mapsto\varphi(h)$.
+\dgi{Arrows:} Top horizontal $\hookrightarrow$: the inclusion $H\hookrightarrow G$ (canonical, $H\sgr G$). Right vertical $\varphi:G\xrightarrow{\;\sim\;}G'$: a group isomorphism, bijective and a homomorphism. Left vertical $\varphi|_H$: the restriction of $\varphi$ to $H$, $h\mapsto\varphi(h)$; it is an isomorphism of $H$ onto its image $\varphi(H)\sgr G'$ (marked $\sim$). Bottom horizontal $\hookrightarrow$: the inclusion $\varphi(H)\hookrightarrow G'$.
+\dgi{What commutes:} The square commutes: the two paths from $H$ to $G'$ are equal. Top-then-right: $H\hookrightarrow G\xrightarrow{\varphi}G'$, sending $h\in H$ to $\varphi(h)\in G'$. Left-then-bottom: $H\xrightarrow{\varphi|_H}\varphi(H)\hookrightarrow G'$, sending any $h\in H$ to $\varphi(h)\in\varphi(H)\subseteq G'$. Both give $h\mapsto\varphi(h)$.
 \dgi{Why it commutes:} Take any $h\in H$. Along the top-then-right path: $h$ is viewed in $G$ via inclusion, then $\varphi$ sends it to $\varphi(h)\in G'$. Along the left-then-bottom path: $H$ is mapped to its image $\varphi(H)\subseteq G'$, and $h\in H$ lands at $\varphi(h)\in\varphi(H)$, then the inclusion puts it in $G'$. Both agree because $\varphi$ is a function: the image of $h$ under $\varphi$ is the same regardless of which route we describe it.
 \dgi{Why this matters here:} This diagram encodes the key fact that an isomorphism $\varphi$ not only identifies $G$ with $G'$ as groups but also identifies their entire subgroup lattices: every $H\sgr G$ corresponds to $\varphi(H)\sgr G'$, and inclusion is preserved. This is why the remark ``isomorphic groups have identical lattices'' is diagrammatically immediate --- $\varphi$ induces a lattice isomorphism $\mathcal{L}(G)\to\mathcal{L}(G')$. It also sets up the punch line: the converse fails because the lattice forgets multiplication.
 \dgi{Concrete example:} Take $G=\Zn{6}$, $G'=\Zn{2}\times\Zn{3}$ (isomorphic by the Chinese remainder theorem), and $H=\gen{\bar2}\sgr\Zn{6}$ of order $3$. The isomorphism $\varphi:\Zn{6}\to\Zn{2}\times\Zn{3}$ sends $\bar2\mapsto(\bar0,\bar2)$, so $\varphi(H)=\{(\bar0,\bar0),(\bar0,\bar1),(\bar0,\bar2)\}=\{0\}\times\Zn{3}\sgr\Zn{2}\times\Zn{3}$. The square commutes: $\varphi(\bar2)=(\bar0,\bar2)$ by either path.
-\dgi{Common pitfall:} The left arrow is labeled with $\mapsto$ (``maps to''), not $\hookrightarrow$ (``is a subgroup of''): it sends a subgroup $H$ to a subgroup $\varphi(H)$, not an element to an element. Students sometimes read it as an inclusion $H\hookrightarrow G'$, but $H$ need not be a subgroup of $G'$ --- only $\varphi(H)$ is. The diagram also does not say $H\cong\varphi(H)$ as an \emph{object inside the diagram}; the isomorphism is an additional fact (restriction of $\varphi$ to $H$).
+\dgi{Common pitfall:} The left arrow is the restriction $\varphi|_H$, not an inclusion. Students sometimes read it as an inclusion $H\hookrightarrow G'$, but $H$ need not be a subgroup of $G'$ --- only $\varphi(H)$ is. The lattice map $H\mapsto\varphi(H)$ acts on subgroups, not on elements, so it is not an arrow of this square: the square is drawn once for each $H\sgr G$.
 \dgi{Takeaway:} The point of this diagram is that an isomorphism $\varphi:G\xrightarrow{\sim}G'$ induces a bijection on subgroup lattices, making every inclusion $H\sgr G$ correspond to $\varphi(H)\sgr G'$, which is why isomorphic groups always have identical subgroup lattices.
 \end{dgx}
 The converse fails: $Z_2\times Z_8$ and the modular group $M$ of order $16$ have
@@ -11313,7 +11313,7 @@ $G = \langle x, y \mid x^4 = y^4 = 1, \ xy = yx \rangle$. Let $\overline{G} = G/
       & H\cap N \arrow[ul, hook] \arrow[ur, hook'] &
     \end{tikzcd}\]
 
-  \item Let $A, B \nor G$ with $A \le B$. Construct the diagram of natural projections below and prove the Third Isomorphism Theorem $\,(G/A)/(B/A) \isom G/B\,$ by exhibiting the dashed induced map and showing it is an isomorphism:
+  \item Let $A, B \nor G$ with $A \le B$. Construct the diagram of natural projections below and prove the Third Isomorphism Theorem $\,(G/A)/(B/A) \isom G/B\,$ by exhibiting the dashed induced map, showing it is surjective with kernel $B/A$, and applying the First Isomorphism Theorem:
     \[\begin{tikzcd}[row sep=large,column sep=large]
       G \arrow[r, two heads, "\pi_A"] \arrow[dr, two heads, "\pi_B"'] & G/A \arrow[d, dashed, "{gA\mapsto gB}"] \\
       & G/B
@@ -12960,7 +12960,7 @@ $G/N\isom\Z/6$ (right), with faint ties joining matched pairs.
   (right), and $\Z/12$ (top). Right diamond: all four subgroups of $G/N\isom\Z/6$, namely
   $\{0\}$ (bottom), $\gen{\overline{3}}\isom\Z/2$ (left), $\gen{\overline{2}}\isom\Z/3$
   (right), and $\Z/6$ (top). The horizontal ties connect matched pairs.
-\dgi{Arrows:} Vertical edges within each diamond are subgroup inclusions (upward = larger
+\dgi{Arrows:} The slanted edges within each diamond are subgroup inclusions (upward = larger
   subgroup). Horizontal tie-lines are the bijection $A\mapsto A/N$ of the Fourth Isomorphism
   Theorem (left to right) and its inverse $\overline{A}\mapsto\pi^{-1}(\overline{A})$ (right
   to left). Each tie connects $A$ on the left to $A/N$ on the right, realized as the image of
@@ -12988,7 +12988,7 @@ $G/N\isom\Z/6$ (right), with faint ties joining matched pairs.
   to draw ties for them would extend the left diamond below $\gen{6}$, which is outside the
   correspondence.
 \dgi{Takeaway:} The point of this diagram is that the Fourth Isomorphism Theorem is not just
-  an abstract bijection but a true lattice isomorphism: the two diamonds are mirror images of
+  an abstract bijection but a true lattice isomorphism: the two diamonds are copies of
   each other, with every inclusion, index, and normality relation intact across the tie-lines.
 \end{dgx}
 
@@ -13160,7 +13160,7 @@ H \arrow[ur, hook] & & N \arrow[ul, hook'] \\
 & H\cap N \arrow[ul, hook] \arrow[ur, hook'] &
 \end{tikzcd}\]
 
-\item With $H\le K$ both normal in $G$, the Third Isomorphism Theorem says the composite of projections factors as below. Supply the dashed map and prove the square-with-diagonal commutes:
+\item With $H\le K$ both normal in $G$, the Third Isomorphism Theorem says the composite of projections factors as below. Supply the dashed map and prove the triangle commutes:
 \[\begin{tikzcd}[row sep=large,column sep=large]
 G/H \arrow[r, two heads, "\overline{\varphi}"] \arrow[dr, two heads] & G/K \\
 & (G/H)/(K/H) \arrow[u, dashed, "\isom"']
