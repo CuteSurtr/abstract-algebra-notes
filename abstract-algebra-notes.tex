@@ -25712,15 +25712,15 @@ cosets of $H=\gen{h_1,\dots,h_s}$ satisfies, and is determined by:
 \begin{enumerate}
   \item[\textnormal{(R1)}] \emph{Each generator acts as a permutation.} For every
         $x_t$, the assignment $i\mapsto i\cdot x_t$ is a bijection of the index
-        set; in particular each row and column of the coset table for $x_t$ is a
-        permutation, and $x_t\inv$ acts as its inverse.
+        set; in particular the $x_t$-column of the coset table lists every
+        index exactly once, and $x_t\inv$ acts as its inverse.
   \item[\textnormal{(R2)}] \emph{Each relation fixes every coset.} For every
         relator $r_j$ and every index $i$, $i\cdot r_j = i$; the relation table of
         $r_j$ has equal entries at both ends of each row.
   \item[\textnormal{(R3)}] \emph{Each generator of $H$ fixes coset $1$.} For every
         $h_j$, $1\cdot h_j = 1$.
   \item[\textnormal{(R4)}] \emph{The operation is transitive.} Every index lies in
-        the orbit of $1$; equivalently no index is introduced that is not forced.
+        the orbit of $1$; equivalently no index is introduced that is not needed.
 \end{enumerate}
 \end{theorem}
 
@@ -25862,14 +25862,16 @@ $2\xrightarrow{x}4\xrightarrow{x}?\xrightarrow{x}2$, while $4\cdot x$ is new ---
 take $4\cdot x=3'$; closing forces these into a $3$-cycle $(2\,4\,\cdot)$. Running
 the relation table for $xyxy$ from both ends and equating the forced
 coincidences (preferring step (i)) collapses the new indices until exactly four
-remain. The completed coset table is
+remain: the row of $1$ reads $1\xrightarrow{x}1\xrightarrow{y}2\xrightarrow{x}4\xrightarrow{y}1$,
+and since already $3\cdot y=1$ this forces $4=3$; the $x$-cycle becomes
+$(2\,3\,3')$, and renaming $3'$ as $4$ gives the completed coset table
 \[
 \begin{array}{c|cc}
  & x & y\\\hline
 1 & 1 & 2\\
-2 & 4 & 3\\
-3 & 2 & 1\\
-4 & 3 & 4
+2 & 3 & 3\\
+3 & 4 & 1\\
+4 & 2 & 4
 \end{array}
 \qquad\Longrightarrow\qquad
 x=(2\,3\,4),\qquad y=(1\,2\,3).
