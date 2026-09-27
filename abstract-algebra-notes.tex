@@ -49901,19 +49901,21 @@ $\varphi(n)/2$. The $n$-gon is constructible iff $\varphi(n)$ is a power of $2$
 $\varphi(n)$ as a power of $2$ leads to Gauss's classification.
 
 \begin{theorem}[{Gauss--Wantzel}]\label{thm:gauss@c13}
-Let $n = 2^{a} p_1 p_2 \cdots p_r$ with the $p_i$ distinct odd primes. The
-regular $n$-gon is constructible if and only if each $p_i$ is a Fermat prime,
-i.e. a prime of the form $2^{2^{k}}+1$.
+The regular $n$-gon is constructible if and only if $n = 2^{a} p_1 p_2 \cdots p_r$
+with $a\ge 0$ and $p_1,\dots,p_r$ distinct Fermat primes, i.e. primes of the form
+$2^{2^{k}}+1$.
 \end{theorem}
 
-This follows from $\varphi(n) = 2^{a-1}\prod_i (p_i - 1)$ (for $a\ge 1$) being a
-power of $2$, which forces each $p_i - 1$ to be a power of $2$, hence each $p_i$
-a Fermat prime; the divisor relations among $n$, the $p_i$, and $\varphi(n)$ are
-displayed below.
+This follows from the criterion that $\varphi(n)$ be a power of $2$. Writing
+$n = 2^{a} q_1^{e_1}\cdots q_s^{e_s}$ with distinct odd primes $q_j$, we have
+$\varphi(n) = \varphi(2^a)\prod_j q_j^{e_j-1}(q_j - 1)$, a power of $2$ exactly when every
+$e_j = 1$ (otherwise $q_j \mid \varphi(n)$) and every $q_j - 1$ is a power of $2$, i.e.
+each $q_j$ is a Fermat prime. For $n = 2^a p_1\cdots p_r$ with distinct odd primes $p_i$
+the divisor relations among $n$, the $p_i$, and $\varphi(n)$ are displayed below.
 
 \begin{center}
 \begin{tikzcd}[row sep=large, column sep=large]
-n = 2^a p_1\cdots p_r \arrow[r, "\varphi"] \arrow[d, dash] & \varphi(n)=2^{a-1}\textstyle\prod_i(p_i-1) \\
+n = 2^a p_1\cdots p_r \arrow[r, "\varphi"] \arrow[d, dash] & \varphi(n)=\varphi(2^a)\textstyle\prod_i(p_i-1) \\
 p_i \mid n \arrow[r, "{p_i = 2^{2^k}+1}"'] & p_i - 1 = 2^{2^k}
 \end{tikzcd}
 \end{center}
@@ -49921,11 +49923,11 @@ p_i \mid n \arrow[r, "{p_i = 2^{2^k}+1}"'] & p_i - 1 = 2^{2^k}
 \begin{dgx}
 \dgi{Objects:} The four nodes are \emph{arithmetic expressions}, not fields: the top-left
 is the integer $n = 2^a p_1 \cdots p_r$ (with the $p_i$ distinct odd prime divisors);
-the top-right is $\varphi(n) = 2^{a-1}\prod_i(p_i-1)$; the bottom-left is a single odd
+the top-right is $\varphi(n) = \varphi(2^a)\prod_i(p_i-1)$; the bottom-left is a single odd
 prime factor $p_i$ of $n$; and the bottom-right is $p_i - 1$.
 \dgi{Arrows:} The top arrow applies the \emph{Euler totient function} $\varphi$:
-$n \mapsto \varphi(n) = 2^{a-1}\prod_i(p_i-1)$ (using multiplicativity of $\varphi$ and
-$\varphi(p) = p-1$).  The left vertical dash is the divisibility relation $p_i \mid n$.
+$n \mapsto \varphi(n) = \varphi(2^a)\prod_i(p_i-1)$ (using multiplicativity of $\varphi$,
+$\varphi(p) = p-1$, and $\varphi(2^a) = 2^{a-1}$ for $a\ge 1$, $\varphi(1) = 1$).  The left vertical dash is the divisibility relation $p_i \mid n$.
 The bottom arrow asserts the \emph{Fermat prime condition}: $p_i = 2^{2^k}+1$, which
 forces $p_i - 1 = 2^{2^k}$, a power of $2$.
 \dgi{What commutes:} The diagram is a \emph{logic square}, not a function square.  The
@@ -49934,7 +49936,7 @@ every odd prime factor $p_i$ satisfies $p_i - 1 = 2^{2^k}$ (bottom-right).  Goin
 top-then-bottom: $n \xrightarrow{\varphi} \varphi(n)$, and requiring $\varphi(n)=2^m$
 forces each factor $p_i - 1$ to be a power of $2$.  Going left-then-right: each $p_i
 \mid n$ with $p_i - 1 = 2^{2^k}$ contributes a pure $2$-power factor to $\varphi(n)$.
-\dgi{Why it commutes:} By the multiplicativity $\varphi(n)=2^{a-1}\prod_i(p_i-1)$: the
+\dgi{Why it commutes:} By the multiplicativity $\varphi(n)=\varphi(2^a)\prod_i(p_i-1)$: the
 only way the product $\prod_i(p_i-1)$ can be a pure power of $2$ is if each factor
 $p_i-1$ is a power of $2$.  And $p_i - 1 = 2^j$ with $p_i$ prime forces $j$ itself to
 be a power of $2$ (if $j$ had an odd factor $d>1$, then $p_i = 2^j + 1$ would be
@@ -49947,13 +49949,14 @@ be a Fermat prime $2^{2^k}+1$.  It is the arithmetic engine behind the theorem.
 are both Fermat primes, so $\varphi(15)=(3-1)(5-1)=8=2^3$, and the $15$-gon is
 constructible.  For $n=7$: $p_1=7$ and $7-1=6=2\cdot 3$ is not a power of $2$, so
 $\varphi(7)=6$ is not a power of $2$, and the $7$-gon is not constructible.
-\dgi{Common pitfall:} Students forget the factor $2^{a-1}$ from the power-of-$2$ part
+\dgi{Common pitfall:} Students forget the factor $\varphi(2^a)$ from the power-of-$2$ part
 of $n$ and think a factor of $2$ in $n$ can ``fix'' a bad odd prime.  The factor
-$\varphi(2^a) = 2^{a-1}$ is always a power of $2$, so powers of $2$ in $n$ are
+$\varphi(2^a)$ ($=2^{a-1}$ for $a\ge 1$, $=1$ for $a=0$) is always a power of $2$, so powers of $2$ in $n$ are
 harmless; only the odd primes $p_i$ can destroy the power-of-$2$ property.
 \dgi{Takeaway:} The point of this diagram is that the constructibility condition
 $\varphi(n) = 2^m$ propagates down to each odd prime factor of $n$, forcing it to be
-a Fermat prime, which is the complete classification of constructible regular polygons.
+a Fermat prime; together with the fact that an odd prime $p$ with $p^2 \mid n$ would
+divide $\varphi(n)$, this gives the complete classification of constructible regular polygons.
 \end{dgx}
 
 \subsection*{Worked Examples: Regular $n$-gons}
