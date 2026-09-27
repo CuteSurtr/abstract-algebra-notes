@@ -36482,7 +36482,7 @@ By Proposition~\ref{prop:homgroup@c10}, $(\End_R(M),+)$ is an abelian group. Com
 \textbf{Trigger.} Asked to compute or describe $\End_R(M)$ for a specific module.
 \textbf{Recipe.}
 \begin{enumerate}
-\item If $M=R^n$ is free, $\End_R(R^n)\isom M_n(R)$ (matrices acting on column vectors).
+\item If $R$ is commutative and $M=R^n$ is free, $\End_R(R^n)\isom M_n(R)$ (matrices acting on column vectors). For noncommutative $R$, left multiplication by a matrix is not $R$-linear: the $R$-linear maps of the left module $R^n$ (row vectors) are $v\mapsto vB$, and $\End_R(R^n)\isom M_n(R^{\mathrm{op}})$, where the opposite ring $R^{\mathrm{op}}$ is $R$ with the product $a*b=ba$ (so $\End_R(R)\isom R^{\mathrm{op}}$).
 \item If $M$ is an $F[x]$-module $(V,T)$, $\End_{F[x]}(V)$ is the \emph{commutant} of $T$: all $F$-linear maps commuting with $T$.
 \item If $M=\Zn n$ over $\Z$, $\End_\Z(\Zn n)\isom\Zn n$ (each endomorphism is multiplication by a residue).
 \end{enumerate}
