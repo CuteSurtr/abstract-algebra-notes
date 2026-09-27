@@ -43388,7 +43388,7 @@ A basis $v_1,\dots,v_n$ of $V$ is an \textbf{orthogonal basis} if $\langle v_i,v
 \end{definition}
 
 \begin{remark}
-When the form is indefinite a \emph{nonzero} vector can be self-orthogonal: $\langle v,v\rangle=0$ with $v\ne 0$ (a \textbf{null vector} of the form is one orthogonal to \emph{all} of $V$). For the Lorentz form on $\R^4$, $(1,1,0,0)$ is such a vector. So one should resist reading $\perp$ as a metric angle in general and work algebraically with the bare condition $\langle v,w\rangle=0$.
+When the form is indefinite a \emph{nonzero} vector can be self-orthogonal: $\langle v,v\rangle=0$ with $v\ne 0$ (a \textbf{null vector} of the form is one orthogonal to \emph{all} of $V$). For the Lorentz form on $\R^4$, $(1,0,0,1)$ is self-orthogonal (but it is not a null vector: the Lorentz form is nondegenerate). So one should resist reading $\perp$ as a metric angle in general and work algebraically with the bare condition $\langle v,w\rangle=0$.
 \end{remark}
 
 \begin{definition}[Nullspace and nondegeneracy]
@@ -43595,10 +43595,10 @@ One often keeps the \emph{orthogonal} (unnormalized) basis $u_1,\dots,u_n$ rathe
 
 Throughout, $V$ is a finite-dimensional \emph{Hermitian space}: a complex vector
 space carrying a positive-definite Hermitian form $\langle\,\cdot\,,\cdot\,\rangle$,
-linear in the first slot and conjugate-linear in the second, with
+conjugate-linear in the first slot and linear in the second (as in the definition of a Hermitian form above), with
 $\langle w,v\rangle=\overline{\langle v,w\rangle}$ and $\langle v,v\rangle>0$ for
 $v\neq 0$. We fix an orthonormal basis $B$ throughout, so that the form is the
-standard one $\langle X,Y\rangle=\dual{Y}X$ on coordinate vectors. For a complex
+standard one $\langle X,Y\rangle=\dual{X}Y$ on coordinate vectors. For a complex
 matrix $A$ we write $\dual{A}=\overline{A}\trans$ for the conjugate transpose. The
 goal of this section is Artin's Spectral Theorem: a single hypothesis --- that an
 operator commute with its adjoint --- forces an orthonormal eigenbasis, and the
@@ -43627,8 +43627,8 @@ An operator $T$ on a Hermitian space is
   \text{\emph{unitary}}\ \text{if}\ \dual{T}T=\id.
 \]
 Correspondingly a matrix $A$ is normal if $\dual{A}A=A\dual{A}$, Hermitian if
-$\dual{A}=A$, and unitary if $\dual{A}=\inv{A}$. Hermitian operators
-($\dual{T}=T$) and unitary operators ($\dual{T}=\inv{T}$) are both normal, since
+$\dual{A}=A$, and unitary if $\dual{A}=A\inv$. Hermitian operators
+($\dual{T}=T$) and unitary operators ($\dual{T}=T\inv$) are both normal, since
 each commutes with its own adjoint; normality is the common umbrella under which
 the Spectral Theorem is stated.
 \end{definition}
@@ -43682,7 +43682,7 @@ roles of $T$ and $\dual{T}$ gives the second statement.
 The adjoint depends on the form, not just on $T$ as a linear map: in a
 \emph{non}-orthonormal basis the matrix of $\dual{T}$ is \emph{not} $\dual{A}$.
 All of the identities here are stated in an orthonormal basis, where
-$\langle X,Y\rangle=\dual{Y}X$; if you change to a skew basis you must conjugate
+$\langle X,Y\rangle=\dual{X}Y$; if you change to a skew basis you must conjugate
 by the Gram matrix. Keep the basis orthonormal and the bookkeeping is automatic.
 \end{pitfall}
 
@@ -43751,7 +43751,7 @@ orthonormal basis $v_1,\dots,v_n$ of $V$ consisting of eigenvectors of $T$.
 the operator ``multiply by $A$,'' which is normal. By (a) there is an orthonormal
 basis $B$ of eigenvectors. The change-of-basis matrix $P$ from the standard basis
 to $B$ has orthonormal columns, hence is unitary, and the matrix of the operator
-in the new basis is $\inv{P}AP=\dual{P}AP$, which is diagonal.
+in the new basis is $P\inv AP=\dual{P}AP$, which is diagonal.
 \end{proof}
 
 The induction is exactly the orthogonal splitting at each stage; the picture below
@@ -43768,8 +43768,8 @@ normal problem fed back into the theorem.
 \begin{dgx}
 \dgi{Objects:} All four nodes are the same vector space $V$, a finite-dimensional
 Hermitian space.  The top-right and bottom-right nodes are written as a direct-sum
-decomposition $W \oplus W^{\perp}$, where $W = \Span(v_1)$ is the one-dimensional
-eigenspace for the chosen unit eigenvector $v_1$, and $W^{\perp}$ is its orthogonal
+decomposition $W \oplus W^{\perp}$, where $W = \Span(v_1)$ is the line spanned by
+the chosen unit eigenvector $v_1$ (it lies in the $\lambda$-eigenspace, which may be larger), and $W^{\perp}$ is its orthogonal
 complement (a $(n-1)$-dimensional $T$-invariant subspace).
 \dgi{Arrows:} The two horizontal arrows labelled ``$=$'' are the \emph{canonical
 decomposition isomorphisms} $V \xrightarrow{\,\sim\,} W \oplus W^{\perp}$: the top
@@ -43845,7 +43845,7 @@ $1=\langle v,v\rangle=\langle Tv,Tv\rangle=\langle\lambda v,\lambda v\rangle
 =\lambda\overline{\lambda}\,\langle v,v\rangle=|\lambda|^{2}$, so $|\lambda|=1$.
 \end{proof}
 
-The two corollaries split the unit eigenvalues into the two distinguished loci of
+The two corollaries place the eigenvalues on the two distinguished loci of
 the complex plane: Hermitian eigenvalues lie on the real axis, unitary eigenvalues
 on the unit circle. (Real symmetric matrices, below, are the real-axis case made
 real.)
@@ -43955,8 +43955,8 @@ so $A$ is normal. The eigenvalues solve
 $(1-\lambda)^{2}+1=0$, i.e.\ $\lambda=1\pm i$. Eigenvectors:
 for $\lambda=1+i$, $(A-(1+i)I)=\left(\begin{smallmatrix}-i&-1\\1&-i\end{smallmatrix}\right)$
 gives $(1,-i)\trans$; for $\lambda=1-i$, $(1,i)\trans$. These are orthogonal under
-the Hermitian form: $\langle(1,-i),(1,i)\rangle=1\cdot\overline{1}+(-i)\cdot\overline{i}
-=1+(-i)(-i)=1-1=0$. Normalize by $1/\sqrt2$:
+the Hermitian form: $\langle(1,-i),(1,i)\rangle=\overline{1}\cdot 1+\overline{(-i)}\cdot i
+=1+i\cdot i=1-1=0$. Normalize by $1/\sqrt2$:
 \[
   P=\frac{1}{\sqrt2}\begin{pmatrix}1&1\\-i&i\end{pmatrix},\qquad
   \dual{P}AP=\begin{pmatrix}1+i&0\\0&1-i\end{pmatrix}.
