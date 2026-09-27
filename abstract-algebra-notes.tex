@@ -48949,12 +48949,12 @@ F \arrow[rr, dash, bend left=30, "\idx{K}{F}=\idx{K}{E}\idx{E}{F}"] \arrow[r, da
 
 \begin{dgx}
 \dgi{Objects:} Three field nodes in both views: $F$ (the base field), $E$ (an intermediate field, $F\subseteq E$), and $K$ (the top field, $E\subseteq K$). Each is a field; the edges record the degree $\idx{\,\cdot\,}{\,\cdot\,}=\dim$ of the upper field as a vector space over the lower.
-\dgi{Arrows:} All arrows here are drawn as dashes (unlabelled inclusion arrows), not ring homomorphisms. Each dash $A\text{--}B$ labeled $d$ means $\idx{B}{A}=d$, i.e.\ $B$ has dimension $d$ as an $A$-vector space. Left diagram: a vertical chain $F\subset E\subset K$ with the two step-degrees on the edges. Right diagram: a horizontal chain $F$--$E$--$K$ with the same edge labels, plus a bent-left arc from $F$ to $K$ labeled with the product $\idx{K}{F}=\idx{K}{E}\idx{E}{F}$, visually asserting the multiplicativity.
+\dgi{Arrows:} All arrows here are drawn as dashes (inclusions labelled only by their degrees), not arbitrary ring homomorphisms. Each dash $A\text{--}B$ labeled $d$ means $\idx{B}{A}=d$, i.e.\ $B$ has dimension $d$ as an $A$-vector space. Left diagram: a vertical chain $F\subset E\subset K$ with the two step-degrees on the edges. Right diagram: a horizontal chain $F$--$E$--$K$ with the same edge labels, plus a bent-left arc from $F$ to $K$ labeled with the product $\idx{K}{F}=\idx{K}{E}\idx{E}{F}$, visually asserting the multiplicativity.
 \dgi{What commutes:} The key equality is $\idx{K}{F}=\idx{K}{E}\cdot\idx{E}{F}$: the two-step product equals the direct degree. In the right diagram this is the equality of the bent arc label with the product of the two straight-edge labels.
 \dgi{Why it commutes:} If $\{\alpha_i\}_{i=1}^{m}$ is an $F$-basis of $E$ and $\{\beta_j\}_{j=1}^{n}$ is an $E$-basis of $K$, then every element of $K$ writes as $\sum_j e_j\beta_j$ with $e_j\in E$, and each $e_j=\sum_i c_{ij}\alpha_i$ with $c_{ij}\in F$; substituting gives $\sum_{i,j}c_{ij}\alpha_i\beta_j$, so $\{\alpha_i\beta_j\}$ spans $K$ over $F$. Independence follows similarly. Hence $\dim_F K=mn$.
 \dgi{Why this matters here:} This pair of diagrams summarizes Theorem 13.14 visually. It is the primary computational tool in the section: every degree calculation in the worked examples below is an instance -- adjoin one generator at a time, read off the degree of its minimal polynomial over the current field, then multiply.
 \dgi{Concrete example:} $F=\Q$, $E=\Q(\sqrt2)$, $K=\Q(\sqrt2,\sqrt3)$. Then $\idx{E}{F}=2$, $\idx{K}{E}=2$, and the tower law gives $\idx{K}{\Q}=4$, with $F$-basis $\{1,\sqrt2,\sqrt3,\sqrt6\}=\{1\cdot1,\sqrt2\cdot1,1\cdot\sqrt3,\sqrt2\cdot\sqrt3\}$ exactly as in the worked example below.
-\dgi{Common pitfall:} The dash arrows here are NOT ring or field homomorphisms; they represent inclusion together with a degree label. Students sometimes read the diagram as if the arrows are projections or quotient maps, but they are merely recording ``$E$ is a degree-$d$ extension of $F$''.
+\dgi{Common pitfall:} The dash arrows here are not arbitrary ring or field homomorphisms; they represent inclusion together with a degree label. Students sometimes read the diagram as if the arrows are projections or quotient maps, but they are merely recording ``$E$ is a degree-$d$ extension of $F$''.
 \dgi{Takeaway:} The point of this diagram is that the degree of a tower of field extensions multiplies at each step, so computing $\idx{K}{F}$ reduces to multiplying the degrees of successive one-generator adjunctions.
 \end{dgx}
 
@@ -49129,7 +49129,7 @@ F &
 
 \begin{dgx}
 \dgi{Objects:} Three field nodes in a vertical tower. Bottom: $F$, the ground field. Middle: $E_0=F(a_0,\dots,a_n)$, the field obtained by adjoining the finitely many coefficients $a_i$ of the minimal polynomial of $\alpha$ over $E$ to $F$; it is a finite extension of $F$ because each $a_i\in E$ is algebraic over $F$ (Theorem 13.17). Top: $E_0(\alpha)$, the extension of $E_0$ by $\alpha$, which is finite because $\alpha$ is a root of the nonzero polynomial $a_nx^n+\cdots+a_0$, whose coefficients lie in $E_0$ (being algebraic over the larger field $E$ would not suffice by itself).
-\dgi{Arrows:} Two undirected solid edges (inclusions), each labeled $<\infty$: (i) $E_0(\alpha)\to E_0$, recording $\idx{E_0(\alpha)}{E_0}<\infty$ (since $\alpha$ is algebraic over $E_0$, its minimal polynomial over $E_0$ has finite degree); (ii) $E_0\to F$, recording $\idx{E_0}{F}<\infty$ (since $E_0$ is generated over $F$ by finitely many algebraic elements $a_0,\dots,a_n$). The annotations to the right explain why each step is finite.
+\dgi{Arrows:} Two undirected solid edges (inclusions), each labeled $<\infty$: (i) $E_0\subseteq E_0(\alpha)$, recording $\idx{E_0(\alpha)}{E_0}<\infty$ (since $\alpha$ is algebraic over $E_0$, its minimal polynomial over $E_0$ has finite degree); (ii) $F\subseteq E_0$, recording $\idx{E_0}{F}<\infty$ (since $E_0$ is generated over $F$ by finitely many algebraic elements $a_0,\dots,a_n$). The annotations to the right explain why each step is finite.
 \dgi{What commutes:} The relevant conclusion is not a path equality but the multiplicativity: $\idx{E_0(\alpha)}{F}=\idx{E_0(\alpha)}{E_0}\cdot\idx{E_0}{F}<\infty$. The tower law turns two finite steps into a finite total, meaning $\alpha$ lies in a finite extension of $F$, hence is algebraic over $F$.
 \dgi{Why it commutes:} Start from $\alpha\in K$, algebraic over $E$ with minimal polynomial $a_nx^n+\cdots+a_0\in E[x]$. The $a_i$ are algebraic over $F$ (given $E/F$ algebraic), so $E_0:=F(a_0,\dots,a_n)$ is finite over $F$ (Theorem 13.17). Then $\alpha$ satisfies a polynomial with coefficients in $E_0$, so $E_0(\alpha)/E_0$ is finite. Both steps are finite, so the tower law gives $E_0(\alpha)/F$ finite, forcing $\alpha$ algebraic over $F$.
 \dgi{Why this matters here:} This diagram is the proof-in-a-picture of Theorem 13.20: algebraicity is transitive. It makes vivid why the two-step argument works -- you cannot directly conclude $\alpha\in K$ is algebraic over $F$ just from $K/E$ algebraic and $E/F$ algebraic, but by constructing the finite intermediate $E_0$ you reduce to the tower law.
@@ -49518,8 +49518,8 @@ compositum, each step of degree $1$ or $2$.
 \begin{center}
 \begin{tikzcd}[row sep=large, column sep=large]
 & F(x_0,y_0) & \\
-F(x_0) \arrow[ur, dash, "2"] & & F(y_0) \arrow[ul, dash, "2"'] \\
-& F \arrow[ul, dash, "2"] \arrow[ur, dash, "2"'] &
+F(x_0) \arrow[ur, dash, "{\le\, 2}"] & & F(y_0) \arrow[ul, dash, "{\le\, 2}"'] \\
+& F \arrow[ul, dash, "{\le\, 2}"] \arrow[ur, dash, "{\le\, 2}"'] &
 \end{tikzcd}
 \end{center}
 
@@ -49528,7 +49528,7 @@ F(x_0) \arrow[ur, dash, "2"] & & F(y_0) \arrow[ul, dash, "2"'] \\
 of all previously constructed points), the two intermediate fields $F(x_0)$ and $F(y_0)$
 obtained by adjoining one coordinate of a new constructible point $(x_0,y_0)$, and the
 compositum $F(x_0,y_0)$ containing both.
-\dgi{Arrows:} Each undirected dash-edge labelled $2$ is a \emph{field extension of degree
+\dgi{Arrows:} Each undirected dash-edge labelled $\le 2$ is a \emph{field extension of degree
 at most $2$}: the inclusion $F \hookrightarrow F(x_0)$ records that $x_0$ satisfies a
 quadratic equation over $F$ (from the line-or-circle intersection analysis), and
 similarly $F \hookrightarrow F(y_0)$.  The top edges record that once $x_0$ is known,
@@ -49550,7 +49550,7 @@ full tower, and the diagram shows which field lattice arises from a single step.
 \dgi{Concrete example:} Starting from $F = \Q$, the point $P = (\frac12, \frac{\sqrt3}{2})$
 from the two-unit-circles example gives $F(x_0) = \Q$ (since $x_0 = \frac12 \in \Q$)
 and $F(y_0) = \Q(\sqrt3)$, degree $2$; the compositum is $\Q(\sqrt3)$, a single step.
-\dgi{Common pitfall:} The degrees $2$ on each edge are upper bounds, not equalities in
+\dgi{Common pitfall:} The labels $\le 2$ on the edges are upper bounds, not equalities in
 general.  If $x_0 \in F$ already (e.g. line-line intersection), then $\idx{F(x_0)}{F}=1$
 and the diamond degenerates.  In fact it always degenerates: since
 $\idx{F(x_0,y_0)}{F}\le 2$, each of $F(x_0)$ and $F(y_0)$ equals $F$ or $F(x_0,y_0)$,
@@ -49921,7 +49921,7 @@ the divisor relations among $n$, the $p_i$, and $\varphi(n)$ are displayed below
 
 \begin{center}
 \begin{tikzcd}[row sep=large, column sep=large]
-n = 2^a p_1\cdots p_r \arrow[r, "\varphi"] \arrow[d, dash] & \varphi(n)=\varphi(2^a)\textstyle\prod_i(p_i-1) \\
+n = 2^a p_1\cdots p_r \arrow[r, "\varphi"] \arrow[d, dash] & \varphi(n)=\varphi(2^a)\textstyle\prod_i(p_i-1) \arrow[d, dash] \\
 p_i \mid n \arrow[r, "{p_i = 2^{2^k}+1}"'] & p_i - 1 = 2^{2^k}
 \end{tikzcd}
 \end{center}
@@ -49933,7 +49933,7 @@ the top-right is $\varphi(n) = \varphi(2^a)\prod_i(p_i-1)$; the bottom-left is a
 prime factor $p_i$ of $n$; and the bottom-right is $p_i - 1$.
 \dgi{Arrows:} The top arrow applies the \emph{Euler totient function} $\varphi$:
 $n \mapsto \varphi(n) = \varphi(2^a)\prod_i(p_i-1)$ (using multiplicativity of $\varphi$,
-$\varphi(p) = p-1$, and $\varphi(2^a) = 2^{a-1}$ for $a\ge 1$, $\varphi(1) = 1$).  The left vertical dash is the divisibility relation $p_i \mid n$.
+$\varphi(p) = p-1$, and $\varphi(2^a) = 2^{a-1}$ for $a\ge 1$, $\varphi(1) = 1$).  The left vertical dash is the divisibility relation $p_i \mid n$, and the right one records that $p_i-1$ divides $\varphi(n)$.
 The bottom arrow asserts the \emph{Fermat prime condition}: $p_i = 2^{2^k}+1$, which
 forces $p_i - 1 = 2^{2^k}$, a power of $2$.
 \dgi{What commutes:} The diagram is a \emph{logic square}, not a function square.  The
@@ -52841,9 +52841,9 @@ L_2 \arrow[d, dash, "2" description] \\
   $\Q$ itself.
 \dgi{Arrows:} Each vertical dash is an \emph{inclusion} of subfields, labeled
   ``$2$'' to record the relative degree $\idx{F_{\text{top}}}{F_{\text{bottom}}}=2$.
-  The arrows point downward (toward smaller fields), so each dash means
-  ``the upper field contains the lower field as a codimension-$1$ subfield''.
-  No map has a formula; the arrows are inclusions, not homomorphisms with
+  The edges carry no arrowheads; each dash means
+  ``the upper field contains the lower field, with relative degree $2$''.
+  No map has a formula; the edges are inclusions, not homomorphisms with
   data to chase.
 \dgi{What commutes:} This is a \emph{chain}, not a square, so there is no
   commutativity condition in the usual sense. The key multiplicativity
@@ -52852,11 +52852,11 @@ L_2 \arrow[d, dash, "2" description] \\
   bottom and multiplying (the tower law for degrees).
 \dgi{Why it commutes:} By the tower law, $[F:K]=[F:E][E:K]$ for any tower
   $K\subseteq E\subseteq F$. Each consecutive pair has degree $2$ because each
-  step corresponds, via the Galois correspondence, to an index-$2$ subgroup
-  of $(\Z/17\Z)^\times\cong\Z/16\Z$: the unique chain
+  step corresponds, via the Galois correspondence, to an index-$2$ inclusion
+  in the unique chain of subgroups of $(\Z/17\Z)^\times\cong\Z/16\Z$,
   $\{1\}\subset\langle\sigma^8\rangle\subset\langle\sigma^4\rangle\subset
   \langle\sigma^2\rangle\subset(\Z/17\Z)^\times$
-  (where $\sigma:\zeta\mapsto\zeta^3$) produces exactly these five fixed
+  (where $\sigma:\zeta\mapsto\zeta^3$), whose five members have exactly these five fixed
   fields. The field $\Q(\zeta_{17})$ has degree $2$ over its real subfield $\Q(\beta)$
   because $\zeta_{17}\notin\R$ satisfies the non-real quadratic
   $\zeta^2-\beta\zeta+1=0$ over $\Q(\beta)$.
@@ -54040,7 +54040,7 @@ The paired lattice (subgroups on the left, subfields on the right), joined by th
   fields $\Q(\sqrt2),\Q(\sqrt6),\Q(\sqrt3)$ (middle row), and the top field $K=\Q(\sqrt2,\sqrt3)$
   (bottom node). All edges are inclusion lines (dashes), not arrows with direction.
 \dgi{Arrows:} The two Hasse diagrams are linked by the correspondence arrow $\xleftrightarrow{\Fix}$
-  between them. Within each diagram, dashed edges record containment: on the left, $1\subset\gen{\cdot}\subset G$;
+  between them. Within each diagram, the edges record containment: on the left, $1\subset\gen{\cdot}\subset G$;
   on the right, $\Q\subset\Q(\sqrt{d})\subset K$. The $\Fix$ arrow itself is the Galois correspondence map
   $H\mapsto K^H$, and its inverse is $E\mapsto\Gal(K/E)$.
 \dgi{What commutes:} This is not a commutative square but a bijection of posets. The key content is the
@@ -54128,7 +54128,7 @@ Writing $V_4=\Gal(K/\Q)=\set{1,a,b,c}$ with $a\colon\sqrt2\mapsto-\sqrt2,\,\sqrt
   $V_4$ (top). Right side: the subfield lattice of $K/\Q$ drawn inverted (growing downward), with nodes --
   $\Q$ (top), $\Q(\sqrt3),\Q(\sqrt2),\Q(\sqrt6)$ (middle), and $K=\Q(\sqrt2,\sqrt3)$ (bottom). The dotted
   curved ties between the two lattices are the correspondence lines, not field or group morphisms.
-\dgi{Arrows:} The solid edges within each lattice are inclusion relations. The dashed curved ties encode
+\dgi{Arrows:} The solid edges within each lattice are inclusion relations. The dotted curved ties encode
   the bijection $H\leftrightarrow\Fix(H)$: each tie connects a subgroup on the left to its fixed field
   on the right at the same height. Specifically: $V_4\leftrightarrow\Q$ (top tie), $1\leftrightarrow K$
   (bottom tie), $\gen{a}\leftrightarrow\Q(\sqrt3)$ (since $a$ negates $\sqrt2$ but fixes $\sqrt3$),
@@ -54206,7 +54206,7 @@ The subgroup lattice (top $=G$):
   $\gen{\sigma^2,\sigma\tau}\isom V_4$. Third row: five order-$2$ subgroups -- the central $\gen{\sigma^2}$
   in the middle, and two pairs of reflection subgroups $\gen{\tau},\gen{\sigma^2\tau}$ (left) and
   $\gen{\sigma\tau},\gen{\sigma^3\tau}$ (right). Bottom: the trivial group $1$.
-\dgi{Arrows:} Every dashed edge is a containment: $H_1 - H_2$ means $H_1\subset H_2$. Edges go from each
+\dgi{Arrows:} Every edge is a containment: $H_1 - H_2$ means $H_1\subset H_2$. Edges go from each
   subgroup upward to every subgroup that contains it with no intermediate subgroup in between (Hasse diagram
   convention). No edge is a group homomorphism; the diagram is purely a poset diagram.
 \dgi{What commutes:} The Hasse diagram records which subgroups contain which. The critical
@@ -54249,7 +54249,7 @@ The corresponding subfield lattice, by $E=\Fix(H)$ with $\idx{E}{\Q}=\idx{G}{H}$
   each of degree $2$ over $\Q$. Third row: the five degree-$4$ subfields -- the Galois biquadratic
   $\Q(i,\sqrt2)$ in the center, and four non-Galois fields $\Q(\theta),\Q(i\theta)$ (left) and
   $\Q((1+i)\theta),\Q((1-i)\theta)$ (right). Bottom: $K=\Q(\theta,i)$ of degree $8$.
-\dgi{Arrows:} Every dashed edge is a field inclusion, pointing downward (toward the larger field). As in
+\dgi{Arrows:} Every edge is a field inclusion, pointing downward (toward the larger field). As in
   the subgroup lattice, edges are Hasse: $E_1 - E_2$ means $E_1\subset E_2$ with no intermediate field
   between them. No edge is a field homomorphism beyond inclusion.
 \dgi{What commutes:} Since the field lattice is drawn upside down (larger fields lower), this picture has exactly the shape of the subgroup lattice. Each field $E$ sits at
@@ -54345,7 +54345,7 @@ E_4 \arrow[dr,dash] & & E_6 \arrow[dl,dash] \\
   $\gen{\sigma^6}$ (order $2$), and $1$ (order $1$, bottom). Right diagram: the corresponding subfield
   lattice of $\Q(\zeta_{13})/\Q$. Nodes are $\Q$ (top), $E_2$ (degree $2$), $E_3$ (degree $3$), $E_4$
   (degree $4$), $E_6$ (degree $6$), and $\Q(\zeta_{13})$ (degree $12$, bottom).
-\dgi{Arrows:} Dashed edges in both diagrams encode inclusion (of subgroups on the left, of fields on the
+\dgi{Arrows:} The edges in both diagrams encode inclusion (of subgroups on the left, of fields on the
   right). The $\xleftrightarrow{\Fix}$ link between the two diagrams records the Galois correspondence
   $\gen{\sigma^m}\mapsto E_{12/\text{ord}(\gen{\sigma^m})}$: a subgroup of order $k$ corresponds to a
   subfield of degree $12/k$ over $\Q$.
@@ -54580,14 +54580,14 @@ commutes, where $\pi$ is the canonical projection. Identify the right-hand verti
 \item Draw the full subgroup lattice of $S_3$ and, beside it, the corresponding intermediate-field lattice for a Galois extension $K/F$ with $\Gal(K/F)\isom S_3$, joined by the order-reversing $\Fix$ as in
 \[
 \begin{tikzcd}[row sep=1.5em, column sep=1.1em]
-& S_3 \arrow[dl,dash]\arrow[d,dash]\arrow[dr,dash,bend left] & \\
-\gen{(1\,2\,3)} \arrow[dr,dash] & \rule{2.4em}{0.4pt} & \cdots \arrow[dl,dash] \\
+& S_3 \arrow[dl,dash]\arrow[d,dash]\arrow[dr,dash] & \\
+\gen{(1\,2\,3)} \arrow[dr,dash] & \strut\rule{2.4em}{0.4pt} \arrow[d,dash] & \cdots \arrow[dl,dash] \\
 & 1 &
 \end{tikzcd}
 \qquad\xleftrightarrow{\ \Fix\ }\qquad
 \begin{tikzcd}[row sep=1.5em, column sep=1.1em]
-& F \arrow[dl,dash]\arrow[d,dash]\arrow[dr,dash,bend left] & \\
-E_2 \arrow[dr,dash] & \cdots & \rule{2.4em}{0.4pt} \arrow[dl,dash] \\
+& F \arrow[dl,dash]\arrow[d,dash]\arrow[dr,dash] & \\
+E_2 \arrow[dr,dash] & \cdots \arrow[d,dash] & \strut\rule{2.4em}{0.4pt} \arrow[dl,dash] \\
 & K &
 \end{tikzcd}
 \]
