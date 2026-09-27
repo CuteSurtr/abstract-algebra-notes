@@ -66324,8 +66324,8 @@ Throughout, $R$ is a commutative ring with $1$, ideals are written in fraktur, a
 \[
 \begin{tikzcd}[row sep=1.7em, column sep=1.6em]
 & R=(\bar1) \arrow[dl,dash]\arrow[dr,dash] & \\
-(\bar2) \arrow[d,dash]\arrow[dr,dash] & & (\bar3) \arrow[dl,dash] \\
-(\bar4) \arrow[d,dash] & (\bar6) \arrow[dl,dash]\arrow[dr,dash] & \\
+(\bar2) \arrow[d,dash]\arrow[dr,dash] & & (\bar3) \arrow[dl,dash]\arrow[dd,dash] \\
+(\bar4) \arrow[d,dash] & (\bar6) & \\
 (\bar8)\arrow[dr,dash] & & (\bar9) \\
 & (\bar0) &
 \end{tikzcd}
@@ -66351,7 +66351,7 @@ Show $\Ker(\operatorname{pr}_i)=\prod_{j\ne i}A_j$, that $q_i$ is the localizati
 \item Let $A$ be an Artinian local ring with principal maximal ideal $\fm=(t)$, $\fm^k=0$ and $\fm^{k-1}\ne0$ -- the $0$-dimensional analogue of a DVR. Complete the chain of inclusions of its ideals (the full ideal lattice is a single chain) and label each arrow with the length of the successive quotient:
 \[
 \begin{tikzcd}[column sep=2.2em]
-A=(t^0) \arrow[r,hook] & (t) \arrow[r,hook] & (t^2) \arrow[r,hook] & \cdots \arrow[r,hook] & (t^{k-1}) \arrow[r,hook] & (t^k)=0
+0=(t^k) \arrow[r,hook] & (t^{k-1}) \arrow[r,hook] & \cdots \arrow[r,hook] & (t^2) \arrow[r,hook] & (t) \arrow[r,hook] & (t^0)=A
 \end{tikzcd}
 \]
 Reading right to left as a descending chain, prove each successive quotient $(t^{r})/(t^{r+1})$ is a $1$-dimensional $A/\fm$-vector space, that $A$ has exactly $k+1$ ideals, and that $\len_A(A)=k$.
@@ -67279,7 +67279,7 @@ Throughout these problems $R$ denotes an integral domain with fraction field $K\
 \begin{tikzcd}[row sep=1.7em, column sep=1.4em]
 & (6)=\fp_2^2\fp_3\fp_3' & \\
 \fp_2^2\fp_3 \arrow[ur,dash] & \fp_2\fp_3\fp_3' \arrow[u,dash] & \fp_2^2\fp_3' \arrow[ul,dash] \\
-\fp_2\fp_3 \arrow[u,dash]\arrow[ur,dash] & \fp_2\fp_3' \arrow[ul,dash]\arrow[ur,dash] & \fp_2^2 \arrow[ul,dash] \\
+\fp_2\fp_3 \arrow[u,dash]\arrow[ur,dash] & \fp_2^2 \arrow[ul,dash]\arrow[ur,dash] & \fp_2\fp_3' \arrow[ul,dash]\arrow[u,dash] \\
 & R=(1) \arrow[ul,dash]\arrow[u,dash]\arrow[ur,dash] &
 \end{tikzcd}
 \]
