@@ -59309,7 +59309,7 @@ Let $\fm$ be a maximal ideal of $A$ containing $\fa$, and let $K_1 = A/\fm$. The
 
 \item Let $A=k[x,y]$ with $k$ a field. Compute the ideal quotient $((x^{3},x^{2}y):(x^{2}))$ and the radical $r((x^{4}y^{2}))$. In each case identify the answer with a single explicit ideal and justify the equality.
 
-\item Determine all prime ideals of $A=\Z/12\Z\times\F_{5}$. For each, state whether it is maximal, and identify the residue field $A/\fp$. Confirm that $\nil(A)$ and $\Jac(A)$ are not equal here and compute both.
+\item Determine all prime ideals of $A=\Z/12\Z\times\F_{5}$. For each, state whether it is maximal, and identify the residue field $A/\fp$. Compute $\nil(A)$ and $\Jac(A)$ and confirm that they are equal here (every prime of this finite ring is maximal).
 
 \item In $A=k[x]$, let $\fa=(x^{2}(x-1))$. Describe $\Spec(A/\fa)$, decompose $A/\fa$ as a product of local rings via CRT, and compute $\nil(A/\fa)$ and $\Jac(A/\fa)$. Show the two radicals coincide in this ring.
 
@@ -59327,7 +59327,7 @@ Let $\fm$ be a maximal ideal of $A$ containing $\fa$, and let $K_1 = A/\fm$. The
 
 \item Prove that for any ring $A$, an element $x$ lies in $\Jac(A)$ iff $1-xy$ is a unit for every $y\in A$. Deduce that if $x\in\Jac(A)$ and $x$ is idempotent then $x=0$, and that $\Jac(A)$ contains no nonzero idempotent.
 
-\item Let $A\to B$ be a surjective ring homomorphism with kernel $\fa$. Prove that the induced map $\Spec B\to\Spec A$ is a homeomorphism onto the closed set $V(\fa)\subseteq\Spec A$, and that under this identification the minimal primes of $B$ correspond to the minimal primes of $A$ containing $\fa$.
+\item Let $A\to B$ be a surjective ring homomorphism with kernel $\fa$. Prove that the induced map $\Spec B\to\Spec A$ is a homeomorphism onto the closed set $V(\fa)\subseteq\Spec A$, and that under this identification the minimal primes of $B$ correspond to the primes of $A$ that are minimal among those containing $\fa$.
 
 \item Let $A$ be a ring such that $\Spec A$ is a finite set $\set{\fm_{1},\dots,\fm_{n}}$ of maximal ideals (so $A$ is semilocal with $\dim A=0$). Prove that $\nil(A)=\Jac(A)=\bigcap_{i}\fm_{i}$, that the $\fm_{i}$ are pairwise coprime, and conclude via CRT that $A/\nil(A)\isom\prod_{i}A/\fm_{i}$, a finite product of fields.
 
@@ -60394,7 +60394,7 @@ for $x \in K_1(A)$, $y \in K(B)$. In other words, regarding $K(B)$ as a $K_1(A)$
 \item Let $R$ be a commutative ring such that $R[[x]]$ is Noetherian. Prove that $R$ is Noetherian. (Use the evaluation-at-zero map and the fact that quotients of Noetherian rings are Noetherian; do not assume the Hilbert Basis Theorem for power series.)
 \item Let $X$ be a Noetherian topological space. Prove that $X$ has only finitely many irreducible components and that $X$ is quasi-compact (every open cover has a finite subcover). Then show that the Zariski space $\Aff^n$ over any field $k$ is quasi-compact, even though it is not Hausdorff when $k$ is infinite.
 \item Suppose $0\to M'\xrightarrow{\alpha}M\xrightarrow{\beta}M''\to0$ is a short exact sequence of $R$-modules in which $M'$ and $M''$ are Noetherian. Prove $M$ is Noetherian by the diagram-chase argument: given an ascending chain $(L_n)$ in $M$, show that $\alpha^{-1}(L_n)$ stationary and $\beta(L_n)$ stationary together force $L_n$ stationary. Then deduce that a finite direct sum of Noetherian modules is Noetherian.
-\item Let $R$ be a Noetherian integral domain and $f\in R$ a nonzero nonunit. Prove that the principal ideal $(f)$ contains a power of every prime $\fp$ minimal over $(f)$ in the sense that there are only finitely many such minimal primes, and that their intersection equals $\rad((f))$. [Use that $\Spec R$ is a Noetherian space and that minimal primes over $(f)$ correspond to irreducible components of $\mathcal Z((f))$.]
+\item Let $R$ be a Noetherian integral domain and $f\in R$ a nonzero nonunit. Prove that there are only finitely many primes $\fp$ minimal over $(f)$, that their intersection equals $\rad((f))$, and that $(f)$ contains a power of this intersection (Corollary~15.2.31), although in general no power of an individual $\fp$ (consider $f=xy$ in $k[x,y]$). [Use that $\Spec R$ is a Noetherian space and that minimal primes over $(f)$ correspond to irreducible components of $\mathcal Z((f))$.]
 \end{exers}
 
 \begin{exers}{Commutative-diagram exercises.}
@@ -60405,7 +60405,7 @@ for $x \in K_1(A)$, $y \in K(B)$. In other words, regarding $K(B)$ as a $K_1(A)$
 \set{\text{ideals of }S} \arrow[r,"\mathcal Z"'] & \set{\text{closed sets in }\Spec S}
 \end{tikzcd}
 \]
-Prove that the left vertical map is an inclusion-preserving bijection (Lattice Isomorphism Theorem), conclude that $\Spec S$ inherits the ascending chain condition on closed sets, and identify the image $\pi^{*}(\Spec S)\subseteq\Spec R$.
+Prove that the left vertical map is an inclusion-preserving bijection (Lattice Isomorphism Theorem), conclude that $\Spec S$ inherits the descending chain condition on closed sets, and identify the image $\pi^{*}(\Spec S)\subseteq\Spec R$.
 \item Let $R$ be Noetherian and let $T=R[x]$ with the inclusion $\iota:R\hookrightarrow T$ and the evaluation $\varepsilon:T\twoheadrightarrow R$, $f(x)\mapsto f(0)$, so that $\varepsilon\circ\iota=\id_R$. Complete the diagram of spectra below and prove it commutes:
 \[
 \begin{tikzcd}[row sep=large, column sep=huge]
@@ -60425,7 +60425,7 @@ Prove that $\varphi^{-1}(W')$ is an affine algebraic subset of $V$ equal to $\ma
 \item For a Noetherian ring $R$ and the chain of quotients $R\twoheadrightarrow R/\fa_1\twoheadrightarrow R/\fa_2\twoheadrightarrow\cdots$ arising from an ascending chain of ideals $\fa_1\subseteq\fa_2\subseteq\cdots$, the spectra form a tower of closed immersions. Complete the inverse-limit tower below (horizontal arrows the spectrum maps induced by the quotient maps) and prove the indicated stabilization:
 \[
 \begin{tikzcd}[row sep=large, column sep=large]
-\Spec(R/\fa_1) \arrow[r,hook] & \Spec(R/\fa_2) \arrow[r,hook] & \Spec(R/\fa_3) \arrow[r,hook] & \cdots
+\Spec(R/\fa_1) & \Spec(R/\fa_2) \arrow[l,hook'] & \Spec(R/\fa_3) \arrow[l,hook'] & \cdots \arrow[l,hook']
 \end{tikzcd}
 \]
 Prove that, because $R$ is Noetherian, this tower of closed immersions is eventually all isomorphisms, identify the common value $\varprojlim$ with $\mathcal Z(\bigcup_n\fa_n)$, and state which property of $R$ (ascending chain condition versus finite generation) is doing the work.
