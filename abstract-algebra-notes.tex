@@ -61879,7 +61879,7 @@ State and use the criterion: a domain $R$ is integrally closed iff every $R_{\fm
 
 \subsection*{Synthesis: localization as a map of spectra}
 
-All the threads converge in one commutative-algebra-meets-geometry picture. The ring map $\pi\colon R\to S^{-1}R$ induces $\Spec(S^{-1}R)\hookrightarrow\Spec R$ identifying $\Spec(S^{-1}R)$ with the primes disjoint from $S$; for $S=R\setminus\fp$ this is the inclusion of the local primes $\set{\fq\subseteq\fp}$, and for $S=\set{f^n}$ it is the distinguished open $D(f)=\set{\fq:\ f\notin\fq}$. The square below shows how localizing at $\fp$ \emph{factors} through localizing at $f$ for $f\notin\fp$ (a smaller open set containing the point $\fp$), with the residue field $\kappa(\fp)=\Frac(R/\fp)$ recovered at the bottom.
+All the threads converge in one commutative-algebra-meets-geometry picture. The ring map $\pi\colon R\to S^{-1}R$ induces $\Spec(S^{-1}R)\hookrightarrow\Spec R$ identifying $\Spec(S^{-1}R)$ with the primes disjoint from $S$; for $S=R\setminus\fp$ this is the inclusion of the local primes $\set{\fq\subseteq\fp}$, and for $S=\set{f^n}$ it is the distinguished open $D(f)=\set{\fq:\ f\notin\fq}$. The square below shows how localizing at $\fp$ \emph{factors} through localizing at $f$ for $f\notin\fp$ (a smaller open set containing the point $\fp$), with the same local ring $R_{\fp}$ (residue field $\kappa(\fp)=\Frac(R/\fp)$) recovered at the bottom.
 
 \[
 \begin{tikzcd}[row sep=large, column sep=huge]
@@ -61910,14 +61910,14 @@ R_{\fp} \arrow[r,"="'] & (R_f)_{\fp R_f}
   injection on spectra induced by $\pi_{\fp}$; the equality on the bottom says $\Spec R_{\fp}$
   is the same subset whether reached via $R$ or via $R_f$ first; the right vertical inclusion
   $\{\fq \subseteq \fp\} \hookrightarrow D(f)$ holds because any $\fq \subseteq \fp$ satisfies
-  $f \notin \fq$ (since $f \notin \fp \supseteq \fq$ would require $f \in \fq \subseteq \fp$,
+  $f \notin \fq$ (since $f \in \fq$ would give $f \in \fq \subseteq \fp$,
   contradicting $f \notin \fp$).
 \dgi{What commutes:} In the ring square, down-then-right equals right-then-down:
   $(\text{localize at } \fp R_f) \circ \pi_f = \pi_{\fp}$, i.e., $(R_f)_{\fp R_f} = R_{\fp}$
   as $R$-algebras. Concretely: any $r/s$ with $s \notin \fp$ can be reached from $R$ either by
-  first inverting $f$ (giving $r/s$ in $R_f$) then localizing at $\fp R_f$, or directly as $r/s$
-  in $R_{\fp}$. In the Spec square, both paths from the lower-left to the upper-right land in
-  $\Spec R$ as the same inclusion: the primes $\subseteq \fp$ that miss $f$ sit inside $D(f)$
+  first inverting $f$ (giving $r/1$ and $s/1$ in $R_f$) then localizing at $\fp R_f$, where $s/1$ becomes a unit, or directly as $r/s$
+  in $R_{\fp}$. In the Spec square, both paths from the lower-right corner to the upper-left corner
+  $\Spec R$ give the same inclusion: the primes $\subseteq \fp$ that miss $f$ sit inside $D(f)$
   inside $\Spec R$.
 \dgi{Why it commutes:} Chase a generic element $r/s \in R_{\fp}$ (so $r \in R$, $s \notin \fp$).
   Via the right-then-down path: first map $r$ to $r/1 \in R_f$, then to $(r/1)/1 \in (R_f)_{\fp R_f}$;
@@ -61932,8 +61932,8 @@ R_{\fp} \arrow[r,"="'] & (R_f)_{\fp R_f}
 \dgi{Why this matters here:} This diagram crystallizes the synthesis paragraph's key claim: localizing
   at a prime $\fp$ is a two-step process -- first restrict to the open set $D(f)$ containing $\fp$
   (by inverting $f$), then localize the resulting ring at its prime $\fp R_f$. It shows that the
-  global prime $\fp$ and the local prime $\fp R_f$ encode the same data, and that the residue field
-  $\kappa(\fp) = \Frac(R/\fp)$ is the common value at the bottom of both paths. The Spec dual
+  global prime $\fp$ and the local prime $\fp R_f$ encode the same data, and that the local ring
+  $R_{\fp}$ (with residue field $\kappa(\fp) = \Frac(R/\fp)$) is the common value at the bottom of both paths. The Spec dual
   makes the geometric content visible: the infinitesimal neighborhood $\{\fq \subseteq \fp\}$
   of the point $\fp$ is equally well described as the intersection $D(f) \cap \Spec R_{\fp}$.
 \dgi{Concrete example:} Take $R = \Z$, $\fp = (2)$, $f = 3$. Then $R_f = \Z[1/3]$ and
