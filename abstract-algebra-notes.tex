@@ -2405,7 +2405,7 @@ S_n\times X \arrow[r, "\rho"'] & X
 \end{tikzcd}\]
 Identify the map labelled $?$ in the right-hand triangle, and prove both diagrams commute using only that $\sigma\tau$ means ``apply $\tau$ then $\sigma$'' and that the identity permutation fixes every point.
 
-\item For $n=4$ consider the assignment $P\colon S_4\to\Sym(\{1,2,3,4\})$ sending each $\sigma$ to itself as a bijection. Letting $\mu$ denote multiplication in each group, draw and verify (on the generators $\sigma=(1\;2\;3\;4)$ and $\tau=(1\;2)$) that
+\item For $n=4$ let $X=\{1,2,3,4\}$ and consider the assignment $P\colon S_4\to\Sym(X)$ sending each $\sigma$ to itself as a bijection. Letting $\mu$ denote multiplication in each group, draw and verify (on the generators $\sigma=(1\;2\;3\;4)$ and $\tau=(1\;2)$) that
 \[\begin{tikzcd}[row sep=large,column sep=large]
 S_4\times S_4 \arrow[r, "\mu"] \arrow[d, "P\times P"'] & S_4 \arrow[d, "P"] \\
 \Sym(X)\times\Sym(X) \arrow[r, "\mu"'] & \Sym(X)
@@ -2696,7 +2696,7 @@ Over $\F_5$, the matrix $A=\begin{psmallmatrix}2&0\\0&1\end{psmallmatrix}$ has $
 \begin{dgx}
 \dgi{Objects:} Four nodes arranged as a $2\times 2$ grid: $\GL_2(\F_5)$ (the group of invertible $2\times 2$ matrices over $\F_5$) in the upper left, $\F_5^\times$ (the group of nonzero elements of $\F_5$ under multiplication) in the upper right, the specific matrix $A=\diag(2,1)$ (an element of $\GL_2(\F_5)$) in the lower left, and the scalar $2\in\F_5^\times$ in the lower right.
 \dgi{Arrows:} The top arrow $\det:\GL_2(\F_5)\twoheadrightarrow\F_5^\times$ is the surjective determinant homomorphism. The bottom arrow $A\mapsto 2$ records the value $\det A=\det\diag(2,1)=2$ for the specific matrix $A$; it is not a separate map but a witness that $A$ lies in the fiber $\det\inv(2)$.
-\dgi{What commutes:} The two paths from $A$ to $2$ agree: following $A$ along the bottom directly gives $2$, and following $A$ up into $\GL_2(\F_5)$ (inclusion) then across $\det$ also gives $2$. Written: $\det(A)=2$.
+\dgi{What commutes:} There is no square to check: the bottom row is the top row evaluated at the element $A\in\GL_2(\F_5)$, which $\det$ sends to $2\in\F_5^\times$. Written: $\det(A)=2$.
 \dgi{Why it commutes:} $A=\diag(2,1)$ has $\det A=2\cdot 1=2$ in $\F_5$, and $2\neq 0$, so $A\in\GL_2(\F_5)$ and $\det A=2$.
 \dgi{Why this matters here:} This diagram serves as a verification step: after the First Isomorphism Theorem identifies the coset $A\cdot\SL_2(\F_5)$ with $\det A=2\in\F_5^\times$, the picture makes the correspondence explicit. It confirms that $A$ lies outside $\SL_2(\F_5)$ (which corresponds to $1$) and in the coset labeled by $2$.
 \dgi{Concrete example:} For $A=\diag(3,1)\in\GL_2(\F_5)$: $\det A=3$, so $A$ lies in the coset $\det\inv(3)$, and the order of this coset in $\GL_2(\F_5)/\SL_2(\F_5)$ equals $\ord{3}$ in $\F_5^\times$, which is $4$.
@@ -5730,7 +5730,7 @@ the coset and conjugation actions worked above (intermediate kernels, the normal
 \end{exers}
 
 \begin{exers}{Commutative-diagram exercises.}
-\item Let $G$ be a group and $A$ a set. Let $\varphi:G\to\Sym(A)$ be a homomorphism, and define $g\cdot a=\varphi(g)(a)$. Prove that this defines a group action by checking the two diagrams below commute for all $g,h\in G$ (here $\cdot_g:A\to A$ denotes $a\mapsto g\cdot a$, and the unlabeled arrow is the identity):
+\item Let $G$ be a group and $A$ a set. Let $\varphi:G\to\Sym(A)$ be a homomorphism, and define $g\cdot a=\varphi(g)(a)$. Prove that this defines a group action by checking the two diagrams below commute for all $g,h\in G$ (here $\cdot_g:A\to A$ denotes $a\mapsto g\cdot a$, and $\id$ is the identity map of $A$):
 \[\begin{tikzcd}[row sep=large,column sep=large]
 A \arrow[r, "\textstyle\cdot_h"] \arrow[dr, "\textstyle\cdot_{gh}"'] & A \arrow[d, "\textstyle\cdot_g"] \\
 & A
@@ -5744,7 +5744,7 @@ Conversely, prove that any action $G\times A\to A$ arises this way from a unique
 
 \item (Cayley's theorem via the regular representation.) Let $G$ be a group and let $\lambda:G\to\Sym(G)$ be the permutation representation of the left-multiplication action $g\cdot x=gx$, so $\lambda(g)$ is the map $x\mapsto gx$.
   \begin{enumerate}
-  \item Show $\lambda$ is a homomorphism by verifying the square commutes for all $g,h$:
+  \item Show $\lambda$ is a homomorphism by verifying the triangle commutes for all $g,h$:
   \[\begin{tikzcd}[row sep=large,column sep=large]
   G \arrow[r, "\lambda(h)"] \arrow[dr, "\lambda(gh)"'] & G \arrow[d, "\lambda(g)"] \\
   & G
