@@ -37651,8 +37651,8 @@ is exact (right-exactness), and give an explicit example with $R = \Z$, $N = \Zn
 
 \item Consider a commutative diagram of $R$-modules with exact rows
 \[\begin{tikzcd}[column sep=large]
-A \arrow[r, "\psi"] \arrow[d, "a"] & B \arrow[r, "\varphi"] \arrow[d, "b"] & C \arrow[r] \arrow[d, "c"] & 0 \\
-0 \arrow[r] & A' \arrow[r, "\psi'"] & B' \arrow[r, "\varphi'"] & C'
+& A \arrow[r, "\psi"] \arrow[d, "a"] & B \arrow[r, two heads, "\varphi"] \arrow[d, "b"] & C \arrow[r] \arrow[d, "c"] & 0 \\
+0 \arrow[r] & A' \arrow[r, hook, "\psi'"] & B' \arrow[r, "\varphi'"] & C'
 \end{tikzcd}\]
 Using the snake lemma, derive the exact sequence relating $\ker a, \ker b, \ker c$ and $\coker a, \coker b, \coker c$, then specialize to the rows obtained by applying $- \tensor_R N$ to a short exact sequence to interpret the connecting map.
 
