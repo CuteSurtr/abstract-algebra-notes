@@ -50347,12 +50347,14 @@ The lattice of subfields produced in the last example sits inside $K$ as
 follows, with edges labelled by their degrees over the field below.
 
 \[
-\begin{tikzcd}[row sep=large, column sep=large]
-& K=\Q(\sqrt[3]2,\zeta_3) & \\
-\Q(\sqrt[3]2) \arrow[ur, dash, "2"] &
-   \Q(\zeta_3\sqrt[3]2) \arrow[u, dash] &
-   \Q(\zeta_3) \arrow[ul, dash, "3"'] \\
-& \Q \arrow[ul, dash, "3"] \arrow[u, dash] \arrow[ur, dash, "2"'] &
+\begin{tikzcd}[row sep=large, column sep=small]
+& &[-2.5em] K=\Q(\sqrt[3]2,\zeta_3) &[-2.5em] & \\
+\Q(\sqrt[3]2) \arrow[urr, dash, "2"] &
+   \Q(\zeta_3\sqrt[3]2) \arrow[ur, dash] &[-2.5em] &[-2.5em]
+   \Q(\zeta_3^2\sqrt[3]2) \arrow[ul, dash] &
+   \Q(\zeta_3) \arrow[ull, dash, "3"'] \\
+& &[-2.5em] \Q \arrow[ull, dash, "3"] \arrow[ul, dash] \arrow[ur, dash]
+   \arrow[urr, dash, "2"'] &[-2.5em] &
 \end{tikzcd}
 \]
 \begin{dgx}
@@ -50366,8 +50368,8 @@ $\Q(\zeta_3)$ (quadratic cyclotomic). At the bottom: $\Q$.
 label on each edge is the degree of that extension. From $\Q$: $[\Q(\sqrt[3]2):\Q]=3$,
 $[\Q(\zeta_3):\Q]=2$. From the cubic fields to $K$: degree $2$ (must adjoin
 $\zeta_3$). From $\Q(\zeta_3)$ to $K$: degree $3$ (must adjoin $\sqrt[3]2$).
-The middle-row field $\Q(\zeta_3\sqrt[3]2)$ connects to $K$ with unlabelled
-dash (also degree $2$).
+The middle-row fields $\Q(\zeta_3\sqrt[3]2)$ and $\Q(\zeta_3^2\sqrt[3]2)$ connect to $K$
+and to $\Q$ by unlabelled dashes (degrees $2$ and $3$, as for $\Q(\sqrt[3]2)$).
 \dgi{What commutes:} Every path from $\Q$ to $K$ has the same total degree
 $6$: by the tower law, upward paths all multiply to $6$. For instance,
 $3\cdot 2=6$ (left branch) and $2\cdot 3=6$ (right branch).
@@ -50386,11 +50388,11 @@ $\zeta_3^2\sqrt[3]2$ generate three distinct but $\Q$-isomorphic cubic subfields
 united only inside $K$.
 \dgi{Common pitfall:} The middle-row fields $\Q(\sqrt[3]2)$,
 $\Q(\zeta_3\sqrt[3]2)$, $\Q(\zeta_3^2\sqrt[3]2)$ are pairwise
-non-isomorphic as subsets of $\C$ (one is real, two are not), but they are
+distinct as subsets of $\C$ (one is real, two are not), but they are
 all isomorphic as abstract fields over $\Q$. Do not read the lattice as
 saying they are equal or that the edges between them have degree $1$.
-\dgi{Takeaway:} The point of this diagram is that the splitting field of a
-cubic sits in a diamond whose left side passes through the real root and whose
+\dgi{Takeaway:} The point of this diagram is that the splitting field of
+$x^3-2$ sits in a lattice whose left side passes through the real root and whose
 right side passes through the primitive cube root of unity, with the total
 degree $6$ read off from any directed path up.
 \end{dgx}
@@ -51087,10 +51089,10 @@ Then explain how iterating this square over the roots of $f$ builds the extensio
 
 \item Let $K$ be the splitting field of $x^3 - 2$ over $\Q$, so $K = \Q(\sqrt[3]{2}, \zeta_3)$. Fill in the lattice of intermediate fields below with the correct degrees on each edge (each edge labelled by $\idx{\cdot}{\cdot}$), and identify which $\Q$-embeddings $K \to \overline{\Q}$ realize each non-real cube root of $2$.
 \[
-\begin{tikzcd}[column sep=large, row sep=large]
-& K \arrow[dl, dash, "{?}"'] \arrow[d, dash, "{?}"] \arrow[dr, dash, "{?}"] & \\
-\Q(\sqrt[3]{2}) \arrow[dr, dash, "{?}"'] & \Q(\zeta_3 \sqrt[3]{2}) \arrow[d, dash, "{?}"] & \Q(\zeta_3) \arrow[dl, dash, "{?}"] \\
-& \Q \arrow[uu, phantom] &
+\begin{tikzcd}[column sep=normal, row sep=large]
+& &[-1em] K \arrow[dll, dash, "{?}"'] \arrow[dl, dash, "{?}"] \arrow[dr, dash, "{?}"'] \arrow[drr, dash, "{?}"] &[-1em] & \\
+\Q(\sqrt[3]{2}) \arrow[drr, dash, "{?}"'] & \Q(\zeta_3 \sqrt[3]{2}) \arrow[dr, dash, "{?}"] &[-1em] &[-1em] \Q(\zeta_3^2 \sqrt[3]{2}) \arrow[dl, dash, "{?}"'] & \Q(\zeta_3) \arrow[dll, dash, "{?}"] \\
+& &[-1em] \Q &[-1em] &
 \end{tikzcd}
 \]
 
