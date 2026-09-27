@@ -58303,7 +58303,7 @@ The clean cube-root form requires $\omega\in F$. The discriminant test (Theorem~
 \section{Quartic Equations and the Resolvent Cubic}
 \subsection*{Quartic equations and the resolvent cubic}
 
-For a quartic the Galois group is hard to pin down by degree alone. Let $f(x)\in F[x]$ be an irreducible quartic with roots $\alpha_1,\alpha_2,\alpha_3,\alpha_4$ in a splitting field $K$. Acting on the four roots represents $G=\Gal(K/F)$ as a \emph{transitive} subgroup of $S_4$, and there are only five such up to conjugacy:
+For a quartic the Galois group is hard to pin down by degree alone. Throughout this section $F$ is a field of characteristic $\neq2$. Let $f(x)\in F[x]$ be an irreducible separable quartic with (distinct) roots $\alpha_1,\alpha_2,\alpha_3,\alpha_4$ in a splitting field $K$. Acting on the four roots represents $G=\Gal(K/F)$ as a \emph{transitive} subgroup of $S_4$, and there are only five such up to conjugacy:
 \[
 S_4,\quad A_4,\quad D_4,\quad C_4,\quad V_4 .
 \]
@@ -58326,11 +58326,11 @@ Let $G$ be the Galois group of an irreducible quartic $f$. Then $D$ is a square 
 \end{proposition}
 
 \begin{proof}
-$D=\delta^2$ is a square in $F$ exactly when $\delta\in F$, i.e.\ when $\delta$ is fixed by every element of $G$. The permutations fixing $\delta$ are precisely the even ones, so $D$ is a square iff $G\sgr A_4$. Among the five transitive subgroups, those lying in $A_4$ are $A_4$ itself and $V_4$ (its elements $(ij)(kl)$ are even); the ones containing an odd permutation are $S_4$, $D_4$ (which contains $4$-cycles and transpositions, both odd), and $C_4$ (a $4$-cycle is odd). Reading off the list (16.9.1) gives the two cases.
+$D=\delta^2$ is a square in $F$ exactly when $\delta\in F$, i.e.\ when $\delta$ is fixed by every element of $G$. The permutations fixing $\delta$ are precisely the even ones, so $D$ is a square iff $G\sgr A_4$. Among the five transitive subgroups, those lying in $A_4$ are $A_4$ itself and $V_4$ (its elements $(ij)(kl)$ are even); the ones containing an odd permutation are $S_4$, $D_4$ (which contains $4$-cycles and transpositions, both odd), and $C_4$ (a $4$-cycle is odd). Reading off the list of five transitive subgroups above gives the two cases.
 \end{proof}
 
 \begin{remark}
-The same argument works in any degree: for an irreducible $f$ of degree $n$, the group $\Gal(K/F)\sgr A_n$ if and only if $\disc(f)$ is a square in $F$ (Artin 16.9.6). The discriminant detects ``even versus odd,'' nothing finer.
+The same argument works in any degree: for an irreducible separable $f$ of degree $n$ over a field $F$ of characteristic $\neq2$, the group $\Gal(K/F)\sgr A_n$ if and only if $\disc(f)$ is a square in $F$ (Artin 16.9.6). The discriminant detects ``even versus odd,'' nothing finer.
 \end{remark}
 
 The discriminant alone cannot separate $A_4$ from $V_4$, nor $S_4$ from the pair $\{D_4,C_4\}$. Lagrange's expression, special to quartics, does the rest.
@@ -58367,7 +58367,7 @@ A short factorization does it:
 which is nonzero because the $\alpha_i$ are distinct; symmetrically $\beta_1-\beta_3=(\alpha_1-\alpha_3)(\alpha_2-\alpha_4)$ and $\beta_2-\beta_3=(\alpha_1-\alpha_2)(\alpha_3-\alpha_4)$ are nonzero. In fact multiplying these three differences reproduces $\pm\delta$, so $\disc(g)=\disc(f)$: the resolvent cubic has the \emph{same} discriminant as $f$.
 \end{proof}
 
-The map $\sigma\mapsto(\text{induced permutation of }\beta_1,\beta_2,\beta_3)$ is a homomorphism $\varphi\colon S_4\to S_3$, the classical surjection of (2.5.13), whose kernel is exactly $V_4$. The behaviour of $g$ therefore reports on the image $\varphi(G)\le S_3$, which is $G/(G\cap V_4)$.
+The map $\sigma\mapsto(\text{induced permutation of }\beta_1,\beta_2,\beta_3)$ is a homomorphism $\varphi\colon S_4\to S_3$, the classical surjection of Artin (2.5.13), whose kernel is exactly $V_4$. The behaviour of $g$ therefore reports on the image $\varphi(G)\le S_3$, which is $G/(G\cap V_4)$.
 
 \begin{theorem}[{resolvent cubic test, Artin 16.9.8}]
 Let $G$ be the Galois group of an irreducible quartic $f$ with resolvent cubic $g$. Then $g$ is irreducible over $F$ if and only if $3\mid\ord G$. Moreover:
@@ -58381,7 +58381,7 @@ Let $G$ be the Galois group of an irreducible quartic $f$ with resolvent cubic $
 \begin{proof}
 Let $B=\set{\beta_1,\beta_2,\beta_3}$, a set of size $3$ by the Lemma. The action of $S_4$ on $B$ is transitive with kernel $V_4$, giving $\varphi\colon S_4\to S_3$. The roots of $g$ are the $\beta_i$, so $g$ splits in $F$ iff $G$ fixes every $\beta_i$, i.e.\ iff $G\sgr\ker\varphi=V_4$; since $G$ is a transitive subgroup, this forces $G=V_4$.
 
-If $g$ is irreducible over $F$, then $G$ acts transitively on its roots $B$, so $\varphi(G)$ is a transitive subgroup of $S_3$ and $3\mid\ord{\varphi(G)}\mid\ord G$. Conversely, if $3\mid\ord G$ then $G$ contains an element $\rho$ of order $3$ (Cauchy); $\rho\notin V_4=\ker\varphi$, so $\varphi(\rho)$ is a $3$-cycle permuting $B$ cyclically, whence $G$ acts transitively on $B$ and $g$ is irreducible. The transitive subgroups with $3\mid\ord G$ are exactly $S_4$ and $A_4$. The remaining case -- $g$ has one root in $F$ and the other two are conjugate over a quadratic -- leaves $G$ of order divisible by $2$ but not $3$ and not all of $V_4$, which by the list (16.9.1) means $G=D_4$ or $C_4$.
+If $g$ is irreducible over $F$, then $G$ acts transitively on its roots $B$, so $\varphi(G)$ is a transitive subgroup of $S_3$ and $3\mid\ord{\varphi(G)}\mid\ord G$. Conversely, if $3\mid\ord G$ then $G$ contains an element $\rho$ of order $3$ (Cauchy); $\rho\notin V_4=\ker\varphi$, so $\varphi(\rho)$ is a $3$-cycle permuting $B$ cyclically, whence $G$ acts transitively on $B$ and $g$ is irreducible. The transitive subgroups with $3\mid\ord G$ are exactly $S_4$ and $A_4$. The remaining case -- $g$ has one root in $F$ and the other two are conjugate over a quadratic -- leaves $G$ of order divisible by $2$ but not $3$ and not all of $V_4$, which by the list of five transitive subgroups means $G=D_4$ or $C_4$.
 \end{proof}
 
 Combining the two tests yields Artin's classification table (16.9.9).
@@ -58439,7 +58439,7 @@ Let $F=\Q$ and $\alpha=\sqrt{4+\sqrt5}$, the nested radical. Verify $f(x)=x^4-8x
 \[
 f(x)=(x-\alpha)(x+\alpha)(x-\alpha')(x+\alpha')=(x^2-(4+\sqrt5))(x^2-(4-\sqrt5))=x^4-8x^2+11,
 \]
-since $\alpha^2+\alpha'^2=8$ and $\alpha^2\alpha'^2=(4+\sqrt5)(4-\sqrt5)=16-5=11$. This $f$ is irreducible over $\Q$ (it has no rational root, and no factorization into two rational quadratics: the only candidate $x^2-8x+\cdots$ pairings give $\sqrt5\notin\Q$). Number the roots $\alpha_1=\alpha,\alpha_2=\alpha',\alpha_3=-\alpha,\alpha_4=-\alpha'$.
+since $\alpha^2+\alpha'^2=8$ and $\alpha^2\alpha'^2=(4+\sqrt5)(4-\sqrt5)=16-5=11$. This $f$ is irreducible over $\Q$ (it has no rational root, and no factorization into two rational quadratics: a factorization would be $(x^2+a)(x^2+b)$ with $a,b=-4\pm\sqrt5\notin\Q$, or $(x^2+cx+d)(x^2-cx+d)$ with $d^2=11$, impossible over $\Q$). Number the roots $\alpha_1=\alpha,\alpha_2=\alpha',\alpha_3=-\alpha,\alpha_4=-\alpha'$.
 
 \emph{Discriminant.} The opposite-pair products are $\alpha_1\alpha_3=-\alpha^2=-(4+\sqrt5)$ and $\alpha_2\alpha_4=-\alpha'^2=-(4-\sqrt5)$, etc. For $f=x^4+px^2+qx+r$ with $p=-8,q=0,r=11$, the discriminant of a biquadratic $x^4+px^2+r$ is $16r(p^2-4r)^2=16\cdot11\cdot(64-44)^2=176\cdot400=70400$, which is not a perfect square ($265^2=70225$, $266^2=70756$). So $D$ is not a square in $\Q$: $G$ is $S_4$, $D_4$, or $C_4$.
 
