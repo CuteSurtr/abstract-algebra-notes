@@ -14229,7 +14229,7 @@ $S_n$. The diagram
 \[
 \begin{tikzcd}[row sep=large,column sep=large]
 S_n \arrow[r, two heads, "\sgn"] \arrow[d, two heads, "\pi"'] & \{\pm1\} \\
-S_n/A_n \arrow[ur, dashed, "\isom"', "{\sigma A_n\mapsto \sgn(\sigma)}"] &
+S_n/A_n \arrow[ur, dashed, "\isom", "{\sigma A_n\mapsto \sgn(\sigma)}"'] &
 \end{tikzcd}
 \]
 \begin{dgx}
@@ -14264,8 +14264,9 @@ student to write $\sigma\mapsto\sgn(\sigma)$ and think the domain is $S_n$ again
 input to the dashed map is the \emph{coset} $\sigma A_n$, an element of $S_n/A_n$; the
 formula merely describes it by a coset representative, which requires well-definedness.
 \dgi{Takeaway:} The point of this diagram is that the coset partition of $S_n$ by $A_n$
-captures exactly the even/odd distinction, and the sign homomorphism is the unique isomorphism
-that reads off which coset a permutation belongs to.
+captures exactly the even/odd distinction, and the map $\sigma A_n\mapsto\sgn(\sigma)$ induced by the
+sign homomorphism is the unique isomorphism $S_n/A_n\to\{\pm1\}$; it reads off which coset
+a permutation belongs to.
 \end{dgx}
 shows the universal property: $\sgn$ factors through $S_n/A_n$ via a unique isomorphism,
 because $A_n=\ker(\sgn)$. The two cosets of $A_n$ are precisely the even and the odd
