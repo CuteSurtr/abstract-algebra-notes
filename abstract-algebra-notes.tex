@@ -56817,7 +56817,7 @@ so that
 \item[(c)] Use (a) and (b) together with the explicit solution of the cubic in (b) in the text to express $\zeta_7$ in terms of radicals similar to the expressions given earlier for the other roots of unity of small order. (The complicated nature of the expression explains why we did not include $\zeta_7$ earlier in our list of explicit roots of unity.)
 \end{enumerate}
 
-\item Let $F$ be a field of characteristic $\neq 2$. State and prove a necessary and sufficient condition on $a, b \in F$ so that $F(\sqrt{a}) = F(\sqrt{b})$. Use this to determine whether $\mathbb{Q}(\sqrt{1 - \sqrt{2}}) = \mathbb{Q}(\sqrt{-2})$.
+\item Let $F$ be a field of characteristic $\neq 2$. State and prove a necessary and sufficient condition on $a, b \in F$ so that $F(\sqrt{a}) = F(\sqrt{b})$. Use this to determine whether $\mathbb{Q}(\sqrt{1 - \sqrt{2}}) = \mathbb{Q}(i, \sqrt{2})$.
 
 \item Let $K = \mathbb{Q}(\sqrt[n]{a})$, where $a \in \mathbb{Q}$, $a > 0$ and suppose $[K : \mathbb{Q}] = n$ (i.e., $x^n - a$ is irreducible). Let $E$ be any subfield of $K$ and let $[E : \mathbb{Q}] = d$. Prove that $E = \mathbb{Q}(\sqrt[d]{a})$. [Consider $N_{K/E}(\sqrt[n]{a}) \in E$.]
 
@@ -56829,7 +56829,7 @@ so that
 \begin{enumerate}
 \item[(a)] Show that $\sigma(\sqrt[d]{a}) = \zeta \sqrt[d]{a}$ for some primitive $d^{\text{th}}$ root of unity $\zeta$.
 \item[(b)] Suppose $K = F(\sqrt[d]{a}) = F(\sqrt[d]{b})$. Use (a) to show that $\dfrac{\sigma(\sqrt[d]{a})}{\sqrt[d]{a}} = \Bigl(\dfrac{\sigma(\sqrt[d]{b})}{\sqrt[d]{b}}\Bigr)^i$ for some integer $i$ relatively prime to $d$. Conclude that $\sigma$ fixes the element $\dfrac{\sqrt[d]{a}}{(\sqrt[d]{b})^i}$ so this is an element of $F$.
-\item[(c)] Prove that $K = F(\sqrt[d]{a}) = F(\sqrt[d]{b})$ if and only if $a = b^i c^d$ and $b = a^j d^d$ for some $c, d \in F$, and $i, j$, and only if $a$ and $b$ generate the same subgroup of $F^\times$ modulo $n^{\text{th}}$ powers.
+\item[(c)] Prove that $K = F(\sqrt[d]{a}) = F(\sqrt[d]{b})$ if and only if $a = b^i c^d$ and $b = a^j e^d$ for some $c, e \in F$ and integers $i, j$, i.e., if and only if $a$ and $b$ generate the same subgroup of $F^\times$ modulo $d^{\text{th}}$ powers.
 \end{enumerate}
 
 \item Let $p, q$ and $r$ be primes in $\mathbb{Z}$ with $q \neq r$. Let $\sqrt[p]{q}$ denote any root of $x^p - q$ and let $\sqrt[p]{r}$ denote any root of $x^p - r$. Prove that $\mathbb{Q}(\sqrt[p]{q}) \neq \mathbb{Q}(\sqrt[p]{r})$.
@@ -56838,7 +56838,7 @@ so that
 
 \item Let $K = \mathbb{Q}(\zeta_p)$ be the cyclotomic field of $p^{\text{th}}$ roots of unity for the prime $p$ and let $G = \Gal(K/\mathbb{Q})$. Let $\zeta$ denote any $p^{\text{th}}$ root of unity. Prove that $\sum_{\sigma \in G} \sigma(\zeta)$ (the trace from $K$ to $\mathbb{Q}$ of $\zeta$) is $-1$ or $p - 1$ depending on whether $\zeta$ is or is not a primitive $p^{\text{th}}$ root of unity.
 
-\item \emph{(The Classical Gauss Sum)} Let $K = \mathbb{Q}(\zeta_p)$ be the cyclotomic field of $p^{\text{th}}$ roots of unity for the odd prime $p$, viewed as a subfield of $\mathbb{C}$, and let $G = \Gal(K/\mathbb{Q})$. Let $H$ denote the subgroup of index 2 in the cyclic group $G$. Define $\eta_0 = \sum_{\tau \in H} \tau(\zeta_p)$, $\eta_1 = \sum_{\sigma \in \sigma H} \sigma(\zeta_p)$, where $\sigma$ is a generator of $\Gal(K/\mathbb{Q})$ (the two \emph{periods} of $\zeta_p$ with respect to $H$, i.e., the sum of the conjugates of $\zeta_p$ with respect to the two cosets of $H$ in $G$, cf. Section 5).
+\item \emph{(The Classical Gauss Sum)} Let $K = \mathbb{Q}(\zeta_p)$ be the cyclotomic field of $p^{\text{th}}$ roots of unity for the odd prime $p$, viewed as a subfield of $\mathbb{C}$, and let $G = \Gal(K/\mathbb{Q})$. Let $H$ denote the subgroup of index 2 in the cyclic group $G$. Define $\eta_0 = \sum_{\tau \in H} \tau(\zeta_p)$, $\eta_1 = \sum_{\tau \in \sigma H} \tau(\zeta_p)$, where $\sigma$ is a generator of $\Gal(K/\mathbb{Q})$ (the two \emph{periods} of $\zeta_p$ with respect to $H$, i.e., the sum of the conjugates of $\zeta_p$ with respect to the two cosets of $H$ in $G$, cf. Section 5).
 \begin{enumerate}
 \item[(a)] Prove that $\sigma(\eta_0) = \eta_1$, $\sigma(\eta_1) = \eta_0$ and that
 \[
@@ -56846,14 +56846,14 @@ so that
 \]
 where the sums are over the squares and nonsquares (respectively) in $(\mathbb{Z}/p\mathbb{Z})^\times$. [Observe that $H$ is the subgroup of squares in $(\mathbb{Z}/p\mathbb{Z})^\times$.]
 \item[(b)] Prove that $\eta_0 + \eta_1 = (\zeta_p, 1) = -1$ and that $\eta_0 - \eta_1 = (\zeta_p, -1)$ where $(\zeta_p, 1)$ and $(\zeta_p, -1)$ are two of the Lagrange resolvents of $\zeta_p$.
-\item[(c)] Let $g = \sum_{i=0}^{p-2} \zeta_2^i \, \zeta_p^{2^i}$ (the classical Gauss sum). Prove that
+\item[(c)] Let $g = \sum_{i=0}^{p-1} \zeta_p^{i^2}$ (the classical Gauss sum). Prove that
 \[
 g = (\zeta_p, -1) = \sum_{i=0}^{p-2} (-1)^i \, \sigma^i(\zeta_p).
 \]
-\item[(d)] Prove that $\tau g = g$ if $\tau \in H$ and $\tau g = -g$ if $\tau \notin H$. Conclude that $[\mathbb{Q}(g) : \mathbb{Q}] = 2$. Recall that complex conjugation is the automorphism $\sigma_{-1}$ on $K$ (cf. Exercise 7 of Section 5). Conclude that $\bar{g} = g$ if $p \equiv 1 \pmod 4$ and $\bar{g} = -g$ if $p \equiv 3 \pmod 4$ i.e., $g$ is a square root of $p$ (i.e., $g^2 = p$) if $p \equiv 1 \pmod 4$ and a square root of $-p$ (i.e., $g^2 = -p$) if $p \equiv 3 \pmod 4$, where $\bar{g}$ denotes the complex conjugate of $g$.
+\item[(d)] Prove that $\tau g = g$ if $\tau \in H$ and $\tau g = -g$ if $\tau \notin H$. Conclude that $[\mathbb{Q}(g) : \mathbb{Q}] = 2$. Recall that complex conjugation is the automorphism $\sigma_{-1}$ on $K$ (cf. Exercise 7 of Section 5). Conclude that $\bar{g} = g$ if $p \equiv 1 \pmod 4$ and $\bar{g} = -g$ if $p \equiv 3 \pmod 4$; with $g\bar{g} = p$ from (e) this makes $g$ a square root of $p$ (i.e., $g^2 = p$) if $p \equiv 1 \pmod 4$ and a square root of $-p$ (i.e., $g^2 = -p$) if $p \equiv 3 \pmod 4$, where $\bar{g}$ denotes the complex conjugate of $g$.
 \item[(e)] Prove that $g^2 = \pm p$. [The complex conjugate of a root of unity is its reciprocal. $\bar{g} = \sum_{i=0}^{p-2} (-1)^i (\sigma^i(\zeta_p))^{-1}$ gives
 \[
-g\bar{g} = \sum_{i,j=0}^{p-2} (-1)^i (-1)^j \frac{\sigma^i(\zeta_p)}{\sigma^j(\zeta_p)} = \sum_{i,j=0}^{p-2} (-1)^{i-j} \frac{\sigma^{i-j}(\zeta_p)}{\zeta_p}
+g\bar{g} = \sum_{i,j=0}^{p-2} (-1)^i (-1)^j \frac{\sigma^i(\zeta_p)}{\sigma^j(\zeta_p)} = \sum_{i,j=0}^{p-2} (-1)^{i-j} \sigma^j\Bigl(\frac{\sigma^{i-j}(\zeta_p)}{\zeta_p}\Bigr)
 \]
 \[
 = \sum_{k=0}^{p-2} (-1)^k \sum_{j=0}^{p-2} \sigma^j \frac{\sigma^k(\zeta_p)}{\zeta_p}
@@ -56862,13 +56862,13 @@ where $k = i - j$. If $k = 0$ the element $\frac{\sigma^k(\zeta_p)}{\zeta_p}$ is
 \item[(f)] Conclude that $g^2 = (-1)^{(p-1)/2} p$ and that $\mathbb{Q}(\sqrt{(-1)^{(p-1)/2} p})$ is the unique quadratic subfield of $\mathbb{Q}(\zeta_p)$. (Cf. also Exercise 33 of Section 6.)
 \end{enumerate}
 
-\item Let $L$ be the Galois closure of the finite extension $\mathbb{Q}(\alpha)$ of $\mathbb{Q}$. For any prime $p$ dividing the order of $\Gal(L/\mathbb{Q})$ prove there is a subfield $K$ of $L$ with $[L : K] = p$ and $K$ is not Galois over $\mathbb{Q}$.
+\item Let $L$ be the Galois closure of the finite extension $\mathbb{Q}(\alpha)$ of $\mathbb{Q}$. For any prime $p$ dividing the order of $\Gal(L/\mathbb{Q})$ prove there is a subfield $F$ of $L$ with $[L : F] = p$ and $L = F(\alpha)$.
 
 \item Let $F$ be a subfield of the real numbers $\mathbb{R}$. Let $a$ be an element of $F$ and let $K = F(\sqrt[n]{a})$ where $\sqrt[n]{a}$ denotes any real $n^{\text{th}}$ root of $a$. Prove that if $L$ is any Galois extension of $F$ contained in $K$ then $[L : F] \leq 2$.
 
 \item This exercise shows that in general it is necessary to use complex numbers when expressing real roots in terms of radicals and generalizes the \emph{Casus irreducibilis} of cubic equations. Let $f(x) \in \mathbb{Q}[x]$ be an irreducible polynomial all of whose roots are real. Suppose further that one of the roots, $\alpha$, of $f(x)$ can be expressed in terms of real radicals (i.e., there is a root extension of real fields $\mathbb{Q} = K_0 \subset K_1 \subset \cdots \subset K_m$ with $K_{i+1} = K_i(\sqrt[n_i]{a_i})$, $i = 1, 2, \ldots, m - 1$, for some integers $n_i$ and some $a_i \in K_i$ and $\alpha \in K_m$). Prove that the Galois group of $f(x)$ is a 2-group. Conclude in particular that the degree of $f(x)$ is a power of 2 and that the real roots of such a polynomial can be expressed entirely in terms of real radicals if and only if these roots can be constructed by straightedge and compass. [The argument is similar to the case of cubics. Let $L \subseteq \mathbb{R}$ be the Galois closure of $\mathbb{Q}(\alpha)$ and suppose the order of $\Gal(L/\mathbb{Q})$ is divisible by some odd prime $p$. Let $F$ be a subfield of $L$ with $[L : F] = p$ and $L = F(\alpha)$ by Exercise 12 and consider the composite fields $K_i' = F K_i$, $i = 0, 1, \ldots, m$. These are again real radical extensions and by the argument in the text for the \emph{Casus irreducibilis}, we may assume each $[K_{i+1}' : K_i']$ is a prime. Since $\alpha \notin F = F K_0$, there is an integer $s$ with $\alpha \notin K_s'$, $\alpha \in K_{s+1}'$. Since the extensions are of prime degree, we have $K_{s+1}' = K_s'(\alpha)$. Since $L = F(\alpha)$ is a Galois extension of degree $p$, $K_{s+1}'$ is a Galois extension of $K_s'$ of degree $p$, contradicting the previous exercise.]
 
-\item \emph{(`Cardano's Formulas' for a Cubic in Characteristic 2)} Suppose $f(x) = x^3 + px + q$ is an irreducible cubic over a field of characteristic 2. Let $\rho$ be a primitive $3^{\text{rd}}$ root of unity and let $\theta, \theta'$ be the roots of the quadratic $x^2 + qx + (p^3 + q^2)$, cf. Exercise 30 of Section 6. Let $\theta_1$ and $\theta_2$ be cube roots of $\rho\theta + \theta'$ and $\rho\theta + \theta'$, respectively, where the cube roots are chosen so that $\theta_1\theta_2 = p$. Show that the roots of $f(x)$ are given by $\alpha = \theta_1 + \theta_2$, $\beta = \rho\alpha + \theta_1$, and $\gamma = \rho^2\alpha + \theta_2 = \alpha + \beta$.
+\item \emph{(`Cardano's Formulas' for a Cubic in Characteristic 2)} Suppose $f(x) = x^3 + px + q$ is an irreducible cubic over a field of characteristic 2. Let $\rho$ be a primitive $3^{\text{rd}}$ root of unity and let $\theta, \theta'$ be the roots of the quadratic $x^2 + qx + (p^3 + q^2)$, cf. Exercise 50 of Section 6. Let $\theta_1$ and $\theta_2$ be cube roots of $\rho q + \theta$ and $\rho q + \theta'$, respectively, where the cube roots are chosen so that $\theta_1\theta_2 = p$. Show that the roots of $f(x)$ are given by $\alpha = \theta_1 + \theta_2$, $\beta = \rho\alpha + \theta_1$, and $\gamma = \rho\alpha + \theta_2 = \alpha + \beta$.
 
 \item Let $a$ be a nonzero rational number.
 \begin{enumerate}
@@ -56878,12 +56878,12 @@ where $k = i - j$. If $k = 0$ the element $\frac{\sigma^k(\zeta_p)}{\zeta_p}$ is
 
 \item Let $D$ be a squarefree integer and let $a \in \mathbb{Q}$ be a nonzero rational number. Show that $\mathbb{Q}(\sqrt{a\sqrt{D}})$ cannot be a cyclic extension of degree 4 over $\mathbb{Q}$.
 
-\item Let $D$ be a squarefree integer and let $a \in \mathbb{Q}$ be a nonzero rational number. Prove that if $\mathbb{Q}(\sqrt{a\sqrt{D}})$ is Galois over $\mathbb{Q}$ then $D = -1$.
+\item Let $D \neq 1$ be a squarefree integer and let $a \in \mathbb{Q}$ be a nonzero rational number. Prove that if $\mathbb{Q}(\sqrt{a\sqrt{D}})$ is Galois over $\mathbb{Q}$ then $D = -1$.
 
 \item Let $D \in \mathbb{Z}$ be a squarefree integer and let $K = \mathbb{Q}(\sqrt{D})$.
 \begin{enumerate}
 \item[(a)] Prove that if $D = s^2 + t^2$ is the sum of two rational squares then there exists an extension $L/\mathbb{Q}$ containing $K$ which is Galois over $\mathbb{Q}$ with a cyclic Galois group of order 4. [Consider the extension $\mathbb{Q}(\sqrt{D + s\sqrt{D}})$.] (Note also that $D$ is the sum of two rational squares if and only if $D$ is also the sum of two integer squares, so one may assume $s$ and $t$ are integral without loss.)
-\item[(b)] Prove conversely that if $K$ can be embedded in a cyclic extension $L$ of degree 4 as in (a) then $D$ is the sum of two squares. [One approach: (i) observe first that $L$ is quadratic over $K$, so $L = K(\sqrt{a + b\sqrt{D}})$ for some $a, b \in K$. (ii) show that $L$ contains the quadratic subfield $\mathbb{Q}(\sqrt{a^2 - b^2 D})$, which must be $\mathbb{Q}(\sqrt{D})$ if $L/\mathbb{Q}$ is cyclic, see Exercise 7.]
+\item[(b)] Prove conversely that if $K$ can be embedded in a cyclic extension $L$ of degree 4 as in (a) then $D$ is the sum of two squares. [One approach: (i) observe first that $L$ is quadratic over $K$, so $L = K(\sqrt{a + b\sqrt{D}})$ for some $a, b \in \mathbb{Q}$. (ii) show that $L$ contains the quadratic subfield $\mathbb{Q}(\sqrt{a^2 - b^2 D})$, which must be $\mathbb{Q}(\sqrt{D})$ if $L/\mathbb{Q}$ is cyclic, see Exercise 7.]
 \item[(c)] Conclude in particular that $\mathbb{Q}(\sqrt{3})$ is not a subfield of any cyclic extension of degree 4 over $\mathbb{Q}$. Similarly conclude that the fields $\mathbb{Q}(\sqrt{D})$ for squarefree integers $D < 0$ are never contained in cyclic extensions of degree 4 over $\mathbb{Q}$ (this gives an alternate proof for Exercise 19, Section 6).
 \end{enumerate}
 
@@ -56896,17 +56896,17 @@ f(x) = x^5 + px^3 + qx^2 + rx + s, \qquad p, q, r, s \in \mathbb{Q}
 then the associated polynomial of degree 6 is
 \begin{align*}
 g(x) ={}& x^6 + 8rx^5 + (2pq^2 - 6p^2r + 40r^2 - 50qs) x^4 \\
-&+ (-2q^4 + 21pq^2r - 40p^2r^2 + 160r^3 - 15p^2qs - 400qrs + 125p^2s^2) x^3 \\
-&+ (p^2q^4 - 8q^4r + 9p^3q^2r - 136p^2r^3 + 625q^2s^2 + 400r^4 - 6p^3q^2s \\
-&\quad + 76pq^2r^2 - 50pq^3s - 1400r^3s + 500prs^2 + 90p^2qrs) x^2 \\
+&+ (-2q^4 + 21pq^2r - 40p^2r^2 + 160r^3 - 15p^2qs - 400qrs + 125ps^2) x^3 \\
+&+ (p^2q^4 - 8q^4r + 9p^4r^2 - 136p^2r^3 + 625q^2s^2 + 400r^4 - 6p^3q^2r \\
+&\quad + 76pq^2r^2 - 50pq^3s - 1400qr^2s + 500prs^2 + 90p^2qrs) x^2 \\
 &+ (-108p^5s^2 + 32p^4r^3 - 256p^2r^4 - 3125s^4 + 512r^5 - 2pq^6 + 3q^4r^2 \\
-&\quad - 58q^4s + 2750q^2rs^2 - 31p^3q^3s - 500pr^2s^2 + 19p^2q^4s \\
+&\quad - 58q^5s + 2750q^2rs^2 - 31p^3q^3s - 500pr^2s^2 + 19p^2q^4r \\
 &\quad - 51p^3q^2r^2 + 76pq^2r^3 - 2400qr^3s - 325p^2q^2s^2 + 525p^3rs^2 \\
 &\quad + 625pqs^3 + 117p^4qrs + 105pq^3rs + 260p^2qr^2s) x \\
-&+ (q^8 + 256r^6 + 11q^6r - 27p^4r^3 - 4p^6r^3 + 48p^4r^4 - 192p^2r^5 \\
-&\quad + 3125p^2r^4 - 9375r^4 - 1600qr^4s - 99p^5rs^2 - 125pq^4s^2 \\
-&\quad - 124q^4rs + 3250q^2r^3s - 2000pr^3s^2 - 13pq^6r + 2p^4q^3rs \\
-&\quad + 65p^2q^4r^2 - 128p^3q^2r^3 - 16pq^4r^4 - 4p^5q^3s - 12p^2q^5s \\
+&+ (q^8 + 256r^6 + 17q^4r^3 - 27p^7s^2 - 4p^6r^3 + 48p^4r^4 - 192p^2r^5 \\
+&\quad + 3125p^2s^4 - 9375rs^4 - 1600qr^4s - 99p^5rs^2 - 125pq^4s^2 \\
+&\quad - 124q^5rs + 3250q^2r^2s^2 - 2000pr^3s^2 - 13pq^6r + p^5q^2r^2 \\
+&\quad + 65p^2q^4r^2 - 128p^3q^2r^3 - 16pq^2r^4 - 4p^5q^3s - 12p^2q^5s \\
 &\quad - 150p^4q^2s^2 + 1200p^3r^2s^2 + 18p^6qrs + 12p^3q^3rs + 196p^4qr^2s \\
 &\quad + 590pq^3r^2s - 160p^2qr^3s - 725p^2q^2rs^2 - 1250pqrs^3).
 \end{align*}
@@ -56935,12 +56935,12 @@ g(x) = x^6 + 8Ax^5 + 40A^2x^4 + 160A^3x^3 + 400A^4x^2 + (512A^5 - 3125B^4)x - 93
 \item Let $F$ contain a primitive $n$th root of unity, and let $a,b\in F^{\times}$. Prove that $F(\sqrt[n]{a})=F(\sqrt[n]{b})$ if and only if $a$ and $b$ generate the same cyclic subgroup of $F^{\times}/(F^{\times})^{n}$. Use this to count the distinct fields among $F(\sqrt[5]{a})$ as $a$ ranges over a system of representatives when $\abs{F^{\times}/(F^{\times})^{5}}$ has order $5$.
 \item Let $f(x)\in\Q[x]$ be irreducible of prime degree $p$. Prove that $f$ is solvable by radicals if and only if its splitting field is generated over $\Q$ by any two of its roots. (One direction: use that a transitive solvable subgroup of $S_p$ lies in the affine group $\operatorname{AGL}_1(\Zn{p})$ of order $p(p-1)$, in which a point stabilizer acts freely on the remaining points.)
 \item Let $K/F$ be a radical Galois extension in characteristic $0$. Prove that $\Gal(K/F)$ is solvable \emph{without} invoking the full solvability criterion, by induction on $\idx{K}{F}$: adjoin a suitable root of unity, peel off the bottom cyclic step via Kummer theory, and apply the closure properties of solvable groups to the quotient.
-\item Construct an irreducible quintic $f(x)\in\Q[x]$ whose Galois group is the dihedral group $D_{10}$ of order $10$ (so $f$ \emph{is} solvable by radicals), and prove that your $f$ has exactly one real root. Explain why the number of real roots is consistent with $\Gal(f)\le F_{20}$ but incompatible with $\Gal(f)=S_5$.
+\item Construct an irreducible quintic $f(x)\in\Q[x]$ whose Galois group is the dihedral group $D_{10}$ of order $10$ (so $f$ \emph{is} solvable by radicals), and prove that your $f$ has exactly one real root. Explain why the number of real roots is consistent with $\Gal(f)\le F_{20}$, and why exactly three real roots would be incompatible with $\Gal(f)\le F_{20}$. (One real root does not rule out $S_5$: $x^5-x-1$ has one real root and group $S_5$.)
 \item Let $p$ be a prime and let $F$ have characteristic $0$ and contain a primitive $p$th root of unity. Suppose $K/F$ is Galois with $\Gal(K/F)$ a nonabelian group of order $p^3$. Prove that $K/F$ is a radical extension, and exhibit a chain of subfields corresponding to a composition series of $\Gal(K/F)$ in which every successive step is a degree-$p$ Kummer extension $F_i(\sqrt[p]{a_i})$.
 \end{exers}
 
 \begin{exers}{Commutative-diagram exercises.}
-\item Let $K$ be the splitting field of $x^5-2$ over $\Q$, so $\Gal(K/\Q)\isom F_{20}=\Zn5\rtimes\Zns5$. The subgroup lattice and its $\Fix$-image are partially drawn below. Complete both diagrams by inserting the missing groups $\Zn{10}$ (the index-$2$ subgroup $D_{10}$ is $\Zn5\rtimes\Zn2$) and $\Zn5$ on the left and their fixed fields on the right, then prove that the dashed correspondence is inclusion-reversing and matches normal subgroups with Galois subextensions of $\Q$:
+\item Let $K$ be the splitting field of $x^5-2$ over $\Q$, so $\Gal(K/\Q)\isom F_{20}=\Zn5\rtimes\Zns5$. The subgroup lattice and its $\Fix$-image are partially drawn below. Complete both diagrams by inserting the missing group $\Zn5$ on the left (the index-$2$ subgroup $D_{10}$ is $\Zn5\rtimes\Zn2$; $F_{20}$ has no element of order $10$, so no $\Zn{10}$ occurs) and the missing fixed field on the right, then prove that the dashed correspondence is inclusion-reversing and matches normal subgroups with Galois subextensions of $\Q$:
 \[
 \begin{tikzcd}[row sep=1.7em, column sep=1.4em]
 F_{20} \arrow[d,dash] \\
