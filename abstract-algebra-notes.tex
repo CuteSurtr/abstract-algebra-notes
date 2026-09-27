@@ -63215,7 +63215,7 @@ Show that a UFD $A$ is integrally closed in $\Frac(A)$.
 \begin{wex}{The ring of integers of $\Q(\sqrt D)$}
 For squarefree $D$, compute the normalization of $\Z$ in $\Q(\sqrt D)$.
 \wrec Test $\alpha=a+b\sqrt D$ ($a,b\in\Q$): integral iff its $\Q$-minimal polynomial $x^2-2ax+(a^2-b^2D)$ has integer coefficients.
-\wsol Integrality forces $2a\in\Z$ and $a^2-b^2D\in\Z$. Writing $a=x/2,\ b=y/2$ gives $x^2-y^2D\equiv0\pmod4$. As squares are $0,1\bmod4$ and $D$ is squarefree, either $D\equiv2,3\pmod4$ with $x,y$ both even (so $a,b\in\Z$), or $D\equiv1\pmod4$ with $x,y$ of equal parity. Hence
+\wsol Integrality forces $2a\in\Z$ and $a^2-b^2D\in\Z$; then $(2b)^2D=(2a)^2-4(a^2-b^2D)\in\Z$, and as $D$ is squarefree this forces $2b\in\Z$. Writing $a=x/2,\ b=y/2$ with $x,y\in\Z$ gives $x^2-y^2D\equiv0\pmod4$. As squares are $0,1\bmod4$ and $D$ is squarefree, either $D\equiv2,3\pmod4$ with $x,y$ both even (so $a,b\in\Z$), or $D\equiv1\pmod4$ with $x,y$ of equal parity. Hence
 \[
 \mathcal O_{\Q(\sqrt D)}=\begin{cases}\Z[\sqrt D],&D\equiv2,3\pmod4,\\[2pt]\Z\!\left[\tfrac{1+\sqrt D}{2}\right],&D\equiv1\pmod4.\end{cases}
 \]
@@ -63237,7 +63237,7 @@ Let $A\subseteq B$ be commutative rings with $B$ integral over $A$.
 \end{theorem}
 
 \begin{proof}[Idea]
-(1): if $A$ is a field and $0\neq s\in B$ satisfies a monic equation with nonzero constant term $a_0$, then $s\cdot(-a_0\inv)(s^{n-1}+\cdots+a_1)=1$ gives $s\inv\in B$. Conversely if $B$ is a field and $0\neq r\in A$, then $r\inv\in B$ is integral, and its monic equation rearranges to express $r\inv$ as an $A$-combination of nonnegative powers of $r$, so $r\inv\in A$. (2): reduce mod the primes -- $B/\fq$ is integral over $A/(\fq\cap A)$, so (1) gives the maximality statement; existence of \emph{some} $\fq$ is the localization argument $S\inv A\subseteq S\inv B$ at $S=A\setminus\fp$ (a prime of $B$ over $\fp S\inv B$ contracts to $\fp$). (3) is an induction reducing to $n=2$, $m=1$: pass to $\overline A=A/\fp_1\subseteq\overline B=B/\fq_1$, apply Lying Over to $\fp_2/\fp_1$, and pull back. (4) uses Going Down for valuation/normal rings (A\&M 5.16): with $A$ integrally closed, $\fp_1B$ meets the right multiplicative set, supplying a prime $\fq_2\subseteq\fq_1$ over $\fp_2$.
+(1): if $A$ is a field and $0\neq s\in B$ satisfies a monic equation with nonzero constant term $a_0$, then $s\cdot(-a_0\inv)(s^{n-1}+\cdots+a_1)=1$ gives $s\inv\in B$. Conversely if $B$ is a field and $0\neq r\in A$, then $r\inv\in B$ is integral, and its monic equation rearranges to express $r\inv$ as an $A$-combination of nonnegative powers of $r$, so $r\inv\in A$. (2): reduce mod the primes -- $B/\fq$ is integral over $A/(\fq\cap A)$, so (1) gives the maximality statement; existence of \emph{some} $\fq$ is the localization argument $S\inv A\subseteq S\inv B$ at $S=A\setminus\fp$ (a maximal ideal $\fn$ of $S\inv B$ contracts, by the maximality statement applied to the integral extension $S\inv A\subseteq S\inv B$, to the maximal ideal $\fp S\inv A$ of the local ring $S\inv A$, so the contraction of $\fn$ to $B$ is a prime of $B$ lying over $\fp$). (3) is an induction reducing to $n=2$, $m=1$: pass to $\overline A=A/\fp_1\subseteq\overline B=B/\fq_1$, apply Lying Over to $\fp_2/\fp_1$, and pull back. (4) is A\&M 5.16: reduce to $n=2$, $m=1$; since $A$ is integrally closed, A\&M 5.15 is used to show that $\fp_2B$ does \emph{not} meet the multiplicative set $(A\setminus\fp_2)(B\setminus\fq_1)$, and an ideal of $B$ maximal among those containing $\fp_2B$ and disjoint from this set is a prime $\fq_2\subseteq\fq_1$ with $\fq_2\cap A=\fp_2$.
 \end{proof}
 
 \begin{remark}[contraction is a continuous map of spectra]
@@ -63262,8 +63262,8 @@ Show $\Q$ is not integral over $\Z$, and that contraction $\Spec\Q\to\Spec\Z$ is
 
 \begin{wex}{$A$ field iff $B$ field, in action}
 Let $A=k$ a field and $B$ a domain integral over $k$. Show $B$ is a field.
-\wrec Apply part~(1) of the theorem; this is exactly the step that kills the polynomial ring inside the Nullstellensatz proof.
-\wsol By (1), $A=k$ a field and $B$ a domain integral over $A$ forces $B$ to be a field. Concretely, each $0\neq b\in B$ satisfies $b^n+a_{n-1}b^{n-1}+\cdots+a_0=0$ with $a_i\in k$; we may take $a_0\neq0$ (cancel powers of $b$ in the domain $B$), and then $b\inv=-a_0\inv(b^{n-1}+\cdots+a_1)\in B$. Sanity check: if instead $B=k[y]$ (a polynomial ring), then $y$ is transcendental over $k$, so it satisfies no monic equation over $k$ and $k[y]$ is \emph{not} integral over $k$; correspondingly $B=k[y]$ is not a field -- consistent with the theorem, since its hypothesis fails. The contrapositive ``$B$ not a field $\Rightarrow$ $B$ not integral over the field $k$'' is what forces $q=0$ in Noether normalization below.
+\wrec Apply the direction ``$A$ a field $\Rightarrow$ $B$ a field'' of part~(1) of the theorem; it is the converse direction that kills the polynomial ring inside the Nullstellensatz proof.
+\wsol By (1), $A=k$ a field and $B$ a domain integral over $A$ forces $B$ to be a field. Concretely, each $0\neq b\in B$ satisfies $b^n+a_{n-1}b^{n-1}+\cdots+a_0=0$ with $a_i\in k$; we may take $a_0\neq0$ (cancel powers of $b$ in the domain $B$), and then $b\inv=-a_0\inv(b^{n-1}+\cdots+a_1)\in B$. Sanity check: if instead $B=k[y]$ (a polynomial ring), then $y$ is transcendental over $k$, so it satisfies no monic equation over $k$ and $k[y]$ is \emph{not} integral over $k$; correspondingly $B=k[y]$ is not a field -- consistent with the theorem, since its hypothesis fails. The contrapositive ``$B$ not a field $\Rightarrow$ $B$ not integral over the field $k$'' is the direction shown here; what forces $q=0$ in the proof of Zariski's Lemma below is the converse direction of (1): a field that is integral over a subring forces that subring to be a field.
 \end{wex}
 
 \subsection*{Noether Normalization and Zariski's Lemma}
@@ -63291,13 +63291,13 @@ By Noether Normalization, $L=k[r_1,\dots,r_m]$ is integral over a polynomial rin
 \end{proof}
 
 \begin{remark}[A\&M's transcendence-degree proof]
-A\&M reach Zariski's Lemma without normalization, via Proposition~5.23 (extending homomorphisms to $\Omega$): if $A\subseteq B$ are domains with $B$ finitely generated over $A$ and $0\neq v\in A$, then for any algebraically closed $\Omega$ and any $\varphi:A\to\Omega$ with $\varphi(v)\neq0$ (for a suitable $v$), $\varphi$ extends to $B$. Applied with $A=k$, every $k$-homomorphism $L\to\overline k$ exists, forcing $L$ algebraic over $k$. Both routes deliver the same arithmetic-geometry payoff.
+A\&M reach Zariski's Lemma without normalization, via Proposition~5.23 (extending homomorphisms to $\Omega$): if $A\subseteq B$ are domains with $B$ finitely generated over $A$, then there is $0\neq u\in A$ such that, for any algebraically closed $\Omega$, every homomorphism $\varphi:A\to\Omega$ with $\varphi(u)\neq0$ extends to $B$. Applied with $A=k$ and $B=L$ (A\&M Corollary~5.24), the inclusion $k\hookrightarrow\overline k$ extends to a homomorphism $L\to\overline k$, which is injective because $L$ is a field; so $L$ is algebraic over $k$. Both routes deliver the same arithmetic-geometry payoff.
 \end{remark}
 
 \begin{wex}{Normalizing $k[x,y]/(xy-1)$}
 Exhibit a Noether normalization of $A=k[x,y]/(xy-1)$ (the hyperbola, $\isom k[t,t\inv]$).
 \wrec Find one algebraically independent element over which $A$ is integral; the relation $xy=1$ must be turned into a monic equation.
-\wsol Here $\bar x,\bar y$ satisfy $\bar x\bar y=1$, so they are algebraically dependent ($q<2$). Set $u=\bar x+\bar y$. Then $\bar x,\bar y$ are the two roots of $T^2-uT+1=0$ (since $\bar x+\bar y=u$, $\bar x\bar y=1$), a monic equation over $k[u]$; hence $A=k[u][\bar x]$ is integral over $k[u]$, and $u$ is algebraically independent (transcendental) over $k$. So $q=1$ and $k[u]\hookrightarrow A$ is a normalization. Sanity check: $\dim A=1$ matches $q=1$ (the number of normalizing parameters equals the Krull dimension); and $A=k[t,t\inv]$ is indeed integral over $k[t+t\inv]$, the classical fact that the coordinate ring of the hyperbola is finite over the ``$x$-axis'' parameter $u$.
+\wsol Here $\bar x,\bar y$ satisfy $\bar x\bar y=1$, so they are algebraically dependent ($q<2$). Set $u=\bar x+\bar y$. Then $\bar x,\bar y$ are the two roots of $T^2-uT+1=0$ (since $\bar x+\bar y=u$, $\bar x\bar y=1$), a monic equation over $k[u]$; hence $A=k[u][\bar x]$ is integral over $k[u]$, and $u$ is algebraically independent (transcendental) over $k$. So $q=1$ and $k[u]\hookrightarrow A$ is a normalization. Sanity check: $\dim A=1$ matches $q=1$ (the number of normalizing parameters equals the Krull dimension); and $A=k[t,t\inv]$ is indeed integral over $k[t+t\inv]$, so the hyperbola is finite over the line with coordinate $u=\bar x+\bar y$ -- but \emph{not} over the $x$-axis, since $\bar y=\bar x\inv$ is not integral over the integrally closed ring $k[\bar x]$.
 \end{wex}
 
 \begin{wex}{Why a polynomial ring is never a field}
@@ -63309,7 +63309,7 @@ Verify the step ``$q\ge1\Rightarrow k[y_1,\dots,y_q]$ not a field'' used in Zari
 \begin{wex}{Noether normalization of a hypersurface}
 Normalize $A=k[x,y]/(y^2-x^3-x)$ over an infinite field $k$.
 \wrec After a linear change ensuring the top-degree form is monic in one variable, that variable becomes integral over the others.
-\wsol The relation $y^2=x^3+x$ is monic in $y$ over $k[x]$ ($y^2-(x^3+x)=0$), so $\bar y$ is integral over $k[\bar x]$, and $\bar x$ is transcendental over $k$ (no relation in $x$ alone). Thus $A=k[\bar x][\bar y]$ is integral over $k[\bar x]$ with $q=1$. Sanity check: $A$ is a free $k[\bar x]$-module on $\set{1,\bar y}$ of rank $2$ -- the elliptic curve presents itself as a degree-$2$ ramified cover of the $x$-line, branched where $x^3+x=0$, exactly the ``ramified covering'' picture A\&M opens the chapter with.
+\wsol The relation $y^2=x^3+x$ is monic in $y$ over $k[x]$ ($y^2-(x^3+x)=0$), so $\bar y$ is integral over $k[\bar x]$, and $\bar x$ is transcendental over $k$ (no relation in $x$ alone). Thus $A=k[\bar x][\bar y]$ is integral over $k[\bar x]$ with $q=1$. Sanity check: $A$ is a free $k[\bar x]$-module on $\set{1,\bar y}$ of rank $2$ -- for $\charac k\neq2$ the elliptic curve presents itself as a degree-$2$ ramified cover of the $x$-line, branched where $x^3+x=0$, exactly the ``ramified covering'' picture A\&M opens the chapter with.
 \end{wex}
 
 \subsection*{Hilbert's Nullstellensatz: the dictionary points $\leftrightarrow$ ideals}
