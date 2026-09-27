@@ -5949,7 +5949,7 @@ Problems are drawn from Dummit \& Foote, Artin (\emph{Algebra}), and Fraleigh
 \item [DF 1.6.14] Show $\ker\varphi$ is a subgroup, and $\varphi$ is injective iff $\ker\varphi=\{1\}$.
 \item [DF 1.6.17] Show $g\mapsto g\inv$ is a homomorphism iff $G$ is abelian.
 \item [DF 1.6.18] Show $g\mapsto g^2$ is a homomorphism iff $G$ is abelian.
-\item [DF 1.6.19] Show $z\mapsto z^k$ on the roots of unity is a surjective homomorphism, not an isomorphism.
+\item [DF 1.6.19] For a fixed integer $k>1$, show $z\mapsto z^k$ on the roots of unity is a surjective homomorphism, not an isomorphism.
 \item [DF 1.6.20] Prove $\Aut(G)$ is a group under composition.
 \item [DF 1.6.21] Show $q\mapsto kq$ ($k\in\Q^\times$) is an automorphism of $\Q$.
 \item [DF 1.6.22] For $A$ abelian, show $a\mapsto a^k$ is a homomorphism, an automorphism for $k=-1$.
@@ -5994,7 +5994,7 @@ Problems are drawn from Dummit \& Foote, Artin (\emph{Algebra}), and Fraleigh
 \item [Artin 6.11] If $\{1,a\}$ is a normal subgroup of $G$, prove $a$ is in the center.
 \item [Artin 7.1] Prove $a\sim b$ iff $b=gag\inv$ for some $g$ is an equivalence relation on $G$.
 \item [Fraleigh 1.42] For associative $\ast$, show $H=\{a\in S\mid a\ast x=x\ast a\text{ for all }x\}$ is closed under $\ast$.
-\item [Fraleigh 2.10] For $n\Z=\{nm\mid m\in\Z\}$: (a) show $\gen{n\Z,+}$ is a group; (b) show $n\Z\isom\Z$.
+\item [Fraleigh 2.10] For $n\in\Z^+$ and $n\Z=\{nm\mid m\in\Z\}$: (a) show $\gen{n\Z,+}$ is a group; (b) show $n\Z\isom\Z$.
 \item [Fraleigh 2.19] On $S=\R\setminus\{-1\}$ with $a\ast b=a+b+ab$: (a) show $\ast$ is a binary operation;
    (b) show $\gen{S,\ast}$ is a group; (c) solve $2\ast x\ast3=7$.
 \item [Fraleigh 2.28] If $a\neq e$ has order $2$ in a group, prove $b\inv ab$ has order $2$ for any $b$.
@@ -6024,7 +6024,7 @@ Problems are drawn from Dummit \& Foote, Artin (\emph{Algebra}), and Fraleigh
 \item [DF 1.1.23] $\ord{x}=n$, $n=st$; prove $\ord{x^s}=t$.
 \item [DF 1.1.31] Prove a finite group of even order contains an element of order $2$.
 \item [DF 1.1.33] For $\ord{x}=n$: (a) $n$ odd $\Rightarrow x^i\neq x^{-i}$ ($1\le i\le n-1$);
-   (b) $n=2k\Rightarrow x^i=x^{-i}$ iff $i=k$.
+   (b) $n=2k\Rightarrow x^i=x^{-i}$ iff $i=k$ ($1\le i\le n-1$).
 \item [DF 1.1.36] If $G=\{1,a,b,c\}$ has order $4$ with no element of order $4$, show the table is
    unique and $G$ is abelian.
 \item [DF 1.2.4] If $n=2k\ge4$, show $z=r^k$ has order $2$ and is the unique nonidentity central element.
@@ -6036,8 +6036,8 @@ Problems are drawn from Dummit \& Foote, Artin (\emph{Algebra}), and Fraleigh
 \item [DF 1.2.17] For $X_{2n}=\gen{x,y\mid x^n=y^2=1,\ xy=yx^2}$, find the order for $n=3k$ and for $\gcd(3,n)=1$.
 \item [DF 1.2.18] For $Y=\gen{u,v\mid u^4=v^3=1,\ uv=v^2u^2}$, show $Y=1$.
 \item [DF 1.3.11] Show $\sigma^i$ for an $m$-cycle is an $m$-cycle iff $\gcd(i,m)=1$.
-\item [DF 1.3.12] (a) Is $(1\,2)(3\,4)(5\,6)(7\,8)(9\,10)$ a power of an $n$-cycle ($n\le10$)?
-   (b) $(1\,2)(3\,4\,5)$, $n\le5$?
+\item [DF 1.3.12] (a) Is $(1\,2)(3\,4)(5\,6)(7\,8)(9\,10)$ a power of an $n$-cycle ($n\ge10$)?
+   (b) $(1\,2)(3\,4\,5)$, $n\ge5$?
 \item [DF 1.3.14] $p$ prime: order $p$ iff disjoint $p$-cycles; give a counterexample for composite order.
 \item [DF 1.3.16] Count the number of $m$-cycles in $S_n$ ($n\ge m$).
 \item [DF 1.3.17] Count the products of two disjoint $2$-cycles in $S_n$ ($n\ge4$).
@@ -6047,8 +6047,8 @@ Problems are drawn from Dummit \& Foote, Artin (\emph{Algebra}), and Fraleigh
 \item [DF 1.4.11] For the Heisenberg group $H(F)$, compute $XY$, find $X\inv$, and show $|H(F)|=|F|^3$.
 \item [DF 1.6.9] Prove $D_{24}$ and $S_4$ are not isomorphic.
 \item [DF 1.6.10] Show $S_\Delta\isom S_\Omega$ when $|\Delta|=|\Omega|$, via $\varphi(\sigma)=\theta\sigma\theta\inv$.
-\item [DF 1.6.23] Show a fixed-point-free order-$2$ automorphism forces $G$ abelian.
-\item [DF 1.6.24] If $x\neq y$ have order $2$ and generate $G$, prove $G\isom D_{2n}$ with $n=\ord{xy}$.
+\item [DF 1.6.23] Show a fixed-point-free order-$2$ automorphism of a finite group $G$ forces $G$ abelian.
+\item [DF 1.6.24] If $x\neq y$ have order $2$ and generate a finite group $G$, prove $G\isom D_{2n}$ with $n=\ord{xy}$.
 \item [DF 1.6.25] Show $\varphi(r)=$ rotation, $\varphi(s)=$ reflection gives an injective homomorphism $D_{2n}\to\GL_2(\R)$.
 \item [DF 1.6.26] Show $\varphi(i),\varphi(j)$ in $\GL_2(\C)$ give an injective homomorphism $Q_8\to\GL_2(\C)$.
 \item [DF 1.7.9] How do $(1\,2)$ and $(1\,2\,3)$ act on the ordered $k$-tuples of $\{1,2,3,4\}$?
