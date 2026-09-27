@@ -25445,9 +25445,10 @@ vertices give $20$ \emph{distinct} rotations, forming one class of size $20$.
 rotation of angle $2\pi/5$ is conjugate to no rotation of a different angle (angle
 is conjugation-invariant), so the $12$ rotations of angle $2\pi/5$ form a class of
 size $12$. Independently, the $12$ rotations of angle $4\pi/5$ form a second class
-of size $12$. (The angles $2\pi/5$ and $4\pi/5$ are \emph{not} fused: in $I$ there
-is no symmetry reversing a $5$-fold axis, so $\rho$ and $\rho\inv$ about a face
-need not be conjugate, and here they are not.)
+of size $12$. (The angles $2\pi/5$ and $4\pi/5$ are \emph{not} fused, since conjugation
+preserves the angle up to sign and $\pm 2\pi/5 \ne \pm 4\pi/5$. By contrast $\rho$
+and $\rho\inv$ about a face \emph{are} conjugate: $\rho\inv$ is the rotation of
+angle $2\pi/5$ about the opposite face, and the faces form one orbit.)
 
 \emph{Edge rotations.} The $30$ edges fall into $15$ antipodal pairs sharing a
 $2$-fold axis. The rotation of angle $\pi$ about such an axis is named by $(e,\pi)$
@@ -25530,7 +25531,7 @@ contain the identity. The lemma's ``includes $\{1\}$'' clause is exactly what
 rules it out.
 \end{wex}
 
-\begin{wex}{No simple group of order $60$ has a subgroup that is a single class}
+\begin{wex}{Intersecting the class-sums with the divisors of $60$}
 \textbf{Problem.} Using only the class equation $60 = 1+20+12+12+15$, list every
 candidate order a proper nontrivial normal subgroup of $I$ \emph{could} have on
 divisibility grounds, and confirm each is excluded.
@@ -25589,8 +25590,10 @@ action are (i) it gives a homomorphism into $S_5$ and (ii) it is nontrivial.
 Simplicity converts ``nontrivial kernel-or-everything'' into ``injective,'' and
 converts ``possible index-$2$ kernel'' into ``image lands in $A_5$.'' No explicit
 description of which permutation each rotation induces is needed. This same
-$I \isom A_5$ is the bedrock fact from which Artin (and D\&F) deduce that $A_n$ is
-simple for all $n \ge 5$.
+$I \isom A_5$ gives a geometric proof that $A_5$ is simple. (The simplicity of
+$A_n$ for all $n \ge 5$ is proved separately: Artin, Theorem 7.5.4, by commutator
+computations with $3$-cycles; D\&F, Section 4.6, by induction on $n$ starting
+from $A_5$.)
 \end{remark}
 
 \begin{wex}{Locating a generator's image: a face rotation is a $5$-cycle}
@@ -25634,18 +25637,21 @@ order $3$, size $20$); and the $24$ five-cycles, which in $A_5$ split into
 $4\pi/5$).
 \textbf{Check.} In $S_5$ all $24$ five-cycles are conjugate, but in $A_5$ a
 $5$-cycle and its non-conjugate partner are separated because the conjugating
-permutation can be forced to be odd; this is precisely the geometric splitting of
+permutation is necessarily odd; this is precisely the geometric splitting of
 the two $5$-fold rotation classes of size $12$. The totals agree:
 $1+15+20+12+12 = 60$.
 \end{wex}
 
 \begin{pitfall}
 Do not expect the two face-rotation classes (angles $2\pi/5$ and $4\pi/5$) to
-merge into one class of size $24$. In $I$ there is no symmetry that reverses a
-$5$-fold axis, so a $5$-fold rotation is \emph{not} conjugate to its inverse; the
-two classes stay separate, giving the $12+12$ split. The same phenomenon on the
+merge into one class of size $24$. Conjugation preserves the rotation angle up to
+sign, so a rotation by $\pm 2\pi/5$ is never conjugate to one by $\pm 4\pi/5$; the
+two classes stay separate, giving the $12+12$ split. (A $5$-fold rotation
+\emph{is} conjugate to its inverse: a half-turn about a $2$-fold axis perpendicular
+to the $5$-fold axis reverses that axis.) The same phenomenon on the
 $A_5$ side is the fact that the $24$ five-cycles, a \emph{single} class in $S_5$,
-break into \emph{two} classes of $12$ inside $A_5$. Collapsing them would wrongly
+break into \emph{two} classes of $12$ inside $A_5$: a $5$-cycle $\sigma$ is
+conjugate in $A_5$ to $\sigma\inv$ but not to $\sigma^2$. Collapsing them would wrongly
 make the class equation read $60 = 1 + 20 + 24 + 15$ and would no longer match the
 arithmetic that forces simplicity.
 \end{pitfall}
