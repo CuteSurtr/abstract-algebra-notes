@@ -57206,7 +57206,7 @@ With $f=x^4+x+1$ ($G=S_4$) and $p=5$, interpret the factorization $\overline f=(
 \begin{exers}{Exercises (from the text).}
 \item Let $p$ be a prime. Prove that the polynomial $x^4+1$ splits mod $p$ either into two irreducible quadratics or into 4 linear factors using Corollary 41 together with the knowledge that the Galois group of this polynomial is the Klein 4-group.
 
-\item (Cf. Exercise 6 of Section 6.)
+\item (Cf. Exercise 48 of Section 6.)
 \begin{enumerate}
 \item[(a)] Let $K$ be the splitting field of $x^6-2x^3-2$. Prove that if $[K:\mathbb{Q}]=12$ then $K=\mathbb{Q}(\sqrt[3]{2}\cdot i,\sqrt{3})$ and $K$ is generated over the biquadratic field $F=\mathbb{Q}(i,\sqrt{3})$ by $\alpha=\sqrt[3]{1+\sqrt{3}}$ and $\beta=\sqrt[3]{1-\sqrt{3}}$. Conclude that any element of $\Gal(K/\mathbb{Q})$ of order 3 maps $\alpha$ to another cube root of $1+\sqrt{3}$ and $\beta$ to another cube root of $1-\sqrt{3}$, and if it is the identity on $\alpha$ or $\beta$ then it is the identity on all of $K$.
 \item[(b)] Show that the factorization of $f(x)$ into irreducibles over $\mathbb{F}_{13}$ is $(x-7)(x-8)(x-11)(x^3+3)$ and use Corollary 41 to show that $[K:\mathbb{Q}]=36$.
@@ -57234,18 +57234,18 @@ With $f=x^4+x+1$ ($G=S_4$) and $p=5$, interpret the factorization $\overline f=(
 \item Let $f(x)=x^3+x^2-2x-1\in\Q[x]$. Show $f$ is irreducible over $\Q$, compute $\disc(f)$, and use the discriminant test to prove $\Gal(f/\Q)\isom\Zn{3}$ (the cyclic group $A_3$). [This is the minimal polynomial of $\zeta_7+\zeta_7\inv$.]
 \item Use Dedekind's theorem to determine $\Gal(f/\Q)$ for $f(x)=x^3-2$. Reduce mod a prime giving an irreducible cubic and a prime giving cycle type $2+1$, and confirm the result against $\disc(x^3+b)=-27b^2$.
 \item For $f(x)=x^4-2x^2-2$ (Eisenstein at $2$), form the resolvent cubic $g(x)=x^3-px^2-4rx+(4pr-q^2)$, factor $g$ over $\Q$, and identify $\Gal(f/\Q)$ among $\set{C_4,V_4,D_8,A_4,S_4}$. If you land in the $C_4$-vs-$D_8$ case, carry out the tiebreak using irreducibility of $f$ over $\Q(\sqrt{\disc f})$.
-\item Let $f(x)=x^4+3x+3$. Verify $f$ is irreducible over $\Q$, compute $\disc(x^4+qx+r)=-27q^4+256r^3$ for this $f$, and decide whether $\Gal(f/\Q)\subseteq A_4$. Then factor $\overline f$ modulo two unramified primes and pin down $G$.
+\item Let $f(x)=x^4+3x+3$. Verify $f$ is irreducible over $\Q$, compute $\disc(x^4+qx+r)=-27q^4+256r^3$ for this $f$, and decide whether $\Gal(f/\Q)\subseteq A_4$. Then factor $\overline f$ modulo two unramified primes to find a $4$-cycle and a transposition in $G$, and pin down $G$ with the resolvent cubic (cycle types alone can never rule out $S_4$).
 \item Let $f\in\Z[x]$ be monic, separable, of degree $7$, with $\overline f$ irreducible mod $11$ and $\overline f$ of cycle type $2+5$ mod $13$ (both primes unramified). Prove that $\Gal(f/\Q)=S_7$. State precisely which two group-theoretic facts about transitive subgroups of $S_7$ you are using.
-\item Suppose $f\in\Z[x]$ is monic separable of degree $5$ and that, over several unramified primes, the cycle types $5$, $2+2+1$, and $5$ all occur, while $\disc(f)$ is a perfect square. Show these data are consistent with $G\in\set{C_5,D_{10},A_5}$ but cannot by themselves distinguish them, and describe what additional computation (a resolvent of which degree) would separate the solvable cases from $A_5$.
-\item Let $\zeta_{13}$ be a primitive $13$th root of unity and $f(x)$ the minimal polynomial of $\alpha=\zeta_{13}+\zeta_{13}\inv$ over $\Q$. Determine $\deg f$, prove $\Gal(f/\Q)$ is cyclic, and give its order. [Use $\Gal(\Q(\zeta_{13})/\Q)\isom\Zns{13}$ and the index-$2$ subgroup $\set{\pm1}$.]
+\item Suppose $f\in\Z[x]$ is monic separable of degree $5$ and that, over several unramified primes, the cycle types $5$, $2+2+1$, and $5$ all occur, while $\disc(f)$ is a perfect square. Show these data force $G\in\set{D_{10},A_5}$ (the element of type $2+2+1$ already rules out $C_5$) but cannot by themselves distinguish these two, and describe what additional computation (a resolvent of which degree) would separate the solvable case $D_{10}$ from $A_5$.
+\item Let $\zeta_{13}$ be a primitive $13$th root of unity and $f(x)$ the minimal polynomial of $\alpha=\zeta_{13}+\zeta_{13}\inv$ over $\Q$. Determine $\deg f$, prove $\Gal(f/\Q)$ is cyclic, and give its order. [Use $\Gal(\Q(\zeta_{13})/\Q)\isom\Zns{13}$ and the order-$2$ subgroup $\set{\pm1}$ (of index $6$).]
 \item Let $f(x)=x^4+1$ and let $p$ be an odd prime. Using the fact that $\Gal(f/\Q)\isom V_4$, show via Dedekind's theorem that $\overline f$ can never have an irreducible quartic factor mod $p$, and conclude that $\overline f$ factors mod every odd $p$ as a product of linear and/or quadratic factors. Relate the three possible factorization patterns to the three index-$2$ subgroups of $V_4$.
 \end{exers}
 
 \begin{exers}{Additional exercises.}
-\item Let $f(x)=x^5-5x+12$. It is known that $\disc(f)$ is a perfect square. Assuming $f$ is irreducible over $\Q$, find unramified primes exhibiting cycle types that, together with the square discriminant, force $\Gal(f/\Q)\isom D_{10}$ rather than $A_5$ or $C_5$. Explain why a $2+2+1$ element together with a $5$-cycle is compatible with $D_{10}$ but a $3$-cycle would not be.
-\item Construct a monic irreducible $f\in\Z[x]$ of degree $6$ with $\Gal(f/\Q)$ cyclic of order $6$, by taking $f$ to be the minimal polynomial of $\zeta_7+\zeta_7\inv$ pulled up appropriately, or more directly the minimal polynomial of a real generator of the degree-$6$ subfield of $\Q(\zeta_n)$ for a suitable $n$. Identify your $n$, justify $\Gal\isom\Zn{6}$, and explain why no real subfield of a cyclotomic field can have Galois group $S_n$ for $n\ge2$.
-\item Let $f\in\Z[x]$ be monic separable of degree $n$ and let $p\ndivides\disc(f)$. Prove carefully that the product of the cycle lengths' parities equals the Legendre symbol $\bigl(\tfrac{\disc(f)}{p}\bigr)$; i.e.\ the Frobenius at $p$ is an even permutation if and only if $\disc(f)$ is a square mod $p$. Deduce that if $\disc(f)$ is a perfect square in $\Z$ then every Frobenius is even, recovering $G\subseteq A_n$.
-\item Show that the cycle-type data from Dedekind's theorem alone can never distinguish $D_8$ from $C_4$ as subgroups of $S_4$: list the cycle types achievable in each, observe they coincide, and explain in terms of the resolvent cubic why an extra invariant (a quadratic subfield computation) is genuinely required. Give explicit irreducible quartics realizing each of $C_4$ and $D_8$.
+\item Let $f(x)=x^5-5x+12$. It is known that $\disc(f)$ is a perfect square. Assuming $f$ is irreducible over $\Q$, find unramified primes exhibiting cycle types that, together with the square discriminant, rule out $C_5$ and leave only $D_{10}$ or $A_5$; explain why no cycle-type data can rule out $A_5$ (every cycle type of $D_{10}$ occurs in $A_5$), and use the sextic resolvent (which has the rational root $40$ here) to conclude $\Gal(f/\Q)\isom D_{10}$. Explain why a $2+2+1$ element together with a $5$-cycle is compatible with $D_{10}$ but a $3$-cycle would not be.
+\item Construct a monic irreducible $f\in\Z[x]$ of degree $6$ with $\Gal(f/\Q)$ cyclic of order $6$, by taking $f$ to be the minimal polynomial of $\zeta_7+\zeta_7\inv$ pulled up appropriately, or more directly the minimal polynomial of a real generator of the degree-$6$ subfield of $\Q(\zeta_n)$ for a suitable $n$. Identify your $n$, justify $\Gal\isom\Zn{6}$, and explain why no real subfield of a cyclotomic field can have Galois group $S_n$ for $n\ge3$.
+\item Let $f\in\Z[x]$ be monic separable of degree $n$ and let $p$ be an odd prime with $p\ndivides\disc(f)$. Prove carefully that the product of the cycle lengths' parities equals the Legendre symbol $\bigl(\tfrac{\disc(f)}{p}\bigr)$; i.e.\ the Frobenius at $p$ is an even permutation if and only if $\disc(f)$ is a square mod $p$. Deduce that if $\disc(f)$ is a perfect square in $\Z$ then every Frobenius is even, recovering $G\subseteq A_n$.
+\item Show that the cycle-type data from Dedekind's theorem alone can never prove that $G\isom C_4$ rather than $D_8$: list the cycle types achievable in each, observe that every cycle type of $C_4$ also occurs in $D_8$ (only $D_8$ contains transpositions, so a factorization of type $2+1+1$ does rule out $C_4$), and explain in terms of the resolvent cubic why an extra invariant (a quadratic subfield computation) is genuinely required. Give explicit irreducible quartics realizing each of $C_4$ and $D_8$.
 \item Let $K/\Q$ be the splitting field of an irreducible quartic $f$ with $\Gal(f/\Q)\isom S_4$. Using the Galois correspondence, count the intermediate fields of each degree $2,3,4,6,8,12$ over $\Q$, by counting subgroups of $S_4$ of the corresponding index. Identify which of these intermediate fields are normal over $\Q$ and match them to the normal subgroups $V_4$ and $A_4$.
 \end{exers}
 
@@ -57266,12 +57266,12 @@ H_1 \arrow[dr,dash] & \gen{r}\isom\Zn{4} \arrow[d,dash] & H_2 \arrow[dl,dash] \\
 & K &
 \end{tikzcd}
 \]
-Here $H_1,H_2$ are the two Klein-four subgroups of $D_8$. Identify $H_1,H_2$ as concrete subgroups of $S_4$, verify $\Fix(\gen{r^2})=\Q(\sqrt2,i)$, and explain why $\gen{r}$ corresponds to the quadratic field $\Q(i)$ cut out by $\sqrt{\disc f}$.
+Here $H_1,H_2$ are the two Klein-four subgroups of $D_8$. Identify $H_1,H_2$ as concrete subgroups of $S_4$, verify $\Fix(\gen{r^2})=\Q(\sqrt2,i)$, and explain why $\gen{r}$ corresponds to the quadratic field $\Q(i)$, while the field $\Q(\sqrt{\disc f})=\Q(\sqrt{-2})$ cut out by the discriminant ($\disc f=-2^{11}$) corresponds to $H_2=D_8\cap A_4$.
 \item Let $f$ be an irreducible quartic with $G=\Gal(f/\Q)\isom A_4$ and splitting field $K$. The resolvent cubic $g$ is irreducible with square discriminant, so its splitting field $M=\Fix(V_4)$ is a cyclic cubic over $\Q$. Draw the diagram exhibiting $M$ as the fixed field of $V_4\nor A_4$ and prove $\Gal(M/\Q)\isom A_4/V_4\isom\Zn{3}$ by completing the quotient square:
 \[
 \begin{tikzcd}
-A_4 \arrow[r,twoheadrightarrow,"q"] \arrow[d,"\Fix"'] & A_4/V_4 \arrow[d,"\isom"] \\
-1\ \text{(over }K) & \Gal(M/\Q) \arrow[l,dash]
+A_4 \arrow[r,twoheadrightarrow,"q"] \arrow[d,equal] & A_4/V_4 \arrow[d,"\isom"] \\
+\Gal(K/\Q) \arrow[r,twoheadrightarrow,"\mathrm{res}"'] & \Gal(M/\Q)
 \end{tikzcd}
 \]
 State why $A_4$ has no subgroup of index $2$, and conclude that $K$ has no quadratic subfield over $\Q$ (so the only proper normal subextension of small degree is the cyclic cubic $M$).
@@ -57293,8 +57293,8 @@ Show $\idx{\Q(\theta_i)}{\Q}=3$ and $\idx{\Q(\sqrt D)}{\Q}=2$, and explain via t
 \item Let $K$ be the splitting field of a monic separable $f\in\Z[x]$ and let $p\ndivides\disc(f)$ with Frobenius $\Frob_p\in\Gal(K/\Q)$ acting on the roots with cycle type $(d_1,\dots,d_k)$. For each fixed-point-free arrangement, draw the diagram relating the decomposition group $D_{\mathfrak p}=\gen{\Frob_p}$ at a prime $\mathfrak p\mid p$ of $K$ to the factorization of $p$ in the root field $\Q(\alpha)=\Fix(G_\alpha)$:
 \[
 \begin{tikzcd}
-\gen{\Frob_p}\sgr G \arrow[r,"\Fix"] \arrow[d,phantom,"\rotatebox{90}{$\sgr$}"] & \text{primes of }K\text{ over }p \arrow[d] \\
-G \arrow[r,"\Fix"] & p\ \text{in }\Z
+D_{\mathfrak p}=\gen{\Frob_p} \arrow[r,"\Fix"] \arrow[d,dash] & K^{D_{\mathfrak p}} \arrow[d,dash] \\
+G \arrow[r,"\Fix"] & \Q
 \end{tikzcd}
 \]
 Prove that the residue degrees of the primes of $\Q(\alpha)$ above $p$ equal the lengths $d_i$ of the orbits of $\gen{\Frob_p}$ on the cosets $G/G_\alpha$, and confirm $\sum_i d_i=\deg f$.
