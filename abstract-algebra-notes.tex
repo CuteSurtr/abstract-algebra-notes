@@ -56560,7 +56560,7 @@ If $\beta=\alpha/\sigma(\alpha)$ then $\Nm_{K/F}(\beta)=\prod_{i=0}^{n-1}\sigma^
 is not identically zero. Pick $\theta$ giving a nonzero value $\alpha$; the norm-one hypothesis makes the coefficients satisfy $\sigma(\alpha)=\beta\inv\alpha$, i.e.\ $\beta=\alpha/\sigma(\alpha)$.
 \end{proof}
 
-Now suppose $F$ contains a primitive $n$th root of unity $\zeta$ (so $\charac F\ndivides n$). Then the cyclic degree-$n$ extensions of $F$ are \emph{exactly} the simple radical extensions $F(\sqrt[n]{a})$. This is the heart of Kummer theory.
+Now suppose $F$ contains a primitive $n$th root of unity $\zeta$ (so $\charac F\ndivides n$). Then the cyclic degree-$n$ extensions of $F$ are \emph{exactly} the simple radical extensions $F(\sqrt[n]{a})$ of degree $n$. This is the heart of Kummer theory.
 
 \begin{theorem}[{cyclic extensions are radical when roots of unity are present}]
 Let $F$ contain a primitive $n$th root of unity. Then:
@@ -56577,7 +56577,7 @@ Let $F$ contain a primitive $n$th root of unity. Then:
 \end{proof}
 
 \begin{remark}
-The element $\alpha$ with $\sigma(\alpha)=\zeta\alpha$ in part (2) is precisely a \emph{Lagrange resolvent}. For any $\theta\in K$ the resolvent is
+The element $\alpha$ with $\sigma(\alpha)=\zeta\alpha$ in part (2) is precisely a \emph{Lagrange resolvent}, formed with the primitive root $\zeta\inv$ in place of $\zeta$: in the notation below, $\alpha=(\alpha/n,\zeta\inv)$. For any $\theta\in K$ the resolvent is
 \[
 (\theta,\zeta)\;=\;\sum_{i=0}^{n-1}\zeta^{i}\,\sigma^{i}(\theta)
 \;=\;\theta+\zeta\,\sigma(\theta)+\zeta^2\sigma^2(\theta)+\cdots+\zeta^{n-1}\sigma^{n-1}(\theta),
@@ -56596,7 +56596,7 @@ and conversely such a polynomial is either split over $F$ or irreducible with cy
 \end{theorem}
 
 \begin{proof}[Idea]
-The additive analogue of Hilbert 90 (the trace form: $\Tr_{K/F}(\beta)=0\iff\beta=\gamma-\sigma(\gamma)$) applies. Since $\charac F=p$, $\Tr_{K/F}(-1)=p\cdot(-1)=0$, so $-1=\sigma(\alpha)-\alpha$ for some $\alpha$, i.e.\ $\sigma(\alpha)=\alpha+1$. Then $\sigma(\alpha^p-\alpha)=(\alpha+1)^p-(\alpha+1)=\alpha^p+1-\alpha-1=\alpha^p-\alpha$, so $a:=\alpha^p-\alpha\in F$, and the conjugates $\alpha,\alpha+1,\dots,\alpha+(p-1)$ are distinct, forcing $\idx{F(\alpha)}F=p$.
+The additive analogue of Hilbert 90 (the trace form: $\Tr_{K/F}(\beta)=0\iff\beta=\gamma-\sigma(\gamma)$) applies. Since $\charac F=p$, $\Tr_{K/F}(-1)=p\cdot(-1)=0$, so $-1=\alpha-\sigma(\alpha)$ for some $\alpha$, i.e.\ $\sigma(\alpha)=\alpha+1$. Then $\sigma(\alpha^p-\alpha)=(\alpha+1)^p-(\alpha+1)=\alpha^p+1-\alpha-1=\alpha^p-\alpha$, so $a:=\alpha^p-\alpha\in F$, and the conjugates $\alpha,\alpha+1,\dots,\alpha+(p-1)$ are distinct, forcing $\idx{F(\alpha)}F=p$.
 \end{proof}
 
 \begin{wex}{The Galois group of $x^n-a$ over $\Q(\zeta_n)$}
@@ -56634,13 +56634,13 @@ Hence $r_1^3,r_2^3$ are the roots of $t^2+27q\,t-27p^3=0$, namely $t=-\tfrac{27q
 \[
 \alpha_1=\sqrt[3]{-\frac q2+\sqrt{\frac{q^2}4+\frac{p^3}{27}}}+\sqrt[3]{-\frac q2-\sqrt{\frac{q^2}4+\frac{p^3}{27}}},
 \]
-with the cube roots chosen so their product is $-p/3$ (i.e.\ $r_1 r_2=-3p$). Sanity check: the discriminant under the square root is $\tfrac{q^2}4+\tfrac{p^3}{27}=-\tfrac1{108}\disc(f)$, where $\disc(f)=-4p^3-27q^2$; so the formula's square root is rational exactly when $\disc(f)$ is a perfect square, which is precisely the condition $\Gal(f)\subseteq A_3=C_3$ rather than $S_3$.
+with the cube roots chosen so their product is $-p/3$ (i.e.\ $r_1 r_2=-3p$). Sanity check: the discriminant under the square root is $\tfrac{q^2}4+\tfrac{p^3}{27}=-\tfrac1{108}\disc(f)$, where $\disc(f)=-4p^3-27q^2$; so, as $\sqrt{-3}\in F$ (because $\zeta_3\in F$), the formula's square root lies in $F$ exactly when $\disc(f)$ is a square in $F$, which is precisely the condition $\Gal(f)\subseteq A_3=C_3$ rather than $S_3$. (Over $\Q$, where $\sqrt{-3}\notin\Q$, a nonzero square $\disc(f)$ makes this square root imaginary instead, as in the next example.)
 \end{wex}
 
 \begin{wex}{Worked cubic: solve $x^3-3x-1=0$}
 Apply the formula to $p=-3,q=-1$ and identify the splitting field's Galois group.
 \wrec Cardano with $p=-3,q=-1$; the sign and shape of $\disc(f)$ decides whether the group is $C_3$ or $S_3$.
-\wsol Here $\tfrac{q^2}4+\tfrac{p^3}{27}=\tfrac14+\tfrac{-27}{27}=\tfrac14-1=-\tfrac34$, so the inner square root is $\sqrt{-3/4}=\tfrac{\sqrt{-3}}2$. Then $r_1^3=-\tfrac q2+\tfrac{\sqrt{-3}}2=\tfrac12+\tfrac{\sqrt{-3}}2$, a primitive $6$th root of unity times a unit; the real root is $\alpha_1=2\cos(2\pi/9)$ numerically $\approx1.532$. The discriminant is $\disc(f)=-4(-3)^3-27(-1)^2=108-27=81=9^2$, a perfect square, so $\Gal(f/\Q)\isom A_3=C_3$ and $\Q(\alpha_1)/\Q$ is already the (cyclic, degree $3$) splitting field. Sanity check: $f$ is irreducible over $\Q$ (a rational root would be $\pm1$, but $f(1)=-3\neq0$ and $f(-1)=1\neq0$), so the group is transitive of order divisible by $3$; with square discriminant it lies in $A_3$, forcing exactly $C_3$ -- consistent with all three roots being real, $2\cos(2\pi/9),2\cos(8\pi/9),2\cos(14\pi/9)$.
+\wsol Here $\tfrac{q^2}4+\tfrac{p^3}{27}=\tfrac14+\tfrac{-27}{27}=\tfrac14-1=-\tfrac34$, so the inner square root is $\sqrt{-3/4}=\tfrac{\sqrt{-3}}2$. Then $(r_1/3)^3=-\tfrac q2+\tfrac{\sqrt{-3}}2=\tfrac12+\tfrac{\sqrt{-3}}2=e^{i\pi/3}$, a primitive $6$th root of unity; its cube root $e^{i\pi/9}$ and the cube root $e^{-i\pi/9}$ of $\tfrac12-\tfrac{\sqrt{-3}}2$ have product $1=-p/3$, so the formula gives the real root $\alpha_1=e^{i\pi/9}+e^{-i\pi/9}=2\cos(\pi/9)$, numerically $\approx1.879$. The discriminant is $\disc(f)=-4(-3)^3-27(-1)^2=108-27=81=9^2$, a perfect square, so $\Gal(f/\Q)\isom A_3=C_3$ and $\Q(\alpha_1)/\Q$ is already the (cyclic, degree $3$) splitting field. Sanity check: $f$ is irreducible over $\Q$ (a rational root would be $\pm1$, but $f(1)=-3\neq0$ and $f(-1)=1\neq0$), so the group is transitive of order divisible by $3$; with square discriminant it lies in $A_3$, forcing exactly $C_3$ -- consistent with all three roots being real, $2\cos(\pi/9),2\cos(7\pi/9),2\cos(13\pi/9)$.
 \end{wex}
 
 The splitting-field picture for a cubic is the smallest interesting Galois correspondence. When $\disc(f)$ is not a square the group is the full $S_3$, and the lattice is:
