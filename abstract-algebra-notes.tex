@@ -63446,7 +63446,7 @@ Find a proper ideal $I\subseteq\R[x]$ with $Z(I)=\es$ in $\R$, and reconcile wit
 
 \subsection*{Valuation rings and the integral closure as an intersection}
 
-A\&M's deepest structural result here is that the integral closure of a domain $A$ in a field $K$ is the \emph{intersection of all valuation rings of $K$ containing $A$}. Valuation rings are the maximal local rings under \emph{dominance}, the local incarnation of ``a point on a curve,'' and they encode orders of vanishing. This section develops them and closes the circle back to $\S15.2$'s geometry: a normal domain is the ring of functions regular at every codimension-one point.
+A\&M's deepest structural result here is that the integral closure of a domain $A$ in a field $K$ is the \emph{intersection of all valuation rings of $K$ containing $A$}. Valuation rings are the maximal local rings under \emph{dominance}, the local incarnation of ``a point on a curve,'' and they encode orders of vanishing. This section develops them and closes the circle back to $\S15.2$'s geometry: a Noetherian normal domain is the ring of functions regular at every codimension-one point.
 
 \begin{definition}[valuation ring; dominance]
 Let $K$ be a field. A subring $B\subseteq K$ is a \emph{valuation ring of $K$} if for every $0\neq x\in K$, at least one of $x,\ x\inv$ lies in $B$. Given local rings $A\subseteq B$ with maximal ideals $\fm_A,\fm_B$, we say $B$ \emph{dominates} $A$ if $A\subseteq B$ and $\fm_B\cap A=\fm_A$.
@@ -63470,7 +63470,7 @@ Let $K$ be a field, $\Omega$ an algebraically closed field, and let $\Sigma$ be 
 \end{theorem}
 
 \begin{proof}[Idea]
-Zorn's Lemma gives a maximal $(B,g)$; $\fm=\ker g$ is maximal in $B$ since $g(B)\subseteq\Omega$ is a domain inside a field, and one shows $B=B_\fm$ is local (Lemma 5.19). For $x\neq0$ in $K$, comparing the extensions of $\fm$ in $B[x]$ and $B[x\inv]$ shows at least one is proper, so $g$ extends to $B[x]$ or $B[x\inv]$ (Lemma 5.20); maximality forces $x\in B$ or $x\inv\in B$. Hence $B$ is a valuation ring.
+Zorn's Lemma gives a maximal $(B,g)$; $\fm=\ker g$ is prime in $B$ since $g(B)\subseteq\Omega$ is a domain inside a field; $g$ extends to $B_\fm$, so maximality forces $B=B_\fm$, a local ring with maximal ideal $\fm$ (Lemma 5.19). For $x\neq0$ in $K$, comparing the extensions of $\fm$ in $B[x]$ and $B[x\inv]$ shows at least one is proper, so $g$ extends to $B[x]$ or $B[x\inv]$ (Lemma 5.20); maximality forces $x\in B$ or $x\inv\in B$. Hence $B$ is a valuation ring.
 \end{proof}
 
 \begin{theorem}[{integral closure $=$ intersection of valuation rings; A\&M 5.22}]
@@ -63498,7 +63498,7 @@ Show the localization $\Z_{(p)}=\set{a/b\in\Q:p\nmid b}$ is a valuation ring of 
 \begin{wex}{$k[x]_{(x)}$ as order of vanishing at $0$}
 Identify the valuation ring $k[x]_{(x)}\subseteq k(x)$ and its valuation geometrically.
 \wrec The local ring of the line at the origin records vanishing order at $x=0$.
-\wsol $B=k[x]_{(x)}=\set{f/g:g(0)\neq0}$. For $0\neq h\in k(x)$ write $h=x^n\cdot(p/q)$ with $p(0),q(0)\neq0$; then $\operatorname{ord}_0(h)=n$ and $h\in B\iff n\ge0$. So $x$ or $x\inv\in B$ always, and $B$ is the valuation ring of order-of-vanishing at the origin, with maximal ideal $(x)$ and residue field $k$. Sanity check: a rational function lies in $B$ iff it has no pole at $0$ -- ``regular at the origin'' -- the local-ring picture from $\S15.2$ realized as a valuation; and $\bigcap_{a\in k}k[x]_{(x-a)}\supseteq k[x]$ recovers global regularity as ``regular at every point.''
+\wsol $B=k[x]_{(x)}=\set{f/g:g(0)\neq0}$. For $0\neq h\in k(x)$ write $h=x^n\cdot(p/q)$ with $p(0),q(0)\neq0$; then $\operatorname{ord}_0(h)=n$ and $h\in B\iff n\ge0$. So $h$ or $h\inv\in B$ always, and $B$ is the valuation ring of order-of-vanishing at the origin, with maximal ideal $(x)$ and residue field $k$. Sanity check: a rational function lies in $B$ iff it has no pole at $0$ -- ``regular at the origin'' -- the local-ring picture from $\S15.5$ realized as a valuation; and $\bigcap_{a\in k}k[x]_{(x-a)}\supseteq k[x]$ recovers global regularity as ``regular at every point.''
 \end{wex}
 
 \begin{wex}{A non-valuation subring}
@@ -63513,16 +63513,16 @@ Express $\Z$ as an intersection of valuation rings of $\Q$, illustrating Theorem
 \wsol $\bigcap_{p\ \mathrm{prime}}\Z_{(p)}=\set{a/b\in\Q:p\nmid b\text{ for all }p}=\set{a/b:b=\pm1}=\Z$. Each $\Z_{(p)}$ is a valuation ring containing $\Z$ (previous Worked Example), and an element of $\Q$ lies in all of them iff its reduced denominator has no prime factor, i.e.\ is a unit. Sanity check: this is Theorem 5.22 with $A=K\cap\Z=\Z$ already integrally closed -- $\overline\Z=\Z=\bigcap_p\Z_{(p)}$ -- and geometrically it says ``an integer is a rational function on $\Spec\Z$ with no poles at any prime,'' the arithmetic analogue of a regular function on a curve.
 \end{wex}
 
-\begin{wex}{Going Down via valuation rings, in $\Z[\sqrt{-5}]$}
+\begin{wex}{Going Down over a normal base, in $\Z[\sqrt{-5}]$}
 Illustrate that normality of the base is what powers Going Down, using $\Z\subseteq\Z[\sqrt{-5}]$.
-\wrec Going Down needs $A$ integrally closed in $B$; $\Z$ is normal, so chains descend.
-\wsol $\Z$ is integrally closed (UFD), and $\Z[\sqrt{-5}]=\mathcal O_{\Q(\sqrt{-5})}$ (here $-5\equiv3\bmod4$) is integral over $\Z$. Take the chain $(2)\supseteq(0)$ in $\Z$ and a prime $\fq_1=(2,1+\sqrt{-5})$ over $(2)$. Going Down completes it downward: there is $\fq_2\subseteq\fq_1$ with $\fq_2\cap\Z=(0)$, namely $\fq_2=(0)$ itself (a prime of the domain $\Z[\sqrt{-5}]$ contracting to $(0)$). Sanity check: had $A$ been non-normal the descent could fail; here normality of $\Z$ guarantees the valuation ring $\Z_{(2)}$ dominating the localization supplies the lower prime -- exactly the role of Prop.~5.16's hypothesis ``$A$ integrally closed.'' Note $\fq_1^2=(2)$ here since $(2)$ ramifies as $(2)=(2,1+\sqrt{-5})^2$, consistent with $2$ being a ramified (non-split) prime.
+\wrec Going Down needs $A$ integrally closed in its fraction field (normal), not in $B$; $\Z$ is normal, so chains descend.
+\wsol $\Z$ is integrally closed (UFD), and $\Z[\sqrt{-5}]=\mathcal O_{\Q(\sqrt{-5})}$ (here $-5\equiv3\bmod4$) is integral over $\Z$. Take the chain $(2)\supseteq(0)$ in $\Z$ and a prime $\fq_1=(2,1+\sqrt{-5})$ over $(2)$. Going Down completes it downward: there is $\fq_2\subseteq\fq_1$ with $\fq_2\cap\Z=(0)$, namely $\fq_2=(0)$ itself (a prime of the domain $\Z[\sqrt{-5}]$ contracting to $(0)$). Sanity check: had $A$ been non-normal the descent could fail in general, but for this short chain the lower prime is automatic -- $\fq_2=(0)$ lies over $(0)$ simply because $\Z[\sqrt{-5}]$ is a domain -- and no valuation ring is involved; the hypothesis ``$A$ integrally closed'' of A\&M's Theorem~5.16 enters the general proof through A\&M 5.15. Note $\fq_1^2=(2)$ here since $(2)$ ramifies as $(2)=(2,1+\sqrt{-5})^2$, consistent with $2$ being a ramified (non-split) prime.
 \end{wex}
 
 \begin{wex}{Integral closure of $k[x^2,x^3]$ via the valuation criterion}
 Confirm the normalization of $A=k[x^2,x^3]$ is $k[x]$ using Theorem 5.22's ``no poles'' reading.
 \wrec An element of $k(x)=\Frac(A)$ is in $\overline A$ iff it lies in every valuation ring of $k(x)$ containing $A$; equivalently, it is a polynomial (no poles).
-\wsol $\Frac(A)=k(x)$ since $x=x^3/x^2\in\Frac(A)$. The valuation rings of $k(x)/k$ containing $A$ are the localizations $k[x]_{(p)}$ at the monic irreducibles $p\in k[x]$ (the finite places, of which the $k[x]_{(x-a)}$ are the degree-one ones) together with the order-at-infinity ring; an element regular at every finite place and at infinity is a constant, but containing $A$ relaxes infinity, leaving exactly the polynomials regular at all finite places: $\overline A=\bigcap_{p\ \mathrm{monic\ irred.}}k[x]_{(p)}=k[x]$. Indeed $x=x^3/x^2$ is integral over $A$ ($x$ satisfies $T^2-x^2=0$). Sanity check: $A=k[x^2,x^3]=k[s,t]/(t^2-s^3)$ is the cusp again; its normalization $k[x]$ smooths the cusp, matching the earlier direct computation and the geometric slogan ``normalize $=$ remove the singularity by demanding no poles.''
+\wsol $\Frac(A)=k(x)$ since $x=x^3/x^2\in\Frac(A)$. The nontrivial valuation rings of $k(x)/k$ are the localizations $k[x]_{(p)}$ at the monic irreducibles $p\in k[x]$ (the finite places, of which the $k[x]_{(x-a)}$ are the degree-one ones) together with the order-at-infinity ring $\set{f/g:\deg f\le\deg g}$; an element regular at every finite place and at infinity is a constant, but the ring at infinity does not contain $A$ ($x^2$ has a pole at infinity), so the valuation rings containing $A$ are $k(x)$ and the finite ones, leaving exactly the polynomials regular at all finite places: $\overline A=\bigcap_{p\ \mathrm{monic\ irred.}}k[x]_{(p)}=k[x]$. Indeed $x=x^3/x^2$ is integral over $A$ ($x$ satisfies $T^2-x^2=0$). Sanity check: $A=k[x^2,x^3]=k[s,t]/(t^2-s^3)$ is the cusp again; its normalization $k[x]$ smooths the cusp, matching the earlier direct computation and the geometric slogan ``normalize $=$ remove the singularity by demanding no poles.''
 \end{wex}
 
 \begin{wex}{Algebraic integers form a ring -- without finding a formula}
