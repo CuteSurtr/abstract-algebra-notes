@@ -21237,7 +21237,7 @@ Classify all groups of order $6$.
 \begin{wex}{Order $10$}
 Classify all groups of order $10$.
 \wrec $2p$ with $p=5$.
-\wsol Sylow: $n_5\mid 2$, $n_5\equiv1\,(5)\imp n_5=1$, so $\gen{r}\isom\Zn5$ is normal. With $s$ of order $2$, $srs\inv\in\{r,r^2,r^3,r^4\}$ must have order $5$ and square to $r$ (since $s^2=1\imp s(srs\inv)s\inv=r$); only $r\mapsto r$ and $r\mapsto r\inv=r^4$ satisfy $\varphi^2=\id$. Two groups: $\Zn{10}$ and $D_{10}$. \\
+\wsol Sylow: $n_5\mid 2$, $n_5\equiv1\,(5)\imp n_5=1$, so $\gen{r}\isom\Zn5$ is normal. With $s$ of order $2$, $srs\inv\in\{r,r^2,r^3,r^4\}$ must have order $5$, and conjugating it once more by $s$ must give back $r$ (since $s^2=1\imp s(srs\inv)s\inv=r$); only $r\mapsto r$ and $r\mapsto r\inv=r^4$ satisfy $\varphi^2=\id$. Two groups: $\Zn{10}$ and $D_{10}$. \\
 \emph{Check:} $D_{10}$ is the symmetry group of the regular pentagon, $|D_{10}|=10$, nonabelian; $\Zn{10}$ has the element $r+s$-style generator of order $10$. \checkmark\ $g(10)=2$.
 \end{wex}
 
@@ -21358,7 +21358,7 @@ order-$4$ subgroups; $A$ is the unique order-$2$ subgroup contained in all three
 whereas $B$ and $C$ lie only in the Klein four-group $K$.
 
 \begin{method}{Distinguishing the five groups of order $8$}
-\textbf{Trigger:} $|G|=8$. First decide abelian vs.\ nonabelian (is there a non-central commutator?).
+\textbf{Trigger:} $|G|=8$. First decide abelian vs.\ nonabelian (is there a nontrivial commutator?).
 \begin{enumerate}
 \item \textbf{Abelian?} Use the \emph{order spectrum} (how many elements of each order):
 \[
@@ -21493,7 +21493,7 @@ Show the order-$12$ dihedral group factors as $D_{12}\isom D_6\times\Zn2\isom S_
 \begin{wex}{Triage drill: a nonabelian order-$12$ group}
 A nonabelian group $G$ of order $12$ has a normal Sylow $3$-subgroup, exactly one element of order $2$, and an element of order $4$. Identify $G$.
 \wrec Run the order-$12$ method box: unique involution $+$ order-$4$ element pins it down.
-\wsol Normal Sylow $3$-subgroup rules out $A_4$ ($n_3=4$). A unique involution rules out $D_{12}$ (seven) and the abelians. The only candidate with $\#\,\ord2=1$ and an order-$4$ element is $\mathrm{Dic}_3=\Zn3\sdp\Zn4$. So $G\isom\mathrm{Dic}_3$. \\
+\wsol Normal Sylow $3$-subgroup rules out $A_4$ ($n_3=4$). A unique involution rules out $D_{12}$ (seven) and $\Zn2\times\Zn6$ (three); $\Zn{12}$, which also has a unique involution, is excluded because $G$ is nonabelian. The only candidate with $\#\,\ord2=1$ and an order-$4$ element is $\mathrm{Dic}_3=\Zn3\sdp\Zn4$. So $G\isom\mathrm{Dic}_3$. \\
 \emph{Check:} consistency -- $\mathrm{Dic}_3$ has element orders $\{1,2,3,4,6\}$, a unique involution $b^2$, and $n_3=1$. All three given properties hold. \checkmark
 \end{wex}
 
@@ -21507,7 +21507,7 @@ G & n_2 & n_3 & \text{type}\\\hline
 \Zn{12} & 1 & 1 & \text{abelian, elt of order }12\\
 \Zn2\times\Zn6 & 1 & 1 & \text{abelian, exponent }6\\
 D_{12} & 3 & 1 & \text{nonab., }7\text{ involutions}\\
-\mathrm{Dic}_3 & 1 & 1 & \text{nonab., unique involution}\\
+\mathrm{Dic}_3 & 3 & 1 & \text{nonab., unique involution}\\
 A_4 & 1 & 4 & \text{nonab., no order }6
 \end{array}
 \]
