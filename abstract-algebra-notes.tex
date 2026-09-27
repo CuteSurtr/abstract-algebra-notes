@@ -6261,12 +6261,12 @@ Subgroups of $G$ are partially ordered by inclusion; the bottom is the trivial s
   \node[ltlab,below=1.5pt of bot] {$1$};
   \node[ltlab,left=3pt of s] {$\langle s\rangle$};
   \node[ltlab,left=3pt of r2s] {$\langle r^2 s\rangle$};
-  \node[ltlab,below=1.5pt of r2] {$\langle r^2\rangle$};
+  \node[ltlab,below right=0pt and 1pt of r2] {$\langle r^2\rangle$};
   \node[ltlab,right=3pt of rs] {$\langle rs\rangle$};
   \node[ltlab,right=3pt of r3s] {$\langle r^3 s\rangle$};
-  \node[ltlab,left=3pt of D1] {$\langle s,r^2\rangle$};
-  \node[ltlab,below=1.5pt of R] {$\langle r\rangle$};
-  \node[ltlab,right=3pt of D2] {$\langle rs,r^2\rangle$};
+  \node[ltlab,above left=0pt and 1pt of D1] {$\langle s,r^2\rangle$};
+  \node[ltlab,right=3pt of R] {$\langle r\rangle$};
+  \node[ltlab,above right=0pt and 1pt of D2] {$\langle rs,r^2\rangle$};
   \node[ltlab,above=1.5pt of top] {$D_8$};
 \end{tikzpicture}\end{center}
 
@@ -6861,7 +6861,7 @@ The lattice below summarizes the $D_8$ centralizers computed above. The full gro
     \draw (cs)--(top);
   \end{scope}
   \node[ltlab,below=1.5pt of bot] {$1$};
-  \node[ltlab,right=3pt of mid] {$\langle r^2\rangle$};
+  \node[ltlab,below right=0pt and 1pt of mid] {$\langle r^2\rangle$};
   \node[ltlab,left=3pt of cr] {$\langle r\rangle=C_{D_8}(r)$};
   \node[ltlab,right=3pt of cs] {$\{1,r^2,s,sr^2\}=C_{D_8}(s)$};
   \node[ltlab,above=1.5pt of top] {$D_8=C_{D_8}(r^2)$};
@@ -6875,8 +6875,8 @@ The picture below records the dihedral action used in every $D_8$ computation: $
   \node (v3) at (2,0) {$3$};
   \node (v4) at (0,0) {$4$};
   \draw (v1)--(v2)--(v3)--(v4)--(v1);
-  \node at (3.4,1) {$r:\ 1\!\to\!2\!\to\!3\!\to\!4$};
-  \node at (3.5,0.3) {$s:\ 2\!\leftrightarrow\!4$};
+  \node[anchor=west] at (2.45,1) {$r:\ 1\!\to\!2\!\to\!3\!\to\!4$};
+  \node[anchor=west] at (2.45,0.3) {$s:\ 2\!\leftrightarrow\!4$};
 \end{tikzpicture}\end{center}
 
 \subsection*{The Center $Z(G)$ (D\&F 2.2)}
@@ -7043,9 +7043,9 @@ Hence $Z(D_{12})=\{1,r^3\}$, order $2$. \emph{Check:} $\{1,r^3\}=\gen{r^3}$ with
     \draw (b)--(top);
   \end{scope}
   \node[ltlab,below=1.5pt of bot] {$1$};
-  \node[ltlab,right=3pt of z] {$Z(D_8)=\langle r^2\rangle$};
+  \node[ltlab,below right=0pt and 1pt of z] {$Z(D_8)=\langle r^2\rangle$};
   \node[ltlab,left=3pt of r] {$\langle r\rangle$};
-  \node[ltlab,below=1.5pt of a] {$\langle r^2,s\rangle$};
+  \node[ltlab,right=3pt of a] {$\langle r^2,s\rangle$};
   \node[ltlab,right=3pt of b] {$\langle r^2,rs\rangle$};
   \node[ltlab,above=1.5pt of top] {$D_8$};
 \end{tikzpicture}\end{center}
@@ -7224,9 +7224,9 @@ The setwise check that grows the normalizer: $s\in N_{D_8}(H)$ because $srs\inv=
   \end{scope}
   \node[ltlab,below=1.5pt of bot] {$1$};
   \node[ltlab,left=3pt of s] {$\langle s\rangle$};
-  \node[ltlab,below=1.5pt of z] {$\langle r^2\rangle$};
+  \node[ltlab,right=3pt of z] {$\langle r^2\rangle$};
   \node[ltlab,right=3pt of sr] {$\langle sr^2\rangle$};
-  \node[ltlab,right=3pt of N] {$N_{D_8}(\langle s\rangle)=\{1,s,r^2,sr^2\}$};
+  \node[ltlab,above right=0pt and 1pt of N] {$N_{D_8}(\langle s\rangle)=\{1,s,r^2,sr^2\}$};
   \node[ltlab,above=1.5pt of G] {$D_8$};
 \end{tikzpicture}\end{center}
 
@@ -8428,7 +8428,7 @@ Containment by orders: $2\mid 6,10$; $3\mid 6,15$; $5\mid 10,15$; $6\mid 30$; $1
   \end{scope}
   \node[ltlab,below=1.5pt of bot] {$\{0\}$};
   \node[ltlab,left=3pt of p2] {$\gen{\overline{15}}$};
-  \node[ltlab,below=1.5pt of p3] {$\gen{\overline{10}}$};
+  \node[ltlab,below right=0pt and 1pt of p3] {$\gen{\overline{10}}$};
   \node[ltlab,right=3pt of p5] {$\gen{\overline 6}$};
   \node[ltlab,left=3pt of q6] {$\gen{\overline 5}$};
   \node[ltlab,below=1.5pt of q10] {$\gen{\overline 3}$};
@@ -9108,7 +9108,7 @@ In a \emph{nonabelian} group you may not reorder letters: $\gen{i,j}$ in $Q_8$ n
     \draw (v1)--(top);
   \end{scope}
   \node[ltlab,below=1.5pt of bot] {$1$};
-  \node[ltlab,right=3pt of rr2] {$\langle r^2\rangle$};
+  \node[ltlab,below right=0pt and 1pt of rr2] {$\langle r^2\rangle$};
   \node[ltlab,left=3pt of r] {$\langle r\rangle\cong\Z_4$};
   \node[ltlab,right=3pt of v1] {$\langle s,r^2\rangle\cong V_4$};
   \node[ltlab,above=1.5pt of top] {$D_8$};
@@ -9498,7 +9498,7 @@ This is a request to ``build the lattice'' (the four-step Method). $|V_4|=4$, so
   \end{scope}
   \node[ltlab,below=1.5pt of bot] {$1$};
   \node[ltlab,left=3pt of a] {$\langle a\rangle$};
-  \node[ltlab,below=1.5pt of b] {$\langle b\rangle$};
+  \node[ltlab,right=3pt of b] {$\langle b\rangle$};
   \node[ltlab,right=3pt of c] {$\langle c\rangle$};
   \node[ltlab,above=1.5pt of top] {$V_4$};
 \end{tikzpicture}\end{center}
@@ -9747,14 +9747,14 @@ The covering relations: each order-$2$ subgroup sits under the order-$4$ subgrou
     \draw (A)--(top); \draw (R)--(top); \draw (B)--(top);
   \end{scope}
   \node[ltlab,below=1.5pt of bot] {$1$};
-  \node[ltlab,below=1.5pt of s]   {$\gen{s}$};
-  \node[ltlab,below=1.5pt of r2s] {$\gen{r^2s}$};
-  \node[ltlab,below=1.5pt of rr]  {$\gen{r^2}$};
-  \node[ltlab,below=1.5pt of rs]  {$\gen{rs}$};
-  \node[ltlab,below=1.5pt of r3s] {$\gen{r^3s}$};
-  \node[ltlab,left=2pt of A]      {$\gen{r^2,s}$};
-  \node[ltlab,above=1.5pt of R]   {$\gen{r}$};
-  \node[ltlab,right=2pt of B]     {$\gen{r^2,rs}$};
+  \node[ltlab,left=3pt of s]     {$\gen{s}$};
+  \node[ltlab,left=3pt of r2s]   {$\gen{r^2s}$};
+  \node[ltlab,below right=0pt and 1pt of rr] {$\gen{r^2}$};
+  \node[ltlab,right=3pt of rs]   {$\gen{rs}$};
+  \node[ltlab,right=3pt of r3s]  {$\gen{r^3s}$};
+  \node[ltlab,above left=0pt and 1pt of A]  {$\gen{r^2,s}$};
+  \node[ltlab,right=3pt of R]    {$\gen{r}$};
+  \node[ltlab,above right=0pt and 1pt of B] {$\gen{r^2,rs}$};
   \node[ltlab,above=1.5pt of top] {$D_8$};
 \end{tikzpicture}\end{center}
 
@@ -9789,7 +9789,7 @@ $r^ks$.
   \node[cglab] at ($(sN)+(0.32,0.18)$)   {$s$};
   \node[cglab] at ($(rsN)+(0.10,0.34)$)  {$rs$};
   \node[cglab] at ($(r2sN)+(0.36,-0.16)$) {$r^2s$};
-  \node[cglab] at ($(r3sN)+(0.40,0.10)$) {$r^3s$};
+  \node[cglab] at ($(r3sN)+(-0.30,0.28)$) {$r^3s$};
   \node[font=\scriptsize,align=left,anchor=west] at (3.0,-1.9)
     {solid $\to$: right mult.\ by $r$\\[1pt] dashed: right mult.\ by $s$};
 \end{tikzpicture}\end{center}
@@ -9831,9 +9831,9 @@ The only element of order $2$ is $-1$ (since $i^2=j^2=k^2=-1\neq1$), giving the 
     \draw (k)--(top);
   \end{scope}
   \node[ltlab,below=1.5pt of bot] {$1$};
-  \node[ltlab,right=3pt of z] {$\gen{-1}$};
+  \node[ltlab,below right=0pt and 1pt of z] {$\gen{-1}$};
   \node[ltlab,left=3pt of i] {$\gen{i}$};
-  \node[ltlab,below=1.5pt of j] {$\gen{j}$};
+  \node[ltlab,right=3pt of j] {$\gen{j}$};
   \node[ltlab,right=3pt of k] {$\gen{k}$};
   \node[ltlab,above=1.5pt of top] {$Q_8$};
 \end{tikzpicture}\end{center}
@@ -10022,8 +10022,9 @@ Draw the subgroup lattices of the trivial group and of a cyclic group $\Zn{p}$ o
 two-vertex ``single edge'' lattice iff it has \emph{no} proper nontrivial subgroup, which for finite groups
 (by Lagrange) means prime order.
 \wsol \emph{Trivial group.} $\Zn{1}=\{1\}$ has only itself as a subgroup, so the lattice is a single point.
-\begin{center}\begin{tikzpicture}[every node/.style={inner sep=1.5pt}]
-  \node (a) at (0,0) {$1$};
+\begin{center}\begin{tikzpicture}
+  \node[ltdot] (a) at (0,0) {};
+  \node[ltlab,below=1.5pt of a] {$1$};
 \end{tikzpicture}\end{center}
 
 \emph{Prime order.} By Lagrange every subgroup of $\Zn{p}$ has order $1$ or $p$, so the only subgroups are
@@ -10169,13 +10170,13 @@ being $\gen{\overline{36/d}}$:
     \draw (n18)--(n36);
   \end{scope}
   \node[ltlab,below=1.5pt of n1] {$\gen{\overline0}$};
-  \node[ltlab,left=3pt of n2] {$\gen{\overline{18}}$};
-  \node[ltlab,right=3pt of n3] {$\gen{\overline{12}}$};
+  \node[ltlab,below left=0pt and 1pt of n2] {$\gen{\overline{18}}$};
+  \node[ltlab,below right=0pt and 1pt of n3] {$\gen{\overline{12}}$};
   \node[ltlab,left=3pt of n4] {$\gen{\overline9}$};
-  \node[ltlab,below=1.5pt of n6] {$\gen{\overline6}$};
+  \node[ltlab,below=5pt of n6] {$\gen{\overline6}$};
   \node[ltlab,right=3pt of n9] {$\gen{\overline4}$};
-  \node[ltlab,left=3pt of n12] {$\gen{\overline3}$};
-  \node[ltlab,right=3pt of n18] {$\gen{\overline2}$};
+  \node[ltlab,above left=0pt and 1pt of n12] {$\gen{\overline3}$};
+  \node[ltlab,above right=0pt and 1pt of n18] {$\gen{\overline2}$};
   \node[ltlab,above=1.5pt of n36] {$\Zn{36}$};
 \end{tikzpicture}
 \end{center}
@@ -10994,9 +10995,9 @@ The next figure shows the fibers of $\varphi$ literally as the cosets of $K = \k
 \node at (1.5,1.85) {$aK = Ka$};
 \node at (1.5,3.25) {$bK = Kb$};
 % codomain points
-\node (i1) at (6.0,0.45) {$\bullet\ 1_H$};
-\node (i2) at (6.0,1.85) {$\bullet\ \varphi(a)$};
-\node (i3) at (6.0,3.25) {$\bullet\ \varphi(b)$};
+\node[anchor=west] (i1) at (5.45,0.45) {$\bullet\ 1_H$};
+\node[anchor=west] (i2) at (5.45,1.85) {$\bullet\ \varphi(a)$};
+\node[anchor=west] (i3) at (5.45,3.25) {$\bullet\ \varphi(b)$};
 \node at (6.0,4.7) {$\im\varphi \subseteq H$};
 % arrows
 \draw[->,thick] (3.3,0.45) -- (i1.west);
@@ -11319,7 +11320,7 @@ $G = \langle x, y \mid x^4 = y^4 = 1, \ xy = yx \rangle$. Let $\overline{G} = G/
     \end{tikzcd}\]
 
   \item Let $\varphi: G \to K$ be surjective with kernel $N$, and let $M \nor G$ with $N \le M$. Show the square below commutes, where the bottom map is induced by $\varphi$. Prove the induced map is an isomorphism (its kernel is trivial), and separately verify the side fact $\varphi(M) \isom M/N$:
-    \[\begin{tikzcd}[row sep=large,column sep=large]
+    \[\begin{tikzcd}[row sep=large,column sep=6.5em]
       G \arrow[r, two heads, "\varphi"] \arrow[d, two heads, "\pi_M"'] & K \arrow[d, two heads] \\
       G/M \arrow[r, dashed, "\isom"', "{gM\mapsto \varphi(g)\varphi(M)}"] & K/\varphi(M)
     \end{tikzcd}\]
@@ -11965,7 +11966,7 @@ A \arrow[ur, hook] & & B \arrow[ul, hook'] \\
 \end{tikzcd}\]
 Taking $G=\Z_{12}$, $A=\gen{2}$, $B=\gen{3}$, compute $|A|$, $|B|$, $|A\cap B|$, $|AB|$ and confirm $|AB|=|A||B|/|A\cap B|$.
 \item Let $N\nor G$ and $H\sgr G$. Using the second isomorphism theorem, label the induced isomorphism in the diagram and prove $\idx{HN}{N}=\idx{H}{H\cap N}$:
-\[\begin{tikzcd}[row sep=large,column sep=large]
+\[\begin{tikzcd}[row sep=large,column sep=5.5em]
 H \arrow[r, hook] \arrow[d, two heads] & HN \arrow[d, two heads] \\
 H/(H\cap N) \arrow[r, dashed, "\isom"', "{h(H\cap N)\mapsto hN}"] & HN/N
 \end{tikzcd}\]
@@ -12929,7 +12930,7 @@ $G/N\isom\Z/6$ (right), with faint ties joining matched pairs.
   \end{scope}
   \node[ltlab,below=1.5pt of Lb] {$\gen{6}$};
   \node[ltlab,left=3pt of L3]    {$\gen{3}$};
-  \node[ltlab,right=3pt of L2]   {$\gen{2}$};
+  \node[ltlab,above right=0pt and 1pt of L2] {$\gen{2}$};
   \node[ltlab,above=1.5pt of Lt] {$\Z/12$};
   % ---- RIGHT lattice: all subgroups of G/N = Z/6 ----
   \node[ltdot] (Rb)  at (6,0)   {};
@@ -12941,7 +12942,7 @@ $G/N\isom\Z/6$ (right), with faint ties joining matched pairs.
     \draw (R3)--(Rt); \draw (R2)--(Rt);
   \end{scope}
   \node[ltlab,below=1.5pt of Rb] {$\{0\}$};
-  \node[ltlab,left=3pt of R3]    {$\gen{\overline{3}}$};
+  \node[ltlab,above left=0pt and 1pt of R3] {$\gen{\overline{3}}$};
   \node[ltlab,right=3pt of R2]   {$\gen{\overline{2}}$};
   \node[ltlab,above=1.5pt of Rt] {$\Z/6$};
   % ---- correspondence ties (equal heights) ----
