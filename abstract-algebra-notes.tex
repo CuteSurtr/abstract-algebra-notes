@@ -60983,7 +60983,7 @@ Verify $\ker(\operatorname{ev}_P)=\fm_P$, that $\fm_P\supseteq\fa$, and that the
 \section{Modules, Tensor Products, and Nakayama's Lemma}
 \subsection*{Modules: the common generalization}
 
-Atiyah and Macdonald open their chapter on modules with a slogan worth keeping in front of us: the module is the device that lets commutative algebra dispense with the ``extra elbow-room'' of linear algebra while keeping its techniques. A vector space is a module over a field; an abelian group is a module over $\Z$; an ideal of a ring $A$ is a module over $A$; the ring $A$ itself is a module over $A$. The single notion of module unifies all of these, and -- crucially for the geometric program -- it is the right home for the functorial operations (quotient, localization, tensor, completion) that we will use to ``concentrate near a point''.
+Atiyah and Macdonald open their chapter on modules with a slogan worth keeping in front of us: working with modules rather than just ideals gives extra ``elbow-room'', and with it greater clarity and simplicity. A vector space is a module over a field; an abelian group is a module over $\Z$; an ideal of a ring $A$ is a module over $A$; the ring $A$ itself is a module over $A$. The single notion of module unifies all of these, and -- crucially for the geometric program -- it is the right home for the functorial operations (quotient, localization, tensor, completion) that we will use to ``concentrate near a point''.
 
 \begin{definition}[{$A$-module}]
 Let $A$ be a commutative ring with $1$. An \emph{$A$-module} is an abelian group $(M,+)$ together with a scalar multiplication $A\times M\to M$, $(a,x)\mapsto ax$, satisfying for all $a,b\in A$ and $x,y\in M$:
@@ -61098,9 +61098,9 @@ N_1\arrow[r] & N_2\arrow[r] & N_3\arrow[r] & N_4\arrow[r] & N_5
 \dgi{Objects:} Ten $A$-modules, $M_1,\dots,M_5$ forming the top exact row and $N_1,\dots,N_5$ forming the bottom exact row. Five vertical maps $f_i:M_i\to N_i$ ($i=1,\dots,5$) connect corresponding positions.
 \dgi{Arrows:} The horizontal arrows (unlabelled in this diagram) form two five-term exact sequences. The vertical arrows $f_i$ are $A$-module homomorphisms with given properties: $f_1$ surjective, $f_5$ injective, $f_2$ and $f_4$ isomorphisms. The arrow $f_3$ is the one whose isomorphism the lemma concludes.
 \dgi{What commutes:} Every square commutes: for each $i$, the horizontal map $M_i\to M_{i+1}$ followed by $f_{i+1}$ equals $f_i$ followed by the horizontal map $N_i\to N_{i+1}$. Exactness means $\operatorname{im}(M_{i-1}\to M_i)=\operatorname{ker}(M_i\to M_{i+1})$ at each $M_i$, and likewise for the $N$-row.
-\dgi{Why it commutes:} Commutativity of each square is given as hypothesis. The argument for $f_3$ being an isomorphism is a four-step diagram chase: surjectivity of $f_1$ and isomorphism of $f_2$ give injectivity of $f_3$ (``four-lemma''); isomorphism of $f_4$ and injectivity of $f_5$ give surjectivity of $f_3$ (the other four-lemma). A generic element in $\ker f_3$ is chased left to show it must be zero; a generic element in the image is lifted from the $N$-row upward.
-\dgi{Why this matters here:} The five lemma is the standard tool for proving that a map between two exact sequences is an isomorphism by bootstrapping from known isomorphisms at adjacent positions. In the context of this chapter it will be used (in later sections) to verify that natural maps between long exact sequences of $\Tor$ and $\Ext$ groups are isomorphisms.
-\dgi{Concrete example:} Take both rows to be $0\to\Z\xrightarrow{2}\Z\to\Z/2\to0\to0$ and $f_1=f_2=f_4=f_5=\id$, $f_3$ the natural map $\Z/2\to\Z/2$. Then $f_3$ is an isomorphism, consistent with the lemma (here both four-element conditions are satisfied with equality).
+\dgi{Why it commutes:} Commutativity of each square is given as hypothesis. The argument for $f_3$ being an isomorphism is a four-step diagram chase: surjectivity of $f_1$ and injectivity of $f_2$ and $f_4$ give injectivity of $f_3$ (``four-lemma''); surjectivity of $f_2$ and $f_4$ and injectivity of $f_5$ give surjectivity of $f_3$ (the other four-lemma). A generic element in $\ker f_3$ is chased left to show it must be zero; a generic element in the image is lifted from the $N$-row upward.
+\dgi{Why this matters here:} The five lemma is the standard tool for proving that a map between two exact sequences is an isomorphism by bootstrapping from known isomorphisms at adjacent positions. In this chapter it is used again for completions, to show that the natural map $\widehat R\tensor_R M\to\widehat M$ is an isomorphism for a finitely generated module $M$ over a Noetherian ring $R$ (Proposition~\ref{prop:flat@c15}).
+\dgi{Concrete example:} Take both rows to be $\Z\xrightarrow{2}\Z\to\Z/2\to0\to0$ and $f_1=f_2=f_4=f_5=\id$, $f_3$ the induced map $\Z/2\to\Z/2$. Then $f_3$ is an isomorphism (the identity), consistent with the lemma.
 \dgi{Common pitfall:} The hypothesis on $f_1$ is \emph{surjectivity}, not injectivity, and on $f_5$ is \emph{injectivity}, not surjectivity. Swapping these weakens the conclusion. Also, the lemma applies to two exact sequences of the same length five, not to arbitrary diagrams; adding or removing terms changes what is provable.
 \dgi{Takeaway:} The point of this diagram is that knowing the four outer vertical maps are (nearly) isomorphisms forces the middle vertical map to be an isomorphism, with the proof being a purely formal element chase using exactness and commutativity.
 \end{dgx}
@@ -61118,7 +61118,7 @@ is short exact for every $i$. Sanity check: reading $\dim$ (over a field) gives 
 \end{wex}
 
 \begin{wex}{Additive functions on short exact sequences}
-Let $\lambda$ be a $\Z$-valued function on a class of modules, additive on short exact sequences. Prove $\sum_{i=0}^{n}(-1)^i\lambda(M_i)=0$ for an exact sequence $0\to M_0\to\cdots\to M_n\to0$.
+Let $\lambda$ be a $\Z$-valued function on a class $\mathcal C$ of modules, additive on short exact sequences whose terms lie in $\mathcal C$. Prove $\sum_{i=0}^{n}(-1)^i\lambda(M_i)=0$ for an exact sequence $0\to M_0\to\cdots\to M_n\to0$ in which all the $M_i$ and all the kernels of the maps lie in $\mathcal C$.
 \wrec Additivity means $\lambda(M)=\lambda(M')+\lambda(M'')$ for $0\to M'\to M\to M''\to0$; this is the abstract Euler characteristic / dimension count.
 \wsol Splice into short exact sequences $0\to N_{i-1}\to M_i\to N_i\to0$ with $N_{-1}=0=N_n$ (A\&M Prop.\ 2.11). Additivity gives $\lambda(M_i)=\lambda(N_{i-1})+\lambda(N_i)$. Form $\sum(-1)^i\lambda(M_i)=\sum(-1)^i\bigl(\lambda(N_{i-1})+\lambda(N_i)\bigr)$; the $N$-terms telescope and cancel because each $N_i$ appears once with sign $(-1)^i$ and once with $(-1)^{i+1}$, leaving $0$. Sanity check: for $0\to M'\to M\to M''\to0$ this is just additivity; for finite-dimensional $k$-vector spaces $\lambda=\dim$ recovers rank--nullity $\dim M=\dim\ker+\dim\im$.
 \end{wex}
@@ -61139,7 +61139,7 @@ Sanity check: with $n=2$ the $2$-torsion $(\Z/2)[2]=\Z/2$ maps isomorphically by
 For a family $(M_i)_{i\in I}$ of $A$-modules, the \emph{direct product} $\prod_{i\in I}M_i$ is the set of all families $(x_i)$ with the componentwise operations; the \emph{direct sum} $\bigoplus_{i\in I}M_i$ is the submodule of families $(x_i)$ with $x_i=0$ for all but finitely many $i$. For finite $I$ the two coincide. A \emph{free} module is one isomorphic to $\bigoplus_{i\in I}A$, written $A^{(I)}$; the finite free modules are $A^n$.
 \end{definition}
 
-A module $M$ is \emph{finitely generated} (f.g.) if there exist $x_1,\dots,x_n\in M$ with $M=Ax_1+\cdots+Ax_n$, equivalently if there is a surjection $A^n\twoheadrightarrow M$, equivalently if $M\isom A^n/K$ for some submodule $K$ and some $n$ (A\&M Prop.\ 2.3). Generation by $n$ elements is captured by a presentation $A^m\to A^n\to M\to0$.
+A module $M$ is \emph{finitely generated} (f.g.) if there exist $x_1,\dots,x_n\in M$ with $M=Ax_1+\cdots+Ax_n$, equivalently if there is a surjection $A^n\twoheadrightarrow M$, equivalently if $M\isom A^n/K$ for some submodule $K$ and some $n$ (A\&M Prop.\ 2.3). Generation by $n$ elements is captured by the surjection $A^n\twoheadrightarrow M$; if its kernel is also finitely generated (automatic when $A$ is Noetherian), $M$ has a finite presentation $A^m\to A^n\to M\to0$.
 
 \begin{wex}{$\Hom$ and direct sums vs.\ products}
 Establish $\Hom_A\bigl(\bigoplus_i M_i,N\bigr)\isom\prod_i\Hom_A(M_i,N)$ and $\Hom_A\bigl(N,\prod_i M_i\bigr)\isom\prod_i\Hom_A(N,M_i)$.
@@ -61161,7 +61161,7 @@ Show that over a nonzero commutative ring, free modules have a well-defined rank
 
 \subsection*{Cayley--Hamilton and Nakayama's lemma}
 
-The determinant trick is the technical heart of the chapter and the source of Nakayama's lemma -- a result A\&M (rightly) call indispensable. It is the commutative-algebra incarnation of the Cayley--Hamilton theorem.
+The determinant trick is the technical heart of the chapter and the source of Nakayama's lemma -- a result used again and again in the rest of this chapter. It is the commutative-algebra incarnation of the Cayley--Hamilton theorem.
 
 \begin{proposition}[{determinant trick, A\&M 2.4}]
 Let $M$ be a finitely generated $A$-module, $\fa\subseteq A$ an ideal, and $\phi:M\to M$ an $A$-endomorphism with $\phi(M)\subseteq\fa M$. Then $\phi$ satisfies an equation
@@ -61193,7 +61193,7 @@ By the corollary there is $x=1+a$ with $a\in\fa\subseteq\Jac(A)$ and $xM=0$. But
 Let $(A,\fm,k)$ be a local ring with maximal ideal $\fm$ and residue field $k=A/\fm$, and let $M$ be a finitely generated $A$-module. Then:
 \begin{enumerate}[label=\textup{(\arabic*)},leftmargin=*]
 \item If $N\subseteq M$ is a submodule with $N+\fm M=M$, then $N=M$.
-\item Elements $x_1,\dots,x_n\in M$ generate $M$ as an $A$-module \emph{iff} their images $\bar x_1,\dots,\bar x_n$ form a basis of the $k$-vector space $M/\fm M$. In particular every minimal generating set has the same size $\dim_k M/\fm M$.
+\item Elements $x_1,\dots,x_n\in M$ generate $M$ as an $A$-module \emph{iff} their images $\bar x_1,\dots,\bar x_n$ span the $k$-vector space $M/\fm M$. In particular the images of a minimal generating set form a basis of $M/\fm M$, so every minimal generating set has the same size $\dim_k M/\fm M$.
 \end{enumerate}
 \end{corollary}
 
