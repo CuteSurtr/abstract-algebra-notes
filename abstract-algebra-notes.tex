@@ -48641,7 +48641,7 @@ Construct a field of $4$ elements and write out its addition/multiplication stru
 \begin{wex}{$\Q[x]/(x^2-2)$ versus $\Q[x]/(x^2+1)$}
 Identify these two quotient fields concretely and give a basis.
 \wrec Both moduli are irreducible over $\Q$ (no rational roots), so each quotient is a degree-$2$ field with basis $1,\theta$.
-\wsol For $x^2-2$: $\theta^2=2$, so the map $\theta\mapsto\sqrt2$ gives $\Q[x]/(x^2-2)\isom\Q(\sqrt2)$, basis $\set{1,\sqrt2}$. For $x^2+1$: $\theta^2=-1$, so $\theta\mapsto i$ gives $\Q[x]/(x^2+1)\isom\Q(i)$, basis $\set{1,i}$. Both have degree $2$ over $\Q$ but are non-isomorphic extensions inside $\C$ ($\sqrt2\in\R$, $i\notin\R$). Sanity check: $(a+b\sqrt2)(a-b\sqrt2)=a^2-2b^2\in\Q$ exhibits inverses in $\Q(\sqrt2)$; $(a+bi)(a-bi)=a^2+b^2$ does so in $\Q(i)$.
+\wsol For $x^2-2$: $\theta^2=2$, so the map $\theta\mapsto\sqrt2$ gives $\Q[x]/(x^2-2)\isom\Q(\sqrt2)$, basis $\set{1,\sqrt2}$. For $x^2+1$: $\theta^2=-1$, so $\theta\mapsto i$ gives $\Q[x]/(x^2+1)\isom\Q(i)$, basis $\set{1,i}$. Both have degree $2$ over $\Q$ but are non-isomorphic: an isomorphism $\Q(i)\to\Q(\sqrt2)$ would send $i$ to a square root of $-1$ in $\Q(\sqrt2)\subseteq\R$, and there is none. Sanity check: $(a+b\sqrt2)(a-b\sqrt2)=a^2-2b^2\in\Q$ exhibits inverses in $\Q(\sqrt2)$; $(a+bi)(a-bi)=a^2+b^2$ does so in $\Q(i)$.
 \end{wex}
 
 \begin{wex}{A cubic: $\Q[x]/(x^3-2)$}
@@ -48664,7 +48664,7 @@ Let $K/F$ be an extension and $\alpha \in K$. We call $\alpha$ \emph{algebraic o
 
 Consider the evaluation homomorphism $\mathrm{ev}_\alpha \colon F[x] \to K$, $f(x) \mapsto f(\alpha)$, with image $F[\alpha]$. Then $\alpha$ is algebraic over $F$ iff $\ker(\mathrm{ev}_\alpha) \neq (0)$.
 
-\begin{theorem}[{13.1.x, minimal polynomial}]
+\begin{theorem}[{13.9, 13.11, minimal polynomial}]
 Let $\alpha$ be algebraic over $F$. Then there is a unique monic irreducible polynomial $m_{\alpha,F}(x) \in F[x]$ with $m_{\alpha,F}(\alpha) = 0$; it generates the kernel of $\mathrm{ev}_\alpha$, i.e.\ $\ker(\mathrm{ev}_\alpha) = (m_{\alpha,F}(x))$. A polynomial $g(x) \in F[x]$ satisfies $g(\alpha) = 0$ iff $m_{\alpha,F}(x) \mid g(x)$. Moreover the evaluation map induces an isomorphism
 \[
 F[x]/(m_{\alpha,F}(x)) \;\xrightarrow{\ \isom\ }\; F[\alpha] = F(\alpha),
@@ -48698,7 +48698,7 @@ F[x]/(m_{\alpha,F}(x)) \arrow[r, "\isom"', "\overline{\mathrm{ev}_\alpha}"] & F(
 \begin{wex}{Minimal polynomials over $\Q$}
 Find $m_{\alpha,\Q}(x)$ and $\idx{\Q(\alpha)}{\Q}$ for: (a) $\alpha=\sqrt2$; (b) $\alpha=\sqrt[3]2$; (c) $\alpha=i$; (d) $\alpha=\zeta_3$ (primitive cube root of $1$); (e) $\alpha=\sqrt2+\sqrt2$, i.e.\ $2\sqrt2$.
 \wrec The minimal polynomial is the monic irreducible with $\alpha$ as a root; produce a monic annihilator and check irreducibility (Eisenstein, rational root test, or cyclotomic).
-\wsol (a) $\sqrt2$: $x^2-2$, irreducible (Eisenstein $p=2$), degree $2$. (b) $\sqrt[3]2$: $x^3-2$, Eisenstein at $2$, degree $3$. (c) $i$: $x^2+1$, no real root, degree $2$. (d) $\zeta_3$: $\Phi_3(x)=x^2+x+1$, irreducible over $\Q$, degree $2$. (e) $2\sqrt2$ satisfies $x^2=8$, so $x^2-8$, irreducible (Eisenstein $p=2$), degree $2$; note $\Q(2\sqrt2)=\Q(\sqrt2)$. Sanity check: in each case $\deg m_{\alpha,\Q}=\idx{\Q(\alpha)}{\Q}$, matching the basis $1,\alpha,\dots,\alpha^{n-1}$.
+\wsol (a) $\sqrt2$: $x^2-2$, irreducible (Eisenstein $p=2$), degree $2$. (b) $\sqrt[3]2$: $x^3-2$, Eisenstein at $2$, degree $3$. (c) $i$: $x^2+1$, no real root, degree $2$. (d) $\zeta_3$: $\Phi_3(x)=x^2+x+1$, irreducible over $\Q$, degree $2$. (e) $2\sqrt2$ satisfies $x^2=8$, so $x^2-8$, irreducible (no rational root, as $8$ is not a square in $\Q$; Eisenstein at $2$ does not apply since $2^2\mid8$), degree $2$; note $\Q(2\sqrt2)=\Q(\sqrt2)$. Sanity check: in each case $\deg m_{\alpha,\Q}=\idx{\Q(\alpha)}{\Q}$, matching the basis $1,\alpha,\dots,\alpha^{n-1}$.
 \end{wex}
 
 \begin{wex}{Minimal polynomial depends on the base field}
@@ -48727,7 +48727,7 @@ Find $m_{\sqrt[4]2,\Q}(x)$ and the degree, then locate $\sqrt2$ in the tower.
 
 \subsection*{Adjoining a root: realizing $F(\alpha)$ abstractly}
 
-Kronecker's theorem and the minimal-polynomial theorem are two sides of one coin. Given \emph{any} irreducible $p(x)\in F[x]$, the field $F[x]/(p(x))$ is an extension in which $p$ acquires a root $\theta$, and there $m_{\theta,F}=p$. Conversely, given an algebraic $\alpha$ inside some $K$, the abstract field $F[x]/(m_{\alpha,F})$ is isomorphic to the concrete subfield $F(\alpha)\subseteq K$ via $x\mapsto\alpha$. This lets us compare two roots of the same irreducible polynomial through a common abstract model:
+Kronecker's theorem and the minimal-polynomial theorem are two sides of one coin. Given \emph{any} monic irreducible $p(x)\in F[x]$, the field $F[x]/(p(x))$ is an extension in which $p$ acquires a root $\theta$, and there $m_{\theta,F}=p$. Conversely, given an algebraic $\alpha$ inside some $K$, the abstract field $F[x]/(m_{\alpha,F})$ is isomorphic to the concrete subfield $F(\alpha)\subseteq K$ via $x\mapsto\alpha$. This lets us compare two roots of the same irreducible polynomial through a common abstract model:
 
 \begin{center}
 \begin{tikzcd}[column sep=large, row sep=large]
