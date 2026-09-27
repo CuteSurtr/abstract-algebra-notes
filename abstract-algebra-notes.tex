@@ -49358,8 +49358,9 @@ at $B$, meeting the circle at $D$. Thales' theorem makes $\angle ADC$ a right
 angle, and the altitude relation in a right triangle gives $BD^2 = AB\cdot BC
 = a$, so $BD = \sqrt{a}$.
 
-The four field constructions are summarized by the parallel-projection square
-they all rely on; here the diagonal records the similar-triangle ratio.
+The multiplication construction (and, with the roles of $1$ and $a$ exchanged,
+division) is summarized by the following parallel-projection square; each arrow
+records a similar-triangle ratio.
 
 \begin{center}
 \begin{tikzcd}[row sep=large, column sep=large]
@@ -49387,9 +49388,9 @@ parallel-projection construction producing $ab$ from the unit is symmetric in $a
 by the symmetry of similar triangles under interchange of the two rays.  Element-chase:
 starting from length $1$, right-then-down gives $a$ then $ab$; down-then-right gives $b$
 then $ba = ab$.
-\dgi{Why this matters here:} This square is the single picture summarising \emph{why} all
-four field operations (addition, subtraction, multiplication, division) can be performed
-with straightedge and compass.  Specifically it shows that constructible lengths are closed
+\dgi{Why this matters here:} This square summarises \emph{why} multiplication (and,
+with the roles of $1$ and $a$ exchanged, division) can be performed with straightedge and
+compass; addition and subtraction need only the compass.  Specifically it shows that constructible lengths are closed
 under multiplication, the crucial non-trivial step in proving the constructible numbers form
 a field (Theorem about the constructible field above).
 \dgi{Concrete example:} Take $a=2$, $b=3$: the unit segment, the segment of length $2$
@@ -49450,10 +49451,10 @@ The tower is the heart of the matter, displayed as a chain of quadratic steps.
 chain of intermediate real fields $F_1, F_2, \ldots, F_m$, each containing the previous.
 The notation $F_m \ni \alpha$ records that the target constructible number $\alpha$ lives
 in the last field.
-\dgi{Arrows:} Each dash-arrow $F_{i-1} \dashrightarrow F_i$ labelled $2$ is a
+\dgi{Arrows:} Each undirected edge between $F_{i-1}$ and $F_i$ labelled $2$ is a
 \emph{field extension of degree $2$}: $F_i = F_{i-1}(\sqrt{u_i})$ for some $u_i \in
-F_{i-1}$, $u_i > 0$, and $\idx{F_i}{F_{i-1}} = 2$.  The dashes indicate the arrow is
-an inclusion (no function formula, just containment) rather than a surjection.
+F_{i-1}$, $u_i > 0$, and $\idx{F_i}{F_{i-1}} = 2$.  The plain edges (no arrowheads)
+indicate an inclusion (no function formula, just containment) rather than a surjection.
 \dgi{What commutes:} This is a linear chain, not a square, so commutativity is trivial:
 following all steps left-to-right passes through $\Q \subseteq F_1 \subseteq \cdots
 \subseteq F_m$.  The key equality is the multiplicativity of degrees:
@@ -49529,24 +49530,27 @@ $y_0$ satisfies a quadratic over $F(x_0)$ (and vice versa), giving at most one m
 quadratic step.
 \dgi{What commutes:} The two paths from $F$ to $F(x_0,y_0)$ agree: $F \subseteq
 F(x_0) \subseteq F(x_0,y_0)$ and $F \subseteq F(y_0) \subseteq F(x_0,y_0)$ both produce
-the same compositum.  The degree relation is $\idx{F(x_0,y_0)}{F} \leq 4$, with the
+the same compositum.  The degree relation is $\idx{F(x_0,y_0)}{F} \leq 2$ (both coordinates lie in
+the single field $F(\sqrt{u})$ of the line-and-circle analysis), with the
 total obtained either way by multiplying the two steps.
 \dgi{Why it commutes:} Both extension chains generate the same subfield of $\R$
 (the smallest field over $F$ containing both $x_0$ and $y_0$), so they must agree at
 the top.  This follows from the universal property of the compositum: $F(x_0,y_0)$ is
 the join of $F(x_0)$ and $F(y_0)$ in the lattice of subfields of $\R$.
 \dgi{Why this matters here:} This diagram encodes the \emph{inductive step} of the tower
-theorem: one new constructible point adds at most two quadratic extensions, yielding
-$\idx{F(x_0,y_0)}{F} \mid 4 = 2^2$.  Iterating over all construction steps builds the
+theorem: one new constructible point adds at most one quadratic extension, yielding
+$\idx{F(x_0,y_0)}{F} \mid 2$.  Iterating over all construction steps builds the
 full tower, and the diagram shows which field lattice arises from a single step.
 \dgi{Concrete example:} Starting from $F = \Q$, the point $P = (\frac12, \frac{\sqrt3}{2})$
 from the two-unit-circles example gives $F(x_0) = \Q$ (since $x_0 = \frac12 \in \Q$)
 and $F(y_0) = \Q(\sqrt3)$, degree $2$; the compositum is $\Q(\sqrt3)$, a single step.
 \dgi{Common pitfall:} The degrees $2$ on each edge are upper bounds, not equalities in
 general.  If $x_0 \in F$ already (e.g. line-line intersection), then $\idx{F(x_0)}{F}=1$
-and the diamond degenerates.  Labelling all edges $2$ is the worst-case picture.
+and the diamond degenerates.  In fact it always degenerates: since
+$\idx{F(x_0,y_0)}{F}\le 2$, each of $F(x_0)$ and $F(y_0)$ equals $F$ or $F(x_0,y_0)$,
+so the four edges never all have degree $2$ (a total degree $4$ cannot occur).
 \dgi{Takeaway:} The point of this diagram is that each new constructible point contributes
-at most two quadratic extension steps to the tower, so the total degree over $\Q$ remains
+at most one quadratic extension step to the tower, so the total degree over $\Q$ remains
 a power of $2$ after any finite sequence of constructions.
 \end{dgx}
 
@@ -49733,7 +49737,8 @@ divide $2^1$, and indeed $30^\circ$ is constructible (the trisection of $90^\cir
 works, as the following worked example explains).
 \dgi{Common pitfall:} Students read the diagram as saying $\Q(\cos 20^\circ)$ and $F_1$
 are somehow equal or comparable.  The point is the opposite: they live in incompatible
-worlds (odd degree vs.\ even degree), so no inclusion between them can exist.
+worlds (degree $3$ vs.\ degree $2$, and neither degree divides the other), so by the
+tower law no inclusion between them can exist.
 \dgi{Takeaway:} The point of this diagram is that the field $\Q(\cos 20^\circ)$ has
 degree $3$ over $\Q$, while every constructible field sits in a tower of degree $2^m$,
 and since $3 \nmid 2^m$, trisecting $60^\circ$ is impossible.
@@ -49866,7 +49871,8 @@ the direct arrow.  Formally: $\idx{\Q(\zeta_n)}{\Q} = \idx{\Q(\zeta_n)}{\Q(\cos
 top step exactly degree $2$ is that $\zeta_n = \cos\frac{2\pi}{n} + i\sin\frac{2\pi}{n}$
 and $\bar\zeta_n = \zeta_n^{-1}$ have the same real part, so $\Q(\zeta_n) =
 \Q(\cos\frac{2\pi}{n})(i\sin\frac{2\pi}{n})$, a degree-$2$ extension of the real subfield
-(since $\sin\frac{2\pi}{n} \notin \R$ is purely imaginary up to the real part).
+(since $(i\sin\frac{2\pi}{n})^2=\cos^2\frac{2\pi}{n}-1$ lies in the real subfield, while
+$i\sin\frac{2\pi}{n}\notin\R$ for $n>2$).
 \dgi{Why this matters here:} This diagram records the key structural decomposition used to
 decide constructibility of regular $n$-gons: the $n$-gon is constructible iff $\zeta_n$
 is constructible iff $\cos\frac{2\pi}{n}$ is constructible iff $\varphi(n)/2$ is a
