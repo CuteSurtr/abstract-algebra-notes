@@ -12102,7 +12102,7 @@ onto its image.
 \begin{remark}
 Two reformulations worth memorizing. (1) \emph{Counting:} if $G$ is finite then
 $|\im\varphi|=|G/\ker\varphi|=\idx{G}{\ker\varphi}=|G|/|\ker\varphi|$; so $|\im\varphi|$ divides
-both $|G|$ and $|H|$. (2) \emph{Size of fibers:} every nonempty fiber $\varphi\inv(\{h\})$ is a
+$|G|$, and also $|H|$ when $H$ is finite. (2) \emph{Size of fibers:} every nonempty fiber $\varphi\inv(\{h\})$ is a
 coset of $\ker\varphi$, hence has exactly $|\ker\varphi|$ elements.
 \end{remark}
 
@@ -12352,7 +12352,7 @@ different ones, confirming the bijection $G/N\leftrightarrow\Z$. Consistent.
 
 \begin{remark}[The exact-sequence picture, revisited]
 Each example above is one instance of a single short exact sequence
-$1\to N\to G\xrightarrow{\varphi}Q\to 1$. Reading the five maps in order:
+$1\to N\to G\xrightarrow{\varphi}Q\to 1$. Reading the four maps in order:
 \[
 \begin{tikzcd}[column sep=large]
 1 \arrow[r] & \SL_n(F) \arrow[r, hook] & \GL_n(F) \arrow[r, two heads, "\det"] & F^\times \arrow[r] & 1
@@ -12382,7 +12382,7 @@ $1\to N\to G\xrightarrow{\varphi}Q\to 1$. Reading the five maps in order:
   For $n=2$, $F=\Zn{5}$: kernel has $|\GL_2(\Zn5)|/(|\Zn5|-1)=480/4=120$ elements, consistent
   with $|\SL_2(\Zn5)|=120$.
 \dgi{Common pitfall:} Students may read the hook arrow as an isomorphism.  $\SL_n(F)$ is a
-  proper subgroup of $\GL_n(F)$ (for $n\ge 1$ and $|F|>1$); the sequence says only that the
+  proper subgroup of $\GL_n(F)$ (for $n\ge 1$ and $|F|>2$; over $\F_2$ the two groups coincide); the sequence says only that the
   inclusion is injective (exact on the left), not that it is surjective.
 \dgi{Takeaway:} The point of this diagram is that the short exact sequence $1\to\SL_n(F)\to\GL_n(F)\xrightarrow{\det}F^\times\to 1$
   encodes in one line that $\SL_n(F)$ is the entire kernel of $\det$ and $\det$ is surjective
@@ -12444,7 +12444,7 @@ $1\to N\to G\xrightarrow{\varphi}Q\to 1$. Reading the five maps in order:
   so the sequence collapses to $1\to G\to G\to 1\to 1$, reflecting $\Inn(G)=\{1\}$.
 \dgi{Concrete example:} $G=S_3$: $Z(S_3)=\{e\}$ (the center of $S_3$ is trivial), so the
   sequence is $1\to\{e\}\hookrightarrow S_3\xrightarrow{\Psi}\Inn(S_3)\to 1$, giving $\Inn(S_3)\isom S_3/\{e\}\isom S_3$.
-  Indeed all automorphisms of $S_3$ for $n\ne 6$ are inner, so $\Inn(S_3)=\Aut(S_3)\isom S_3$.
+  Indeed all automorphisms of $S_n$ for $n\ne 6$ are inner, so $\Inn(S_3)=\Aut(S_3)\isom S_3$.
 \dgi{Common pitfall:} Conflating $\Aut(G)$ and $\Inn(G)$.  The sequence ends at $\Inn(G)$, not
   $\Aut(G)$; outer automorphisms (elements of $\Aut(G)\setminus\Inn(G)$) are invisible here.
   $\Psi$ is a map into $\Aut(G)$ but surjects only onto the inner subgroup $\Inn(G)$.
