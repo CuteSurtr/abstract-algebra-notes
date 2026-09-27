@@ -53209,7 +53209,8 @@ image of $C_{r}$ under $x\mapsto x^{n}$ is the circle of radius $r^{n}$ traverse
 $n$ times: its winding number about $0$ is $n$, for \emph{every} $r$.
 
 \textbf{Large $r$: the leading term dominates, so $f(C_r)$ winds $n$ times.}
-Let $M=\max_i|a_i|$. The lower terms are controlled by a single estimate: if
+Let $M=\max\{1,|a_0|,\dots,|a_{n-1}|\}$ (the $1$ makes $M\ge1$, so the condition
+$r\ge 10\,n\,M$ below forces $r\ge1$, which the estimate needs). The lower terms are controlled by a single estimate: if
 $|x|=r\ge 10\,n\,M$, then
 \[
   \bigl|f(x)-x^{n}\bigr|
@@ -53247,9 +53248,11 @@ is a point $\alpha$ on $C_{r'}$ with $f(\alpha)=0$. That $\alpha$ is a root.
 \begin{remark}
 The proof is honestly analytic: it uses that $\C$ (equivalently $\R$) is
 complete, packaged as the intermediate-value behaviour of the winding number.
-No purely algebraic proof exists, and there cannot be one -- the result fails
-for the algebraic numbers $\overline{\Q}\cap\R$ and depends on the topology of
-$\R$. The single inequality $|f(x)-x^{n}|\le\tfrac1{10}r^{n}$ does all the work;
+Some input beyond algebra is unavoidable, since the analogous statement fails for
+$\Q(i)$ (for instance $x^{2}-2$ has no root there); but little is needed: the
+Galois-theoretic proofs (D\&F 14.6) use only that real polynomials of odd degree have
+real roots, by the intermediate value theorem, and that complex numbers have complex
+square roots. The single inequality $|f(x)-x^{n}|\le\tfrac1{10}r^{n}$ does all the work;
 everything else is the geometry of ``the leash is shorter than the radius.''
 \end{remark}
 
@@ -53261,8 +53264,8 @@ everything else is the geometry of ``the leash is shorter than the radius.''
     \draw[->] (0,-1.9)--(0,1.9) node[above]{};
     \fill (0,0) circle (1.2pt);
     \node[below right] at (0,0) {$0$};
-    \draw[thick] plot[domain=0:1080,samples=200,smooth]
-      ({(1.35+0.18*sin(3*\x))*cos(\x)},{(1.35+0.18*sin(3*\x))*sin(\x)});
+    \draw[thick] plot[domain=0:360,samples=240,smooth]
+      ({1.1*cos(3*\x)+0.45*cos(\x)},{1.1*sin(3*\x)+0.45*sin(\x)});
     \node at (0,-2.35) {large $r$: winds $n=3$};
   \end{scope}
   % small-r winding curve: a loop around a_0, not around 0
@@ -53288,7 +53291,7 @@ the only way to lose the windings is to cross the origin.
 For $f(x)=x^{2}+1$, describe $f(C_{r})$ for very large $r$ and for $r=\tfrac12$,
 and locate where the winding number drops.
 \wrec Apply the dictionary: large $r$ gives winding $n=\deg f=2$; small $r$
-gives winding $0$ around $f(0)$; a root sits at the radius where it changes.
+gives winding $0$ about the origin (the curve stays near $f(0)$); a root sits at the radius where it changes.
 \wsol For large $r$, $x^{2}$ dominates and $f(C_{r})$ winds $2$ times about $0$.
 For $r=\tfrac12$, $|x^{2}|=\tfrac14$ while $f(0)=1$, so $f(C_{1/2})$ stays in the
 disc $|y-1|\le\tfrac14$, missing $0$: winding $0$. The transition happens at
@@ -53321,20 +53324,27 @@ $f(C_{r})$ makes $n$ loops with total curvature $2\pi n$, while for small $r$
 (assuming $a_{1}\neq0$) the linear term $a_{1}x+a_{0}$ dominates and $f(C_{r})$
 makes a single loop around $a_{0}$ with total curvature $2\pi$. Explain what
 becomes of the extra loops.
-\wrec The winding number equals total curvature divided by $2\pi$; as $r$
-varies, loops can only be created or destroyed when the curve degenerates
-(passes through $0$ or develops a cusp/crossing), changing the integer count.
-\wsol For small $r$, $f(re^{i\theta})\approx a_{0}+a_{1}re^{i\theta}$ traces a
-near-circle once around $a_{0}$: one loop, total curvature $2\pi$, winding $1$
-about $a_{0}$ but $0$ about the origin. For large $r$ there are $n$ loops, total
-curvature $2\pi n$, winding $n$ about $0$. As $r$ increases the curve sprouts the
-missing $n-1$ loops one at a time; each new loop is born exactly when $f(C_{r})$
-sweeps across the origin, i.e.\ at a radius $|\alpha_j|$ of a root $\alpha_j$.
-The loops do not appear from nowhere -- they are pinned to the moduli of the
-roots. Sanity check: a degree-$n$ polynomial has $n$ roots (counted with
-multiplicity, by this very theorem), and the winding number climbs from $0$ to
-$n$ in steps of $1$, one step per root modulus -- consistent with $f(C_r)$
-acquiring $n$ loops total.
+\wrec Total curvature divided by $2\pi$ is the \emph{turning number} of the curve (the
+winding number of its tangent vector about $0$), not its winding number about $0$; as
+$r$ varies it can change only when the tangent vector vanishes, i.e.\ when the curve
+develops a cusp.
+\wsol The tangent vector of $\theta\mapsto f(re^{i\theta})$ is
+$ire^{i\theta}f'(re^{i\theta})$, so by the argument principle the total curvature of
+$f(C_r)$ is $2\pi(1+N_r)$, where $N_r$ is the number of roots of $f'$ inside $C_r$
+(with multiplicity; none on $C_r$). For small $r$,
+$f(re^{i\theta})\approx a_{0}+a_{1}re^{i\theta}$ traces a near-circle once around
+$a_{0}$ and $N_r=0$ (as $f'(0)=a_1\neq0$): one loop, total curvature $2\pi$, winding
+$1$ about $a_{0}$ but $0$ about the origin. For large $r$, $N_r=n-1$: $n$ loops, total
+curvature $2\pi n$, winding $n$ about $0$. As $r$ increases the curve acquires the
+missing $n-1$ loops at the moduli $|\beta_k|$ of the critical points $\beta_k$ (the
+roots of $f'$): when $C_r$ passes through $\beta_k$ the curve $f(C_r)$ has a cusp at
+$f(\beta_k)$, which opens into a new small loop as $r$ grows. Crossing the origin is a
+different event: it happens at the moduli $|\alpha_j|$ of the roots of $f$ and raises
+the winding number about $0$, not the number of loops. Sanity check: for
+$f(x)=x^2+x+1$ the second loop appears at $r=\tfrac12$ (the critical point is
+$-\tfrac12$), while $f(C_r)$ first meets $0$ at $r=1$ (both roots have modulus $1$);
+the winding number about $0$ climbs from $0$ to $n$ (one step per root), the number of
+loops from $1$ to $n$ (one step per critical point).
 \end{wex}
 
 \begin{corollary}
