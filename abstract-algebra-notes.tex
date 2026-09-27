@@ -23989,7 +23989,7 @@ Let $|G|=105$. Show the Sylow $5$- and Sylow $7$-subgroups are normal.
 
 \begin{wex}{Every group of order $pqr$ ($p<q<r$ primes) is not simple}
 Let $|G|=pqr$ with $p<q<r$ distinct primes. Prove $G$ is not simple; in fact $G$ has a normal Sylow $r$-subgroup.
-\wrec The general version of the previous two examples. The largest prime $r$ has the tightest congruence; a counting argument forces $n_r=1$.
+\wrec The general version of the previous two examples. The largest prime $r$ has the tightest congruence; a counting argument, plus one normal-subgroup step, forces $n_r=1$.
 \wsol
 \textbf{Step 1.} For the largest prime $r$: $n_r\mid pq$ and $n_r\equiv1\pmod r$. The divisors of $pq$ are $1,p,q,pq$. Since $p,q<r$ we have $p\not\equiv1$ and $q\not\equiv1\pmod r$, so the only admissible values are $1$ and $pq$. Thus $n_r\in\{1,pq\}$.
 \textbf{Step 2 (assume all maximal).} Suppose, for contradiction, $G$ is simple, so every $n_p,n_q,n_r>1$. Then $n_r=pq$, and the Sylow $r$-subgroups (prime order $r$, disjoint by L2) contribute $pq(r-1)$ elements of order $r$.
@@ -23999,8 +23999,8 @@ Let $|G|=pqr$ with $p<q<r$ distinct primes. Prove $G$ is not simple; in fact $G$
 pq(r-1)+r(q-1)+q(p-1)+1 \le |G|=pqr.
 \]
 But $pq(r-1)=pqr-pq$, so the left side equals $pqr-pq+rq-r+qp-q+1=pqr+rq-r-q+1=pqr+(r-1)(q-1)$. Since $(r-1)(q-1)>0$ this exceeds $pqr$, a contradiction.
-\textbf{Step 5.} Hence not all of $n_p,n_q,n_r$ can exceed $1$; the contradiction came precisely from $n_r=pq$, so in fact $n_r=1$ and the Sylow $r$-subgroup is normal. Therefore $G$ is not simple.
-\textbf{Check.} For $(p,q,r)=(2,3,5)$ this is the order-$30$ result ($n_5=1$); for $(3,5,7)$ it gives $n_7=1$ as in Example~2. Specializing recovers both. Consistent.
+\textbf{Step 5.} Hence not all of $n_p,n_q,n_r$ can exceed $1$, so $G$ is not simple. This count alone does not give $n_r=1$ (it also used $n_p,n_q>1$), so suppose $n_r=pq$. The $pqr-pq$ elements of order $r$ leave only $pq-1$ other nonidentity elements, while $n_q>1$ would give at least $r(q-1)\ge(q+1)(q-1)>pq-1$ elements of order $q$ (Step 3); so $n_q=1$. Then for $P_q\in\Syl_q(G)$ (normal) and $P_r\in\Syl_r(G)$, $H:=P_qP_r$ is a subgroup of order $qr$ and index $p$, the smallest prime dividing $|G|$, so $H\nor G$. In $H$, $n_r(H)\mid q$ and $n_r(H)\equiv1\pmod r$ force $n_r(H)=1$, so $P_r$ is characteristic in $H$, hence normal in $G$, contradicting $n_r=pq$. Therefore $n_r=1$ and the Sylow $r$-subgroup is normal.
+\textbf{Check.} For $(p,q,r)=(2,3,5)$ this is the order-$30$ result ($n_5=1$); for $(3,5,7)$ it gives $n_7=1$ as in the order-$105$ example. Specializing recovers both. Consistent.
 \end{wex}
 
 \subsection*{Worked Examples: Small-Index Cores and Non-Simplicity}
@@ -24256,8 +24256,8 @@ Thus there are exactly five groups of order $18$:
 \]
 the first two abelian and the last three nonabelian. In particular every group of order $18$ is non-simple, since $P\nor G$ is proper of order $9$.
 
-\item \textbf{(Order $pqr$: bound the elements to force $n_r=1$.)} Let $|G|=pqr$ with $p<q<r$ primes. Prove the Sylow $r$-subgroup is normal by first finding the admissible values of $n_r$ and then ruling out $n_r=pq$ by counting.
-\\\emph{Answer key.} For the largest prime $r$: $n_r\mid pq$ and $n_r\equiv1\pmod r$. The divisors of $pq$ are $1,p,q,pq$; since $p,q<r$ we have $p,q\not\equiv1\pmod r$, leaving $n_r\in\{1,pq\}$. Suppose $n_r=pq$. The Sylow $r$-subgroups have prime order $r$, intersect trivially, and contribute $pq(r-1)=pqr-pq$ elements of order $r$. If moreover $n_q>1$ and $n_p>1$, then $n_q\ge r$ and $n_p\ge q$, contributing at least $r(q-1)$ and $q(p-1)$ further elements; summing with the identity gives at least $pqr-pq+r(q-1)+q(p-1)+1=pqr+(r-1)(q-1)>pqr$, a contradiction. Hence not all three $n_p,n_q,n_r$ exceed $1$; the overflow came precisely from $n_r=pq$, so in fact $n_r=1$ and the Sylow $r$-subgroup is normal; $G$ is not simple.
+\item \textbf{(Order $pqr$: bound the elements to force $n_r=1$.)} Let $|G|=pqr$ with $p<q<r$ primes. Prove the Sylow $r$-subgroup is normal by first finding the admissible values of $n_r$ and then ruling out $n_r=pq$ by counting (plus one normal-subgroup step).
+\\\emph{Answer key.} For the largest prime $r$: $n_r\mid pq$ and $n_r\equiv1\pmod r$. The divisors of $pq$ are $1,p,q,pq$; since $p,q<r$ we have $p,q\not\equiv1\pmod r$, leaving $n_r\in\{1,pq\}$. Suppose $n_r=pq$. The Sylow $r$-subgroups have prime order $r$, intersect trivially, and contribute $pq(r-1)=pqr-pq$ elements of order $r$, leaving only $pq-1$ other nonidentity elements. If $n_q>1$, then $n_q\ge r$ (as $n_q\mid pr$ and $p\not\equiv1\pmod q$), contributing at least $r(q-1)\ge(q+1)(q-1)>pq-1$ elements of order $q$, which is impossible; hence $n_q=1$. So $P_q\nor G$, and $H:=P_qP_r$ is a subgroup of order $qr$ and index $p$, the smallest prime dividing $|G|$; hence $H\nor G$. In $H$, $n_r(H)\mid q$ and $n_r(H)\equiv1\pmod r$ force $n_r(H)=1$, so $P_r$ is characteristic in $H$ and therefore normal in $G$, contradicting $n_r=pq$. Hence $n_r=1$ and the Sylow $r$-subgroup is normal; $G$ is not simple.
 \end{exers}
 
 \begin{exers}{Additional exercises.}
