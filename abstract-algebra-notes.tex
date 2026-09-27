@@ -48898,7 +48898,7 @@ Find $m_{\alpha,\Q}(x)$, $\deg\alpha$, and an explicit basis of $\Q(\alpha)$ for
 \begin{wex}{Minimal polynomial depends on the base field}
 Compute $m_{\sqrt2,F}(x)$ for $F=\Q$, $F=\Q(\sqrt2)$, and $F=\Q(\sqrt3)$; in each case give $\idx{F(\sqrt2)}{F}$.
 \wrec The minimal polynomial is taken \emph{over the stated base}; enlarging the base can only shrink the degree (the old minimal polynomial still vanishes, so the new one divides it).
-\wsol Over $\Q$: $m=x^2-2$, degree $2$. Over $\Q(\sqrt2)$: $\sqrt2\in F$ already, so $m=x-\sqrt2$, degree $1$ and $F(\sqrt2)=F$. Over $\Q(\sqrt3)$: is $\sqrt2\in\Q(\sqrt3)$? If $\sqrt2=a+b\sqrt3$ with $a,b\in\Q$, squaring gives $2=a^2+3b^2+2ab\sqrt3$, forcing $ab=0$; neither $a=0$ (then $2=3b^2$, impossible in $\Q$) nor $b=0$ (then $2=a^2$, impossible) works, so $\sqrt2\notin\Q(\sqrt3)$. Hence $x^2-2$ stays irreducible over $\Q(\sqrt3)$, $m=x^2-2$, degree $2$. Sanity check: degrees $2,1,2$ all divide the ambient $\idx{\Q(\sqrt2,\sqrt3)}{\Q(\sqrt3)}=2$ as they must.
+\wsol Over $\Q$: $m=x^2-2$, degree $2$. Over $\Q(\sqrt2)$: $\sqrt2\in F$ already, so $m=x-\sqrt2$, degree $1$ and $F(\sqrt2)=F$. Over $\Q(\sqrt3)$: is $\sqrt2\in\Q(\sqrt3)$? If $\sqrt2=a+b\sqrt3$ with $a,b\in\Q$, squaring gives $2=a^2+3b^2+2ab\sqrt3$, forcing $ab=0$; neither $a=0$ (then $2=3b^2$, impossible in $\Q$) nor $b=0$ (then $2=a^2$, impossible) works, so $\sqrt2\notin\Q(\sqrt3)$. Hence $x^2-2$ stays irreducible over $\Q(\sqrt3)$, $m=x^2-2$, degree $2$. Sanity check: each $m_{\sqrt2,F}$ divides $x^2-2$ (which still vanishes at $\sqrt2$), so the degrees $2,1,2$ are all at most $2$, as they must be.
 \end{wex}
 
 \begin{wex}{A transcendental element}
@@ -49005,11 +49005,11 @@ This biquadratic extension is \emph{not} a simple tower: $\Q(\sqrt2,\sqrt3)/\Q$ 
 \begin{wex}{Degree $6$ and an immediate non-membership}
 Let $K=\Q(\sqrt[3]2,\zeta_3)$ (the splitting field of $x^3-2$). Compute $\idx{K}{\Q}$ two ways and deduce $\sqrt[3]2\notin\Q(\zeta_3)$.
 \wrec Build the tower in two orders; the tower law forces the two products to agree, and a degree that does not divide the total rules out membership.
-\wsol Order 1: $\idx{\Q(\sqrt[3]2)}{\Q}=3$ ($x^3-2$, Eisenstein). Then $\zeta_3$ has degree $\le2$ over $\Q(\sqrt[3]2)$; since $\zeta_3\notin\R\supseteq\Q(\sqrt[3]2)$, its degree is exactly $2$ (minimal poly $x^2+x+1$). So $\idx{K}{\Q}=2\cdot3=6$. Order 2: $\idx{\Q(\zeta_3)}{\Q}=2$ ($\Phi_3=x^2+x+1$); then $\idx{K}{\Q(\zeta_3)}$ divides $3$ and the product must equal $6$, forcing $\idx{K}{\Q(\zeta_3)}=3$, i.e.\ $x^3-2$ is irreducible over $\Q(\zeta_3)$ and $\sqrt[3]2\notin\Q(\zeta_3)$. Sanity check: $6=2\cdot3=3\cdot2$ both ways; and $3\nmid2=\idx{\Q(\zeta_3)}{\Q}$ already shows $\sqrt[3]2$ (degree $3$) cannot lie in $\Q(\zeta_3)$.
+\wsol Order 1: $\idx{\Q(\sqrt[3]2)}{\Q}=3$ ($x^3-2$, Eisenstein). Then $\zeta_3$ has degree $\le2$ over $\Q(\sqrt[3]2)$; since $\zeta_3\notin\R\supseteq\Q(\sqrt[3]2)$, its degree is exactly $2$ (minimal poly $x^2+x+1$). So $\idx{K}{\Q}=2\cdot3=6$. Order 2: $\idx{\Q(\zeta_3)}{\Q}=2$ ($\Phi_3=x^2+x+1$); then $\idx{K}{\Q(\zeta_3)}\le3$ (as $\sqrt[3]2$ is a root of $x^3-2$) and the product must equal $6$, forcing $\idx{K}{\Q(\zeta_3)}=3$, i.e.\ $x^3-2$ is irreducible over $\Q(\zeta_3)$ and $\sqrt[3]2\notin\Q(\zeta_3)$. Sanity check: $6=2\cdot3=3\cdot2$ both ways; and $3\nmid2=\idx{\Q(\zeta_3)}{\Q}$ already shows $\sqrt[3]2$ (degree $3$) cannot lie in $\Q(\zeta_3)$.
 \end{wex}
 
 \begin{wex}{Degree forces irreducibility}
-Show $\sqrt[3]2\notin\Q(\sqrt2)$ and, more generally, that $\idx{F(\alpha)}{F}=p$ prime forces $\alpha\notin E$ for any $E$ with $F\subseteq E\subsetneq F(\alpha)$, $\idx{E}{F}<p$.
+Show $\sqrt[3]2\notin\Q(\sqrt2)$ and, more generally, that $\idx{F(\alpha)}{F}=p$ prime forces $\alpha\notin E$ for any field $E\supseteq F$ with $\idx{E}{F}<p$.
 \wrec The degree $\idx{F(\alpha)}{F}$ must be divisible by $\idx{E}{F}$ for any intermediate $E$ (tower law). If $\alpha\in E$ then $F(\alpha)\subseteq E$, constraining degrees.
 \wsol If $\sqrt[3]2\in\Q(\sqrt2)$ then $\Q(\sqrt[3]2)\subseteq\Q(\sqrt2)$, so by the tower law $3=\idx{\Q(\sqrt[3]2)}{\Q}$ divides $\idx{\Q(\sqrt2)}{\Q}=2$, false; hence $\sqrt[3]2\notin\Q(\sqrt2)$. General statement: if $\alpha\in E$ then $F(\alpha)\subseteq E$, so $p=\idx{F(\alpha)}{F}$ divides $\idx{E}{F}<p$, impossible for a prime $p$ unless $\idx{E}{F}=0$, which cannot happen; contradiction. Sanity check: this is the standard ``prime degree blocks proper subfields'' argument --- a degree-$p$ simple extension has no intermediate fields strictly between $F$ and $F(\alpha)$.
 \end{wex}
@@ -49041,7 +49041,7 @@ Let $K=\Q(\sqrt2,\sqrt3)$, $\idx{K}{\Q}=4$. Show $\gamma=1+\sqrt2+\sqrt6$ is alg
 \begin{wex}{A finitely generated tower built step by step}
 Compute $\idx{\Q(\sqrt2,\sqrt[3]2)}{\Q}$ via the chain $\Q\subseteq\Q(\sqrt2)\subseteq\Q(\sqrt2,\sqrt[3]2)$.
 \wrec Iterate the tower law: each adjunction of an algebraic element multiplies the degree by the degree of its minimal polynomial \emph{over the current field}.
-\wsol $\idx{\Q(\sqrt2)}{\Q}=2$. Over $E=\Q(\sqrt2)$, $\sqrt[3]2$ satisfies $x^3-2$; this is irreducible over $E$ since $3\nmid\idx{E}{\Q}=2$ rules out a root or factor (a proper factor would give $\sqrt[3]2$ of degree $1$ or $2$ over $E$, but then $\Q(\sqrt[3]2)\subseteq E$ forces $3\mid2$). So $\idx{\Q(\sqrt2,\sqrt[3]2)}{E}=3$ and $\idx{\Q(\sqrt2,\sqrt[3]2)}{\Q}=3\cdot2=6$. Sanity check: $6$ is divisible by both $2=\idx{\Q(\sqrt2)}{\Q}$ and $3=\idx{\Q(\sqrt[3]2)}{\Q}$, as the tower law requires; note $\Q(\sqrt2,\sqrt[3]2)=\Q(\sqrt[6]2)$ since $\sqrt[6]2=\sqrt2/\sqrt[3]2$ lies in the field, while conversely $\sqrt2=(\sqrt[6]2)^3$ and $\sqrt[3]2=(\sqrt[6]2)^2$, so $\sqrt[6]2$ generates both.
+\wsol $\idx{\Q(\sqrt2)}{\Q}=2$. Over $E=\Q(\sqrt2)$, $\sqrt[3]2$ satisfies $x^3-2$; this is irreducible over $E$ since $3\nmid\idx{E}{\Q}=2$ rules out a root or factor (a proper factor would give $\sqrt[3]2$ degree $1$ or $2$ over $E$, hence $\idx{E(\sqrt[3]2)}{\Q}\in\set{2,4}$, which is not divisible by $3=\idx{\Q(\sqrt[3]2)}{\Q}$ although $\Q(\sqrt[3]2)\subseteq E(\sqrt[3]2)$). So $\idx{\Q(\sqrt2,\sqrt[3]2)}{E}=3$ and $\idx{\Q(\sqrt2,\sqrt[3]2)}{\Q}=3\cdot2=6$. Sanity check: $6$ is divisible by both $2=\idx{\Q(\sqrt2)}{\Q}$ and $3=\idx{\Q(\sqrt[3]2)}{\Q}$, as the tower law requires; note $\Q(\sqrt2,\sqrt[3]2)=\Q(\sqrt[6]2)$ since $\sqrt[6]2=\sqrt2/\sqrt[3]2$ lies in the field, while conversely $\sqrt2=(\sqrt[6]2)^3$ and $\sqrt[3]2=(\sqrt[6]2)^2$, so $\sqrt[6]2$ generates both.
 \end{wex}
 
 \begin{wex}{Composite degree bound for $F(\alpha,\beta)$}
@@ -49088,7 +49088,7 @@ The point: if $\alpha,\beta$ are algebraic over $F$, then $F(\alpha,\beta)/F$ is
 \begin{wex}{Sum and product of algebraic numbers are algebraic}
 Show directly that $\sqrt2+\sqrt[3]2$ and $\sqrt2\cdot\sqrt[3]2$ are algebraic over $\Q$, and bound their degrees.
 \wrec Theorem 13.19 / the remark: both lie in $\Q(\sqrt2,\sqrt[3]2)$, a finite (hence algebraic) extension; degrees divide $\idx{\Q(\sqrt2,\sqrt[3]2)}{\Q}=6$.
-\wsol $\Q(\sqrt2,\sqrt[3]2)$ has degree $6$ over $\Q$ and is algebraic, so $\sqrt2+\sqrt[3]2$ and $\sqrt2\sqrt[3]2=2^{1/2+1/3}=2^{5/6}=\sqrt[6]{32}$ are algebraic with degree dividing $6$. In fact $2^{5/6}$ has minimal polynomial $x^6-32$ (Eisenstein at $2$), so degree exactly $6$. Sanity check: $\deg(2^{5/6})=6=\idx{\Q(\sqrt2,\sqrt[3]2)}{\Q}$, so $\Q(2^{5/6})=\Q(\sqrt2,\sqrt[3]2)$, consistent with $2^{5/6}$ generating the whole field.
+\wsol $\Q(\sqrt2,\sqrt[3]2)$ has degree $6$ over $\Q$ and is algebraic, so $\sqrt2+\sqrt[3]2$ and $\sqrt2\sqrt[3]2=2^{1/2+1/3}=2^{5/6}=\sqrt[6]{32}$ are algebraic with degree dividing $6$. In fact $2^{5/6}$ has minimal polynomial $x^6-32$, so degree exactly $6$: Eisenstein at $2$ does not apply ($2^2\mid32$), but $(2^{5/6})^5=16\sqrt[6]2$ puts $\sqrt[6]2$, of degree $6$ by Eisenstein on $x^6-2$, inside $\Q(2^{5/6})$. Sanity check: $\deg(2^{5/6})=6=\idx{\Q(\sqrt2,\sqrt[3]2)}{\Q}$, so $\Q(2^{5/6})=\Q(\sqrt2,\sqrt[3]2)$, consistent with $2^{5/6}$ generating the whole field.
 \end{wex}
 
 \begin{wex}{The field of algebraic numbers}
@@ -49145,7 +49145,7 @@ Show $\gamma=\sqrt[3]{\,5+\sqrt2\,}$ is algebraic over $\Q$ and find $m_{\gamma,
 \[
 m_{\gamma,\Q}(x)\mid x^6-10x^3+23.
 \]
-This sextic is irreducible over $\Q$ (it factors through the tower $\idx{E}{\Q}=2$, $\idx{E(\gamma)}{E}=3$, total $6$, with no proper $\Q$-subfield forcing a smaller degree), so $m_{\gamma,\Q}(x)=x^6-10x^3+23$ and $\idx{\Q(\gamma)}{\Q}=6$. Sanity check: $6=3\cdot2=\idx{E(\gamma)}{E}\idx{E}{\Q}$, matching the tower law and the degree of the found polynomial.
+This sextic is irreducible over $\Q$: since $\sqrt2=\gamma^3-5\in\Q(\gamma)$ we have $\Q(\gamma)=E(\gamma)$; and $x^3-(5+\sqrt2)$ has no root in $E$ (if $(a+b\sqrt2)^3=5+\sqrt2$ with $a,b\in\Q$, applying $\sqrt2\mapsto-\sqrt2$ and multiplying gives $(a^2-2b^2)^3=23$, impossible in $\Q$), so this cubic is irreducible over $E$ and $\idx{\Q(\gamma)}{\Q}=\idx{E(\gamma)}{E}\,\idx{E}{\Q}=3\cdot2=6$. Hence $m_{\gamma,\Q}(x)=x^6-10x^3+23$ and $\idx{\Q(\gamma)}{\Q}=6$. Sanity check: $6=3\cdot2=\idx{E(\gamma)}{E}\idx{E}{\Q}$, matching the tower law and the degree of the found polynomial.
 \end{wex}
 
 \begin{wex}{Composite of two algebraic extensions is algebraic}
