@@ -39154,7 +39154,7 @@ The two universal-property diagrams above are the prototypes for the rest of the
 
 \item Let $V$ be the collection of polynomials with coefficients in $\Q$ in the variable $x$ of degree at most 5. Prove that $V$ is a vector space over $\Q$ of dimension 6, with $1,x,x^2,\dots,x^5$ as basis. Prove that $1,1+x,1+x+x^2,\dots,1+x+x^2+x^3+x^4+x^5$ is also a basis for $V$.
 
-\item Let $\varphi$ be the linear transformation $\varphi:\R^4\to\R^3$ such that
+\item Let $\varphi$ be the linear transformation $\varphi:\R^4\to\R$ such that
 \[
 \varphi((1,0,0,0))=1 \qquad \varphi((1,-1,0,0))=0
 \]
@@ -39798,25 +39798,24 @@ A linear transformation $\varphi$ satisfying $\varphi^2 = \varphi$ is called an 
 \item Prove that the row rank of a matrix in reduced row echelon form is the number of nonzero rows.
 
 \item Prove that the reduced row echelon form of the matrices
-\[ \begin{pmatrix} 1 & 1 & 4 & 8 & 0 & \vline & -1 \\ 1 & 2 & 3 & 9 & 0 & \vline & -5 \\ 0 & -2 & 2 & -2 & 1 & \vline & 14 \\ 1 & 4 & 1 & 10 & -13 & \vline & -4 \end{pmatrix} \qquad \begin{pmatrix} 0 & -3 & 3 & 1 & \vline & 5 \\ 0 & 1 & -1 & 0 & \vline & 0 \\ 0 & 2 & -2 & 0 & \vline & -3 \end{pmatrix} \]
+\[ \begin{pmatrix} 1 & 1 & 4 & 8 & 0 & -1 & \vline & -1 \\ 1 & 2 & 3 & 9 & 0 & -5 & \vline & -2 \\ 0 & -2 & 2 & -2 & 1 & 14 & \vline & 3 \\ 1 & 4 & 1 & 11 & 0 & -13 & \vline & -4 \end{pmatrix} \qquad \begin{pmatrix} 0 & -3 & 3 & 1 & \vline & 5 \\ 0 & 1 & -1 & 0 & \vline & 0 \\ 0 & 2 & -2 & 0 & \vline & -3 \end{pmatrix} \]
 are the two matrices preceding Exercise 16.
 
 \item (\emph{Solving Systems of Linear Equations}) Let $(A' \mid C')$ be the reduced row echelon form of the augmented matrix $(A \mid C)$. The number of zero rows of $A'$ is clearly at least as great as the number of zero rows of $(A' \mid C')$.
 \begin{enumerate}
 \item[(a)] Prove that if the number of zero rows of $A'$ is strictly larger than the number of zero rows of $(A' \mid C')$ then there are no solutions to $AX = C$.
-\item[(b)] Prove that if $r = n$ then there is precisely one solution to the system of equations $AX = C$.
-\item[(c)] Prove that if $r < n$ then there are infinitely many solutions to the system of equations $AX = C$. Prove in fact that the values of the $n - r$ variables corresponding to the nonpivotal columns of $(A' \mid C')$ can be chosen arbitrarily and that the remaining $r$ variables corresponding to the pivotal columns of $(A' \mid C')$ are then determined uniquely.
+\item[(b)] By (a) we may assume that $A'$ and $(A' \mid C')$ have the same number, $r$, of nonzero rows (so $r \le n$, where $n$ is the number of unknowns, i.e.\ of columns of $A$). Prove that if $r = n$ then there is precisely one solution to the system of equations $AX = C$.
+\item[(c)] Prove that if $r < n$ then there are $\abs{F}^{\,n-r}$ solutions to the system of equations $AX = C$ (infinitely many when $F$ is infinite). Prove in fact that the values of the $n - r$ variables corresponding to the nonpivotal columns of $(A' \mid C')$ can be chosen arbitrarily and that the remaining $r$ variables corresponding to the pivotal columns of $(A' \mid C')$ are then determined uniquely.
 \end{enumerate}
 
 \item Determine the solutions of the following systems of equations:
 \begin{enumerate}
 \item[(a)] $\begin{aligned} -3x + 3y + z &= 5 \\ x - y &= 0 \\ 2x - 2y &= -3 \end{aligned}$
-\item[(b)] $\begin{aligned} x - 2y + z &= 5 \\ x - 4y \quad 6z &= 10 \\ 4x - 11y + 11z &= 12 \end{aligned}$
+\item[(b)] $\begin{aligned} x - 2y + z &= 5 \\ x - 4y + 6z &= 10 \\ 4x - 11y + 11z &= 12 \end{aligned}$
 \item[(c)] $\begin{aligned} x - 2y + z &= 5 \\ y - 2z &= 17 \\ 2x - 3y &= 27 \end{aligned}$
 \item[(d)] $\begin{aligned} x + y - 3z + 2u &= 2 \\ 3x - 2y + 5z + u &= 1 \\ 6x + y - 4z + 3u &= 7 \\ 2x + 2y - 6z &= 4 \end{aligned}$
-\item[(e)] $\begin{aligned} x + y + 4z + 8u \quad - w &= -1 \\ x + 2y + 3z + 9u \quad - 5u &= -2 \\ -2y + 2z - 2u + v + 14u &= 3 \\ x + 4y + z + 11u \quad - 13u &= -4 \end{aligned}$
+\item[(e)] $\begin{aligned} x + y + 4z + 8u \quad - w &= -1 \\ x + 2y + 3z + 9u \quad - 5w &= -2 \\ -2y + 2z - 2u + v + 14w &= 3 \\ x + 4y + z + 11u \quad - 13w &= -4 \end{aligned}$
 \end{enumerate}
-% UNCERTAIN: ex.21(b) second equation middle term printed without an operator between $4y$ and $6z$; ex.21(e) uses both $u$ and $w$ and a repeated $u$ in several rows as printed
 
 \item Suppose $A$ and $B$ are two row equivalent $m \times n$ matrices.
 \begin{enumerate}
@@ -39854,7 +39853,7 @@ have solutions.
 satisfied by $v_1, v_2, \ldots, v_n$ is also satisfied by $v_i$ when $v_i$ is replaced by $w_i$, $i = 1, 2, \ldots, n$.
 \item[(b)] Prove that the vectors whose coordinates are given by the pivotal columns of $A'$ are linearly independent and that the vectors whose coordinates are given by the nonpivotal columns of $A'$ are linearly dependent on these.
 \item[(c)] (\emph{Determining Linear Independence of Vectors}) Prove that the vectors $v_1, v_2, \ldots, v_n$ are linearly independent if and only if $A'$ has $n$ nonzero rows (i.e., has rank $n$).
-\item[(d)] (\emph{Determining Linear Dependencies of Vectors}) By (c), the vectors $v_1, v_2, \ldots, v_n$ are linearly dependent if and only if $A'$ has nonpivotal columns. The linear dependence relations satisfied by these defining linear dependence relations among $v_1, v_2, \ldots, v_n$, are given by the linear equations defined by $A'$. Show that each of the variables $x_1, x_2, \ldots, x_n$ in (5) corresponding to the nonpivotal columns of $A'$ can be prescribed arbitrarily and the values of the remaining variables are then uniquely determined to give a linear dependence relation among $v_1, v_2, \ldots, v_n$ as in (5).
+\item[(d)] (\emph{Determining Linear Dependencies of Vectors}) By (c), the vectors $v_1, v_2, \ldots, v_n$ are linearly dependent if and only if $A'$ has nonpivotal columns. The solutions to (11.5), which define the linear dependence relations among $v_1, v_2, \ldots, v_n$, are given by the linear equations defined by $A'$. Show that each of the variables $x_1, x_2, \ldots, x_n$ in (11.5) corresponding to the nonpivotal columns of $A'$ can be prescribed arbitrarily and the values of the remaining variables are then uniquely determined to give a linear dependence relation among $v_1, v_2, \ldots, v_n$ as in (11.5).
 \item[(e)] (\emph{Determining the Span of a Set of Vectors}) Prove that the subspace $W$ spanned by $v_1, v_2, \ldots, v_n$ has dimension $r$ where $r$ is the number of nonzero rows of $A'$ and that a basis for $W$ is given by the original vectors $v_{j_i}$ ($i = 1, 2, \ldots, r$) corresponding to the pivotal columns of $A'$.
 \end{enumerate}
 
@@ -39896,9 +39895,8 @@ corresponding to ($x_3 = 1$, $x_5 = 0$) and ($x_3 = 0$, $x_5 = 1$), respectively
 \item[(a)] $(1, -2, 5, 3)$, $(2, 3, 1, -4)$, $(3, 8, -3, -5)$.
 \item[(b)] $(2, -5, 3, 0)$, $(0, -2, 5, -3)$, $(1, -1, 1, -1)$, $(-3, 2, -1, 3)$.
 \item[(c)] $(1, -2, 0, 1)$, $(2, -2, 0, 0)$, $(-1, 3, 0, -2)$, $(-2, 1, 0, 1)$.
-\item[(d)] $(1, 0, -1)$, $(1, 2, 3, 0)$, $(2, 3, 2, 0)$, $(2, 3, 2, -3)$, $(1, 3, 4, -3)$.
+\item[(d)] $(1, 1, 0, -1)$, $(1, 2, 3, 0)$, $(2, 3, 3, -1)$, $(1, 2, 2, -2)$, $(2, 3, 2, -3)$, $(1, 3, 4, -3)$.
 \end{enumerate}
-% UNCERTAIN: ex.30(d) first vector printed as $(1,0,-1)$ (three entries shown) while the others are 4-tuples; likely a scan artifact
 
 \item (\emph{Computing the Image and Kernel of a Linear Transformation}) Let $V$ be an $n$-dimensional vector space with basis $e_1, e_2, \ldots, e_n$ and let $W$ be an $m$-dimensional vector space with basis $f_1, f_2, \ldots, f_m$. Let $\varphi$ be a linear transformation from $V$ to $W$ and let the corresponding $m \times n$ matrix with respect to these bases: $A = (a_{ij})$ be
 \[ \varphi(e_j) = \sum_{i=1}^{m} a_{ij} f_i, \qquad j = 1, 2, \ldots, n, \]
@@ -39915,7 +39913,7 @@ and the solutions $x_1, x_2, \ldots, x_n$ to this system of linear equations are
 \end{enumerate}
 
 \item Let $V = \mathbb{R}^5$ and $W = \mathbb{R}^4$ with the standard bases. Let $\varphi$ be the linear transformation $\varphi : V \to W$ defined by
-\[ \varphi(x, y, z, u, v) = (x + 2y + 3z + 4u + 4v, \; -2x - 4y + 2v, \; x + 2y + z - 2v, \; x + 2y + u - 2v, \; x + 2y - v). \]
+\[ \varphi(x, y, z, u, v) = (x + 2y + 3z + 4u + 4v, \; -2x - 4y + 2v, \; x + 2y + u - 2v, \; x + 2y - v). \]
 \begin{enumerate}
 \item[(a)] Prove that the matrix $A$ corresponding to $\varphi$ and these basis is
 \[ A = \begin{pmatrix} 1 & 2 & 3 & 4 & 4 \\ -2 & -4 & 0 & 0 & 2 \\ 1 & 2 & 0 & 1 & -2 \\ 1 & 2 & 0 & 0 & -1 \end{pmatrix} \]
@@ -39939,7 +39937,7 @@ with respect to the standard basis for $\mathbb{R}^4$. Determine a basis for the
 \[ \varphi((1, -1, 1, 0)) = (1, -1) \qquad \varphi((1, -1, 1, -1)) = (0, 0). \]
 Determine a basis for the image and for the kernel of $\varphi$.
 
-\item Let $V$ be the vector space of all $2 \times 2$ matrices with real entries and let $\varphi : V \to V$ be the map defined by sending a matrix $A \in V$ to the sum of the diagonal entries of $A$ (the \emph{trace} of $A$).
+\item Let $V$ be the vector space of all $2 \times 2$ matrices with real entries and let $\varphi : V \to \mathbb{R}$ be the map defined by sending a matrix $A \in V$ to the sum of the diagonal entries of $A$ (the \emph{trace} of $A$).
 \begin{enumerate}
 \item[(a)] Show that
 \[ \begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix}, \quad \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix}, \quad \begin{pmatrix} 0 & 0 \\ 1 & 0 \end{pmatrix}, \quad \begin{pmatrix} 0 & 0 \\ 0 & 1 \end{pmatrix} \]
@@ -39947,12 +39945,11 @@ is a basis for $V$.
 \item[(b)] Prove that $\varphi$ is a linear transformation and determine the matrix of $\varphi$ with respect to the basis in (a) for $V$. Determine the dimension of and a basis for the kernel of $\varphi$.
 \end{enumerate}
 
-\item Let $V$ be the 6-dimensional vector space over $\mathbb{Q}$ consisting of the polynomials in the variable $x$ of degree at most 5. Let $\varphi$ be the map of $V$ to itself defined by $\varphi(f) = x^2 f'' - 6xf' + 12f$ (where $f'$ denotes the usual second derivative with respect to $x$ of the polynomial $f \in V$ and $f''$ similarly denotes the usual first derivative).
+\item Let $V$ be the 6-dimensional vector space over $\mathbb{Q}$ consisting of the polynomials in the variable $x$ of degree at most 5. Let $\varphi$ be the map of $V$ to itself defined by $\varphi(f) = x^2 f'' - 6xf' + 12f$ (where $f''$ denotes the usual second derivative with respect to $x$ of the polynomial $f \in V$ and $f'$ similarly denotes the usual first derivative).
 \begin{enumerate}
 \item[(a)] Prove that $\varphi$ is a linear transformation of $V$ to itself.
 \item[(b)] Determine a basis for the image and for the kernel of $\varphi$.
 \end{enumerate}
-% UNCERTAIN: ex.36 the descriptions of $f'$ as "second derivative" and $f''$ as "first derivative" appear swapped in the printed text; transcribed as printed
 
 \item Let $V$ be the 7-dimensional vector space over the field $F$ consisting of the polynomials in the variable $x$ of degree at most 6. Let $\varphi$ be the linear transformation of $V$ to itself defined by $\varphi(f) = f'$, where $f'$ denotes the usual derivative with respect to $x$ of the polynomial $f \in V$. For each of the fields below, determine a basis for the image and for the kernel of $\varphi$:
 \begin{enumerate}
