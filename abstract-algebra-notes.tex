@@ -12465,7 +12465,7 @@ obtained by writing down a cleverly chosen surjection and computing its kernel. 
 them in order, then close with the lattice (Fourth) theorem, which organizes the whole
 subgroup structure of a quotient.
 
-Throughout, recall the workhorse fact (D\&F \S 3.2): a subgroup $N\nor G$ is normal iff it
+Throughout, recall the workhorse fact (D\&F \S 3.1): a subgroup $N\sgr G$ is normal iff it
 is the kernel of some homomorphism, and the canonical projection
 $\pi\colon G\to G/N$, $\pi(g)=gN$, is a surjective homomorphism with $\ker\pi=N$.
 
@@ -12504,7 +12504,7 @@ The hypothesis $A\sgr N_G(B)$ means $aBa\inv=B$ for all $a\in A$; also $B\sgr N_
 trivially. Hence both $A$ and $B$ lie in the subgroup $N_G(B)$, so the product set $AB$
 lies inside $N_G(B)$.
 
-(1) $AB$ is a subgroup. In general $AB\sgr G$ iff $AB=BA$ (D\&F Prop.~3.3.13). Since $A$
+(1) $AB$ is a subgroup. In general $AB\sgr G$ iff $AB=BA$ (D\&F Prop.~3.2.14). Since $A$
 normalizes $B$, for $a\in A$ we have $aB=(aBa\inv)a=Ba$, so $AB=\bigcup_{a\in A}aB
 =\bigcup_{a\in A}Ba=BA$. Thus $AB=BA$ and $AB\sgr G$. (Equivalently: $AB\sgr N_G(B)$ since
 $B\nor N_G(B)$ and any subgroup-times-normal-subgroup product is a subgroup.)
@@ -12520,7 +12520,7 @@ $A\cap B\nor A$, proving (3). The First Isomorphism Theorem applied to $\varphi$
 $A/(A\cap B)=A/\ker\varphi\isom\im\varphi=AB/B$, proving (4).
 \end{proof}
 
-The proof is exactly the diagram below: $\varphi$ is the diagonal restriction, $\pi$ is
+The proof is exactly the diagram below: $\varphi$ is the horizontal restriction, $\pi$ is
 the projection from $A$, and the induced map $\overline{\varphi}$ closes the triangle.
 \[\begin{tikzcd}[row sep=large,column sep=large]
 A \arrow[r, "\varphi"] \arrow[d, two heads, "\pi"'] & AB/B \\
@@ -12561,8 +12561,10 @@ A/(A\cap B) \arrow[ur, dashed, "\overline{\varphi}"', "\isom"] &
 \end{dgx}
 
 \begin{remark}
-If $A\nor G$ (or even just $B\nor G$) the hypothesis $A\sgr N_G(B)$ is automatic, because
-then $N_G(B)=G$. In most textbook applications one of $A,B$ is normal in $G$, so people
+If $B\nor G$ the hypothesis $A\sgr N_G(B)$ is automatic, because
+then $N_G(B)=G$. (Normality of $A$ is not enough: $A_3\nor S_3$ does not normalize
+$B=\gen{(1\,2)}$, and $B$ is not normal in $A_3B=S_3$; when $A\nor G$, apply the theorem
+with the roles of $A$ and $B$ exchanged, getting $AB/A\isom B/(A\cap B)$.) In most textbook applications one of $A,B$ is normal in $G$, so people
 often quote the theorem as ``$A\sgr G$, $B\nor G$ $\imp AB/B\isom A/(A\cap B)$.'' The full
 hypothesis only needs $A\sgr N_G(B)$.
 \end{remark}
@@ -12617,7 +12619,7 @@ $V\nor A_4$) and $A\cap V=\{e\}\nor A$ (trivially). Good.
 \begin{wex}{When you must check $A\sgr N_G(B)$: $D_8$}
 In $G=D_8=\gen{r,s\mid r^4=s^2=1,\ sr=r\inv s}$ let $B=\gen{s}=\{1,s\}$ and
 $A=\gen{r^2}=\{1,r^2\}$. Does the Diamond Theorem apply, and what is $AB$?
-\wrec Second Iso: neither $A$ nor $B$ is normal-by-inspection here, so we must verify the
+\wrec Second Iso: $B$ is not normal in $G$ (and normality of $A=Z(D_8)$ does not help), so we must verify the
 hypothesis $A\sgr N_G(B)$ rather than assume it.
 \wsol Check $A$ normalizes $B$: $r^2 s r^{-2}=r^2 (s r^{-2})=r^2(r^2 s)=r^4 s=s\in B$
 (using $sr\inv=rs$ so $sr^{-2}=r^2 s$). Thus $r^2\in N_G(B)$, and since $A=\gen{r^2}$ we get
