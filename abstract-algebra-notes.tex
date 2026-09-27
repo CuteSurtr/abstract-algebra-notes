@@ -944,7 +944,7 @@ r^n=1,\qquad s^2=1,\qquad srs=r\inv\quad(\text{equivalently }sr=r\inv s,\ \ r^k 
 \]
 \end{definition}
 
-Here is the square ($D_8$, $n=4$) with the rotation $r$ and the reflection axis fixed by $s$ (for even $n$ the axis through vertex $0$ is a diagonal, passing through the opposite vertex $2$), and the pentagon ($D_{10}$, $n=5$) with $r$ and the axis of $s$ (for odd $n$ the axis through vertex $0$ passes through the midpoint of the opposite edge):
+Here is the square ($D_8$, $n=4$) with the rotation $r$ and the reflection axis fixed by $s$ (for even $n$ the axis through vertex $0$ is a diagonal, passing through the opposite vertex $n/2$, here vertex $2$), and the pentagon ($D_{10}$, $n=5$) with $r$ and the axis of $s$ (for odd $n$ the axis through vertex $0$ passes through the midpoint of the opposite edge):
 
 \begin{center}
 \begin{tikzpicture}[scale=1.3]
@@ -1013,7 +1013,7 @@ using $r^i s=sr^{-i}$. Since $sr^i\ne1$ (it is a reflection, not the identity), 
 \begin{method}{How to simplify a word and read off the order in $D_{2n}$}
 \textbf{Trigger:} any product of $r$'s and $s$'s in $D_{2n}$, e.g.\ $(sr^a)(sr^b)$, $r^k s r^{-k}$, or $(sr^i)^m$.
 \begin{enumerate}
-\item \textbf{Push every $s$ left.} Repeatedly apply $r^k s = s r^{-k}$ to slide each $s$ past any $r$ on its right, flipping that $r$'s exponent sign.
+\item \textbf{Push every $s$ left.} Repeatedly apply $r^k s = s r^{-k}$ to slide each $s$ past any $r$ on its left, flipping that $r$'s exponent sign.
 \item \textbf{Cancel adjacent $s$'s} via $s^2=1$. You end with $s^a r^m$, $a\in\{0,1\}$.
 \item \textbf{Reduce the exponent} $m$ modulo $n$ (since $r^n=1$) to land in $0\le m<n$.
 \item \textbf{Read the answer:} $r^m$ is a rotation with $\ord{r^m}=n/\gcd(n,m)$; $sr^m$ is a reflection with order $2$.
@@ -1048,7 +1048,7 @@ Use $r^k s = s r^{-k}$ on the leftmost pair:
 r^k s r^{-k}=(r^k s)r^{-k}=(s r^{-k})r^{-k}=s r^{-k-k}=s r^{-2k}.
 \]
 Reduce the exponent mod $n$: $sr^{-2k}=s r^{\,n-2k\bmod n}$. Normal form $\boxed{sr^{-2k}}$ (a reflection).
-\textbf{Check:} as a reflection it should square to $1$: $(sr^{-2k})^2=1$ by Proposition~\ref{p:orders@c1}. Geometrically, conjugating the axis of $s$ by the rotation $r^k$ rotates that axis by $2k$ steps, matching the index $-2k$.
+\textbf{Check:} as a reflection it should square to $1$: $(sr^{-2k})^2=1$ by Proposition~\ref{p:orders@c1}. Geometrically, conjugating the axis of $s$ by the rotation $r^k$ rotates that axis through the angle $2\pi k/n$ (onto the axis through vertex $k$), i.e.\ by $2k$ steps of $\pi/n$ (the angle between neighboring reflection axes), matching the index $-2k$.
 \end{wex}
 
 \begin{wex}{All elements of order $2$ in $D_8$}
